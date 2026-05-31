@@ -16,9 +16,11 @@ npm run build
 
 ```text
 docs/index.html
+docs/v3.html
 docs/v2-agent-validation.md
 docs/company-validation/
 data/sectors.json
+data/v3-foreign-flow.json
 ```
 
 ## v2 분류
@@ -44,6 +46,31 @@ data/sectors.json
 - `조` 단위 시총은 반드시 억원 단위로 환산합니다. 예: `1조 892억원`은 `10,892억원`.
 - 저시총 후보라도 `Reconsider`이면 자동 편입하지 않고 `C`로 둡니다.
 - 3000억~3500억원 경계 후보는 최신 시총 재확인 대상으로 남깁니다.
+
+## v3 외국인 수급 페이지
+
+v3는 기존 v2 페이지를 덮지 않고 별도 페이지로 생성합니다.
+
+```powershell
+npm run v3
+```
+
+생성 결과:
+
+```text
+docs/v3.html
+data/v3-foreign-flow.json
+```
+
+v3 기준:
+
+- 지난주 외국인 순매수 금액 / 시가총액 비율이 양수인 종목만 우선 후보군으로 봅니다.
+- 시가총액 기준은 6000억원 이하로 상향합니다.
+- 정책 적합성, 밸류체인 직접성, 성장 촉매, 신규자금 가능성은 v2 기준을 유지합니다.
+- 동일 점수대에서는 시가총액이 낮은 종목이 유리하도록 valuation 점수를 조정합니다.
+- `A`: 외국인 수급 플러스, 6000억원 이하, `Strong` 또는 `Watch`
+- `C`: 외국인 수급 플러스, 6000억원 이하이나 `Reconsider`
+- `제외`: 외국인 수급이 0 이하이거나 6000억원 초과
 
 ## 검증 프롬프트
 

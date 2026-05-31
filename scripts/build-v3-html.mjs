@@ -1,0 +1,454 @@
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(__dirname, "..");
+const dataPath = path.join(root, "data", "v3-foreign-flow.json");
+const outputPath = path.join(root, "docs", "v3.html");
+const data = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+const json = JSON.stringify(data).replaceAll("<", "\\u003c");
+
+const html = `<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(data.meta.title)}</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f6f8;
+      --ink: #17202b;
+      --muted: #657181;
+      --line: #d9e0e8;
+      --surface: #ffffff;
+      --surface-2: #eef2f5;
+      --nav: #17202b;
+      --accent: #0f6b68;
+      --blue: #2f5ea8;
+      --warn: #9a5b13;
+      --bad: #8c3333;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .layout {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+    }
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 24px 20px;
+      background: var(--nav);
+      color: #f8fafc;
+    }
+    main { min-width: 0; padding: 28px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 8px; font-size: 22px; line-height: 1.25; letter-spacing: 0; }
+    h2 { margin-bottom: 10px; font-size: 32px; line-height: 1.18; letter-spacing: 0; }
+    h3 { margin-bottom: 10px; font-size: 17px; letter-spacing: 0; }
+    .brand p { color: #cbd5df; font-size: 13px; }
+    .side-box {
+      display: grid;
+      gap: 7px;
+      margin: 16px 0;
+      padding: 13px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      font-size: 12px;
+      color: #d8e1eb;
+    }
+    .side-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      margin-top: 8px;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 8px;
+      color: #f8fafc;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .side-link:hover { background: #ffffff; color: var(--ink); }
+    .nav-list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+    .nav-button {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      min-height: 42px;
+      padding: 9px 11px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      color: #f8fafc;
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+    }
+    .nav-button.active, .nav-button:hover { background: #ffffff; color: var(--ink); }
+    .count {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 30px;
+      min-height: 22px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(15,107,104,.14);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .hero, .panel, .detail {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .hero { padding: 28px; margin-bottom: 16px; }
+    .hero p { max-width: 1040px; margin-bottom: 0; color: var(--muted); }
+    .kicker { margin-bottom: 9px; color: var(--accent); font-size: 13px; font-weight: 900; }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .metric {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .metric strong { display: block; font-size: 27px; line-height: 1.1; }
+    .metric span { color: var(--muted); font-size: 12px; }
+    .panel { padding: 18px; margin-bottom: 16px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: #334155;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .badge.a { background: #e8f4f3; color: var(--accent); }
+    .badge.c { background: #fff4df; color: var(--warn); }
+    .badge.out { background: #f5e8e8; color: var(--bad); }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .segmented { display: flex; flex-wrap: wrap; gap: 6px; }
+    .segmented button {
+      min-height: 34px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+      color: var(--ink);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .segmented button.active { border-color: var(--accent); background: #e8f4f3; color: var(--accent); }
+    .table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
+    table { width: 100%; min-width: 1540px; border-collapse: collapse; background: #fff; }
+    th, td {
+      padding: 10px 11px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+    th { position: sticky; top: 0; z-index: 1; background: #eef2f5; color: #344052; }
+    tr:last-child td { border-bottom: 0; }
+    .company { font-weight: 900; }
+    .note { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .score { font-size: 21px; font-weight: 900; line-height: 1; }
+    .positive { color: var(--accent); font-weight: 900; }
+    .negative { color: var(--bad); font-weight: 900; }
+    .link-list { display: grid; gap: 4px; margin-top: 7px; }
+    .link-list a { color: var(--blue); font-size: 12px; text-decoration: none; }
+    .link-list a:hover { text-decoration: underline; }
+    ul.clean { margin: 0; padding-left: 17px; color: var(--muted); }
+    footer { margin-top: 18px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 1180px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 720px) {
+      main { padding: 16px; }
+      aside { padding: 18px; }
+      .metrics { grid-template-columns: 1fr; }
+      .hero { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <div class="brand">
+        <h1>${escapeHtml(data.meta.title)}</h1>
+        <p>지난주 외국인 순매수/시총 비율 기반 후보군</p>
+      </div>
+      <div class="side-box">
+        <span>산출일: ${escapeHtml(data.meta.runDate)}</span>
+        <span>수급 기간: ${escapeHtml(data.meta.weekStart)} ~ ${escapeHtml(data.meta.weekEnd)}</span>
+        <span>시총 기준: ${escapeHtml(data.meta.threshold)}</span>
+        <span>출처: ${escapeHtml(data.meta.source)}</span>
+      </div>
+      <a class="side-link" href="index.html">v2 정책 후보 페이지</a>
+      <ul class="nav-list" id="sideNav"></ul>
+    </aside>
+    <main>
+      <section class="hero">
+        <p class="kicker">v3 Foreign Flow Screen</p>
+        <h2>지난주 외국인 수급이 시총 대비 플러스인 후보를 우선순위화합니다.</h2>
+        <p>${escapeHtml(data.meta.foreignFlowRule)} ${escapeHtml(data.meta.smallCapRule)} v2의 정책 적합성 기준은 유지하되, 시총 기준을 6000억원으로 상향했습니다.</p>
+      </section>
+      <section class="metrics" id="metrics"></section>
+      <section class="panel">
+        <h3>v3 판정 기준</h3>
+        <p class="note">외국인 순매수/시총 비율은 지난주 일별 외국인 순매매량에 해당일 종가를 곱해 합산한 뒤 현재 시가총액으로 나눈 값입니다. 외국인 지분율 변화는 지난주 외국인 순매수 주식수를 상장주식수로 나눈 보조 지표입니다.</p>
+        <div class="badges">
+          <span class="badge a">A: 외국인 플러스 + 6000억 이하 + Strong/Watch</span>
+          <span class="badge c">C: 외국인 플러스 + 6000억 이하이나 Reconsider</span>
+          <span class="badge out">제외: 수급 음수/0 또는 6000억 초과</span>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="toolbar">
+          <h3 style="margin:0;">외국인 수급 플러스 후보</h3>
+          <div class="segmented">
+            <button class="active" type="button" data-filter="all">전체 +수급</button>
+            <button type="button" data-filter="A">A 후보</button>
+            <button type="button" data-filter="C">C 보류</button>
+            <button type="button" data-filter="제외">초과 추적</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>순위</th>
+                <th>회사</th>
+                <th>섹터</th>
+                <th>외국인 수급</th>
+                <th>시총</th>
+                <th>정책 적합성</th>
+                <th>점수</th>
+                <th>분류</th>
+                <th>투자포인트</th>
+                <th>리스크/확인사항</th>
+                <th>출처</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </section>
+      <footer>이 페이지는 <code>data/v3-foreign-flow.json</code>에서 생성됩니다. 갱신 순서: <code>npm run v3</code>.</footer>
+    </main>
+  </div>
+  <script>
+    const DATA = ${json};
+    let currentFilter = "all";
+    const tableBody = document.querySelector("#tableBody");
+    const metrics = document.querySelector("#metrics");
+    const sideNav = document.querySelector("#sideNav");
+
+    function renderMetrics() {
+      const rows = DATA.selectedRows;
+      const top = rows[0];
+      const aRows = rows.filter((row) => row.v3.classification === "A");
+      metrics.innerHTML = [
+        ["중복 제거 종목", DATA.meta.totalUniqueTickers, "기존 후보 universe"],
+        ["외국인 +수급", DATA.meta.positiveForeignFlow, "시총대비 플러스"],
+        ["A 후보", DATA.meta.eligibleA, "6000억 이하 통과"],
+        ["C 보류", DATA.meta.watchC, "저시총이나 Reconsider"],
+        ["최상위 수급", top ? pct(top.foreignFlow.netValueToMarketCapPct) : "-", top ? top.company : "없음"],
+      ].map(([label, value, note]) => \`
+        <div class="metric">
+          <strong>\${escapeHtml(value)}</strong>
+          <span>\${escapeHtml(label)} · \${escapeHtml(note)}</span>
+        </div>
+      \`).join("");
+    }
+
+    function renderNav() {
+      const sectorCounts = new Map();
+      for (const row of DATA.selectedRows) {
+        for (const sector of row.sectors) {
+          sectorCounts.set(sector, (sectorCounts.get(sector) ?? 0) + 1);
+        }
+      }
+      sideNav.innerHTML = [...sectorCounts.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .map(([sector, count]) => \`
+          <li>
+            <button class="nav-button" type="button" data-sector="\${escapeHtml(sector)}">
+              <span>\${escapeHtml(sector)}</span>
+              <span class="count">\${count}</span>
+            </button>
+          </li>
+        \`).join("");
+      document.querySelectorAll("[data-sector]").forEach((button) => {
+        button.addEventListener("click", () => {
+          currentFilter = button.dataset.sector;
+          document.querySelectorAll("[data-filter]").forEach((item) => item.classList.remove("active"));
+          renderTable();
+        });
+      });
+    }
+
+    function renderTable() {
+      let rows = DATA.selectedRows;
+      if (currentFilter !== "all") {
+        rows = rows.filter((row) => row.v3.classification === currentFilter || row.sectors.includes(currentFilter));
+      }
+      tableBody.innerHTML = rows.map((row, index) => renderRow(row, index)).join("");
+      document.querySelectorAll("[data-sector]").forEach((button) => {
+        button.classList.toggle("active", button.dataset.sector === currentFilter);
+      });
+    }
+
+    function renderRow(row, index) {
+      return \`
+        <tr>
+          <td class="num">\${index + 1}</td>
+          <td>
+            <span class="company">\${escapeHtml(row.company)}</span>
+            <span class="note">\${escapeHtml(row.ticker)} · \${escapeHtml(row.market)}</span>
+          </td>
+          <td>
+            <div class="badges">\${row.sectors.map((sector) => \`<span class="badge">\${escapeHtml(sector)}</span>\`).join("")}</div>
+            <span class="note">\${escapeHtml(row.valueChains.slice(0, 2).join(" / "))}</span>
+          </td>
+          <td>
+            <span class="positive num">\${pct(row.foreignFlow.netValueToMarketCapPct)}</span>
+            <span class="note">순매수액: \${eok(row.foreignFlow.netValueEok)}</span>
+            <span class="note">순매수주식: \${num(row.foreignFlow.netShares)}주</span>
+            <span class="note">지분율 변화: \${pctp(row.foreignFlow.ownershipChangePctp)}</span>
+          </td>
+          <td>
+            <span class="num">\${eok(row.marketCap.eok)}</span>
+            <span class="note">기준: 6000억원</span>
+          </td>
+          <td>
+            <span class="badge \${validationClass(row.baseValidation)}">\${escapeHtml(row.baseValidation)}</span>
+            <span class="note">v2 점수: \${escapeHtml(row.baseScore)}</span>
+          </td>
+          <td>
+            <span class="score">\${escapeHtml(row.v3.priorityScore)}</span>
+            <span class="note">정책 \${escapeHtml(row.v3.policyScore)} + 수급 \${escapeHtml(row.v3.foreignMomentumScore)}</span>
+            <span class="note">\${breakdown(row.v3.scoreBreakdown)}</span>
+          </td>
+          <td><span class="badge \${className(row.v3.classification)}">\${escapeHtml(row.v3.classification)}</span><span class="note">\${escapeHtml(row.v3.verdict)}</span></td>
+          <td>
+            \${escapeHtml(row.capitalUses.slice(0, 2).join(" / "))}
+            <span class="note">경로: \${escapeHtml(row.possiblePaths.slice(0, 2).join(" / "))}</span>
+          </td>
+          <td><ul class="clean">\${row.nextChecks.slice(0, 4).map((item) => \`<li>\${escapeHtml(item)}</li>\`).join("")}</ul></td>
+          <td>
+            <div class="link-list">
+              <a href="\${escapeHtml(row.foreignFlow.sourceUrl)}" target="_blank" rel="noreferrer">외국인 순매매</a>
+              <a href="\${escapeHtml(row.marketCap.sourceUrl)}" target="_blank" rel="noreferrer">시가총액</a>
+            </div>
+          </td>
+        </tr>
+      \`;
+    }
+
+    document.querySelectorAll("[data-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        currentFilter = button.dataset.filter;
+        document.querySelectorAll("[data-filter]").forEach((item) => item.classList.toggle("active", item === button));
+        renderTable();
+      });
+    });
+
+    function className(value) {
+      if (value === "A") return "a";
+      if (value === "C") return "c";
+      return "out";
+    }
+    function validationClass(value) {
+      if (value === "Strong") return "a";
+      if (value === "Watch") return "c";
+      return "out";
+    }
+    function breakdown(value) {
+      if (!value) return "";
+      return \`정책 \${value.policyFit} / 가치 \${value.valuationThreshold} / 직접성 \${value.valueChainDirectness} / 촉매 \${value.growthCatalyst} / 투자성 \${value.investability}\`;
+    }
+    function num(value) {
+      if (value === null || value === undefined) return "-";
+      return Number(value).toLocaleString("ko-KR");
+    }
+    function eok(value) {
+      if (value === null || value === undefined) return "-";
+      return Number(value).toLocaleString("ko-KR", { maximumFractionDigits: 2 }) + "억원";
+    }
+    function pct(value) {
+      if (value === null || value === undefined) return "-";
+      return Number(value).toLocaleString("ko-KR", { minimumFractionDigits: 2, maximumFractionDigits: 4 }) + "%";
+    }
+    function pctp(value) {
+      if (value === null || value === undefined) return "-";
+      return Number(value).toLocaleString("ko-KR", { minimumFractionDigits: 3, maximumFractionDigits: 4 }) + "%p";
+    }
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    renderMetrics();
+    renderNav();
+    renderTable();
+  </script>
+</body>
+</html>`;
+
+fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+fs.writeFileSync(outputPath, html, "utf8");
+console.log(`Generated ${path.relative(root, outputPath)}`);
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}

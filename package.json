@@ -8,6 +8,7 @@
     "catalysts": "node scripts/enrich-catalyst-signals.mjs",
     "catalyst-report": "node scripts/build-catalyst-report.mjs",
     "v2": "node scripts/enrich-v2-screening.mjs",
+    "v3": "python scripts/fetch-v3-foreign-flow.py && node scripts/build-v3-html.mjs",
     "apply-validations": "node scripts/apply-agent-validations.mjs",
     "build": "node scripts/build-html.mjs",
     "check": "node scripts/check-data.mjs"
