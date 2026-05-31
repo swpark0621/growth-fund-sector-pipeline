@@ -1,0 +1,446 @@
+﻿[
+    {
+        "Code":  "006910",
+        "Name":  "보성파워텍",
+        "Market":  "코스닥",
+        "MarketCap":  "5,616 억원"
+    },
+    {
+        "Code":  "017510",
+        "Name":  "세명전기",
+        "Market":  "코스닥",
+        "MarketCap":  "1,804 억원"
+    },
+    {
+        "Code":  "033640",
+        "Name":  "네패스",
+        "Market":  "코스닥",
+        "MarketCap":  "7,206 억원"
+    },
+    {
+        "Code":  "048910",
+        "Name":  "대원미디어",
+        "Market":  "코스닥",
+        "MarketCap":  "831 억원"
+    },
+    {
+        "Code":  "053030",
+        "Name":  "바이넥스",
+        "Market":  "코스닥",
+        "MarketCap":  "3,327 억원"
+    },
+    {
+        "Code":  "053080",
+        "Name":  "케이엔솔",
+        "Market":  "코스닥",
+        "MarketCap":  "1,724 억원"
+    },
+    {
+        "Code":  "054450",
+        "Name":  "텔레칩스",
+        "Market":  "코스닥",
+        "MarketCap":  "2,570 억원"
+    },
+    {
+        "Code":  "059120",
+        "Name":  "아진엑스텍",
+        "Market":  "코스닥",
+        "MarketCap":  "1,946 억원"
+    },
+    {
+        "Code":  "067310",
+        "Name":  "하나마이크론",
+        "Market":  "코스닥",
+        "MarketCap":  "3조 5,160 억원"
+    },
+    {
+        "Code":  "078600",
+        "Name":  "대주전자재료",
+        "Market":  "코스닥",
+        "MarketCap":  "2조 3,222 억원"
+    },
+    {
+        "Code":  "079940",
+        "Name":  "가비아",
+        "Market":  "코스닥",
+        "MarketCap":  "4,308 억원"
+    },
+    {
+        "Code":  "083450",
+        "Name":  "GST",
+        "Market":  "코스닥",
+        "MarketCap":  "1조 892 억원"
+    },
+    {
+        "Code":  "087260",
+        "Name":  "모바일어플라이언스",
+        "Market":  "코스닥",
+        "MarketCap":  "493 억원"
+    },
+    {
+        "Code":  "089980",
+        "Name":  "상아프론테크",
+        "Market":  "코스닥",
+        "MarketCap":  "3,646 억원"
+    },
+    {
+        "Code":  "093320",
+        "Name":  "케이아이엔엑스",
+        "Market":  "코스닥",
+        "MarketCap":  "5,597 억원"
+    },
+    {
+        "Code":  "107600",
+        "Name":  "새빗켐",
+        "Market":  "코스닥",
+        "MarketCap":  "1,416 억원"
+    },
+    {
+        "Code":  "108490",
+        "Name":  "로보티즈",
+        "Market":  "코스닥",
+        "MarketCap":  "4조 8,148 억원"
+    },
+    {
+        "Code":  "110990",
+        "Name":  "디아이티",
+        "Market":  "코스닥",
+        "MarketCap":  "4,602 억원"
+    },
+    {
+        "Code":  "115180",
+        "Name":  "큐리언트",
+        "Market":  "코스닥",
+        "MarketCap":  "1조 371 억원"
+    },
+    {
+        "Code":  "117730",
+        "Name":  "티로보틱스",
+        "Market":  "코스닥",
+        "MarketCap":  "4,534 억원"
+    },
+    {
+        "Code":  "119850",
+        "Name":  "지엔씨에너지",
+        "Market":  "코스닥",
+        "MarketCap":  "5,264 억원"
+    },
+    {
+        "Code":  "121600",
+        "Name":  "나노신소재",
+        "Market":  "코스닥",
+        "MarketCap":  "8,676 억원"
+    },
+    {
+        "Code":  "126340",
+        "Name":  "비나텍",
+        "Market":  "코스닥",
+        "MarketCap":  "1조 1,080 억원"
+    },
+    {
+        "Code":  "126880",
+        "Name":  "제이엔케이글로벌",
+        "Market":  "코스닥",
+        "MarketCap":  "796 억원"
+    },
+    {
+        "Code":  "131290",
+        "Name":  "티에스이",
+        "Market":  "코스닥",
+        "MarketCap":  "2조 76 억원"
+    },
+    {
+        "Code":  "147830",
+        "Name":  "제룡산업",
+        "Market":  "코스닥",
+        "MarketCap":  "2,030 억원"
+    },
+    {
+        "Code":  "161580",
+        "Name":  "필옵틱스",
+        "Market":  "코스닥",
+        "MarketCap":  "1조 1,487 억원"
+    },
+    {
+        "Code":  "171090",
+        "Name":  "선익시스템",
+        "Market":  "코스닥",
+        "MarketCap":  "8,708 억원"
+    },
+    {
+        "Code":  "189860",
+        "Name":  "서전기전",
+        "Market":  "코스닥",
+        "MarketCap":  "727 억원"
+    },
+    {
+        "Code":  "199820",
+        "Name":  "제일일렉트릭",
+        "Market":  "코스닥",
+        "MarketCap":  "3,200 억원"
+    },
+    {
+        "Code":  "200710",
+        "Name":  "에이디테크놀로지",
+        "Market":  "코스닥",
+        "MarketCap":  "6,038 억원"
+    },
+    {
+        "Code":  "206560",
+        "Name":  "덱스터",
+        "Market":  "코스닥",
+        "MarketCap":  "508 억원"
+    },
+    {
+        "Code":  "206650",
+        "Name":  "유바이오로직스",
+        "Market":  "코스닥",
+        "MarketCap":  "4,183 억원"
+    },
+    {
+        "Code":  "211270",
+        "Name":  "AP위성",
+        "Market":  "코스닥",
+        "MarketCap":  "2,323 억원"
+    },
+    {
+        "Code":  "214430",
+        "Name":  "아이쓰리시스템",
+        "Market":  "코스닥",
+        "MarketCap":  "6,299 억원"
+    },
+    {
+        "Code":  "226950",
+        "Name":  "올릭스",
+        "Market":  "코스닥",
+        "MarketCap":  "3조 3,861 억원"
+    },
+    {
+        "Code":  "232680",
+        "Name":  "라온로보틱스",
+        "Market":  "코스닥",
+        "MarketCap":  "2,061 억원"
+    },
+    {
+        "Code":  "237690",
+        "Name":  "에스티팜",
+        "Market":  "코스닥",
+        "MarketCap":  "2조 7,394 억원"
+    },
+    {
+        "Code":  "237750",
+        "Name":  "피앤씨테크",
+        "Market":  "코스닥",
+        "MarketCap":  "330 억원"
+    },
+    {
+        "Code":  "239890",
+        "Name":  "피엔에이치테크",
+        "Market":  "코스닥",
+        "MarketCap":  "573 억원"
+    },
+    {
+        "Code":  "251630",
+        "Name":  "브이원텍",
+        "Market":  "코스닥",
+        "MarketCap":  "1,014 억원"
+    },
+    {
+        "Code":  "255440",
+        "Name":  "야스",
+        "Market":  "코스닥",
+        "MarketCap":  "1,320 억원"
+    },
+    {
+        "Code":  "265520",
+        "Name":  "AP시스템",
+        "Market":  "코스닥",
+        "MarketCap":  "3,936 억원"
+    },
+    {
+        "Code":  "271940",
+        "Name":  "일진하이솔루스",
+        "Market":  "코스피",
+        "MarketCap":  "5,730 억원"
+    },
+    {
+        "Code":  "273640",
+        "Name":  "와이엠텍",
+        "Market":  "코스닥",
+        "MarketCap":  "1,134 억원"
+    },
+    {
+        "Code":  "274090",
+        "Name":  "켄코아에어로스페이스",
+        "Market":  "코스닥",
+        "MarketCap":  "2,745 억원"
+    },
+    {
+        "Code":  "278280",
+        "Name":  "천보",
+        "Market":  "코스닥",
+        "MarketCap":  "6,297 억원"
+    },
+    {
+        "Code":  "288620",
+        "Name":  "에스프리즘",
+        "Market":  "코스닥",
+        "MarketCap":  "680 억원"
+    },
+    {
+        "Code":  "289220",
+        "Name":  "자이언트스텝",
+        "Market":  "코스닥",
+        "MarketCap":  "537 억원"
+    },
+    {
+        "Code":  "299030",
+        "Name":  "하나기술",
+        "Market":  "코스닥",
+        "MarketCap":  "1,959 억원"
+    },
+    {
+        "Code":  "299660",
+        "Name":  "셀리드",
+        "Market":  "코스닥",
+        "MarketCap":  "894 억원"
+    },
+    {
+        "Code":  "310200",
+        "Name":  "애니플러스",
+        "Market":  "코스닥",
+        "MarketCap":  "1,333 억원"
+    },
+    {
+        "Code":  "317120",
+        "Name":  "라닉스",
+        "Market":  "코스닥",
+        "MarketCap":  "365 억원"
+    },
+    {
+        "Code":  "330860",
+        "Name":  "네패스아크",
+        "Market":  "코스닥",
+        "MarketCap":  "5,550 억원"
+    },
+    {
+        "Code":  "334970",
+        "Name":  "프레스티지바이오로직스",
+        "Market":  "코스닥",
+        "MarketCap":  "1,641 억원"
+    },
+    {
+        "Code":  "348340",
+        "Name":  "뉴로메카",
+        "Market":  "코스닥",
+        "MarketCap":  "8,332 억원"
+    },
+    {
+        "Code":  "348370",
+        "Name":  "엔켐",
+        "Market":  "코스닥",
+        "MarketCap":  "8,118 억원"
+    },
+    {
+        "Code":  "354320",
+        "Name":  "알멕",
+        "Market":  "코스닥",
+        "MarketCap":  "5,484 억원"
+    },
+    {
+        "Code":  "358570",
+        "Name":  "지아이이노베이션",
+        "Market":  "코스닥",
+        "MarketCap":  "8,190 억원"
+    },
+    {
+        "Code":  "361390",
+        "Name":  "제노코",
+        "Market":  "코스닥",
+        "MarketCap":  "2,478 억원"
+    },
+    {
+        "Code":  "365340",
+        "Name":  "성일하이텍",
+        "Market":  "코스닥",
+        "MarketCap":  "8,223 억원"
+    },
+    {
+        "Code":  "368770",
+        "Name":  "파이버프로",
+        "Market":  "코스닥",
+        "MarketCap":  "6,568 억원"
+    },
+    {
+        "Code":  "370090",
+        "Name":  "퓨런티어",
+        "Market":  "코스닥",
+        "MarketCap":  "1,077 억원"
+    },
+    {
+        "Code":  "382900",
+        "Name":  "범한퓨얼셀",
+        "Market":  "코스닥",
+        "MarketCap":  "2,712 억원"
+    },
+    {
+        "Code":  "388720",
+        "Name":  "유일로보틱스",
+        "Market":  "코스닥",
+        "MarketCap":  "1조 1,557 억원"
+    },
+    {
+        "Code":  "389500",
+        "Name":  "에스비비테크",
+        "Market":  "코스닥",
+        "MarketCap":  "5,657 억원"
+    },
+    {
+        "Code":  "394280",
+        "Name":  "오픈엣지테크놀로지",
+        "Market":  "코스닥",
+        "MarketCap":  "4,397 억원"
+    },
+    {
+        "Code":  "399720",
+        "Name":  "가온칩스",
+        "Market":  "코스닥",
+        "MarketCap":  "7,293 억원"
+    },
+    {
+        "Code":  "408900",
+        "Name":  "스튜디오미르",
+        "Market":  "코스닥",
+        "MarketCap":  "714 억원"
+    },
+    {
+        "Code":  "419530",
+        "Name":  "SAMG엔터",
+        "Market":  "코스닥",
+        "MarketCap":  "3,901 억원"
+    },
+    {
+        "Code":  "424960",
+        "Name":  "스마트레이더시스템",
+        "Market":  "코스닥",
+        "MarketCap":  "1,116 억원"
+    },
+    {
+        "Code":  "448710",
+        "Name":  "코츠테크놀로지",
+        "Market":  "코스닥",
+        "MarketCap":  "968 억원"
+    },
+    {
+        "Code":  "451760",
+        "Name":  "컨텍",
+        "Market":  "코스닥",
+        "MarketCap":  "2,950 억원"
+    },
+    {
+        "Code":  "452280",
+        "Name":  "한선엔지니어링",
+        "Market":  "코스닥",
+        "MarketCap":  "5,562 억원"
+    }
+]
