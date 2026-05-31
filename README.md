@@ -17,10 +17,12 @@ npm run build
 ```text
 docs/index.html
 docs/v3.html
+docs/v4.html
 docs/v2-agent-validation.md
 docs/company-validation/
 data/sectors.json
 data/v3-foreign-flow.json
+data/v4-study-data.json
 ```
 
 ## v2 분류
@@ -71,6 +73,30 @@ v3 기준:
 - `A`: 외국인 수급 플러스, 6000억원 이하, `Strong` 또는 `Watch`
 - `C`: 외국인 수급 플러스, 6000억원 이하이나 `Reconsider`
 - `제외`: 외국인 수급이 0 이하이거나 6000억원 초과
+
+## v4 저평가 스터디 페이지
+
+v4는 단기 수급 랭킹이 아니라 종목 스터디용 화면입니다.
+
+```powershell
+npm run v4
+```
+
+생성 결과:
+
+```text
+docs/v4.html
+data/v4-study-data.json
+```
+
+v4 기준:
+
+- 6000억원은 상한선이고, 1500억~3000억원 구간을 가장 선호합니다.
+- 500억원 미만은 저시총 매력보다 유동성·재무 리스크를 먼저 봅니다.
+- 1주, 4주, 12주, 약 6개월 외국인 순매수/시총 비율을 함께 봅니다.
+- 기관 4주·12주 동행 여부와 외국인 보유율 변화를 함께 봅니다.
+- 최근 가격 위치, 고점대비 낙폭, 12주 주가 상승률을 같이 봐 수급 과열을 걸러냅니다.
+- 각 행에는 정책 근거, 저평가 근거, 촉매, 리스크, 다음 스터디 질문을 포함합니다.
 
 ## 검증 프롬프트
 

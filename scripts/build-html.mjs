@@ -252,7 +252,8 @@ const html = `<!doctype html>
         <p class="subtle" style="margin:12px 0 0;">
           <a href="v2-agent-validation.md">v2 에이전트 검증 요약</a> ·
           <a href="company-validation/README.md">종목별 validation 문서</a> ·
-          <a href="v3.html">v3 외국인 수급 후보</a>
+          <a href="v3.html">v3 외국인 수급 후보</a> ·
+          <a href="v4.html">v4 저평가 스터디</a>
         </p>
       </section>
       <section class="panel">

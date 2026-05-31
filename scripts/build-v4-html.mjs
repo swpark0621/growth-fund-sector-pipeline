@@ -4,8 +4,8 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
-const dataPath = path.join(root, "data", "v3-foreign-flow.json");
-const outputPath = path.join(root, "docs", "v3.html");
+const dataPath = path.join(root, "data", "v4-study-data.json");
+const outputPath = path.join(root, "docs", "v4.html");
 const data = JSON.parse(fs.readFileSync(dataPath, "utf8"));
 const json = JSON.stringify(data).replaceAll("<", "\\u003c");
 
@@ -42,7 +42,7 @@ const html = `<!doctype html>
     .layout {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 320px minmax(0, 1fr);
+      grid-template-columns: 330px minmax(0, 1fr);
     }
     aside {
       position: sticky;
@@ -70,11 +70,11 @@ const html = `<!doctype html>
       font-size: 12px;
       color: #d8e1eb;
     }
+    .side-links { display: grid; gap: 8px; margin-bottom: 14px; }
     .side-link {
       display: inline-flex;
       align-items: center;
       min-height: 34px;
-      margin-top: 8px;
       padding: 6px 10px;
       border: 1px solid rgba(255,255,255,.14);
       border-radius: 8px;
@@ -115,13 +115,13 @@ const html = `<!doctype html>
       font-size: 12px;
       font-weight: 800;
     }
-    .hero, .panel, .detail {
+    .hero, .panel {
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--surface);
     }
     .hero { padding: 28px; margin-bottom: 16px; }
-    .hero p { max-width: 1040px; margin-bottom: 0; color: var(--muted); }
+    .hero p { max-width: 1080px; margin-bottom: 0; color: var(--muted); }
     .kicker { margin-bottom: 9px; color: var(--accent); font-size: 13px; font-weight: 900; }
     .metrics {
       display: grid;
@@ -152,7 +152,9 @@ const html = `<!doctype html>
       white-space: nowrap;
     }
     .badge.a { background: #e8f4f3; color: var(--accent); }
+    .badge.b { background: #eaf1fb; color: var(--blue); }
     .badge.c { background: #fff4df; color: var(--warn); }
+    .badge.track { background: #f1f3f5; color: #556070; }
     .badge.out { background: #f5e8e8; color: var(--bad); }
     .toolbar {
       display: flex;
@@ -177,7 +179,7 @@ const html = `<!doctype html>
     }
     .segmented button.active { border-color: var(--accent); background: #e8f4f3; color: var(--accent); }
     .table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
-    table { width: 100%; min-width: 1540px; border-collapse: collapse; background: #fff; }
+    table { width: 100%; min-width: 1880px; border-collapse: collapse; background: #fff; }
     th, td {
       padding: 10px 11px;
       border-bottom: 1px solid var(--line);
@@ -197,6 +199,7 @@ const html = `<!doctype html>
     .link-list a { color: var(--blue); font-size: 12px; text-decoration: none; }
     .link-list a:hover { text-decoration: underline; }
     ul.clean { margin: 0; padding-left: 17px; color: var(--muted); }
+    .wide-note { max-width: 1080px; color: var(--muted); }
     footer { margin-top: 18px; color: var(--muted); font-size: 12px; }
     @media (max-width: 1180px) {
       .layout { grid-template-columns: 1fr; }
@@ -216,42 +219,48 @@ const html = `<!doctype html>
     <aside>
       <div class="brand">
         <h1>${escapeHtml(data.meta.title)}</h1>
-        <p>지난주 외국인 순매수/시총 비율 기반 후보군</p>
+        <p>정책 수혜 + 저평가 + 중장기 수급 스터디</p>
       </div>
       <div class="side-box">
         <span>산출일: ${escapeHtml(data.meta.runDate)}</span>
-        <span>수급 기간: ${escapeHtml(data.meta.weekStart)} ~ ${escapeHtml(data.meta.weekEnd)}</span>
-        <span>시총 기준: ${escapeHtml(data.meta.threshold)}</span>
+        <span>최근 거래일: ${escapeHtml(data.meta.latestTradingDate)}</span>
+        <span>기준: ${escapeHtml(data.meta.threshold)}</span>
         <span>출처: ${escapeHtml(data.meta.source)}</span>
       </div>
-      <a class="side-link" href="index.html">v2 정책 후보 페이지</a>
-      <a class="side-link" href="v4.html">v4 저평가 스터디</a>
+      <div class="side-links">
+        <a class="side-link" href="index.html">v2 정책 후보</a>
+        <a class="side-link" href="v3.html">v3 외국인 수급</a>
+      </div>
       <ul class="nav-list" id="sideNav"></ul>
     </aside>
     <main>
       <section class="hero">
-        <p class="kicker">v3 Foreign Flow Screen</p>
-        <h2>지난주 외국인 수급이 시총 대비 플러스인 후보를 우선순위화합니다.</h2>
-        <p>${escapeHtml(data.meta.foreignFlowRule)} ${escapeHtml(data.meta.smallCapRule)} v2의 정책 적합성 기준은 유지하되, 시총 기준을 6000억원으로 상향했습니다.</p>
+        <p class="kicker">v4 Study Dashboard</p>
+        <h2>국민성장펀드 수혜 가능성이 있는데 아직 시장이 덜 본 후보를 찾습니다.</h2>
+        <p>${escapeHtml(data.meta.method)} 6000억원은 상한선이고, 실제 저평가 점수는 1500억~3000억원 구간을 가장 선호하도록 설계했습니다.</p>
       </section>
       <section class="metrics" id="metrics"></section>
       <section class="panel">
-        <h3>v3 판정 기준</h3>
-        <p class="note">외국인 순매수/시총 비율은 지난주 일별 외국인 순매매량에 해당일 종가를 곱해 합산한 뒤 현재 시가총액으로 나눈 값입니다. 외국인 지분율 변화는 지난주 외국인 순매수 주식수를 상장주식수로 나눈 보조 지표입니다.</p>
+        <h3>스터디 검증 기준</h3>
+        <p class="wide-note">처음 만든 검증 프롬프트를 유지하되, v4에서는 “시장이 다시 볼 이유”를 반드시 같이 봅니다. 각 종목은 정책 적합성, 실제 밸류체인 직접성, 1/4/12주 외국인 수급, 6개월 보유율 변화, 기관 동행 여부, 주가 위치, 재무·희석 리스크, 촉매를 한 줄에서 검토할 수 있게 구성했습니다.</p>
         <div class="badges">
-          <span class="badge a">A: 외국인 플러스 + 6000억 이하 + Strong/Watch</span>
-          <span class="badge c">C: 외국인 플러스 + 6000억 이하이나 Reconsider</span>
-          <span class="badge out">제외: 수급 음수/0 또는 6000억 초과</span>
+          <span class="badge a">A: 우선 스터디</span>
+          <span class="badge b">B: 후보 스터디</span>
+          <span class="badge c">C: 보류 스터디</span>
+          <span class="badge track">추적: 6000억 초과 대표주</span>
+          <span class="badge out">제외</span>
         </div>
       </section>
       <section class="panel">
         <div class="toolbar">
-          <h3 style="margin:0;">외국인 수급 플러스 후보</h3>
+          <h3 style="margin:0;">v4 종합 스터디 테이블</h3>
           <div class="segmented">
-            <button class="active" type="button" data-filter="all">전체 +수급</button>
-            <button type="button" data-filter="A">A 후보</button>
-            <button type="button" data-filter="C">C 보류</button>
-            <button type="button" data-filter="제외">초과 추적</button>
+            <button class="active" type="button" data-filter="study">스터디 후보</button>
+            <button type="button" data-filter="A">A</button>
+            <button type="button" data-filter="B">B</button>
+            <button type="button" data-filter="C">C</button>
+            <button type="button" data-filter="추적">추적</button>
+            <button type="button" data-filter="all">전체</button>
           </div>
         </div>
         <div class="table-wrap">
@@ -260,14 +269,16 @@ const html = `<!doctype html>
               <tr>
                 <th>순위</th>
                 <th>회사</th>
-                <th>섹터</th>
+                <th>섹터/정책 근거</th>
+                <th>시총·저평가</th>
                 <th>외국인 수급</th>
-                <th>시총</th>
-                <th>정책 적합성</th>
+                <th>기관/주주 비중</th>
+                <th>가격 위치</th>
                 <th>점수</th>
-                <th>분류</th>
-                <th>투자포인트</th>
-                <th>리스크/확인사항</th>
+                <th>판정</th>
+                <th>촉매</th>
+                <th>리스크</th>
+                <th>다음 스터디 질문</th>
                 <th>출처</th>
               </tr>
             </thead>
@@ -275,26 +286,24 @@ const html = `<!doctype html>
           </table>
         </div>
       </section>
-      <footer>이 페이지는 <code>data/v3-foreign-flow.json</code>에서 생성됩니다. 갱신 순서: <code>npm run v3</code>.</footer>
+      <footer>갱신 순서: <code>npm run v4</code>. 네이버 금융 표 구조가 바뀌면 수집 스크립트 확인이 필요합니다.</footer>
     </main>
   </div>
   <script>
     const DATA = ${json};
-    let currentFilter = "all";
+    let currentFilter = "study";
     const tableBody = document.querySelector("#tableBody");
     const metrics = document.querySelector("#metrics");
     const sideNav = document.querySelector("#sideNav");
 
     function renderMetrics() {
-      const rows = DATA.selectedRows;
-      const top = rows[0];
-      const aRows = rows.filter((row) => row.v3.classification === "A");
+      const counts = DATA.meta.classCounts;
       metrics.innerHTML = [
-        ["중복 제거 종목", DATA.meta.totalUniqueTickers, "기존 후보 universe"],
-        ["외국인 +수급", DATA.meta.positiveForeignFlow, "시총대비 플러스"],
-        ["A 후보", DATA.meta.eligibleA, "6000억 이하 통과"],
-        ["C 보류", DATA.meta.watchC, "저시총이나 Reconsider"],
-        ["최상위 수급", top ? pct(top.foreignFlow.netValueToMarketCapPct) : "-", top ? top.company : "없음"],
+        ["전체", DATA.meta.totalUniqueTickers, "중복 제거 종목"],
+        ["A", counts.A ?? 0, "우선 스터디"],
+        ["B", counts.B ?? 0, "후보 스터디"],
+        ["C", counts.C ?? 0, "보류 스터디"],
+        ["추적", counts["추적"] ?? 0, "6000억 초과 대표주"],
       ].map(([label, value, note]) => \`
         <div class="metric">
           <strong>\${escapeHtml(value)}</strong>
@@ -305,21 +314,17 @@ const html = `<!doctype html>
 
     function renderNav() {
       const sectorCounts = new Map();
-      for (const row of DATA.selectedRows) {
-        for (const sector of row.sectors) {
-          sectorCounts.set(sector, (sectorCounts.get(sector) ?? 0) + 1);
-        }
+      for (const row of DATA.studyRows) {
+        for (const sector of row.sectors) sectorCounts.set(sector, (sectorCounts.get(sector) ?? 0) + 1);
       }
-      sideNav.innerHTML = [...sectorCounts.entries()]
-        .sort((a, b) => b[1] - a[1])
-        .map(([sector, count]) => \`
-          <li>
-            <button class="nav-button" type="button" data-sector="\${escapeHtml(sector)}">
-              <span>\${escapeHtml(sector)}</span>
-              <span class="count">\${count}</span>
-            </button>
-          </li>
-        \`).join("");
+      sideNav.innerHTML = [...sectorCounts.entries()].sort((a, b) => b[1] - a[1]).map(([sector, count]) => \`
+        <li>
+          <button class="nav-button" type="button" data-sector="\${escapeHtml(sector)}">
+            <span>\${escapeHtml(sector)}</span>
+            <span class="count">\${count}</span>
+          </button>
+        </li>
+      \`).join("");
       document.querySelectorAll("[data-sector]").forEach((button) => {
         button.addEventListener("click", () => {
           currentFilter = button.dataset.sector;
@@ -329,11 +334,15 @@ const html = `<!doctype html>
       });
     }
 
+    function rowsForFilter() {
+      let rows = DATA.rows;
+      if (currentFilter === "study") rows = DATA.studyRows;
+      else if (currentFilter !== "all") rows = rows.filter((row) => row.v4.classification === currentFilter || row.sectors.includes(currentFilter));
+      return rows;
+    }
+
     function renderTable() {
-      let rows = DATA.selectedRows;
-      if (currentFilter !== "all") {
-        rows = rows.filter((row) => row.v3.classification === currentFilter || row.sectors.includes(currentFilter));
-      }
+      const rows = rowsForFilter();
       tableBody.innerHTML = rows.map((row, index) => renderRow(row, index)).join("");
       document.querySelectorAll("[data-sector]").forEach((button) => {
         button.classList.toggle("active", button.dataset.sector === currentFilter);
@@ -341,46 +350,59 @@ const html = `<!doctype html>
     }
 
     function renderRow(row, index) {
+      const w = row.flowTrend.windows;
       return \`
         <tr>
           <td class="num">\${index + 1}</td>
           <td>
             <span class="company">\${escapeHtml(row.company)}</span>
             <span class="note">\${escapeHtml(row.ticker)} · \${escapeHtml(row.market)}</span>
+            <span class="note">기존 validation: \${escapeHtml(row.baseValidation)}</span>
           </td>
           <td>
             <div class="badges">\${row.sectors.map((sector) => \`<span class="badge">\${escapeHtml(sector)}</span>\`).join("")}</div>
             <span class="note">\${escapeHtml(row.valueChains.slice(0, 2).join(" / "))}</span>
-          </td>
-          <td>
-            <span class="positive num">\${pct(row.foreignFlow.netValueToMarketCapPct)}</span>
-            <span class="note">순매수액: \${eok(row.foreignFlow.netValueEok)}</span>
-            <span class="note">순매수주식: \${num(row.foreignFlow.netShares)}주</span>
-            <span class="note">지분율 변화: \${pctp(row.foreignFlow.ownershipChangePctp)}</span>
+            <span class="note">\${escapeHtml((row.study.policyFitEvidence ?? []).slice(0, 1).join(""))}</span>
           </td>
           <td>
             <span class="num">\${eok(row.marketCap.eok)}</span>
-            <span class="note">기준: 6000억원</span>
+            <span class="note">\${escapeHtml(row.marketCap.sizeBucket)}</span>
+            <span class="note">\${escapeHtml(row.valuation.interpretation)}</span>
           </td>
           <td>
-            <span class="badge \${validationClass(row.baseValidation)}">\${escapeHtml(row.baseValidation)}</span>
-            <span class="note">v2 점수: \${escapeHtml(row.baseScore)}</span>
+            <span class="\${signClass(w.w4.foreignValueToMarketCapPct)}">4주 \${pct(w.w4.foreignValueToMarketCapPct)}</span>
+            <span class="note \${signClass(w.w1.foreignValueToMarketCapPct)}">1주 \${pct(w.w1.foreignValueToMarketCapPct)}</span>
+            <span class="note \${signClass(w.w12.foreignValueToMarketCapPct)}">12주 \${pct(w.w12.foreignValueToMarketCapPct)}</span>
+            <span class="note \${signClass(w.m6.foreignValueToMarketCapPct)}">약 6개월 \${pct(w.m6.foreignValueToMarketCapPct)}</span>
           </td>
           <td>
-            <span class="score">\${escapeHtml(row.v3.priorityScore)}</span>
-            <span class="note">정책 \${escapeHtml(row.v3.policyScore)} + 수급 \${escapeHtml(row.v3.foreignMomentumScore)}</span>
-            <span class="note">\${breakdown(row.v3.scoreBreakdown)}</span>
+            <span class="\${signClass(w.w4.institutionValueToMarketCapPct)}">기관 4주 \${pct(w.w4.institutionValueToMarketCapPct)}</span>
+            <span class="note \${signClass(w.w12.institutionValueToMarketCapPct)}">기관 12주 \${pct(w.w12.institutionValueToMarketCapPct)}</span>
+            <span class="note">외국인 보유율 \${pct(row.flowTrend.ownership.latestHoldingRatePct)}</span>
+            <span class="note \${signClass(row.flowTrend.ownership.sixMonthHoldingRateChangePctp)}">보유율 변화 \${pctp(row.flowTrend.ownership.sixMonthHoldingRateChangePctp)}</span>
           </td>
-          <td><span class="badge \${className(row.v3.classification)}">\${escapeHtml(row.v3.classification)}</span><span class="note">\${escapeHtml(row.v3.verdict)}</span></td>
           <td>
-            \${escapeHtml(row.capitalUses.slice(0, 2).join(" / "))}
-            <span class="note">경로: \${escapeHtml(row.possiblePaths.slice(0, 2).join(" / "))}</span>
+            <span class="\${signClass(row.priceTrend.returns.w12)}">12주 \${pct(row.priceTrend.returns.w12)}</span>
+            <span class="note \${signClass(row.priceTrend.returns.w4)}">4주 \${pct(row.priceTrend.returns.w4)}</span>
+            <span class="note \${signClass(row.priceTrend.drawdownFromHighPct)}">고점대비 \${pct(row.priceTrend.drawdownFromHighPct)}</span>
+            <span class="note">저점대비 \${pct(row.priceTrend.reboundFromLowPct)}</span>
           </td>
-          <td><ul class="clean">\${row.nextChecks.slice(0, 4).map((item) => \`<li>\${escapeHtml(item)}</li>\`).join("")}</ul></td>
+          <td>
+            <span class="score">\${escapeHtml(row.v4.totalScore)}</span>
+            <span class="note">저평가 \${escapeHtml(row.v4.undervaluationScore)} / 수급 \${escapeHtml(row.v4.scores.flowTrend)}</span>
+            <span class="note">정책 \${escapeHtml(row.v4.scores.policyFit)} / 직접성 \${escapeHtml(row.v4.scores.businessDirectness)}</span>
+          </td>
+          <td>
+            <span class="badge \${className(row.v4.classification)}">\${escapeHtml(row.v4.classification)}</span>
+            <span class="note">\${escapeHtml(row.v4.verdict)}</span>
+          </td>
+          <td><ul class="clean">\${(row.study.keyCatalysts ?? []).slice(0, 5).map((item) => \`<li>\${escapeHtml(item)}</li>\`).join("")}</ul></td>
+          <td><ul class="clean">\${(row.study.riskFlags ?? []).slice(0, 5).map((item) => \`<li>\${escapeHtml(item)}</li>\`).join("")}</ul></td>
+          <td><ul class="clean">\${(row.study.nextStudyQuestions ?? []).slice(0, 5).map((item) => \`<li>\${escapeHtml(item)}</li>\`).join("")}</ul></td>
           <td>
             <div class="link-list">
-              <a href="\${escapeHtml(row.foreignFlow.sourceUrl)}" target="_blank" rel="noreferrer">외국인 순매매</a>
-              <a href="\${escapeHtml(row.marketCap.sourceUrl)}" target="_blank" rel="noreferrer">시가총액</a>
+              <a href="\${escapeHtml(row.flowTrend.sourceUrl ?? "")}" target="_blank" rel="noreferrer">수급</a>
+              <a href="\${escapeHtml(row.marketCap.sourceUrl ?? "")}" target="_blank" rel="noreferrer">시총·투자정보</a>
             </div>
           </td>
         </tr>
@@ -397,25 +419,19 @@ const html = `<!doctype html>
 
     function className(value) {
       if (value === "A") return "a";
+      if (value === "B") return "b";
       if (value === "C") return "c";
+      if (value === "추적") return "track";
       return "out";
     }
-    function validationClass(value) {
-      if (value === "Strong") return "a";
-      if (value === "Watch") return "c";
-      return "out";
-    }
-    function breakdown(value) {
-      if (!value) return "";
-      return \`정책 \${value.policyFit} / 가치 \${value.valuationThreshold} / 직접성 \${value.valueChainDirectness} / 촉매 \${value.growthCatalyst} / 투자성 \${value.investability}\`;
-    }
-    function num(value) {
-      if (value === null || value === undefined) return "-";
-      return Number(value).toLocaleString("ko-KR");
+    function signClass(value) {
+      if (Number(value) > 0) return "positive";
+      if (Number(value) < 0) return "negative";
+      return "";
     }
     function eok(value) {
       if (value === null || value === undefined) return "-";
-      return Number(value).toLocaleString("ko-KR", { maximumFractionDigits: 2 }) + "억원";
+      return Number(value).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "억원";
     }
     function pct(value) {
       if (value === null || value === undefined) return "-";
