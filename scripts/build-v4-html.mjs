@@ -243,6 +243,7 @@ const html = `<!doctype html>
       <section class="panel">
         <h3>스터디 검증 기준</h3>
         <p class="wide-note">처음 만든 검증 프롬프트를 유지하되, v4에서는 “시장이 다시 볼 이유”를 반드시 같이 봅니다. 각 종목은 정책 적합성, 실제 밸류체인 직접성, 1/4/12주 외국인 수급, 6개월 보유율 변화, 기관 동행 여부, 주가 위치, 재무·희석 리스크, 촉매를 한 줄에서 검토할 수 있게 구성했습니다.</p>
+        <p class="wide-note">Big3 모니터링은 BlackRock/iShares, Vanguard, State Street/SSGA/SPDR 명칭이 공개 institutional ownership 페이지에 잡히는지 확인하는 보조 항목입니다. 현재 데이터는 Fintel SEC 신고 기반 페이지를 출처로 하며, 국내 전체 주주명부나 실시간 지분율을 의미하지 않습니다.</p>
         <div class="badges">
           <span class="badge a">A: 우선 스터디</span>
           <span class="badge b">B: 후보 스터디</span>
@@ -273,6 +274,7 @@ const html = `<!doctype html>
                 <th>시총·저평가</th>
                 <th>외국인 수급</th>
                 <th>기관/주주 비중</th>
+                <th>Big3 모니터링</th>
                 <th>가격 위치</th>
                 <th>점수</th>
                 <th>판정</th>
@@ -382,6 +384,12 @@ const html = `<!doctype html>
             <span class="note \${signClass(row.flowTrend.ownership.sixMonthHoldingRateChangePctp)}">보유율 변화 \${pctp(row.flowTrend.ownership.sixMonthHoldingRateChangePctp)}</span>
           </td>
           <td>
+            <span class="badge \${big3Class(row.big3Ownership?.summary)}">\${escapeHtml(row.big3Ownership?.summary ?? "확인 필요")}</span>
+            <span class="note">\${big3ManagerText(row.big3Ownership)}</span>
+            <span class="note">Fintel 기관 보유율: \${pct(row.big3Ownership?.institutionalSharesPct)}</span>
+            <span class="note">\${escapeHtml(row.big3Ownership?.note ?? "")}</span>
+          </td>
+          <td>
             <span class="\${signClass(row.priceTrend.returns.w12)}">12주 \${pct(row.priceTrend.returns.w12)}</span>
             <span class="note \${signClass(row.priceTrend.returns.w4)}">4주 \${pct(row.priceTrend.returns.w4)}</span>
             <span class="note \${signClass(row.priceTrend.drawdownFromHighPct)}">고점대비 \${pct(row.priceTrend.drawdownFromHighPct)}</span>
@@ -423,6 +431,16 @@ const html = `<!doctype html>
       if (value === "C") return "c";
       if (value === "추적") return "track";
       return "out";
+    }
+    function big3Class(value) {
+      if (String(value ?? "").includes("BlackRock") || String(value ?? "").includes("Vanguard") || String(value ?? "").includes("SSGA")) return "a";
+      if (String(value ?? "").includes("수동")) return "c";
+      return "track";
+    }
+    function big3ManagerText(value) {
+      const managers = value?.managers ?? [];
+      if (!managers.length) return "BlackRock / Vanguard / SSGA 확인 필요";
+      return managers.map((item) => \`\${item.name}: \${item.status}\`).join(" · ");
     }
     function signClass(value) {
       if (Number(value) > 0) return "positive";

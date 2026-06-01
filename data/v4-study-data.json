@@ -14,7 +14,18 @@
       "추적": 7,
       "제외": 19
     },
-    "latestTradingDate": "2026-05-29"
+    "latestTradingDate": "2026-05-29",
+    "big3Ownership": {
+      "checkedAt": "2026-06-01",
+      "source": "Fintel institutional ownership pages",
+      "scope": "SEC 13F/NPORT/13D/G 등 공개 신고 기반 보유분입니다. 국내 전체 주주명부나 실시간 지분율을 의미하지 않습니다.",
+      "managers": [
+        "BlackRock",
+        "Vanguard",
+        "SSGA"
+      ],
+      "confirmedRows": 0
+    }
   },
   "rows": [
     {
@@ -72,7 +83,7 @@
             "institutionNetValueEok": 92.36,
             "institutionNetShares": 419987,
             "institutionValueToMarketCapPct": 3.605,
-            "holdingRateChangePctp": 3.0,
+            "holdingRateChangePctp": 3,
             "priceReturnPct": 14.8824
           },
           "w12": {
@@ -168,6 +179,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/232680",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/232680"
       }
     },
     {
@@ -259,9 +299,9 @@
         },
         "ownership": {
           "latestHoldingRatePct": 5.55,
-          "oldestHoldingRatePct": 0.0,
+          "oldestHoldingRatePct": 0,
           "sixMonthHoldingRateChangePctp": 5.55,
-          "minHoldingRatePct": 0.0,
+          "minHoldingRatePct": 0,
           "maxHoldingRatePct": 5.84
         },
         "sourceUrl": "https://finance.naver.com/item/frgn.naver?code=054450&page=1"
@@ -321,6 +361,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/054450",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/054450"
       }
     },
     {
@@ -474,6 +543,35 @@
           "catalyst": 8
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/147830",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/147830"
       }
     },
     {
@@ -627,6 +725,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/361390",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/361390"
       }
     },
     {
@@ -780,6 +907,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/093320",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/093320"
       }
     },
     {
@@ -933,6 +1089,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/199820",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/199820"
       }
     },
     {
@@ -1089,6 +1274,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/200710",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/200710"
       }
     },
     {
@@ -1242,6 +1456,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/211270",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/211270"
       }
     },
     {
@@ -1395,6 +1638,35 @@
           "catalyst": 8
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/017510",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/017510"
       }
     },
     {
@@ -1499,7 +1771,7 @@
         "highClose": 17430,
         "lowClose": 10200,
         "drawdownFromHighPct": -41.4802,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -16.5985,
           "w4": -27.5568,
@@ -1548,6 +1820,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/370090",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/370090"
       }
     },
     {
@@ -1701,6 +2002,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/273640",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/273640"
       }
     },
     {
@@ -1855,6 +2185,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/079940",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/079940"
       }
     },
     {
@@ -1895,9 +2254,9 @@
             "foreignNetShares": 13307,
             "foreignValueToMarketCapPct": 0.1991,
             "foreignSharesToListedPct": 0.1907,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": -70,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": -0.09,
             "priceReturnPct": -3.1904
           },
@@ -1909,9 +2268,9 @@
             "foreignNetShares": 70010,
             "foreignValueToMarketCapPct": 1.0723,
             "foreignSharesToListedPct": 1.0031,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": 33,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": 1.09,
             "priceReturnPct": -10.0093
           },
@@ -2008,6 +2367,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/288620",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/288620"
       }
     },
     {
@@ -2162,6 +2550,35 @@
           "catalyst": 8
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/354320",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/354320"
       }
     },
     {
@@ -2266,7 +2683,7 @@
         "highClose": 33950,
         "lowClose": 19510,
         "drawdownFromHighPct": -42.5331,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -15.1739,
           "w4": -40.6088,
@@ -2315,6 +2732,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/299030",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/299030"
       }
     },
     {
@@ -2355,9 +2801,9 @@
             "foreignNetShares": 28964,
             "foreignValueToMarketCapPct": 0.2115,
             "foreignSharesToListedPct": 0.2986,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": 1,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": 0.97,
             "priceReturnPct": -19.3548
           },
@@ -2397,7 +2843,7 @@
             "foreignNetShares": 102743,
             "foreignValueToMarketCapPct": -0.0556,
             "foreignSharesToListedPct": 1.0593,
-            "institutionNetValueEok": 1.0,
+            "institutionNetValueEok": 1,
             "institutionNetShares": 16413,
             "institutionValueToMarketCapPct": 0.1792,
             "holdingRateChangePctp": 0.92,
@@ -2468,6 +2914,35 @@
           "catalyst": 8
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/189860",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/189860"
       }
     },
     {
@@ -2621,6 +3096,35 @@
           "catalyst": 10
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/389500",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/389500"
       }
     },
     {
@@ -2774,6 +3278,35 @@
           "catalyst": 8
         },
         "verdict": "우선 스터디: 정책 적합성, 6000억원 이하, 중장기 수급, 저평가 구간이 함께 확인됩니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/271940",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/271940"
       }
     },
     {
@@ -2878,7 +3411,7 @@
         "highClose": 16400,
         "lowClose": 8890,
         "drawdownFromHighPct": -45.7927,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -9.5626,
           "w4": -22.1541,
@@ -2928,6 +3461,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/053030",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/053030"
       }
     },
     {
@@ -2982,9 +3544,9 @@
             "foreignNetShares": 57277,
             "foreignValueToMarketCapPct": 0.2192,
             "foreignSharesToListedPct": 0.2193,
-            "institutionNetValueEok": -0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": -13565,
-            "institutionValueToMarketCapPct": -0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": 0.24,
             "priceReturnPct": -31.3738
           },
@@ -3032,7 +3594,7 @@
         "highClose": 18590,
         "lowClose": 11090,
         "drawdownFromHighPct": -40.3443,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -12.9513,
           "w4": -31.3738,
@@ -3082,6 +3644,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/114190",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/114190"
       }
     },
     {
@@ -3173,9 +3764,9 @@
         },
         "ownership": {
           "latestHoldingRatePct": 2.3,
-          "oldestHoldingRatePct": 0.0,
+          "oldestHoldingRatePct": 0,
           "sixMonthHoldingRateChangePctp": 2.3,
-          "minHoldingRatePct": 0.0,
+          "minHoldingRatePct": 0,
           "maxHoldingRatePct": 5.12
         },
         "sourceUrl": "https://finance.naver.com/item/frgn.naver?code=451760&page=1"
@@ -3236,6 +3827,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/451760",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/451760"
       }
     },
     {
@@ -3390,6 +4010,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/382900",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/382900"
       }
     },
     {
@@ -3494,7 +4143,7 @@
         "highClose": 23500,
         "lowClose": 15900,
         "drawdownFromHighPct": -32.3404,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -12.7333,
           "w4": -29.646,
@@ -3544,6 +4193,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/448710",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/448710"
       }
     },
     {
@@ -3697,6 +4375,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/214430",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/214430"
       }
     },
     {
@@ -3801,7 +4508,7 @@
         "highClose": 46350,
         "lowClose": 24150,
         "drawdownFromHighPct": -47.8964,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -6.0311,
           "w4": -47.8964,
@@ -3851,6 +4558,35 @@
           "catalyst": 5
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/419530",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/419530"
       }
     },
     {
@@ -3955,7 +4691,7 @@
         "highClose": 3770,
         "lowClose": 1826,
         "drawdownFromHighPct": -51.565,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -10.4902,
           "w4": -23.9167,
@@ -4004,6 +4740,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/334970",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/334970"
       }
     },
     {
@@ -4161,6 +4926,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/394280",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/394280"
       }
     },
     {
@@ -4315,6 +5109,35 @@
           "catalyst": 8
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/006910",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/006910"
       }
     },
     {
@@ -4469,6 +5292,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/368770",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/368770"
       }
     },
     {
@@ -4573,7 +5425,7 @@
         "highClose": 40450,
         "lowClose": 22700,
         "drawdownFromHighPct": -43.8813,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -18.3453,
           "w4": -36.8567,
@@ -4623,6 +5475,35 @@
           "catalyst": 8
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/119850",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/119850"
       }
     },
     {
@@ -4687,7 +5568,7 @@
             "days": 60,
             "startDate": "2026-03-04",
             "endDate": "2026-05-29",
-            "foreignNetValueEok": -38.0,
+            "foreignNetValueEok": -38,
             "foreignNetShares": -331287,
             "foreignValueToMarketCapPct": -1.0349,
             "foreignSharesToListedPct": -0.9021,
@@ -4727,7 +5608,7 @@
         "highClose": 16200,
         "lowClose": 10000,
         "drawdownFromHighPct": -38.2716,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -10.8734,
           "w4": -23.9544,
@@ -4777,6 +5658,35 @@
           "catalyst": 5
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/206650",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/206650"
       }
     },
     {
@@ -4816,7 +5726,7 @@
             "foreignNetValueEok": -0.1,
             "foreignNetShares": 23,
             "foreignValueToMarketCapPct": -0.0087,
-            "foreignSharesToListedPct": 0.0,
+            "foreignSharesToListedPct": 0,
             "institutionNetValueEok": 0.11,
             "institutionNetShares": 4149,
             "institutionValueToMarketCapPct": 0.0096,
@@ -4881,7 +5791,7 @@
         "highClose": 3465,
         "lowClose": 2200,
         "drawdownFromHighPct": -36.5079,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -10.9312,
           "w4": -22.5352,
@@ -4931,6 +5841,35 @@
           "catalyst": 5
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/310200",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/310200"
       }
     },
     {
@@ -5035,7 +5974,7 @@
         "highClose": 4120,
         "lowClose": 3135,
         "drawdownFromHighPct": -23.9078,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -5.5723,
           "w4": -23.9078,
@@ -5085,6 +6024,35 @@
           "catalyst": 8
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/126880",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/126880"
       }
     },
     {
@@ -5239,6 +6207,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/255440",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/255440"
       }
     },
     {
@@ -5329,7 +6326,7 @@
           }
         },
         "ownership": {
-          "latestHoldingRatePct": 4.0,
+          "latestHoldingRatePct": 4,
           "oldestHoldingRatePct": 2.08,
           "sixMonthHoldingRateChangePctp": 1.92,
           "minHoldingRatePct": 2.08,
@@ -5393,6 +6390,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/278280",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/278280"
       }
     },
     {
@@ -5547,6 +6573,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/053080",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/053080"
       }
     },
     {
@@ -5587,9 +6642,9 @@
             "foreignNetShares": -18303,
             "foreignValueToMarketCapPct": -0.1018,
             "foreignSharesToListedPct": -0.111,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": 0,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": -0.33,
             "priceReturnPct": -12.7889
           },
@@ -5651,7 +6706,7 @@
         "highClose": 8870,
         "lowClose": 5660,
         "drawdownFromHighPct": -36.1894,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -12.7889,
           "w4": -18.2081,
@@ -5701,6 +6756,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/424960",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/424960"
       }
     },
     {
@@ -5751,7 +6835,7 @@
             "days": 20,
             "startDate": "2026-04-29",
             "endDate": "2026-05-29",
-            "foreignNetValueEok": -8.0,
+            "foreignNetValueEok": -8,
             "foreignNetShares": -294661,
             "foreignValueToMarketCapPct": -1.4652,
             "foreignSharesToListedPct": -0.8996,
@@ -5805,7 +6889,7 @@
         "highClose": 3245,
         "lowClose": 1668,
         "drawdownFromHighPct": -48.5978,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -21.1348,
           "w4": -34.2012,
@@ -5855,6 +6939,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/408900",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/408900"
       }
     },
     {
@@ -6009,6 +7122,35 @@
           "catalyst": 8
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/265520",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/265520"
       }
     },
     {
@@ -6163,6 +7305,35 @@
           "catalyst": 10
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/117730",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/117730"
       }
     },
     {
@@ -6267,7 +7438,7 @@
         "highClose": 9150,
         "lowClose": 5430,
         "drawdownFromHighPct": -40.6557,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -10.9836,
           "w4": -30.3846,
@@ -6317,6 +7488,35 @@
           "catalyst": 5
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/048910",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/048910"
       }
     },
     {
@@ -6471,6 +7671,35 @@
           "catalyst": 8
         },
         "verdict": "후보 스터디: 정책성과 저평가 구간은 유효하나 수급 추세 또는 촉매 확인이 더 필요합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/005420",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/005420"
       }
     },
     {
@@ -6625,6 +7854,35 @@
           "catalyst": 10
         },
         "verdict": "보류 스터디: 일부 조건은 맞지만 Reconsider, 수급 약화, 재무/희석 리스크를 먼저 확인해야 합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/330860",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/330860"
       }
     },
     {
@@ -6729,7 +7987,7 @@
         "highClose": 2455,
         "lowClose": 746,
         "drawdownFromHighPct": -69.613,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -30.4104,
           "w4": -66.7706,
@@ -6779,6 +8037,35 @@
           "catalyst": 10
         },
         "verdict": "보류 스터디: 일부 조건은 맞지만 Reconsider, 수급 약화, 재무/희석 리스크를 먼저 확인해야 합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/087260",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/087260"
       }
     },
     {
@@ -6933,6 +8220,35 @@
           "catalyst": 10
         },
         "verdict": "보류 스터디: 일부 조건은 맞지만 Reconsider, 수급 약화, 재무/희석 리스크를 먼저 확인해야 합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/239890",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/239890"
       }
     },
     {
@@ -6973,9 +8289,9 @@
             "foreignNetShares": -52149,
             "foreignValueToMarketCapPct": -0.3652,
             "foreignSharesToListedPct": -0.3271,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": 9,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": -0.2,
             "priceReturnPct": -18.2266
           },
@@ -7037,7 +8353,7 @@
         "highClose": 9810,
         "lowClose": 4980,
         "drawdownFromHighPct": -49.2355,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -18.2266,
           "w4": -20.8267,
@@ -7087,6 +8403,35 @@
           "catalyst": 10
         },
         "verdict": "보류 스터디: 일부 조건은 맞지만 Reconsider, 수급 약화, 재무/희석 리스크를 먼저 확인해야 합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/251630",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/251630"
       }
     },
     {
@@ -7241,6 +8586,35 @@
           "catalyst": 10
         },
         "verdict": "보류 스터디: 일부 조건은 맞지만 Reconsider, 수급 약화, 재무/희석 리스크를 먼저 확인해야 합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/089980",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/089980"
       }
     },
     {
@@ -7395,6 +8769,35 @@
           "catalyst": 10
         },
         "verdict": "보류 스터디: 일부 조건은 맞지만 Reconsider, 수급 약화, 재무/희석 리스크를 먼저 확인해야 합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/110990",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/110990"
       }
     },
     {
@@ -7550,6 +8953,35 @@
           "catalyst": 10
         },
         "verdict": "보류 스터디: 일부 조건은 맞지만 Reconsider, 수급 약화, 재무/희석 리스크를 먼저 확인해야 합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/317120",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/317120"
       }
     },
     {
@@ -7654,7 +9086,7 @@
         "highClose": 4290,
         "lowClose": 1523,
         "drawdownFromHighPct": -64.4988,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -22.2959,
           "w4": -44.0074,
@@ -7705,6 +9137,35 @@
           "catalyst": 10
         },
         "verdict": "보류 스터디: 일부 조건은 맞지만 Reconsider, 수급 약화, 재무/희석 리스크를 먼저 확인해야 합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/206560",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/206560"
       }
     },
     {
@@ -7809,7 +9270,7 @@
         "highClose": 4530,
         "lowClose": 1867,
         "drawdownFromHighPct": -58.7859,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -15.7111,
           "w4": -41.5649,
@@ -7860,6 +9321,35 @@
           "catalyst": 5
         },
         "verdict": "보류 스터디: 일부 조건은 맞지만 Reconsider, 수급 약화, 재무/희석 리스크를 먼저 확인해야 합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/289220",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/289220"
       }
     },
     {
@@ -8014,6 +9504,35 @@
           "catalyst": 10
         },
         "verdict": "추적군: 정책 대표성은 있으나 6000억원을 초과해 저평가 발굴 목적과는 거리가 있습니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/126340",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/126340"
       }
     },
     {
@@ -8057,7 +9576,7 @@
             "institutionNetValueEok": -487.73,
             "institutionNetShares": -1081612,
             "institutionValueToMarketCapPct": -2.4386,
-            "holdingRateChangePctp": 0.0,
+            "holdingRateChangePctp": 0,
             "priceReturnPct": -21.7602
           },
           "w4": {
@@ -8168,6 +9687,35 @@
           "catalyst": 8
         },
         "verdict": "추적군: 정책 대표성은 있으나 6000억원을 초과해 저평가 발굴 목적과는 거리가 있습니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/067310",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/067310"
       }
     },
     {
@@ -8261,7 +9809,7 @@
           "latestHoldingRatePct": 0.14,
           "oldestHoldingRatePct": 0.46,
           "sixMonthHoldingRateChangePctp": -0.32,
-          "minHoldingRatePct": 0.0,
+          "minHoldingRatePct": 0,
           "maxHoldingRatePct": 1.97
         },
         "sourceUrl": "https://finance.naver.com/item/frgn.naver?code=399720&page=1"
@@ -8322,6 +9870,35 @@
           "catalyst": 10
         },
         "verdict": "추적군: 정책 대표성은 있으나 6000억원을 초과해 저평가 발굴 목적과는 거리가 있습니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/399720",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/399720"
       }
     },
     {
@@ -8478,6 +10055,35 @@
           "catalyst": 10
         },
         "verdict": "추적군: 정책 대표성은 있으나 6000억원을 초과해 저평가 발굴 목적과는 거리가 있습니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/033640",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/033640"
       }
     },
     {
@@ -8633,6 +10239,35 @@
           "catalyst": 10
         },
         "verdict": "추적군: 정책 대표성은 있으나 6000억원을 초과해 저평가 발굴 목적과는 거리가 있습니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/171090",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/171090"
       }
     },
     {
@@ -8792,6 +10427,35 @@
           "catalyst": 10
         },
         "verdict": "추적군: 정책 대표성은 있으나 6000억원을 초과해 저평가 발굴 목적과는 거리가 있습니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/365340",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/365340"
       }
     },
     {
@@ -8947,6 +10611,35 @@
           "catalyst": 10
         },
         "verdict": "추적군: 정책 대표성은 있으나 6000억원을 초과해 저평가 발굴 목적과는 거리가 있습니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/348370",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/348370"
       }
     },
     {
@@ -9040,7 +10733,7 @@
           "latestHoldingRatePct": 0.67,
           "oldestHoldingRatePct": 0.23,
           "sixMonthHoldingRateChangePctp": 0.44,
-          "minHoldingRatePct": 0.0,
+          "minHoldingRatePct": 0,
           "maxHoldingRatePct": 3.35
         },
         "sourceUrl": "https://finance.naver.com/item/frgn.naver?code=161580&page=1"
@@ -9101,6 +10794,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/161580",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/161580"
       }
     },
     {
@@ -9158,7 +10880,7 @@
             "institutionNetValueEok": -132.39,
             "institutionNetShares": -65606,
             "institutionValueToMarketCapPct": -0.6619,
-            "holdingRateChangePctp": 0.0,
+            "holdingRateChangePctp": 0,
             "priceReturnPct": 18.4242
           },
           "w12": {
@@ -9194,7 +10916,7 @@
           "latestHoldingRatePct": 11.65,
           "oldestHoldingRatePct": 9.52,
           "sixMonthHoldingRateChangePctp": 2.13,
-          "minHoldingRatePct": 9.0,
+          "minHoldingRatePct": 9,
           "maxHoldingRatePct": 13.13
         },
         "sourceUrl": "https://finance.naver.com/item/frgn.naver?code=131290&page=1"
@@ -9256,6 +10978,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/131290",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/131290"
       }
     },
     {
@@ -9299,7 +11050,7 @@
             "institutionNetValueEok": 94.63,
             "institutionNetShares": 60150,
             "institutionValueToMarketCapPct": 0.4731,
-            "holdingRateChangePctp": -1.0,
+            "holdingRateChangePctp": -1,
             "priceReturnPct": -2.3597
           },
           "w4": {
@@ -9411,6 +11162,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/078600",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/078600"
       }
     },
     {
@@ -9565,6 +11345,35 @@
           "catalyst": 8
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/237690",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/237690"
       }
     },
     {
@@ -9720,6 +11529,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/059120",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/059120"
       }
     },
     {
@@ -9875,6 +11713,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/083450",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/083450"
       }
     },
     {
@@ -10030,6 +11897,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/121600",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/121600"
       }
     },
     {
@@ -10112,7 +12008,7 @@
             "foreignNetShares": 587006,
             "foreignValueToMarketCapPct": 3.3994,
             "foreignSharesToListedPct": 2.8916,
-            "institutionNetValueEok": 2384.0,
+            "institutionNetValueEok": 2384,
             "institutionNetShares": 1368310,
             "institutionValueToMarketCapPct": 7.9467,
             "holdingRateChangePctp": 2.01,
@@ -10185,6 +12081,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/226950",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/226950"
       }
     },
     {
@@ -10340,6 +12265,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/108490",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/108490"
       }
     },
     {
@@ -10495,6 +12449,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/348340",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/348340"
       }
     },
     {
@@ -10601,7 +12584,7 @@
         "highClose": 38850,
         "lowClose": 22650,
         "drawdownFromHighPct": -41.6988,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -11.8677,
           "w4": -30.3077,
@@ -10654,6 +12637,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/107600",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/107600"
       }
     },
     {
@@ -10809,6 +12821,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/388720",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/388720"
       }
     },
     {
@@ -10964,6 +13005,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/299660",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/299660"
       }
     },
     {
@@ -11119,6 +13189,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/358570",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/358570"
       }
     },
     {
@@ -11275,6 +13374,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/452280",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/452280"
       }
     },
     {
@@ -11430,6 +13558,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/115180",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/115180"
       }
     },
     {
@@ -11585,6 +13742,35 @@
           "catalyst": 8
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/274090",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/274090"
       }
     },
     {
@@ -11627,7 +13813,7 @@
             "foreignSharesToListedPct": -0.1659,
             "institutionNetValueEok": 0,
             "institutionNetShares": 0,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": -0.08,
             "priceReturnPct": -11.5035
           },
@@ -11741,6 +13927,35 @@
           "catalyst": 10
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/237750",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/237750"
       }
     },
     {
@@ -11779,13 +13994,13 @@
             "endDate": "2026-05-29",
             "foreignNetValueEok": 0,
             "foreignNetShares": 0,
-            "foreignValueToMarketCapPct": 0.0,
-            "foreignSharesToListedPct": 0.0,
+            "foreignValueToMarketCapPct": 0,
+            "foreignSharesToListedPct": 0,
             "institutionNetValueEok": 0,
             "institutionNetShares": 0,
-            "institutionValueToMarketCapPct": 0.0,
-            "holdingRateChangePctp": 0.0,
-            "priceReturnPct": 0.0
+            "institutionValueToMarketCapPct": 0,
+            "holdingRateChangePctp": 0,
+            "priceReturnPct": 0
           },
           "w4": {
             "days": 20,
@@ -11793,13 +14008,13 @@
             "endDate": "2026-05-29",
             "foreignNetValueEok": 0,
             "foreignNetShares": 0,
-            "foreignValueToMarketCapPct": 0.0,
-            "foreignSharesToListedPct": 0.0,
+            "foreignValueToMarketCapPct": 0,
+            "foreignSharesToListedPct": 0,
             "institutionNetValueEok": 0,
             "institutionNetShares": 0,
-            "institutionValueToMarketCapPct": 0.0,
-            "holdingRateChangePctp": 0.0,
-            "priceReturnPct": 0.0
+            "institutionValueToMarketCapPct": 0,
+            "holdingRateChangePctp": 0,
+            "priceReturnPct": 0
           },
           "w12": {
             "days": 60,
@@ -11807,13 +14022,13 @@
             "endDate": "2026-05-29",
             "foreignNetValueEok": 0,
             "foreignNetShares": 0,
-            "foreignValueToMarketCapPct": 0.0,
-            "foreignSharesToListedPct": 0.0,
+            "foreignValueToMarketCapPct": 0,
+            "foreignSharesToListedPct": 0,
             "institutionNetValueEok": 0,
             "institutionNetShares": 0,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": -0.02,
-            "priceReturnPct": 0.0
+            "priceReturnPct": 0
           },
           "m6": {
             "days": 100,
@@ -11821,19 +14036,19 @@
             "endDate": "2026-05-29",
             "foreignNetValueEok": 0,
             "foreignNetShares": 0,
-            "foreignValueToMarketCapPct": 0.0,
-            "foreignSharesToListedPct": 0.0,
+            "foreignValueToMarketCapPct": 0,
+            "foreignSharesToListedPct": 0,
             "institutionNetValueEok": 0,
             "institutionNetShares": 0,
-            "institutionValueToMarketCapPct": 0.0,
-            "holdingRateChangePctp": 0.0,
-            "priceReturnPct": 0.0
+            "institutionValueToMarketCapPct": 0,
+            "holdingRateChangePctp": 0,
+            "priceReturnPct": 0
           }
         },
         "ownership": {
           "latestHoldingRatePct": 2.19,
           "oldestHoldingRatePct": 2.19,
-          "sixMonthHoldingRateChangePctp": 0.0,
+          "sixMonthHoldingRateChangePctp": 0,
           "minHoldingRatePct": 2.19,
           "maxHoldingRatePct": 2.21
         },
@@ -11844,13 +14059,13 @@
         "observations": 100,
         "highClose": 3530,
         "lowClose": 3530,
-        "drawdownFromHighPct": 0.0,
-        "reboundFromLowPct": 0.0,
+        "drawdownFromHighPct": 0,
+        "reboundFromLowPct": 0,
         "returns": {
-          "w1": 0.0,
-          "w4": 0.0,
-          "w12": 0.0,
-          "m6": 0.0
+          "w1": 0,
+          "w4": 0,
+          "w12": 0,
+          "m6": 0
         }
       },
       "study": {
@@ -11895,6 +14110,35 @@
           "catalyst": 3
         },
         "verdict": "제외: 정책 직접성, 시총, 수급, 데이터 중 핵심 조건이 부족합니다."
+      },
+      "big3Ownership": {
+        "checkedAt": "2026-06-01",
+        "sourceUrl": "https://fintel.io/so/kr/011810",
+        "sourceScope": "Fintel SEC 신고 기반 institutional ownership",
+        "managers": [
+          {
+            "name": "BlackRock",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "Vanguard",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          },
+          {
+            "name": "SSGA",
+            "status": "확인 필요",
+            "evidence": "",
+            "estimatedStakePct": null
+          }
+        ],
+        "institutionalOwners": null,
+        "institutionalSharesPct": null,
+        "summary": "수동확인 필요",
+        "note": "403 Client Error: Forbidden for url: https://fintel.io/so/kr/011810"
       }
     }
   ],
@@ -11954,7 +14198,7 @@
             "institutionNetValueEok": 92.36,
             "institutionNetShares": 419987,
             "institutionValueToMarketCapPct": 3.605,
-            "holdingRateChangePctp": 3.0,
+            "holdingRateChangePctp": 3,
             "priceReturnPct": 14.8824
           },
           "w12": {
@@ -12141,9 +14385,9 @@
         },
         "ownership": {
           "latestHoldingRatePct": 5.55,
-          "oldestHoldingRatePct": 0.0,
+          "oldestHoldingRatePct": 0,
           "sixMonthHoldingRateChangePctp": 5.55,
-          "minHoldingRatePct": 0.0,
+          "minHoldingRatePct": 0,
           "maxHoldingRatePct": 5.84
         },
         "sourceUrl": "https://finance.naver.com/item/frgn.naver?code=054450&page=1"
@@ -13381,7 +15625,7 @@
         "highClose": 17430,
         "lowClose": 10200,
         "drawdownFromHighPct": -41.4802,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -16.5985,
           "w4": -27.5568,
@@ -13777,9 +16021,9 @@
             "foreignNetShares": 13307,
             "foreignValueToMarketCapPct": 0.1991,
             "foreignSharesToListedPct": 0.1907,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": -70,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": -0.09,
             "priceReturnPct": -3.1904
           },
@@ -13791,9 +16035,9 @@
             "foreignNetShares": 70010,
             "foreignValueToMarketCapPct": 1.0723,
             "foreignSharesToListedPct": 1.0031,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": 33,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": 1.09,
             "priceReturnPct": -10.0093
           },
@@ -14148,7 +16392,7 @@
         "highClose": 33950,
         "lowClose": 19510,
         "drawdownFromHighPct": -42.5331,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -15.1739,
           "w4": -40.6088,
@@ -14237,9 +16481,9 @@
             "foreignNetShares": 28964,
             "foreignValueToMarketCapPct": 0.2115,
             "foreignSharesToListedPct": 0.2986,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": 1,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": 0.97,
             "priceReturnPct": -19.3548
           },
@@ -14279,7 +16523,7 @@
             "foreignNetShares": 102743,
             "foreignValueToMarketCapPct": -0.0556,
             "foreignSharesToListedPct": 1.0593,
-            "institutionNetValueEok": 1.0,
+            "institutionNetValueEok": 1,
             "institutionNetShares": 16413,
             "institutionValueToMarketCapPct": 0.1792,
             "holdingRateChangePctp": 0.92,
@@ -14760,7 +17004,7 @@
         "highClose": 16400,
         "lowClose": 8890,
         "drawdownFromHighPct": -45.7927,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -9.5626,
           "w4": -22.1541,
@@ -14864,9 +17108,9 @@
             "foreignNetShares": 57277,
             "foreignValueToMarketCapPct": 0.2192,
             "foreignSharesToListedPct": 0.2193,
-            "institutionNetValueEok": -0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": -13565,
-            "institutionValueToMarketCapPct": -0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": 0.24,
             "priceReturnPct": -31.3738
           },
@@ -14914,7 +17158,7 @@
         "highClose": 18590,
         "lowClose": 11090,
         "drawdownFromHighPct": -40.3443,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -12.9513,
           "w4": -31.3738,
@@ -15055,9 +17299,9 @@
         },
         "ownership": {
           "latestHoldingRatePct": 2.3,
-          "oldestHoldingRatePct": 0.0,
+          "oldestHoldingRatePct": 0,
           "sixMonthHoldingRateChangePctp": 2.3,
-          "minHoldingRatePct": 0.0,
+          "minHoldingRatePct": 0,
           "maxHoldingRatePct": 5.12
         },
         "sourceUrl": "https://finance.naver.com/item/frgn.naver?code=451760&page=1"
@@ -15376,7 +17620,7 @@
         "highClose": 23500,
         "lowClose": 15900,
         "drawdownFromHighPct": -32.3404,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -12.7333,
           "w4": -29.646,
@@ -15683,7 +17927,7 @@
         "highClose": 46350,
         "lowClose": 24150,
         "drawdownFromHighPct": -47.8964,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -6.0311,
           "w4": -47.8964,
@@ -15837,7 +18081,7 @@
         "highClose": 3770,
         "lowClose": 1826,
         "drawdownFromHighPct": -51.565,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -10.4902,
           "w4": -23.9167,
@@ -16455,7 +18699,7 @@
         "highClose": 40450,
         "lowClose": 22700,
         "drawdownFromHighPct": -43.8813,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -18.3453,
           "w4": -36.8567,
@@ -16569,7 +18813,7 @@
             "days": 60,
             "startDate": "2026-03-04",
             "endDate": "2026-05-29",
-            "foreignNetValueEok": -38.0,
+            "foreignNetValueEok": -38,
             "foreignNetShares": -331287,
             "foreignValueToMarketCapPct": -1.0349,
             "foreignSharesToListedPct": -0.9021,
@@ -16609,7 +18853,7 @@
         "highClose": 16200,
         "lowClose": 10000,
         "drawdownFromHighPct": -38.2716,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -10.8734,
           "w4": -23.9544,
@@ -16698,7 +18942,7 @@
             "foreignNetValueEok": -0.1,
             "foreignNetShares": 23,
             "foreignValueToMarketCapPct": -0.0087,
-            "foreignSharesToListedPct": 0.0,
+            "foreignSharesToListedPct": 0,
             "institutionNetValueEok": 0.11,
             "institutionNetShares": 4149,
             "institutionValueToMarketCapPct": 0.0096,
@@ -16763,7 +19007,7 @@
         "highClose": 3465,
         "lowClose": 2200,
         "drawdownFromHighPct": -36.5079,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -10.9312,
           "w4": -22.5352,
@@ -16917,7 +19161,7 @@
         "highClose": 4120,
         "lowClose": 3135,
         "drawdownFromHighPct": -23.9078,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -5.5723,
           "w4": -23.9078,
@@ -17211,7 +19455,7 @@
           }
         },
         "ownership": {
-          "latestHoldingRatePct": 4.0,
+          "latestHoldingRatePct": 4,
           "oldestHoldingRatePct": 2.08,
           "sixMonthHoldingRateChangePctp": 1.92,
           "minHoldingRatePct": 2.08,
@@ -17469,9 +19713,9 @@
             "foreignNetShares": -18303,
             "foreignValueToMarketCapPct": -0.1018,
             "foreignSharesToListedPct": -0.111,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": 0,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": -0.33,
             "priceReturnPct": -12.7889
           },
@@ -17533,7 +19777,7 @@
         "highClose": 8870,
         "lowClose": 5660,
         "drawdownFromHighPct": -36.1894,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -12.7889,
           "w4": -18.2081,
@@ -17633,7 +19877,7 @@
             "days": 20,
             "startDate": "2026-04-29",
             "endDate": "2026-05-29",
-            "foreignNetValueEok": -8.0,
+            "foreignNetValueEok": -8,
             "foreignNetShares": -294661,
             "foreignValueToMarketCapPct": -1.4652,
             "foreignSharesToListedPct": -0.8996,
@@ -17687,7 +19931,7 @@
         "highClose": 3245,
         "lowClose": 1668,
         "drawdownFromHighPct": -48.5978,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -21.1348,
           "w4": -34.2012,
@@ -18149,7 +20393,7 @@
         "highClose": 9150,
         "lowClose": 5430,
         "drawdownFromHighPct": -40.6557,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -10.9836,
           "w4": -30.3846,
@@ -18611,7 +20855,7 @@
         "highClose": 2455,
         "lowClose": 746,
         "drawdownFromHighPct": -69.613,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -30.4104,
           "w4": -66.7706,
@@ -18855,9 +21099,9 @@
             "foreignNetShares": -52149,
             "foreignValueToMarketCapPct": -0.3652,
             "foreignSharesToListedPct": -0.3271,
-            "institutionNetValueEok": 0.0,
+            "institutionNetValueEok": 0,
             "institutionNetShares": 9,
-            "institutionValueToMarketCapPct": 0.0,
+            "institutionValueToMarketCapPct": 0,
             "holdingRateChangePctp": -0.2,
             "priceReturnPct": -18.2266
           },
@@ -18919,7 +21163,7 @@
         "highClose": 9810,
         "lowClose": 4980,
         "drawdownFromHighPct": -49.2355,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -18.2266,
           "w4": -20.8267,
@@ -19536,7 +21780,7 @@
         "highClose": 4290,
         "lowClose": 1523,
         "drawdownFromHighPct": -64.4988,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -22.2959,
           "w4": -44.0074,
@@ -19691,7 +21935,7 @@
         "highClose": 4530,
         "lowClose": 1867,
         "drawdownFromHighPct": -58.7859,
-        "reboundFromLowPct": 0.0,
+        "reboundFromLowPct": 0,
         "returns": {
           "w1": -15.7111,
           "w4": -41.5649,
