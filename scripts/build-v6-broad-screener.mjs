@@ -1,13 +1,43 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import zlib from "node:zlib";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const dataPath = path.join(root, "data", "v6-broad-screener-data.json");
 const outputPath = path.join(root, "docs", "v6.html");
-const RUN_DATE = "2026-06-08";
+const RUN_DATE = "2026-06-09";
 const USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36";
+const BLACKROCK_EWY_URL = "https://www.ishares.com/us/products/239681/EWY";
+const BLACKROCK_EWY_DOWNLOAD_URL = "https://www.blackrock.com/varnish-api/blk-one01-product-data/product-data/api/v1/get-fund-document?appType=PRODUCT_PAGE&appSubType=ISHARES&targetSite=us-ishares&locale=en_US&portfolioId=239681&component=fundDownload&userType=individual";
+const VANGUARD_TRUST_URL = "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf";
+const SSGA_SPDW_URL = "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw";
+const SSGA_SPDW_DOWNLOAD_URL = "https://www.ssga.com/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spdw.xlsx";
+const FSC_PUBLIC_FUND_URL = "https://www.fsc.go.kr/no010101/86834?curPage=2&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText=";
+const FSC_APPROVAL_URL = "https://www.fsc.go.kr/no010101/87003";
+const DART_LARGE_HOLDER_GUIDE_URL = "https://dart.fss.or.kr/info/main.do?menu=310";
+const NAVER_BLACKROCK_DISCLOSURE_URL = "https://kind.krx.co.kr/external/2025/11/14/001550/20251114003439/11013.htm";
+const VANGUARD_CONFIRMED_TICKERS = new Set([
+  "319660", "012510", "030520", "204320", "012330", "005290", "011070", "336260", "108320", "265520",
+  "307950", "036930", "403870", "035420", "373220", "006400", "298040", "454910", "240810", "058470",
+  "064350", "272210", "214450", "078600", "012450", "068270", "095340", "103590", "035900", "010120",
+  "041510", "047810", "000100", "237690", "039200", "277810", "267260", "302440", "206650", "352820",
+  "207940", "042700", "348370", "278280", "298380", "247540", "196170", "005070", "003670", "066970",
+  "141080"
+]);
+const DART_DISCLOSURES = new Map([
+  ["035420", {
+    manager: "BlackRock",
+    holder: "BlackRock Fund Advisors",
+    evidence: "DART_5PCT_DISCLOSURE",
+    shares: 9592734,
+    ownershipPct: 6.05,
+    asOf: "2025-09-30",
+    basis: "NAVER 2025년 3분기보고서의 5% 이상 주주 표기. BlackRock 수치는 2025-01-10 대량보유상황보고 기준.",
+    sourceUrl: NAVER_BLACKROCK_DISCLOSURE_URL
+  }]
+]);
 
 const universe = [
   // AI infrastructure, software, datacenter
@@ -195,6 +225,8 @@ async function main() {
   }
 
   const ranked = valid.sort((a, b) => b.totalScore - a.totalScore);
+  const megaManagers = await buildMegaManagerSignals(ranked);
+  const growthFundReview = buildGrowthFundReview(ranked);
   const entryList = ranked.filter((row) => row.decision === "ENTRY_OK").slice(0, 15);
   const triggerList = ranked.filter((row) => row.decision === "WAIT_TRIGGER").slice(0, 30);
   const avoidList = ranked.filter((row) => row.decision === "AVOID_NOW").slice(0, 30);
@@ -211,14 +243,21 @@ async function main() {
     market: await fetchMarketSnapshot(),
     rules: buildRules(),
     summary: summarize(ranked),
+    growthFundReview,
+    megaManagers,
     entryList,
     triggerList,
     avoidList,
     allRows: ranked,
     sources: [
       { title: "Naver Finance 시세·외국인/기관·거래원", url: "https://finance.naver.com/" },
-      { title: "금융위원회 국민성장펀드 누적 승인자료", url: "https://www.fsc.go.kr/no010101/87003" },
-      { title: "금융위원회 국민참여형·2026년 운용계획", url: "https://www.fsc.go.kr/po010101/86834" }
+      { title: "금융위원회 국민성장펀드 누적 승인자료", url: FSC_APPROVAL_URL },
+      { title: "금융위원회 국민참여형·2026년 운용계획", url: FSC_PUBLIC_FUND_URL },
+      { title: "DART 대량보유 5% 공시 기준", url: DART_LARGE_HOLDER_GUIDE_URL },
+      { title: "KRX/DART NAVER 2025년 3분기보고서 BlackRock 6.05%", url: NAVER_BLACKROCK_DISCLOSURE_URL },
+      { title: "BlackRock iShares MSCI South Korea ETF (EWY)", url: BLACKROCK_EWY_URL },
+      { title: "Vanguard Institutional Total International Stock Market Index Trust holdings PDF", url: VANGUARD_TRUST_URL },
+      { title: "State Street SPDW holdings", url: SSGA_SPDW_URL }
     ]
   };
 
@@ -637,6 +676,353 @@ async function fetchIndex(code) {
   return { code, now, change };
 }
 
+async function buildMegaManagerSignals(rows) {
+  const [blackRockResult, ssgaResult] = await Promise.allSettled([
+    fetchBlackRockEwyHoldings(),
+    fetchStateStreetSpdwHoldings()
+  ]);
+  const blackRock = blackRockResult.status === "fulfilled" ? blackRockResult.value : { asOf: null, holdings: new Map(), error: blackRockResult.reason?.message };
+  const ssga = ssgaResult.status === "fulfilled" ? ssgaResult.value : { asOf: null, holdings: new Map(), error: ssgaResult.reason?.message };
+
+  for (const row of rows) {
+    const managers = [];
+    const blackRockHolding = blackRock.holdings.get(row.ticker);
+    if (blackRockHolding) {
+      managers.push({
+        manager: "BlackRock",
+        managerGroup: "BlackRock",
+        vehicle: "iShares MSCI South Korea ETF (EWY)",
+        evidence: "ETF_HOLDING",
+        asOf: blackRock.asOf,
+        weightPct: blackRockHolding.weightPct,
+        shares: blackRockHolding.shares,
+        holdingName: blackRockHolding.name,
+        sourceUrl: BLACKROCK_EWY_URL
+      });
+    }
+    if (VANGUARD_CONFIRMED_TICKERS.has(row.ticker)) {
+      managers.push({
+        manager: "Vanguard",
+        managerGroup: "Vanguard",
+        vehicle: "Institutional Total International Stock Market Index Trust",
+        evidence: "INDEX_TRUST_HOLDING",
+        asOf: "2025-10-31",
+        weightPct: null,
+        shares: null,
+        holdingName: row.company,
+        sourceUrl: VANGUARD_TRUST_URL
+      });
+    }
+    const ssgaHolding = ssga.holdings.get(row.ticker);
+    if (ssgaHolding) {
+      managers.push({
+        manager: "SSGA/State Street",
+        managerGroup: "SSGA",
+        vehicle: "SPDR Portfolio Developed World ex-US ETF (SPDW)",
+        evidence: "ETF_HOLDING",
+        asOf: ssga.asOf,
+        weightPct: ssgaHolding.weightPct,
+        shares: ssgaHolding.shares,
+        holdingName: ssgaHolding.name,
+        sourceUrl: SSGA_SPDW_URL
+      });
+    }
+
+    const largeHolderDisclosure = DART_DISCLOSURES.get(row.ticker) ?? null;
+    const managerGroups = new Set(managers.map((item) => item.managerGroup));
+    if (largeHolderDisclosure) managerGroups.add("BlackRock");
+    const hasAllThree = ["BlackRock", "Vanguard", "SSGA"].every((name) => managerGroups.has(name));
+    const score = managers.length + (largeHolderDisclosure ? 4 : 0);
+    row.megaManagers = {
+      score,
+      managerCount: managerGroups.size,
+      status: megaManagerStatus(managerGroups.size, hasAllThree, largeHolderDisclosure),
+      managers,
+      largeHolderDisclosure,
+      interpretation: megaManagerInterpretation(managerGroups.size, hasAllThree, largeHolderDisclosure)
+    };
+  }
+
+  const withSignal = rows.filter((row) => row.megaManagers.managerCount > 0);
+  const hasGroup = (row, group) => {
+    if (group === "BlackRock" && row.megaManagers.largeHolderDisclosure) return true;
+    return row.megaManagers.managers.some((item) => item.managerGroup === group);
+  };
+  return {
+    asOf: RUN_DATE,
+    caveat: "ETF·인덱스 보유는 지수 편입·상품 운용 신호이며, 특정 종목을 능동적으로 매집했다는 증거가 아닙니다. DART 5% 이상 공시는 더 강한 보유 증거지만 신규 매수 시점과는 구분해야 합니다.",
+    sourceStatus: {
+      blackRockEwy: blackRock.error ? `failed: ${blackRock.error}` : `ok · ${blackRock.asOf}`,
+      vanguardTrust: "ok · 2025-10-31 official holdings PDF",
+      ssgaSpdw: ssga.error ? `failed: ${ssga.error}` : `ok · ${ssga.asOf}`
+    },
+    summary: {
+      withAny: withSignal.length,
+      allThree: withSignal.filter((row) => row.megaManagers.managerCount >= 3).length,
+      blackRock: rows.filter((row) => hasGroup(row, "BlackRock")).length,
+      vanguard: rows.filter((row) => hasGroup(row, "Vanguard")).length,
+      ssga: rows.filter((row) => hasGroup(row, "SSGA")).length,
+      dartLargeHolder: rows.filter((row) => row.megaManagers.largeHolderDisclosure).length,
+      topRows: withSignal
+        .toSorted((a, b) => b.megaManagers.score - a.megaManagers.score || b.totalScore - a.totalScore)
+        .slice(0, 35)
+        .map((row) => ({
+          ticker: row.ticker,
+          company: row.company,
+          sector: row.sector,
+          decision: row.decision,
+          totalScore: row.totalScore,
+          status: row.megaManagers.status,
+          managerCount: row.megaManagers.managerCount,
+          managers: row.megaManagers.managers.map((item) => ({
+            manager: item.manager,
+            vehicle: item.vehicle,
+            evidence: item.evidence,
+            asOf: item.asOf,
+            weightPct: item.weightPct,
+            shares: item.shares
+          })),
+          largeHolderDisclosure: row.megaManagers.largeHolderDisclosure,
+          interpretation: row.megaManagers.interpretation
+        }))
+    }
+  };
+}
+
+function megaManagerStatus(managerCount, hasAllThree, largeHolderDisclosure) {
+  if (largeHolderDisclosure) return "DART 5% 이상 공시 확인";
+  if (hasAllThree) return "3대 운용사 상품 보유 확인";
+  if (managerCount >= 2) return "복수 운용사 상품 보유 확인";
+  if (managerCount === 1) return "단일 운용사 상품 보유 확인";
+  return "공개 소스상 미확인";
+}
+
+function megaManagerInterpretation(managerCount, hasAllThree, largeHolderDisclosure) {
+  if (largeHolderDisclosure) return "공시급 보유 증거입니다. 다만 기존 보유·비율 변동 공시와 신규 매수 시점은 분리해서 봅니다.";
+  if (hasAllThree) return "3대 운용사 모두에서 확인되지만, 대부분 패시브 ETF·인덱스 편입 신호입니다.";
+  if (managerCount >= 2) return "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다.";
+  if (managerCount === 1) return "단일 운용사 상품 보유 확인입니다. 능동적 매집 근거로 단정하지 않습니다.";
+  return "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다.";
+}
+
+async function fetchBlackRockEwyHoldings() {
+  const text = await fetchUtf8Text(BLACKROCK_EWY_DOWNLOAD_URL);
+  const rows = parseSpreadsheetXmlRows(text);
+  const asOf = rows.find((row) => row[0] === "Fund Holdings as of")?.[1] ?? null;
+  const headerIndex = rows.findIndex((row) => row.includes("Ticker") && row.includes("Name") && row.includes("Weight (%)"));
+  if (headerIndex < 0) throw new Error("BlackRock EWY header not found");
+  const headers = rows[headerIndex];
+  const idx = indexMap(headers);
+  const holdings = new Map();
+  for (const row of rows.slice(headerIndex + 1)) {
+    const ticker = normalizeTicker(row[idx.Ticker]);
+    if (!ticker) continue;
+    holdings.set(ticker, {
+      ticker,
+      name: row[idx.Name],
+      weightPct: round(parseNumber(row[idx["Weight (%)"]]), 4),
+      shares: parseNumber(row[idx.Quantity])
+    });
+  }
+  return { asOf, holdings };
+}
+
+async function fetchStateStreetSpdwHoldings() {
+  const buffer = await fetchBuffer(SSGA_SPDW_DOWNLOAD_URL);
+  const entries = readZipEntries(buffer);
+  const sharedStrings = parseSharedStrings(entries.get("xl/sharedStrings.xml") ?? "");
+  const rows = parseOpenXmlRows(entries.get("xl/worksheets/sheet1.xml") ?? "", sharedStrings);
+  const asOf = rows.find((row) => row[0] === "Holdings:")?.[1] ?? null;
+  const headerIndex = rows.findIndex((row) => row.includes("Name") && row.includes("Ticker") && row.includes("Weight"));
+  if (headerIndex < 0) throw new Error("SSGA SPDW header not found");
+  const headers = rows[headerIndex];
+  const idx = indexMap(headers);
+  const holdings = new Map();
+  for (const row of rows.slice(headerIndex + 1)) {
+    const ticker = normalizeTicker(row[idx.Ticker]);
+    if (!ticker) continue;
+    holdings.set(ticker, {
+      ticker,
+      name: row[idx.Name],
+      weightPct: round(parseNumber(row[idx.Weight]), 6),
+      shares: parseNumber(row[idx["Shares Held"]])
+    });
+  }
+  return { asOf, holdings };
+}
+
+function buildGrowthFundReview(rows) {
+  const byTicker = new Map(rows.map((row) => [row.ticker, row]));
+  const directProjects = [
+    policyProject(byTicker, "035420", "NAVER", "AI·데이터센터", "네이버 AI 저리대출 승인 프로젝트", "직접 확인", "이미 정책 기대가 반영된 축이라 신규 선정 기대보다 차트·밸류 조건을 우선합니다."),
+    policyProject(byTicker, "302440", "SK바이오사이언스", "바이오·백신", "차세대 바이오·백신 설비구축 및 R&D 지원자금, 3,000억원 대출", "직접 확인", "정책 수혜는 명확하지만 v6에서는 이미 선정 감점과 기술 조건 미통과를 함께 반영합니다."),
+    policyProject(byTicker, "066970", "엘앤에프", "이차전지 소재", "엘앤에프플러스 이차전지 프로젝트, 2,200억원 대출", "프록시 확인", "상장 모회사 프록시는 기대가 선반영될 수 있어 직접 수혜주보다 보수적으로 봅니다.")
+  ];
+  const reviewedRows = rows
+    .filter((row) => row.policy.score >= 22 || ["035420", "302440", "066970"].includes(row.ticker))
+    .toSorted((a, b) => b.policy.score - a.policy.score || b.totalScore - a.totalScore)
+    .slice(0, 24)
+    .map((row) => ({
+      ticker: row.ticker,
+      company: row.company,
+      sector: row.sector,
+      decision: row.decision,
+      totalScore: row.totalScore,
+      policyScore: row.policy.score,
+      policyMemo: row.policy.memo,
+      technicalMemo: row.technical.memo,
+      riskNotes: row.risk.notes,
+      assessment: policyAssessment(row)
+    }));
+
+  return {
+    asOf: "2026-05-29",
+    scale: [
+      { label: "5년 총 공급", value: "150조원", memo: "첨단산업생태계 전반" },
+      { label: "2026년 공급계획", value: "30조원", memo: "직접 3조, 간접 7조, 인프라 10조, 초저리대출 10조" },
+      { label: "국민참여형", value: "7,200억원", memo: "국민 모집 6,000억원 + 손실 우선부담 재정 1,200억원" },
+      { label: "누적 승인", value: "16건·12.5조원", memo: "2026년 1~5월 승인 기준" },
+      { label: "기금 누적 승인", value: "5.17조원", memo: "직접투자·인프라·저리대출 기금 승인액" },
+      { label: "간접투자", value: "별도 운용", memo: "국민참여형과 기관투자자용 자펀드 운용 절차" }
+    ],
+    judgement: [
+      "총량은 크지만 상장주 매수세와 직접 연결되는 구조는 아닙니다. 직접투자는 비상장·프로젝트성 자금, 인프라투융자와 대출은 주가보다 자금조달 비용·CAPEX에 먼저 영향을 줍니다.",
+      "v6에서는 정책점수 상한을 25점으로 제한하고, 이미 선정된 기업·프록시는 신규 기대값을 낮췄습니다. 정책 테마만으로 진입하지 않는다는 전제를 유지합니다.",
+      "정책 수혜 후보는 AI반도체/NPU, AI데이터센터 인프라, 바이오·백신, 이차전지/LFP, 전력망/OLED/방산·미래차로 넓게 보되, 최종 진입은 MA20·RSI·밸류에이션·수급으로 확인합니다."
+    ],
+    directProjects,
+    reviewedRows
+  };
+}
+
+function policyProject(byTicker, ticker, fallbackCompany, bucket, project, evidence, review) {
+  const row = byTicker.get(ticker);
+  return {
+    ticker,
+    company: row?.company ?? fallbackCompany,
+    sector: row?.sector ?? bucket,
+    project,
+    evidence,
+    decision: row?.decision ?? "-",
+    totalScore: row?.totalScore ?? null,
+    policyScore: row?.policy?.score ?? null,
+    technicalMemo: row?.technical?.memo ?? "-",
+    review
+  };
+}
+
+function policyAssessment(row) {
+  if (row.decision === "ENTRY_OK") return "정책 적합성과 기술 조건이 동시에 통과한 예외적 후보입니다. 그래도 분할 진입 기준을 유지합니다.";
+  if (row.status === "already-selected") return "정책 수혜 확인도가 높지만, 이미 선정·프록시라 신규 기대값은 낮게 봅니다.";
+  if (row.decision === "WAIT_TRIGGER") return "정책/가치 매력은 있으나 아직 진입 트리거 확인이 필요합니다.";
+  return "정책 테마는 있으나 현재 가격·추세·밸류 리스크가 우선입니다.";
+}
+
+async function fetchUtf8Text(url) {
+  const response = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
+  if (!response.ok) throw new Error(`${response.status} ${url}`);
+  return new TextDecoder("utf-8").decode(await response.arrayBuffer());
+}
+
+async function fetchBuffer(url) {
+  const response = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
+  if (!response.ok) throw new Error(`${response.status} ${url}`);
+  return Buffer.from(await response.arrayBuffer());
+}
+
+function parseSpreadsheetXmlRows(xml) {
+  return [...String(xml).matchAll(/<(?:\w+:)?Row\b[\s\S]*?<\/(?:\w+:)?Row>/g)].map((match) => {
+    const row = [];
+    for (const cell of match[0].matchAll(/<(?:\w+:)?Cell\b([^>]*)>([\s\S]*?)<\/(?:\w+:)?Cell>/g)) {
+      const index = parseNumber(cell[1].match(/(?:\w+:)?Index="(\d+)"/)?.[1]);
+      const position = index ? index - 1 : row.length;
+      const data = cell[2].match(/<(?:\w+:)?Data\b[^>]*>([\s\S]*?)<\/(?:\w+:)?Data>/)?.[1] ?? "";
+      row[position] = decodeXml(data.replace(/<[^>]+>/g, ""));
+    }
+    return row;
+  });
+}
+
+function parseSharedStrings(xml) {
+  return [...String(xml).matchAll(/<si>([\s\S]*?)<\/si>/g)].map((match) => {
+    const text = [...match[1].matchAll(/<t[^>]*>([\s\S]*?)<\/t>/g)].map((item) => item[1]).join("");
+    return decodeXml(text);
+  });
+}
+
+function parseOpenXmlRows(sheetXml, sharedStrings) {
+  return [...String(sheetXml).matchAll(/<row\b[\s\S]*?<\/row>/g)].map((match) => {
+    const row = [];
+    for (const cell of match[0].matchAll(/<c\b([^>]*)>([\s\S]*?)<\/c>/g)) {
+      const attrs = cell[1];
+      const body = cell[2];
+      const column = attrs.match(/r="([A-Z]+)\d+"/)?.[1];
+      const position = column ? columnToIndex(column) : row.length;
+      let value = body.match(/<v>([\s\S]*?)<\/v>/)?.[1] ?? body.match(/<t[^>]*>([\s\S]*?)<\/t>/)?.[1] ?? "";
+      if (attrs.includes('t="s"')) value = sharedStrings[Number(value)] ?? "";
+      row[position] = decodeXml(value);
+    }
+    return row;
+  });
+}
+
+function readZipEntries(buffer) {
+  let eocd = -1;
+  for (let pos = buffer.length - 22; pos >= 0; pos -= 1) {
+    if (buffer.readUInt32LE(pos) === 0x06054b50) {
+      eocd = pos;
+      break;
+    }
+  }
+  if (eocd < 0) throw new Error("ZIP end of central directory not found");
+  const count = buffer.readUInt16LE(eocd + 10);
+  let position = buffer.readUInt32LE(eocd + 16);
+  const entries = new Map();
+  for (let i = 0; i < count; i += 1) {
+    if (buffer.readUInt32LE(position) !== 0x02014b50) throw new Error("ZIP central directory signature mismatch");
+    const method = buffer.readUInt16LE(position + 10);
+    const compressedSize = buffer.readUInt32LE(position + 20);
+    const nameLength = buffer.readUInt16LE(position + 28);
+    const extraLength = buffer.readUInt16LE(position + 30);
+    const commentLength = buffer.readUInt16LE(position + 32);
+    const localOffset = buffer.readUInt32LE(position + 42);
+    const name = buffer.subarray(position + 46, position + 46 + nameLength).toString("utf8");
+    const localNameLength = buffer.readUInt16LE(localOffset + 26);
+    const localExtraLength = buffer.readUInt16LE(localOffset + 28);
+    const dataStart = localOffset + 30 + localNameLength + localExtraLength;
+    const raw = buffer.subarray(dataStart, dataStart + compressedSize);
+    const data = method === 8 ? zlib.inflateRawSync(raw) : raw;
+    entries.set(name, data.toString("utf8"));
+    position += 46 + nameLength + extraLength + commentLength;
+  }
+  return entries;
+}
+
+function indexMap(headers) {
+  return Object.fromEntries(headers.map((header, index) => [header, index]));
+}
+
+function normalizeTicker(value) {
+  const text = String(value ?? "").trim().toUpperCase();
+  const prefixed = text.match(/^A(\d{6})$/)?.[1];
+  if (prefixed) return prefixed;
+  return /^\d{6}$/.test(text) ? text : null;
+}
+
+function columnToIndex(column) {
+  return [...column].reduce((acc, char) => acc * 26 + char.charCodeAt(0) - 64, 0) - 1;
+}
+
+function decodeXml(value) {
+  return String(value ?? "")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .trim();
+}
+
 function buildHtml(data) {
   const json = JSON.stringify(data).replaceAll("<", "\\u003c").replaceAll("</script", "<\\/script");
   return `<!doctype html>
@@ -654,11 +1040,11 @@ function buildHtml(data) {
     .tag,.badge{display:inline-flex;align-items:center;min-height:24px;padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;white-space:nowrap}.tag{background:rgba(255,255,255,.12);color:#e5edf7}.badge.entry{background:#e5f3f0;color:var(--green)}.badge.wait{background:#fff2db;color:var(--gold)}.badge.avoid{background:#f7e8e6;color:var(--red)}.badge.info{background:#e8eef9;color:var(--blue)}
     .hero,.band{border:1px solid var(--line);border-radius:8px;background:var(--surface)}.hero{padding:28px;margin-bottom:16px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.9fr);gap:20px}.kicker{margin-bottom:9px;color:var(--green);font-size:13px;font-weight:900}.hero p{color:var(--muted)}
     .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:16px}.metric{min-height:108px;padding:16px;border:1px solid var(--line);border-radius:8px;background:#fff}.metric strong{display:block;font-size:27px;line-height:1.1}.metric span{display:block;margin-top:6px;color:var(--muted);font-size:12px}
-    .band{padding:18px;margin-bottom:16px}.head{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;margin-bottom:12px}.head p{max-width:900px;margin-bottom:0;color:var(--muted);font-size:13px}.grid-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{padding:14px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd}.card p{margin-bottom:0;color:var(--muted);font-size:12px}
+    .band{padding:18px;margin-bottom:16px}.head{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;margin-bottom:12px}.head p{max-width:900px;margin-bottom:0;color:var(--muted);font-size:13px}.grid-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.grid-6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.card{padding:14px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd}.card p{margin-bottom:0;color:var(--muted);font-size:12px}.compact strong{display:block;font-size:20px}.compact span{display:block;color:var(--muted);font-size:12px}.callout{margin:10px 0 12px;padding:12px 14px;border:1px solid #c9d9e8;border-radius:8px;background:#f3f8fd;color:#334052;font-size:13px}.list-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}.list-grid .card{min-height:92px}.manager-list{display:flex;flex-wrap:wrap;gap:6px}.manager-chip{display:inline-flex;align-items:center;min-height:23px;padding:2px 7px;border-radius:999px;background:#eef2f6;color:#334052;font-size:12px;font-weight:800}
     .toolbar{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-bottom:12px}.segmented{display:flex;flex-wrap:wrap;gap:6px}.segmented button{min-height:34px;padding:5px 10px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;cursor:pointer;font-size:13px;font-weight:800}.segmented button.active{border-color:var(--green);background:#e5f3f0;color:var(--green)}.search{width:min(360px,100%);min-height:36px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff}
     .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff} table{width:100%;min-width:1380px;border-collapse:collapse} th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px} th{position:sticky;top:0;z-index:1;background:#eef2f6;color:#334052} tr:last-child td{border-bottom:0}.num{font-variant-numeric:tabular-nums;white-space:nowrap}.company{font-weight:900}.note{display:block;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.42}
     .source-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.source-list a{min-height:60px;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;text-decoration:none;font-size:13px}.source-list span{display:block;margin-top:4px;color:var(--muted);font-size:12px} footer{color:var(--muted);font-size:12px}
-    @media(max-width:1180px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.grid-2,.grid-3{grid-template-columns:1fr}}@media(max-width:720px){main{padding:16px}aside{padding:18px}.metrics{grid-template-columns:1fr}h2{font-size:24px}.head{display:block}}
+    @media(max-width:1180px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.grid-2,.grid-3,.grid-6,.list-grid{grid-template-columns:1fr}}@media(max-width:720px){main{padding:16px}aside{padding:18px}.metrics{grid-template-columns:1fr}h2{font-size:24px}.head{display:block}}
   </style>
 </head>
 <body>
@@ -669,6 +1055,8 @@ function buildHtml(data) {
       <nav class="nav-list">
         <a class="nav-link" href="#overview"><span>요약</span><span class="tag">KPI</span></a>
         <a class="nav-link" href="#rules"><span>새 기준</span><span class="tag">Rules</span></a>
+        <a class="nav-link" href="#growthFund"><span>국민성장펀드</span><span class="tag">Policy</span></a>
+        <a class="nav-link" href="#megaManagers"><span>3대 운용사</span><span class="tag">Big 3</span></a>
         <a class="nav-link" href="#entry"><span>진입 가능</span><span class="tag">Entry</span></a>
         <a class="nav-link" href="#wait"><span>트리거 대기</span><span class="tag">Wait</span></a>
         <a class="nav-link" href="#all"><span>전체 테이블</span><span class="tag">All</span></a>
@@ -679,27 +1067,41 @@ function buildHtml(data) {
       <section class="hero" id="overview"><div><p class="kicker">v6 Broad Screener</p><h2>정책 수혜 가능성보다 “지금 들어갈 수 있는 차트인지”를 더 엄격하게 본 새 스크리너입니다.</h2><p>${escapeHtml(data.meta.warning)}</p></div><div class="grid-2"><div class="card"><h4>KOSPI</h4><p><strong>${escapeHtml(data.market.kospi.now)}</strong></p><p>${escapeHtml(data.market.kospi.change)}</p></div><div class="card"><h4>KOSDAQ</h4><p><strong>${escapeHtml(data.market.kosdaq.now)}</strong></p><p>${escapeHtml(data.market.kosdaq.change)}</p></div></div></section>
       <section class="metrics" id="metrics"></section>
       <section class="band" id="rules"><div class="head"><div><h3>새 선별 기준</h3><p>${escapeHtml(data.meta.methodology)}</p></div></div><div class="grid-3" id="rulesGrid"></div></section>
-      <section class="band" id="entry"><div class="head"><div><h3>진입 가능 후보</h3><p>MA20 회복, RSI, 낙폭, 수급, 리스크 페널티를 통과한 후보입니다. 그래도 급락장이라 분할 진입 전제입니다.</p></div></div><div class="table-wrap"><table><thead><tr><th>순위</th><th>회사</th><th>점수</th><th>가격/가치</th><th>기술적 위치</th><th>수급</th><th>거래원</th><th>진입 계획</th><th>리스크</th></tr></thead><tbody id="entryRows"></tbody></table></div></section>
+      <section class="band" id="growthFund"><div class="head"><div><h3>국민성장펀드 정책 검토</h3><p>총량·집행구조·실제 승인 프로젝트를 분리해 봅니다. 정책자금 수혜는 후보 발굴 신호이지, 상장주 진입 신호 자체는 아닙니다.</p></div></div><div class="grid-6" id="growthFundGrid"></div><div class="list-grid" id="growthJudgement"></div><div class="table-wrap"><table><thead><tr><th>회사</th><th>연결 프로젝트</th><th>정책 평가</th><th>v6 판단</th></tr></thead><tbody id="policyProjectRows"></tbody></table></div><div class="table-wrap" style="margin-top:12px;"><table><thead><tr><th>회사</th><th>정책점수</th><th>기술 조건</th><th>평가</th></tr></thead><tbody id="policyRows"></tbody></table></div></section>
+      <section class="band" id="megaManagers"><div class="head"><div><h3>BlackRock·Vanguard·SSGA 보유 신호</h3><p>공개 ETF/인덱스 보유자료와 DART 5% 공시를 매칭했습니다. ETF 보유는 패시브 편입 신호이며 능동적 매집으로 단정하지 않습니다.</p></div></div><div class="callout" id="megaCaveat"></div><div class="grid-6" id="megaMetricGrid"></div><div class="table-wrap"><table><thead><tr><th>회사</th><th>확인 신호</th><th>증거</th><th>해석</th></tr></thead><tbody id="megaRows"></tbody></table></div></section>
+      <section class="band" id="entry"><div class="head"><div><h3>진입 가능 후보</h3><p>MA20 회복, RSI, 낙폭, 수급, 리스크 페널티를 통과한 후보입니다. 그래도 급락장이라 분할 진입 전제입니다.</p></div></div><div class="table-wrap"><table><thead><tr><th>순위</th><th>회사</th><th>점수</th><th>가격/가치</th><th>기술적 위치</th><th>수급</th><th>3대 운용사</th><th>거래원</th><th>진입 계획</th><th>리스크</th></tr></thead><tbody id="entryRows"></tbody></table></div></section>
       <section class="band" id="wait"><div class="head"><div><h3>트리거 대기 후보</h3><p>정책/가치 매력은 있지만 아직 차트가 회복되지 않은 후보입니다.</p></div></div><div class="table-wrap"><table><thead><tr><th>회사</th><th>점수</th><th>기술 조건</th><th>기다릴 트리거</th><th>무효 조건</th></tr></thead><tbody id="waitRows"></tbody></table></div></section>
-      <section class="band" id="all"><div class="toolbar"><div><h3 style="margin-bottom:4px;">전체 재탐색 테이블</h3><p class="muted" style="margin-bottom:0;font-size:13px;">검색과 결정 필터로 확인하세요.</p></div><input class="search" id="search" type="search" placeholder="회사, 섹터, 코드 검색"></div><div class="segmented" id="filters"></div><div class="table-wrap"><table><thead><tr><th>순위</th><th>회사</th><th>결정</th><th>총점</th><th>정책</th><th>가치</th><th>기술</th><th>수급</th><th>메모</th></tr></thead><tbody id="allRows"></tbody></table></div></section>
+      <section class="band" id="all"><div class="toolbar"><div><h3 style="margin-bottom:4px;">전체 재탐색 테이블</h3><p class="muted" style="margin-bottom:0;font-size:13px;">검색과 결정 필터로 확인하세요.</p></div><input class="search" id="search" type="search" placeholder="회사, 섹터, 코드 검색"></div><div class="segmented" id="filters"></div><div class="table-wrap"><table><thead><tr><th>순위</th><th>회사</th><th>결정</th><th>총점</th><th>정책</th><th>가치</th><th>기술</th><th>수급</th><th>3대 운용사</th><th>메모</th></tr></thead><tbody id="allRows"></tbody></table></div></section>
       <section class="band" id="sources"><div class="head"><div><h3>출처</h3><p>Naver Finance 일별 시세, 외국인·기관 순매매, 거래원정보와 금융위원회 공개자료를 사용했습니다.</p></div></div><div class="source-list" id="sourceList"></div></section>
       <footer>생성 스크립트: <code>node scripts/build-v6-broad-screener.mjs</code>. 데이터: <code>data/v6-broad-screener-data.json</code>.</footer>
     </main>
   </div>
   <script>
     const DATA=${json}; let filter="all"; let search="";
-    const metrics=[["분석 유니버스",DATA.meta.validCount+"개","기존 v4 순위 배제"],["진입 가능",DATA.summary.entryOk+"개","기술 조건 통과"],["트리거 대기",DATA.summary.waitTrigger+"개","회복 확인 필요"],["관망/제외",DATA.summary.avoidNow+"개","추세·리스크 미통과"],["최상위",DATA.allRows[0]?.company??"-","총점 "+(DATA.allRows[0]?.totalScore??"-")]];
+    const megaStats=DATA.megaManagers?.summary??{};
+    const metrics=[["분석 유니버스",DATA.meta.validCount+"개","기존 v4 순위 배제"],["진입 가능",DATA.summary.entryOk+"개","기술 조건 통과"],["트리거 대기",DATA.summary.waitTrigger+"개","회복 확인 필요"],["관망/제외",DATA.summary.avoidNow+"개","추세·리스크 미통과"],["운용사 신호",(megaStats.withAny??0)+"개","BlackRock·Vanguard·SSGA 매칭"]];
     document.querySelector("#metrics").innerHTML=metrics.map(([a,b,c])=>\`<div class="metric"><strong>\${escapeHtml(b)}</strong><span>\${escapeHtml(a)} · \${escapeHtml(c)}</span></div>\`).join("");
     document.querySelector("#rulesGrid").innerHTML=DATA.rules.map((r,i)=>\`<div class="card"><h4>\${i+1}. 기준</h4><p>\${escapeHtml(r)}</p></div>\`).join("");
     function decisionClass(d){return d==="ENTRY_OK"?"entry":d==="WAIT_TRIGGER"?"wait":"avoid"}
     function decisionText(d){return d==="ENTRY_OK"?"진입 가능":d==="WAIT_TRIGGER"?"트리거 대기":d==="AVOID_NOW"?"관망/제외":d}
     function broker(row){const b=row.brokers?.d5;if(!b)return"미확인";const buy=(b.buyTop||[]).slice(0,2).map(x=>x.name).join(", ");const sell=(b.sellTop||[]).slice(0,2).map(x=>x.name).join(", ");const net=b.foreignEstimate?.net;return \`\${net==null?"외국계 추정 없음":"외국계 "+net.toLocaleString("ko-KR")+"주"} · 매수 \${buy} / 매도 \${sell}\`}
-    document.querySelector("#entryRows").innerHTML=DATA.entryList.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge entry">\${r.totalScore}</span></td><td>\${price(r.close)}<span class="note">시총 \${eok(r.marketCapEok)} · PER \${r.per??"-"} · PBR \${r.pbr??"-"}</span></td><td>\${escapeHtml(r.technical.memo)}<span class="note">20일 \${pct(r.returns.d20)}, 60일 \${pct(r.returns.d60)}</span></td><td>\${escapeHtml(r.flowScore.memo)}</td><td>\${escapeHtml(broker(r))}</td><td>\${escapeHtml(r.entryPlan.trigger)}<span class="note">\${escapeHtml(r.entryPlan.invalidation)}</span></td><td>\${escapeHtml((r.risk.notes||[]).join(" · ")||"특이 리스크 없음")}</td></tr>\`).join("");
+    document.querySelector("#growthFundGrid").innerHTML=(DATA.growthFundReview?.scale||[]).map(x=>\`<div class="card compact"><strong>\${escapeHtml(x.value)}</strong><span>\${escapeHtml(x.label)}</span><p>\${escapeHtml(x.memo)}</p></div>\`).join("");
+    document.querySelector("#growthJudgement").innerHTML=(DATA.growthFundReview?.judgement||[]).map((x,i)=>\`<div class="card"><h4>평가 \${i+1}</h4><p>\${escapeHtml(x)}</p></div>\`).join("");
+    document.querySelector("#policyProjectRows").innerHTML=(DATA.growthFundReview?.directProjects||[]).map(r=>\`<tr><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td>\${escapeHtml(r.project)}<span class="note">\${escapeHtml(r.evidence)}</span></td><td>정책 \${r.policyScore??"-"}점<span class="note">\${escapeHtml(r.review)}</span></td><td><span class="badge \${decisionClass(r.decision)}">\${decisionText(r.decision)}</span><span class="note">총점 \${r.totalScore??"-"} · \${escapeHtml(r.technicalMemo)}</span></td></tr>\`).join("");
+    document.querySelector("#policyRows").innerHTML=(DATA.growthFundReview?.reviewedRows||[]).map(r=>\`<tr><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><strong>\${r.policyScore}</strong><span class="note">\${escapeHtml(r.policyMemo)}</span></td><td><span class="badge \${decisionClass(r.decision)}">\${decisionText(r.decision)}</span><span class="note">총점 \${r.totalScore} · \${escapeHtml(r.technicalMemo)}</span></td><td>\${escapeHtml(r.assessment)}<span class="note">\${escapeHtml((r.riskNotes||[]).join(" · ")||"특이 리스크 없음")}</span></td></tr>\`).join("");
+    document.querySelector("#megaCaveat").textContent=DATA.megaManagers?.caveat??"";
+    const megaMetrics=[["확인 종목",megaStats.withAny??0,"ETF/인덱스 또는 DART"],["3대 모두",megaStats.allThree??0,"BlackRock·Vanguard·SSGA"],["BlackRock",megaStats.blackRock??0,"EWY 또는 DART"],["Vanguard",megaStats.vanguard??0,"공식 보유 PDF"],["SSGA",megaStats.ssga??0,"SPDW 보유"],["DART 5%+",megaStats.dartLargeHolder??0,"공시급 보유"]];
+    document.querySelector("#megaMetricGrid").innerHTML=megaMetrics.map(([a,b,c])=>\`<div class="card compact"><strong>\${Number(b).toLocaleString("ko-KR")}</strong><span>\${escapeHtml(a)}</span><p>\${escapeHtml(c)}</p></div>\`).join("");
+    document.querySelector("#megaRows").innerHTML=(megaStats.topRows||[]).map(r=>\`<tr><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)} · \${decisionText(r.decision)} \${r.totalScore}점</span></td><td>\${managerChips(r.managers,r.largeHolderDisclosure)}<span class="note">\${escapeHtml(r.status)}</span></td><td>\${managerEvidence(r.managers,r.largeHolderDisclosure)}</td><td>\${escapeHtml(r.interpretation)}</td></tr>\`).join("");
+    document.querySelector("#entryRows").innerHTML=DATA.entryList.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge entry">\${r.totalScore}</span></td><td>\${price(r.close)}<span class="note">시총 \${eok(r.marketCapEok)} · PER \${r.per??"-"} · PBR \${r.pbr??"-"}</span></td><td>\${escapeHtml(r.technical.memo)}<span class="note">20일 \${pct(r.returns.d20)}, 60일 \${pct(r.returns.d60)}</span></td><td>\${escapeHtml(r.flowScore.memo)}</td><td>\${managerCell(r)}</td><td>\${escapeHtml(broker(r))}</td><td>\${escapeHtml(r.entryPlan.trigger)}<span class="note">\${escapeHtml(r.entryPlan.invalidation)}</span></td><td>\${escapeHtml((r.risk.notes||[]).join(" · ")||"특이 리스크 없음")}</td></tr>\`).join("");
     document.querySelector("#waitRows").innerHTML=DATA.triggerList.slice(0,25).map(r=>\`<tr><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge wait">\${r.totalScore}</span></td><td>\${escapeHtml(r.technical.memo)}</td><td>\${escapeHtml(r.entryPlan.trigger)}</td><td>\${escapeHtml(r.entryPlan.invalidation)}</td></tr>\`).join("");
     function renderFilters(){const vals=["all","ENTRY_OK","WAIT_TRIGGER","AVOID_NOW"];document.querySelector("#filters").innerHTML=vals.map(v=>\`<button class="\${filter===v?"active":""}" data-filter="\${v}">\${v==="all"?"전체":decisionText(v)}</button>\`).join("");document.querySelectorAll("#filters button").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;renderFilters();renderAll()}));}
-    function renderAll(){const needle=search.trim().toLowerCase();const rows=DATA.allRows.filter(r=>(filter==="all"||r.decision===filter)&&(!needle||[r.company,r.ticker,r.sector,r.rationale].join(" ").toLowerCase().includes(needle))).slice(0,90);document.querySelector("#allRows").innerHTML=rows.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge \${decisionClass(r.decision)}">\${decisionText(r.decision)}</span></td><td><strong>\${r.totalScore}</strong></td><td>\${r.policy.score}<span class="note">\${escapeHtml(r.policy.memo)}</span></td><td>\${r.value.score}<span class="note">\${escapeHtml(r.value.memo)}</span></td><td>\${r.technical.score}<span class="note">\${escapeHtml(r.technical.memo)}</span></td><td>\${r.flowScore.score}<span class="note">\${escapeHtml(r.flowScore.memo)}</span></td><td>\${escapeHtml(r.entryPlan.action)}<span class="note">\${escapeHtml((r.risk.notes||[]).join(" · "))}</span></td></tr>\`).join("");}
+    function renderAll(){const needle=search.trim().toLowerCase();const rows=DATA.allRows.filter(r=>(filter==="all"||r.decision===filter)&&(!needle||[r.company,r.ticker,r.sector,r.rationale].join(" ").toLowerCase().includes(needle))).slice(0,90);document.querySelector("#allRows").innerHTML=rows.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge \${decisionClass(r.decision)}">\${decisionText(r.decision)}</span></td><td><strong>\${r.totalScore}</strong></td><td>\${r.policy.score}<span class="note">\${escapeHtml(r.policy.memo)}</span></td><td>\${r.value.score}<span class="note">\${escapeHtml(r.value.memo)}</span></td><td>\${r.technical.score}<span class="note">\${escapeHtml(r.technical.memo)}</span></td><td>\${r.flowScore.score}<span class="note">\${escapeHtml(r.flowScore.memo)}</span></td><td>\${managerCell(r)}</td><td>\${escapeHtml(r.entryPlan.action)}<span class="note">\${escapeHtml((r.risk.notes||[]).join(" · "))}</span></td></tr>\`).join("");}
     document.querySelector("#search").addEventListener("input",e=>{search=e.target.value;renderAll()});document.querySelector("#sourceList").innerHTML=DATA.sources.map(s=>\`<a href="\${escapeHtml(s.url)}" target="_blank" rel="noreferrer"><strong>\${escapeHtml(s.title)}</strong><span>\${escapeHtml(s.url)}</span></a>\`).join("");
-    function price(v){return v==null?"-":Number(v).toLocaleString("ko-KR")+"원"} function eok(v){return v==null?"-":Number(v).toLocaleString("ko-KR",{maximumFractionDigits:0})+"억원"} function pct(v){return v==null?"-":Number(v).toLocaleString("ko-KR",{maximumFractionDigits:1})+"%"} function escapeHtml(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
+    function managerCell(row){const mm=row.megaManagers;if(!mm||!mm.managerCount)return'<span class="muted">미확인</span>';return managerChips(mm.managers,mm.largeHolderDisclosure)+\`<span class="note">\${escapeHtml(mm.status)}</span>\`}
+    function managerChips(managers,disclosure){const labels=[...(managers||[]).map(x=>x.manager),...(disclosure?[disclosure.holder+" 5%+"] : [])];return \`<div class="manager-list">\${labels.map(x=>\`<span class="manager-chip">\${escapeHtml(x)}</span>\`).join("")}</div>\`}
+    function managerEvidence(managers,disclosure){const lines=[];(managers||[]).forEach(x=>lines.push(\`\${x.manager}: \${x.vehicle}\${x.weightPct==null?"":" · "+pct(x.weightPct)}\${x.shares==null?"":" · "+shares(x.shares)+"주"}\${x.asOf?" · "+x.asOf:""}\`));if(disclosure)lines.push(\`\${disclosure.holder}: DART 5%+ · \${shares(disclosure.shares)}주 · \${disclosure.ownershipPct}% · \${disclosure.asOf}\`);return lines.map(x=>\`<span class="note">\${escapeHtml(x)}</span>\`).join("")}
+    function price(v){return v==null?"-":Number(v).toLocaleString("ko-KR")+"원"} function eok(v){return v==null?"-":Number(v).toLocaleString("ko-KR",{maximumFractionDigits:0})+"억원"} function pct(v){return v==null?"-":Number(v).toLocaleString("ko-KR",{maximumFractionDigits:2})+"%"} function shares(v){return v==null?"-":Number(v).toLocaleString("ko-KR",{maximumFractionDigits:0})} function escapeHtml(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
     renderFilters();renderAll();
   </script>
 </body>
