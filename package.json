@@ -14,6 +14,7 @@
     "build": "node scripts/build-html.mjs",
     "check": "node scripts/check-data.mjs",
     "fund-dashboard": "node scripts/build-national-growth-fund-dashboard.mjs",
-    "v5": "node scripts/build-v5-portfolio.mjs"
+    "v5": "node scripts/build-v5-portfolio.mjs",
+    "v6": "node scripts/build-v6-broad-screener.mjs"
   }
 }
