@@ -12,6 +12,7 @@
     "v4": "python scripts/fetch-v4-study-data.py && python scripts/enrich-v4-big3-ownership.py && node scripts/build-v4-html.mjs",
     "apply-validations": "node scripts/apply-agent-validations.mjs",
     "build": "node scripts/build-html.mjs",
-    "check": "node scripts/check-data.mjs"
+    "check": "node scripts/check-data.mjs",
+    "fund-dashboard": "node scripts/build-national-growth-fund-dashboard.mjs"
   }
 }

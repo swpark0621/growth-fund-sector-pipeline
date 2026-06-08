@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>국민성장펀드 집행 현황 대시보드</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --ink: #141a22;
+      --muted: #5f6b7a;
+      --line: #d8dee7;
+      --surface: #ffffff;
+      --surface-2: #eef2f6;
+      --nav: #18212e;
+      --green: #0b6b5d;
+      --blue: #2e5ea8;
+      --gold: #9a6515;
+      --red: #8d3a35;
+      --violet: #6b4aa3;
+      --teal-soft: #e5f3f0;
+      --blue-soft: #e8eef9;
+      --gold-soft: #fff2db;
+      --red-soft: #f7e8e6;
+      --violet-soft: #eee9f7;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    .layout {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+    }
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 24px 20px;
+      background: var(--nav);
+      color: #f8fafc;
+    }
+    main { min-width: 0; padding: 28px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 8px; font-size: 22px; line-height: 1.25; letter-spacing: 0; }
+    h2 { margin-bottom: 8px; font-size: 30px; line-height: 1.2; letter-spacing: 0; }
+    h3 { margin-bottom: 10px; font-size: 17px; letter-spacing: 0; }
+    .brand p { margin-bottom: 18px; color: #cbd5df; font-size: 13px; }
+    .side-box {
+      display: grid;
+      gap: 7px;
+      margin: 16px 0;
+      padding: 13px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      font-size: 12px;
+      color: #d8e1eb;
+    }
+    .nav-list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+    .nav-link {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 10px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      background: rgba(255,255,255,.05);
+      color: #f8fafc;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .nav-link:hover { background: #ffffff; color: var(--ink); }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      color: #e5edf7;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(300px, .9fr);
+      gap: 20px;
+      align-items: stretch;
+      padding: 28px;
+      margin-bottom: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .kicker { margin-bottom: 9px; color: var(--green); font-size: 13px; font-weight: 900; }
+    .hero p, .muted { color: var(--muted); }
+    .hero-panel {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .hero-stat {
+      min-height: 92px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+    }
+    .hero-stat strong { display: block; font-size: 28px; line-height: 1.1; }
+    .hero-stat span { color: var(--muted); font-size: 12px; }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .metric {
+      min-height: 112px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .metric strong { display: block; font-size: 27px; line-height: 1.1; }
+    .metric span { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; }
+    .section-band {
+      padding: 18px;
+      margin-bottom: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .section-head {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .section-head p { max-width: 860px; margin-bottom: 0; color: var(--muted); font-size: 13px; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+      gap: 14px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .mini-card {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+    }
+    .mini-card h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+    .mini-card p { margin-bottom: 0; color: var(--muted); font-size: 12px; }
+    .progress-list { display: grid; gap: 10px; }
+    .progress-row {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr) 96px;
+      gap: 10px;
+      align-items: center;
+      min-height: 42px;
+    }
+    .progress-label strong { display: block; font-size: 13px; }
+    .progress-label span { display: block; color: var(--muted); font-size: 11px; }
+    .bar {
+      height: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: var(--surface-2);
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: var(--green);
+    }
+    .bar-fill.direct { background: var(--green); }
+    .bar-fill.indirect { background: var(--violet); }
+    .bar-fill.infra { background: var(--blue); }
+    .bar-fill.loan { background: var(--gold); }
+    .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .segmented {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .segmented button {
+      min-height: 34px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .segmented button.active {
+      border-color: var(--green);
+      background: var(--teal-soft);
+      color: var(--green);
+    }
+    .search {
+      width: min(360px, 100%);
+      min-height: 36px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    table { width: 100%; min-width: 1280px; border-collapse: collapse; }
+    th, td {
+      padding: 10px 11px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+    th { position: sticky; top: 0; z-index: 1; background: #eef2f6; color: #334052; }
+    tr:last-child td { border-bottom: 0; }
+    .entity { font-weight: 900; }
+    .note { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.42; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .badge.direct { background: var(--teal-soft); color: var(--green); }
+    .badge.indirect { background: var(--violet-soft); color: var(--violet); }
+    .badge.infra { background: var(--blue-soft); color: var(--blue); }
+    .badge.loan { background: var(--gold-soft); color: var(--gold); }
+    .badge.plan { background: var(--surface-2); color: #475569; }
+    .badge.warn { background: var(--red-soft); color: var(--red); }
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      padding-left: 18px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 9px;
+      bottom: 9px;
+      width: 2px;
+      background: var(--line);
+    }
+    .timeline-item {
+      position: relative;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 18px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid var(--surface);
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 1px var(--line);
+    }
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-items: center;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .timeline-item h4 { margin: 0 0 5px; font-size: 14px; letter-spacing: 0; }
+    .timeline-item p { margin: 0; color: var(--muted); font-size: 12px; }
+    .manager-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .manager-list {
+      display: grid;
+      gap: 7px;
+      margin-top: 10px;
+    }
+    .manager-row {
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .manager-row strong { display: block; font-size: 12px; }
+    .manager-row span { display: block; color: var(--muted); font-size: 11px; }
+    .source-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+    .source-link {
+      min-height: 74px;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+      text-decoration: none;
+    }
+    .source-link:hover { border-color: var(--blue); }
+    .source-link strong { display: block; margin-bottom: 4px; font-size: 13px; }
+    .source-link span { display: block; color: var(--muted); font-size: 12px; }
+    .compact-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .compact-list li {
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+      font-size: 13px;
+    }
+    .footer { margin-top: 18px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 1280px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .manager-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      main { padding: 16px; }
+      aside { padding: 18px; }
+      .hero, .grid-2 { grid-template-columns: 1fr; }
+      .grid-3, .metrics, .manager-grid, .source-list { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .progress-row { grid-template-columns: 1fr; }
+      .hero-panel { grid-template-columns: 1fr; }
+      h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <div class="brand">
+        <h1>국민성장펀드 집행 현황 대시보드</h1>
+        <p>승인금액, 투자계획, 운용주체, 판매·펀드레이징 단계 추적</p>
+      </div>
+      <div class="side-box">
+        <span>기준일: 2026-06-08</span>
+        <span>공식 누적: 12.5조원</span>
+        <span>승인 건수: 16건</span>
+        <span>기금 승인: 5.17조원</span>
+      </div>
+      <nav class="nav-list" aria-label="대시보드 섹션">
+        <a class="nav-link" href="#overview"><span>요약</span><span class="tag">KPI</span></a>
+        <a class="nav-link" href="#plan"><span>사용 계획</span><span class="tag">30조</span></a>
+        <a class="nav-link" href="#timeline"><span>타임라인</span><span class="tag">2025-2026</span></a>
+        <a class="nav-link" href="#approvals"><span>승인 내역</span><span class="tag">16건</span></a>
+        <a class="nav-link" href="#operators"><span>집행 주체</span><span class="tag">GP/LP</span></a>
+        <a class="nav-link" href="#sources"><span>출처</span><span class="tag">공식/시장</span></a>
+      </nav>
+    </aside>
+    <main>
+      <section class="hero" id="overview">
+        <div>
+          <p class="kicker">National Growth Fund Monitor</p>
+          <h2>국민성장펀드의 계획, 승인, 운용사 선정, 국민참여형 판매 흐름을 한 화면에서 추적합니다.</h2>
+          <p>공개자료는 실제 현금 지급액보다 승인금액, 자금공급 결정액, 펀드 조성 목표를 중심으로 공시되어 있다. 따라서 이 대시보드의 &#039;집행&#039;은 별도 표기가 없는 한 승인/자금공급 결정 기준이다.</p>
+        </div>
+        <div class="hero-panel" id="heroStats"></div>
+      </section>
+
+      <section class="metrics" id="metrics"></section>
+
+      <section class="section-band" id="plan">
+        <div class="section-head">
+          <div>
+            <h3>총 규모와 2026년 사용 계획</h3>
+            <p>5년 총 150조원 중 2026년 공급 목표는 30조원입니다. 5월 28일 공식 누적 기준으로 직접투자, 인프라투융자, 저리대출에서 12.5조원이 승인됐고, 간접투자는 별도 운용사 선정과 펀드 결성 절차가 진행 중입니다.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="mini-card">
+            <h4>방식별 목표 대비 승인</h4>
+            <div class="progress-list" id="methodProgress"></div>
+          </div>
+          <div class="mini-card">
+            <h4>국민참여형 구조</h4>
+            <div id="publicFund"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band" id="timeline">
+        <div class="section-head">
+          <div>
+            <h3>타임라인</h3>
+            <p>정책 발표부터 프로젝트 승인, 국민참여형 판매, 간접투자 GP 선정까지의 진행 상태입니다.</p>
+          </div>
+          <div class="segmented" id="timelineFilters"></div>
+        </div>
+        <div class="timeline" id="timelineList"></div>
+      </section>
+
+      <section class="section-band" id="approvals">
+        <div class="toolbar">
+          <div>
+            <h3 style="margin-bottom:4px;">프로젝트별 승인·자금공급 결정 내역</h3>
+            <p class="muted" style="margin-bottom:0;font-size:13px;">개별 합산 12.47조원은 공식 반올림 누적 12.5조원과 맞춰 읽어야 합니다.</p>
+          </div>
+          <input class="search" id="approvalSearch" type="search" placeholder="기업, 산업, 지역 검색" aria-label="승인 내역 검색">
+        </div>
+        <div class="segmented" id="approvalFilters" style="margin-bottom:12px;"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>일자</th>
+                <th>기업·사업</th>
+                <th>방식</th>
+                <th>승인액</th>
+                <th>기금 부담</th>
+                <th>지역·산업</th>
+                <th>수단·주체</th>
+                <th>목적과 비고</th>
+              </tr>
+            </thead>
+            <tbody id="approvalRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="section-head">
+          <div>
+            <h3>승인 전·준비 중 파이프라인</h3>
+            <p>2차 메가프로젝트 중 공개자료상 아직 개별 승인액으로 잡히지 않은 항목입니다.</p>
+          </div>
+        </div>
+        <div class="grid-3" id="pipelineGrid"></div>
+      </section>
+
+      <section class="section-band" id="operators">
+        <div class="section-head">
+          <div>
+            <h3>집행 주체와 운용사</h3>
+            <p>정책 총괄, 기금 심의, 모펀드, 공모펀드, 자펀드, 판매사를 분리했습니다. 간접투자는 운용사 선정 이후에도 실제 기업 투자까지는 펀드 결성과 LP 모집 단계가 필요합니다.</p>
+          </div>
+        </div>
+        <div class="grid-3" id="operatorGrid"></div>
+      </section>
+
+      <section class="section-band">
+        <div class="section-head">
+          <div>
+            <h3>운용사·판매채널 매트릭스</h3>
+            <p>국민참여형과 정책성펀드 운용사 선정 현황을 증권사 투자현황식으로 구분했습니다.</p>
+          </div>
+        </div>
+        <div class="manager-grid" id="managerGrid"></div>
+      </section>
+
+      <section class="section-band">
+        <div class="section-head">
+          <div>
+            <h3>국민참여형 판매사</h3>
+            <p>공모펀드 운용사별 은행·증권 판매채널입니다.</p>
+          </div>
+        </div>
+        <div class="grid-3" id="salesGrid"></div>
+      </section>
+
+      <section class="section-band" id="sources">
+        <div class="section-head">
+          <div>
+            <h3>출처</h3>
+            <p>공식 금융위원회 자료를 우선 사용했고, 공식 HTML에 누락된 세부 금액이나 최신 GP 명단은 시장 보도 출처로 보완했습니다.</p>
+          </div>
+        </div>
+        <div class="source-list" id="sourceList"></div>
+      </section>
+
+      <p class="footer">생성 스크립트: <code>node scripts/build-national-growth-fund-dashboard.mjs</code>. 데이터: <code>data/national-growth-fund-dashboard.json</code>.</p>
+    </main>
+  </div>
+  <script>
+    const DATA = {"meta":{"title":"국민성장펀드 집행 현황 대시보드","asOf":"2026-06-08","dataCutoff":"2026-05-28 공식 누적 승인자료 및 2026-05-27 간접투자 GP 선정 보도 기준","currency":"KRW","unit":"조원","disclosureNote":"공개자료는 실제 현금 지급액보다 승인금액, 자금공급 결정액, 펀드 조성 목표를 중심으로 공시되어 있다. 따라서 이 대시보드의 '집행'은 별도 표기가 없는 한 승인/자금공급 결정 기준이다.","officialCumulativeApprovedTn":12.5,"officialCumulativeFundApprovedTn":5.17,"officialApprovedCount":16,"officialLocalSharePct":41},"fundingPlan":{"fiveYear":{"totalTn":150,"period":"2026-2030","components":[{"name":"첨단전략산업기금","amountTn":75,"description":"정부보증채권 기반의 정책 재원. 산은과 기금운용심의회가 직접투자, 인프라투융자, 저리대출을 중심으로 운용한다."},{"name":"민간·국민·금융권 자금","amountTn":75,"description":"금융회사, 연기금, 국민참여형 펀드, 민간 GP 매칭자금 등으로 구성된다."}],"fiscalBackstop2026Tn":1,"expectedValueAddedTn":125},"annual2026":{"totalTn":30,"methods":[{"id":"direct","name":"직접투자","targetTn":3,"approvedTn":2,"fundApprovedTn":0.72,"lead":"첨단전략산업기금운용심의회 + 민간자율참여","status":"승인 진행","description":"대규모 증자, 스케일업, 전략기업 직접 지분투자."},{"id":"indirect","name":"간접투자","targetTn":7,"approvedTn":null,"fundApprovedTn":null,"lead":"민간운용사 다수, 재정모펀드, 산업은행","status":"운용사 선정·펀드레이징","description":"국민참여형 0.6조원, 일반정책성펀드 6.4조원 중심. 2026년 5월 기준 자펀드 운용사 선정 및 모집 절차 진행."},{"id":"infra","name":"인프라투융자","targetTn":10,"approvedTn":6.6,"fundApprovedTn":1.27,"lead":"첨단전략산업기금운용심의회 + 민간자율참여","status":"승인 진행","description":"해상풍력, AI 컴퓨팅센터, 데이터센터 등 대규모 산업 인프라."},{"id":"loan","name":"초저리대출","targetTn":10,"approvedTn":3.91,"fundApprovedTn":3.18,"lead":"첨단전략산업기금운용심의회 + 산업은행·시중은행 공동대출","status":"승인 진행","description":"국고채 수준 저리, 장기 대출. 대규모 설비투자, R&D, 지역 중소·중견기업 지원."}]},"publicParticipation":{"name":"국민참여형 국민성장펀드","targetTotalTn":0.72,"publicRaiseTn":0.6,"fiscalJuniorTn":0.12,"seedInvestmentTn":0.0006,"plannedPublicRaiseFiveYearsTn":3,"salePeriod":"2026-05-22 ~ 2026-06-11","status":"판매 진행, 첫날 상당 물량 소진","termYears":5,"riskAbsorptionPct":20,"taxBenefits":["투자금액 3천만원 이하 40%, 3천만~5천만원 20%, 5천만~7천만원 10% 소득공제","배당소득 9% 분리과세, 투자일로부터 5년","전용계좌 기준 5년간 2억원, 연간 1억원 한도"],"mainInvestmentRule":"자펀드 결성금액의 60% 이상을 12개 첨단전략산업 및 관련기업에 투자. 결성금액의 30% 이상은 비상장기업 또는 코스닥 기술특례상장사 신규자금 공급으로 운용."}},"cumulative":{"asOf":"2026-05-28","officialApprovedTn":12.5,"officialFundApprovedTn":5.17,"officialApprovedCount":16,"approvedByMethodTn":{"direct":2,"infra":6.6,"loan":3.91},"fundByMethodTn":{"direct":0.72,"infra":1.27,"loan":3.18},"localSharePct":41,"computedProjectSumTn":12.4715,"privateAndOtherApprovedTn":7.33},"operators":[{"name":"금융위원회","role":"정책 총괄, 전략위원회 운영, 보도자료 및 운용방안 공표","scope":"전체 펀드 운용방향과 성과 점검"},{"name":"한국산업은행","role":"첨단전략산업기금 운용 실무, 금융주선, 위탁운용사 선정 지원","scope":"직접투자, 인프라투융자, 저리대출, 간접투자 출자사업"},{"name":"첨단전략산업기금운용심의회","role":"개별 투자·대출·인프라 지원 승인","scope":"기금 재원 승인 및 위험분담"},{"name":"재정모펀드 운용사","role":"정부 재정 후순위·마중물 재원 관리, 자펀드 관리","scope":"한국성장금융투자운용, 신한자산운용, 우리자산운용"},{"name":"공모펀드 운용사","role":"국민참여형 공모펀드 자금 모집과 모펀드 운용","scope":"미래에셋자산운용, 삼성자산운용, KB자산운용"},{"name":"자펀드 운용사","role":"실제 기업 투자 집행","scope":"국민참여형 10개 운용사, 정책성펀드 1차 GP 11개사 등"},{"name":"은행·증권 판매사","role":"국민참여형 펀드 판매 채널","scope":"은행 10개사, 증권사 15개사"},{"name":"민간 금융기관·연기금","role":"LP 출자, 공동대출, 인프라 금융 참여","scope":"5대 은행, 보험, 연기금, 증권, 기타 기관투자자"}],"managerGroups":[{"name":"재정모펀드","status":"선정 완료","amountTn":0.45,"items":[{"manager":"한국성장금융투자운용","mandate":"국민참여형 1,200억원, 일반정책성펀드 집중지원 900억원","amountTn":0.21},{"manager":"신한자산운용","mandate":"일반정책성펀드 산업전반 지원","amountTn":0.16},{"manager":"우리자산운용","mandate":"초장기 기술투자","amountTn":0.08}]},{"name":"국민참여형 공모펀드","status":"선정 완료","amountTn":0.6,"items":[{"manager":"미래에셋자산운용","mandate":"공모펀드 운용, 판매채널 6개"},{"manager":"삼성자산운용","mandate":"공모펀드 운용, 판매채널 9개"},{"manager":"KB자산운용","mandate":"공모펀드 운용, 판매채널 10개"}]},{"name":"국민참여형 자펀드","status":"선정 완료","amountTn":0.6,"items":[{"manager":"디에스자산운용","mandate":"대형 1,200억원"},{"manager":"미래에셋자산운용","mandate":"대형 1,200억원"},{"manager":"라이프자산운용","mandate":"중형 800억원"},{"manager":"마이다스에셋자산운용","mandate":"중형 800억원"},{"manager":"타임폴리오자산운용","mandate":"중형 800억원, 코스닥벤처펀드"},{"manager":"한국투자밸류자산운용","mandate":"중형 800억원"},{"manager":"더제이자산운용","mandate":"소형 400억원, 코스닥벤처펀드"},{"manager":"수성자산운용","mandate":"소형 400억원, 코스닥벤처펀드"},{"manager":"오라이언자산운용","mandate":"소형 400억원"},{"manager":"KB자산운용","mandate":"소형 400억원"}]},{"name":"정책성펀드 1차 GP","status":"2026-05-27 시장보도 기준 선정 완료, 펀드레이징","amountTn":3.9,"items":[{"manager":"삼호그린인베스트먼트","mandate":"도전 리그"},{"manager":"에이스톤벤처스","mandate":"도전 리그"},{"manager":"아주아이비투자","mandate":"소형 리그"},{"manager":"파라투스인베스트먼트","mandate":"소형 리그"},{"manager":"스카이레이크에쿼티파트너스","mandate":"생태계 전반 대형 리그"},{"manager":"에이티넘인베스트먼트","mandate":"생태계 전반 대형 리그"},{"manager":"미래에셋벤처투자/브레인자산운용","mandate":"코스닥 리그, Co-GP"},{"manager":"웰투시인베스트먼트","mandate":"M&A 리그"},{"manager":"대신프라이빗에쿼티","mandate":"AI·반도체 중형 리그"},{"manager":"인터베스트","mandate":"AI·반도체 중형 리그"},{"manager":"키움프라이빗에쿼티","mandate":"프로젝트 위탁 리그"}]}],"salesChannels":[{"publicFundManager":"미래에셋자산운용","banks":["부산은행","우리은행","하나은행"],"securities":["NH투자증권","미래에셋증권","유안타증권"]},{"publicFundManager":"삼성자산운용","banks":["경남은행","광주은행","농협은행","신한은행"],"securities":["메리츠증권","삼성증권","신한투자증권","우리투자증권","하나증권"]},{"publicFundManager":"KB자산운용","banks":["국민은행","기업은행","아이엠뱅크"],"securities":["KB증권","대신증권","신영증권","아이엠증권","키움증권","한국투자증권","한화투자증권"]}],"timeline":[{"date":"2025-09-10","title":"5년 150조원 조성방안 발표","category":"계획","amountTn":150,"description":"첨단전략산업기금 75조원과 민간·국민·금융권 자금 75조원 구조를 발표."},{"date":"2025-12-16","title":"2026년 30조원 운용방안 확정","category":"계획","amountTn":30,"description":"직접투자 3조원, 간접투자 7조원, 인프라투융자 10조원, 초저리대출 10조원."},{"date":"2025-12-19","title":"1차 메가프로젝트 7건 발표","category":"프로젝트","amountTn":null,"description":"K-엔비디아, 국가 AI컴퓨팅센터, 신안우이 해상풍력, AI반도체 공장 등."},{"date":"2026-01-15","title":"간접투자 재정모펀드 선정공고","category":"운용사","amountTn":0.45,"description":"2026년 간접투자 재정 4,500억원 관리 운용사 선정 절차 개시."},{"date":"2026-01-29","title":"1호 승인: 신안우이 해상풍력","category":"승인","amountTn":3.4,"description":"전남 신안 해상풍력 3.4조원 프로젝트. 첨단기금 7,500억원 선·후순위 장기대출 참여."},{"date":"2026-02-26","title":"이수스페셜티케미컬·삼성전자 승인, 재정모펀드 3개사 선정","category":"승인","amountTn":2.6,"description":"울산 이차전지 소재 0.1조원, 평택 AI반도체 2.5조원 저리대출. 재정모펀드 운용사는 한국성장금융·신한·우리."},{"date":"2026-03-13","title":"국민참여형 공모펀드 운용사 선정","category":"운용사","amountTn":0.6,"description":"미래에셋자산운용, 삼성자산운용, KB자산운용 3개사 선정."},{"date":"2026-03-26","title":"리벨리온 직접투자 승인","category":"승인","amountTn":0.6,"description":"AI 반도체 NPU 양산 및 차세대 제품 개발. 국민성장펀드 6,000억원, 첨단기금 2,500억원."},{"date":"2026-04-14","title":"제2차 전략위원회, 2차 메가프로젝트 발표","category":"계획","amountTn":null,"description":"바이오 백신, OLED, 미래모빌리티·방산, 소버린 AI, 에너지인프라, 새만금 첨단벨트."},{"date":"2026-04-15","title":"네이버·샘씨엔에스 승인","category":"승인","amountTn":0.42,"description":"네이버 AI 데이터센터·GPU 4,000억원 저리대출, 샘씨엔에스 200억원 저리대출 보도."},{"date":"2026-04-30","title":"업스테이지 등 5건 승인","category":"승인","amountTn":1.3115,"description":"업스테이지, 국가 AI컴퓨팅센터, 퓨처그라프, 에스티젠바이오, 후성. 4월까지 누적 8.37조원."},{"date":"2026-05-06","title":"국민참여형 판매계획·10개 자펀드 발표","category":"판매","amountTn":0.72,"description":"국민 모집 6,000억원, 재정 후순위 1,200억원, 2026년 5월 22일 판매 개시 계획."},{"date":"2026-05-22","title":"국민참여형 판매 시작","category":"판매","amountTn":0.6,"description":"은행 10개사와 증권사 15개사를 통한 선착순 판매. 첫날 상당 물량 소진."},{"date":"2026-05-27","title":"정책성펀드 1차 GP 11곳 선정","category":"운용사","amountTn":3.9,"description":"간접투자 정책성펀드 1차 자펀드 운용사 11개사 선정, 펀드레이징 단계."},{"date":"2026-05-28","title":"퓨리오사AI 등 5건 승인, 누적 16건 12.5조원","category":"승인","amountTn":4.14,"description":"직접투자·인프라투융자·저리대출 신규 5건 승인. 첨단전략산업기금 누적승인액 5.17조원."}],"approvals":[{"date":"2026-01-29","project":"신안우이 해상풍력 발전사업","entity":"신안우이 해상풍력","sector":"에너지·인프라","method":"infra","region":"전남 신안, 지방","status":"승인","approvedAmountTn":3.4,"projectCostTn":3.4,"fundCommitmentTn":0.75,"privateOrOtherTn":2.65,"instrument":"선·후순위 장기대출, 18~19년","owner":"첨단전략산업기금, 한국산업은행·KB국민은행 금융주선, 국내 금융기관","purpose":"지방 첨단산업단지 전력수요 대응, 국내자본 대규모 해상풍력, 조선·케이블 생태계 파급.","note":"2029년 본격 가동 계획."},{"date":"2026-02-26","project":"평택 5라인 AI반도체 클러스터 구축","entity":"삼성전자","sector":"반도체","method":"loan","region":"경기 평택, 수도권","status":"승인","approvedAmountTn":2.5,"projectCostTn":8.8,"fundCommitmentTn":2,"privateOrOtherTn":0.5,"instrument":"5년 저리대출","owner":"첨단전략산업기금 2조원, 5대 시중은행 0.5조원","purpose":"HBM·AI 반도체 생산기지 조기 가동, 반도체 생태계 상생 보증프로그램 2,000억원 연계.","note":"삼성전자는 P5 1단계 설비투자 8.8조원 중 6.3조원을 자체조달."},{"date":"2026-02-26","project":"울산 차세대 이차전지 소재공장","entity":"이수스페셜티케미컬","sector":"이차전지","method":"loan","region":"울산 울주, 지방","status":"승인","approvedAmountTn":0.1,"projectCostTn":null,"fundCommitmentTn":0.1,"privateOrOtherTn":null,"instrument":"10년 장기 저리대출, 3% 초반대","owner":"첨단전략산업기금","purpose":"전고체배터리 핵심소재 황화리튬 공급망 국산화와 울산 이차전지 특화단지 강화.","note":"2029년 말까지 대규모 투자 계획."},{"date":"2026-03-26","project":"AI 반도체 NPU 양산 및 차세대 개발","entity":"리벨리온","sector":"AI·반도체","method":"direct","region":"수도권","status":"승인","approvedAmountTn":0.6,"projectCostTn":0.6,"fundCommitmentTn":0.25,"privateOrOtherTn":0.35,"instrument":"직접 지분투자","owner":"첨단전략산업기금, 민간 투자자","purpose":"국내 NPU 팹리스의 양산과 차세대 AI 반도체 개발.","note":"직접투자 첫 번째 승인 사례."},{"date":"2026-04-15","project":"AI 데이터센터 증설·GPU 서버 도입","entity":"네이버","sector":"AI","method":"loan","region":"세종 등","status":"승인","approvedAmountTn":0.4,"projectCostTn":0.9221,"fundCommitmentTn":0.34,"privateOrOtherTn":0.06,"instrument":"저리대출","owner":"첨단전략산업기금 3,400억원, 산업은행 본체 600억원","purpose":"하이퍼클로바X 등 소버린 AI 풀스택 인프라 확충.","note":"AI 데이터센터와 GPU 도입자금."},{"date":"2026-04-15","project":"반도체 테스트 공정 부품 공장증설","entity":"샘씨엔에스","sector":"반도체 소재·부품","method":"loan","region":"충북 청주, 지방","status":"승인","approvedAmountTn":0.02,"projectCostTn":null,"fundCommitmentTn":0.02,"privateOrOtherTn":null,"instrument":"저리대출","owner":"첨단전략산업기금","purpose":"반도체 테스트 장비 핵심 세라믹 STF 생산능력 확대.","note":"금액은 충북도·언론 보도 기준 200억원."},{"date":"2026-04-30","project":"차세대 B2B AI모델 개발 및 인프라 확보","entity":"업스테이지","sector":"AI","method":"direct","region":"수도권","status":"승인","approvedAmountTn":0.56,"projectCostTn":0.56,"fundCommitmentTn":0.1,"privateOrOtherTn":0.46,"instrument":"직접 지분투자","owner":"첨단전략산업기금 1,000억원, 민간 투자자","purpose":"소버린 AI 대표기업의 LLM 개발, 고순도 데이터 확보, 포털 협력.","note":"정책영상은 5,600억원대 직접투자 안건으로 설명."},{"date":"2026-04-30","project":"국가 AI컴퓨팅센터 구축","entity":"SPC, 국가 AI컴퓨팅센터","sector":"AI·인프라","method":"infra","region":"전남 해남, 지방","status":"승인","approvedAmountTn":0.4,"projectCostTn":2,"fundCommitmentTn":null,"privateOrOtherTn":null,"instrument":"지분출자·향후 대출 추진","owner":"국민성장펀드, 첨단전략산업기금, 민간 SPC","purpose":"GPU 1.5만장 이상 AI 컴퓨팅센터 구축, 국내 AI 연구개발·국산 AI반도체 생태계 지원.","note":"4,000억원 SPC 자본금 재원조달 연계 확정, 향후 최대 2조원 이상 대출 추진."},{"date":"2026-04-30","project":"새만금 음극재 핵심소재 생산공장","entity":"퓨처그라프","sector":"이차전지","method":"loan","region":"새만금, 지방","status":"승인","approvedAmountTn":0.25,"projectCostTn":null,"fundCommitmentTn":null,"privateOrOtherTn":null,"instrument":"저리대출","owner":"첨단전략산업기금","purpose":"음극재 핵심소재 공급망 안정화.","note":"공개자료상 2,500억원 저리대출."},{"date":"2026-04-30","project":"바이오시밀러 생산공장 증축","entity":"에스티젠바이오","sector":"바이오","method":"loan","region":"인천 송도, 수도권","status":"승인","approvedAmountTn":0.085,"projectCostTn":null,"fundCommitmentTn":null,"privateOrOtherTn":null,"instrument":"장기·저리대출","owner":"첨단전략산업기금","purpose":"국내 바이오시밀러 CDMO 생산역량 확대.","note":"공개자료상 850억원."},{"date":"2026-04-30","project":"반도체 공정용 고순도 불화수소가스 증설","entity":"후성","sector":"반도체 소재","method":"loan","region":"울산, 지방","status":"승인","approvedAmountTn":0.0165,"projectCostTn":null,"fundCommitmentTn":0.0165,"privateOrOtherTn":null,"instrument":"저리대출","owner":"첨단전략산업기금","purpose":"반도체 식각·세정용 소재 국산화와 공급망 안정화.","note":"공개자료상 165억원."},{"date":"2026-05-28","project":"고성능 NPU 양산 및 차세대 제품 개발","entity":"퓨리오사AI","sector":"AI·반도체","method":"direct","region":"수도권","status":"승인","approvedAmountTn":0.8,"projectCostTn":0.8,"fundCommitmentTn":0.37,"privateOrOtherTn":0.43,"instrument":"직접 지분투자","owner":"첨단전략산업기금 3,700억원, 민간·해외 투자자","purpose":"레니게이드 양산 확대와 HBM4 기반 차세대 NPU 개발.","note":"국민성장펀드 총 8,000억원 내외 예정."},{"date":"2026-05-28","project":"게임·AI 콘텐츠 데이터센터 건설","entity":"스마일게이트","sector":"AI·콘텐츠·인프라","method":"infra","region":"수도권","status":"승인","approvedAmountTn":2.8,"projectCostTn":null,"fundCommitmentTn":0.5,"privateOrOtherTn":2.3,"instrument":"인프라투융자, 후순위 대출 포함","owner":"첨단전략산업기금 5,000억원, 민간 금융","purpose":"AI 콘텐츠 제작능력 고도화, 글로벌 빅테크 데이터센터 의존 완화.","note":"승인액은 5월 누적 인프라투융자 증가분 기준. 텍스트상 기금 투융자는 5,000억원."},{"date":"2026-05-28","project":"폐렴구균 3상 신약개발","entity":"SK바이오사이언스","sector":"바이오·백신","method":"loan","region":"수도권·지방","status":"승인","approvedAmountTn":0.3,"projectCostTn":null,"fundCommitmentTn":0.3,"privateOrOtherTn":null,"instrument":"대출","owner":"첨단전략산업기금","purpose":"차세대 프리미엄 백신시장 진출 및 백신주권 강화.","note":"공개자료상 3,000억원 대출."},{"date":"2026-05-28","project":"LFP 이차전지 양극재 양산","entity":"엘앤에프플러스","sector":"이차전지","method":"loan","region":"대구, 지방","status":"승인","approvedAmountTn":0.22,"projectCostTn":null,"fundCommitmentTn":0.17,"privateOrOtherTn":0.05,"instrument":"저리대출","owner":"첨단전략산업기금, 산업은행","purpose":"국내 최초·최대 규모 LFP 양극재 양산시설 구축과 공급망 내재화.","note":"공개자료상 2,200억원 대출."},{"date":"2026-05-28","project":"AI 데이터센터용 배전반 생산역량 확대","entity":"근우","sector":"전력기기·인프라","method":"loan","region":"충북 음성, 지방","status":"승인","approvedAmountTn":0.02,"projectCostTn":null,"fundCommitmentTn":0.02,"privateOrOtherTn":null,"instrument":"저리대출","owner":"첨단전략산업기금","purpose":"AI 데이터센터 전력기기 생산·설치역량 확대.","note":"공개자료상 200억원 대출 신청 및 승인."}],"projectPipeline":[{"name":"2차 메가프로젝트: OLED 초격차 확보","method":"loan","plannedScaleTn":5.9,"status":"발표, 승인 전","region":"지방·수도권"},{"name":"2차 메가프로젝트: 미래모빌리티·방산지원","method":"loan","plannedScaleTn":1.4,"status":"발표, 승인 전","region":"수도권·지방"},{"name":"2차 메가프로젝트: 에너지인프라 구축","method":"infra","plannedScaleTn":1,"status":"발표, 승인 전","region":"지방"},{"name":"2차 메가프로젝트: 새만금 첨단벨트","method":"direct","plannedScaleTn":9,"status":"발표, 승인 전","region":"지방"}],"sources":[{"id":"fsc-structure-2025","type":"official","title":"금융위원회, 국민성장펀드 150조원 운용방안 개요","url":"https://www.fsc.go.kr/po010106/85265?curPage=1&srchBeginDt=&srchCtgry=6&srchEndDt=&srchKey=&srchText=","date":"2025-09-10","usedFor":"5년 150조원 조성 구조, 첨단전략산업기금 75조원, 민간·국민자금 75조원, 2026년 재정 1조원"},{"id":"fsc-indirect-notice","type":"official","title":"금융위원회, 국민성장펀드 간접투자 재정모펀드 선정공고","url":"https://www.fsc.go.kr/no010101/86060","date":"2026-01-15","usedFor":"2026년 30조원 이상 공급, 1차 메가프로젝트 절차, 간접투자 선정공고"},{"id":"fsc-shinan","type":"official","title":"금융위원회, 신안우이 해상풍력 발전사업 승인","url":"https://www.fsc.go.kr/no010101/86170","date":"2026-01-29","usedFor":"1호 프로젝트 승인, 3.4조원, 첨단기금 7,500억원"},{"id":"fsc-feb-approvals","type":"official","title":"금융위원회, 이수스페셜티케미컬·삼성전자 승인","url":"https://www.fsc.go.kr/no010101/86341","date":"2026-02-26","usedFor":"삼성전자 2.5조원 저리대출, 이수스페셜티케미컬 1,000억원"},{"id":"fsc-rebellions","type":"official","title":"금융위원회, 리벨리온 직접투자 승인","url":"https://www.fsc.go.kr/no010101/86564","date":"2026-03-27","usedFor":"리벨리온 6,000억원 직접투자, 첨단기금 2,500억원"},{"id":"fsc-second-strategy","type":"official","title":"금융위원회, 제2차 전략위원회 및 2차 메가프로젝트","url":"https://www.fsc.go.kr/no010101/86699","date":"2026-04-14","usedFor":"2차 메가프로젝트, 1~3월 6.6조원 승인, 첨단산업 생태계 50조원+@"},{"id":"fsc-naver","type":"official","title":"금융위원회, 네이버 AI 데이터센터·GPU 4,000억원 승인","url":"https://www.fsc.go.kr/po010101/86717?curPage=5&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText=","date":"2026-04-16","usedFor":"네이버 4,000억원 저리대출, 샘씨엔에스 승인"},{"id":"fsc-apr30","type":"official","title":"금융위원회, 업스테이지 등 5건 승인","url":"https://www.fsc.go.kr/no010101/86830?curPage=&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText=","date":"2026-05-06","usedFor":"4월까지 누적 8.37조원, 업스테이지, 국가 AI컴퓨팅센터, 퓨처그라프, 에스티젠바이오, 후성"},{"id":"fsc-public-fund","type":"official","title":"금융위원회, 국민참여형 국민성장펀드 출시 준비 및 판매계획","url":"https://www.fsc.go.kr/po010101/86834","date":"2026-05-06","usedFor":"2026년 30조원 운용방안, 국민참여형 7,200억원, 운용사·판매사·자펀드·투자요건"},{"id":"fsc-public-faq","type":"official","title":"금융위원회, 국민참여형 가입 FAQ","url":"https://www.fsc.go.kr/no010101/86927","date":"2026-05-19","usedFor":"판매기간, 은행·증권사 채널, 5년 환매금지형 특성"},{"id":"fsc-public-sales","type":"official","title":"금융위원회, 국민참여형 판매 결과 잔여물량 현황","url":"https://www.fsc.go.kr/no010101/86974?curPage=2&srchBeginDt=&srchCtgry=&srchEndDt=&srchKey=&srchText=","date":"2026-05-26","usedFor":"5월 22일 판매 시작, 첫날 상당 물량 소진, 매년 6,000억원씩 5년 총 3조원 국민자금 모집 계획"},{"id":"fsc-may28","type":"official","title":"금융위원회, 퓨리오사AI 등 5건 승인 및 누적 16건 12.5조원","url":"https://www.fsc.go.kr/no010101/87003","date":"2026-05-28","usedFor":"5월 28일 5건 4.14조원 승인, 누적 16건 12.5조원, 기금 누적 5.17조원, 방식별 누적"},{"id":"media-mother-fund","type":"market","title":"아시아경제, 재정모펀드 운용사 3개사 선정","url":"https://cm.asiae.co.kr/article/2026022615534508779","date":"2026-02-26","usedFor":"한국성장금융·신한자산운용·우리자산운용 운용규모 세부 배분"},{"id":"media-gp-selection","type":"market","title":"뉴스웨이, 간접투자 정책성펀드 1차 GP 11개사 선정","url":"https://www.newsway.co.kr/news/view?ud=2026052718484496772","date":"2026-05-27","usedFor":"1차 자펀드 위탁운용사 11개사 명단과 3.9조원 규모"},{"id":"media-sem-c","type":"market","title":"뉴시스, 샘씨엔에스 국민성장펀드 충북 1호 선정","url":"https://www.newsis.com/view/NISX20260416_0003594347","date":"2026-04-16","usedFor":"샘씨엔에스 200억원 저리대출 금액 보완"}]};
+    const METHOD_LABELS = {
+      direct: "직접투자",
+      indirect: "간접투자",
+      infra: "인프라투융자",
+      loan: "저리대출"
+    };
+    const CATEGORY_ORDER = ["전체", "계획", "프로젝트", "운용사", "승인", "판매"];
+    const METHOD_ORDER = ["전체", "direct", "infra", "loan", "indirect"];
+    let timelineFilter = "전체";
+    let approvalFilter = "전체";
+    let approvalSearch = "";
+
+    const heroStats = document.querySelector("#heroStats");
+    const metrics = document.querySelector("#metrics");
+    const methodProgress = document.querySelector("#methodProgress");
+    const publicFund = document.querySelector("#publicFund");
+    const timelineFilters = document.querySelector("#timelineFilters");
+    const timelineList = document.querySelector("#timelineList");
+    const approvalFilters = document.querySelector("#approvalFilters");
+    const approvalRows = document.querySelector("#approvalRows");
+    const approvalSearchInput = document.querySelector("#approvalSearch");
+    const pipelineGrid = document.querySelector("#pipelineGrid");
+    const operatorGrid = document.querySelector("#operatorGrid");
+    const managerGrid = document.querySelector("#managerGrid");
+    const salesGrid = document.querySelector("#salesGrid");
+    const sourceList = document.querySelector("#sourceList");
+
+    function renderHero() {
+      const fiveYear = DATA.fundingPlan.fiveYear;
+      const publicParticipation = DATA.fundingPlan.publicParticipation;
+      heroStats.innerHTML = [
+        ["총 규모", money(fiveYear.totalTn), "5년 계획"],
+        ["2026 목표", money(DATA.fundingPlan.annual2026.totalTn), "민관합동 자금"],
+        ["누적 승인", money(DATA.cumulative.officialApprovedTn), DATA.cumulative.asOf + " 기준"],
+        ["국민참여형", money(publicParticipation.targetTotalTn), "국민 0.6조 + 재정 0.12조"]
+      ].map(([label, value, note]) => `
+        <div class="hero-stat">
+          <strong>${escapeHtml(value)}</strong>
+          <span>${escapeHtml(label)} · ${escapeHtml(note)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderMetrics() {
+      const c = DATA.cumulative;
+      metrics.innerHTML = [
+        ["승인 건수", c.officialApprovedCount + "건", "직접·인프라·저리대출 공식 누적"],
+        ["목표 대비", pct(c.officialApprovedTn / DATA.fundingPlan.annual2026.totalTn * 100), "2026년 30조원 대비"],
+        ["기금 부담", money(c.officialFundApprovedTn), "첨단전략산업기금 승인액"],
+        ["민간·은행 등", money(c.privateAndOtherApprovedTn), "공식 누적 승인액 - 기금 승인액"],
+        ["지방 비중", pct(c.localSharePct), "공식 누적 승인 기준"]
+      ].map(([label, value, note]) => `
+        <div class="metric">
+          <strong>${escapeHtml(value)}</strong>
+          <span>${escapeHtml(label)} · ${escapeHtml(note)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderPlan() {
+      methodProgress.innerHTML = DATA.fundingPlan.annual2026.methods.map((method) => {
+        const progress = method.approvedTn == null ? 0 : Math.min(100, method.approvedTn / method.targetTn * 100);
+        const value = method.approvedTn == null ? method.status : money(method.approvedTn) + " / " + money(method.targetTn);
+        return `
+          <div class="progress-row">
+            <div class="progress-label">
+              <strong>${escapeHtml(method.name)}</strong>
+              <span>${escapeHtml(method.status)}</span>
+            </div>
+            <div class="bar" aria-label="${escapeHtml(method.name)} 진행률">
+              <div class="bar-fill ${escapeHtml(method.id)}" style="width:${progress}%"></div>
+            </div>
+            <div class="num">${escapeHtml(value)}</div>
+          </div>
+          <p class="muted" style="margin:0 0 4px 0;font-size:12px;">${escapeHtml(method.description)} ${method.fundApprovedTn == null ? "" : "기금 승인 " + money(method.fundApprovedTn) + "."}</p>
+        `;
+      }).join("");
+
+      const p = DATA.fundingPlan.publicParticipation;
+      publicFund.innerHTML = `
+        <div class="grid-2">
+          <div>
+            <p><strong>${money(p.targetTotalTn)}</strong> 조성 목표</p>
+            <p class="muted">국민 모집 ${money(p.publicRaiseTn)}, 재정 후순위 ${money(p.fiscalJuniorTn)}. 손실 우선부담 범위 ${pct(p.riskAbsorptionPct)}.</p>
+          </div>
+          <div>
+            <p><strong>${escapeHtml(p.salePeriod)}</strong></p>
+            <p class="muted">${escapeHtml(p.status)}. ${p.termYears}년 환매금지형.</p>
+          </div>
+        </div>
+        <ul class="compact-list" style="margin-top:10px;">
+          <li>${escapeHtml(p.mainInvestmentRule)}</li>
+          ${p.taxBenefits.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+        </ul>
+      `;
+    }
+
+    function renderTimelineFilters() {
+      timelineFilters.innerHTML = CATEGORY_ORDER.map((category) => `
+        <button type="button" class="${category === timelineFilter ? "active" : ""}" data-timeline="${escapeHtml(category)}">${escapeHtml(category)}</button>
+      `).join("");
+      timelineFilters.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          timelineFilter = button.dataset.timeline;
+          renderTimelineFilters();
+          renderTimeline();
+        });
+      });
+    }
+
+    function renderTimeline() {
+      const rows = DATA.timeline.filter((item) => timelineFilter === "전체" || item.category === timelineFilter);
+      timelineList.innerHTML = rows.map((item) => `
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span>${escapeHtml(item.date)}</span>
+            <span class="badge plan">${escapeHtml(item.category)}</span>
+            ${item.amountTn == null ? "" : `<span class="num">${money(item.amountTn)}</span>`}
+          </div>
+          <h4>${escapeHtml(item.title)}</h4>
+          <p>${escapeHtml(item.description)}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderApprovalFilters() {
+      approvalFilters.innerHTML = METHOD_ORDER.map((method) => {
+        const label = method === "전체" ? "전체" : METHOD_LABELS[method];
+        return `<button type="button" class="${method === approvalFilter ? "active" : ""}" data-approval="${escapeHtml(method)}">${escapeHtml(label)}</button>`;
+      }).join("");
+      approvalFilters.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          approvalFilter = button.dataset.approval;
+          renderApprovalFilters();
+          renderApprovals();
+        });
+      });
+    }
+
+    function renderApprovals() {
+      const needle = approvalSearch.trim().toLowerCase();
+      const rows = DATA.approvals.filter((item) => {
+        const byMethod = approvalFilter === "전체" || item.method === approvalFilter;
+        const haystack = [item.project, item.entity, item.sector, item.region, item.owner, item.purpose, item.note].join(" ").toLowerCase();
+        return byMethod && (!needle || haystack.includes(needle));
+      });
+      approvalRows.innerHTML = rows.map((item) => `
+        <tr>
+          <td class="num">${escapeHtml(item.date)}</td>
+          <td>
+            <span class="entity">${escapeHtml(item.entity)}</span>
+            <span class="note">${escapeHtml(item.project)}</span>
+          </td>
+          <td><span class="badge ${escapeHtml(item.method)}">${escapeHtml(METHOD_LABELS[item.method] ?? item.method)}</span></td>
+          <td>
+            <span class="num">${money(item.approvedAmountTn)}</span>
+            <span class="note">사업비 ${money(item.projectCostTn)}</span>
+          </td>
+          <td>
+            <span class="num">${money(item.fundCommitmentTn)}</span>
+            <span class="note">기타·민간 ${money(item.privateOrOtherTn)}</span>
+          </td>
+          <td>
+            <span>${escapeHtml(item.sector)}</span>
+            <span class="note">${escapeHtml(item.region)}</span>
+          </td>
+          <td>
+            <span>${escapeHtml(item.instrument)}</span>
+            <span class="note">${escapeHtml(item.owner)}</span>
+          </td>
+          <td>
+            <span>${escapeHtml(item.purpose)}</span>
+            <span class="note">${escapeHtml(item.note)}</span>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    function renderPipeline() {
+      pipelineGrid.innerHTML = DATA.projectPipeline.map((item) => `
+        <article class="mini-card">
+          <h4>${escapeHtml(item.name)}</h4>
+          <p><span class="badge ${escapeHtml(item.method)}">${escapeHtml(METHOD_LABELS[item.method] ?? item.method)}</span></p>
+          <p style="margin-top:8px;">예상 규모 ${money(item.plannedScaleTn)} · ${escapeHtml(item.region)}</p>
+          <p>${escapeHtml(item.status)}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderOperators() {
+      operatorGrid.innerHTML = DATA.operators.map((item) => `
+        <article class="mini-card">
+          <h4>${escapeHtml(item.name)}</h4>
+          <p>${escapeHtml(item.role)}</p>
+          <p style="margin-top:8px;">${escapeHtml(item.scope)}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderManagers() {
+      managerGrid.innerHTML = DATA.managerGroups.map((group) => `
+        <article class="mini-card">
+          <h4>${escapeHtml(group.name)}</h4>
+          <p>${escapeHtml(group.status)}${group.amountTn == null ? "" : " · " + money(group.amountTn)}</p>
+          <div class="manager-list">
+            ${group.items.map((item) => `
+              <div class="manager-row">
+                <strong>${escapeHtml(item.manager)}</strong>
+                <span>${escapeHtml(item.mandate)}${item.amountTn == null ? "" : " · " + money(item.amountTn)}</span>
+              </div>
+            `).join("")}
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderSales() {
+      salesGrid.innerHTML = DATA.salesChannels.map((group) => `
+        <article class="mini-card">
+          <h4>${escapeHtml(group.publicFundManager)}</h4>
+          <p><strong>은행</strong> ${escapeHtml(group.banks.join(", "))}</p>
+          <p style="margin-top:8px;"><strong>증권</strong> ${escapeHtml(group.securities.join(", "))}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderSources() {
+      sourceList.innerHTML = DATA.sources.map((source) => `
+        <a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">
+          <strong>${escapeHtml(source.title)}</strong>
+          <span>${escapeHtml(source.type)} · ${escapeHtml(source.date)}</span>
+          <span>${escapeHtml(source.usedFor)}</span>
+        </a>
+      `).join("");
+    }
+
+    approvalSearchInput.addEventListener("input", (event) => {
+      approvalSearch = event.target.value;
+      renderApprovals();
+    });
+
+    function money(value) {
+      if (value === null || value === undefined || Number.isNaN(Number(value))) return "비공개";
+      const number = Number(value);
+      if (Math.abs(number) >= 1) return number.toLocaleString("ko-KR", { maximumFractionDigits: 2 }) + "조원";
+      const eok = number * 10000;
+      return eok.toLocaleString("ko-KR", { maximumFractionDigits: eok < 100 ? 1 : 0 }) + "억원";
+    }
+
+    function pct(value) {
+      if (value === null || value === undefined || Number.isNaN(Number(value))) return "-";
+      return Number(value).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "%";
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    renderHero();
+    renderMetrics();
+    renderPlan();
+    renderTimelineFilters();
+    renderTimeline();
+    renderApprovalFilters();
+    renderApprovals();
+    renderPipeline();
+    renderOperators();
+    renderManagers();
+    renderSales();
+    renderSources();
+  </script>
+</body>
+</html>
