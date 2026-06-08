@@ -441,7 +441,7 @@ function decide(totalScore, technical, flowScore, risk, t) {
 }
 
 function entryPlan(decision, close, ma5, ma20, ma60, low60, high60, rsi14) {
-  const stop = Math.min(low60 * 0.97, close * 0.9);
+  const stop = Math.max(low60 * 0.97, close * 0.9);
   if (decision === "ENTRY_OK") {
     return {
       action: "분할 진입 가능",

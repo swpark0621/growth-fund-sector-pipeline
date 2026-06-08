@@ -336,7 +336,7 @@
       "entryPlan": {
         "action": "분할 진입 가능",
         "trigger": "현 가격대 111,200원에서 40%, MA20 107,445원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 107,445원 아래로 재이탈하거나 손절 기준 56,066원 하회",
+        "invalidation": "종가가 MA20 107,445원 아래로 재이탈하거나 손절 기준 100,080원 하회",
         "target": "1차 91,348.33원, 2차 60일 고점 132,700원 부근"
       },
       "sourceUrl": "https://finance.naver.com/item/main.naver?code=319660",
@@ -6860,7 +6860,7 @@
       "entryPlan": {
         "action": "분할 진입 가능",
         "trigger": "현 가격대 111,200원에서 40%, MA20 107,445원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 107,445원 아래로 재이탈하거나 손절 기준 56,066원 하회",
+        "invalidation": "종가가 MA20 107,445원 아래로 재이탈하거나 손절 기준 100,080원 하회",
         "target": "1차 91,348.33원, 2차 60일 고점 132,700원 부근"
       },
       "sourceUrl": "https://finance.naver.com/item/main.naver?code=319660",
