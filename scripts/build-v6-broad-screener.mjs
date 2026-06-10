@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const dataPath = path.join(root, "data", "v6-broad-screener-data.json");
 const outputPath = path.join(root, "docs", "v6.html");
-const RUN_DATE = "2026-06-09";
+const RUN_DATE = "2026-06-10";
 const USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36";
 const BLACKROCK_EWY_URL = "https://www.ishares.com/us/products/239681/EWY";
 const BLACKROCK_EWY_DOWNLOAD_URL = "https://www.blackrock.com/varnish-api/blk-one01-product-data/product-data/api/v1/get-fund-document?appType=PRODUCT_PAGE&appSubType=ISHARES&targetSite=us-ishares&locale=en_US&portfolioId=239681&component=fundDownload&userType=individual";
@@ -18,6 +18,7 @@ const FSC_PUBLIC_FUND_URL = "https://www.fsc.go.kr/no010101/86834?curPage=2&srch
 const FSC_APPROVAL_URL = "https://www.fsc.go.kr/no010101/87003";
 const DART_LARGE_HOLDER_GUIDE_URL = "https://dart.fss.or.kr/info/main.do?menu=310";
 const NAVER_BLACKROCK_DISCLOSURE_URL = "https://kind.krx.co.kr/external/2025/11/14/001550/20251114003439/11013.htm";
+const FNGUIDE_COMPANY_URL = "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx";
 const VANGUARD_CONFIRMED_TICKERS = new Set([
   "319660", "012510", "030520", "204320", "012330", "005290", "011070", "336260", "108320", "265520",
   "307950", "036930", "403870", "035420", "373220", "006400", "298040", "454910", "240810", "058470",
@@ -198,7 +199,11 @@ async function main() {
       const daily = await fetchDailyHistory(item.ticker, 9);
       const flow = await fetchForeignHistory(item.ticker, 9);
       const merged = mergeHistory(daily, flow);
-      const quote = await fetchQuote(item.ticker);
+      const [quote, ownership] = await Promise.all([
+        fetchQuote(item.ticker),
+        fetchOwnership(item.ticker)
+      ]);
+      quote.ownership = ownership;
       const row = evaluate(item, merged, quote);
       rows.push(row);
       console.log(`[${String(index + 1).padStart(3, "0")}/${universe.length}] ${item.company} ${item.ticker}: ${row.decision} ${row.totalScore}`);
@@ -255,6 +260,7 @@ async function main() {
       { title: "금융위원회 국민참여형·2026년 운용계획", url: FSC_PUBLIC_FUND_URL },
       { title: "DART 대량보유 5% 공시 기준", url: DART_LARGE_HOLDER_GUIDE_URL },
       { title: "KRX/DART NAVER 2025년 3분기보고서 BlackRock 6.05%", url: NAVER_BLACKROCK_DISCLOSURE_URL },
+      { title: "FnGuide/Naver Company 주요주주", url: FNGUIDE_COMPANY_URL },
       { title: "BlackRock iShares MSCI South Korea ETF (EWY)", url: BLACKROCK_EWY_URL },
       { title: "Vanguard Institutional Total International Stock Market Index Trust holdings PDF", url: VANGUARD_TRUST_URL },
       { title: "State Street SPDW holdings", url: SSGA_SPDW_URL }
@@ -307,6 +313,7 @@ function evaluate(item, history, quote) {
     per: quote.per,
     pbr: quote.pbr,
     roe: quote.roe,
+    ownership: quote.ownership,
     liquidity: {
       avgVolume20: Math.round(avgVol20),
       volumeRatio: round(volumeRatio, 2)
@@ -569,6 +576,67 @@ async function fetchQuote(ticker) {
   return { marketCapEok, listedShares, per, pbr, roe };
 }
 
+async function fetchOwnership(ticker) {
+  const sourceUrl = `${FNGUIDE_COMPANY_URL}?cmp_cd=${ticker}&target=finsum_more`;
+  try {
+    const html = await fetchUtf8Text(sourceUrl);
+    const table = extractTableByCaptionContains(html, "주요주주명");
+    if (!table) return { sourceUrl, topHolders: [], majorHolderName: null, majorHolderPct: null, memo: "주요주주 표 미확인" };
+    const topHolders = parseOwnershipRows(table);
+    const major = topHolders[0] ?? null;
+    return {
+      sourceUrl,
+      topHolders,
+      majorHolderName: major?.name ?? null,
+      majorHolderShares: major?.shares ?? null,
+      majorHolderPct: major?.pct ?? null,
+      topHolderPct: round(sum(topHolders.map((holder) => holder.pct)), 2),
+      memo: ownershipMemo(major?.pct)
+    };
+  } catch (error) {
+    return { sourceUrl, topHolders: [], majorHolderName: null, majorHolderPct: null, error: error.message, memo: "주요주주 조회 실패" };
+  }
+}
+
+function parseOwnershipRows(table) {
+  const rows = [];
+  for (const tr of table.match(/<tr[\s\S]*?<\/tr>/g) ?? []) {
+    const cells = [...tr.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((match) => strip(match[1]));
+    if (cells.length < 3) continue;
+    const shares = parseNumber(cells[1]);
+    const pct = parseNumber(cells[2]);
+    if (pct == null) continue;
+    const title = tr.match(/<td[^>]*\btitle="([^"]*)"/)?.[1];
+    const rawName = decodeXml(title || cells[0]).replace(/\s+/g, " ").trim();
+    const name = dedupeRepeatedHolderName(rawName);
+    rows.push({ name, shares, pct });
+  }
+  return rows;
+}
+
+function dedupeRepeatedHolderName(name) {
+  const text = String(name ?? "").trim();
+  if (!text) return "";
+  const half = Math.floor(text.length / 2);
+  if (text.length % 2 === 0 && text.slice(0, half) === text.slice(half)) return text.slice(0, half).trim();
+  const parts = text.split(" ");
+  if (parts.length % 2 === 0) {
+    const left = parts.slice(0, parts.length / 2).join(" ");
+    const right = parts.slice(parts.length / 2).join(" ");
+    if (left === right) return left;
+  }
+  return text;
+}
+
+function ownershipMemo(pct) {
+  if (pct == null) return "대주주 지분 미확인";
+  if (pct >= 50) return "대주주 지분 매우 높음";
+  if (pct >= 35) return "대주주 지분 높음";
+  if (pct >= 20) return "대주주 지분 보통 이상";
+  if (pct >= 10) return "대주주 지분 낮은 편";
+  return "대주주 지분 매우 낮음";
+}
+
 async function fetchBrokers(ticker, day) {
   const html = await fetchText(`https://finance.naver.com/item/frgn.naver?code=${ticker}&page=1&trader_day=${day}`);
   const table = extractTableByCaption(html, "거래원정보");
@@ -608,6 +676,16 @@ function applyBrokerAdjustment(row) {
     ret20: row.returns.d20,
     drawdown60Pct: row.technicals.drawdown60Pct
   });
+  row.entryPlan = entryPlan(
+    row.decision,
+    row.close,
+    row.technicals.ma5,
+    row.technicals.ma20,
+    row.technicals.ma60,
+    row.technicals.low60,
+    row.technicals.high60,
+    row.technicals.rsi14
+  );
 }
 
 function mergeHistory(daily, flows) {
@@ -635,6 +713,7 @@ function buildRules() {
     "적자+고PBR, PBR 10배 초과, PER 60배 초과는 점수가 높아도 즉시 진입에서 제외한다.",
     "기술적 조건은 MA20 회복, RSI 35~58, 60일 고점 대비 적정 조정, 20일 낙폭 과다 여부를 본다.",
     "외국인·기관 5일/20일 수급은 보조 점수다. 거래원은 최종 투자자 확인이 아니므로 3점 이내로만 반영한다.",
+    "대주주 비율은 유통물량·지배구조 참고 항목으로 표시하되, 단독 진입 신호로 쓰지 않는다.",
     "ENTRY_OK도 급락장에서는 40/30/30 분할 진입이며, MA20 이탈 또는 60일 저점 이탈 시 무효다."
   ];
 }
@@ -1042,7 +1121,7 @@ function buildHtml(data) {
     .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:16px}.metric{min-height:108px;padding:16px;border:1px solid var(--line);border-radius:8px;background:#fff}.metric strong{display:block;font-size:27px;line-height:1.1}.metric span{display:block;margin-top:6px;color:var(--muted);font-size:12px}
     .band{padding:18px;margin-bottom:16px}.head{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;margin-bottom:12px}.head p{max-width:900px;margin-bottom:0;color:var(--muted);font-size:13px}.grid-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.grid-6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.card{padding:14px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd}.card p{margin-bottom:0;color:var(--muted);font-size:12px}.compact strong{display:block;font-size:20px}.compact span{display:block;color:var(--muted);font-size:12px}.callout{margin:10px 0 12px;padding:12px 14px;border:1px solid #c9d9e8;border-radius:8px;background:#f3f8fd;color:#334052;font-size:13px}.list-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}.list-grid .card{min-height:92px}.manager-list{display:flex;flex-wrap:wrap;gap:6px}.manager-chip{display:inline-flex;align-items:center;min-height:23px;padding:2px 7px;border-radius:999px;background:#eef2f6;color:#334052;font-size:12px;font-weight:800}
     .toolbar{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-bottom:12px}.segmented{display:flex;flex-wrap:wrap;gap:6px}.segmented button{min-height:34px;padding:5px 10px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;cursor:pointer;font-size:13px;font-weight:800}.segmented button.active{border-color:var(--green);background:#e5f3f0;color:var(--green)}.search{width:min(360px,100%);min-height:36px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff}
-    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff} table{width:100%;min-width:1380px;border-collapse:collapse} th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px} th{position:sticky;top:0;z-index:1;background:#eef2f6;color:#334052} tr:last-child td{border-bottom:0}.num{font-variant-numeric:tabular-nums;white-space:nowrap}.company{font-weight:900}.note{display:block;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.42}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff} table{width:100%;min-width:1480px;border-collapse:collapse} th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px} th{position:sticky;top:0;z-index:1;background:#eef2f6;color:#334052} tr:last-child td{border-bottom:0}.num{font-variant-numeric:tabular-nums;white-space:nowrap}.company{font-weight:900}.note{display:block;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.42}
     .source-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.source-list a{min-height:60px;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;text-decoration:none;font-size:13px}.source-list span{display:block;margin-top:4px;color:var(--muted);font-size:12px} footer{color:var(--muted);font-size:12px}
     @media(max-width:1180px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.grid-2,.grid-3,.grid-6,.list-grid{grid-template-columns:1fr}}@media(max-width:720px){main{padding:16px}aside{padding:18px}.metrics{grid-template-columns:1fr}h2{font-size:24px}.head{display:block}}
   </style>
@@ -1069,9 +1148,9 @@ function buildHtml(data) {
       <section class="band" id="rules"><div class="head"><div><h3>새 선별 기준</h3><p>${escapeHtml(data.meta.methodology)}</p></div></div><div class="grid-3" id="rulesGrid"></div></section>
       <section class="band" id="growthFund"><div class="head"><div><h3>국민성장펀드 정책 검토</h3><p>총량·집행구조·실제 승인 프로젝트를 분리해 봅니다. 정책자금 수혜는 후보 발굴 신호이지, 상장주 진입 신호 자체는 아닙니다.</p></div></div><div class="grid-6" id="growthFundGrid"></div><div class="list-grid" id="growthJudgement"></div><div class="table-wrap"><table><thead><tr><th>회사</th><th>연결 프로젝트</th><th>정책 평가</th><th>v6 판단</th></tr></thead><tbody id="policyProjectRows"></tbody></table></div><div class="table-wrap" style="margin-top:12px;"><table><thead><tr><th>회사</th><th>정책점수</th><th>기술 조건</th><th>평가</th></tr></thead><tbody id="policyRows"></tbody></table></div></section>
       <section class="band" id="megaManagers"><div class="head"><div><h3>BlackRock·Vanguard·SSGA 보유 신호</h3><p>공개 ETF/인덱스 보유자료와 DART 5% 공시를 매칭했습니다. ETF 보유는 패시브 편입 신호이며 능동적 매집으로 단정하지 않습니다.</p></div></div><div class="callout" id="megaCaveat"></div><div class="grid-6" id="megaMetricGrid"></div><div class="table-wrap"><table><thead><tr><th>회사</th><th>확인 신호</th><th>증거</th><th>해석</th></tr></thead><tbody id="megaRows"></tbody></table></div></section>
-      <section class="band" id="entry"><div class="head"><div><h3>진입 가능 후보</h3><p>MA20 회복, RSI, 낙폭, 수급, 리스크 페널티를 통과한 후보입니다. 그래도 급락장이라 분할 진입 전제입니다.</p></div></div><div class="table-wrap"><table><thead><tr><th>순위</th><th>회사</th><th>점수</th><th>가격/가치</th><th>기술적 위치</th><th>수급</th><th>3대 운용사</th><th>거래원</th><th>진입 계획</th><th>리스크</th></tr></thead><tbody id="entryRows"></tbody></table></div></section>
+      <section class="band" id="entry"><div class="head"><div><h3>진입 가능 후보</h3><p>MA20 회복, RSI, 낙폭, 수급, 리스크 페널티를 통과한 후보입니다. 그래도 급락장이라 분할 진입 전제입니다.</p></div></div><div class="table-wrap"><table><thead><tr><th>순위</th><th>회사</th><th>점수</th><th>가격/가치</th><th>대주주</th><th>기술적 위치</th><th>수급</th><th>3대 운용사</th><th>거래원</th><th>진입 계획</th><th>리스크</th></tr></thead><tbody id="entryRows"></tbody></table></div></section>
       <section class="band" id="wait"><div class="head"><div><h3>트리거 대기 후보</h3><p>정책/가치 매력은 있지만 아직 차트가 회복되지 않은 후보입니다.</p></div></div><div class="table-wrap"><table><thead><tr><th>회사</th><th>점수</th><th>기술 조건</th><th>기다릴 트리거</th><th>무효 조건</th></tr></thead><tbody id="waitRows"></tbody></table></div></section>
-      <section class="band" id="all"><div class="toolbar"><div><h3 style="margin-bottom:4px;">전체 재탐색 테이블</h3><p class="muted" style="margin-bottom:0;font-size:13px;">검색과 결정 필터로 확인하세요.</p></div><input class="search" id="search" type="search" placeholder="회사, 섹터, 코드 검색"></div><div class="segmented" id="filters"></div><div class="table-wrap"><table><thead><tr><th>순위</th><th>회사</th><th>결정</th><th>총점</th><th>정책</th><th>가치</th><th>기술</th><th>수급</th><th>3대 운용사</th><th>메모</th></tr></thead><tbody id="allRows"></tbody></table></div></section>
+      <section class="band" id="all"><div class="toolbar"><div><h3 style="margin-bottom:4px;">전체 재탐색 테이블</h3><p class="muted" style="margin-bottom:0;font-size:13px;">검색과 결정 필터로 확인하세요.</p></div><input class="search" id="search" type="search" placeholder="회사, 섹터, 코드 검색"></div><div class="segmented" id="filters"></div><div class="table-wrap"><table><thead><tr><th>순위</th><th>회사</th><th>결정</th><th>총점</th><th>정책</th><th>가치</th><th>대주주</th><th>기술</th><th>수급</th><th>3대 운용사</th><th>메모</th></tr></thead><tbody id="allRows"></tbody></table></div></section>
       <section class="band" id="sources"><div class="head"><div><h3>출처</h3><p>Naver Finance 일별 시세, 외국인·기관 순매매, 거래원정보와 금융위원회 공개자료를 사용했습니다.</p></div></div><div class="source-list" id="sourceList"></div></section>
       <footer>생성 스크립트: <code>node scripts/build-v6-broad-screener.mjs</code>. 데이터: <code>data/v6-broad-screener-data.json</code>.</footer>
     </main>
@@ -1093,11 +1172,12 @@ function buildHtml(data) {
     const megaMetrics=[["확인 종목",megaStats.withAny??0,"ETF/인덱스 또는 DART"],["3대 모두",megaStats.allThree??0,"BlackRock·Vanguard·SSGA"],["BlackRock",megaStats.blackRock??0,"EWY 또는 DART"],["Vanguard",megaStats.vanguard??0,"공식 보유 PDF"],["SSGA",megaStats.ssga??0,"SPDW 보유"],["DART 5%+",megaStats.dartLargeHolder??0,"공시급 보유"]];
     document.querySelector("#megaMetricGrid").innerHTML=megaMetrics.map(([a,b,c])=>\`<div class="card compact"><strong>\${Number(b).toLocaleString("ko-KR")}</strong><span>\${escapeHtml(a)}</span><p>\${escapeHtml(c)}</p></div>\`).join("");
     document.querySelector("#megaRows").innerHTML=(megaStats.topRows||[]).map(r=>\`<tr><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)} · \${decisionText(r.decision)} \${r.totalScore}점</span></td><td>\${managerChips(r.managers,r.largeHolderDisclosure)}<span class="note">\${escapeHtml(r.status)}</span></td><td>\${managerEvidence(r.managers,r.largeHolderDisclosure)}</td><td>\${escapeHtml(r.interpretation)}</td></tr>\`).join("");
-    document.querySelector("#entryRows").innerHTML=DATA.entryList.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge entry">\${r.totalScore}</span></td><td>\${price(r.close)}<span class="note">시총 \${eok(r.marketCapEok)} · PER \${r.per??"-"} · PBR \${r.pbr??"-"}</span></td><td>\${escapeHtml(r.technical.memo)}<span class="note">20일 \${pct(r.returns.d20)}, 60일 \${pct(r.returns.d60)}</span></td><td>\${escapeHtml(r.flowScore.memo)}</td><td>\${managerCell(r)}</td><td>\${escapeHtml(broker(r))}</td><td>\${escapeHtml(r.entryPlan.trigger)}<span class="note">\${escapeHtml(r.entryPlan.invalidation)}</span></td><td>\${escapeHtml((r.risk.notes||[]).join(" · ")||"특이 리스크 없음")}</td></tr>\`).join("");
+    document.querySelector("#entryRows").innerHTML=DATA.entryList.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge entry">\${r.totalScore}</span></td><td>\${price(r.close)}<span class="note">시총 \${eok(r.marketCapEok)} · PER \${r.per??"-"} · PBR \${r.pbr??"-"}</span></td><td>\${ownershipCell(r)}</td><td>\${escapeHtml(r.technical.memo)}<span class="note">20일 \${pct(r.returns.d20)}, 60일 \${pct(r.returns.d60)}</span></td><td>\${escapeHtml(r.flowScore.memo)}</td><td>\${managerCell(r)}</td><td>\${escapeHtml(broker(r))}</td><td>\${escapeHtml(r.entryPlan.trigger)}<span class="note">\${escapeHtml(r.entryPlan.invalidation)}</span></td><td>\${escapeHtml((r.risk.notes||[]).join(" · ")||"특이 리스크 없음")}</td></tr>\`).join("");
     document.querySelector("#waitRows").innerHTML=DATA.triggerList.slice(0,25).map(r=>\`<tr><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge wait">\${r.totalScore}</span></td><td>\${escapeHtml(r.technical.memo)}</td><td>\${escapeHtml(r.entryPlan.trigger)}</td><td>\${escapeHtml(r.entryPlan.invalidation)}</td></tr>\`).join("");
     function renderFilters(){const vals=["all","ENTRY_OK","WAIT_TRIGGER","AVOID_NOW"];document.querySelector("#filters").innerHTML=vals.map(v=>\`<button class="\${filter===v?"active":""}" data-filter="\${v}">\${v==="all"?"전체":decisionText(v)}</button>\`).join("");document.querySelectorAll("#filters button").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;renderFilters();renderAll()}));}
-    function renderAll(){const needle=search.trim().toLowerCase();const rows=DATA.allRows.filter(r=>(filter==="all"||r.decision===filter)&&(!needle||[r.company,r.ticker,r.sector,r.rationale].join(" ").toLowerCase().includes(needle))).slice(0,90);document.querySelector("#allRows").innerHTML=rows.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge \${decisionClass(r.decision)}">\${decisionText(r.decision)}</span></td><td><strong>\${r.totalScore}</strong></td><td>\${r.policy.score}<span class="note">\${escapeHtml(r.policy.memo)}</span></td><td>\${r.value.score}<span class="note">\${escapeHtml(r.value.memo)}</span></td><td>\${r.technical.score}<span class="note">\${escapeHtml(r.technical.memo)}</span></td><td>\${r.flowScore.score}<span class="note">\${escapeHtml(r.flowScore.memo)}</span></td><td>\${managerCell(r)}</td><td>\${escapeHtml(r.entryPlan.action)}<span class="note">\${escapeHtml((r.risk.notes||[]).join(" · "))}</span></td></tr>\`).join("");}
+    function renderAll(){const needle=search.trim().toLowerCase();const rows=DATA.allRows.filter(r=>(filter==="all"||r.decision===filter)&&(!needle||[r.company,r.ticker,r.sector,r.rationale].join(" ").toLowerCase().includes(needle))).slice(0,90);document.querySelector("#allRows").innerHTML=rows.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge \${decisionClass(r.decision)}">\${decisionText(r.decision)}</span></td><td><strong>\${r.totalScore}</strong></td><td>\${r.policy.score}<span class="note">\${escapeHtml(r.policy.memo)}</span></td><td>\${r.value.score}<span class="note">\${escapeHtml(r.value.memo)}</span></td><td>\${ownershipCell(r)}</td><td>\${r.technical.score}<span class="note">\${escapeHtml(r.technical.memo)}</span></td><td>\${r.flowScore.score}<span class="note">\${escapeHtml(r.flowScore.memo)}</span></td><td>\${managerCell(r)}</td><td>\${escapeHtml(r.entryPlan.action)}<span class="note">\${escapeHtml((r.risk.notes||[]).join(" · "))}</span></td></tr>\`).join("");}
     document.querySelector("#search").addEventListener("input",e=>{search=e.target.value;renderAll()});document.querySelector("#sourceList").innerHTML=DATA.sources.map(s=>\`<a href="\${escapeHtml(s.url)}" target="_blank" rel="noreferrer"><strong>\${escapeHtml(s.title)}</strong><span>\${escapeHtml(s.url)}</span></a>\`).join("");
+    function ownershipCell(row){const o=row.ownership;if(!o||o.majorHolderPct==null)return'<span class="muted">미확인</span>';return \`<strong>\${pct(o.majorHolderPct)}</strong><span class="note">\${escapeHtml(o.majorHolderName??"대주주")} · 상위합 \${pct(o.topHolderPct)}</span><span class="note">\${escapeHtml(o.memo??"")}</span>\`}
     function managerCell(row){const mm=row.megaManagers;if(!mm||!mm.managerCount)return'<span class="muted">미확인</span>';return managerChips(mm.managers,mm.largeHolderDisclosure)+\`<span class="note">\${escapeHtml(mm.status)}</span>\`}
     function managerChips(managers,disclosure){const labels=[...(managers||[]).map(x=>x.manager),...(disclosure?[disclosure.holder+" 5%+"] : [])];return \`<div class="manager-list">\${labels.map(x=>\`<span class="manager-chip">\${escapeHtml(x)}</span>\`).join("")}</div>\`}
     function managerEvidence(managers,disclosure){const lines=[];(managers||[]).forEach(x=>lines.push(\`\${x.manager}: \${x.vehicle}\${x.weightPct==null?"":" · "+pct(x.weightPct)}\${x.shares==null?"":" · "+shares(x.shares)+"주"}\${x.asOf?" · "+x.asOf:""}\`));if(disclosure)lines.push(\`\${disclosure.holder}: DART 5%+ · \${shares(disclosure.shares)}주 · \${disclosure.ownershipPct}% · \${disclosure.asOf}\`);return lines.map(x=>\`<span class="note">\${escapeHtml(x)}</span>\`).join("")}
@@ -1122,6 +1202,15 @@ function extractFirstTable(html) {
 
 function extractTableByCaption(html, captionText) {
   const captionIndex = html.indexOf(`<caption>${captionText}</caption>`);
+  if (captionIndex < 0) return null;
+  const start = html.lastIndexOf("<table", captionIndex);
+  const end = html.indexOf("</table>", captionIndex);
+  if (start < 0 || end < 0) return null;
+  return html.slice(start, end + 8);
+}
+
+function extractTableByCaptionContains(html, captionText) {
+  const captionIndex = html.indexOf(captionText);
   if (captionIndex < 0) return null;
   const start = html.lastIndexOf("<table", captionIndex);
   const end = html.indexOf("</table>", captionIndex);
