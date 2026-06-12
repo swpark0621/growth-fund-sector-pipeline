@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const dataPath = path.join(root, "data", "v6-broad-screener-data.json");
 const outputPath = path.join(root, "docs", "v6.html");
-const RUN_DATE = "2026-06-10";
+const RUN_DATE = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
 const USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36";
 const BLACKROCK_EWY_URL = "https://www.ishares.com/us/products/239681/EWY";
 const BLACKROCK_EWY_DOWNLOAD_URL = "https://www.blackrock.com/varnish-api/blk-one01-product-data/product-data/api/v1/get-fund-document?appType=PRODUCT_PAGE&appSubType=ISHARES&targetSite=us-ishares&locale=en_US&portfolioId=239681&component=fundDownload&userType=individual";
