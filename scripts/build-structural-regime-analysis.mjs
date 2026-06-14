@@ -1,0 +1,607 @@
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(__dirname, "..");
+const dataPath = path.join(root, "data", "structural-regime-analysis.json");
+const outputPath = path.join(root, "docs", "structural-regime.html");
+const v6DataPath = path.join(root, "data", "v6-broad-screener-data.json");
+const RUN_DATE = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
+const END_DATE = RUN_DATE.replaceAll("-", "");
+const HISTORY_START = "20190101";
+
+const companies = [
+  {
+    ticker: "265520",
+    company: "AP시스템",
+    sector: "OLED 장비",
+    confidence: 3,
+    primaryEvent: "visionox-order",
+    structuralMemo: "OLED 장비 사이클 회복과 8.6G IT OLED 수주가 핵심이다. 다만 장비주는 고객사 CAPEX에 민감하므로 장기 복리형보다는 사이클형 성격을 먼저 둔다.",
+    holdView: "장기 체질 검증은 아직 짧다. v6 진입 가능이라도 기준 비중을 낮추고, 수주잔고와 2026년 납품/매출 인식 확인 전에는 장기 보유 확신을 과하게 두지 않는다.",
+    events: [
+      {
+        id: "oled-cycle",
+        label: "IT OLED 투자 사이클 회복 시작",
+        date: "2024-01-02",
+        basis: "2024년 OLED 노트북·태블릿 확대와 8.6G 투자 기대를 반영한 업황 기준선. 회사 자체 체질 개선보다는 사이클 시작선이다.",
+        sourceName: "한국IR협의회 AP시스템 리포트",
+        sourceUrl: "https://w4.kirs.or.kr/download/research/250528_AP%EC%8B%9C%EC%8A%A4%ED%85%9C.pdf"
+      },
+      {
+        id: "visionox-order",
+        label: "비전옥스 8.6G ELA 단독 공급 확인",
+        date: "2025-09-25",
+        basis: "중국 비전옥스 8.6세대 OLED 신규 라인 ELA 장비 단독 공급계약 보도. 10월 클린룸 인수로 OLED·반도체 장비 생산능력 확대도 확인됐다.",
+        sourceName: "전자신문·디일렉",
+        sourceUrl: "https://www.etnews.com/20250925000333",
+        extraSourceUrl: "https://www.thelec.kr/news/articleView.html?idxno=42231"
+      }
+    ]
+  },
+  {
+    ticker: "030520",
+    company: "한글과컴퓨터",
+    sector: "AI·소프트웨어",
+    confidence: 3,
+    primaryEvent: "hancomdocs-ai",
+    structuralMemo: "패키지 오피스에서 AI·SaaS·Agentic OS로 정체성을 바꾸는 시도다. 하지만 주가와 실적이 아직 장기 복리형으로 검증됐다고 보기는 어렵다.",
+    holdView: "AI 전환 스토리는 유효하지만, 2024년 AI 제품 출시 이후 현재 주가는 200일·600일선 아래다. 기술적 진입과 장기 보유 판단을 강하게 분리해야 한다.",
+    events: [
+      {
+        id: "hancomdocs-ai",
+        label: "한컴독스 AI 정식 출시",
+        date: "2024-09-30",
+        basis: "구독형 문서 서비스에 생성형 AI를 결합한 상용 제품 출시일. AI 전환의 매출화 시작 기준으로 본다.",
+        sourceName: "연합뉴스",
+        sourceUrl: "https://www.yna.co.kr/view/AKR20240930066900017"
+      },
+      {
+        id: "agentic-os",
+        label: "AI Agent OS 기업 전환 선언",
+        date: "2026-05-19",
+        basis: "사명 변경과 소버린 에이전틱 OS 전략 발표. 다만 발표 후 기간이 짧아 장기 검증 기준으로는 보조 신호다.",
+        sourceName: "연합뉴스",
+        sourceUrl: "https://www.yna.co.kr/view/AKR20260519092151017"
+      }
+    ]
+  },
+  {
+    ticker: "005290",
+    company: "동진쎄미켐",
+    sector: "반도체 소재",
+    confidence: 4.5,
+    primaryEvent: "euv-pr-qual",
+    structuralMemo: "포토레지스트 국산화에서 EUV PR까지 확장한 소재 기업이다. 고객사 공정 진입과 공급망 내재화가 주가의 장기 기준선이다.",
+    holdView: "다섯 종목 중 체질과 주가 검증의 균형이 가장 낫다. 다만 소재주도 반도체 업황과 고객사 의존도가 있어 큰 MDD를 감수할 수 있는지 확인해야 한다.",
+    events: [
+      {
+        id: "euv-pr-qual",
+        label: "EUV PR 삼성 퀄 통과 보도",
+        date: "2021-12-20",
+        basis: "EUV 포토레지스트 개발 성공 및 삼성전자 신뢰성 시험 통과 보도 이후를 고부가 소재 기준선으로 본다.",
+        sourceName: "전자신문",
+        sourceUrl: "https://www.etnews.com/20211217000147"
+      },
+      {
+        id: "negative-pr",
+        label: "EUV 네거티브 PR 양산 착수",
+        date: "2023-07-07",
+        basis: "포지티브 PR에 이어 네거티브 PR 공급까지 확대된 확인 구간. 단일 이벤트보다 소재 포트폴리오 확장의 의미가 크다.",
+        sourceName: "디일렉",
+        sourceUrl: "https://www.thelec.kr/news/articleView.html?idxno=21931"
+      }
+    ]
+  },
+  {
+    ticker: "204320",
+    company: "HL만도",
+    sector: "미래차·전장",
+    confidence: 3,
+    primaryEvent: "electronics-mix",
+    structuralMemo: "기계식 샤시 부품사에서 전장·ADAS·IDB 중심으로 믹스가 바뀌는 구간이다. 변화는 점진적이라 한 날짜로 끊기 어렵다.",
+    holdView: "2024년 이후 주가 검증은 좋아졌다. 다만 완성차 부품사의 낮은 마진, 고객사 가격 압박, 중국·북미 수요 리스크가 남아 있어 구조적 우상향 확신은 동진/현대로템보다 낮게 둔다.",
+    events: [
+      {
+        id: "electronics-mix",
+        label: "전장 매출 비중 우위 기준연도",
+        date: "2024-01-02",
+        basis: "2024년 전장 부품 매출 비중이 기계 부품을 넘어선 것으로 보는 기준연도 시작선. 정확한 공시일보다 사업 믹스 변화의 연도 기준이다.",
+        sourceName: "iM증권·뉴시스",
+        sourceUrl: "https://file.alphasquare.co.kr/media/pdfs/company-report/_25072330-204320.pdf",
+        extraSourceUrl: "https://www.newsis.com/view/NISX20251202_0003424961"
+      },
+      {
+        id: "adas-order-mix",
+        label: "ADAS·전장 신규수주 비중 확인",
+        date: "2025-02-25",
+        basis: "수주잔고와 신규 수주에서 ADAS 포함 전장 비중이 높아진 구간. 수익성 개선 가능성을 보조 검증한다.",
+        sourceName: "IB토마토·삼성증권",
+        sourceUrl: "https://www.ibtomato.com/ExternalView.aspx?no=14272&type=1",
+        extraSourceUrl: "https://www.samsungpop.com/common.do?cmd=down&contentType=application%2Fpdf&fileName=2010%2F2025022118583711K_02_09.pdf&inlineYn=Y&saveKey=research.pdf"
+      }
+    ]
+  },
+  {
+    ticker: "064350",
+    company: "현대로템",
+    sector: "방산·철도",
+    confidence: 5,
+    primaryEvent: "poland-k2",
+    structuralMemo: "철도 중심 기업에서 K2 수출을 통한 방산 수주잔고 재평가가 붙은 케이스다. 체질 개선 기준일이 가장 명확하다.",
+    holdView: "장기 체질 검증은 가장 강하다. 문제는 회사가 아니라 가격이다. 고점 대비 조정이 있어도 이미 큰 재평가를 받은 종목이므로 추격매수보다 눌림·분할 원칙이 필요하다.",
+    events: [
+      {
+        id: "poland-k2",
+        label: "폴란드 K2 1차 실행계약",
+        date: "2022-08-29",
+        basis: "폴란드 군비청과 K2 전차 180대, 4조원대 계약을 체결한 첫 대형 수출 확인일. 방산 체질 전환의 기준선으로 본다.",
+        sourceName: "현대로템 공식 블로그",
+        sourceUrl: "https://blog.hyundai-rotem.co.kr/736"
+      },
+      {
+        id: "order-backlog",
+        label: "K-방산 수주잔고 재평가",
+        date: "2025-05-07",
+        basis: "폴란드 2차 계약 기대와 방산 수주잔고 재평가가 본격화된 구간. 이미 오른 가격을 검증하는 보조 기준선이다.",
+        sourceName: "연합뉴스",
+        sourceUrl: "https://www.yna.co.kr/view/AKR20250504013800003"
+      }
+    ]
+  }
+];
+
+async function main() {
+  const v6Rows = readV6Rows();
+  const results = [];
+  for (const company of companies) {
+    const history = await fetchNaverHistory(company.ticker);
+    const latest = history.at(-1);
+    const ma200 = movingAverage(history, 200);
+    const ma600 = movingAverage(history, 600);
+    const analyzedEvents = company.events.map((event) => analyzeEvent(event, history, latest, ma200, ma600, company.confidence));
+    const primary = analyzedEvents.find((event) => event.id === company.primaryEvent) ?? analyzedEvents[0];
+    const v6 = v6Rows.get(company.ticker) ?? null;
+    results.push({
+      ticker: company.ticker,
+      company: company.company,
+      sector: company.sector,
+      confidence: company.confidence,
+      structuralMemo: company.structuralMemo,
+      holdView: company.holdView,
+      latestDate: latest.date,
+      latestClose: latest.close,
+      ma200: round(ma200, 0),
+      ma600: round(ma600, 0),
+      v6: v6 ? {
+        decision: v6.decision,
+        totalScore: v6.totalScore,
+        technicalMemo: v6.technical?.memo ?? null,
+        entryAction: v6.entryPlan?.action ?? null
+      } : null,
+      primary,
+      events: analyzedEvents,
+      adjustedAction: adjustedAction(primary, v6),
+      structuralGrade: structuralGrade(primary.score)
+    });
+    await sleep(60);
+  }
+
+  const sorted = [...results].sort((a, b) => b.primary.score - a.primary.score);
+  const payload = {
+    meta: {
+      title: "체질 전환 기준선 분석",
+      runDate: RUN_DATE,
+      priceSource: "Naver Finance siseJson daily close",
+      latestPriceDate: mostRecentDate(results),
+      note: "기준일은 차트 저점이 아니라 사업 체질 변화 근거가 있는 이벤트일을 우선 적용했다. 1년 미만 기준선은 점수 상한을 둔다."
+    },
+    methodology: {
+      score: "스토리 신뢰도 25점, 전환 후 CAGR/누적수익률 35점, 200/600일선 16점, 고점 대비 낙폭·MDD 24점. 1년 미만은 65점, 6개월 미만은 50점으로 상한.",
+      interpretation: [
+        "80점 이상: 구조적 우상향 검증 강함",
+        "65~79점: 체질 개선 인정, 진입가 관리 필요",
+        "50~64점: 전환 스토리는 있으나 검증 기간 또는 가격 검증 부족",
+        "50점 미만: 장기 보유보다 이벤트·트레이딩 관점 우선"
+      ]
+    },
+    results: sorted
+  };
+
+  fs.writeFileSync(dataPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+  fs.writeFileSync(outputPath, renderHtml(payload), "utf8");
+  console.log(`Wrote ${path.relative(root, dataPath)}`);
+  console.log(`Wrote ${path.relative(root, outputPath)}`);
+}
+
+function analyzeEvent(event, history, latest, ma200, ma600, confidence) {
+  const basisRow = history.find((row) => row.date >= event.date);
+  if (!basisRow) throw new Error(`No price row for ${event.id} ${event.date}`);
+  const regimeRows = history.filter((row) => row.date >= basisRow.date);
+  const high = regimeRows.reduce((memo, row) => row.close > memo.close ? row : memo, regimeRows[0]);
+  const low = regimeRows.reduce((memo, row) => row.close < memo.close ? row : memo, regimeRows[0]);
+  const days = daysBetween(basisRow.date, latest.date);
+  const returnPct = pctChange(basisRow.close, latest.close);
+  const cagrPct = cagr(basisRow.close, latest.close, days);
+  const drawdownFromHighPct = pctChange(high.close, latest.close);
+  const maxDrawdownPct = maxDrawdown(regimeRows);
+  const aboveMA200 = ma200 != null ? latest.close >= ma200 : null;
+  const aboveMA600 = ma600 != null ? latest.close >= ma600 : null;
+  const score = regimeScore({ returnPct, cagrPct, drawdownFromHighPct, maxDrawdownPct, aboveMA200, aboveMA600, days, confidence });
+  return {
+    ...event,
+    firstTradingDate: basisRow.date,
+    basisClose: basisRow.close,
+    latestClose: latest.close,
+    latestDate: latest.date,
+    days: Math.round(days),
+    returnPct: round(returnPct, 1),
+    cagrPct: round(cagrPct, 1),
+    highClose: high.close,
+    highDate: high.date,
+    lowClose: low.close,
+    lowDate: low.date,
+    drawdownFromHighPct: round(drawdownFromHighPct, 1),
+    maxDrawdownPct: round(maxDrawdownPct, 1),
+    aboveMA200,
+    aboveMA600,
+    score,
+    grade: structuralGrade(score),
+    durationFlag: days < 180 ? "검증 기간 매우 짧음" : days < 365 ? "1년 미만 검증" : "검증 기간 충분"
+  };
+}
+
+function regimeScore(metric) {
+  let score = metric.confidence * 5;
+  if (metric.cagrPct >= 35) score += 25;
+  else if (metric.cagrPct >= 20) score += 20;
+  else if (metric.cagrPct >= 10) score += 14;
+  else if (metric.cagrPct >= 0) score += 8;
+
+  if (metric.returnPct >= 100) score += 10;
+  else if (metric.returnPct >= 50) score += 8;
+  else if (metric.returnPct >= 20) score += 5;
+  else if (metric.returnPct >= 0) score += 3;
+
+  if (metric.aboveMA200) score += 8;
+  if (metric.aboveMA600) score += 8;
+
+  if (metric.drawdownFromHighPct >= -15) score += 12;
+  else if (metric.drawdownFromHighPct >= -30) score += 8;
+  else if (metric.drawdownFromHighPct >= -45) score += 4;
+
+  if (metric.maxDrawdownPct >= -35) score += 12;
+  else if (metric.maxDrawdownPct >= -55) score += 6;
+
+  const durationCap = metric.days < 180 ? 50 : metric.days < 365 ? 65 : 100;
+  return Math.max(0, Math.min(durationCap, Math.round(score)));
+}
+
+function structuralGrade(score) {
+  if (score >= 80) return "구조적 우상향 검증 강함";
+  if (score >= 65) return "체질 개선 인정, 진입가 관리 필요";
+  if (score >= 50) return "전환 스토리 있으나 검증 부족";
+  return "장기 보유보다 이벤트·트레이딩 우선";
+}
+
+function adjustedAction(primary, v6) {
+  const decision = v6?.decision ?? "UNKNOWN";
+  if (primary.score >= 80) {
+    return decision === "ENTRY_OK"
+      ? "장기 체질은 인정. 단기 과열이면 v7 기준으로 눌림 분할만 허용"
+      : "장기 체질은 인정하되, 기술적 트리거 전 대기";
+  }
+  if (primary.score >= 65) {
+    return decision === "ENTRY_OK"
+      ? "진입 가능은 유지하되, 장기 보유 비중은 수주·실적 확인 후 확대"
+      : "체질 개선은 인정. 가격 트리거 확인 후 분할";
+  }
+  if (primary.score >= 50) {
+    return "기술적 진입과 장기 보유를 분리. 소액·조건부 또는 사이클 거래";
+  }
+  return "장기 보유 후보로는 보류. AI/신사업 실적 확인 전에는 트레이딩 관점";
+}
+
+async function fetchNaverHistory(ticker) {
+  const url = `https://api.finance.naver.com/siseJson.naver?symbol=${ticker}&requestType=1&startTime=${HISTORY_START}&endTime=${END_DATE}&timeframe=day`;
+  const response = await fetch(url, {
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/125 Safari/537.36",
+      "Referer": `https://finance.naver.com/item/main.naver?code=${ticker}`
+    }
+  });
+  if (!response.ok) throw new Error(`${response.status} ${url}`);
+  const text = await response.text();
+  const raw = Function(`return (${text})`)();
+  return raw.slice(1)
+    .filter(Array.isArray)
+    .map((row) => ({
+      date: formatNaverDate(String(row[0])),
+      open: row[1],
+      high: row[2],
+      low: row[3],
+      close: row[4],
+      volume: row[5]
+    }))
+    .filter((row) => Number.isFinite(row.close))
+    .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+function readV6Rows() {
+  if (!fs.existsSync(v6DataPath)) return new Map();
+  const payload = JSON.parse(fs.readFileSync(v6DataPath, "utf8"));
+  const rows = payload.allRows ?? payload.rows ?? [];
+  return new Map(rows.map((row) => [row.ticker, row]));
+}
+
+function movingAverage(rows, n) {
+  if (rows.length < n) return null;
+  const slice = rows.slice(-n);
+  return slice.reduce((sum, row) => sum + row.close, 0) / n;
+}
+
+function maxDrawdown(rows) {
+  let peak = rows[0]?.close ?? 0;
+  let drawdown = 0;
+  for (const row of rows) {
+    if (row.close > peak) peak = row.close;
+    drawdown = Math.min(drawdown, pctChange(peak, row.close));
+  }
+  return drawdown;
+}
+
+function pctChange(from, to) {
+  if (!from) return null;
+  return (to / from - 1) * 100;
+}
+
+function cagr(from, to, days) {
+  if (!from || days <= 0) return null;
+  return (Math.pow(to / from, 365.25 / days) - 1) * 100;
+}
+
+function daysBetween(from, to) {
+  return (new Date(`${to}T00:00:00+09:00`) - new Date(`${from}T00:00:00+09:00`)) / 86_400_000;
+}
+
+function formatNaverDate(value) {
+  return `${value.slice(0, 4)}-${value.slice(4, 6)}-${value.slice(6, 8)}`;
+}
+
+function mostRecentDate(rows) {
+  return rows.map((row) => row.latestDate).sort().at(-1);
+}
+
+function round(value, digits = 2) {
+  if (value == null || !Number.isFinite(value)) return null;
+  const factor = 10 ** digits;
+  return Math.round(value * factor) / factor;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function renderHtml(payload) {
+  const data = JSON.stringify(payload).replace(/</g, "\\u003c");
+  return `<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(payload.meta.title)}</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --line: #d9e0e8;
+      --text: #17202a;
+      --muted: #637083;
+      --blue: #155eef;
+      --green: #16794c;
+      --amber: #a15c00;
+      --red: #bd2f2f;
+      --slate: #314155;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, Pretendard, "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); letter-spacing: 0; }
+    header { background: #ffffff; border-bottom: 1px solid var(--line); }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .top { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 28px 0 20px; align-items: end; }
+    h1 { margin: 0 0 8px; font-size: clamp(24px, 4vw, 38px); line-height: 1.15; }
+    .sub { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav a { border: 1px solid var(--line); color: var(--slate); text-decoration: none; padding: 8px 11px; border-radius: 8px; background: #fff; font-weight: 700; font-size: 13px; }
+    main { padding: 22px 0 40px; }
+    .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .metric, .panel, .company { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+    .metric { padding: 16px; }
+    .label { color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .value { margin-top: 7px; font-size: 24px; font-weight: 850; }
+    .panel { padding: 18px; margin-bottom: 16px; }
+    .panel h2 { margin: 0 0 12px; font-size: 18px; }
+    .method { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; align-items: start; }
+    .method p { margin: 0; color: var(--muted); line-height: 1.65; }
+    .method ul { margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.7; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 920px; }
+    th, td { padding: 11px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 13px; }
+    th { color: var(--muted); font-size: 12px; background: #f8fafc; white-space: nowrap; }
+    td strong { font-size: 14px; }
+    .score { display: inline-flex; min-width: 42px; height: 30px; align-items: center; justify-content: center; border-radius: 8px; color: #fff; font-weight: 900; background: var(--slate); }
+    .score.high { background: var(--green); }
+    .score.mid { background: var(--blue); }
+    .score.low { background: var(--amber); }
+    .score.weak { background: var(--red); }
+    .tag { display: inline-flex; align-items: center; min-height: 24px; padding: 3px 8px; border-radius: 999px; background: #eef2f7; color: var(--slate); font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .tag.ok { background: #e9f7ef; color: var(--green); }
+    .tag.wait { background: #fff2dc; color: var(--amber); }
+    .tag.bad { background: #ffe8e8; color: var(--red); }
+    .companies { display: grid; gap: 14px; }
+    .company { padding: 18px; }
+    .company-head { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start; margin-bottom: 12px; }
+    .company h3 { margin: 0 0 6px; font-size: 21px; }
+    .company .meta { color: var(--muted); font-size: 13px; }
+    .memo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+    .memo p { margin: 0; padding: 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); line-height: 1.6; background: #fbfcfe; }
+    .event-grid { display: grid; gap: 10px; }
+    .event { border-top: 1px solid var(--line); padding-top: 12px; }
+    .event-title { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+    .event-title strong { font-size: 15px; }
+    .basis { margin: 0 0 8px; color: var(--muted); line-height: 1.55; font-size: 13px; }
+    .numbers { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; }
+    .num { padding: 9px; background: #f8fafc; border: 1px solid var(--line); border-radius: 8px; min-width: 0; }
+    .num span { display: block; color: var(--muted); font-size: 11px; font-weight: 800; margin-bottom: 5px; }
+    .num b { font-size: 13px; }
+    .positive { color: var(--green); }
+    .negative { color: var(--red); }
+    a { color: var(--blue); }
+    .footnotes { color: var(--muted); font-size: 12px; line-height: 1.6; }
+    @media (max-width: 840px) {
+      .top, .method, .memo, .company-head { grid-template-columns: 1fr; }
+      .nav { justify-content: flex-start; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap top">
+      <div>
+        <h1>체질 전환 기준선 분석</h1>
+        <p class="sub">사업 구조가 달라졌다고 볼 수 있는 이벤트일을 기준으로, 단순 5년 수익률이 아니라 전환 이후의 수익률·CAGR·고점 대비 낙폭·MDD·장기 이동평균을 다시 계산했습니다.</p>
+      </div>
+      <nav class="nav" aria-label="대시보드 이동">
+        <a href="./v6.html">V6 스크리너</a>
+        <a href="./v7.html">V7 실행판</a>
+        <a href="./national-growth-fund-dashboard.html">국민성장펀드</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="metrics" id="metrics"></section>
+    <section class="panel method">
+      <div>
+        <h2>계산 기준</h2>
+        <p>${escapeHtml(payload.methodology.score)} 기준일은 차트상 저점이 아니라 사업 체질 변화 근거가 있는 이벤트일을 우선했습니다.</p>
+      </div>
+      <ul>${payload.methodology.interpretation.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+    </section>
+    <section class="panel">
+      <h2>요약 순위</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>종목</th>
+              <th>대표 기준선</th>
+              <th>체질 점수</th>
+              <th>전환 후 수익률</th>
+              <th>CAGR</th>
+              <th>고점 대비</th>
+              <th>MDD</th>
+              <th>V6 판단</th>
+              <th>조정 해석</th>
+            </tr>
+          </thead>
+          <tbody id="summaryRows"></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="companies" id="companies"></section>
+    <section class="panel footnotes">
+      <b>주의:</b> 이 페이지는 공개 뉴스·리포트와 네이버 금융 일별 종가를 결합한 리서치 보조 자료입니다. 배당, 유상증자, 거래정지, 장중 실시간 가격은 반영하지 않습니다. 투자 판단은 실적 추정, 밸류에이션, 수급, 리스크 한도를 별도로 확인해야 합니다.
+    </section>
+  </main>
+  <script>
+    const DATA = ${data};
+    const pct = (v) => v == null ? "-" : Number(v).toLocaleString("ko-KR", { maximumFractionDigits: 1 }) + "%";
+    const price = (v) => v == null ? "-" : Number(v).toLocaleString("ko-KR") + "원";
+    const scoreClass = (s) => s >= 80 ? "high" : s >= 65 ? "mid" : s >= 50 ? "low" : "weak";
+    const decisionClass = (d) => d === "ENTRY_OK" ? "ok" : d === "WAIT_TRIGGER" ? "wait" : "bad";
+    const signedClass = (v) => Number(v) >= 0 ? "positive" : "negative";
+    const esc = (v) => String(v ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+
+    function renderMetrics() {
+      const strong = DATA.results.filter((x) => x.primary.score >= 80).length;
+      const weak = DATA.results.filter((x) => x.primary.score < 50).length;
+      document.querySelector("#metrics").innerHTML = [
+        ["가격 기준일", DATA.meta.latestPriceDate],
+        ["분석 종목", DATA.results.length + "개"],
+        ["장기 검증 강함", strong + "개"],
+        ["장기 보유 보류", weak + "개"]
+      ].map(([label, value]) => '<div class="metric"><div class="label">' + esc(label) + '</div><div class="value">' + esc(value) + '</div></div>').join("");
+    }
+
+    function renderSummary() {
+      document.querySelector("#summaryRows").innerHTML = DATA.results.map((row) => {
+        const p = row.primary;
+        return '<tr>' +
+          '<td><strong>' + esc(row.company) + '</strong><br><span class="meta">' + esc(row.ticker + " · " + row.sector) + '</span></td>' +
+          '<td>' + esc(p.label) + '<br><span class="meta">' + esc(p.firstTradingDate + " · " + p.durationFlag) + '</span></td>' +
+          '<td><span class="score ' + scoreClass(p.score) + '">' + p.score + '</span><br><span class="meta">' + esc(row.structuralGrade) + '</span></td>' +
+          '<td class="' + signedClass(p.returnPct) + '">' + pct(p.returnPct) + '</td>' +
+          '<td class="' + signedClass(p.cagrPct) + '">' + pct(p.cagrPct) + '</td>' +
+          '<td class="' + signedClass(p.drawdownFromHighPct) + '">' + pct(p.drawdownFromHighPct) + '</td>' +
+          '<td class="' + signedClass(p.maxDrawdownPct) + '">' + pct(p.maxDrawdownPct) + '</td>' +
+          '<td><span class="tag ' + decisionClass(row.v6?.decision) + '">' + esc(row.v6?.decision ?? "N/A") + '</span></td>' +
+          '<td>' + esc(row.adjustedAction) + '</td>' +
+        '</tr>';
+      }).join("");
+    }
+
+    function eventHtml(event) {
+      const source = event.extraSourceUrl
+        ? '<a href="' + esc(event.sourceUrl) + '" target="_blank" rel="noopener">' + esc(event.sourceName) + '</a> · <a href="' + esc(event.extraSourceUrl) + '" target="_blank" rel="noopener">추가 근거</a>'
+        : '<a href="' + esc(event.sourceUrl) + '" target="_blank" rel="noopener">' + esc(event.sourceName) + '</a>';
+      const nums = [
+        ["기준가", price(event.basisClose)],
+        ["현재가", price(event.latestClose)],
+        ["수익률", pct(event.returnPct), signedClass(event.returnPct)],
+        ["CAGR", pct(event.cagrPct), signedClass(event.cagrPct)],
+        ["고점", price(event.highClose) + " · " + event.highDate],
+        ["고점 대비", pct(event.drawdownFromHighPct), signedClass(event.drawdownFromHighPct)],
+        ["MDD", pct(event.maxDrawdownPct), signedClass(event.maxDrawdownPct)],
+        ["MA", (event.aboveMA200 ? "200일 상회" : "200일 하회") + " · " + (event.aboveMA600 ? "600일 상회" : "600일 하회")]
+      ].map(([label, value, cls]) => '<div class="num"><span>' + esc(label) + '</span><b class="' + (cls ?? "") + '">' + esc(value) + '</b></div>').join("");
+      return '<div class="event">' +
+        '<div class="event-title"><span class="score ' + scoreClass(event.score) + '">' + event.score + '</span><strong>' + esc(event.label) + '</strong><span class="tag">' + esc(event.firstTradingDate) + '</span><span class="tag ' + (event.days < 365 ? "wait" : "ok") + '">' + esc(event.durationFlag) + '</span></div>' +
+        '<p class="basis">' + esc(event.basis) + ' 출처: ' + source + '</p>' +
+        '<div class="numbers">' + nums + '</div>' +
+      '</div>';
+    }
+
+    function renderCompanies() {
+      document.querySelector("#companies").innerHTML = DATA.results.map((row) => {
+        return '<article class="company">' +
+          '<div class="company-head"><div><h3>' + esc(row.company) + '</h3><div class="meta">' + esc(row.ticker + " · " + row.sector + " · 현재 " + price(row.latestClose) + " (" + row.latestDate + ")") + '</div></div><div><span class="score ' + scoreClass(row.primary.score) + '">' + row.primary.score + '</span></div></div>' +
+          '<div class="memo"><p><b>체질 스토리</b><br>' + esc(row.structuralMemo) + '</p><p><b>보유 판단</b><br>' + esc(row.holdView) + '</p></div>' +
+          '<div class="event-grid">' + row.events.map(eventHtml).join("") + '</div>' +
+        '</article>';
+      }).join("");
+    }
+
+    renderMetrics();
+    renderSummary();
+    renderCompanies();
+  </script>
+</body>
+</html>`;
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
