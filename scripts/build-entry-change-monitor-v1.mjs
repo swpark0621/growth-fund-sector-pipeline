@@ -46,6 +46,7 @@ function main() {
       snapshots.push(toSnapshot(commit, target, payload));
     }
   }
+  const workingSnapshotCount = appendWorkingSnapshots(snapshots);
 
   const entryTickers = new Set();
   for (const snapshot of snapshots) {
@@ -63,7 +64,7 @@ function main() {
       runDate: RUN_DATE,
       startDate: "2026-06-10",
       startLabel: "저번주 수요일 이후",
-      source: "git history of v6, v7, v10 dashboard data",
+      source: workingSnapshotCount ? "git history plus current working-tree dashboard data" : "git history of v6, v7, v10 dashboard data",
       snapshotCount: snapshots.length,
       trackedVersions: trackedFiles.map((item) => item.version),
       entryTickerCount: records.length,
@@ -93,6 +94,33 @@ function safeGitShow(hash, file) {
     return git(["show", `${hash}:${file}`]);
   } catch {
     return null;
+  }
+}
+
+function appendWorkingSnapshots(snapshots) {
+  let count = 0;
+  for (const target of trackedFiles) {
+    if (!hasWorkingChange(target.file)) continue;
+    const filePath = path.join(root, target.file);
+    if (!fs.existsSync(filePath)) continue;
+    const payload = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    snapshots.push(toSnapshot({
+      hash: `WORKTREE-${target.version}`,
+      shortHash: "working",
+      date: RUN_DATE,
+      subject: "Current working-tree data"
+    }, target, payload));
+    count += 1;
+  }
+  return count;
+}
+
+function hasWorkingChange(file) {
+  try {
+    git(["diff", "--quiet", "HEAD", "--", file], { stdio: "ignore" });
+    return false;
+  } catch {
+    return true;
   }
 }
 
@@ -155,6 +183,7 @@ function normalizeRow(row) {
     levels: row.executionPlan?.levels ?? [],
     returns: row.returns ?? {},
     technicals: row.technicals ?? {},
+    priceSource: row.priceSource ?? null,
     sourceUrl: row.sourceUrl
   };
 }
@@ -248,6 +277,7 @@ function publicObservation(item) {
     valuationBlock: row.valuationBlock,
     structural: row.structural,
     holderCost: row.holderCost,
+    priceSource: row.priceSource,
     levels: row.levels
   };
 }
@@ -448,7 +478,7 @@ function renderHtml(payload) {
     function renderMetrics(){const s=DATA.summary.byStatus||{};const metrics=[["ENTRY 이력",DATA.meta.entryTickerCount+"개","v6·v7·v10 합산"],["관리 후보",DATA.summary.activeLike+"개","신규·유지·재진입"],["소프트 탈락",DATA.summary.lostSoft+"개","재진입 대기"],["축소/하드",DATA.summary.hardOrReduce+"개","신규 금지"],["스냅샷",DATA.meta.snapshotCount+"개",DATA.meta.startDate+" 이후"]];document.querySelector("#metrics").innerHTML=metrics.map(([a,b,c])=>\`<div class="metric"><strong>\${esc(b)}</strong><span>\${esc(a)} · \${esc(c)}</span></div>\`).join("");}
     function renderFilters(){document.querySelector("#statusFilters").innerHTML=statusOrder.map(x=>\`<button class="\${status===x?"active":""}" data-status="\${x}">\${esc(statusName[x]??x)} \${x==="ALL"?DATA.records.length:(DATA.summary.byStatus?.[x]??0)}</button>\`).join("");document.querySelectorAll("#statusFilters button").forEach(btn=>btn.addEventListener("click",()=>{status=btn.dataset.status;renderFilters();renderRecords();}));}
     function renderSnapshots(){document.querySelector("#snapshotGrid").innerHTML=DATA.summary.snapshotSummary.map(x=>\`<div class="snapshot"><strong>\${esc(x.version.toUpperCase())} · \${esc(x.latestDate)}</strong><span>ENTRY_OK \${x.entryOk}개 · \${esc(x.commit)}</span><span>\${esc(x.label)}</span></div>\`).join("");}
-    function recordCard(r){const c=r.current||{};const structural=c.structural;const holder=c.holderCost;return \`<article class="record"><div class="record-head"><div><h3>\${esc(r.company)}</h3><span class="note">\${esc(r.ticker)} · \${esc(r.sector)}</span></div><div class="chips"><span class="chip \${statusClass[r.status]??"info"}">\${esc(r.statusLabel)}</span><span class="chip info">\${esc(c.version??"-")}</span></div></div><div class="section-grid"><div class="mini"><b>현재</b><span>\${esc(c.decision??"-")} · \${price(c.close)} · 총점 \${c.totalScore??"-"}\${c.v10cScore?" · v10c "+c.v10cScore:""}</span></div><div class="mini"><b>마지막 ENTRY</b><span>\${r.lastEntry?esc(r.lastEntry.label)+" · "+price(r.lastEntry.close):"-"}</span></div><div class="mini"><b>체질</b><span>\${structural?esc(structural.gate)+" · "+structural.score+"점 · "+esc(structural.label):"미확인"}</span></div><div class="mini"><b>평단</b><span>\${holder?esc(holder.signal)+" · "+(holder.score??0)+"점 · "+price(holder.estimatedCost)+" · 괴리 "+pct(holder.gapPct):"NO_DATA"}</span></div><div class="mini"><b>재진입 트리거</b><span>\${esc(c.entryTrigger??"-")}</span></div><div class="mini"><b>무효/손절</b><span>\${esc(c.invalidation??"-")}</span></div></div><div class="action"><b>관리 액션</b><br>\${esc(r.action)}</div><div class="reason">\${esc(r.reason)}</div><div class="timeline">\${r.transitionHistory.map(ev=>\`<div class="event"><strong>\${esc(ev.version.toUpperCase())} \${esc(ev.change)}</strong><span>\${esc(ev.latestDate)} · \${esc(ev.from)} → \${esc(ev.to)}</span><span>\${price(ev.close)} · \${ev.totalScore??"-"}점</span></div>\`).join("")}</div></article>\`;}
+    function recordCard(r){const c=r.current||{};const structural=c.structural;const holder=c.holderCost;const source=c.priceSource?.source?\` · \${esc(c.priceSource.source)}\`:"";return \`<article class="record"><div class="record-head"><div><h3>\${esc(r.company)}</h3><span class="note">\${esc(r.ticker)} · \${esc(r.sector)}</span></div><div class="chips"><span class="chip \${statusClass[r.status]??"info"}">\${esc(r.statusLabel)}</span><span class="chip info">\${esc(c.version??"-")}</span></div></div><div class="section-grid"><div class="mini"><b>현재</b><span>\${esc(c.decision??"-")} · \${price(c.close)}\${source} · 총점 \${c.totalScore??"-"}\${c.v10cScore?" · v10c "+c.v10cScore:""}</span></div><div class="mini"><b>마지막 ENTRY</b><span>\${r.lastEntry?esc(r.lastEntry.label)+" · "+price(r.lastEntry.close):"-"}</span></div><div class="mini"><b>체질</b><span>\${structural?esc(structural.gate)+" · "+structural.score+"점 · "+esc(structural.label):"미확인"}</span></div><div class="mini"><b>평단</b><span>\${holder?esc(holder.signal)+" · "+(holder.score??0)+"점 · "+price(holder.estimatedCost)+" · 괴리 "+pct(holder.gapPct):"NO_DATA"}</span></div><div class="mini"><b>재진입 트리거</b><span>\${esc(c.entryTrigger??"-")}</span></div><div class="mini"><b>무효/손절</b><span>\${esc(c.invalidation??"-")}</span></div></div><div class="action"><b>관리 액션</b><br>\${esc(r.action)}</div><div class="reason">\${esc(r.reason)}</div><div class="timeline">\${r.transitionHistory.map(ev=>\`<div class="event"><strong>\${esc(ev.version.toUpperCase())} \${esc(ev.change)}</strong><span>\${esc(ev.latestDate)} · \${esc(ev.from)} → \${esc(ev.to)}</span><span>\${price(ev.close)} · \${ev.totalScore??"-"}점</span></div>\`).join("")}</div></article>\`;}
     function renderRecords(){const needle=query.trim().toLowerCase();const rows=DATA.records.filter(r=>(status==="ALL"||r.status===status)&&(!needle||r.searchText.includes(needle))).sort((a,b)=>0);document.querySelector("#recordGrid").innerHTML=rows.map(recordCard).join("");document.querySelector("#empty").hidden=rows.length>0;document.querySelector("#resultCount").textContent=\`표시 \${rows.length}개 / 전체 \${DATA.records.length}개\`;}
     document.querySelector("#search").addEventListener("input",e=>{query=e.target.value;renderRecords();});
     renderMetrics();renderFilters();renderSnapshots();renderRecords();

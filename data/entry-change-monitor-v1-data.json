@@ -1,18 +1,18 @@
 {
   "meta": {
     "title": "Entry Change Monitor v1",
-    "runDate": "2026-06-16T06:53:23",
+    "runDate": "2026-06-16T07:36:40",
     "startDate": "2026-06-10",
     "startLabel": "저번주 수요일 이후",
     "source": "git history of v6, v7, v10 dashboard data",
-    "snapshotCount": 7,
+    "snapshotCount": 8,
     "trackedVersions": [
       "v6",
       "v7",
       "v10"
     ],
     "entryTickerCount": 19,
-    "latestV10Snapshot": "V10 · 2026-06-15 · d5969b6"
+    "latestV10Snapshot": "V10 · 2026-06-15 · b438bbe"
   },
   "summary": {
     "byStatus": {
@@ -71,6 +71,13 @@
         "label": "V10 · 2026-06-15 · d5969b6",
         "latestDate": "2026-06-15",
         "commit": "d5969b6",
+        "entryOk": 10
+      },
+      {
+        "version": "v10",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "latestDate": "2026-06-15",
+        "commit": "b438bbe",
         "entryOk": 10
       }
     ]
@@ -166,6 +173,19 @@
       "latestDate": "2026-06-15",
       "label": "V10 · 2026-06-15 · d5969b6",
       "entryCount": 10
+    },
+    {
+      "id": "v10-b438bbe",
+      "version": "v10",
+      "file": "data/v10-execution-dashboard-data.json",
+      "commit": "b438bbec9b1c6c0f296044784311f833a0599973",
+      "shortHash": "b438bbe",
+      "commitDate": "2026-06-16T07:36:33+09:00",
+      "subject": "Refresh v10 current quote data",
+      "runDate": "2026-06-16",
+      "latestDate": "2026-06-15",
+      "label": "V10 · 2026-06-15 · b438bbe",
+      "entryCount": 10
     }
   ],
   "records": [
@@ -179,9 +199,9 @@
       "reason": "체질 PASS 65점 | 평단 ACCUMULATION 18점 | MA20 상회, RSI 43.7, 60일 고점 대비 -17.5%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -211,6 +231,13 @@
           "gapPct": 25,
           "memo": "B 추정 평단 20,521원 대비 25%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 25650,
+          "alternateClose": 25650
         },
         "levels": [
           {
@@ -252,102 +279,6 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
-        "latestDate": "2026-06-15",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 96,
-        "v10cScore": 114,
-        "close": 25600,
-        "entryRank": 1,
-        "technicalMemo": "MA20 상회, RSI 43.5, 60일 고점 대비 -17.7%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 25,600원에서 40%, MA20 24,672.5원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 24,672.5원 아래로 재이탈하거나 손절 기준 23,040원 하회",
-        "target": "1차 23,642.5원, 2차 60일 고점 31,100원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": {
-          "score": 65,
-          "gate": "PASS",
-          "grade": "체질 개선 인정, 진입가 관리 필요",
-          "label": "비전옥스 8.6G ELA 단독 공급 확인",
-          "memo": "체질 기준선 통과: 비전옥스 8.6G ELA 단독 공급 확인 이후 35.3%"
-        },
-        "holderCost": {
-          "signal": "ACCUMULATION",
-          "tier": "B",
-          "score": 18,
-          "estimatedCost": 20521,
-          "gapPct": 24.7,
-          "memo": "B 추정 평단 20,521원 대비 24.7%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
-          "holderName": "외국인 투자자군"
-        },
-        "levels": [
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 20521
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 23040
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 24549
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 24673
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 25600
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 27648
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 29440
-          }
-        ]
-      },
-      "firstEntry": {
-        "version": "v6",
-        "label": "V6 · 2026-06-12 · 7d6b23f",
-        "commit": "7d6b23f",
-        "commitDate": "2026-06-12T21:17:51+09:00",
-        "latestDate": "2026-06-12",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 95,
-        "v10cScore": null,
-        "close": 25400,
-        "entryRank": 1,
-        "technicalMemo": "MA20 상회, RSI 47.7, 60일 고점 대비 -18.3%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 25,400원에서 40%, MA20 24,800원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 24,800원 아래로 재이탈하거나 손절 기준 22,860원 하회",
-        "target": "1차 23,590원, 2차 60일 고점 31,100원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": null,
-        "holderCost": null,
-        "levels": []
-      },
-      "lastEntry": {
-        "version": "v10",
         "label": "V10 · 2026-06-15 · d5969b6",
         "commit": "d5969b6",
         "commitDate": "2026-06-15T20:59:07+09:00",
@@ -380,6 +311,111 @@
           "gapPct": 25,
           "memo": "B 추정 평단 20,521원 대비 25%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": null,
+        "levels": [
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 20521
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 23085
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 24552
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 24675
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 25650
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 27702
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 29497
+          }
+        ]
+      },
+      "firstEntry": {
+        "version": "v6",
+        "label": "V6 · 2026-06-12 · 7d6b23f",
+        "commit": "7d6b23f",
+        "commitDate": "2026-06-12T21:17:51+09:00",
+        "latestDate": "2026-06-12",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 95,
+        "v10cScore": null,
+        "close": 25400,
+        "entryRank": 1,
+        "technicalMemo": "MA20 상회, RSI 47.7, 60일 고점 대비 -18.3%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 25,400원에서 40%, MA20 24,800원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 24,800원 아래로 재이탈하거나 손절 기준 22,860원 하회",
+        "target": "1차 23,590원, 2차 60일 고점 31,100원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": null,
+        "holderCost": null,
+        "priceSource": null,
+        "levels": []
+      },
+      "lastEntry": {
+        "version": "v10",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
+        "latestDate": "2026-06-15",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 96,
+        "v10cScore": 114,
+        "close": 25650,
+        "entryRank": 1,
+        "technicalMemo": "MA20 상회, RSI 43.7, 60일 고점 대비 -17.5%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 25,650원에서 40%, MA20 24,675원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 24,675원 아래로 재이탈하거나 손절 기준 23,085원 하회",
+        "target": "1차 23,643.33원, 2차 60일 고점 31,100원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": {
+          "score": 65,
+          "gate": "PASS",
+          "grade": "체질 개선 인정, 진입가 관리 필요",
+          "label": "비전옥스 8.6G ELA 단독 공급 확인",
+          "memo": "체질 기준선 통과: 비전옥스 8.6G ELA 단독 공급 확인 이후 35.6%"
+        },
+        "holderCost": {
+          "signal": "ACCUMULATION",
+          "tier": "B",
+          "score": 18,
+          "estimatedCost": 20521,
+          "gapPct": 25,
+          "memo": "B 추정 평단 20,521원 대비 25%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
+          "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 25650,
+          "alternateClose": 25650
         },
         "levels": [
           {
@@ -441,6 +477,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -464,6 +501,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -499,9 +537,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -531,6 +569,13 @@
             "gapPct": 25,
             "memo": "B 추정 평단 20,521원 대비 25%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
             "holderName": "외국인 투자자군"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 25650,
+            "alternateClose": 25650
           },
           "levels": [
             {
@@ -662,9 +707,22 @@
           "totalScore": 96,
           "v10cScore": 114,
           "entryRank": 1
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 25650,
+          "totalScore": 96,
+          "v10cScore": 114,
+          "entryRank": 1
         }
       ],
-      "entryCount": 5,
+      "entryCount": 6,
       "entryVersions": [
         "v6",
         "v7",
@@ -682,9 +740,9 @@
       "reason": "체질 PASS 90점 | 평단 ACCUMULATION 18점 | MA20 상회, RSI 53.1, 60일 고점 대비 -24.5%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -714,6 +772,13 @@
           "gapPct": 0.7,
           "memo": "B 추정 평단 211,605원 대비 0.7%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 213000,
+          "alternateClose": 213000
         },
         "levels": [
           {
@@ -755,102 +820,6 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
-        "latestDate": "2026-06-15",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 90,
-        "v10cScore": 108,
-        "close": 214000,
-        "entryRank": 4,
-        "technicalMemo": "MA20 상회, RSI 53.5, 60일 고점 대비 -24.1%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 214,000원에서 40%, MA20 198,695원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 198,695원 아래로 재이탈하거나 손절 기준 192,600원 하회",
-        "target": "1차 208,343.33원, 2차 60일 고점 282,000원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": {
-          "score": 90,
-          "gate": "PASS",
-          "grade": "구조적 우상향 검증 강함",
-          "label": "폴란드 K2 1차 실행계약",
-          "memo": "체질 기준선 통과: 폴란드 K2 1차 실행계약 이후 611%"
-        },
-        "holderCost": {
-          "signal": "ACCUMULATION",
-          "tier": "B",
-          "score": 18,
-          "estimatedCost": 211598,
-          "gapPct": 1.1,
-          "memo": "B 추정 평단 211,598원 대비 1.1%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
-          "holderName": "외국인 투자자군"
-        },
-        "levels": [
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 192600
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 201160
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 205440
-          },
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 211598
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 214000
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 231120
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 246100
-          }
-        ]
-      },
-      "firstEntry": {
-        "version": "v6",
-        "label": "V6 · 2026-06-12 · 7d6b23f",
-        "commit": "7d6b23f",
-        "commitDate": "2026-06-12T21:17:51+09:00",
-        "latestDate": "2026-06-12",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 90,
-        "v10cScore": null,
-        "close": 208500,
-        "entryRank": 7,
-        "technicalMemo": "MA20 상회, RSI 55.5, 60일 고점 대비 -26.1%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 208,500원에서 40%, MA20 198,620원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 198,620원 아래로 재이탈하거나 손절 기준 187,650원 하회",
-        "target": "1차 207,991.67원, 2차 60일 고점 282,000원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": null,
-        "holderCost": null,
-        "levels": []
-      },
-      "lastEntry": {
-        "version": "v10",
         "label": "V10 · 2026-06-15 · d5969b6",
         "commit": "d5969b6",
         "commitDate": "2026-06-15T20:59:07+09:00",
@@ -883,6 +852,111 @@
           "gapPct": 0.7,
           "memo": "B 추정 평단 211,605원 대비 0.7%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": null,
+        "levels": [
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 191700
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 200220
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 204480
+          },
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 211605
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 213000
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 230040
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 244950
+          }
+        ]
+      },
+      "firstEntry": {
+        "version": "v6",
+        "label": "V6 · 2026-06-12 · 7d6b23f",
+        "commit": "7d6b23f",
+        "commitDate": "2026-06-12T21:17:51+09:00",
+        "latestDate": "2026-06-12",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 90,
+        "v10cScore": null,
+        "close": 208500,
+        "entryRank": 7,
+        "technicalMemo": "MA20 상회, RSI 55.5, 60일 고점 대비 -26.1%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 208,500원에서 40%, MA20 198,620원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 198,620원 아래로 재이탈하거나 손절 기준 187,650원 하회",
+        "target": "1차 207,991.67원, 2차 60일 고점 282,000원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": null,
+        "holderCost": null,
+        "priceSource": null,
+        "levels": []
+      },
+      "lastEntry": {
+        "version": "v10",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
+        "latestDate": "2026-06-15",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 90,
+        "v10cScore": 108,
+        "close": 213000,
+        "entryRank": 3,
+        "technicalMemo": "MA20 상회, RSI 53.1, 60일 고점 대비 -24.5%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 213,000원에서 40%, MA20 198,645원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 198,645원 아래로 재이탈하거나 손절 기준 191,700원 하회",
+        "target": "1차 208,326.67원, 2차 60일 고점 282,000원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": {
+          "score": 90,
+          "gate": "PASS",
+          "grade": "구조적 우상향 검증 강함",
+          "label": "폴란드 K2 1차 실행계약",
+          "memo": "체질 기준선 통과: 폴란드 K2 1차 실행계약 이후 607.6%"
+        },
+        "holderCost": {
+          "signal": "ACCUMULATION",
+          "tier": "B",
+          "score": 18,
+          "estimatedCost": 211605,
+          "gapPct": 0.7,
+          "memo": "B 추정 평단 211,605원 대비 0.7%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
+          "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 213000,
+          "alternateClose": 213000
         },
         "levels": [
           {
@@ -944,6 +1018,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -967,6 +1042,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -1002,9 +1078,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -1034,6 +1110,13 @@
             "gapPct": 0.7,
             "memo": "B 추정 평단 211,605원 대비 0.7%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
             "holderName": "외국인 투자자군"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 213000,
+            "alternateClose": 213000
           },
           "levels": [
             {
@@ -1165,9 +1248,22 @@
           "totalScore": 90,
           "v10cScore": 108,
           "entryRank": 3
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 213000,
+          "totalScore": 90,
+          "v10cScore": 108,
+          "entryRank": 3
         }
       ],
-      "entryCount": 5,
+      "entryCount": 6,
       "entryVersions": [
         "v6",
         "v7",
@@ -1185,9 +1281,9 @@
       "reason": "체질 PASS 75점 | 평단 ACCUMULATION 21점 | MA20 상회, RSI 51.7, 60일 고점 대비 -16.5%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -1217,6 +1313,13 @@
           "gapPct": 26.5,
           "memo": "B 추정 평단 944,173원 대비 26.5%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 1194000,
+          "alternateClose": 1194000
         },
         "levels": [
           {
@@ -1258,102 +1361,6 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
-        "latestDate": "2026-06-15",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 87,
-        "v10cScore": 108,
-        "close": 1179000,
-        "entryRank": 5,
-        "technicalMemo": "MA20 상회, RSI 50.5, 60일 고점 대비 -17.6%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 1,179,000원에서 40%, MA20 1,065,750원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 1,065,750원 아래로 재이탈하거나 손절 기준 1,061,100원 하회",
-        "target": "1차 1,078,633.33원, 2차 60일 고점 1,430,000원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": {
-          "score": 75,
-          "gate": "PASS",
-          "grade": "체질 개선 인정, 진입가 관리 필요",
-          "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 1,295.3%"
-        },
-        "holderCost": {
-          "signal": "ACCUMULATION",
-          "tier": "B",
-          "score": 21,
-          "estimatedCost": 933395,
-          "gapPct": 26.3,
-          "memo": "B 추정 평단 933,395원 대비 26.3%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
-          "holderName": "국민연금공단"
-        },
-        "levels": [
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 933395
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 1061100
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 1108260
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 1131840
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 1179000
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 1273320
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 1355850
-          }
-        ]
-      },
-      "firstEntry": {
-        "version": "v6",
-        "label": "V6 · 2026-06-12 · 7d6b23f",
-        "commit": "7d6b23f",
-        "commitDate": "2026-06-12T21:17:51+09:00",
-        "latestDate": "2026-06-12",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 87,
-        "v10cScore": null,
-        "close": 1130000,
-        "entryRank": 10,
-        "technicalMemo": "MA20 상회, RSI 49.5, 60일 고점 대비 -21%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 1,130,000원에서 40%, MA20 1,070,150원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 1,070,150원 아래로 재이탈하거나 손절 기준 1,017,000원 하회",
-        "target": "1차 1,074,500원, 2차 60일 고점 1,430,000원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": null,
-        "holderCost": null,
-        "levels": []
-      },
-      "lastEntry": {
-        "version": "v10",
         "label": "V10 · 2026-06-15 · d5969b6",
         "commit": "d5969b6",
         "commitDate": "2026-06-15T20:59:07+09:00",
@@ -1386,6 +1393,111 @@
           "gapPct": 26.5,
           "memo": "B 추정 평단 944,173원 대비 26.5%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "국민연금공단"
+        },
+        "priceSource": null,
+        "levels": [
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 944173
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 1074600
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 1122360
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 1146240
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 1194000
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 1289520
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 1373100
+          }
+        ]
+      },
+      "firstEntry": {
+        "version": "v6",
+        "label": "V6 · 2026-06-12 · 7d6b23f",
+        "commit": "7d6b23f",
+        "commitDate": "2026-06-12T21:17:51+09:00",
+        "latestDate": "2026-06-12",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 87,
+        "v10cScore": null,
+        "close": 1130000,
+        "entryRank": 10,
+        "technicalMemo": "MA20 상회, RSI 49.5, 60일 고점 대비 -21%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 1,130,000원에서 40%, MA20 1,070,150원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 1,070,150원 아래로 재이탈하거나 손절 기준 1,017,000원 하회",
+        "target": "1차 1,074,500원, 2차 60일 고점 1,430,000원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": null,
+        "holderCost": null,
+        "priceSource": null,
+        "levels": []
+      },
+      "lastEntry": {
+        "version": "v10",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
+        "latestDate": "2026-06-15",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 87,
+        "v10cScore": 108,
+        "close": 1194000,
+        "entryRank": 4,
+        "technicalMemo": "MA20 상회, RSI 51.7, 60일 고점 대비 -16.5%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 1,194,000원에서 40%, MA20 1,066,500원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 1,066,500원 아래로 재이탈하거나 손절 기준 1,074,600원 하회",
+        "target": "1차 1,078,883.33원, 2차 60일 고점 1,430,000원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": {
+          "score": 75,
+          "gate": "PASS",
+          "grade": "체질 개선 인정, 진입가 관리 필요",
+          "label": "가격 기반 장기 추세 기준선",
+          "memo": "가격 기반 장기 추세 통과: 1,313%"
+        },
+        "holderCost": {
+          "signal": "ACCUMULATION",
+          "tier": "B",
+          "score": 21,
+          "estimatedCost": 944173,
+          "gapPct": 26.5,
+          "memo": "B 추정 평단 944,173원 대비 26.5%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
+          "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 1194000,
+          "alternateClose": 1194000
         },
         "levels": [
           {
@@ -1447,6 +1559,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -1470,6 +1583,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -1505,9 +1619,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -1537,6 +1651,13 @@
             "gapPct": 26.5,
             "memo": "B 추정 평단 944,173원 대비 26.5%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
             "holderName": "국민연금공단"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 1194000,
+            "alternateClose": 1194000
           },
           "levels": [
             {
@@ -1668,9 +1789,22 @@
           "totalScore": 87,
           "v10cScore": 108,
           "entryRank": 4
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 1194000,
+          "totalScore": 87,
+          "v10cScore": 108,
+          "entryRank": 4
         }
       ],
-      "entryCount": 5,
+      "entryCount": 6,
       "entryVersions": [
         "v6",
         "v7",
@@ -1688,9 +1822,9 @@
       "reason": "체질 PASS 75점 | 평단 ACCUMULATION 15점 | MA20 상회, RSI 41, 60일 고점 대비 -24.4%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -1720,6 +1854,13 @@
           "gapPct": 33.5,
           "memo": "B 추정 평단 632,977원 대비 33.5%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 845000,
+          "alternateClose": 845000
         },
         "levels": [
           {
@@ -1761,21 +1902,21 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
         "totalScore": 93,
         "v10cScore": 108,
-        "close": 853000,
-        "entryRank": 3,
-        "technicalMemo": "MA20 상회, RSI 42, 60일 고점 대비 -23.7%",
+        "close": 845000,
+        "entryRank": 2,
+        "technicalMemo": "MA20 상회, RSI 41, 60일 고점 대비 -24.4%",
         "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 853,000원에서 40%, MA20 808,050원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 808,050원 아래로 재이탈하거나 손절 기준 767,700원 하회",
-        "target": "1차 833,433.33원, 2차 60일 고점 1,118,000원 부근",
+        "entryTrigger": "현 가격대 845,000원에서 40%, MA20 807,650원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 807,650원 아래로 재이탈하거나 손절 기준 760,500원 하회",
+        "target": "1차 833,300원, 2차 60일 고점 1,118,000원 부근",
         "riskNotes": [],
         "valuationBlock": false,
         "structural": {
@@ -1783,52 +1924,53 @@
           "gate": "PASS",
           "grade": "체질 개선 인정, 진입가 관리 필요",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 515.9%"
+          "memo": "가격 기반 장기 추세 통과: 510.1%"
         },
         "holderCost": {
           "signal": "ACCUMULATION",
           "tier": "B",
           "score": 15,
-          "estimatedCost": 632178,
-          "gapPct": 34.9,
-          "memo": "B 추정 평단 632,178원 대비 34.9%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
+          "estimatedCost": 632977,
+          "gapPct": 33.5,
+          "memo": "B 추정 평단 632,977원 대비 33.5%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
           "holderName": "국민연금공단"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
             "kind": "holderCost",
-            "price": 632178
+            "price": 632977
           },
           {
             "label": "손절",
             "kind": "stop",
-            "price": 767700
+            "price": 760500
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 804010
+            "price": 803612
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 818880
+            "price": 811200
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 853000
+            "price": 845000
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 921240
+            "price": 912600
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 980950
+            "price": 971750
           }
         ]
       },
@@ -1867,6 +2009,7 @@
           "memo": "B 추정 평단 632,178원 대비 34.9%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
           "holderName": "국민연금공단"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
@@ -1907,9 +2050,9 @@
       },
       "lastEntry": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -1939,6 +2082,13 @@
           "gapPct": 33.5,
           "memo": "B 추정 평단 632,977원 대비 33.5%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 845000,
+          "alternateClose": 845000
         },
         "levels": [
           {
@@ -2002,6 +2152,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -2027,6 +2178,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -2062,9 +2214,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -2094,6 +2246,13 @@
             "gapPct": 33.5,
             "memo": "B 추정 평단 632,977원 대비 33.5%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
             "holderName": "국민연금공단"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 845000,
+            "alternateClose": 845000
           },
           "levels": [
             {
@@ -2225,9 +2384,22 @@
           "totalScore": 93,
           "v10cScore": 108,
           "entryRank": 2
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 845000,
+          "totalScore": 93,
+          "v10cScore": 108,
+          "entryRank": 2
         }
       ],
-      "entryCount": 2,
+      "entryCount": 3,
       "entryVersions": [
         "v10"
       ],
@@ -2243,9 +2415,9 @@
       "reason": "체질 PASS 73점 | 평단 ACCUMULATION 15점 | MA20 상회, RSI 47.2, 60일 고점 대비 -16.9%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -2275,6 +2447,13 @@
           "gapPct": 31.8,
           "memo": "B 추정 평단 28,367원 대비 31.8%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
           "holderName": "삼성자산운용"
+        },
+        "priceSource": {
+          "source": "KRX",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 37400,
+          "alternateClose": null
         },
         "levels": [
           {
@@ -2316,102 +2495,6 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
-        "latestDate": "2026-06-15",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 92,
-        "v10cScore": 107,
-        "close": 37500,
-        "entryRank": 6,
-        "technicalMemo": "MA20 상회, RSI 47.3, 60일 고점 대비 -16.7%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 37,500원에서 40%, MA20 35,002.5원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 35,002.5원 아래로 재이탈하거나 손절 기준 33,750원 하회",
-        "target": "1차 33,405원, 2차 60일 고점 45,000원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": {
-          "score": 73,
-          "gate": "PASS",
-          "grade": "체질 개선 인정, 진입가 관리 필요",
-          "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 120.8%"
-        },
-        "holderCost": {
-          "signal": "ACCUMULATION",
-          "tier": "B",
-          "score": 15,
-          "estimatedCost": 28367,
-          "gapPct": 32.2,
-          "memo": "B 추정 평단 28,367원 대비 32.2%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
-          "holderName": "삼성자산운용"
-        },
-        "levels": [
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 28367
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 33750
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 35250
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 36000
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 37500
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 40500
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 43125
-          }
-        ]
-      },
-      "firstEntry": {
-        "version": "v6",
-        "label": "V6 · 2026-06-12 · 7d6b23f",
-        "commit": "7d6b23f",
-        "commitDate": "2026-06-12T21:17:51+09:00",
-        "latestDate": "2026-06-12",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 92,
-        "v10cScore": null,
-        "close": 39150,
-        "entryRank": 3,
-        "technicalMemo": "MA20 상회, RSI 52.3, 60일 고점 대비 -13%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 39,150원에서 40%, MA20 35,135원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 35,135원 아래로 재이탈하거나 손절 기준 35,235원 하회",
-        "target": "1차 33,265.83원, 2차 60일 고점 45,000원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": null,
-        "holderCost": null,
-        "levels": []
-      },
-      "lastEntry": {
-        "version": "v10",
         "label": "V10 · 2026-06-15 · d5969b6",
         "commit": "d5969b6",
         "commitDate": "2026-06-15T20:59:07+09:00",
@@ -2444,6 +2527,111 @@
           "gapPct": 31.8,
           "memo": "B 추정 평단 28,367원 대비 31.8%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
           "holderName": "삼성자산운용"
+        },
+        "priceSource": null,
+        "levels": [
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 28367
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 33660
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 35156
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 35904
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 37400
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 40392
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 43010
+          }
+        ]
+      },
+      "firstEntry": {
+        "version": "v6",
+        "label": "V6 · 2026-06-12 · 7d6b23f",
+        "commit": "7d6b23f",
+        "commitDate": "2026-06-12T21:17:51+09:00",
+        "latestDate": "2026-06-12",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 92,
+        "v10cScore": null,
+        "close": 39150,
+        "entryRank": 3,
+        "technicalMemo": "MA20 상회, RSI 52.3, 60일 고점 대비 -13%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 39,150원에서 40%, MA20 35,135원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 35,135원 아래로 재이탈하거나 손절 기준 35,235원 하회",
+        "target": "1차 33,265.83원, 2차 60일 고점 45,000원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": null,
+        "holderCost": null,
+        "priceSource": null,
+        "levels": []
+      },
+      "lastEntry": {
+        "version": "v10",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
+        "latestDate": "2026-06-15",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 92,
+        "v10cScore": 107,
+        "close": 37400,
+        "entryRank": 5,
+        "technicalMemo": "MA20 상회, RSI 47.2, 60일 고점 대비 -16.9%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 37,400원에서 40%, MA20 34,997.5원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 34,997.5원 아래로 재이탈하거나 손절 기준 33,660원 하회",
+        "target": "1차 33,403.33원, 2차 60일 고점 45,000원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": {
+          "score": 73,
+          "gate": "PASS",
+          "grade": "체질 개선 인정, 진입가 관리 필요",
+          "label": "가격 기반 장기 추세 기준선",
+          "memo": "가격 기반 장기 추세 통과: 120.3%"
+        },
+        "holderCost": {
+          "signal": "ACCUMULATION",
+          "tier": "B",
+          "score": 15,
+          "estimatedCost": 28367,
+          "gapPct": 31.8,
+          "memo": "B 추정 평단 28,367원 대비 31.8%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
+          "holderName": "삼성자산운용"
+        },
+        "priceSource": {
+          "source": "KRX",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 37400,
+          "alternateClose": null
         },
         "levels": [
           {
@@ -2505,6 +2693,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -2528,6 +2717,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -2563,9 +2753,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -2595,6 +2785,13 @@
             "gapPct": 31.8,
             "memo": "B 추정 평단 28,367원 대비 31.8%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 15점",
             "holderName": "삼성자산운용"
+          },
+          "priceSource": {
+            "source": "KRX",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 37400,
+            "alternateClose": null
           },
           "levels": [
             {
@@ -2726,9 +2923,22 @@
           "totalScore": 92,
           "v10cScore": 107,
           "entryRank": 5
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 37400,
+          "totalScore": 92,
+          "v10cScore": 107,
+          "entryRank": 5
         }
       ],
-      "entryCount": 5,
+      "entryCount": 6,
       "entryVersions": [
         "v6",
         "v7",
@@ -2746,9 +2956,9 @@
       "reason": "체질 PASS 73점 | 평단 NEUTRAL 13점 | MA20 상회, RSI 48.7, 60일 고점 대비 -15.7%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -2778,6 +2988,13 @@
           "gapPct": 32.8,
           "memo": "B 추정 평단 45,864원 대비 32.8%. 방향성은 중립",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 60900,
+          "alternateClose": 60900
         },
         "levels": [
           {
@@ -2819,102 +3036,6 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
-        "latestDate": "2026-06-15",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 98,
-        "v10cScore": 111,
-        "close": 61100,
-        "entryRank": 2,
-        "technicalMemo": "MA20 상회, RSI 48.8, 60일 고점 대비 -15.4%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 61,100원에서 40%, MA20 56,802.5원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 56,802.5원 아래로 재이탈하거나 손절 기준 54,990원 하회",
-        "target": "1차 54,215원, 2차 60일 고점 72,200원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": {
-          "score": 73,
-          "gate": "PASS",
-          "grade": "체질 개선 인정, 진입가 관리 필요",
-          "label": "EUV PR 삼성 퀄 통과 보도",
-          "memo": "체질 기준선 통과: EUV PR 삼성 퀄 통과 보도 이후 70%"
-        },
-        "holderCost": {
-          "signal": "NEUTRAL",
-          "tier": "B",
-          "score": 13,
-          "estimatedCost": 45864,
-          "gapPct": 33.2,
-          "memo": "B 추정 평단 45,864원 대비 33.2%. 방향성은 중립",
-          "holderName": "외국인 투자자군"
-        },
-        "levels": [
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 45864
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 54990
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 57434
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 58656
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 61100
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 65988
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 70265
-          }
-        ]
-      },
-      "firstEntry": {
-        "version": "v6",
-        "label": "V6 · 2026-06-12 · 7d6b23f",
-        "commit": "7d6b23f",
-        "commitDate": "2026-06-12T21:17:51+09:00",
-        "latestDate": "2026-06-12",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 91,
-        "v10cScore": null,
-        "close": 59000,
-        "entryRank": 4,
-        "technicalMemo": "MA20 상회, RSI 47, 60일 고점 대비 -18.3%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 59,000원에서 40%, MA20 56,647.5원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 56,647.5원 아래로 재이탈하거나 손절 기준 53,100원 하회",
-        "target": "1차 54,017.5원, 2차 60일 고점 72,200원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": null,
-        "holderCost": null,
-        "levels": []
-      },
-      "lastEntry": {
-        "version": "v10",
         "label": "V10 · 2026-06-15 · d5969b6",
         "commit": "d5969b6",
         "commitDate": "2026-06-15T20:59:07+09:00",
@@ -2947,6 +3068,111 @@
           "gapPct": 32.8,
           "memo": "B 추정 평단 45,864원 대비 32.8%. 방향성은 중립",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": null,
+        "levels": [
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 45864
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 54810
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 57246
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 58464
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 60900
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 65772
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 70035
+          }
+        ]
+      },
+      "firstEntry": {
+        "version": "v6",
+        "label": "V6 · 2026-06-12 · 7d6b23f",
+        "commit": "7d6b23f",
+        "commitDate": "2026-06-12T21:17:51+09:00",
+        "latestDate": "2026-06-12",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 91,
+        "v10cScore": null,
+        "close": 59000,
+        "entryRank": 4,
+        "technicalMemo": "MA20 상회, RSI 47, 60일 고점 대비 -18.3%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 59,000원에서 40%, MA20 56,647.5원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 56,647.5원 아래로 재이탈하거나 손절 기준 53,100원 하회",
+        "target": "1차 54,017.5원, 2차 60일 고점 72,200원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": null,
+        "holderCost": null,
+        "priceSource": null,
+        "levels": []
+      },
+      "lastEntry": {
+        "version": "v10",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
+        "latestDate": "2026-06-15",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 86,
+        "v10cScore": 99,
+        "close": 60900,
+        "entryRank": 6,
+        "technicalMemo": "MA20 상회, RSI 48.7, 60일 고점 대비 -15.7%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 60,900원에서 40%, MA20 56,792.5원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 56,792.5원 아래로 재이탈하거나 손절 기준 54,810원 하회",
+        "target": "1차 54,211.67원, 2차 60일 고점 72,200원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": {
+          "score": 73,
+          "gate": "PASS",
+          "grade": "체질 개선 인정, 진입가 관리 필요",
+          "label": "EUV PR 삼성 퀄 통과 보도",
+          "memo": "체질 기준선 통과: EUV PR 삼성 퀄 통과 보도 이후 69.4%"
+        },
+        "holderCost": {
+          "signal": "NEUTRAL",
+          "tier": "B",
+          "score": 13,
+          "estimatedCost": 45864,
+          "gapPct": 32.8,
+          "memo": "B 추정 평단 45,864원 대비 32.8%. 방향성은 중립",
+          "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 60900,
+          "alternateClose": 60900
         },
         "levels": [
           {
@@ -3008,6 +3234,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -3031,6 +3258,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -3066,9 +3294,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -3098,6 +3326,13 @@
             "gapPct": 32.8,
             "memo": "B 추정 평단 45,864원 대비 32.8%. 방향성은 중립",
             "holderName": "외국인 투자자군"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 60900,
+            "alternateClose": 60900
           },
           "levels": [
             {
@@ -3229,9 +3464,22 @@
           "totalScore": 86,
           "v10cScore": 99,
           "entryRank": 6
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 60900,
+          "totalScore": 86,
+          "v10cScore": 99,
+          "entryRank": 6
         }
       ],
-      "entryCount": 5,
+      "entryCount": 6,
       "entryVersions": [
         "v6",
         "v7",
@@ -3249,9 +3497,9 @@
       "reason": "체질 PASS 73점 | 평단 NEUTRAL 3점 | MA20 상회, RSI 67.4, 60일 고점 대비 -11.2%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -3281,6 +3529,13 @@
           "gapPct": 192.2,
           "memo": "B 추정 평단 56,716원 대비 192.2%. 방향성은 중립",
           "holderName": "국민연금공단, 삼성자산운용"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 165700,
+          "alternateClose": 165700
         },
         "levels": [
           {
@@ -3322,102 +3577,6 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
-        "latestDate": "2026-06-15",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 88,
-        "v10cScore": 91,
-        "close": 167900,
-        "entryRank": 8,
-        "technicalMemo": "MA20 상회, RSI 68.5, 60일 고점 대비 -10%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 167,900원에서 40%, MA20 118,850원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 118,850원 아래로 재이탈하거나 손절 기준 151,110원 하회",
-        "target": "1차 98,695원, 2차 60일 고점 186,500원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": {
-          "score": 73,
-          "gate": "PASS",
-          "grade": "체질 개선 인정, 진입가 관리 필요",
-          "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 731.2%"
-        },
-        "holderCost": {
-          "signal": "NEUTRAL",
-          "tier": "B",
-          "score": 3,
-          "estimatedCost": 56716,
-          "gapPct": 196,
-          "memo": "B 추정 평단 56,716원 대비 196%. 방향성은 중립",
-          "holderName": "국민연금공단, 삼성자산운용"
-        },
-        "levels": [
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 56716
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 151110
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 157826
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 161184
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 167900
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 181332
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 186500
-          }
-        ]
-      },
-      "firstEntry": {
-        "version": "v6",
-        "label": "V6 · 2026-06-10 · 5b6fc74",
-        "commit": "5b6fc74",
-        "commitDate": "2026-06-10T23:15:22+09:00",
-        "latestDate": "2026-06-10",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 94,
-        "v10cScore": null,
-        "close": 145800,
-        "entryRank": 1,
-        "technicalMemo": "MA20 상회, RSI 66.8, 60일 고점 대비 -9.9%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 145,800원에서 40%, MA20 110,735원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 110,735원 아래로 재이탈하거나 손절 기준 131,220원 하회",
-        "target": "1차 94,083.33원, 2차 60일 고점 161,800원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": null,
-        "holderCost": null,
-        "levels": []
-      },
-      "lastEntry": {
-        "version": "v10",
         "label": "V10 · 2026-06-15 · d5969b6",
         "commit": "d5969b6",
         "commitDate": "2026-06-15T20:59:07+09:00",
@@ -3450,6 +3609,111 @@
           "gapPct": 192.2,
           "memo": "B 추정 평단 56,716원 대비 192.2%. 방향성은 중립",
           "holderName": "국민연금공단, 삼성자산운용"
+        },
+        "priceSource": null,
+        "levels": [
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 56716
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 149130
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 155758
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 159072
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 165700
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 178956
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 186500
+          }
+        ]
+      },
+      "firstEntry": {
+        "version": "v6",
+        "label": "V6 · 2026-06-10 · 5b6fc74",
+        "commit": "5b6fc74",
+        "commitDate": "2026-06-10T23:15:22+09:00",
+        "latestDate": "2026-06-10",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 94,
+        "v10cScore": null,
+        "close": 145800,
+        "entryRank": 1,
+        "technicalMemo": "MA20 상회, RSI 66.8, 60일 고점 대비 -9.9%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 145,800원에서 40%, MA20 110,735원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 110,735원 아래로 재이탈하거나 손절 기준 131,220원 하회",
+        "target": "1차 94,083.33원, 2차 60일 고점 161,800원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": null,
+        "holderCost": null,
+        "priceSource": null,
+        "levels": []
+      },
+      "lastEntry": {
+        "version": "v10",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
+        "latestDate": "2026-06-15",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 88,
+        "v10cScore": 91,
+        "close": 165700,
+        "entryRank": 7,
+        "technicalMemo": "MA20 상회, RSI 67.4, 60일 고점 대비 -11.2%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 165,700원에서 40%, MA20 118,740원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 118,740원 아래로 재이탈하거나 손절 기준 149,130원 하회",
+        "target": "1차 98,658.33원, 2차 60일 고점 186,500원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": {
+          "score": 73,
+          "gate": "PASS",
+          "grade": "체질 개선 인정, 진입가 관리 필요",
+          "label": "가격 기반 장기 추세 기준선",
+          "memo": "가격 기반 장기 추세 통과: 720.3%"
+        },
+        "holderCost": {
+          "signal": "NEUTRAL",
+          "tier": "B",
+          "score": 3,
+          "estimatedCost": 56716,
+          "gapPct": 192.2,
+          "memo": "B 추정 평단 56,716원 대비 192.2%. 방향성은 중립",
+          "holderName": "국민연금공단, 삼성자산운용"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 165700,
+          "alternateClose": 165700
         },
         "levels": [
           {
@@ -3511,6 +3775,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -3534,6 +3799,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -3569,9 +3835,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -3601,6 +3867,13 @@
             "gapPct": 192.2,
             "memo": "B 추정 평단 56,716원 대비 192.2%. 방향성은 중립",
             "holderName": "국민연금공단, 삼성자산운용"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 165700,
+            "alternateClose": 165700
           },
           "levels": [
             {
@@ -3732,9 +4005,22 @@
           "totalScore": 88,
           "v10cScore": 91,
           "entryRank": 7
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 165700,
+          "totalScore": 88,
+          "v10cScore": 91,
+          "entryRank": 7
         }
       ],
-      "entryCount": 7,
+      "entryCount": 8,
       "entryVersions": [
         "v6",
         "v7",
@@ -3752,9 +4038,9 @@
       "reason": "체질 PASS 77점 | 평단 NEUTRAL 10점 | MA20 상회, RSI 60, 60일 고점 대비 -7.8%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -3784,6 +4070,13 @@
           "gapPct": 38.1,
           "memo": "B 추정 평단 51,109원 대비 38.1%. 방향성은 중립",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 70600,
+          "alternateClose": 70600
         },
         "levels": [
           {
@@ -3825,102 +4118,6 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
-        "latestDate": "2026-06-15",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 89,
-        "v10cScore": 99,
-        "close": 69500,
-        "entryRank": 7,
-        "technicalMemo": "MA20 상회, RSI 58.8, 60일 고점 대비 -9.3%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 69,500원에서 40%, MA20 58,580원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 58,580원 아래로 재이탈하거나 손절 기준 62,550원 하회",
-        "target": "1차 55,400.83원, 2차 60일 고점 76,600원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": {
-          "score": 77,
-          "gate": "PASS",
-          "grade": "체질 개선 인정, 진입가 관리 필요",
-          "label": "전장 매출 비중 우위 기준연도",
-          "memo": "체질 기준선 통과: 전장 매출 비중 우위 기준연도 이후 73.3%"
-        },
-        "holderCost": {
-          "signal": "NEUTRAL",
-          "tier": "B",
-          "score": 10,
-          "estimatedCost": 50582,
-          "gapPct": 37.4,
-          "memo": "B 추정 평단 50,582원 대비 37.4%. 방향성은 중립",
-          "holderName": "국민연금공단"
-        },
-        "levels": [
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 50582
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 62550
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 65330
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 66720
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 69500
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 75060
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 76600
-          }
-        ]
-      },
-      "firstEntry": {
-        "version": "v6",
-        "label": "V6 · 2026-06-12 · 7d6b23f",
-        "commit": "7d6b23f",
-        "commitDate": "2026-06-12T21:17:51+09:00",
-        "latestDate": "2026-06-12",
-        "decision": "ENTRY_OK",
-        "baseDecision": "ENTRY_OK",
-        "totalScore": 91,
-        "v10cScore": null,
-        "close": 65000,
-        "entryRank": 5,
-        "technicalMemo": "MA20 상회, RSI 56.5, 60일 고점 대비 -4.4%",
-        "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 65,000원에서 40%, MA20 58,250원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 58,250원 아래로 재이탈하거나 손절 기준 58,500원 하회",
-        "target": "1차 55,117.5원, 2차 60일 고점 68,000원 부근",
-        "riskNotes": [],
-        "valuationBlock": false,
-        "structural": null,
-        "holderCost": null,
-        "levels": []
-      },
-      "lastEntry": {
-        "version": "v10",
         "label": "V10 · 2026-06-15 · d5969b6",
         "commit": "d5969b6",
         "commitDate": "2026-06-15T20:59:07+09:00",
@@ -3953,6 +4150,111 @@
           "gapPct": 38.1,
           "memo": "B 추정 평단 51,109원 대비 38.1%. 방향성은 중립",
           "holderName": "국민연금공단"
+        },
+        "priceSource": null,
+        "levels": [
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 51109
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 63540
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 66364
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 67776
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 70600
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 75068
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 76600
+          }
+        ]
+      },
+      "firstEntry": {
+        "version": "v6",
+        "label": "V6 · 2026-06-12 · 7d6b23f",
+        "commit": "7d6b23f",
+        "commitDate": "2026-06-12T21:17:51+09:00",
+        "latestDate": "2026-06-12",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 91,
+        "v10cScore": null,
+        "close": 65000,
+        "entryRank": 5,
+        "technicalMemo": "MA20 상회, RSI 56.5, 60일 고점 대비 -4.4%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 65,000원에서 40%, MA20 58,250원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 58,250원 아래로 재이탈하거나 손절 기준 58,500원 하회",
+        "target": "1차 55,117.5원, 2차 60일 고점 68,000원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": null,
+        "holderCost": null,
+        "priceSource": null,
+        "levels": []
+      },
+      "lastEntry": {
+        "version": "v10",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
+        "latestDate": "2026-06-15",
+        "decision": "ENTRY_OK",
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 80,
+        "v10cScore": 90,
+        "close": 70600,
+        "entryRank": 8,
+        "technicalMemo": "MA20 상회, RSI 60, 60일 고점 대비 -7.8%",
+        "entryAction": "분할 진입 가능",
+        "entryTrigger": "현 가격대 70,600원에서 40%, MA20 58,635원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 58,635원 아래로 재이탈하거나 손절 기준 63,540원 하회",
+        "target": "1차 55,419.17원, 2차 60일 고점 76,600원 부근",
+        "riskNotes": [],
+        "valuationBlock": false,
+        "structural": {
+          "score": 77,
+          "gate": "PASS",
+          "grade": "체질 개선 인정, 진입가 관리 필요",
+          "label": "전장 매출 비중 우위 기준연도",
+          "memo": "체질 기준선 통과: 전장 매출 비중 우위 기준연도 이후 76.1%"
+        },
+        "holderCost": {
+          "signal": "NEUTRAL",
+          "tier": "B",
+          "score": 10,
+          "estimatedCost": 51109,
+          "gapPct": 38.1,
+          "memo": "B 추정 평단 51,109원 대비 38.1%. 방향성은 중립",
+          "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 70600,
+          "alternateClose": 70600
         },
         "levels": [
           {
@@ -4014,6 +4316,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -4037,6 +4340,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "추가",
@@ -4072,9 +4376,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -4104,6 +4408,13 @@
             "gapPct": 38.1,
             "memo": "B 추정 평단 51,109원 대비 38.1%. 방향성은 중립",
             "holderName": "국민연금공단"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 70600,
+            "alternateClose": 70600
           },
           "levels": [
             {
@@ -4235,9 +4546,22 @@
           "totalScore": 80,
           "v10cScore": 90,
           "entryRank": 8
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 70600,
+          "totalScore": 80,
+          "v10cScore": 90,
+          "entryRank": 8
         }
       ],
-      "entryCount": 5,
+      "entryCount": 6,
       "entryVersions": [
         "v6",
         "v7",
@@ -4255,9 +4579,9 @@
       "reason": "체질 PASS 75점 | 평단 OVERHANG 0점 | MA20 상회, RSI 44.4, 60일 고점 대비 -23.1%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -4287,6 +4611,13 @@
           "gapPct": 60.3,
           "memo": "B 추정 평단 160,602원 대비 60.3% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 257500,
+          "alternateClose": 257500
         },
         "levels": [
           {
@@ -4328,9 +4659,9 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -4356,16 +4687,17 @@
           "signal": "OVERHANG",
           "tier": "B",
           "score": 0,
-          "estimatedCost": 159866,
-          "gapPct": 61.1,
-          "memo": "B 추정 평단 159,866원 대비 61.1% 수익권이며 최근 처분 압력 감지. 오버행 주의",
+          "estimatedCost": 160602,
+          "gapPct": 60.3,
+          "memo": "B 추정 평단 160,602원 대비 60.3% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "국민연금공단"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
             "kind": "holderCost",
-            "price": 159866
+            "price": 160602
           },
           {
             "label": "손절",
@@ -4434,6 +4766,7 @@
           "memo": "B 추정 평단 159,866원 대비 61.1% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "국민연금공단"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
@@ -4474,9 +4807,9 @@
       },
       "lastEntry": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -4506,6 +4839,13 @@
           "gapPct": 60.3,
           "memo": "B 추정 평단 160,602원 대비 60.3% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 257500,
+          "alternateClose": 257500
         },
         "levels": [
           {
@@ -4569,6 +4909,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -4594,6 +4935,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -4629,9 +4971,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -4661,6 +5003,13 @@
             "gapPct": 60.3,
             "memo": "B 추정 평단 160,602원 대비 60.3% 수익권이며 최근 처분 압력 감지. 오버행 주의",
             "holderName": "국민연금공단"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 257500,
+            "alternateClose": 257500
           },
           "levels": [
             {
@@ -4792,9 +5141,22 @@
           "totalScore": 88,
           "v10cScore": 88,
           "entryRank": 9
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 257500,
+          "totalScore": 88,
+          "v10cScore": 88,
+          "entryRank": 9
         }
       ],
-      "entryCount": 2,
+      "entryCount": 3,
       "entryVersions": [
         "v10"
       ],
@@ -4810,9 +5172,9 @@
       "reason": "체질 PASS 75점 | 평단 OVERHANG 0점 | MA20 상회, RSI 44, 60일 고점 대비 -20.9%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -4842,6 +5204,13 @@
           "gapPct": 58.5,
           "memo": "B 추정 평단 2,367,762원 대비 58.5% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 3752000,
+          "alternateClose": 3752000
         },
         "levels": [
           {
@@ -4883,21 +5252,21 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
         "totalScore": 81,
         "v10cScore": 81,
-        "close": 3737000,
+        "close": 3752000,
         "entryRank": 10,
-        "technicalMemo": "MA20 상회, RSI 43.6, 60일 고점 대비 -21.2%",
+        "technicalMemo": "MA20 상회, RSI 44, 60일 고점 대비 -20.9%",
         "entryAction": "분할 진입 가능",
-        "entryTrigger": "현 가격대 3,737,000원에서 40%, MA20 3,604,750원 재확인 후 30%, 직전 고점 돌파 시 30%",
-        "invalidation": "종가가 MA20 3,604,750원 아래로 재이탈하거나 손절 기준 3,363,300원 하회",
-        "target": "1차 3,368,216.67원, 2차 60일 고점 4,742,000원 부근",
+        "entryTrigger": "현 가격대 3,752,000원에서 40%, MA20 3,605,500원 재확인 후 30%, 직전 고점 돌파 시 30%",
+        "invalidation": "종가가 MA20 3,605,500원 아래로 재이탈하거나 손절 기준 3,376,800원 하회",
+        "target": "1차 3,368,466.67원, 2차 60일 고점 4,742,000원 부근",
         "riskNotes": [],
         "valuationBlock": false,
         "structural": {
@@ -4905,52 +5274,53 @@
           "gate": "PASS",
           "grade": "체질 개선 인정, 진입가 관리 필요",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 2,139.1%"
+          "memo": "가격 기반 장기 추세 통과: 2,148.1%"
         },
         "holderCost": {
           "signal": "OVERHANG",
           "tier": "B",
           "score": 0,
-          "estimatedCost": 2337875,
-          "gapPct": 59.8,
-          "memo": "B 추정 평단 2,337,875원 대비 59.8% 수익권이며 최근 처분 압력 감지. 오버행 주의",
+          "estimatedCost": 2367762,
+          "gapPct": 58.5,
+          "memo": "B 추정 평단 2,367,762원 대비 58.5% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "국민연금공단"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
             "kind": "holderCost",
-            "price": 2337875
+            "price": 2367762
           },
           {
             "label": "손절",
             "kind": "stop",
-            "price": 3363300
+            "price": 3376800
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 3586726
+            "price": 3587473
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 3604750
+            "price": 3605500
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 3737000
+            "price": 3752000
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 4035960
+            "price": 4052160
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 4297550
+            "price": 4314800
           }
         ]
       },
@@ -4989,6 +5359,7 @@
           "memo": "B 추정 평단 2,337,875원 대비 59.8% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "국민연금공단"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
@@ -5029,9 +5400,9 @@
       },
       "lastEntry": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "ENTRY_OK",
         "baseDecision": "ENTRY_OK",
@@ -5061,6 +5432,13 @@
           "gapPct": 58.5,
           "memo": "B 추정 평단 2,367,762원 대비 58.5% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 3752000,
+          "alternateClose": 3752000
         },
         "levels": [
           {
@@ -5122,6 +5500,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -5145,6 +5524,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -5180,9 +5560,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "ENTRY_OK",
           "baseDecision": "ENTRY_OK",
@@ -5212,6 +5592,13 @@
             "gapPct": 58.5,
             "memo": "B 추정 평단 2,367,762원 대비 58.5% 수익권이며 최근 처분 압력 감지. 오버행 주의",
             "holderName": "국민연금공단"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 3752000,
+            "alternateClose": 3752000
           },
           "levels": [
             {
@@ -5343,9 +5730,22 @@
           "totalScore": 81,
           "v10cScore": 81,
           "entryRank": 10
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "ENTRY_OK",
+          "to": "ENTRY_OK",
+          "change": "STAY",
+          "close": 3752000,
+          "totalScore": 81,
+          "v10cScore": 81,
+          "entryRank": 10
         }
       ],
-      "entryCount": 2,
+      "entryCount": 3,
       "entryVersions": [
         "v10"
       ],
@@ -5361,9 +5761,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 PASS 72점 | 평단 ACCUMULATION 21점 | MA20 하회, RSI 47, 60일 고점 대비 -11.1%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -5393,6 +5793,13 @@
           "gapPct": 2,
           "memo": "B 추정 평단 30,302원 대비 2%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "얼라인파트너스자산운용"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 30900,
+          "alternateClose": 30900
         },
         "levels": [
           {
@@ -5434,21 +5841,21 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
         "totalScore": 91,
         "v10cScore": 112,
-        "close": 31100,
+        "close": 30900,
         "entryRank": null,
-        "technicalMemo": "MA20 하회, RSI 48.2, 60일 고점 대비 -10.5%",
+        "technicalMemo": "MA20 하회, RSI 47, 60일 고점 대비 -11.1%",
         "entryAction": "트리거 대기",
-        "entryTrigger": "종가가 MA20 31,247.5원 회복, 또는 5일선 30,840원 위에서 거래량 동반 양봉",
+        "entryTrigger": "종가가 MA20 31,237.5원 회복, 또는 5일선 30,800원 위에서 거래량 동반 양봉",
         "invalidation": "60일 저점 24,900원 이탈",
-        "target": "MA60 29,698.33원 또는 60일 고점 대비 절반 되돌림",
+        "target": "MA60 29,695원 또는 60일 고점 대비 절반 되돌림",
         "riskNotes": [],
         "valuationBlock": false,
         "structural": {
@@ -5456,22 +5863,23 @@
           "gate": "PASS",
           "grade": "체질 개선 인정, 진입가 관리 필요",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 91.1%"
+          "memo": "가격 기반 장기 추세 통과: 89.9%"
         },
         "holderCost": {
           "signal": "ACCUMULATION",
           "tier": "B",
           "score": 21,
           "estimatedCost": 30302,
-          "gapPct": 2.6,
-          "memo": "B 추정 평단 30,302원 대비 2.6%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
+          "gapPct": 2,
+          "memo": "B 추정 평단 30,302원 대비 2%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "얼라인파트너스자산운용"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
             "kind": "stop",
-            "price": 27990
+            "price": 27810
           },
           {
             "label": "평단",
@@ -5479,24 +5887,24 @@
             "price": 30302
           },
           {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 31091
-          },
-          {
             "label": "현재",
             "kind": "now",
-            "price": 31100
+            "price": 30900
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 31081
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 31248
+            "price": 31238
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 33588
+            "price": 33372
           },
           {
             "label": "2차 목표",
@@ -5526,6 +5934,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": []
       },
       "lastEntry": {
@@ -5563,6 +5972,7 @@
           "memo": "B 추정 평단 30,302원 대비 3.8%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "얼라인파트너스자산운용"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
@@ -5623,6 +6033,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -5646,6 +6057,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -5681,9 +6093,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "WAIT_TRIGGER",
@@ -5713,6 +6125,13 @@
             "gapPct": 2,
             "memo": "B 추정 평단 30,302원 대비 2%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
             "holderName": "얼라인파트너스자산운용"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 30900,
+            "alternateClose": 30900
           },
           "levels": [
             {
@@ -5844,6 +6263,19 @@
           "totalScore": 91,
           "v10cScore": 112,
           "entryRank": null
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 30900,
+          "totalScore": 91,
+          "v10cScore": 112,
+          "entryRank": null
         }
       ],
       "entryCount": 3,
@@ -5864,9 +6296,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 REVIEW 63점 | 평단 ACCUMULATION 21점 | MA20 상회, RSI 49.6, 60일 고점 대비 -13.6%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "ENTRY_OK",
@@ -5896,6 +6328,13 @@
           "gapPct": 23,
           "memo": "B 추정 평단 347,278원 대비 23%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "미래에셋자산운용"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 427000,
+          "alternateClose": 427000
         },
         "levels": [
           {
@@ -5937,39 +6376,40 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "ENTRY_OK",
         "totalScore": 80,
         "v10cScore": 101,
-        "close": 425500,
+        "close": 427000,
         "entryRank": null,
-        "technicalMemo": "MA20 상회, RSI 49.4, 60일 고점 대비 -13.9%",
+        "technicalMemo": "MA20 상회, RSI 49.6, 60일 고점 대비 -13.6%",
         "entryAction": "체질 검증 대기",
-        "entryTrigger": "체질 점수 59점 REVIEW. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
-        "invalidation": "장기 기준선 미통과 상태에서 MA20 392,125원 재이탈 또는 60일 저점 320,000원 이탈",
+        "entryTrigger": "체질 점수 63점 REVIEW. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
+        "invalidation": "장기 기준선 미통과 상태에서 MA20 392,200원 재이탈 또는 60일 저점 320,000원 이탈",
         "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요",
         "riskNotes": [],
         "valuationBlock": false,
         "structural": {
-          "score": 59,
+          "score": 63,
           "gate": "REVIEW",
           "grade": "전환 스토리/가격 검증 부족",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 검증 대기: 점수 59"
+          "memo": "가격 기반 장기 추세 검증 대기: 점수 63"
         },
         "holderCost": {
           "signal": "ACCUMULATION",
           "tier": "B",
           "score": 21,
           "estimatedCost": 347278,
-          "gapPct": 22.5,
-          "memo": "B 추정 평단 347,278원 대비 22.5%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
+          "gapPct": 23,
+          "memo": "B 추정 평단 347,278원 대비 23%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "미래에셋자산운용"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
@@ -5979,32 +6419,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 382950
+            "price": 384300
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 399970
+            "price": 401380
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 408480
+            "price": 409920
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 425500
+            "price": 427000
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 459540
+            "price": 461160
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 489325
+            "price": 491050
           }
         ]
       },
@@ -6029,6 +6469,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": []
       },
       "lastEntry": {
@@ -6052,6 +6493,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
@@ -6107,6 +6549,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -6130,6 +6573,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -6165,9 +6609,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "ENTRY_OK",
@@ -6197,6 +6641,13 @@
             "gapPct": 23,
             "memo": "B 추정 평단 347,278원 대비 23%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
             "holderName": "미래에셋자산운용"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 427000,
+            "alternateClose": 427000
           },
           "levels": [
             {
@@ -6328,6 +6779,19 @@
           "totalScore": 80,
           "v10cScore": 101,
           "entryRank": null
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 427000,
+          "totalScore": 80,
+          "v10cScore": 101,
+          "entryRank": null
         }
       ],
       "entryCount": 2,
@@ -6347,9 +6811,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 PASS 75점 | 평단 ACCUMULATION 21점 | MA20 하회, RSI 44.1, 60일 고점 대비 -25% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -6381,6 +6845,13 @@
           "gapPct": 8.4,
           "memo": "B 추정 평단 89,325원 대비 8.4%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "삼성자산운용"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 96800,
+          "alternateClose": 96800
         },
         "levels": [
           {
@@ -6422,21 +6893,21 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
         "totalScore": 77,
         "v10cScore": 98,
-        "close": 97100,
+        "close": 96800,
         "entryRank": null,
-        "technicalMemo": "MA20 하회, RSI 44.3, 60일 고점 대비 -24.7%",
+        "technicalMemo": "MA20 하회, RSI 44.1, 60일 고점 대비 -25%",
         "entryAction": "트리거 대기",
-        "entryTrigger": "종가가 MA20 98,870원 회복, 또는 5일선 98,680원 위에서 거래량 동반 양봉",
+        "entryTrigger": "종가가 MA20 98,855원 회복, 또는 5일선 98,620원 위에서 거래량 동반 양봉",
         "invalidation": "60일 저점 85,100원 이탈",
-        "target": "MA60 107,560원 또는 60일 고점 대비 절반 되돌림",
+        "target": "MA60 107,555원 또는 60일 고점 대비 절반 되돌림",
         "riskNotes": [
           "MA20·MA60 동시 하회"
         ],
@@ -6446,22 +6917,23 @@
           "gate": "PASS",
           "grade": "체질 개선 인정, 진입가 관리 필요",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 140.1%"
+          "memo": "가격 기반 장기 추세 통과: 139.3%"
         },
         "holderCost": {
           "signal": "ACCUMULATION",
           "tier": "B",
           "score": 21,
           "estimatedCost": 89325,
-          "gapPct": 8.7,
-          "memo": "B 추정 평단 89,325원 대비 8.7%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
+          "gapPct": 8.4,
+          "memo": "B 추정 평단 89,325원 대비 8.4%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "삼성자산운용"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
             "kind": "stop",
-            "price": 87390
+            "price": 87120
           },
           {
             "label": "평단",
@@ -6471,27 +6943,27 @@
           {
             "label": "현재",
             "kind": "now",
-            "price": 97100
+            "price": 96800
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 98376
+            "price": 98361
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 98870
+            "price": 98855
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 104868
+            "price": 104544
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 111665
+            "price": 111320
           }
         ]
       },
@@ -6516,6 +6988,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": []
       },
       "lastEntry": {
@@ -6553,6 +7026,7 @@
           "memo": "B 추정 평단 89,199원 대비 17.2%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
           "holderName": "삼성자산운용"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
@@ -6613,6 +7087,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -6636,6 +7111,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -6671,9 +7147,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "WAIT_TRIGGER",
@@ -6705,6 +7181,13 @@
             "gapPct": 8.4,
             "memo": "B 추정 평단 89,325원 대비 8.4%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 21점",
             "holderName": "삼성자산운용"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 96800,
+            "alternateClose": 96800
           },
           "levels": [
             {
@@ -6836,6 +7319,19 @@
           "totalScore": 77,
           "v10cScore": 98,
           "entryRank": null
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 96800,
+          "totalScore": 77,
+          "v10cScore": 98,
+          "entryRank": null
         }
       ],
       "entryCount": 3,
@@ -6856,9 +7352,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 REVIEW 63점 | 평단 NEUTRAL 13점 | MA20 상회, RSI 74, 60일 고점 대비 -2.9%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "ENTRY_OK",
@@ -6888,6 +7384,13 @@
           "gapPct": 31.9,
           "memo": "B 추정 평단 102,961원 대비 31.9%. 방향성은 중립",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 135800,
+          "alternateClose": 135800
         },
         "levels": [
           {
@@ -6929,20 +7432,20 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "ENTRY_OK",
         "totalScore": 79,
-        "v10cScore": 86,
-        "close": 139400,
+        "v10cScore": 92,
+        "close": 135800,
         "entryRank": null,
-        "technicalMemo": "MA20 상회, RSI 76.1, 60일 고점 대비 -0.3%",
+        "technicalMemo": "MA20 상회, RSI 74, 60일 고점 대비 -2.9%",
         "entryAction": "체질 검증 대기",
         "entryTrigger": "체질 점수 63점 REVIEW. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
-        "invalidation": "장기 기준선 미통과 상태에서 MA20 115,200원 재이탈 또는 60일 저점 98,600원 이탈",
+        "invalidation": "장기 기준선 미통과 상태에서 MA20 115,020원 재이탈 또는 60일 저점 98,600원 이탈",
         "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요",
         "riskNotes": [],
         "valuationBlock": false,
@@ -6956,12 +7459,13 @@
         "holderCost": {
           "signal": "NEUTRAL",
           "tier": "B",
-          "score": 7,
+          "score": 13,
           "estimatedCost": 102961,
-          "gapPct": 35.4,
-          "memo": "B 추정 평단 102,961원 대비 35.4%. 방향성은 중립",
+          "gapPct": 31.9,
+          "memo": "B 추정 평단 102,961원 대비 31.9%. 방향성은 중립",
           "holderName": "외국인 투자자군"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
@@ -6971,32 +7475,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 125460
+            "price": 122220
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 131036
+            "price": 127652
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 133824
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 137004
+            "price": 130368
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 139400
+            "price": 135800
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 137102
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 139800
+            "price": 139900
           }
         ]
       },
@@ -7021,6 +7525,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": []
       },
       "lastEntry": {
@@ -7044,6 +7549,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
@@ -7099,6 +7605,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -7122,6 +7629,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -7157,9 +7665,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "ENTRY_OK",
@@ -7189,6 +7697,13 @@
             "gapPct": 31.9,
             "memo": "B 추정 평단 102,961원 대비 31.9%. 방향성은 중립",
             "holderName": "외국인 투자자군"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 135800,
+            "alternateClose": 135800
           },
           "levels": [
             {
@@ -7320,6 +7835,19 @@
           "totalScore": 79,
           "v10cScore": 92,
           "entryRank": null
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 135800,
+          "totalScore": 79,
+          "v10cScore": 92,
+          "entryRank": null
         }
       ],
       "entryCount": 2,
@@ -7339,9 +7867,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 REVIEW 69점 | 평단 NEUTRAL 3점 | MA20 상회, RSI 61.8, 60일 고점 대비 -32.4%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "ENTRY_OK",
@@ -7371,6 +7899,13 @@
           "gapPct": 192,
           "memo": "B 추정 평단 414,104원 대비 192%. 방향성은 중립",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 1209000,
+          "alternateClose": 1209000
         },
         "levels": [
           {
@@ -7412,20 +7947,20 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
-        "baseDecision": "WAIT_TRIGGER",
-        "totalScore": 71,
-        "v10cScore": 74,
-        "close": 1205000,
+        "baseDecision": "ENTRY_OK",
+        "totalScore": 78,
+        "v10cScore": 81,
+        "close": 1209000,
         "entryRank": null,
-        "technicalMemo": "MA20 상회, RSI 61.7, 60일 고점 대비 -32.6%",
+        "technicalMemo": "MA20 상회, RSI 61.8, 60일 고점 대비 -32.4%",
         "entryAction": "체질 검증 대기",
         "entryTrigger": "체질 점수 69점 REVIEW. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
-        "invalidation": "장기 기준선 미통과 상태에서 MA20 1,060,050원 재이탈 또는 60일 저점 259,500원 이탈",
+        "invalidation": "장기 기준선 미통과 상태에서 MA20 1,060,250원 재이탈 또는 60일 저점 259,500원 이탈",
         "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요",
         "riskNotes": [],
         "valuationBlock": false,
@@ -7440,46 +7975,47 @@
           "signal": "NEUTRAL",
           "tier": "B",
           "score": 3,
-          "estimatedCost": 406952,
-          "gapPct": 196.1,
-          "memo": "B 추정 평단 406,952원 대비 196.1%. 방향성은 중립",
+          "estimatedCost": 414104,
+          "gapPct": 192,
+          "memo": "B 추정 평단 414,104원 대비 192%. 방향성은 중립",
           "holderName": "국민연금공단"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
             "kind": "holderCost",
-            "price": 406952
+            "price": 414104
           },
           {
             "label": "손절",
             "kind": "stop",
-            "price": 1084500
+            "price": 1088100
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 1132700
+            "price": 1136460
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 1156800
+            "price": 1160640
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 1205000
+            "price": 1209000
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 1301400
+            "price": 1305720
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 1385750
+            "price": 1390350
           }
         ]
       },
@@ -7504,6 +8040,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": []
       },
       "lastEntry": {
@@ -7527,6 +8064,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
@@ -7582,6 +8120,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -7605,6 +8144,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -7640,9 +8180,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "ENTRY_OK",
@@ -7672,6 +8212,13 @@
             "gapPct": 192,
             "memo": "B 추정 평단 414,104원 대비 192%. 방향성은 중립",
             "holderName": "국민연금공단"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 1209000,
+            "alternateClose": 1209000
           },
           "levels": [
             {
@@ -7803,6 +8350,19 @@
           "totalScore": 78,
           "v10cScore": 81,
           "entryRank": null
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 1209000,
+          "totalScore": 78,
+          "v10cScore": 81,
+          "entryRank": null
         }
       ],
       "entryCount": 2,
@@ -7822,9 +8382,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 36점 | 평단 NEUTRAL 7점 | MA20 상회, RSI 47.5, 60일 고점 대비 -10%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "ENTRY_OK",
@@ -7854,6 +8414,13 @@
           "gapPct": -18.6,
           "memo": "B 추정 평단 24,999원 대비 -18.6%. 방향성은 중립",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 20350,
+          "alternateClose": 20350
         },
         "levels": [
           {
@@ -7895,20 +8462,20 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "ENTRY_OK",
-        "totalScore": 100,
-        "v10cScore": 107,
-        "close": 20300,
+        "totalScore": 94,
+        "v10cScore": 101,
+        "close": 20350,
         "entryRank": null,
-        "technicalMemo": "MA20 상회, RSI 47.1, 60일 고점 대비 -10.2%",
+        "technicalMemo": "MA20 상회, RSI 47.5, 60일 고점 대비 -10%",
         "entryAction": "체질 검증 대기",
         "entryTrigger": "체질 점수 36점 BLOCK. 한컴독스 AI 정식 출시 이후 우상향 검증 필요",
-        "invalidation": "장기 기준선 미통과 상태에서 MA20 19,559.5원 재이탈 또는 60일 저점 17,800원 이탈",
+        "invalidation": "장기 기준선 미통과 상태에서 MA20 19,562원 재이탈 또는 60일 저점 17,800원 이탈",
         "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요",
         "riskNotes": [],
         "valuationBlock": false,
@@ -7923,36 +8490,37 @@
           "signal": "NEUTRAL",
           "tier": "B",
           "score": 7,
-          "estimatedCost": 25028,
-          "gapPct": -18.9,
-          "memo": "B 추정 평단 25,028원 대비 -18.9%. 방향성은 중립",
+          "estimatedCost": 24999,
+          "gapPct": -18.6,
+          "memo": "B 추정 평단 24,999원 대비 -18.6%. 방향성은 중립",
           "holderName": "외국인 투자자군"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
             "kind": "stop",
-            "price": 18270
+            "price": 18315
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 19462
+            "price": 19464
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 19560
+            "price": 19562
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 20300
+            "price": 20350
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 21924
+            "price": 21978
           },
           {
             "label": "2차 목표",
@@ -7962,7 +8530,7 @@
           {
             "label": "평단",
             "kind": "holderCost",
-            "price": 25028
+            "price": 24999
           }
         ]
       },
@@ -7987,6 +8555,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": []
       },
       "lastEntry": {
@@ -8010,6 +8579,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
@@ -8065,6 +8635,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -8088,6 +8659,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -8123,9 +8695,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "ENTRY_OK",
@@ -8155,6 +8727,13 @@
             "gapPct": -18.6,
             "memo": "B 추정 평단 24,999원 대비 -18.6%. 방향성은 중립",
             "holderName": "외국인 투자자군"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 20350,
+            "alternateClose": 20350
           },
           "levels": [
             {
@@ -8286,6 +8865,19 @@
           "totalScore": 94,
           "v10cScore": 101,
           "entryRank": null
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 20350,
+          "totalScore": 94,
+          "v10cScore": 101,
+          "entryRank": null
         }
       ],
       "entryCount": 2,
@@ -8305,9 +8897,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 16점 | 평단 NEUTRAL 2점 | MA20 하회, RSI 41.9, 60일 고점 대비 -20.9% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -8339,6 +8931,13 @@
           "gapPct": -30.5,
           "memo": "B 추정 평단 116,800원 대비 -30.5%. 방향성은 중립",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 81200,
+          "alternateClose": 81200
         },
         "levels": [
           {
@@ -8380,9 +8979,9 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -8415,6 +9014,7 @@
           "memo": "B 추정 평단 116,800원 대비 -30.5%. 방향성은 중립",
           "holderName": "외국인 투자자군"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
@@ -8474,6 +9074,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": []
       },
       "lastEntry": {
@@ -8497,6 +9098,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
@@ -8552,6 +9154,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -8575,6 +9178,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -8610,9 +9214,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "WAIT_TRIGGER",
@@ -8644,6 +9248,13 @@
             "gapPct": -30.5,
             "memo": "B 추정 평단 116,800원 대비 -30.5%. 방향성은 중립",
             "holderName": "외국인 투자자군"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 81200,
+            "alternateClose": 81200
           },
           "levels": [
             {
@@ -8775,6 +9386,19 @@
           "totalScore": 69,
           "v10cScore": 71,
           "entryRank": null
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 81200,
+          "totalScore": 69,
+          "v10cScore": 71,
+          "entryRank": null
         }
       ],
       "entryCount": 2,
@@ -8794,9 +9418,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 PASS 73점 | 평단 OVERHANG 0점 | MA20 상회, RSI 63, 60일 고점 대비 -9.1% | 리스크: 변동성/재무 확인 필요 · 적자 구간",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -8829,6 +9453,13 @@
           "gapPct": 105.6,
           "memo": "B 추정 평단 28,058원 대비 105.6% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "외국인 투자자군"
+        },
+        "priceSource": {
+          "source": "KRX",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 57700,
+          "alternateClose": null
         },
         "levels": [
           {
@@ -8870,21 +9501,21 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
-        "totalScore": 72,
-        "v10cScore": 72,
-        "close": 58000,
+        "totalScore": 69,
+        "v10cScore": 69,
+        "close": 57700,
         "entryRank": null,
-        "technicalMemo": "MA20 상회, RSI 63.2, 60일 고점 대비 -8.7%",
+        "technicalMemo": "MA20 상회, RSI 63, 60일 고점 대비 -9.1%",
         "entryAction": "트리거 대기",
-        "entryTrigger": "종가가 MA20 42,917.5원 회복, 또는 5일선 47,500원 위에서 거래량 동반 양봉",
+        "entryTrigger": "종가가 MA20 42,902.5원 회복, 또는 5일선 47,440원 위에서 거래량 동반 양봉",
         "invalidation": "60일 저점 18,100원 이탈",
-        "target": "MA60 35,707.83원 또는 60일 고점 대비 절반 되돌림",
+        "target": "MA60 35,702.83원 또는 60일 고점 대비 절반 되돌림",
         "riskNotes": [
           "변동성/재무 확인 필요",
           "적자 구간"
@@ -8895,17 +9526,18 @@
           "gate": "PASS",
           "grade": "체질 개선 인정, 진입가 관리 필요",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 123.5%"
+          "memo": "가격 기반 장기 추세 통과: 122.4%"
         },
         "holderCost": {
           "signal": "OVERHANG",
           "tier": "B",
           "score": 0,
           "estimatedCost": 28058,
-          "gapPct": 106.7,
-          "memo": "B 추정 평단 28,058원 대비 106.7% 수익권이며 최근 처분 압력 감지. 오버행 주의",
+          "gapPct": 105.6,
+          "memo": "B 추정 평단 28,058원 대비 105.6% 수익권이며 최근 처분 압력 감지. 오버행 주의",
           "holderName": "외국인 투자자군"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "평단",
@@ -8915,22 +9547,22 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 52200
+            "price": 51930
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 54520
+            "price": 54238
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 55680
+            "price": 55392
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 58000
+            "price": 57700
           },
           {
             "label": "1차 회수",
@@ -8968,6 +9600,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": []
       },
       "lastEntry": {
@@ -8994,6 +9627,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
@@ -9052,6 +9686,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -9078,6 +9713,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -9113,9 +9749,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "WAIT_TRIGGER",
@@ -9148,6 +9784,13 @@
             "gapPct": 105.6,
             "memo": "B 추정 평단 28,058원 대비 105.6% 수익권이며 최근 처분 압력 감지. 오버행 주의",
             "holderName": "외국인 투자자군"
+          },
+          "priceSource": {
+            "source": "KRX",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 57700,
+            "alternateClose": null
           },
           "levels": [
             {
@@ -9279,6 +9922,19 @@
           "totalScore": 69,
           "v10cScore": 69,
           "entryRank": null
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 57700,
+          "totalScore": 69,
+          "v10cScore": 69,
+          "entryRank": null
         }
       ],
       "entryCount": 2,
@@ -9298,9 +9954,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 16점 | 평단 NEUTRAL 5점 | MA20 하회, RSI 39.7, 60일 고점 대비 -41.8% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · d5969b6",
-        "commit": "d5969b6",
-        "commitDate": "2026-06-15T20:59:07+09:00",
+        "label": "V10 · 2026-06-15 · b438bbe",
+        "commit": "b438bbe",
+        "commitDate": "2026-06-16T07:36:33+09:00",
         "latestDate": "2026-06-15",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -9332,6 +9988,13 @@
           "gapPct": -25.4,
           "memo": "B 추정 평단 292,873원 대비 -25.4%. 방향성은 중립",
           "holderName": "국민연금공단"
+        },
+        "priceSource": {
+          "source": "NXT",
+          "asOfDate": "2026-06-15",
+          "asOfText": "2026-06-15 16:10 장마감",
+          "officialClose": 218500,
+          "alternateClose": 218500
         },
         "levels": [
           {
@@ -9373,19 +10036,19 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-06-15 · a3f7562",
-        "commit": "a3f7562",
-        "commitDate": "2026-06-15T15:20:23+09:00",
+        "label": "V10 · 2026-06-15 · d5969b6",
+        "commit": "d5969b6",
+        "commitDate": "2026-06-15T20:59:07+09:00",
         "latestDate": "2026-06-15",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
-        "totalScore": 61,
-        "v10cScore": 66,
-        "close": 217500,
+        "totalScore": 56,
+        "v10cScore": 61,
+        "close": 218500,
         "entryRank": null,
-        "technicalMemo": "MA20 하회, RSI 39.2, 60일 고점 대비 -42.1%",
+        "technicalMemo": "MA20 하회, RSI 39.7, 60일 고점 대비 -41.8%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 222,170원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 222,220원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -9404,40 +10067,41 @@
           "tier": "B",
           "score": 5,
           "estimatedCost": 292873,
-          "gapPct": -25.7,
-          "memo": "B 추정 평단 292,873원 대비 -25.7%. 방향성은 중립",
+          "gapPct": -25.4,
+          "memo": "B 추정 평단 292,873원 대비 -25.4%. 방향성은 중립",
           "holderName": "국민연금공단"
         },
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
             "kind": "stop",
-            "price": 195750
+            "price": 196650
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 217500
+            "price": 218500
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 221059
+            "price": 221109
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 222170
+            "price": 222220
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 234900
+            "price": 235980
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 250125
+            "price": 251275
           },
           {
             "label": "평단",
@@ -9467,6 +10131,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": []
       },
       "lastEntry": {
@@ -9490,6 +10155,7 @@
         "valuationBlock": false,
         "structural": null,
         "holderCost": null,
+        "priceSource": null,
         "levels": [
           {
             "label": "손절",
@@ -9545,6 +10211,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": []
         },
         "v7": {
@@ -9568,6 +10235,7 @@
           "valuationBlock": false,
           "structural": null,
           "holderCost": null,
+          "priceSource": null,
           "levels": [
             {
               "label": "손절",
@@ -9603,9 +10271,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-06-15 · d5969b6",
-          "commit": "d5969b6",
-          "commitDate": "2026-06-15T20:59:07+09:00",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "commit": "b438bbe",
+          "commitDate": "2026-06-16T07:36:33+09:00",
           "latestDate": "2026-06-15",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -9637,6 +10305,13 @@
             "gapPct": -25.4,
             "memo": "B 추정 평단 292,873원 대비 -25.4%. 방향성은 중립",
             "holderName": "국민연금공단"
+          },
+          "priceSource": {
+            "source": "NXT",
+            "asOfDate": "2026-06-15",
+            "asOfText": "2026-06-15 16:10 장마감",
+            "officialClose": 218500,
+            "alternateClose": 218500
           },
           "levels": [
             {
@@ -9761,6 +10436,19 @@
           "label": "V10 · 2026-06-15 · d5969b6",
           "latestDate": "2026-06-15",
           "commit": "d5969b6",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 218500,
+          "totalScore": 56,
+          "v10cScore": 61,
+          "entryRank": null
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-06-15 · b438bbe",
+          "latestDate": "2026-06-15",
+          "commit": "b438bbe",
           "from": "AVOID_NOW",
           "to": "AVOID_NOW",
           "change": "WATCH",
