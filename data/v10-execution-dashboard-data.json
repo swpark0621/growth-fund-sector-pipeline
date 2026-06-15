@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
-    "runDate": "2026-06-15",
+    "runDate": "2026-06-16",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -66,7 +66,7 @@
       },
       "전력망·AI인프라": {
         "count": 11,
-        "avgScore": 62.4,
+        "avgScore": 62.7,
         "entry": 3
       },
       "스마트팩토리": {
@@ -404,6 +404,20 @@
         "assessment": "정책/가치 매력은 있으나 아직 진입 트리거 확인이 필요합니다."
       },
       {
+        "ticker": "000500",
+        "company": "가온전선",
+        "sector": "전력망·AI인프라",
+        "decision": "AVOID_NOW",
+        "totalScore": 57,
+        "policyScore": 24,
+        "policyMemo": "전선 중견주",
+        "technicalMemo": "MA20 하회, RSI 29.9, 60일 고점 대비 -60.3%",
+        "riskNotes": [
+          "20일 추세 훼손"
+        ],
+        "assessment": "정책 테마는 있으나 현재 가격·추세·밸류 리스크가 우선입니다."
+      },
+      {
         "ticker": "001440",
         "company": "대한전선",
         "sector": "전력망·AI인프라",
@@ -416,20 +430,6 @@
           "20일 추세 훼손",
           "MA20·MA60 동시 하회",
           "과매도 지속 가능성"
-        ],
-        "assessment": "정책 테마는 있으나 현재 가격·추세·밸류 리스크가 우선입니다."
-      },
-      {
-        "ticker": "000500",
-        "company": "가온전선",
-        "sector": "전력망·AI인프라",
-        "decision": "AVOID_NOW",
-        "totalScore": 53,
-        "policyScore": 24,
-        "policyMemo": "전선 중견주",
-        "technicalMemo": "MA20 하회, RSI 29.9, 60일 고점 대비 -60.3%",
-        "riskNotes": [
-          "20일 추세 훼손"
         ],
         "assessment": "정책 테마는 있으나 현재 가격·추세·밸류 리스크가 우선입니다."
       },
@@ -664,7 +664,7 @@
     ]
   },
   "megaManagers": {
-    "asOf": "2026-06-15",
+    "asOf": "2026-06-16",
     "caveat": "ETF·인덱스 보유는 지수 편입·상품 운용 신호이며, 특정 종목을 능동적으로 매집했다는 증거가 아닙니다. DART 5% 이상 공시는 더 강한 보유 증거지만 신규 매수 시점과는 구분해야 합니다.",
     "sourceStatus": {
       "blackRockEwy": "ok · Jun 12, 2026",
@@ -709,7 +709,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.069023,
+              "weightPct": 0.069395,
               "shares": 172014
             }
           ],
@@ -755,7 +755,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.023548,
+              "weightPct": 0.023675,
               "shares": 69521
             }
           ],
@@ -792,7 +792,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.069758,
+              "weightPct": 0.070134,
               "shares": 192988
             }
           ],
@@ -829,7 +829,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.046802,
+              "weightPct": 0.047055,
               "shares": 25495
             }
           ],
@@ -866,7 +866,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.063649,
+              "weightPct": 0.063992,
               "shares": 72689
             }
           ],
@@ -903,7 +903,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.072446,
+              "weightPct": 0.072837,
               "shares": 73467
             }
           ],
@@ -940,7 +940,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.062907,
+              "weightPct": 0.063246,
               "shares": 11470
             }
           ],
@@ -977,7 +977,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.030634,
+              "weightPct": 0.030799,
               "shares": 47142
             }
           ],
@@ -1014,7 +1014,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.026354,
+              "weightPct": 0.026497,
               "shares": 168985
             }
           ],
@@ -1051,7 +1051,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.046965,
+              "weightPct": 0.047219,
               "shares": 80082
             }
           ],
@@ -1088,7 +1088,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.057174,
+              "weightPct": 0.057482,
               "shares": 203430
             }
           ],
@@ -1125,7 +1125,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.007769,
+              "weightPct": 0.007811,
               "shares": 61943
             }
           ],
@@ -1162,7 +1162,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.066617,
+              "weightPct": 0.066976,
               "shares": 38039
             }
           ],
@@ -1199,7 +1199,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.018077,
+              "weightPct": 0.018175,
               "shares": 78975
             }
           ],
@@ -1236,7 +1236,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.007884,
+              "weightPct": 0.007927,
               "shares": 21570
             }
           ],
@@ -1273,7 +1273,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.021308,
+              "weightPct": 0.021423,
               "shares": 38921
             }
           ],
@@ -1310,7 +1310,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.029327,
+              "weightPct": 0.029485,
               "shares": 13940
             }
           ],
@@ -1347,7 +1347,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.015301,
+              "weightPct": 0.015383,
               "shares": 55402
             }
           ],
@@ -1384,7 +1384,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.012943,
+              "weightPct": 0.013013,
               "shares": 39955
             }
           ],
@@ -1413,7 +1413,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.001568,
+              "weightPct": 0.001577,
               "shares": 38008
             }
           ],
@@ -1442,7 +1442,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.004801,
+              "weightPct": 0.004827,
               "shares": 148498
             }
           ],
@@ -1471,7 +1471,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.016394,
+              "weightPct": 0.016483,
               "shares": 13072
             }
           ],
@@ -1500,7 +1500,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.003404,
+              "weightPct": 0.003423,
               "shares": 7251
             }
           ],
@@ -1529,7 +1529,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.003622,
+              "weightPct": 0.003641,
               "shares": 37785
             }
           ],
@@ -1558,7 +1558,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.00389,
+              "weightPct": 0.003911,
               "shares": 36838
             }
           ],
@@ -1587,7 +1587,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.049451,
+              "weightPct": 0.049718,
               "shares": 29382
             }
           ],
@@ -1616,7 +1616,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.007724,
+              "weightPct": 0.007766,
               "shares": 45498
             }
           ],
@@ -1645,7 +1645,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.041551,
+              "weightPct": 0.041775,
               "shares": 110721
             }
           ],
@@ -1674,7 +1674,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.007897,
+              "weightPct": 0.007939,
               "shares": 21134
             }
           ],
@@ -1703,7 +1703,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.002956,
+              "weightPct": 0.002972,
               "shares": 21768
             }
           ],
@@ -1732,7 +1732,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.010579,
+              "weightPct": 0.010636,
               "shares": 35525
             }
           ],
@@ -1761,7 +1761,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.006546,
+              "weightPct": 0.006582,
               "shares": 49263
             }
           ],
@@ -1790,7 +1790,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.008922,
+              "weightPct": 0.00897,
               "shares": 8029
             }
           ],
@@ -1819,7 +1819,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.001075,
+              "weightPct": 0.001081,
               "shares": 13187
             }
           ],
@@ -1848,7 +1848,7 @@
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
               "asOf": "As of 12-Jun-2026",
-              "weightPct": 0.001223,
+              "weightPct": 0.001229,
               "shares": 21538
             }
           ],
@@ -1901,6 +1901,13 @@
         "majorHolderPct": 25.57,
         "topHolderPct": 39.21,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 25650,
+        "alternateClose": 25650
       },
       "liquidity": {
         "avgVolume20": 111367,
@@ -2346,7 +2353,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.001568,
+            "weightPct": 0.001577,
             "shares": 38008,
             "holdingName": "ADVANCED PROCESS SYSTEMS COR",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -2393,6 +2400,13 @@
         "majorHolderPct": 38.21,
         "topHolderPct": 48.97,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 845000,
+        "alternateClose": 845000
       },
       "liquidity": {
         "avgVolume20": 225087,
@@ -2812,7 +2826,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.016394,
+            "weightPct": 0.016483,
             "shares": 13072,
             "holdingName": "LIG DEFENSE+AEROSPACE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -2859,6 +2873,13 @@
         "majorHolderPct": 33.77,
         "topHolderPct": 46.85,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 213000,
+        "alternateClose": 213000
       },
       "liquidity": {
         "avgVolume20": 654950,
@@ -3315,7 +3336,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.023548,
+            "weightPct": 0.023675,
             "shares": 69521,
             "holdingName": "HYUNDAI ROTEM COMPANY",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -3362,6 +3383,13 @@
         "majorHolderPct": 37.11,
         "topHolderPct": 45.26,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1194000,
+        "alternateClose": 1194000
       },
       "liquidity": {
         "avgVolume20": 219640,
@@ -3792,7 +3820,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.046802,
+            "weightPct": 0.047055,
             "shares": 25495,
             "holdingName": "HD HYUNDAI ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -3839,6 +3867,13 @@
         "majorHolderPct": 20.53,
         "topHolderPct": 30.91,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 37400,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 3011645,
@@ -4247,7 +4282,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.029369,
+            "weightPct": 0.029527,
             "shares": 461759,
             "holdingName": "KOH YOUNG TECHNOLOGY INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -4284,6 +4319,13 @@
         "majorHolderPct": 34.84,
         "topHolderPct": 34.84,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 60900,
+        "alternateClose": 60900
       },
       "liquidity": {
         "avgVolume20": 1013013,
@@ -4729,7 +4771,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.003622,
+            "weightPct": 0.003641,
             "shares": 37785,
             "holdingName": "DONGJIN SEMICHEM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -4776,6 +4818,13 @@
         "majorHolderPct": 32.84,
         "topHolderPct": 48.28,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 165700,
+        "alternateClose": 165700
       },
       "liquidity": {
         "avgVolume20": 667879,
@@ -5227,6 +5276,13 @@
         "topHolderPct": 40.4,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 70600,
+        "alternateClose": 70600
+      },
       "liquidity": {
         "avgVolume20": 1038718,
         "volumeRatio": 7.25
@@ -5671,7 +5727,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.00389,
+            "weightPct": 0.003911,
             "shares": 36838,
             "holdingName": "HL MANDO CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -5718,6 +5774,13 @@
         "majorHolderPct": 48.48,
         "topHolderPct": 58.08,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 257500,
+        "alternateClose": 257500
       },
       "liquidity": {
         "avgVolume20": 1321579,
@@ -6148,7 +6211,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.069758,
+            "weightPct": 0.070134,
             "shares": 192988,
             "holdingName": "LS ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -6195,6 +6258,13 @@
         "majorHolderPct": 43.99,
         "topHolderPct": 54.13,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 3752000,
+        "alternateClose": 3752000
       },
       "liquidity": {
         "avgVolume20": 59444,
@@ -6625,7 +6695,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.062907,
+            "weightPct": 0.063246,
             "shares": 11470,
             "holdingName": "HYOSUNG HEAVY INDUSTRIES COR",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -6679,6 +6749,13 @@
         "majorHolderPct": 26.02,
         "topHolderPct": 64.48,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 30900,
+        "alternateClose": 30900
       },
       "liquidity": {
         "avgVolume20": 25435,
@@ -7101,6 +7178,13 @@
         "majorHolderPct": 36.99,
         "topHolderPct": 38.78,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 20350,
+        "alternateClose": 20350
       },
       "liquidity": {
         "avgVolume20": 193153,
@@ -7530,7 +7614,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.004801,
+            "weightPct": 0.004827,
             "shares": 148498,
             "holdingName": "HANCOM INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -7582,6 +7666,13 @@
         "majorHolderPct": 44.73,
         "topHolderPct": 70.48,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 427000,
+        "alternateClose": 427000
       },
       "liquidity": {
         "avgVolume20": 93585,
@@ -7974,7 +8065,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007201,
+            "weightPct": 0.00724,
             "shares": 10040,
             "holdingName": "SOULBRAIN CO LTD/NEW",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -8021,6 +8112,13 @@
         "majorHolderPct": 16.09,
         "topHolderPct": 23.16,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 44000,
+        "alternateClose": 44000
       },
       "liquidity": {
         "avgVolume20": 191686,
@@ -8454,6 +8552,13 @@
         "topHolderPct": 57.92,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 96800,
+        "alternateClose": 96800
+      },
       "liquidity": {
         "avgVolume20": 1612088,
         "volumeRatio": 1.26
@@ -8858,7 +8963,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007724,
+            "weightPct": 0.007766,
             "shares": 45498,
             "holdingName": "LEENO INDUSTRIAL INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -8910,6 +9015,13 @@
         "majorHolderPct": 32.7,
         "topHolderPct": 49.87,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 640000,
+        "alternateClose": 640000
       },
       "liquidity": {
         "avgVolume20": 1083697,
@@ -9324,7 +9436,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.072446,
+            "weightPct": 0.072837,
             "shares": 73467,
             "holdingName": "HYUNDAI MOBIS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -9366,6 +9478,13 @@
         "majorHolderPct": 17.74,
         "topHolderPct": 21.35,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 40400,
+        "alternateClose": 40400
       },
       "liquidity": {
         "avgVolume20": 256093,
@@ -9791,6 +9910,13 @@
         "topHolderPct": 85.51,
         "memo": "대주주 지분 매우 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 420500,
+        "alternateClose": 420500
+      },
       "liquidity": {
         "avgVolume20": 614183,
         "volumeRatio": 0.51
@@ -10206,7 +10332,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.030634,
+            "weightPct": 0.030799,
             "shares": 47142,
             "holdingName": "LG ENERGY SOLUTION",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -10258,6 +10384,13 @@
         "majorHolderPct": 39.87,
         "topHolderPct": 67.49,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 135800,
+        "alternateClose": 135800
       },
       "liquidity": {
         "avgVolume20": 12159,
@@ -10686,6 +10819,13 @@
         "topHolderPct": 31.32,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 553000,
+        "alternateClose": 553000
+      },
       "liquidity": {
         "avgVolume20": 762825,
         "volumeRatio": 0.7
@@ -11099,7 +11239,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.063649,
+            "weightPct": 0.063992,
             "shares": 72689,
             "holdingName": "SAMSUNG SDI CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -11151,6 +11291,13 @@
         "majorHolderPct": 23.82,
         "topHolderPct": 36.79,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 332000,
+        "alternateClose": 332000
       },
       "liquidity": {
         "avgVolume20": 399449,
@@ -11545,7 +11692,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.009718,
+            "weightPct": 0.00977,
             "shares": 18127,
             "holdingName": "ROBOTIS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -11592,6 +11739,13 @@
         "majorHolderPct": 59.53,
         "topHolderPct": 67.74,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 99500,
+        "alternateClose": 99500
       },
       "liquidity": {
         "avgVolume20": 864310,
@@ -12008,7 +12162,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.026354,
+            "weightPct": 0.026497,
             "shares": 168985,
             "holdingName": "HANWHA SYSTEMS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -12045,6 +12199,13 @@
         "majorHolderPct": 34.92,
         "topHolderPct": 34.92,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 303500,
+        "alternateClose": 303500
       },
       "liquidity": {
         "avgVolume20": 89790,
@@ -12431,7 +12592,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.003404,
+            "weightPct": 0.003423,
             "shares": 7251,
             "holdingName": "PHARMARESEARCH CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -12478,6 +12639,13 @@
         "majorHolderPct": 20.16,
         "topHolderPct": 32.69,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 13450,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 346323,
@@ -12907,6 +13075,13 @@
         "majorHolderPct": 8.26,
         "topHolderPct": 18.58,
         "memo": "대주주 지분 매우 낮음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 395000,
+        "alternateClose": 395000
       },
       "liquidity": {
         "avgVolume20": 503213,
@@ -13349,6 +13524,13 @@
         "topHolderPct": 46.41,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 55800,
+        "alternateClose": 55800
+      },
       "liquidity": {
         "avgVolume20": 267758,
         "volumeRatio": 1.7
@@ -13778,6 +13960,13 @@
         "topHolderPct": 20.08,
         "memo": "대주주 지분 매우 낮음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 248000,
+        "alternateClose": 248000
+      },
       "liquidity": {
         "avgVolume20": 3840340,
         "volumeRatio": 0.52
@@ -14070,7 +14259,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.069023,
+            "weightPct": 0.069395,
             "shares": 172014,
             "holdingName": "NAVER CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -14116,6 +14305,13 @@
         "majorHolderPct": 60.23,
         "topHolderPct": 60.23,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1925,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 132065,
@@ -14542,6 +14738,13 @@
         "topHolderPct": 44.83,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 19570,
+        "alternateClose": 19570
+      },
       "liquidity": {
         "avgVolume20": 79901,
         "volumeRatio": 0.78
@@ -14847,6 +15050,13 @@
         "majorHolderPct": 40.79,
         "topHolderPct": 50.82,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1209000,
+        "alternateClose": 1209000
       },
       "liquidity": {
         "avgVolume20": 667327,
@@ -15250,7 +15460,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.049451,
+            "weightPct": 0.049718,
             "shares": 29382,
             "holdingName": "LG INNOTEK CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -15287,6 +15497,13 @@
         "majorHolderPct": 11.57,
         "topHolderPct": 11.57,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 10410,
+        "alternateClose": 10410
       },
       "liquidity": {
         "avgVolume20": 407964,
@@ -15723,6 +15940,13 @@
         "topHolderPct": 63.51,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 209500,
+        "alternateClose": 209500
+      },
       "liquidity": {
         "avgVolume20": 315942,
         "volumeRatio": 0.78
@@ -16127,7 +16351,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007897,
+            "weightPct": 0.007939,
             "shares": 21134,
             "holdingName": "ISC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -16174,6 +16398,13 @@
         "majorHolderPct": 43.79,
         "topHolderPct": 52.55,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 88000,
+        "alternateClose": 88000
       },
       "liquidity": {
         "avgVolume20": 505230,
@@ -16579,7 +16810,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.006546,
+            "weightPct": 0.006582,
             "shares": 49263,
             "holdingName": "ILJIN ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -16616,6 +16847,13 @@
         "majorHolderPct": 34.89,
         "topHolderPct": 34.89,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 73300,
+        "alternateClose": 73300
       },
       "liquidity": {
         "avgVolume20": 72577,
@@ -17046,6 +17284,13 @@
         "topHolderPct": 41.96,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 14680,
+        "alternateClose": 14680
+      },
       "liquidity": {
         "avgVolume20": 102888,
         "volumeRatio": 0.64
@@ -17471,6 +17716,13 @@
         "topHolderPct": 41.97,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 13240,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 738850,
         "volumeRatio": 0.31
@@ -17888,6 +18140,13 @@
         "topHolderPct": 50.22,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 225000,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 4024853,
         "volumeRatio": 0.6
@@ -18290,7 +18549,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.041551,
+            "weightPct": 0.041775,
             "shares": 110721,
             "holdingName": "JUSUNG ENGINEERING CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -18337,6 +18596,13 @@
         "majorHolderPct": 41.67,
         "topHolderPct": 58.37,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 81200,
+        "alternateClose": 81200
       },
       "liquidity": {
         "avgVolume20": 142648,
@@ -18742,7 +19008,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.002956,
+            "weightPct": 0.002972,
             "shares": 21768,
             "holdingName": "SM ENTERTAINMENT CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -18794,6 +19060,13 @@
         "majorHolderPct": 32.95,
         "topHolderPct": 56.93,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 174500,
+        "alternateClose": 174500
       },
       "liquidity": {
         "avgVolume20": 1292576,
@@ -19199,7 +19472,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.010579,
+            "weightPct": 0.010636,
             "shares": 35525,
             "holdingName": "WONIK IPS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -19241,6 +19514,13 @@
         "majorHolderPct": 75.29,
         "topHolderPct": 83.51,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 746000,
+        "alternateClose": 746000
       },
       "liquidity": {
         "avgVolume20": 318869,
@@ -19644,7 +19924,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.008922,
+            "weightPct": 0.00897,
             "shares": 8029,
             "holdingName": "HYUNDAI AUTOEVER CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -19693,6 +19973,13 @@
         "majorHolderPct": 32.6,
         "topHolderPct": 40.74,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 175000,
+        "alternateClose": 175000
       },
       "liquidity": {
         "avgVolume20": 712791,
@@ -19986,7 +20273,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.057174,
+            "weightPct": 0.057482,
             "shares": 203430,
             "holdingName": "CELLTRION INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -20033,6 +20320,13 @@
         "majorHolderPct": 35.78,
         "topHolderPct": 43.92,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1084000,
+        "alternateClose": 1084000
       },
       "liquidity": {
         "avgVolume20": 237144,
@@ -20327,7 +20621,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.066617,
+            "weightPct": 0.066976,
             "shares": 38039,
             "holdingName": "HANWHA AEROSPACE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -20374,6 +20668,13 @@
         "majorHolderPct": 33.11,
         "topHolderPct": 43.28,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 50000,
+        "alternateClose": 50000
       },
       "liquidity": {
         "avgVolume20": 151923,
@@ -20657,7 +20958,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.001075,
+            "weightPct": 0.001081,
             "shares": 13187,
             "holdingName": "LX SEMICON CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -20709,6 +21010,13 @@
         "majorHolderPct": 26.41,
         "topHolderPct": 48.39,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 147600,
+        "alternateClose": 147600
       },
       "liquidity": {
         "avgVolume20": 649914,
@@ -21002,7 +21310,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.018077,
+            "weightPct": 0.018175,
             "shares": 78975,
             "holdingName": "KOREA AEROSPACE INDUSTRIES",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -21044,6 +21352,13 @@
         "majorHolderPct": 51.54,
         "topHolderPct": 53.58,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 29200,
+        "alternateClose": 29200
       },
       "liquidity": {
         "avgVolume20": 126227,
@@ -21351,6 +21666,13 @@
         "majorHolderPct": 25.89,
         "topHolderPct": 40.13,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 44750,
+        "alternateClose": 44750
       },
       "liquidity": {
         "avgVolume20": 337395,
@@ -21664,6 +21986,13 @@
         "topHolderPct": 48.84,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 29200,
+        "alternateClose": 29200
+      },
       "liquidity": {
         "avgVolume20": 268195,
         "volumeRatio": 0.56
@@ -21964,6 +22293,13 @@
         "majorHolderPct": 44.28,
         "topHolderPct": 48.52,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 7960,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 481426,
@@ -22267,6 +22603,13 @@
         "majorHolderPct": 26.69,
         "topHolderPct": 30.85,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 2990,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 3763006,
@@ -22574,6 +22917,13 @@
         "topHolderPct": 46.02,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 39950,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 4864109,
         "volumeRatio": 0.84
@@ -22846,7 +23196,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007331,
+            "weightPct": 0.007371,
             "shares": 119230,
             "holdingName": "TAIHAN CABLE + SOLUTION CO L",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -22888,6 +23238,13 @@
         "majorHolderPct": 37.42,
         "topHolderPct": 43.46,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 123800,
+        "alternateClose": 123800
       },
       "liquidity": {
         "avgVolume20": 141539,
@@ -23171,7 +23528,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.005747,
+            "weightPct": 0.005778,
             "shares": 28998,
             "holdingName": "ST PHARM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -23213,6 +23570,13 @@
         "majorHolderPct": 49.98,
         "topHolderPct": 54.99,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 111400,
+        "alternateClose": 111400
       },
       "liquidity": {
         "avgVolume20": 3129600,
@@ -23496,7 +23860,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.004353,
+            "weightPct": 0.004376,
             "shares": 24270,
             "holdingName": "DOOSAN ROBOTICS INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -23548,6 +23912,13 @@
         "majorHolderPct": 44.03,
         "topHolderPct": 62.19,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 38850,
+        "alternateClose": 38850
       },
       "liquidity": {
         "avgVolume20": 247951,
@@ -23855,6 +24226,13 @@
         "topHolderPct": 39.04,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 122500,
+        "alternateClose": 122500
+      },
       "liquidity": {
         "avgVolume20": 384791,
         "volumeRatio": 0.59
@@ -24137,7 +24515,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.005131,
+            "weightPct": 0.005159,
             "shares": 26146,
             "holdingName": "DAEJOO ELECTRONIC MATERIALS",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -24179,6 +24557,13 @@
         "majorHolderPct": 33.07,
         "topHolderPct": 33.08,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 10890,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 1516453,
@@ -24485,6 +24870,13 @@
         "majorHolderPct": 15.43,
         "topHolderPct": 35.77,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 15720,
+        "alternateClose": 15720
       },
       "liquidity": {
         "avgVolume20": 199413,
@@ -24793,6 +25185,13 @@
         "majorHolderPct": 29.86,
         "topHolderPct": 48,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 53800,
+        "alternateClose": 53800
       },
       "liquidity": {
         "avgVolume20": 91414,
@@ -25106,6 +25505,13 @@
         "topHolderPct": 37.89,
         "memo": "대주주 지분 낮은 편"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 78900,
+        "alternateClose": 78900
+      },
       "liquidity": {
         "avgVolume20": 336057,
         "volumeRatio": 0.54
@@ -25398,7 +25804,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007769,
+            "weightPct": 0.007811,
             "shares": 61943,
             "holdingName": "YUHAN CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -25445,6 +25851,13 @@
         "majorHolderPct": 37.32,
         "topHolderPct": 49.1,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 2230,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 218528,
@@ -25752,6 +26165,13 @@
         "majorHolderPct": 33.55,
         "topHolderPct": 41.24,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 23000,
+        "alternateClose": 23000
       },
       "liquidity": {
         "avgVolume20": 192261,
@@ -26064,6 +26484,13 @@
         "topHolderPct": 62.51,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1253000,
+        "alternateClose": 1253000
+      },
       "liquidity": {
         "avgVolume20": 22823,
         "volumeRatio": 0.63
@@ -26334,7 +26761,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.028905,
+            "weightPct": 0.029061,
             "shares": 14815,
             "holdingName": "KOREA ZINC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -26371,6 +26798,13 @@
         "majorHolderPct": 38.83,
         "topHolderPct": 38.83,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 8930,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 423837,
@@ -26675,6 +27109,13 @@
         "topHolderPct": 42.87,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 108000,
+        "alternateClose": 108000
+      },
       "liquidity": {
         "avgVolume20": 157565,
         "volumeRatio": 1.48
@@ -26977,6 +27418,13 @@
         "topHolderPct": 22.41,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 10830,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 329040,
         "volumeRatio": 4.48
@@ -27242,7 +27690,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.000226,
+            "weightPct": 0.000227,
             "shares": 14676,
             "holdingName": "EUBIOLOGICS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -27284,6 +27732,13 @@
         "majorHolderPct": 15.95,
         "topHolderPct": 22.7,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 55900,
+        "alternateClose": 55900
       },
       "liquidity": {
         "avgVolume20": 259424,
@@ -27567,7 +28022,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.002734,
+            "weightPct": 0.002749,
             "shares": 30109,
             "holdingName": "JYP ENTERTAINMENT CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -27619,6 +28074,13 @@
         "majorHolderPct": 28.58,
         "topHolderPct": 48.53,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 218500,
+        "alternateClose": 218500
       },
       "liquidity": {
         "avgVolume20": 299713,
@@ -27912,7 +28374,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007884,
+            "weightPct": 0.007927,
             "shares": 21570,
             "holdingName": "HYBE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -27949,6 +28411,13 @@
         "majorHolderPct": 93.98,
         "topHolderPct": 93.98,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 119600,
+        "alternateClose": 119600
       },
       "liquidity": {
         "avgVolume20": 26867,
@@ -28251,6 +28720,13 @@
         "majorHolderPct": 30.08,
         "topHolderPct": 39.33,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 113900,
+        "alternateClose": 113900
       },
       "liquidity": {
         "avgVolume20": 136701,
@@ -28560,6 +29036,13 @@
         "topHolderPct": 45.78,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 77700,
+        "alternateClose": 77700
+      },
       "liquidity": {
         "avgVolume20": 772285,
         "volumeRatio": 0.5
@@ -28842,7 +29325,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.006087,
+            "weightPct": 0.00612,
             "shares": 51260,
             "holdingName": "DOOSAN FUEL CELL CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -28884,6 +29367,13 @@
         "majorHolderPct": 30.8,
         "topHolderPct": 30.84,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 48200,
+        "alternateClose": 48200
       },
       "liquidity": {
         "avgVolume20": 215608,
@@ -29168,7 +29658,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.002083,
+            "weightPct": 0.002094,
             "shares": 28465,
             "holdingName": "COSMOAM+T CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -29222,6 +29712,13 @@
         "majorHolderPct": 25.57,
         "topHolderPct": 39.21,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 25650,
+        "alternateClose": 25650
       },
       "liquidity": {
         "avgVolume20": 111367,
@@ -29667,7 +30164,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.001568,
+            "weightPct": 0.001577,
             "shares": 38008,
             "holdingName": "ADVANCED PROCESS SYSTEMS COR",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -29719,6 +30216,13 @@
         "majorHolderPct": 26.02,
         "topHolderPct": 64.48,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 30900,
+        "alternateClose": 30900
       },
       "liquidity": {
         "avgVolume20": 25435,
@@ -30147,6 +30651,13 @@
         "topHolderPct": 48.97,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 845000,
+        "alternateClose": 845000
+      },
       "liquidity": {
         "avgVolume20": 225087,
         "volumeRatio": 0.92
@@ -30565,7 +31076,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.016394,
+            "weightPct": 0.016483,
             "shares": 13072,
             "holdingName": "LIG DEFENSE+AEROSPACE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -30612,6 +31123,13 @@
         "majorHolderPct": 33.77,
         "topHolderPct": 46.85,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 213000,
+        "alternateClose": 213000
       },
       "liquidity": {
         "avgVolume20": 654950,
@@ -31068,7 +31586,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.023548,
+            "weightPct": 0.023675,
             "shares": 69521,
             "holdingName": "HYUNDAI ROTEM COMPANY",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -31115,6 +31633,13 @@
         "majorHolderPct": 37.11,
         "topHolderPct": 45.26,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1194000,
+        "alternateClose": 1194000
       },
       "liquidity": {
         "avgVolume20": 219640,
@@ -31545,7 +32070,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.046802,
+            "weightPct": 0.047055,
             "shares": 25495,
             "holdingName": "HD HYUNDAI ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -31592,6 +32117,13 @@
         "majorHolderPct": 20.53,
         "topHolderPct": 30.91,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 37400,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 3011645,
@@ -32000,7 +32532,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.029369,
+            "weightPct": 0.029527,
             "shares": 461759,
             "holdingName": "KOH YOUNG TECHNOLOGY INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -32042,6 +32574,13 @@
         "majorHolderPct": 36.99,
         "topHolderPct": 38.78,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 20350,
+        "alternateClose": 20350
       },
       "liquidity": {
         "avgVolume20": 193153,
@@ -32471,7 +33010,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.004801,
+            "weightPct": 0.004827,
             "shares": 148498,
             "holdingName": "HANCOM INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -32523,6 +33062,13 @@
         "majorHolderPct": 44.73,
         "topHolderPct": 70.48,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 427000,
+        "alternateClose": 427000
       },
       "liquidity": {
         "avgVolume20": 93585,
@@ -32915,7 +33461,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007201,
+            "weightPct": 0.00724,
             "shares": 10040,
             "holdingName": "SOULBRAIN CO LTD/NEW",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -32962,6 +33508,13 @@
         "majorHolderPct": 16.09,
         "topHolderPct": 23.16,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 44000,
+        "alternateClose": 44000
       },
       "liquidity": {
         "avgVolume20": 191686,
@@ -33379,6 +33932,13 @@
         "majorHolderPct": 34.84,
         "topHolderPct": 34.84,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 60900,
+        "alternateClose": 60900
       },
       "liquidity": {
         "avgVolume20": 1013013,
@@ -33824,7 +34384,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.003622,
+            "weightPct": 0.003641,
             "shares": 37785,
             "holdingName": "DONGJIN SEMICHEM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -33876,6 +34436,13 @@
         "majorHolderPct": 34.66,
         "topHolderPct": 57.92,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 96800,
+        "alternateClose": 96800
       },
       "liquidity": {
         "avgVolume20": 1612088,
@@ -34281,7 +34848,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007724,
+            "weightPct": 0.007766,
             "shares": 45498,
             "holdingName": "LEENO INDUSTRIAL INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -34333,6 +34900,13 @@
         "majorHolderPct": 32.7,
         "topHolderPct": 49.87,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 640000,
+        "alternateClose": 640000
       },
       "liquidity": {
         "avgVolume20": 1083697,
@@ -34747,7 +35321,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.072446,
+            "weightPct": 0.072837,
             "shares": 73467,
             "holdingName": "HYUNDAI MOBIS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -34789,6 +35363,13 @@
         "majorHolderPct": 17.74,
         "topHolderPct": 21.35,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 40400,
+        "alternateClose": 40400
       },
       "liquidity": {
         "avgVolume20": 256093,
@@ -35214,6 +35795,13 @@
         "topHolderPct": 85.51,
         "memo": "대주주 지분 매우 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 420500,
+        "alternateClose": 420500
+      },
       "liquidity": {
         "avgVolume20": 614183,
         "volumeRatio": 0.51
@@ -35629,7 +36217,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.030634,
+            "weightPct": 0.030799,
             "shares": 47142,
             "holdingName": "LG ENERGY SOLUTION",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -35681,6 +36269,13 @@
         "majorHolderPct": 39.87,
         "topHolderPct": 67.49,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 135800,
+        "alternateClose": 135800
       },
       "liquidity": {
         "avgVolume20": 12159,
@@ -36108,6 +36703,13 @@
         "majorHolderPct": 32.84,
         "topHolderPct": 48.28,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 165700,
+        "alternateClose": 165700
       },
       "liquidity": {
         "avgVolume20": 667879,
@@ -36564,6 +37166,13 @@
         "topHolderPct": 31.32,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 553000,
+        "alternateClose": 553000
+      },
       "liquidity": {
         "avgVolume20": 762825,
         "volumeRatio": 0.7
@@ -36977,7 +37586,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.063649,
+            "weightPct": 0.063992,
             "shares": 72689,
             "holdingName": "SAMSUNG SDI CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -37029,6 +37638,13 @@
         "majorHolderPct": 23.82,
         "topHolderPct": 36.79,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 332000,
+        "alternateClose": 332000
       },
       "liquidity": {
         "avgVolume20": 399449,
@@ -37423,7 +38039,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.009718,
+            "weightPct": 0.00977,
             "shares": 18127,
             "holdingName": "ROBOTIS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -37465,6 +38081,13 @@
         "majorHolderPct": 30.26,
         "topHolderPct": 40.4,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 70600,
+        "alternateClose": 70600
       },
       "liquidity": {
         "avgVolume20": 1038718,
@@ -37910,7 +38533,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.00389,
+            "weightPct": 0.003911,
             "shares": 36838,
             "holdingName": "HL MANDO CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -37957,6 +38580,13 @@
         "majorHolderPct": 59.53,
         "topHolderPct": 67.74,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 99500,
+        "alternateClose": 99500
       },
       "liquidity": {
         "avgVolume20": 864310,
@@ -38373,7 +39003,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.026354,
+            "weightPct": 0.026497,
             "shares": 168985,
             "holdingName": "HANWHA SYSTEMS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -38420,6 +39050,13 @@
         "majorHolderPct": 48.48,
         "topHolderPct": 58.08,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 257500,
+        "alternateClose": 257500
       },
       "liquidity": {
         "avgVolume20": 1321579,
@@ -38850,7 +39487,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.069758,
+            "weightPct": 0.070134,
             "shares": 192988,
             "holdingName": "LS ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -38887,6 +39524,13 @@
         "majorHolderPct": 34.92,
         "topHolderPct": 34.92,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 303500,
+        "alternateClose": 303500
       },
       "liquidity": {
         "avgVolume20": 89790,
@@ -39273,7 +39917,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.003404,
+            "weightPct": 0.003423,
             "shares": 7251,
             "holdingName": "PHARMARESEARCH CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -39320,6 +39964,13 @@
         "majorHolderPct": 20.16,
         "topHolderPct": 32.69,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 13450,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 346323,
@@ -39749,6 +40400,13 @@
         "majorHolderPct": 8.26,
         "topHolderPct": 18.58,
         "memo": "대주주 지분 매우 낮음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 395000,
+        "alternateClose": 395000
       },
       "liquidity": {
         "avgVolume20": 503213,
@@ -40191,6 +40849,13 @@
         "topHolderPct": 46.41,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 55800,
+        "alternateClose": 55800
+      },
       "liquidity": {
         "avgVolume20": 267758,
         "volumeRatio": 1.7
@@ -40620,6 +41285,13 @@
         "topHolderPct": 20.08,
         "memo": "대주주 지분 매우 낮음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 248000,
+        "alternateClose": 248000
+      },
       "liquidity": {
         "avgVolume20": 3840340,
         "volumeRatio": 0.52
@@ -40912,7 +41584,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.069023,
+            "weightPct": 0.069395,
             "shares": 172014,
             "holdingName": "NAVER CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -40958,6 +41630,13 @@
         "majorHolderPct": 60.23,
         "topHolderPct": 60.23,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1925,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 132065,
@@ -41384,6 +42063,13 @@
         "topHolderPct": 44.83,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 19570,
+        "alternateClose": 19570
+      },
       "liquidity": {
         "avgVolume20": 79901,
         "volumeRatio": 0.78
@@ -41690,6 +42376,13 @@
         "topHolderPct": 40.74,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 175000,
+        "alternateClose": 175000
+      },
       "liquidity": {
         "avgVolume20": 712791,
         "volumeRatio": 0.56
@@ -41982,7 +42675,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.057174,
+            "weightPct": 0.057482,
             "shares": 203430,
             "holdingName": "CELLTRION INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -42029,6 +42722,13 @@
         "majorHolderPct": 43.99,
         "topHolderPct": 54.13,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 3752000,
+        "alternateClose": 3752000
       },
       "liquidity": {
         "avgVolume20": 59444,
@@ -42459,7 +43159,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.062907,
+            "weightPct": 0.063246,
             "shares": 11470,
             "holdingName": "HYOSUNG HEAVY INDUSTRIES COR",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -42506,6 +43206,13 @@
         "majorHolderPct": 40.79,
         "topHolderPct": 50.82,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1209000,
+        "alternateClose": 1209000
       },
       "liquidity": {
         "avgVolume20": 667327,
@@ -42909,7 +43616,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.049451,
+            "weightPct": 0.049718,
             "shares": 29382,
             "holdingName": "LG INNOTEK CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -42956,6 +43663,13 @@
         "majorHolderPct": 35.78,
         "topHolderPct": 43.92,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1084000,
+        "alternateClose": 1084000
       },
       "liquidity": {
         "avgVolume20": 237144,
@@ -43250,7 +43964,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.066617,
+            "weightPct": 0.066976,
             "shares": 38039,
             "holdingName": "HANWHA AEROSPACE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -43287,6 +44001,13 @@
         "majorHolderPct": 11.57,
         "topHolderPct": 11.57,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 10410,
+        "alternateClose": 10410
       },
       "liquidity": {
         "avgVolume20": 407964,
@@ -43718,6 +44439,13 @@
         "topHolderPct": 43.28,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 50000,
+        "alternateClose": 50000
+      },
       "liquidity": {
         "avgVolume20": 151923,
         "volumeRatio": 1
@@ -44000,7 +44728,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.001075,
+            "weightPct": 0.001081,
             "shares": 13187,
             "holdingName": "LX SEMICON CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -44052,6 +44780,13 @@
         "majorHolderPct": 26.41,
         "topHolderPct": 48.39,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 147600,
+        "alternateClose": 147600
       },
       "liquidity": {
         "avgVolume20": 649914,
@@ -44345,7 +45080,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.018077,
+            "weightPct": 0.018175,
             "shares": 78975,
             "holdingName": "KOREA AEROSPACE INDUSTRIES",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -44397,6 +45132,13 @@
         "majorHolderPct": 48.62,
         "topHolderPct": 63.51,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 209500,
+        "alternateClose": 209500
       },
       "liquidity": {
         "avgVolume20": 315942,
@@ -44802,7 +45544,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007897,
+            "weightPct": 0.007939,
             "shares": 21134,
             "holdingName": "ISC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -44844,6 +45586,13 @@
         "majorHolderPct": 51.54,
         "topHolderPct": 53.58,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 29200,
+        "alternateClose": 29200
       },
       "liquidity": {
         "avgVolume20": 126227,
@@ -45151,6 +45900,13 @@
         "majorHolderPct": 25.89,
         "topHolderPct": 40.13,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 44750,
+        "alternateClose": 44750
       },
       "liquidity": {
         "avgVolume20": 337395,
@@ -45464,6 +46220,13 @@
         "topHolderPct": 48.84,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 29200,
+        "alternateClose": 29200
+      },
       "liquidity": {
         "avgVolume20": 268195,
         "volumeRatio": 0.56
@@ -45769,6 +46532,13 @@
         "majorHolderPct": 43.79,
         "topHolderPct": 52.55,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 88000,
+        "alternateClose": 88000
       },
       "liquidity": {
         "avgVolume20": 505230,
@@ -46174,7 +46944,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.006546,
+            "weightPct": 0.006582,
             "shares": 49263,
             "holdingName": "ILJIN ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -46216,6 +46986,13 @@
         "majorHolderPct": 44.28,
         "topHolderPct": 48.52,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 7960,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 481426,
@@ -46519,6 +47296,13 @@
         "majorHolderPct": 26.69,
         "topHolderPct": 30.85,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 2990,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 3763006,
@@ -46826,6 +47610,13 @@
         "topHolderPct": 46.02,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 39950,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 4864109,
         "volumeRatio": 0.84
@@ -47098,7 +47889,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007331,
+            "weightPct": 0.007371,
             "shares": 119230,
             "holdingName": "TAIHAN CABLE + SOLUTION CO L",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -47140,6 +47931,13 @@
         "majorHolderPct": 37.42,
         "topHolderPct": 43.46,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 123800,
+        "alternateClose": 123800
       },
       "liquidity": {
         "avgVolume20": 141539,
@@ -47423,7 +48221,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.005747,
+            "weightPct": 0.005778,
             "shares": 28998,
             "holdingName": "ST PHARM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -47460,6 +48258,13 @@
         "majorHolderPct": 34.89,
         "topHolderPct": 34.89,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 73300,
+        "alternateClose": 73300
       },
       "liquidity": {
         "avgVolume20": 72577,
@@ -47890,6 +48695,13 @@
         "topHolderPct": 41.96,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 14680,
+        "alternateClose": 14680
+      },
       "liquidity": {
         "avgVolume20": 102888,
         "volumeRatio": 0.64
@@ -48315,6 +49127,13 @@
         "topHolderPct": 54.99,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 111400,
+        "alternateClose": 111400
+      },
       "liquidity": {
         "avgVolume20": 3129600,
         "volumeRatio": 0.24
@@ -48597,7 +49416,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.004353,
+            "weightPct": 0.004376,
             "shares": 24270,
             "holdingName": "DOOSAN ROBOTICS INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -48649,6 +49468,13 @@
         "majorHolderPct": 44.03,
         "topHolderPct": 62.19,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 38850,
+        "alternateClose": 38850
       },
       "liquidity": {
         "avgVolume20": 247951,
@@ -48956,6 +49782,13 @@
         "topHolderPct": 39.04,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 122500,
+        "alternateClose": 122500
+      },
       "liquidity": {
         "avgVolume20": 384791,
         "volumeRatio": 0.59
@@ -49238,7 +50071,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.005131,
+            "weightPct": 0.005159,
             "shares": 26146,
             "holdingName": "DAEJOO ELECTRONIC MATERIALS",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -49280,6 +50113,13 @@
         "majorHolderPct": 35.52,
         "topHolderPct": 41.97,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 13240,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 738850,
@@ -49698,6 +50538,13 @@
         "topHolderPct": 50.22,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 225000,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 4024853,
         "volumeRatio": 0.6
@@ -50100,7 +50947,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.041551,
+            "weightPct": 0.041775,
             "shares": 110721,
             "holdingName": "JUSUNG ENGINEERING CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -50147,6 +50994,13 @@
         "majorHolderPct": 41.67,
         "topHolderPct": 58.37,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 81200,
+        "alternateClose": 81200
       },
       "liquidity": {
         "avgVolume20": 142648,
@@ -50552,7 +51406,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.002956,
+            "weightPct": 0.002972,
             "shares": 21768,
             "holdingName": "SM ENTERTAINMENT CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -50604,6 +51458,13 @@
         "majorHolderPct": 32.95,
         "topHolderPct": 56.93,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 174500,
+        "alternateClose": 174500
       },
       "liquidity": {
         "avgVolume20": 1292576,
@@ -51009,7 +51870,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.010579,
+            "weightPct": 0.010636,
             "shares": 35525,
             "holdingName": "WONIK IPS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -51051,6 +51912,13 @@
         "majorHolderPct": 75.29,
         "topHolderPct": 83.51,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 746000,
+        "alternateClose": 746000
       },
       "liquidity": {
         "avgVolume20": 318869,
@@ -51454,7 +52322,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.008922,
+            "weightPct": 0.00897,
             "shares": 8029,
             "holdingName": "HYUNDAI AUTOEVER CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -51496,6 +52364,13 @@
         "majorHolderPct": 9.39,
         "topHolderPct": 16.99,
         "memo": "대주주 지분 매우 낮음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 37600,
+        "alternateClose": 37600
       },
       "liquidity": {
         "avgVolume20": 206470,
@@ -51778,7 +52653,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.001223,
+            "weightPct": 0.001229,
             "shares": 21538,
             "holdingName": "ENCHEM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -51820,6 +52695,13 @@
         "majorHolderPct": 33.07,
         "topHolderPct": 33.08,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 10890,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 1516453,
@@ -52116,6 +52998,13 @@
         "majorHolderPct": 37.23,
         "topHolderPct": 37.23,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 57700,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 501814,
@@ -52547,6 +53436,13 @@
         "topHolderPct": 35.77,
         "memo": "대주주 지분 낮은 편"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 15720,
+        "alternateClose": 15720
+      },
       "liquidity": {
         "avgVolume20": 199413,
         "volumeRatio": 0.95
@@ -52860,6 +53756,13 @@
         "topHolderPct": 38.06,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 83500,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 6503348,
         "volumeRatio": 5.12
@@ -53141,7 +54044,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.006177,
+            "weightPct": 0.00621,
             "shares": 53176,
             "holdingName": "HPSP CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -53188,6 +54091,13 @@
         "majorHolderPct": 29.86,
         "topHolderPct": 48,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 53800,
+        "alternateClose": 53800
       },
       "liquidity": {
         "avgVolume20": 91414,
@@ -53500,6 +54410,13 @@
         "majorHolderPct": 55.76,
         "topHolderPct": 69.39,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 347000,
+        "alternateClose": 347000
       },
       "liquidity": {
         "avgVolume20": 1550762,
@@ -53916,7 +54833,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.046965,
+            "weightPct": 0.047219,
             "shares": 80082,
             "holdingName": "HANMI SEMICONDUCTOR CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -53968,6 +54885,13 @@
         "majorHolderPct": 16.03,
         "topHolderPct": 37.89,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 78900,
+        "alternateClose": 78900
       },
       "liquidity": {
         "avgVolume20": 336057,
@@ -54261,7 +55185,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007769,
+            "weightPct": 0.007811,
             "shares": 61943,
             "holdingName": "YUHAN CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -54308,6 +55232,13 @@
         "majorHolderPct": 37.32,
         "topHolderPct": 49.1,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 2230,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 218528,
@@ -54615,6 +55546,13 @@
         "majorHolderPct": 33.55,
         "topHolderPct": 41.24,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 23000,
+        "alternateClose": 23000
       },
       "liquidity": {
         "avgVolume20": 192261,
@@ -54927,6 +55865,13 @@
         "topHolderPct": 62.51,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1253000,
+        "alternateClose": 1253000
+      },
       "liquidity": {
         "avgVolume20": 22823,
         "volumeRatio": 0.63
@@ -55197,7 +56142,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.028905,
+            "weightPct": 0.029061,
             "shares": 14815,
             "holdingName": "KOREA ZINC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -55234,6 +56179,13 @@
         "majorHolderPct": 38.83,
         "topHolderPct": 38.83,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 8930,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 423837,
@@ -55538,6 +56490,13 @@
         "topHolderPct": 42.87,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 108000,
+        "alternateClose": 108000
+      },
       "liquidity": {
         "avgVolume20": 157565,
         "volumeRatio": 1.48
@@ -55840,6 +56799,13 @@
         "topHolderPct": 22.41,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 10830,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 329040,
         "volumeRatio": 4.48
@@ -56105,7 +57071,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.000226,
+            "weightPct": 0.000227,
             "shares": 14676,
             "holdingName": "EUBIOLOGICS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -56147,6 +57113,13 @@
         "majorHolderPct": 15.95,
         "topHolderPct": 22.7,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 55900,
+        "alternateClose": 55900
       },
       "liquidity": {
         "avgVolume20": 259424,
@@ -56430,7 +57403,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.002734,
+            "weightPct": 0.002749,
             "shares": 30109,
             "holdingName": "JYP ENTERTAINMENT CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -56482,6 +57455,13 @@
         "majorHolderPct": 28.58,
         "topHolderPct": 48.53,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 218500,
+        "alternateClose": 218500
       },
       "liquidity": {
         "avgVolume20": 299713,
@@ -56775,7 +57755,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.007884,
+            "weightPct": 0.007927,
             "shares": 21570,
             "holdingName": "HYBE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -56812,6 +57792,13 @@
         "majorHolderPct": 93.98,
         "topHolderPct": 93.98,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 119600,
+        "alternateClose": 119600
       },
       "liquidity": {
         "avgVolume20": 26867,
@@ -57114,6 +58101,13 @@
         "majorHolderPct": 30.08,
         "topHolderPct": 39.33,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 113900,
+        "alternateClose": 113900
       },
       "liquidity": {
         "avgVolume20": 136701,
@@ -57423,6 +58417,13 @@
         "topHolderPct": 45.78,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 77700,
+        "alternateClose": 77700
+      },
       "liquidity": {
         "avgVolume20": 772285,
         "volumeRatio": 0.5
@@ -57705,7 +58706,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.006087,
+            "weightPct": 0.00612,
             "shares": 51260,
             "holdingName": "DOOSAN FUEL CELL CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -57747,6 +58748,13 @@
         "majorHolderPct": 30.8,
         "topHolderPct": 30.84,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 48200,
+        "alternateClose": 48200
       },
       "liquidity": {
         "avgVolume20": 215608,
@@ -58031,7 +59039,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.002083,
+            "weightPct": 0.002094,
             "shares": 28465,
             "holdingName": "COSMOAM+T CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -58068,6 +59076,13 @@
         "majorHolderPct": 60.52,
         "topHolderPct": 60.52,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 10120,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 493111,
@@ -58373,6 +59388,13 @@
         "topHolderPct": 17.13,
         "memo": "대주주 지분 낮은 편"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 3115,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 118869,
         "volumeRatio": 0.33
@@ -58663,6 +59685,13 @@
         "topHolderPct": 31.24,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 63000,
+        "alternateClose": 63000
+      },
       "liquidity": {
         "avgVolume20": 110701,
         "volumeRatio": 0.73
@@ -58935,7 +59964,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.002183,
+            "weightPct": 0.002194,
             "shares": 23284,
             "holdingName": "ADVANCED NANO PRODUCTS CO LT",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -58943,6 +59972,309 @@
         ],
         "largeHolderDisclosure": null,
         "interpretation": "단일 운용사 상품 보유 확인입니다. 능동적 매집 근거로 단정하지 않습니다."
+      }
+    },
+    {
+      "ticker": "000500",
+      "company": "가온전선",
+      "sector": "전력망·AI인프라",
+      "status": "candidate",
+      "rationale": "전선 중견주",
+      "latestDate": "2026-06-15",
+      "close": 252000,
+      "marketCapEok": 41689,
+      "listedShares": 16543115,
+      "per": 7.75,
+      "pbr": 0.46,
+      "roe": 5.64,
+      "ownership": {
+        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=000500&target=finsum_more",
+        "topHolders": [
+          {
+            "name": "LS전선 외 4인",
+            "shares": 13518091,
+            "pct": 81.71
+          }
+        ],
+        "majorHolderName": "LS전선 외 4인",
+        "majorHolderShares": 13518091,
+        "majorHolderPct": 81.71,
+        "topHolderPct": 81.71,
+        "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 252000,
+        "alternateClose": 252000
+      },
+      "liquidity": {
+        "avgVolume20": 206691,
+        "volumeRatio": 1.49
+      },
+      "returns": {
+        "d5": -11.8881,
+        "d20": -36.8421,
+        "d60": 147.0588
+      },
+      "technicals": {
+        "ma5": 292600,
+        "ma20": 344950,
+        "ma60": 244678.33,
+        "ma120": 168005,
+        "rsi14": 29.9,
+        "high60": 635000,
+        "low60": 96400,
+        "drawdown60Pct": -60.315,
+        "reboundFromLow60Pct": 161.4108,
+        "aboveMa20": false,
+        "aboveMa60": true,
+        "ma20SlopePct": -12.2041
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": 448.56,
+          "institutionNetValueEok": -1645.5,
+          "foreignPct": 1.076,
+          "institutionPct": -3.947
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": 439.41,
+          "institutionNetValueEok": -2029.88,
+          "foreignPct": 1.054,
+          "institutionPct": -4.869
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": 105.76,
+          "institutionNetValueEok": -744.43,
+          "foreignPct": 0.254,
+          "institutionPct": -1.786
+        }
+      },
+      "policy": {
+        "score": 24,
+        "memo": "전선 중견주"
+      },
+      "value": {
+        "score": 23,
+        "memo": "시총 41,689억원, PER 7.75, PBR 0.46"
+      },
+      "technical": {
+        "score": 4,
+        "memo": "MA20 하회, RSI 29.9, 60일 고점 대비 -60.3%"
+      },
+      "flowScore": {
+        "score": 12,
+        "memo": "20일 외국인 1.1%, 기관 -4.9%"
+      },
+      "risk": {
+        "penalty": 6,
+        "notes": [
+          "20일 추세 훼손"
+        ],
+        "valuationBlock": false
+      },
+      "totalScore": 57,
+      "baseDecision": "AVOID_NOW",
+      "decision": "AVOID_NOW",
+      "structuralRegime": {
+        "mode": "PRICE_ONLY",
+        "confidence": 2,
+        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
+        "score": 61,
+        "grade": "전환 스토리/가격 검증 부족",
+        "gate": "REVIEW",
+        "entryEligible": false,
+        "primary": {
+          "id": "price-regime",
+          "label": "가격 기반 장기 추세 기준선",
+          "date": "2023-12-21",
+          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+          "sourceName": "Naver Finance daily price",
+          "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
+          "firstTradingDate": "2023-12-21",
+          "basisClose": 22300,
+          "latestClose": 252000,
+          "latestDate": "2026-06-15",
+          "days": 907,
+          "returnPct": 1030,
+          "cagrPct": 165.5,
+          "highClose": 564000,
+          "highDate": "2026-05-12",
+          "lowClose": 19220,
+          "lowDate": "2024-01-17",
+          "drawdownFromHighPct": -55.3,
+          "maxDrawdownPct": -55.3,
+          "aboveMA200": true,
+          "aboveMA600": true,
+          "score": 61,
+          "grade": "전환 스토리/가격 검증 부족",
+          "durationFlag": "가격 추세"
+        },
+        "events": [
+          {
+            "id": "price-regime",
+            "label": "가격 기반 장기 추세 기준선",
+            "date": "2023-12-21",
+            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+            "sourceName": "Naver Finance daily price",
+            "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
+            "firstTradingDate": "2023-12-21",
+            "basisClose": 22300,
+            "latestClose": 252000,
+            "latestDate": "2026-06-15",
+            "days": 907,
+            "returnPct": 1030,
+            "cagrPct": 165.5,
+            "highClose": 564000,
+            "highDate": "2026-05-12",
+            "lowClose": 19220,
+            "lowDate": "2024-01-17",
+            "drawdownFromHighPct": -55.3,
+            "maxDrawdownPct": -55.3,
+            "aboveMA200": true,
+            "aboveMA600": true,
+            "score": 61,
+            "grade": "전환 스토리/가격 검증 부족",
+            "durationFlag": "가격 추세"
+          }
+        ],
+        "memo": "가격 기반 장기 추세 검증 대기: 점수 61"
+      },
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
+        "estimatedCost": 125995,
+        "holderName": "외국인 투자자군",
+        "recentAccumulation": false,
+        "disposalPressure": false,
+        "flow": {
+          "cost": 125995.15097529926,
+          "shares": 1268585,
+          "netShares": -199533,
+          "last20NetShares": 186953,
+          "firstDate": "2025-06-20",
+          "lastDate": "2026-06-15",
+          "days": 240
+        },
+        "method": "구간 추정: 외국인 순매수 VWAP",
+        "score": 0,
+        "signal": "NO_DATA",
+        "gapPct": 100,
+        "overhang": false,
+        "memo": "B 추정 평단 125,995원 대비 100%. 방향성은 중립"
+      },
+      "holderCostScore": 0,
+      "v10cScore": 57,
+      "entryPlan": {
+        "action": "관망/제외",
+        "trigger": "최소 MA20 344,950원 회복과 RSI 35 이상 필요",
+        "invalidation": "추세 훼손 지속",
+        "target": "반등 확인 전 목표가 산정 보류"
+      },
+      "executionPlan": {
+        "stance": "관망",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 125995
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 226800
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 252000
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 272160
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 289800
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 343225
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 344950
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 252000,
+            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
+          },
+          {
+            "label": "확인",
+            "weight": "관찰",
+            "price": 344950,
+            "rule": "MA20 344,950원 회복 또는 5일선 292,600원 위 양봉"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "보유자 대응",
+            "action": "반등 시 비중 축소",
+            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
+          },
+          {
+            "label": "무효",
+            "action": "신규 검토 중단",
+            "trigger": "60일 저점 96,400원 이탈"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
+          },
+          {
+            "window": "장중",
+            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
+          },
+          {
+            "window": "종가",
+            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "수급 보조 신호 양호",
+          "체질 기준: REVIEW · 61점 · 가격 기반 장기 추세 기준선",
+          "평단 신호: NO_DATA · 0점 · B 추정 평단 125,995원 대비 100%. 방향성은 중립",
+          "리스크: 20일 추세 훼손",
+          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
+      "megaManagers": {
+        "score": 0,
+        "managerCount": 0,
+        "status": "공개 소스상 미확인",
+        "managers": [],
+        "largeHolderDisclosure": null,
+        "interpretation": "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다."
       }
     },
     {
@@ -58982,6 +60314,13 @@
         "majorHolderPct": 54.79,
         "topHolderPct": 61.05,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 25450,
+        "alternateClose": 25450
       },
       "liquidity": {
         "avgVolume20": 99764,
@@ -59289,6 +60628,13 @@
         "topHolderPct": 25.45,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 349000,
+        "alternateClose": 349000
+      },
       "liquidity": {
         "avgVolume20": 566243,
         "volumeRatio": 0.83
@@ -59583,7 +60929,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.021308,
+            "weightPct": 0.021423,
             "shares": 38921,
             "holdingName": "ALTEOGEN INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -59625,6 +60971,13 @@
         "majorHolderPct": 14.57,
         "topHolderPct": 14.98,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 8580,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 1568417,
@@ -59897,302 +61250,6 @@
       }
     },
     {
-      "ticker": "000500",
-      "company": "가온전선",
-      "sector": "전력망·AI인프라",
-      "status": "candidate",
-      "rationale": "전선 중견주",
-      "latestDate": "2026-06-15",
-      "close": 252000,
-      "marketCapEok": 41689,
-      "listedShares": 16543115,
-      "per": 7.75,
-      "pbr": 0.46,
-      "roe": 5.64,
-      "ownership": {
-        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=000500&target=finsum_more",
-        "topHolders": [
-          {
-            "name": "LS전선 외 4인",
-            "shares": 13518091,
-            "pct": 81.71
-          }
-        ],
-        "majorHolderName": "LS전선 외 4인",
-        "majorHolderShares": 13518091,
-        "majorHolderPct": 81.71,
-        "topHolderPct": 81.71,
-        "memo": "대주주 지분 매우 높음"
-      },
-      "liquidity": {
-        "avgVolume20": 206691,
-        "volumeRatio": 1.49
-      },
-      "returns": {
-        "d5": -11.8881,
-        "d20": -36.8421,
-        "d60": 147.0588
-      },
-      "technicals": {
-        "ma5": 292600,
-        "ma20": 344950,
-        "ma60": 244678.33,
-        "ma120": 168005,
-        "rsi14": 29.9,
-        "high60": 635000,
-        "low60": 0,
-        "drawdown60Pct": -60.315,
-        "reboundFromLow60Pct": null,
-        "aboveMa20": false,
-        "aboveMa60": true,
-        "ma20SlopePct": -12.2041
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": 448.56,
-          "institutionNetValueEok": -1645.5,
-          "foreignPct": 1.076,
-          "institutionPct": -3.947
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": 439.41,
-          "institutionNetValueEok": -2029.88,
-          "foreignPct": 1.054,
-          "institutionPct": -4.869
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": 105.76,
-          "institutionNetValueEok": -744.43,
-          "foreignPct": 0.254,
-          "institutionPct": -1.786
-        }
-      },
-      "policy": {
-        "score": 24,
-        "memo": "전선 중견주"
-      },
-      "value": {
-        "score": 23,
-        "memo": "시총 41,689억원, PER 7.75, PBR 0.46"
-      },
-      "technical": {
-        "score": 0,
-        "memo": "MA20 하회, RSI 29.9, 60일 고점 대비 -60.3%"
-      },
-      "flowScore": {
-        "score": 12,
-        "memo": "20일 외국인 1.1%, 기관 -4.9%"
-      },
-      "risk": {
-        "penalty": 6,
-        "notes": [
-          "20일 추세 훼손"
-        ],
-        "valuationBlock": false
-      },
-      "totalScore": 53,
-      "baseDecision": "AVOID_NOW",
-      "decision": "AVOID_NOW",
-      "structuralRegime": {
-        "mode": "PRICE_ONLY",
-        "confidence": 2,
-        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
-        "score": 61,
-        "grade": "전환 스토리/가격 검증 부족",
-        "gate": "REVIEW",
-        "entryEligible": false,
-        "primary": {
-          "id": "price-regime",
-          "label": "가격 기반 장기 추세 기준선",
-          "date": "2023-12-21",
-          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-          "sourceName": "Naver Finance daily price",
-          "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
-          "firstTradingDate": "2023-12-21",
-          "basisClose": 22300,
-          "latestClose": 252000,
-          "latestDate": "2026-06-15",
-          "days": 907,
-          "returnPct": 1030,
-          "cagrPct": 165.5,
-          "highClose": 564000,
-          "highDate": "2026-05-12",
-          "lowClose": 19220,
-          "lowDate": "2024-01-17",
-          "drawdownFromHighPct": -55.3,
-          "maxDrawdownPct": -55.3,
-          "aboveMA200": true,
-          "aboveMA600": true,
-          "score": 61,
-          "grade": "전환 스토리/가격 검증 부족",
-          "durationFlag": "가격 추세"
-        },
-        "events": [
-          {
-            "id": "price-regime",
-            "label": "가격 기반 장기 추세 기준선",
-            "date": "2023-12-21",
-            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-            "sourceName": "Naver Finance daily price",
-            "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
-            "firstTradingDate": "2023-12-21",
-            "basisClose": 22300,
-            "latestClose": 252000,
-            "latestDate": "2026-06-15",
-            "days": 907,
-            "returnPct": 1030,
-            "cagrPct": 165.5,
-            "highClose": 564000,
-            "highDate": "2026-05-12",
-            "lowClose": 19220,
-            "lowDate": "2024-01-17",
-            "drawdownFromHighPct": -55.3,
-            "maxDrawdownPct": -55.3,
-            "aboveMA200": true,
-            "aboveMA600": true,
-            "score": 61,
-            "grade": "전환 스토리/가격 검증 부족",
-            "durationFlag": "가격 추세"
-          }
-        ],
-        "memo": "가격 기반 장기 추세 검증 대기: 점수 61"
-      },
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
-        "estimatedCost": 125995,
-        "holderName": "외국인 투자자군",
-        "recentAccumulation": false,
-        "disposalPressure": false,
-        "flow": {
-          "cost": 125995.15097529926,
-          "shares": 1268585,
-          "netShares": -199533,
-          "last20NetShares": 186953,
-          "firstDate": "2025-06-20",
-          "lastDate": "2026-06-15",
-          "days": 240
-        },
-        "method": "구간 추정: 외국인 순매수 VWAP",
-        "score": 0,
-        "signal": "NO_DATA",
-        "gapPct": 100,
-        "overhang": false,
-        "memo": "B 추정 평단 125,995원 대비 100%. 방향성은 중립"
-      },
-      "holderCostScore": 0,
-      "v10cScore": 53,
-      "entryPlan": {
-        "action": "관망/제외",
-        "trigger": "최소 MA20 344,950원 회복과 RSI 35 이상 필요",
-        "invalidation": "추세 훼손 지속",
-        "target": "반등 확인 전 목표가 산정 보류"
-      },
-      "executionPlan": {
-        "stance": "관망",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 125995
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 226800
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 252000
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 272160
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 289800
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 343225
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 344950
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 252000,
-            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
-          },
-          {
-            "label": "확인",
-            "weight": "관찰",
-            "price": 344950,
-            "rule": "MA20 344,950원 회복 또는 5일선 292,600원 위 양봉"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "보유자 대응",
-            "action": "반등 시 비중 축소",
-            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
-          },
-          {
-            "label": "무효",
-            "action": "신규 검토 중단",
-            "trigger": "60일 저점 0원 이탈"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
-          },
-          {
-            "window": "장중",
-            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
-          },
-          {
-            "window": "종가",
-            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "수급 보조 신호 양호",
-          "체질 기준: REVIEW · 61점 · 가격 기반 장기 추세 기준선",
-          "평단 신호: NO_DATA · 0점 · B 추정 평단 125,995원 대비 100%. 방향성은 중립",
-          "리스크: 20일 추세 훼손",
-          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
-      "megaManagers": {
-        "score": 0,
-        "managerCount": 0,
-        "status": "공개 소스상 미확인",
-        "managers": [],
-        "largeHolderDisclosure": null,
-        "interpretation": "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다."
-      }
-    },
-    {
       "ticker": "299030",
       "company": "하나기술",
       "sector": "이차전지 장비",
@@ -60219,6 +61276,13 @@
         "majorHolderPct": 29.32,
         "topHolderPct": 29.32,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 19000,
+        "alternateClose": 19000
       },
       "liquidity": {
         "avgVolume20": 44084,
@@ -60509,6 +61573,13 @@
         "majorHolderPct": 39.91,
         "topHolderPct": 52.1,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 22000,
+        "alternateClose": 22000
       },
       "liquidity": {
         "avgVolume20": 167550,
@@ -60823,6 +61894,13 @@
         "topHolderPct": 63.55,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 15020,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 309324,
         "volumeRatio": 0.48
@@ -61126,6 +62204,13 @@
         "topHolderPct": 45.49,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 186500,
+        "alternateClose": 186500
+      },
       "liquidity": {
         "avgVolume20": 738694,
         "volumeRatio": 0.69
@@ -61420,7 +62505,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.015301,
+            "weightPct": 0.015383,
             "shares": 55402,
             "holdingName": "ECOPRO BM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -61462,6 +62547,13 @@
         "majorHolderPct": 60.58,
         "topHolderPct": 65.62,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 210500,
+        "alternateClose": 210500
       },
       "liquidity": {
         "avgVolume20": 325307,
@@ -61757,7 +62849,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.012943,
+            "weightPct": 0.013013,
             "shares": 39955,
             "holdingName": "POSCO FUTURE M CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -61794,6 +62886,13 @@
         "majorHolderPct": 12.09,
         "topHolderPct": 12.09,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 16520,
+        "alternateClose": 16520
       },
       "liquidity": {
         "avgVolume20": 168143,
@@ -62098,6 +63197,13 @@
         "topHolderPct": 30.65,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 13450,
+        "alternateClose": 13450
+      },
       "liquidity": {
         "avgVolume20": 204750,
         "volumeRatio": 0.75
@@ -62378,6 +63484,13 @@
         "majorHolderPct": 30.71,
         "topHolderPct": 30.71,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 9460,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 71849,
@@ -62687,6 +63800,13 @@
         "topHolderPct": 81.09,
         "memo": "대주주 지분 매우 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1332000,
+        "alternateClose": 1332000
+      },
       "liquidity": {
         "avgVolume20": 63351,
         "volumeRatio": 0.69
@@ -62981,7 +64101,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.029327,
+            "weightPct": 0.029485,
             "shares": 13940,
             "holdingName": "SAMSUNG BIOLOGICS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -63023,6 +64143,13 @@
         "majorHolderPct": 59.56,
         "topHolderPct": 70,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 13320,
+        "alternateClose": 13320
       },
       "liquidity": {
         "avgVolume20": 64061,
@@ -63326,6 +64453,13 @@
         "majorHolderPct": 44.6,
         "topHolderPct": 51.91,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 74300,
+        "alternateClose": 74300
       },
       "liquidity": {
         "avgVolume20": 124216,
@@ -63635,6 +64769,13 @@
         "topHolderPct": 38.22,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 141700,
+        "alternateClose": 141700
+      },
       "liquidity": {
         "avgVolume20": 589564,
         "volumeRatio": 0.41
@@ -63919,7 +65060,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.006981,
+            "weightPct": 0.007019,
             "shares": 32070,
             "holdingName": "L+F CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -63961,6 +65102,13 @@
         "majorHolderPct": 23.14,
         "topHolderPct": 28,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 98300,
+        "alternateClose": 98300
       },
       "liquidity": {
         "avgVolume20": 229463,
@@ -64266,6 +65414,13 @@
         "topHolderPct": 66.96,
         "memo": "대주주 지분 매우 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 40100,
+        "alternateClose": 40100
+      },
       "liquidity": {
         "avgVolume20": 170245,
         "volumeRatio": 0.47
@@ -64532,7 +65687,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.001394,
+            "weightPct": 0.001402,
             "shares": 21897,
             "holdingName": "SK BIOSCIENCE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -64574,6 +65729,13 @@
         "majorHolderPct": 45.23,
         "topHolderPct": 45.79,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 43800,
+        "alternateClose": 43800
       },
       "liquidity": {
         "avgVolume20": 78003,
@@ -64857,7 +66019,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.000397,
+            "weightPct": 0.000399,
             "shares": 5740,
             "holdingName": "CHUNBO CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -64899,6 +66061,13 @@
         "majorHolderPct": 18.83,
         "topHolderPct": 23.88,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 49900,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 348633,
@@ -65210,6 +66379,13 @@
         "topHolderPct": 47,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 12000,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 511691,
         "volumeRatio": 0.46
@@ -65501,6 +66677,13 @@
         "topHolderPct": 27.55,
         "memo": "대주주 지분 낮은 편"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 39250,
+        "alternateClose": 39250
+      },
       "liquidity": {
         "avgVolume20": 319321,
         "volumeRatio": 0.41
@@ -65785,7 +66968,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.001921,
+            "weightPct": 0.001931,
             "shares": 30238,
             "holdingName": "OSCOTEC INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -65832,6 +67015,13 @@
         "majorHolderPct": 10.76,
         "topHolderPct": 18.33,
         "memo": "대주주 지분 낮은 편"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 8200,
+        "alternateClose": 8200
       },
       "liquidity": {
         "avgVolume20": 315830,
@@ -66131,6 +67321,13 @@
         "majorHolderPct": 42.3,
         "topHolderPct": 42.3,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 62400,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 198385,
@@ -66446,6 +67643,13 @@
         "topHolderPct": 67.9,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 7170,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 32835,
         "volumeRatio": 0.28
@@ -66730,6 +67934,13 @@
         "majorHolderPct": 28.73,
         "topHolderPct": 30.26,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 12470,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 305084,
@@ -67030,6 +68241,13 @@
         "topHolderPct": 19.94,
         "memo": "대주주 지분 낮은 편"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 16660,
+        "alternateClose": 16660
+      },
       "liquidity": {
         "avgVolume20": 266641,
         "volumeRatio": 0.38
@@ -67317,6 +68535,13 @@
         "topHolderPct": 58.62,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 660000,
+        "alternateClose": 660000
+      },
       "liquidity": {
         "avgVolume20": 190807,
         "volumeRatio": 0.39
@@ -67582,7 +68807,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.019491,
+            "weightPct": 0.019596,
             "shares": 19227,
             "holdingName": "RAINBOW ROBOTICS",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -67619,6 +68844,13 @@
         "majorHolderPct": 37.08,
         "topHolderPct": 37.08,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 4125,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 75914,
@@ -67923,6 +69155,13 @@
         "topHolderPct": 34.62,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 13590,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 62872,
         "volumeRatio": 0.9
@@ -68203,6 +69442,13 @@
         "majorHolderPct": 35,
         "topHolderPct": 35,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 7190,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 44420,
@@ -68509,6 +69755,13 @@
         "topHolderPct": 39.27,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 5140,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 81550,
         "volumeRatio": 0.34
@@ -68790,6 +70043,13 @@
         "majorHolderPct": 31.32,
         "topHolderPct": 31.32,
         "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 8150,
+        "alternateClose": 8150
       },
       "liquidity": {
         "avgVolume20": 190305,
@@ -69077,6 +70337,13 @@
         "majorHolderPct": 38.05,
         "topHolderPct": 39,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 304,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 1146097,
@@ -69369,6 +70636,13 @@
         "topHolderPct": 32.35,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 132800,
+        "alternateClose": 132800
+      },
       "liquidity": {
         "avgVolume20": 464133,
         "volumeRatio": 0.37
@@ -69652,7 +70926,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.006157,
+            "weightPct": 0.00619,
             "shares": 29335,
             "holdingName": "LIGACHEM BIOSCIENCES INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -69699,6 +70973,13 @@
         "majorHolderPct": 45.4,
         "topHolderPct": 56.79,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 16730,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 130275,
@@ -70005,6 +71286,13 @@
         "topHolderPct": 56.12,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 19700,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 20143,
         "volumeRatio": 0.54
@@ -70308,6 +71596,13 @@
         "majorHolderPct": 46.59,
         "topHolderPct": 55.24,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 7810,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 44982,
@@ -70618,6 +71913,13 @@
         "topHolderPct": 62.51,
         "memo": "대주주 지분 높음"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 14750,
+        "alternateClose": 14750
+      },
       "liquidity": {
         "avgVolume20": 52154,
         "volumeRatio": 0.73
@@ -70916,6 +72218,13 @@
         "majorHolderPct": 7.14,
         "topHolderPct": 7.14,
         "memo": "대주주 지분 매우 낮음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 609,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 1987898,
@@ -71227,6 +72536,13 @@
         "topHolderPct": 28.63,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1477,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 152200,
         "volumeRatio": 0.42
@@ -71527,6 +72843,13 @@
         "topHolderPct": 24.52,
         "memo": "대주주 지분 보통 이상"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 95900,
+        "alternateClose": 95900
+      },
       "liquidity": {
         "avgVolume20": 462727,
         "volumeRatio": 0.62
@@ -71811,7 +73134,7 @@
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
             "asOf": "As of 12-Jun-2026",
-            "weightPct": 0.004691,
+            "weightPct": 0.004716,
             "shares": 31695,
             "holdingName": "ABLBIO INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -71848,6 +73171,13 @@
         "majorHolderPct": 37.32,
         "topHolderPct": 37.32,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1771,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 113494,
@@ -72159,6 +73489,13 @@
         "topHolderPct": 19.91,
         "memo": "대주주 지분 매우 낮음"
       },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 4965,
+        "alternateClose": null
+      },
       "liquidity": {
         "avgVolume20": 117118,
         "volumeRatio": 0.3
@@ -72464,6 +73801,13 @@
         "topHolderPct": 21.21,
         "memo": "대주주 지분 낮은 편"
       },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 25200,
+        "alternateClose": 25200
+      },
       "liquidity": {
         "avgVolume20": 142056,
         "volumeRatio": 0.57
@@ -72750,6 +74094,13 @@
         "majorHolderPct": 47.33,
         "topHolderPct": 48.33,
         "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 4030,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 112149,
@@ -73055,6 +74406,13 @@
         "majorHolderPct": 65.6,
         "topHolderPct": 65.66,
         "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-06-15",
+        "asOfText": "2026-06-15 16:10 장마감",
+        "officialClose": 1468,
+        "alternateClose": null
       },
       "liquidity": {
         "avgVolume20": 161648,

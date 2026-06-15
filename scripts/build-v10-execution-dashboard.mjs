@@ -318,12 +318,12 @@ async function main() {
     try {
       const daily = await fetchLongDailyHistory(item.ticker);
       const flow = await fetchForeignHistory(item.ticker, FOREIGN_FLOW_PAGES);
-      const merged = mergeHistory(daily, flow);
       const [quote, ownership] = await Promise.all([
         fetchQuote(item.ticker),
         fetchOwnership(item.ticker)
       ]);
       quote.ownership = ownership;
+      const merged = mergeHistory(applyCurrentQuote(daily, quote.currentQuote), flow);
       const row = evaluate(item, merged, quote);
       rows.push(row);
       console.log(`[${String(index + 1).padStart(3, "0")}/${universe.length}] ${item.company} ${item.ticker}: ${row.decision} ${row.totalScore} structural ${row.structuralRegime.score}`);
@@ -407,8 +407,10 @@ function evaluate(item, history, quote) {
   const ma60 = sma(closes, 60);
   const ma120 = sma(closes, 120);
   const rsi14 = rsi(closes, 14);
-  const high60 = Math.max(...highs.slice(-60));
-  const low60 = Math.min(...lows.slice(-60));
+  const recentHighs = highs.slice(-60).filter(isPositiveNumber);
+  const recentLows = lows.slice(-60).filter(isPositiveNumber);
+  const high60 = recentHighs.length ? Math.max(...recentHighs, latest.close) : latest.close;
+  const low60 = recentLows.length ? Math.min(...recentLows, latest.close) : latest.close;
   const drawdown60Pct = pctChange(high60, latest.close);
   const reboundFromLow60Pct = pctChange(low60, latest.close);
   const ret5 = pctChange(closes.at(-6), latest.close);
@@ -442,6 +444,13 @@ function evaluate(item, history, quote) {
     pbr: quote.pbr,
     roe: quote.roe,
     ownership: quote.ownership,
+    priceSource: quote.currentQuote ? {
+      source: quote.currentQuote.source,
+      asOfDate: quote.currentQuote.asOfDate,
+      asOfText: quote.currentQuote.asOfText,
+      officialClose: quote.currentQuote.officialClose,
+      alternateClose: quote.currentQuote.alternateClose
+    } : null,
     liquidity: {
       avgVolume20: Math.round(avgVol20),
       volumeRatio: round(volumeRatio, 2)
@@ -1116,9 +1125,11 @@ async function fetchForeignHistory(ticker, pages) {
 }
 
 async function fetchQuote(ticker) {
-  const [mainHtml, siseHtml] = await Promise.all([
-    fetchText(`https://finance.naver.com/item/main.naver?code=${ticker}`),
-    fetchText(`https://finance.naver.com/item/sise.naver?code=${ticker}`)
+  const mainUrl = `https://finance.naver.com/item/main.naver?code=${ticker}`;
+  const [mainHtml, siseHtml, mainUtf8Html] = await Promise.all([
+    fetchText(mainUrl),
+    fetchText(`https://finance.naver.com/item/sise.naver?code=${ticker}`),
+    fetchUtf8Text(mainUrl)
   ]);
   const marketCapEok = parseMarketCapEok(siseHtml) ?? parseMarketCapEok(mainHtml);
   const listedShares = parseListedShares(siseHtml);
@@ -1126,7 +1137,99 @@ async function fetchQuote(ticker) {
   const per = parseAfterLabel(tableText, "PER");
   const pbr = parseAfterLabel(tableText, "PBR");
   const roe = parseAfterLabel(tableText, "ROE");
-  return { marketCapEok, listedShares, per, pbr, roe };
+  return { marketCapEok, listedShares, per, pbr, roe, currentQuote: parseCurrentQuote(mainUtf8Html) };
+}
+
+function parseCurrentQuote(html) {
+  const text = strip(html);
+  const asOf = text.match(/종목 시세 정보\s+(\d{4})년\s+(\d{2})월\s+(\d{2})일\s+(\d{2})시\s+(\d{2})분 기준\s+([^\s]+)/);
+  const asOfDate = asOf ? `${asOf[1]}-${asOf[2]}-${asOf[3]}` : null;
+  const asOfText = asOf ? `${asOf[1]}-${asOf[2]}-${asOf[3]} ${asOf[4]}:${asOf[5]} ${asOf[6]}` : null;
+  const chartIndex = text.indexOf("종목 시세 차트");
+  const quoteSection = chartIndex >= 0 ? text.slice(0, chartIndex) : text.slice(0, 3000);
+  const blocks = [];
+  const quotePattern = /오늘의시세\s+([\d,]+)\s+포인트[\s\S]{0,360}?주요 시세\s+전일\s+([\d,]+)[\s\S]*?고가\s+([\d,]+)[\s\S]*?거래량\s+([\d,]+)[\s\S]*?시가\s+([\d,]+)[\s\S]*?저가\s+([\d,]+)/g;
+  for (const match of quoteSection.matchAll(quotePattern)) {
+    blocks.push({
+      close: parseNumber(match[1]),
+      previousClose: parseNumber(match[2]),
+      high: parseNumber(match[3]),
+      volume: parseNumber(match[4]),
+      open: parseNumber(match[5]),
+      low: parseNumber(match[6])
+    });
+  }
+
+  if (!blocks.length) {
+    const headline = quoteSection.match(/현재가\s+([\d,]+)[\s\S]*?시가\s+([\d,]+)[\s\S]*?고가\s+([\d,]+)[\s\S]*?저가\s+([\d,]+)[\s\S]*?거래량\s+([\d,]+)/);
+    if (headline) {
+      blocks.push({
+        close: parseNumber(headline[1]),
+        open: parseNumber(headline[2]),
+        high: parseNumber(headline[3]),
+        low: parseNumber(headline[4]),
+        volume: parseNumber(headline[5])
+      });
+    }
+  }
+
+  const selected = blocks[1] ?? blocks[0] ?? null;
+  if (!selected?.close) return null;
+  return {
+    ...selected,
+    source: blocks[1] ? "NXT" : "KRX",
+    asOfDate,
+    asOfText,
+    officialClose: blocks[0]?.close ?? null,
+    alternateClose: blocks[1]?.close ?? null
+  };
+}
+
+function applyCurrentQuote(history, currentQuote) {
+  if (!currentQuote?.close || !history.length) return history;
+  const rows = history.map((row) => ({ ...row }));
+  const latest = rows.at(-1);
+  const date = currentQuote.asOfDate ?? latest.date ?? RUN_DATE;
+  if (date < latest.date && !rows.some((row) => row.date === date)) return rows;
+  const open = isPositiveNumber(currentQuote.open) ? currentQuote.open : currentQuote.close;
+  const high = isPositiveNumber(currentQuote.high) ? currentQuote.high : currentQuote.close;
+  const low = isPositiveNumber(currentQuote.low) ? currentQuote.low : currentQuote.close;
+  const volume = isPositiveNumber(currentQuote.volume) ? currentQuote.volume : latest.volume;
+  const currentHigh = Math.max(
+    currentQuote.close,
+    open,
+    high
+  );
+  const currentLow = Math.min(
+    currentQuote.close,
+    open,
+    low
+  );
+  const patch = {
+    date,
+    open,
+    high: currentHigh,
+    low: currentLow,
+    close: currentQuote.close,
+    volume,
+    priceSource: currentQuote.source
+  };
+  const index = rows.findIndex((row) => row.date === date);
+  if (index >= 0) {
+    const original = rows[index];
+    rows[index] = {
+      ...original,
+      ...patch,
+      open,
+      high: Math.max(isPositiveNumber(original.high) ? original.high : currentHigh, currentHigh),
+      low: Math.min(isPositiveNumber(original.low) ? original.low : currentLow, currentLow),
+      volume,
+      officialClose: currentQuote.officialClose ?? original.close
+    };
+  } else {
+    rows.push(patch);
+  }
+  return rows.sort((a, b) => a.date.localeCompare(b.date));
 }
 
 async function fetchOwnership(ticker) {
@@ -1764,12 +1867,12 @@ function buildHtml(data) {
     document.querySelector("#megaMetricGrid").innerHTML=megaMetrics.map(([a,b,c])=>\`<div class="card compact"><strong>\${Number(b).toLocaleString("ko-KR")}</strong><span>\${escapeHtml(a)}</span><p>\${escapeHtml(c)}</p></div>\`).join("");
     document.querySelector("#megaRows").innerHTML=(megaStats.topRows||[]).map(r=>\`<tr><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)} · \${decisionText(r.decision)} \${r.totalScore}점</span></td><td>\${managerChips(r.managers,r.largeHolderDisclosure)}<span class="note">\${escapeHtml(r.status)}</span></td><td>\${managerEvidence(r.managers,r.largeHolderDisclosure)}</td><td>\${escapeHtml(r.interpretation)}</td></tr>\`).join("");
     document.querySelector("#executionCards").innerHTML=DATA.entryList.length?DATA.entryList.map((r,i)=>strategyCard(r,i)).join(""):\`<p class="muted">현재 기준 진입 가능 후보가 없습니다.</p>\`;
-    document.querySelector("#entryRows").innerHTML=DATA.entryList.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><strong>\${r.v10cScore}</strong><span class="note">총점 \${r.totalScore} + 평단 \${r.holderCostScore}</span></td><td>\${structuralCell(r)}</td><td>\${holderCostCell(r)}</td><td>\${price(r.close)}<span class="note">시총 \${eok(r.marketCapEok)} · PER \${r.per??"-"} · PBR \${r.pbr??"-"}</span></td><td>\${ownershipCell(r)}</td><td>\${escapeHtml(r.technical.memo)}<span class="note">20일 \${pct(r.returns.d20)}, 60일 \${pct(r.returns.d60)}</span></td><td>\${escapeHtml(r.flowScore.memo)}</td><td>\${managerCell(r)}</td><td>\${escapeHtml(broker(r))}</td><td>\${escapeHtml(r.entryPlan.trigger)}<span class="note">\${escapeHtml(r.entryPlan.invalidation)}</span></td><td>\${sellSummary(r)}</td><td>\${escapeHtml((r.risk.notes||[]).join(" · ")||"특이 리스크 없음")}</td></tr>\`).join("");
+    document.querySelector("#entryRows").innerHTML=DATA.entryList.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><strong>\${r.v10cScore}</strong><span class="note">총점 \${r.totalScore} + 평단 \${r.holderCostScore}</span></td><td>\${structuralCell(r)}</td><td>\${holderCostCell(r)}</td><td>\${price(r.close)}\${priceSourceLabel(r)}<span class="note">시총 \${eok(r.marketCapEok)} · PER \${r.per??"-"} · PBR \${r.pbr??"-"}</span></td><td>\${ownershipCell(r)}</td><td>\${escapeHtml(r.technical.memo)}<span class="note">20일 \${pct(r.returns.d20)}, 60일 \${pct(r.returns.d60)}</span></td><td>\${escapeHtml(r.flowScore.memo)}</td><td>\${managerCell(r)}</td><td>\${escapeHtml(broker(r))}</td><td>\${escapeHtml(r.entryPlan.trigger)}<span class="note">\${escapeHtml(r.entryPlan.invalidation)}</span></td><td>\${sellSummary(r)}</td><td>\${escapeHtml((r.risk.notes||[]).join(" · ")||"특이 리스크 없음")}</td></tr>\`).join("");
     document.querySelector("#waitRows").innerHTML=DATA.triggerList.slice(0,25).map(r=>\`<tr><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge wait">\${r.totalScore}</span></td><td>\${escapeHtml(r.technical.memo)}</td><td>\${escapeHtml(r.entryPlan.trigger)}</td><td>\${escapeHtml(r.entryPlan.invalidation)}</td></tr>\`).join("");
     function renderFilters(){const vals=["all","ENTRY_OK","WAIT_TRIGGER","AVOID_NOW"];document.querySelector("#filters").innerHTML=vals.map(v=>\`<button class="\${filter===v?"active":""}" data-filter="\${v}">\${v==="all"?"전체":decisionText(v)}</button>\`).join("");document.querySelectorAll("#filters button").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;renderFilters();renderAll()}));}
     function renderAll(){const needle=search.trim().toLowerCase();const rows=DATA.allRows.filter(r=>(filter==="all"||r.decision===filter)&&(!needle||[r.company,r.ticker,r.sector,r.rationale,r.structuralRegime?.primary?.label,r.holderCost?.signal].join(" ").toLowerCase().includes(needle))).slice(0,90);document.querySelector("#allRows").innerHTML=rows.map((r,i)=>\`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge \${decisionClass(r.decision)}">\${decisionText(r.decision)}</span></td><td><span class="badge \${decisionClass(r.baseDecision)}">\${decisionText(r.baseDecision)}</span></td><td><strong>\${r.v10cScore}</strong><span class="note">+\${r.holderCostScore}</span></td><td><strong>\${r.totalScore}</strong></td><td>\${structuralCell(r)}</td><td>\${holderCostCell(r)}</td><td>\${r.policy.score}<span class="note">\${escapeHtml(r.policy.memo)}</span></td><td>\${r.value.score}<span class="note">\${escapeHtml(r.value.memo)}</span></td><td>\${ownershipCell(r)}</td><td>\${r.technical.score}<span class="note">\${escapeHtml(r.technical.memo)}</span></td><td>\${r.flowScore.score}<span class="note">\${escapeHtml(r.flowScore.memo)}</span></td><td>\${managerCell(r)}</td><td>\${escapeHtml(r.entryPlan.action)}<span class="note">\${escapeHtml((r.risk.notes||[]).join(" · "))}</span></td></tr>\`).join("");}
     document.querySelector("#search").addEventListener("input",e=>{search=e.target.value;renderAll()});document.querySelector("#sourceList").innerHTML=DATA.sources.map(s=>\`<a href="\${escapeHtml(s.url)}" target="_blank" rel="noreferrer"><strong>\${escapeHtml(s.title)}</strong><span>\${escapeHtml(s.url)}</span></a>\`).join("");
-    function strategyCard(row,index){const p=row.executionPlan??{};return \`<article class="strategy-card"><div class="strategy-head"><div><h4>\${index+1}. \${escapeHtml(row.company)}</h4><span class="note">\${row.ticker} · \${escapeHtml(row.sector)} · 현재 \${price(row.close)} · v10c \${row.v10cScore}</span></div><div class="strategy-meta"><span class="pill good">\${escapeHtml(p.stance??row.entryPlan.action)}</span><span class="pill \${row.structuralRegime?.gate==="PASS"?"good":"warn"}">체질 \${escapeHtml(row.structuralRegime?.gate??"-")} \${row.structuralRegime?.score??0}점</span><span class="pill \${holderSignalClass(row.holderCost?.signal)}">평단 \${escapeHtml(row.holderCost?.signal??"NO_DATA")} \${row.holderCostScore??0}점</span><span class="pill \${p.isOverheated?"warn":"good"}">\${p.isOverheated?"과열 축소":"분할 기준"}</span><span class="pill \${p.isWeakFlow?"bad":"good"}">\${p.isWeakFlow?"수급 약함":"수급 양호"}</span></div></div>\${priceRail(p)}<div class="plan-columns"><div><h5>진입</h5>\${stepList(p.buySteps,"buy")}</div><div><h5>매도·축소</h5>\${stepList(p.sellSteps,"sell")}</div></div><div class="session-grid">\${(p.sessionRules||[]).map(x=>\`<div class="session-item"><strong>\${escapeHtml(x.window)}</strong><span>\${escapeHtml(x.rule)}</span></div>\`).join("")}</div><div class="risk-strip">\${(p.riskSwitches||[]).map(x=>\`<span>\${escapeHtml(x)}</span>\`).join("")}</div></article>\`}
+    function strategyCard(row,index){const p=row.executionPlan??{};return \`<article class="strategy-card"><div class="strategy-head"><div><h4>\${index+1}. \${escapeHtml(row.company)}</h4><span class="note">\${row.ticker} · \${escapeHtml(row.sector)} · 현재 \${price(row.close)}\${priceSourceLabel(row)} · v10c \${row.v10cScore}</span></div><div class="strategy-meta"><span class="pill good">\${escapeHtml(p.stance??row.entryPlan.action)}</span><span class="pill \${row.structuralRegime?.gate==="PASS"?"good":"warn"}">체질 \${escapeHtml(row.structuralRegime?.gate??"-")} \${row.structuralRegime?.score??0}점</span><span class="pill \${holderSignalClass(row.holderCost?.signal)}">평단 \${escapeHtml(row.holderCost?.signal??"NO_DATA")} \${row.holderCostScore??0}점</span><span class="pill \${p.isOverheated?"warn":"good"}">\${p.isOverheated?"과열 축소":"분할 기준"}</span><span class="pill \${p.isWeakFlow?"bad":"good"}">\${p.isWeakFlow?"수급 약함":"수급 양호"}</span></div></div>\${priceRail(p)}<div class="plan-columns"><div><h5>진입</h5>\${stepList(p.buySteps,"buy")}</div><div><h5>매도·축소</h5>\${stepList(p.sellSteps,"sell")}</div></div><div class="session-grid">\${(p.sessionRules||[]).map(x=>\`<div class="session-item"><strong>\${escapeHtml(x.window)}</strong><span>\${escapeHtml(x.rule)}</span></div>\`).join("")}</div><div class="risk-strip">\${(p.riskSwitches||[]).map(x=>\`<span>\${escapeHtml(x)}</span>\`).join("")}</div></article>\`}
     function stepList(steps,type){return (steps||[]).map(x=>\`<div class="plan-step"><strong>\${escapeHtml(x.label)}\${x.weight?" · "+escapeHtml(x.weight):""}</strong><span>\${x.price?price(x.price)+" · ":""}\${escapeHtml(x.rule??x.trigger??"")}</span>\${x.action?\`<span>\${escapeHtml(x.action)}</span>\`:""}</div>\`).join("")}
     function priceRail(plan){const levels=(plan.levels||[]).filter(x=>x.price!=null);if(!levels.length)return"";const min=Math.min(...levels.map(x=>x.price));const max=Math.max(...levels.map(x=>x.price));return \`<div class="price-rail"><div class="rail-track"><div class="rail-line"></div>\${levels.map(x=>\`<div class="rail-marker \${escapeHtml(x.kind)}" style="left:\${levelPosition(x.price,min,max)}%"><span class="rail-dot"></span><strong>\${escapeHtml(x.label)}</strong><span>\${price(x.price)}</span></div>\`).join("")}</div></div>\`}
     function levelPosition(price,min,max){if(max<=min)return 50;return Math.max(8,Math.min(92,8+(price-min)/(max-min)*84)).toFixed(2)}
@@ -1780,6 +1883,7 @@ function buildHtml(data) {
     function holderSignalClass(signal){return signal==="ACCUMULATION"?"good":signal==="OVERHANG"?"bad":signal==="NEUTRAL"?"warn":"bad"}
     function managerCell(row){const mm=row.megaManagers;if(!mm||!mm.managerCount)return'<span class="muted">미확인</span>';return managerChips(mm.managers,mm.largeHolderDisclosure)+\`<span class="note">\${escapeHtml(mm.status)}</span>\`}
     function managerChips(managers,disclosure){const labels=[...(managers||[]).map(x=>x.manager),...(disclosure?[disclosure.holder+" 5%+"] : [])];return \`<div class="manager-list">\${labels.map(x=>\`<span class="manager-chip">\${escapeHtml(x)}</span>\`).join("")}</div>\`}
+    function priceSourceLabel(row){return row.priceSource?.source?" · "+escapeHtml(row.priceSource.source):""}
     function managerEvidence(managers,disclosure){const lines=[];(managers||[]).forEach(x=>lines.push(\`\${x.manager}: \${x.vehicle}\${x.weightPct==null?"":" · "+pct(x.weightPct)}\${x.shares==null?"":" · "+shares(x.shares)+"주"}\${x.asOf?" · "+x.asOf:""}\`));if(disclosure)lines.push(\`\${disclosure.holder}: DART 5%+ · \${shares(disclosure.shares)}주 · \${disclosure.ownershipPct}% · \${disclosure.asOf}\`);return lines.map(x=>\`<span class="note">\${escapeHtml(x)}</span>\`).join("")}
     function price(v){return v==null?"-":Number(v).toLocaleString("ko-KR")+"원"} function eok(v){return v==null?"-":Number(v).toLocaleString("ko-KR",{maximumFractionDigits:0})+"억원"} function pct(v){return v==null?"-":Number(v).toLocaleString("ko-KR",{maximumFractionDigits:2})+"%"} function shares(v){return v==null?"-":Number(v).toLocaleString("ko-KR",{maximumFractionDigits:0})} function escapeHtml(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
     renderFilters();renderAll();
@@ -1836,6 +1940,10 @@ function parseNumber(value) {
   const text = String(value ?? "").replace(/[,+%\s]/g, "");
   if (!text || text === "-") return null;
   return Number(text);
+}
+
+function isPositiveNumber(value) {
+  return Number.isFinite(value) && value > 0;
 }
 
 function parseMarketCapEok(html) {
