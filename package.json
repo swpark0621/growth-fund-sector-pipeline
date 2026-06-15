@@ -18,6 +18,7 @@
     "v6": "node scripts/build-v6-broad-screener.mjs",
     "v7": "node scripts/build-v7-execution-dashboard.mjs",
     "v8": "node scripts/build-v8-holder-cost-dashboard.mjs",
-    "v10": "node scripts/build-v10-execution-dashboard.mjs"
+    "v10": "node scripts/build-v10-execution-dashboard.mjs",
+    "entry-monitor": "node scripts/build-entry-change-monitor-v1.mjs"
   }
 }
