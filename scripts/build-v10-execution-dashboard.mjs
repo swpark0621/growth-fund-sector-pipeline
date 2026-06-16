@@ -7,7 +7,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const dataPath = path.join(root, "data", "v10-execution-dashboard-data.json");
 const outputPath = path.join(root, "docs", "v10.html");
-const RUN_DATE = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
+const RUN_NOW = new Date();
+const RUN_DATE = formatSeoulDate(RUN_NOW);
 const LONG_HISTORY_START = "20190101";
 const FOREIGN_FLOW_PAGES = 14;
 const USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36";
@@ -355,11 +356,13 @@ async function main() {
   const entryList = ranked.filter((row) => row.decision === "ENTRY_OK").slice(0, 15);
   const triggerList = ranked.filter((row) => row.decision === "WAIT_TRIGGER").slice(0, 30);
   const avoidList = ranked.filter((row) => row.decision === "AVOID_NOW").slice(0, 30);
+  const updatedAt = formatSeoulDateTime(new Date());
 
   const output = {
     meta: {
       title: "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
       runDate: RUN_DATE,
+      updatedAt,
       universeCount: universe.length,
       validCount: valid.length,
       methodology: "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -1816,7 +1819,7 @@ function buildHtml(data) {
   <div class="layout">
     <aside>
       <div class="brand"><h1>${escapeHtml(data.meta.title)}</h1><p>체질 기준, Holder Cost, 진입·축소 규칙</p></div>
-      <div class="side-box"><span>기준일: ${data.meta.runDate}</span><span>유니버스: ${data.meta.universeCount}개</span><span>분석 성공: ${data.meta.validCount}개</span><span>ENTRY_OK: ${data.summary.entryOk}개</span></div>
+      <div class="side-box"><span>기준일: ${data.meta.runDate} · 문서 업데이트: ${data.meta.updatedAt}</span><span>유니버스: ${data.meta.universeCount}개</span><span>분석 성공: ${data.meta.validCount}개</span><span>ENTRY_OK: ${data.summary.entryOk}개</span></div>
       <nav class="nav-list">
         <a class="nav-link" href="#overview"><span>요약</span><span class="tag">KPI</span></a>
         <a class="nav-link" href="#execution"><span>실행 전략</span><span class="tag">v10</span></a>
@@ -1934,6 +1937,26 @@ function strip(value) {
 
 function formatNaverDate(value) {
   return `${value.slice(0, 4)}-${value.slice(4, 6)}-${value.slice(6, 8)}`;
+}
+
+function formatSeoulDate(date) {
+  return date.toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
+}
+
+function formatSeoulDateTime(date) {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Seoul",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(date).map((part) => [part.type, part.value])
+  );
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second} KST`;
 }
 
 function parseNumber(value) {
