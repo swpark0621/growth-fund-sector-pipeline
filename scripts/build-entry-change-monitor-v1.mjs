@@ -47,6 +47,9 @@ function main() {
     }
   }
   const workingSnapshotCount = appendWorkingSnapshots(snapshots);
+  snapshots.forEach((snapshot, index) => {
+    snapshot.order = index;
+  });
 
   const entryTickers = new Set();
   for (const snapshot of snapshots) {
@@ -71,6 +74,7 @@ function main() {
       latestV10Snapshot: latestSnapshot(snapshots, "v10")?.label ?? null
     },
     summary: summarize(records, snapshots),
+    feedback: buildFeedbackReview(records, snapshots),
     snapshots: snapshots.map(({ rows, rowMap, ...snapshot }) => ({
       ...snapshot,
       entryCount: rows.filter((row) => row.decision === "ENTRY_OK").length
@@ -204,8 +208,10 @@ function buildRecord(ticker, snapshots) {
       baseDecision: row.baseDecision,
       totalScore: row.totalScore,
       v10cScore: row.v10cScore,
+      holderCostScore: row.holderCostScore,
       close: row.close,
       entryRank: snapshot.rows.filter((item) => item.decision === "ENTRY_OK").findIndex((item) => item.ticker === ticker) + 1,
+      snapshotOrder: snapshot.order,
       row
     });
   }
@@ -214,7 +220,7 @@ function buildRecord(ticker, snapshots) {
     latestByVersion[version] = observations.filter((item) => item.version === version).at(-1) ?? null;
   }
   const current = latestByVersion.v10 ?? latestByVersion.v7 ?? latestByVersion.v6;
-  const previousSameVersion = observations.filter((item) => item.version === current?.version).slice(-2)[0] ?? null;
+  const previousSameVersion = observations.filter((item) => item.version === current?.version).at(-2) ?? null;
   const entryObservations = observations.filter((item) => item.decision === "ENTRY_OK");
   const firstEntry = entryObservations[0] ?? null;
   const lastEntry = entryObservations.at(-1) ?? null;
@@ -266,8 +272,11 @@ function publicObservation(item) {
     baseDecision: item.baseDecision,
     totalScore: item.totalScore,
     v10cScore: item.v10cScore,
+    holderCostScore: item.holderCostScore,
     close: item.close,
     entryRank: item.entryRank || null,
+    returns: row.returns,
+    technicals: row.technicals,
     technicalMemo: row.technicalMemo,
     entryAction: row.entryAction,
     entryTrigger: row.entryTrigger,
@@ -304,11 +313,13 @@ function buildTransitionHistory(observations) {
         close: curr.close,
         totalScore: curr.totalScore,
         v10cScore: curr.v10cScore,
-        entryRank: curr.entryRank || null
+        entryRank: curr.entryRank || null,
+        commitDate: curr.commitDate,
+        snapshotOrder: curr.snapshotOrder
       });
     }
   }
-  return result.sort((a, b) => a.latestDate.localeCompare(b.latestDate) || a.version.localeCompare(b.version));
+  return result.sort((a, b) => a.latestDate.localeCompare(b.latestDate) || a.commitDate.localeCompare(b.commitDate) || a.version.localeCompare(b.version));
 }
 
 function transitionLabel(from, to) {
@@ -323,7 +334,7 @@ function transitionLabel(from, to) {
 function classifyStatus(current, previousSameVersion, entryObservations) {
   if (!current) return "NO_CURRENT";
   const row = current.row;
-  const wasEntryBefore = entryObservations.some((item) => item.commitDate < current.commitDate || item.snapshotId !== current.snapshotId);
+  const wasEntryBefore = entryObservations.some((item) => item.snapshotOrder < current.snapshotOrder);
   const previousDecision = previousSameVersion?.decision ?? null;
   if (current.decision === "ENTRY_OK") {
     if (previousDecision === "ENTRY_OK") return "ACTIVE_ENTRY";
@@ -424,6 +435,236 @@ function summarize(records, snapshots) {
   };
 }
 
+function buildFeedbackReview(records, snapshots) {
+  const latestV10 = latestSnapshot(snapshots, "v10");
+  const recordMap = new Map(records.map((record) => [record.ticker, record]));
+  const rows = (latestV10?.rows ?? [])
+    .filter((row) => row.decision === "ENTRY_OK")
+    .map((row) => buildFeedbackRow(row, recordMap.get(row.ticker)))
+    .sort((a, b) => (b.v10cScore ?? b.totalScore ?? 0) - (a.v10cScore ?? a.totalScore ?? 0));
+
+  const leaders = rows.filter((row) => (row.d5 ?? 0) >= 10 && (row.d20 ?? 0) >= 0);
+  const bouncePending = rows.filter((row) => (row.d5 ?? 0) >= 5 && (row.d20 ?? 0) < 0);
+  const slowRows = rows.filter((row) => (row.d5 ?? 0) < 5 && (row.d20 ?? 0) >= 0);
+  const riskRows = rows.filter((row) => row.holderCostSignal === "OVERHANG" || (row.rsi14 ?? 0) >= 68 || (row.d20 ?? 0) >= 40);
+  const softRows = records
+    .filter((record) => record.status === "ENTRY_LOST_SOFT")
+    .map(compactRecordForFeedback)
+    .sort((a, b) => (b.v10cScore ?? b.totalScore ?? 0) - (a.v10cScore ?? a.totalScore ?? 0))
+    .slice(0, 8);
+  const hardRows = records
+    .filter((record) => record.status === "LOST_HARD" || record.status === "REDUCE_ONLY")
+    .map(compactRecordForFeedback)
+    .sort((a, b) => (b.v10cScore ?? b.totalScore ?? 0) - (a.v10cScore ?? a.totalScore ?? 0))
+    .slice(0, 8);
+
+  return {
+    latestV10Label: latestV10?.label ?? null,
+    latestDate: latestV10?.latestDate ?? null,
+    entryCount: rows.length,
+    averageReturns: averageReturnBlock(rows),
+    sectorRows: sectorFeedback(rows),
+    takeaways: buildFeedbackTakeaways(rows, leaders, bouncePending, slowRows, riskRows, softRows, hardRows),
+    buckets: [
+      {
+        id: "leaders",
+        title: "시장 반응 강함",
+        memo: "5일과 20일 흐름이 같이 살아난 종목입니다. 추격보다 보유·일부 회수 기준이 우선입니다.",
+        rows: leaders.map(compactFeedbackRow)
+      },
+      {
+        id: "bouncePending",
+        title: "반등은 했지만 20일 추세 미회복",
+        memo: "단기 반등은 나왔지만 최근 20일 기준으로는 아직 시장 반응이 덜 확인된 종목입니다.",
+        rows: bouncePending.map(compactFeedbackRow)
+      },
+      {
+        id: "slowRows",
+        title: "선정 유지, 단기 반응 둔함",
+        memo: "체질과 점수는 통과하지만 최근 반등 탄력은 주도주보다 약한 종목입니다.",
+        rows: slowRows.map(compactFeedbackRow)
+      },
+      {
+        id: "riskWatch",
+        title: "과열·오버행 주의",
+        memo: "선정은 유지되지만 RSI, 20일 급등, 평단 오버행 때문에 매수보다 비중 관리가 먼저입니다.",
+        rows: riskRows.map(compactFeedbackRow)
+      },
+      {
+        id: "softLost",
+        title: "이전 ENTRY 이후 반응 미흡",
+        memo: "체질 또는 평단 신호가 남아 있어 재진입 대기로 두되, 현재 v10에서는 ENTRY_OK가 아닙니다.",
+        rows: softRows
+      },
+      {
+        id: "hardLost",
+        title: "축소·배제 우선",
+        memo: "구조 차단, 오버행, 기술 훼손 중 하나가 강하게 걸린 종목입니다.",
+        rows: hardRows
+      }
+    ],
+    rows
+  };
+}
+
+function buildFeedbackRow(row, record) {
+  const d5 = row.returns?.d5 ?? null;
+  const d20 = row.returns?.d20 ?? null;
+  const d60 = row.returns?.d60 ?? null;
+  const rsi14 = row.technicals?.rsi14 ?? null;
+  const fromLastEntryPct = pctChange(record?.lastEntry?.close, row.close);
+  const flags = [];
+  if ((d5 ?? 0) >= 15) flags.push("5일 급반등");
+  if ((d20 ?? 0) >= 10) flags.push("20일 추세 양호");
+  if ((d5 ?? 0) >= 5 && (d20 ?? 0) < 0) flags.push("반등 후 확인 필요");
+  if ((d5 ?? 0) < 5) flags.push("단기 반응 둔함");
+  if (row.holderCost?.signal === "OVERHANG") flags.push("평단 오버행");
+  if ((rsi14 ?? 0) >= 68) flags.push("RSI 과열");
+
+  return {
+    ticker: row.ticker,
+    company: row.company,
+    sector: row.sector,
+    close: row.close,
+    latestDate: row.latestDate,
+    totalScore: row.totalScore,
+    v10cScore: row.v10cScore,
+    holderCostScore: row.holderCostScore,
+    holderCostSignal: row.holderCost?.signal ?? "NO_DATA",
+    structuralGate: row.structural?.gate ?? "-",
+    d5,
+    d20,
+    d60,
+    rsi14,
+    fromLastEntryPct,
+    status: record?.status ?? "NEW_ENTRY",
+    response: responseLabel({ d5, d20, rsi14, holderCostSignal: row.holderCost?.signal }),
+    assessment: responseAssessment({ d5, d20, d60, rsi14, holderCostSignal: row.holderCost?.signal }),
+    flags
+  };
+}
+
+function responseLabel({ d5, d20, rsi14, holderCostSignal }) {
+  if (holderCostSignal === "OVERHANG") return "선정 유지, 매물압력 주의";
+  if ((rsi14 ?? 0) >= 68 || (d20 ?? 0) >= 40) return "강하지만 추격 위험";
+  if ((d5 ?? 0) >= 10 && (d20 ?? 0) >= 0) return "시장 반응 양호";
+  if ((d5 ?? 0) >= 5 && (d20 ?? 0) < 0) return "단기 반등, 확인 필요";
+  if ((d5 ?? 0) < 5) return "반응 둔함";
+  return "유지 관찰";
+}
+
+function responseAssessment({ d5, d20, d60, rsi14, holderCostSignal }) {
+  if (holderCostSignal === "OVERHANG") return "v10 점수는 통과하지만 평단 위 매물 압력이 남아 신규 비중 확대보다 보유분 관리가 우선입니다.";
+  if ((rsi14 ?? 0) >= 68 || (d20 ?? 0) >= 40) return "강한 추세가 확인됐지만 과열 구간이라 장중 추격보다 눌림·분할 기준이 필요합니다.";
+  if ((d5 ?? 0) >= 10 && (d20 ?? 0) >= 0) return "시장 반등에 동행했습니다. 보유 가능하되 급등분은 일부 회수 기준을 같이 둡니다.";
+  if ((d5 ?? 0) >= 5 && (d20 ?? 0) < 0) return "급락 후 되돌림은 나왔지만 20일 추세가 아직 복구되지 않아 종가 유지 확인이 필요합니다.";
+  if ((d60 ?? 0) < 0) return "선정 논리는 남아도 최근 시장 주도주와의 상대 강도는 약합니다.";
+  return "추세 훼손은 아니지만 시장 반응이 강하지 않아 다음 업데이트에서 유지 여부를 재확인합니다.";
+}
+
+function buildFeedbackTakeaways(rows, leaders, bouncePending, slowRows, riskRows, softRows, hardRows) {
+  const topSectors = sectorFeedback(rows).slice(0, 3).map((row) => `${row.sector} ${row.count}개`).join(", ");
+  const weakNames = bouncePending.slice(0, 5).map((row) => row.company).join(", ") || "없음";
+  const slowNames = slowRows.slice(0, 5).map((row) => row.company).join(", ") || "없음";
+  return [
+    `최신 v10 ENTRY_OK는 ${rows.length}개이며, 강한 시장 반응은 ${leaders.length}개, 반등 확인 대기는 ${bouncePending.length}개, 단기 반응 둔화는 ${slowRows.length}개입니다.`,
+    `노출은 ${topSectors || "분산 미확인"} 중심입니다. 방산·전력망·반도체/OLED처럼 강한 테마에 붙은 종목과 그렇지 못한 종목의 차이가 큽니다.`,
+    `선정은 됐지만 20일 추세가 덜 회복된 종목은 ${weakNames}입니다. 이 그룹은 신규 추격보다 다음 종가 업데이트 확인이 우선입니다.`,
+    `현재 선정 유지 중 반등 탄력이 약한 종목은 ${slowNames}입니다. 점수 통과와 시장 주도 반응을 분리해서 봐야 합니다.`,
+    `과열·오버행 감시 대상은 ${riskRows.length}개입니다. 점수 통과와 실제 매수 타이밍을 분리해야 합니다.`,
+    `이전 ENTRY에서 현재 탈락한 후보는 소프트 ${softRows.length}개, 하드/축소 ${hardRows.length}개입니다. 소프트는 재진입 트리거, 하드는 쿨다운 기준으로 관리합니다.`
+  ];
+}
+
+function compactFeedbackRow(row) {
+  return {
+    ticker: row.ticker,
+    company: row.company,
+    sector: row.sector,
+    status: row.status,
+    response: row.response,
+    close: row.close,
+    v10cScore: row.v10cScore,
+    totalScore: row.totalScore,
+    holderCostSignal: row.holderCostSignal,
+    d5: row.d5,
+    d20: row.d20,
+    d60: row.d60,
+    rsi14: row.rsi14,
+    fromLastEntryPct: row.fromLastEntryPct,
+    flags: row.flags,
+    assessment: row.assessment
+  };
+}
+
+function compactRecordForFeedback(record) {
+  const current = record.current ?? {};
+  return {
+    ticker: record.ticker,
+    company: record.company,
+    sector: record.sector,
+    status: record.status,
+    response: record.statusLabel,
+    close: current.close,
+    v10cScore: current.v10cScore,
+    totalScore: current.totalScore,
+    holderCostSignal: current.holderCost?.signal ?? "NO_DATA",
+    d5: current.returns?.d5 ?? null,
+    d20: current.returns?.d20 ?? null,
+    d60: current.returns?.d60 ?? null,
+    rsi14: current.technicals?.rsi14 ?? null,
+    flags: [record.statusLabel],
+    assessment: record.reason
+  };
+}
+
+function averageReturnBlock(rows) {
+  return {
+    d5: round(average(rows.map((row) => row.d5)), 2),
+    d20: round(average(rows.map((row) => row.d20)), 2),
+    d60: round(average(rows.map((row) => row.d60)), 2)
+  };
+}
+
+function sectorFeedback(rows) {
+  const bySector = new Map();
+  for (const row of rows) {
+    const item = bySector.get(row.sector) ?? { sector: row.sector, count: 0, d5: [], d20: [], d60: [], names: [] };
+    item.count += 1;
+    item.d5.push(row.d5);
+    item.d20.push(row.d20);
+    item.d60.push(row.d60);
+    item.names.push(row.company);
+    bySector.set(row.sector, item);
+  }
+  return [...bySector.values()]
+    .map((item) => ({
+      sector: item.sector,
+      count: item.count,
+      avgD5: round(average(item.d5), 2),
+      avgD20: round(average(item.d20), 2),
+      avgD60: round(average(item.d60), 2),
+      names: item.names
+    }))
+    .sort((a, b) => b.count - a.count || (b.avgD5 ?? 0) - (a.avgD5 ?? 0));
+}
+
+function pctChange(from, to) {
+  if (from == null || to == null || !from) return null;
+  return round((to - from) / from * 100, 2);
+}
+
+function average(values) {
+  const arr = values.filter((value) => value != null && Number.isFinite(Number(value)));
+  return arr.length ? arr.reduce((sum, value) => sum + Number(value), 0) / arr.length : null;
+}
+
+function round(value, digits = 2) {
+  if (value == null || Number.isNaN(Number(value))) return null;
+  const unit = 10 ** digits;
+  return Math.round(Number(value) * unit) / unit;
+}
+
 function renderHtml(payload) {
   const json = JSON.stringify(payload).replaceAll("<", "\\u003c").replaceAll("</script", "<\\/script");
   return `<!doctype html>
@@ -441,11 +682,11 @@ function renderHtml(payload) {
     .hero,.band,.record{border:1px solid var(--line);border-radius:8px;background:var(--surface)}.hero{padding:clamp(16px,2.4vw,26px);margin-bottom:14px}.hero p{max-width:980px;color:var(--muted)}.kicker{font-weight:900;color:var(--green);font-size:13px;margin-bottom:8px}
     .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px}.metric{padding:14px;border:1px solid var(--line);border-radius:8px;background:#fff}.metric strong{display:block;font-size:26px;line-height:1.1}.metric span{display:block;margin-top:6px;color:var(--muted);font-size:12px}
     .toolbar{position:sticky;top:0;z-index:5;display:grid;gap:10px;padding:12px;margin-bottom:14px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px)}.search{width:100%;min-height:42px;padding:8px 11px;border:1px solid var(--line);border-radius:8px;font:inherit}.toolbar-meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.toolbar-meta b{color:var(--ink)}.segments{display:flex;gap:6px;overflow:auto;padding-bottom:2px}.segments button{flex:0 0 auto;min-height:34px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;font-weight:800;cursor:pointer}.segments button.active{border-color:var(--green);background:#e5f3ef;color:var(--green)}
-    .band{padding:16px;margin-bottom:14px}.snapshot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.snapshot{padding:12px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd}.snapshot strong{display:block}.snapshot span{color:var(--muted);font-size:12px}
+    .band{padding:16px;margin-bottom:14px}.snapshot-grid,.feedback-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.snapshot,.feedback-item{padding:12px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd}.snapshot strong,.feedback-item strong{display:block}.snapshot span,.feedback-item span{color:var(--muted);font-size:12px}.feedback-list{display:grid;gap:7px;margin:10px 0 14px;padding:0;list-style:none}.feedback-list li{padding:9px 11px;border-left:4px solid var(--green);background:#f5fbf8;border-radius:6px;font-size:13px}.table-wrap{overflow:auto}.feedback-table{width:100%;border-collapse:collapse;font-size:12px}.feedback-table th,.feedback-table td{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.feedback-table th{color:var(--muted);font-size:11px}.flag-list{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
     .records{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.record{padding:15px}.record-head{display:flex;justify-content:space-between;gap:12px}.record h3{margin-bottom:4px}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{display:inline-flex;align-items:center;min-height:24px;padding:3px 8px;border-radius:999px;background:#eef2f7;color:#344054;font-size:12px;font-weight:800}.chip.good{background:#e5f3ef;color:var(--green)}.chip.warn{background:#fff2dc;color:var(--amber)}.chip.bad{background:#ffe8e8;color:var(--red)}.chip.info{background:#e8eef9;color:var(--blue)}
     .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.mini{padding:10px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd}.mini b{display:block;font-size:13px}.mini span{display:block;color:var(--muted);font-size:12px;margin-top:3px}.action{margin-top:12px;padding:10px 12px;border-left:4px solid var(--blue);background:#f3f7fd;border-radius:6px;font-size:13px}.reason{margin-top:8px;color:var(--muted);font-size:12px}
     .timeline{display:flex;gap:8px;overflow:auto;margin-top:12px;padding-bottom:2px}.event{flex:0 0 170px;padding:9px;border:1px solid var(--line);border-radius:8px;background:#fff}.event strong{display:block;font-size:12px}.event span{display:block;color:var(--muted);font-size:11px;margin-top:3px}.empty{padding:22px;border:1px dashed var(--line);border-radius:8px;background:#fff;color:var(--muted);text-align:center}
-    footer{margin-top:18px;color:var(--muted);font-size:12px}@media(max-width:1120px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}.nav-list{display:flex;overflow:auto}.nav-link{min-width:150px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.records,.snapshot-grid{grid-template-columns:1fr}}@media(max-width:560px){main{padding:12px}.metrics{grid-template-columns:1fr}.record-head,.section-grid{display:block}.mini{margin-top:8px}.toolbar{top:0}.toolbar-meta{display:block}.event{flex-basis:150px}}
+    footer{margin-top:18px;color:var(--muted);font-size:12px}@media(max-width:1120px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}.nav-list{display:flex;overflow:auto}.nav-link{min-width:150px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.records,.snapshot-grid,.feedback-grid{grid-template-columns:1fr}}@media(max-width:560px){main{padding:12px}.metrics{grid-template-columns:1fr}.record-head,.section-grid{display:block}.mini{margin-top:8px}.toolbar{top:0}.toolbar-meta{display:block}.event{flex-basis:150px}}
   </style>
 </head>
 <body>
@@ -453,11 +694,12 @@ function renderHtml(payload) {
     <aside>
       <div class="brand"><h1>Entry Change Monitor v1</h1><p>v6·v7·v10 ENTRY_OK 이력 관리판</p></div>
       <div class="side-box"><span>기준: ${escapeHtml(payload.meta.startLabel)} (${payload.meta.startDate} 이후)</span><span>스냅샷: ${payload.meta.snapshotCount}개</span><span>ENTRY 이력 종목: ${payload.meta.entryTickerCount}개</span><span>최신 v10: ${escapeHtml(payload.meta.latestV10Snapshot ?? "-")}</span></div>
-      <nav class="nav-list"><a class="nav-link" href="./v10.html"><span>V10 대시보드</span><span>↗</span></a><a class="nav-link" href="#records"><span>종목 상태</span><span>검색</span></a><a class="nav-link" href="#snapshots"><span>스냅샷</span><span>이력</span></a></nav>
+      <nav class="nav-list"><a class="nav-link" href="./v10.html"><span>V10 대시보드</span><span>↗</span></a><a class="nav-link" href="#feedback"><span>v10 피드백</span><span>평가</span></a><a class="nav-link" href="#records"><span>종목 상태</span><span>검색</span></a><a class="nav-link" href="#snapshots"><span>스냅샷</span><span>이력</span></a></nav>
     </aside>
     <main>
       <section class="hero"><p class="kicker">ENTRY 변화 추적</p><h2>ENTRY_OK였던 종목을 바로 버리지 않고, 재진입·축소·제외 상태로 나눠 관리합니다.</h2><p>하루 3회 업데이트할 때마다 신규 ENTRY, 유지, 소프트 탈락, 하드 탈락을 분리해서 봅니다. 특히 리노공업처럼 체질과 평단 신호는 유지되지만 기술 조건이 빠진 종목은 완전 제외가 아니라 재진입 대기로 관리합니다.</p></section>
       <section class="metrics" id="metrics"></section>
+      <section class="band" id="feedback"><h3>v10 기준 피드백 평가</h3><span class="note" id="feedbackMeta"></span><ul class="feedback-list" id="feedbackSummary"></ul><div class="feedback-grid" id="feedbackMetrics"></div><h3>선정 종목 반응</h3><div class="table-wrap"><table class="feedback-table"><thead><tr><th>종목</th><th>반응</th><th>수익률</th><th>평가</th></tr></thead><tbody id="feedbackRows"></tbody></table></div><h3>분류별 점검</h3><div class="feedback-grid" id="feedbackBuckets"></div><h3>섹터 노출</h3><div class="feedback-grid" id="sectorGrid"></div></section>
       <section class="toolbar"><input id="search" class="search" type="search" aria-label="검색" placeholder="회사명, 코드, 섹터, 상태, 리스크 검색"><div class="toolbar-meta"><span id="resultCount">전체 ${payload.records.length}개</span><span>소프트 탈락은 완전 배제가 아니라 재진입 트리거 대기</span></div><div class="segments" id="statusFilters"></div></section>
       <section class="band" id="snapshots"><h3>스냅샷 이력</h3><div class="snapshot-grid" id="snapshotGrid"></div></section>
       <section id="records"><div class="records" id="recordGrid"></div><div class="empty" id="empty" hidden>검색 조건에 맞는 종목이 없습니다.</div></section>
@@ -478,10 +720,11 @@ function renderHtml(payload) {
     function renderMetrics(){const s=DATA.summary.byStatus||{};const metrics=[["ENTRY 이력",DATA.meta.entryTickerCount+"개","v6·v7·v10 합산"],["관리 후보",DATA.summary.activeLike+"개","신규·유지·재진입"],["소프트 탈락",DATA.summary.lostSoft+"개","재진입 대기"],["축소/하드",DATA.summary.hardOrReduce+"개","신규 금지"],["스냅샷",DATA.meta.snapshotCount+"개",DATA.meta.startDate+" 이후"]];document.querySelector("#metrics").innerHTML=metrics.map(([a,b,c])=>\`<div class="metric"><strong>\${esc(b)}</strong><span>\${esc(a)} · \${esc(c)}</span></div>\`).join("");}
     function renderFilters(){document.querySelector("#statusFilters").innerHTML=statusOrder.map(x=>\`<button class="\${status===x?"active":""}" data-status="\${x}">\${esc(statusName[x]??x)} \${x==="ALL"?DATA.records.length:(DATA.summary.byStatus?.[x]??0)}</button>\`).join("");document.querySelectorAll("#statusFilters button").forEach(btn=>btn.addEventListener("click",()=>{status=btn.dataset.status;renderFilters();renderRecords();}));}
     function renderSnapshots(){document.querySelector("#snapshotGrid").innerHTML=DATA.summary.snapshotSummary.map(x=>\`<div class="snapshot"><strong>\${esc(x.version.toUpperCase())} · \${esc(x.latestDate)}</strong><span>ENTRY_OK \${x.entryOk}개 · \${esc(x.commit)}</span><span>\${esc(x.label)}</span></div>\`).join("");}
+    function renderFeedback(){const f=DATA.feedback||{};document.querySelector("#feedbackMeta").textContent=\`\${f.latestV10Label||"-"} · 평균 5일 \${pct(f.averageReturns?.d5)}, 20일 \${pct(f.averageReturns?.d20)}, 60일 \${pct(f.averageReturns?.d60)}\`;document.querySelector("#feedbackSummary").innerHTML=(f.takeaways||[]).map(x=>\`<li>\${esc(x)}</li>\`).join("");const metrics=[["현재 v10 ENTRY",f.entryCount??0,"ENTRY_OK"],["평균 5일",pct(f.averageReturns?.d5),"단기 반응"],["평균 20일",pct(f.averageReturns?.d20),"추세 확인"],["평균 60일",pct(f.averageReturns?.d60),"중기 상대강도"]];document.querySelector("#feedbackMetrics").innerHTML=metrics.map(([a,b,c])=>\`<div class="feedback-item"><strong>\${esc(b)}</strong><span>\${esc(a)} · \${esc(c)}</span></div>\`).join("");document.querySelector("#feedbackRows").innerHTML=(f.rows||[]).map(r=>\`<tr><td><b>\${esc(r.company)}</b><span class="note">\${esc(r.ticker)} · \${esc(r.sector)} · v10c \${r.v10cScore??"-"}</span></td><td>\${esc(r.response)}<div class="flag-list">\${(r.flags||[]).map(x=>\`<span class="chip info">\${esc(x)}</span>\`).join("")}</div></td><td>5일 \${pct(r.d5)}<span class="note">20일 \${pct(r.d20)} · 60일 \${pct(r.d60)} · RSI \${r.rsi14??"-"}</span></td><td>\${esc(r.assessment)}</td></tr>\`).join("");document.querySelector("#feedbackBuckets").innerHTML=(f.buckets||[]).map(b=>\`<div class="feedback-item"><strong>\${esc(b.title)} \${(b.rows||[]).length}개</strong><span>\${esc(b.memo)}</span><span>\${(b.rows||[]).slice(0,6).map(r=>esc(r.company)).join(" · ")||"-"}</span></div>\`).join("");document.querySelector("#sectorGrid").innerHTML=(f.sectorRows||[]).map(s=>\`<div class="feedback-item"><strong>\${esc(s.sector)} \${s.count}개</strong><span>평균 5일 \${pct(s.avgD5)} · 20일 \${pct(s.avgD20)} · 60일 \${pct(s.avgD60)}</span><span>\${esc((s.names||[]).join(" · "))}</span></div>\`).join("");}
     function recordCard(r){const c=r.current||{};const structural=c.structural;const holder=c.holderCost;const source=c.priceSource?.source?\` · \${esc(c.priceSource.source)}\`:"";return \`<article class="record"><div class="record-head"><div><h3>\${esc(r.company)}</h3><span class="note">\${esc(r.ticker)} · \${esc(r.sector)}</span></div><div class="chips"><span class="chip \${statusClass[r.status]??"info"}">\${esc(r.statusLabel)}</span><span class="chip info">\${esc(c.version??"-")}</span></div></div><div class="section-grid"><div class="mini"><b>현재</b><span>\${esc(c.decision??"-")} · \${price(c.close)}\${source} · 총점 \${c.totalScore??"-"}\${c.v10cScore?" · v10c "+c.v10cScore:""}</span></div><div class="mini"><b>마지막 ENTRY</b><span>\${r.lastEntry?esc(r.lastEntry.label)+" · "+price(r.lastEntry.close):"-"}</span></div><div class="mini"><b>체질</b><span>\${structural?esc(structural.gate)+" · "+structural.score+"점 · "+esc(structural.label):"미확인"}</span></div><div class="mini"><b>평단</b><span>\${holder?esc(holder.signal)+" · "+(holder.score??0)+"점 · "+price(holder.estimatedCost)+" · 괴리 "+pct(holder.gapPct):"NO_DATA"}</span></div><div class="mini"><b>재진입 트리거</b><span>\${esc(c.entryTrigger??"-")}</span></div><div class="mini"><b>무효/손절</b><span>\${esc(c.invalidation??"-")}</span></div></div><div class="action"><b>관리 액션</b><br>\${esc(r.action)}</div><div class="reason">\${esc(r.reason)}</div><div class="timeline">\${r.transitionHistory.map(ev=>\`<div class="event"><strong>\${esc(ev.version.toUpperCase())} \${esc(ev.change)}</strong><span>\${esc(ev.latestDate)} · \${esc(ev.from)} → \${esc(ev.to)}</span><span>\${price(ev.close)} · \${ev.totalScore??"-"}점</span></div>\`).join("")}</div></article>\`;}
     function renderRecords(){const needle=query.trim().toLowerCase();const rows=DATA.records.filter(r=>(status==="ALL"||r.status===status)&&(!needle||r.searchText.includes(needle))).sort((a,b)=>0);document.querySelector("#recordGrid").innerHTML=rows.map(recordCard).join("");document.querySelector("#empty").hidden=rows.length>0;document.querySelector("#resultCount").textContent=\`표시 \${rows.length}개 / 전체 \${DATA.records.length}개\`;}
     document.querySelector("#search").addEventListener("input",e=>{query=e.target.value;renderRecords();});
-    renderMetrics();renderFilters();renderSnapshots();renderRecords();
+    renderMetrics();renderFeedback();renderFilters();renderSnapshots();renderRecords();
   </script>
 </body>
 </html>`;
