@@ -19,6 +19,10 @@
     "v7": "node scripts/build-v7-execution-dashboard.mjs",
     "v8": "node scripts/build-v8-holder-cost-dashboard.mjs",
     "v10": "node scripts/build-v10-execution-dashboard.mjs",
+    "v11:collect": "node scripts/collect-beta-regime.mjs",
+    "v11": "node scripts/build-v11-structure-dashboard.mjs",
+    "v11:verify": "node scripts/verify-v11-capture.mjs",
+    "v11:all": "npm run v11:collect && npm run v11 && npm run v11:verify",
     "entry-monitor": "node scripts/build-entry-change-monitor-v1.mjs"
   }
 }
