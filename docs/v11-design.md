@@ -151,10 +151,12 @@ high semi dependency
 
 ### 5. Regime
 
+레짐(regime)은 "지금 시장이 어떤 장세인가"를 뜻하는 v11의 시장 모드다. 같은 종목이라도 좁은 반도체 장, 위험회피장, 정책 이벤트 반등장에서는 진입 기준과 비중을 다르게 적용한다.
+
 v11은 20일 추세뿐 아니라 당일 광폭 반등도 본다.
 
 ```text
-POLICY_EVENT_REBOUND
+정책 이벤트 반등장(POLICY_EVENT_REBOUND)
 = KOSDAQ 1D 급등
 + KOSDAQ의 KOSPI 대비 당일 상대강도
 + 유니버스 당일 상승 비율

@@ -137,6 +137,7 @@ export async function runStandaloneV11({ writeHtml = true } = {}) {
     regime,
     summary: summarizeStandalone(ranked),
     rules: standaloneRules(),
+    coverage: featureCoverage(),
     entryList: ranked.filter((row) => row.v11Decision === "ENTRY"),
     accumulateList: ranked.filter((row) => row.v11Decision === "ACCUMULATE_ON_WEAKNESS"),
     watchList: ranked.filter((row) => row.v11Decision === "WATCH"),
@@ -883,6 +884,41 @@ function standaloneRules() {
   ];
 }
 
+function featureCoverage() {
+  return [
+    {
+      feature: "레짐 설명과 정책 이벤트 반등장",
+      status: "반영",
+      note: "레짐을 현재 장세 분류로 설명하고 정책 이벤트 반등장(POLICY_EVENT_REBOUND)을 추가했다."
+    },
+    {
+      feature: "조회시점 현재가",
+      status: "반영",
+      note: "currentPrice, currentChangePct, quoteFetchedAt을 일봉 기준가와 분리했다."
+    },
+    {
+      feature: "진입·매도 실행전략 카드",
+      status: "반영",
+      note: "v10의 가격 레일, 분할 매수, 매도·축소, 장중 대응, 리스크 스위치 구조를 v11에 복구했다."
+    },
+    {
+      feature: "체질·평단 보조축",
+      status: "반영",
+      note: "v11 독립 가격 체질과 독립 수급 VWAP 평단을 표시한다."
+    },
+    {
+      feature: "대주주·거래원·3대 운용사 상세",
+      status: "후속 포팅 필요",
+      note: "v10에는 있었지만 v11 독립 수집기에는 아직 연결하지 않았다."
+    },
+    {
+      feature: "정책 프로젝트 상세 연결표",
+      status: "후속 포팅 필요",
+      note: "v7/v10 문서의 정책 검토 상세표는 v11 독립 화면에 아직 별도 섹션으로 없다."
+    }
+  ];
+}
+
 function compareRows(a, b) {
   return (Number.isFinite(b.v11StandaloneScore) ? b.v11StandaloneScore : -Infinity) -
     (Number.isFinite(a.v11StandaloneScore) ? a.v11StandaloneScore : -Infinity) ||
@@ -918,8 +954,9 @@ function buildStandaloneHtml(data) {
     .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:16px}.metric{min-height:104px;padding:15px}.metric strong{display:block;font-size:27px;line-height:1.1}.metric span{display:block;margin-top:6px;color:var(--muted);font-size:12px}.band{padding:18px;margin-bottom:16px}.head{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;margin-bottom:12px}.head p{max-width:920px;margin-bottom:0;color:var(--muted);font-size:13px}
     .toolbar{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-bottom:12px}.segmented{display:flex;flex-wrap:wrap;gap:6px}.segmented button{min-height:34px;padding:5px 10px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;cursor:pointer;font-size:13px;font-weight:800}.segmented button.active{border-color:var(--teal);background:#e5f3f0;color:var(--teal)}.search{width:min(360px,100%);min-height:36px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff}
     .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff}table{width:100%;min-width:1920px;border-collapse:collapse}th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px}th{position:sticky;top:0;z-index:1;background:#edf3f4;color:#334155}tr:last-child td{border-bottom:0}.num{font-variant-numeric:tabular-nums;white-space:nowrap}.company{font-weight:900}.note{display:block;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.42}.teal{color:var(--teal);font-weight:900}
-    .sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.sources a{min-height:58px;padding:11px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;text-decoration:none;font-size:13px}.sources span{display:block;margin-top:4px;color:var(--muted);font-size:12px}
-    footer{color:var(--muted);font-size:12px}@media(max-width:1120px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}.nav-list{grid-template-columns:repeat(3,minmax(150px,1fr))}.hero,.metrics,.regime-grid{grid-template-columns:1fr 1fr}}@media(max-width:720px){main{padding:14px}.nav-list{display:flex;overflow:auto;padding-bottom:4px}.nav-link{min-width:150px}.hero,.metrics,.regime-grid,.sources{grid-template-columns:1fr}h2{font-size:23px}table{min-width:1420px}}
+    .execution-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.strategy-card{border:1px solid var(--line);border-radius:8px;background:#fbfcfd;padding:14px}.strategy-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}.strategy-head h4{margin:0 0 4px;font-size:17px}.strategy-meta{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}.pill{display:inline-flex;min-height:24px;align-items:center;padding:3px 8px;border-radius:999px;font-size:12px;font-weight:900}.pill.good{background:#e5f3f0;color:var(--teal)}.pill.warn{background:#fff3df;color:var(--orange)}.pill.bad{background:#f8e8e6;color:var(--red)}.price-rail{padding:14px 4px 30px;margin:10px 0 14px}.rail-track{position:relative;height:58px}.rail-line{position:absolute;left:8%;right:8%;top:24px;height:3px;background:#d4dde5}.rail-marker{position:absolute;top:6px;transform:translateX(-50%);min-width:58px;text-align:center;font-size:11px;color:var(--muted)}.rail-dot{display:block;width:12px;height:12px;margin:12px auto 4px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}.rail-marker.stop .rail-dot,.rail-marker.softStop .rail-dot{background:var(--red)}.rail-marker.now .rail-dot{background:var(--teal)}.rail-marker.holderCost .rail-dot{background:#7c3aed}.rail-marker.trim .rail-dot,.rail-marker.target .rail-dot{background:var(--green)}.rail-marker strong{display:block;color:var(--ink)}.plan-columns{display:grid;grid-template-columns:1fr 1fr;gap:10px}.plan-columns h5{margin:0 0 8px;font-size:14px}.plan-step{min-height:54px;padding:9px;border:1px solid var(--line);border-radius:8px;background:#fff;margin-bottom:7px}.plan-step strong,.plan-step span{display:block}.plan-step span{color:var(--muted);font-size:12px}.session-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}.session-item{padding:8px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:12px}.session-item strong,.session-item span{display:block}.risk-strip{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.risk-strip span{padding:5px 8px;border-radius:999px;background:#eef3f6;color:#43515f;font-size:12px;font-weight:800}
+    .sources,.coverage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.sources a,.coverage-item{min-height:58px;padding:11px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;text-decoration:none;font-size:13px}.sources span,.coverage-item span{display:block;margin-top:4px;color:var(--muted);font-size:12px}.coverage-item strong{display:flex;justify-content:space-between;gap:8px}.coverage-item em{font-style:normal;color:var(--teal);font-size:12px}.coverage-item.pending em{color:var(--orange)}
+    footer{color:var(--muted);font-size:12px}@media(max-width:1120px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}.nav-list{grid-template-columns:repeat(3,minmax(150px,1fr))}.hero,.metrics,.regime-grid,.execution-grid{grid-template-columns:1fr 1fr}}@media(max-width:720px){main{padding:14px}.nav-list{display:flex;overflow:auto;padding-bottom:4px}.nav-link{min-width:150px}.hero,.metrics,.regime-grid,.sources,.coverage-grid,.execution-grid,.plan-columns,.session-grid{grid-template-columns:1fr}h2{font-size:23px}table{min-width:1420px}}
   </style>
 </head>
 <body>
@@ -934,10 +971,12 @@ function buildStandaloneHtml(data) {
       </div>
       <nav class="nav-list">
         <a class="nav-link" href="#overview"><span>개요</span><span class="tag">v11</span></a>
+        <a class="nav-link" href="#execution"><span>실행전략</span><span class="tag">전략</span></a>
         <a class="nav-link" href="#entry"><span>즉시 진입</span><span class="tag">ENTRY</span></a>
         <a class="nav-link" href="#accumulate"><span>약세 분할</span><span class="tag">분할</span></a>
         <a class="nav-link" href="#wait"><span>트리거 대기</span><span class="tag">대기</span></a>
         <a class="nav-link" href="#all"><span>전체 후보</span><span class="tag">전체</span></a>
+        <a class="nav-link" href="#coverage"><span>기능 점검</span><span class="tag">점검</span></a>
         <a class="nav-link" href="#sources"><span>출처</span><span class="tag">Src</span></a>
       </nav>
     </aside>
@@ -946,12 +985,14 @@ function buildStandaloneHtml(data) {
         <div><p class="kicker">v11 독립 대시보드</p><h2>종목 선정, 데이터 수집, 평가, 시장 의존도, 실행 판단을 v11 내부에서 다시 계산합니다.</h2><p>${escapeHtml(data.meta.purpose)}</p></div>
         <div><p>${escapeHtml(data.meta.warning)}</p></div>
       </section>
-      <section class="regime ${regimeClass(data.regime.state)}"><strong>${escapeHtml(data.regime.state)}</strong><span>${escapeHtml(data.regime.guidance)}</span><div class="regime-grid" id="regimeGrid"></div></section>
+      <section class="regime ${regimeClass(data.regime.state)}"><strong>${escapeHtml(regimeLabel(data.regime.state))}</strong><span class="note">코드: ${escapeHtml(data.regime.state)}</span><span>레짐은 지금 시장의 장세 분류입니다. v11은 장세에 따라 즉시 진입, 약세 분할, 관망 기준을 다르게 적용합니다.</span><span>${escapeHtml(data.regime.guidance)}</span><div class="regime-grid" id="regimeGrid"></div></section>
       <section class="metrics" id="metrics"></section>
+      <section class="band" id="execution"><div class="head"><div><h3>진입·매도 실행전략</h3><p>v10의 실행 카드 구조를 v11에 다시 넣었습니다. 즉시 진입과 약세 분할 후보에 대해 가격 레일, 분할 매수, 매도·축소, 장중 대응 규칙을 같이 봅니다.</p></div></div><div class="execution-grid" id="executionCards"></div></section>
       <section class="band" id="entry"><div class="head"><div><h3>v11 즉시 진입</h3><p>기본 품질, 체질, 시장 의존도, 레짐 게이트를 모두 통과한 후보입니다.</p></div></div><div class="table-wrap"><table>${tableHead()}<tbody id="entryRows"></tbody></table></div></section>
       <section class="band" id="accumulate"><div class="head"><div><h3>약세 분할진입</h3><p>정책 반등 레짐에서 기본 조건은 대기지만 품질·수급·의존도 조건이 좋아 눌림 매수를 검토할 후보입니다.</p></div></div><div class="table-wrap"><table>${tableHead()}<tbody id="accRows"></tbody></table></div></section>
       <section class="band" id="wait"><div class="head"><div><h3>트리거 대기</h3><p>점수는 양호하지만 가격, 체질, 수급 중 일부 조건 확인이 더 필요한 후보입니다.</p></div></div><div class="table-wrap"><table>${tableHead()}<tbody id="waitRows"></tbody></table></div></section>
       <section class="band" id="all"><div class="toolbar"><div><h3 style="margin-bottom:4px;">전체 v11 후보</h3><p class="muted" style="margin-bottom:0;font-size:13px;">v11StandaloneScore = v11BaseScore + marketDependencyScore. 시장 의존도 결측은 0점으로 대체하지 않습니다.</p></div><input class="search" id="search" type="search" placeholder="종목명, 코드, 섹터 검색"></div><div class="segmented" id="filters"></div><div class="table-wrap"><table>${tableHead()}<tbody id="allRows"></tbody></table></div></section>
+      <section class="band" id="coverage"><div class="head"><div><h3>v10 대비 기능 점검</h3><p>지난 버전 문서를 기준으로 v11에 들어온 항목과 후속 포팅이 필요한 항목을 분리했습니다.</p></div></div><div class="coverage-grid" id="coverageGrid"></div></section>
       <section class="band" id="sources"><div class="head"><div><h3>출처</h3><p>v11은 자체 유니버스 파일과 현재 시장 데이터 수집으로 산출합니다.</p></div></div><div class="sources" id="sourceList"></div></section>
       <footer><code>node scripts/run-v11-standalone-process.mjs</code>로 생성. 데이터: <code>data/v11-execution-dashboard-data.json</code>.</footer>
     </main>
@@ -975,9 +1016,16 @@ function buildStandaloneHtml(data) {
     document.querySelector("#entryRows").innerHTML=DATA.entryList.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("즉시 진입 후보가 없습니다.");
     document.querySelector("#accRows").innerHTML=DATA.accumulateList.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("약세 분할 후보가 없습니다.");
     document.querySelector("#waitRows").innerHTML=DATA.triggerList.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("트리거 대기 후보가 없습니다.");
+    const actionableRows=[...DATA.entryList,...DATA.accumulateList];
+    document.querySelector("#executionCards").innerHTML=actionableRows.length?actionableRows.map((r,i)=>strategyCard(r,i)).join(""):'<p class="muted">현재 기준 실행전략 표시 대상이 없습니다.</p>';
+    document.querySelector("#coverageGrid").innerHTML=(DATA.coverage||[]).map(x=>\`<div class="coverage-item \${x.status==="후속 포팅 필요"?"pending":""}"><strong>\${escapeHtml(x.feature)}<em>\${escapeHtml(x.status)}</em></strong><span>\${escapeHtml(x.note)}</span></div>\`).join("");
     function renderFilters(){const vals=["all","ENTRY","ACCUMULATE_ON_WEAKNESS","WAIT_TRIGGER","WATCH","AVOID_NOW","NO_DATA","DATA_FAIL"];document.querySelector("#filters").innerHTML=vals.map(v=>\`<button class="\${filter===v?"active":""}" data-filter="\${v}">\${v==="all"?"All":label(v)}</button>\`).join("");document.querySelectorAll("#filters button").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;renderFilters();renderAll()}));}
     function renderAll(){const needle=search.trim().toLowerCase();const rows=DATA.allRows.filter(r=>(filter==="all"||r.v11Decision===filter)&&(!needle||[r.company,r.ticker,r.sector,r.rationale,r.dependencyProfile?.dependencyLabel].join(" ").toLowerCase().includes(needle))).slice(0,140);document.querySelector("#allRows").innerHTML=rows.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("표시할 후보가 없습니다.");}
-    function rowHtml(r,i){const p=r.betaProfile||{};const d=r.dependencyProfile||{};const e=r.executionPlan||{};const buy=(e.buySteps||[])[0]||{};const sell=(e.sellSteps||[])[0]||{};return \`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><strong>\${price(r.currentPrice??r.close)}</strong><span class="note">조회 \${escapeHtml(r.quoteFetchedAt??"-")} · 등락 \${pct(r.currentChangePct)}</span><span class="note">일봉 기준 \${escapeHtml(r.latestDate)} · \${price(r.close)}</span></td><td><span class="badge \${decisionClass(r.v11Decision)}">\${label(r.v11Decision)}</span><span class="note">\${escapeHtml(r.v11Reason)}</span></td><td><strong>\${r.v11StandaloneScore??"-"}</strong><span class="note">기본 \${r.v11BaseScore??"-"} · 의존 <span class="teal">\${score(r.marketDependencyScore)}</span></span></td><td><strong>\${r.totalScore??"-"}</strong><span class="note">정책 \${r.policy?.score??"-"} · 가치 \${r.value?.score??"-"} · 기술 \${r.technical?.score??"-"} · 수급 \${r.flowScore?.score??"-"}</span></td><td><strong class="teal">\${score(r.marketDependencyScore)}</strong><span class="note">\${depLabel(d.dependencyLabel)} · 비중 \${d.sizeFactor??"-"}</span><span class="note">잔차 \${d.components?.residualScore??"-"} / 캡처 \${d.components?.captureScore??"-"} / 조정 \${d.components?.dependencyAdjustment??"-"}</span></td><td>βM \${fmt(p.betaMarket,2)}<span class="note">βSemiExcess \${fmt(p.betaSemiExcess,2)} · 상관 \${fmt(p.semiCorr,2)}</span><span class="note">캡처 \${fmt(p.captureRatio,2)} · 상승 \${fmt(p.upCapture,2)} · 하락 \${fmt(p.lossCapture,2)}</span></td><td><strong>\${escapeHtml(e.stance??"-")}</strong><span class="note">매수: \${escapeHtml(b.weight??"-")} · \${escapeHtml(b.rule??"-")}</span><span class="note">매도: \${escapeHtml(sell.action??"-")} · \${escapeHtml(sell.trigger??"-")}</span></td><td>\${r.structuralRegime?.score??"-"}<span class="note">\${escapeHtml(r.structuralRegime?.gate??"-")} · \${escapeHtml(r.structuralRegime?.grade??"-")}</span><span class="note">평단 \${r.holderCostScore??"-"} · \${escapeHtml(r.holderCost?.memo??"")}</span></td><td>Tier \${escapeHtml(p.tier??"NO_DATA")}<span class="note">\${p.alignedReturnDays??0}일 · \${escapeHtml((p.notes||[]).join(" · "))}</span></td></tr>\`;}
+    function rowHtml(r,i){const p=r.betaProfile||{};const d=r.dependencyProfile||{};const e=r.executionPlan||{};const buy=(e.buySteps||[])[0]||{};const sell=(e.sellSteps||[])[0]||{};return \`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><strong>\${price(r.currentPrice??r.close)}</strong><span class="note">조회 \${escapeHtml(r.quoteFetchedAt??"-")} · 등락 \${pct(r.currentChangePct)}</span><span class="note">일봉 기준 \${escapeHtml(r.latestDate)} · \${price(r.close)}</span></td><td><span class="badge \${decisionClass(r.v11Decision)}">\${label(r.v11Decision)}</span><span class="note">\${escapeHtml(r.v11Reason)}</span></td><td><strong>\${r.v11StandaloneScore??"-"}</strong><span class="note">기본 \${r.v11BaseScore??"-"} · 의존 <span class="teal">\${score(r.marketDependencyScore)}</span></span></td><td><strong>\${r.totalScore??"-"}</strong><span class="note">정책 \${r.policy?.score??"-"} · 가치 \${r.value?.score??"-"} · 기술 \${r.technical?.score??"-"} · 수급 \${r.flowScore?.score??"-"}</span></td><td><strong class="teal">\${score(r.marketDependencyScore)}</strong><span class="note">\${depLabel(d.dependencyLabel)} · 비중 \${d.sizeFactor??"-"}</span><span class="note">잔차 \${d.components?.residualScore??"-"} / 캡처 \${d.components?.captureScore??"-"} / 조정 \${d.components?.dependencyAdjustment??"-"}</span></td><td>βM \${fmt(p.betaMarket,2)}<span class="note">βSemiExcess \${fmt(p.betaSemiExcess,2)} · 상관 \${fmt(p.semiCorr,2)}</span><span class="note">캡처 \${fmt(p.captureRatio,2)} · 상승 \${fmt(p.upCapture,2)} · 하락 \${fmt(p.lossCapture,2)}</span></td><td><strong>\${escapeHtml(e.stance??"-")}</strong><span class="note">매수: \${escapeHtml(buy.weight??"-")} · \${escapeHtml(buy.rule??"-")}</span><span class="note">매도: \${escapeHtml(sell.action??"-")} · \${escapeHtml(sell.trigger??"-")}</span></td><td>\${r.structuralRegime?.score??"-"}<span class="note">\${escapeHtml(r.structuralRegime?.gate??"-")} · \${escapeHtml(r.structuralRegime?.grade??"-")}</span><span class="note">평단 \${r.holderCostScore??"-"} · \${escapeHtml(r.holderCost?.memo??"")}</span></td><td>Tier \${escapeHtml(p.tier??"NO_DATA")}<span class="note">\${p.alignedReturnDays??0}일 · \${escapeHtml((p.notes||[]).join(" · "))}</span></td></tr>\`;}
+    function strategyCard(row,index){const p=row.executionPlan||{};return \`<article class="strategy-card"><div class="strategy-head"><div><h4>\${index+1}. \${escapeHtml(row.company)}</h4><span class="note">\${row.ticker} · \${escapeHtml(row.sector)} · 현재 \${price(row.currentPrice??row.close)} · \${label(row.v11Decision)}</span></div><div class="strategy-meta"><span class="pill good">\${escapeHtml(p.stance??"-")}</span><span class="pill \${p.isOverheated?"warn":"good"}">\${p.isOverheated?"과열 축소":"분할 기준"}</span><span class="pill \${p.isWeakFlow?"bad":"good"}">\${p.isWeakFlow?"수급 약함":"수급 양호"}</span><span class="pill warn">비중 \${row.dependencyProfile?.sizeFactor??"-"}</span></div></div>\${priceRail(p)}<div class="plan-columns"><div><h5>진입</h5>\${stepList(p.buySteps)}</div><div><h5>매도·축소</h5>\${stepList(p.sellSteps)}</div></div><div class="session-grid">\${(p.sessionRules||[]).map(x=>\`<div class="session-item"><strong>\${escapeHtml(x.window)}</strong><span>\${escapeHtml(x.rule)}</span></div>\`).join("")}</div><div class="risk-strip">\${(p.riskSwitches||[]).map(x=>\`<span>\${escapeHtml(x)}</span>\`).join("")}</div></article>\`;}
+    function stepList(steps){return (steps||[]).map(x=>\`<div class="plan-step"><strong>\${escapeHtml(x.label)}\${x.weight?" · "+escapeHtml(x.weight):""}</strong><span>\${x.price?price(x.price)+" · ":""}\${escapeHtml(x.rule??x.trigger??"")}</span>\${x.action?\`<span>\${escapeHtml(x.action)}</span>\`:""}</div>\`).join("")}
+    function priceRail(plan){const levels=(plan.levels||[]).filter(x=>x.price!=null);if(!levels.length)return"";const min=Math.min(...levels.map(x=>x.price));const max=Math.max(...levels.map(x=>x.price));return \`<div class="price-rail"><div class="rail-track"><div class="rail-line"></div>\${levels.map(x=>\`<div class="rail-marker \${escapeHtml(x.kind)}" style="left:\${levelPosition(x.price,min,max)}%"><span class="rail-dot"></span><strong>\${escapeHtml(x.label)}</strong><span>\${price(x.price)}</span></div>\`).join("")}</div></div>\`}
+    function levelPosition(v,min,max){if(max<=min)return 50;return Math.max(8,Math.min(92,8+(v-min)/(max-min)*84)).toFixed(2)}
     function emptyRow(text){return \`<tr><td colspan="11" class="muted">\${escapeHtml(text)}</td></tr>\`;}
     function decisionClass(d){return d==="ENTRY"?"entry":d==="ACCUMULATE_ON_WEAKNESS"?"acc":d==="WATCH"?"watch":d==="NO_DATA"||d==="DATA_FAIL"?"no":d==="WAIT_TRIGGER"?"acc":"neutral";}
     function label(d){return {ENTRY:"즉시진입",ACCUMULATE_ON_WEAKNESS:"약세분할",WATCH:"관망",WAIT_TRIGGER:"대기",AVOID_NOW:"제외",NO_DATA:"데이터부족",DATA_FAIL:"수집실패"}[d]??d;}
@@ -996,10 +1044,21 @@ function tableHead() {
 }
 
 function regimeClass(state) {
+  if (state === "POLICY_EVENT_REBOUND") return "broad";
   if (state === "NARROW_SEMI_LED") return "narrow";
   if (state === "RISK_OFF") return "risk";
   if (state === "BROAD_RISK_ON") return "broad";
   return "";
+}
+
+function regimeLabel(state) {
+  return {
+    POLICY_EVENT_REBOUND: "정책 이벤트 반등장",
+    NARROW_SEMI_LED: "좁은 반도체 주도장",
+    BROAD_RISK_ON: "광범위 위험선호장",
+    RISK_OFF: "위험회피장",
+    NEUTRAL: "중립장"
+  }[state] ?? state;
 }
 
 function thresholdByRegime(state) {

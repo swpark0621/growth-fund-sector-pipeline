@@ -26,11 +26,11 @@
     "v11EntryAvgAdverseDependency": 0,
     "v11ActionableAvgAdverseDependency": 0,
     "baseScoreTopAvgCaptureRatio": 1.09,
-    "v11ScoreTopAvgCaptureRatio": 1.079,
+    "v11ScoreTopAvgCaptureRatio": 0.98,
     "baseScoreTopMedianSemiCorr": 0.759,
-    "v11ScoreTopMedianSemiCorr": 0.812,
+    "v11ScoreTopMedianSemiCorr": 0.773,
     "baseScoreTopAvgBetaSemiExcess": 0.323,
-    "v11ScoreTopAvgBetaSemiExcess": 0.808,
+    "v11ScoreTopAvgBetaSemiExcess": 0.56,
     "baseScoreTopAvgAdverseDependency": 0,
     "v11ScoreTopAvgAdverseDependency": 0
   },
@@ -88,13 +88,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": 9.04,
+        "periodReturnPct": 7.59,
         "marketReturnPct": 8.61,
-        "semiCorr": 0.565,
-        "upCapture": 1.013,
+        "semiCorr": 0.526,
+        "upCapture": 0.901,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.808,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -111,16 +111,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -131,12 +131,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -192,13 +192,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": -3.13,
+        "periodReturnPct": -3.39,
         "marketReturnPct": 2.13,
-        "semiCorr": 0.783,
-        "upCapture": 0.543,
+        "semiCorr": 0.753,
+        "upCapture": 0.58,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.808,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -215,16 +215,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -235,12 +235,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -296,13 +296,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": 0.82,
+        "periodReturnPct": -1.39,
         "marketReturnPct": 0.75,
-        "semiCorr": 0.828,
-        "upCapture": 0.878,
-        "lossCapture": 0.855,
-        "captureRatio": 1.028,
-        "avgBetaSemiExcess": 0.808,
+        "semiCorr": 0.783,
+        "upCapture": 1.028,
+        "lossCapture": 1.346,
+        "captureRatio": 0.764,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -319,16 +319,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -339,12 +339,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -400,13 +400,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": 19.65,
+        "periodReturnPct": 14.7,
         "marketReturnPct": 9.17,
-        "semiCorr": 0.843,
-        "upCapture": 1.519,
+        "semiCorr": 0.851,
+        "upCapture": 1.314,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.808,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -423,16 +423,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -443,12 +443,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -504,13 +504,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": 5.73,
+        "periodReturnPct": 9.88,
         "marketReturnPct": 23.04,
-        "semiCorr": 0.821,
-        "upCapture": 0.54,
+        "semiCorr": 0.782,
+        "upCapture": 0.618,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.808,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -527,16 +527,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -547,12 +547,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -608,13 +608,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": -2.01,
+        "periodReturnPct": -2.38,
         "marketReturnPct": -7.14,
-        "semiCorr": 0.802,
-        "upCapture": 1.241,
-        "lossCapture": 0.895,
-        "captureRatio": 1.386,
-        "avgBetaSemiExcess": 0.808,
+        "semiCorr": 0.8,
+        "upCapture": 1.301,
+        "lossCapture": 0.952,
+        "captureRatio": 1.367,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -631,16 +631,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -651,12 +651,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -712,13 +712,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": 1.08,
+        "periodReturnPct": 0.71,
         "marketReturnPct": 7.49,
-        "semiCorr": 0.911,
-        "upCapture": 0.685,
-        "lossCapture": 1.218,
-        "captureRatio": 0.562,
-        "avgBetaSemiExcess": 0.808,
+        "semiCorr": 0.654,
+        "upCapture": 0.553,
+        "lossCapture": 1.005,
+        "captureRatio": 0.55,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -735,16 +735,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -755,12 +755,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -816,13 +816,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": 26.58,
+        "periodReturnPct": 22.49,
         "marketReturnPct": 23.9,
-        "semiCorr": 0.787,
-        "upCapture": 0.918,
+        "semiCorr": 0.7,
+        "upCapture": 0.79,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.808,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -839,16 +839,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -859,12 +859,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -920,13 +920,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": -5.98,
+        "periodReturnPct": -5.97,
         "marketReturnPct": -2.45,
-        "semiCorr": 0.868,
-        "upCapture": 0.484,
+        "semiCorr": 0.825,
+        "upCapture": 0.518,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.808,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -943,16 +943,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -963,12 +963,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -1024,13 +1024,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": 18.74,
+        "periodReturnPct": 15.35,
         "marketReturnPct": 7.56,
-        "semiCorr": 0.945,
-        "upCapture": 1.178,
-        "lossCapture": 0.881,
-        "captureRatio": 1.338,
-        "avgBetaSemiExcess": 0.808,
+        "semiCorr": 0.946,
+        "upCapture": 1.11,
+        "lossCapture": 0.895,
+        "captureRatio": 1.239,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -1047,16 +1047,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -1067,12 +1067,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -1128,13 +1128,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": 24.79,
+        "periodReturnPct": 33.26,
         "marketReturnPct": 22.13,
-        "semiCorr": 0.663,
-        "upCapture": 0.796,
+        "semiCorr": 0.679,
+        "upCapture": 1.056,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.808,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -1151,16 +1151,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -1171,12 +1171,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     },
     {
@@ -1232,13 +1232,13 @@
       "v11ScoreTop": {
         "count": 10,
         "realizedDays": 20,
-        "periodReturnPct": -0.32,
+        "periodReturnPct": 5.03,
         "marketReturnPct": 31.35,
-        "semiCorr": 0.774,
-        "upCapture": 0.444,
+        "semiCorr": 0.763,
+        "upCapture": 0.534,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.808,
+        "avgBetaSemiExcess": 0.56,
         "adverseDependencyCount": 0
       },
       "baseEntryTickers": [
@@ -1255,16 +1255,16 @@
         "036930",
         "005290",
         "319660",
-        "267260",
-        "064350"
+        "064350",
+        "267260"
       ],
       "baseScoreTopTickers": [
         "012510",
         "403870",
         "068270",
         "079940",
-        "005290",
         "093320",
+        "005290",
         "033100",
         "137400",
         "265520",
@@ -1275,12 +1275,12 @@
         "079550",
         "036930",
         "403870",
+        "093320",
         "005290",
         "330860",
-        "093320",
+        "000500",
         "012510",
-        "098460",
-        "319660"
+        "098460"
       ]
     }
   ]

@@ -3,7 +3,7 @@
     "title": "국민성장펀드 v11 독립 실행 대시보드",
     "version": "v11-standalone",
     "runDate": "2026-06-30",
-    "updatedAt": "2026-06-30 08:22:27 KST",
+    "updatedAt": "2026-06-30 08:49:46 KST",
     "universeSource": "data/v11-universe.json",
     "purpose": "v11은 종목 유니버스, 데이터 수집, 기본 점수, 시장 의존도, 레짐, 실행 판단을 이전 버전 산출물 없이 독립적으로 다시 계산합니다.",
     "methodology": "기존의 정책·가치·기술·수급·평단·체질 방법론을 v11 내부에서 재계산한 뒤, 시장 의존도와 레짐 적합성을 실행 게이트로 더합니다.",
@@ -85,6 +85,38 @@
     "NO_DATA는 0점이 아니라 별도 보류 상태입니다. 결측 데이터로 ENTRY를 만들지 않습니다.",
     "정책 이벤트성 광폭 반등장에서는 좋은 WAIT_TRIGGER를 약세 분할 후보로 승격할 수 있습니다."
   ],
+  "coverage": [
+    {
+      "feature": "레짐 설명과 정책 이벤트 반등장",
+      "status": "반영",
+      "note": "레짐을 현재 장세 분류로 설명하고 정책 이벤트 반등장(POLICY_EVENT_REBOUND)을 추가했다."
+    },
+    {
+      "feature": "조회시점 현재가",
+      "status": "반영",
+      "note": "currentPrice, currentChangePct, quoteFetchedAt을 일봉 기준가와 분리했다."
+    },
+    {
+      "feature": "진입·매도 실행전략 카드",
+      "status": "반영",
+      "note": "v10의 가격 레일, 분할 매수, 매도·축소, 장중 대응, 리스크 스위치 구조를 v11에 복구했다."
+    },
+    {
+      "feature": "체질·평단 보조축",
+      "status": "반영",
+      "note": "v11 독립 가격 체질과 독립 수급 VWAP 평단을 표시한다."
+    },
+    {
+      "feature": "대주주·거래원·3대 운용사 상세",
+      "status": "후속 포팅 필요",
+      "note": "v10에는 있었지만 v11 독립 수집기에는 아직 연결하지 않았다."
+    },
+    {
+      "feature": "정책 프로젝트 상세 연결표",
+      "status": "후속 포팅 필요",
+      "note": "v7/v10 문서의 정책 검토 상세표는 v11 독립 화면에 아직 별도 섹션으로 없다."
+    }
+  ],
   "entryList": [
     {
       "ticker": "319660",
@@ -97,12 +129,12 @@
       "currentPrice": 177800,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:03 KST",
       "priceSource": {
         "currentPrice": 177800,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:03 KST",
         "analysisClose": 177800,
         "analysisDate": "2026-06-29"
       },
@@ -495,12 +527,12 @@
       "currentPrice": 30200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:11 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:31 KST",
       "priceSource": {
         "currentPrice": 30200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:11 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:31 KST",
         "analysisClose": 30200,
         "analysisDate": "2026-06-29"
       },
@@ -895,12 +927,12 @@
       "currentPrice": 745000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:09 KST",
       "priceSource": {
         "currentPrice": 745000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:09 KST",
         "analysisClose": 745000,
         "analysisDate": "2026-06-29"
       },
@@ -1293,12 +1325,12 @@
       "currentPrice": 176600,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:05 KST",
       "priceSource": {
         "currentPrice": 176600,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:05 KST",
         "analysisClose": 176600,
         "analysisDate": "2026-06-29"
       },
@@ -1308,8 +1340,8 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 3066482,
-        "volumeRatio": 0.72
+        "avgVolume20": 3066907,
+        "volumeRatio": 0.73
       },
       "returns": {
         "d1": 6.6425,
@@ -1539,7 +1571,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 5415.4,
+        "avgTradingValueEok": 5416.2,
         "betaMarket": 0.656,
         "betaSemiExcess": 1.368,
         "betaSemiRaw": 0.905,
@@ -1689,12 +1721,12 @@
       "currentPrice": 56100,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:03 KST",
       "priceSource": {
         "currentPrice": 56100,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:03 KST",
         "analysisClose": 56100,
         "analysisDate": "2026-06-29"
       },
@@ -2077,6 +2109,404 @@
       }
     },
     {
+      "ticker": "064350",
+      "company": "현대로템",
+      "sector": "방산",
+      "status": "candidate",
+      "rationale": "방산·철도, 수출 모멘텀",
+      "latestDate": "2026-06-29",
+      "close": 184900,
+      "currentPrice": 184900,
+      "currentChangePct": 0,
+      "currentDiff": 0,
+      "quoteFetchedAt": "2026-06-30 08:50:07 KST",
+      "priceSource": {
+        "currentPrice": 184900,
+        "currentChangePct": 0,
+        "currentDiff": 0,
+        "quoteFetchedAt": "2026-06-30 08:50:07 KST",
+        "analysisClose": 184900,
+        "analysisDate": "2026-06-29"
+      },
+      "marketCapEok": 201804,
+      "listedShares": 109142293,
+      "per": 24.83,
+      "pbr": null,
+      "roe": null,
+      "liquidity": {
+        "avgVolume20": 607324,
+        "volumeRatio": 1.03
+      },
+      "returns": {
+        "d1": 8.8928,
+        "d5": -9.14,
+        "d20": -7.7805,
+        "d60": 9.0855
+      },
+      "technicals": {
+        "ma5": 185360,
+        "ma20": 197480,
+        "ma60": 211225,
+        "ma120": 209638.33,
+        "ma200": 206986,
+        "ma600": 121461.33,
+        "rsi14": 51.62,
+        "high60": 282000,
+        "low60": 162000,
+        "drawdown60Pct": -34.4326,
+        "reboundFromLow60Pct": 14.1358,
+        "aboveMa20": false,
+        "aboveMa60": false,
+        "ma20SlopePct": -2.6305
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": 193.74,
+          "institutionNetValueEok": -268.81,
+          "foreignPct": 0.096,
+          "institutionPct": -0.133
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": 2694.77,
+          "institutionNetValueEok": -726.4,
+          "foreignPct": 1.335,
+          "institutionPct": -0.36
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": 8540.99,
+          "institutionNetValueEok": 186.59,
+          "foreignPct": 4.232,
+          "institutionPct": 0.092
+        }
+      },
+      "policy": {
+        "score": 21,
+        "memo": "방산·철도, 수출 모멘텀"
+      },
+      "value": {
+        "score": 13,
+        "memo": "시총 201804억원, PER 24.83, PBR -"
+      },
+      "technical": {
+        "score": 23,
+        "memo": "MA20 하회, RSI 51.6, 60일 고점 대비 -34.4%"
+      },
+      "flowScore": {
+        "score": 15,
+        "memo": "20일 외국인 1.34%, 기관 -0.36%"
+      },
+      "risk": {
+        "penalty": 5,
+        "notes": [
+          "MA20·MA60 동시 하회"
+        ],
+        "valuationBlock": false
+      },
+      "totalScore": 67,
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "외국인 순매수 VWAP",
+        "estimatedCost": 211859,
+        "holderName": "외국인 수급",
+        "recentAccumulation": true,
+        "disposalPressure": false,
+        "flow": {
+          "cost": 211859.48043703125,
+          "shares": 17616498,
+          "netShares": 6922423,
+          "last20NetShares": 1278580,
+          "firstDate": "2025-07-04",
+          "lastDate": "2026-06-29",
+          "days": 240
+        },
+        "score": 14,
+        "signal": "ACCUMULATION",
+        "gapPct": -12.7,
+        "overhang": false,
+        "memo": "B 외국인 순매수 VWAP, 추정 평단 211,859원, 괴리 -12.7%"
+      },
+      "holderCostScore": 14,
+      "structuralRegime": {
+        "mode": "PRICE_ONLY_STANDALONE",
+        "confidence": 2,
+        "score": 63,
+        "gate": "REVIEW",
+        "grade": "검토 체질",
+        "entryEligible": false,
+        "primary": {
+          "label": "v11 독립 가격 체질",
+          "date": "2024-01-09",
+          "latestDate": "2026-06-29",
+          "basisClose": 26550,
+          "latestClose": 184900,
+          "returnPct": 596.4,
+          "cagrPct": 120.9,
+          "highClose": 269000,
+          "lowClose": 25500,
+          "drawdownFromHighPct": -31.3,
+          "maxDrawdownPct": -36.9,
+          "aboveMA200": false,
+          "aboveMA600": true
+        }
+      },
+      "v11BaseDecision": "WAIT_TRIGGER",
+      "v11BaseScore": 81,
+      "entryPlan": {
+        "stance": "약세 분할",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 184900
+          },
+          {
+            "label": "MA20",
+            "kind": "add",
+            "price": 197480
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 166410
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 177504
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 199692
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 282000
+          },
+          {
+            "label": "추정 평단",
+            "kind": "holderCost",
+            "price": 211859
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "1차",
+            "weight": "25~30%",
+            "price": 184900,
+            "rule": "눌림 184,900원 부근에서 양봉 전환 확인"
+          },
+          {
+            "label": "2차",
+            "weight": "30%",
+            "price": 197480,
+            "rule": "종가 197,480원 회복"
+          },
+          {
+            "label": "3차",
+            "weight": "관찰",
+            "price": 284820,
+            "rule": "고점 돌파는 추격보다 재평가 후 실행"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "위험 축소",
+            "action": "30~50% 축소",
+            "trigger": "종가 177,504원 이탈 또는 5일선 회복 실패"
+          },
+          {
+            "label": "손절",
+            "action": "신규 검토 중단",
+            "trigger": "166,410원 이탈"
+          },
+          {
+            "label": "익절",
+            "action": "30% 이상 회수",
+            "trigger": "199,692원 도달 후 거래대금 둔화"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
+          },
+          {
+            "window": "장중",
+            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
+          },
+          {
+            "window": "종가",
+            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "단기 수급 급악화 아님",
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.72",
+          "의존도: INDEPENDENT_STRENGTH · 점수 9",
+          "리스크: MA20·MA60 동시 하회"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=064350",
+      "betaProfile": {
+        "ticker": "064350",
+        "company": "현대로템",
+        "sector": "방산",
+        "latestDate": "2026-06-29",
+        "alignedReturnDays": 727,
+        "evaluationDays": 60,
+        "betaWindowDays": 120,
+        "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
+        "tier": "A",
+        "rho": 1,
+        "avgTradingValueEok": 1122.9,
+        "betaMarket": 0.953,
+        "betaSemiExcess": -0.027,
+        "betaSemiRaw": 0.61,
+        "alpha": -0.00501,
+        "r2TwoFactor": 0.364,
+        "r2SemiRaw": 0.3,
+        "residualMomentum": -0.0924,
+        "residualIR": -0.254,
+        "semiCorr": 0.272,
+        "marketCorr": 0.339,
+        "upCapture": 0.306,
+        "lossCapture": 0.419,
+        "captureRatio": 0.729,
+        "captureBalance": -0.114,
+        "semiProxyFlag": false,
+        "adverseDependency": false,
+        "favorableBeta": false,
+        "asymmetricFailure": false,
+        "notes": [],
+        "residualStrengthPct": 0.881
+      },
+      "dependencyProfile": {
+        "marketDependencyScore": 9,
+        "dependencyScoreRaw": 9,
+        "components": {
+          "residualScore": 9,
+          "captureScore": -5,
+          "dependencyAdjustment": 5
+        },
+        "dependencyLabel": "INDEPENDENT_STRENGTH",
+        "sizeFactor": 0.72,
+        "thresholdRegime": "POLICY_EVENT_REBOUND"
+      },
+      "marketDependencyScore": 9,
+      "v11StandaloneScore": 90,
+      "v11Decision": "ACCUMULATE_ON_WEAKNESS",
+      "v11Reason": "정책 반등 레짐: 기본 조건은 대기지만 품질·수급·의존도 통과로 약세 분할 후보",
+      "executionPlan": {
+        "stance": "약세 분할",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 184900
+          },
+          {
+            "label": "MA20",
+            "kind": "add",
+            "price": 197480
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 166410
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 177504
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 199692
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 282000
+          },
+          {
+            "label": "추정 평단",
+            "kind": "holderCost",
+            "price": 211859
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "1차",
+            "weight": "25~30%",
+            "price": 184900,
+            "rule": "눌림 184,900원 부근에서 양봉 전환 확인"
+          },
+          {
+            "label": "2차",
+            "weight": "30%",
+            "price": 197480,
+            "rule": "종가 197,480원 회복"
+          },
+          {
+            "label": "3차",
+            "weight": "관찰",
+            "price": 284820,
+            "rule": "고점 돌파는 추격보다 재평가 후 실행"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "위험 축소",
+            "action": "30~50% 축소",
+            "trigger": "종가 177,504원 이탈 또는 5일선 회복 실패"
+          },
+          {
+            "label": "손절",
+            "action": "신규 검토 중단",
+            "trigger": "166,410원 이탈"
+          },
+          {
+            "label": "익절",
+            "action": "30% 이상 회수",
+            "trigger": "199,692원 도달 후 거래대금 둔화"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
+          },
+          {
+            "window": "장중",
+            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
+          },
+          {
+            "window": "종가",
+            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "단기 수급 급악화 아님",
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.72",
+          "의존도: INDEPENDENT_STRENGTH · 점수 9",
+          "리스크: MA20·MA60 동시 하회"
+        ]
+      }
+    },
+    {
       "ticker": "267260",
       "company": "HD현대일렉트릭",
       "sector": "전력망·AI인프라",
@@ -2087,12 +2517,12 @@
       "currentPrice": 937000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:05 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:25 KST",
       "priceSource": {
         "currentPrice": 937000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:05 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:25 KST",
         "analysisClose": 937000,
         "analysisDate": "2026-06-29"
       },
@@ -2473,404 +2903,6 @@
           "리스크: MA20·MA60 동시 하회"
         ]
       }
-    },
-    {
-      "ticker": "064350",
-      "company": "현대로템",
-      "sector": "방산",
-      "status": "candidate",
-      "rationale": "방산·철도, 수출 모멘텀",
-      "latestDate": "2026-06-29",
-      "close": 184900,
-      "currentPrice": 184900,
-      "currentChangePct": 0,
-      "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:48 KST",
-      "priceSource": {
-        "currentPrice": 184900,
-        "currentChangePct": 0,
-        "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:48 KST",
-        "analysisClose": 184900,
-        "analysisDate": "2026-06-29"
-      },
-      "marketCapEok": 201804,
-      "listedShares": 109142293,
-      "per": 24.83,
-      "pbr": null,
-      "roe": null,
-      "liquidity": {
-        "avgVolume20": 598428,
-        "volumeRatio": 0.75
-      },
-      "returns": {
-        "d1": 8.8928,
-        "d5": -9.14,
-        "d20": -7.7805,
-        "d60": 9.0855
-      },
-      "technicals": {
-        "ma5": 185360,
-        "ma20": 197480,
-        "ma60": 211225,
-        "ma120": 209638.33,
-        "ma200": 206986,
-        "ma600": 121461.33,
-        "rsi14": 51.62,
-        "high60": 282000,
-        "low60": 162000,
-        "drawdown60Pct": -34.4326,
-        "reboundFromLow60Pct": 14.1358,
-        "aboveMa20": false,
-        "aboveMa60": false,
-        "ma20SlopePct": -2.6305
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": 193.74,
-          "institutionNetValueEok": -268.81,
-          "foreignPct": 0.096,
-          "institutionPct": -0.133
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": 2694.77,
-          "institutionNetValueEok": -726.4,
-          "foreignPct": 1.335,
-          "institutionPct": -0.36
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": 8540.99,
-          "institutionNetValueEok": 186.59,
-          "foreignPct": 4.232,
-          "institutionPct": 0.092
-        }
-      },
-      "policy": {
-        "score": 21,
-        "memo": "방산·철도, 수출 모멘텀"
-      },
-      "value": {
-        "score": 13,
-        "memo": "시총 201804억원, PER 24.83, PBR -"
-      },
-      "technical": {
-        "score": 20,
-        "memo": "MA20 하회, RSI 51.6, 60일 고점 대비 -34.4%"
-      },
-      "flowScore": {
-        "score": 15,
-        "memo": "20일 외국인 1.34%, 기관 -0.36%"
-      },
-      "risk": {
-        "penalty": 5,
-        "notes": [
-          "MA20·MA60 동시 하회"
-        ],
-        "valuationBlock": false
-      },
-      "totalScore": 64,
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "외국인 순매수 VWAP",
-        "estimatedCost": 211859,
-        "holderName": "외국인 수급",
-        "recentAccumulation": true,
-        "disposalPressure": false,
-        "flow": {
-          "cost": 211859.48043703125,
-          "shares": 17616498,
-          "netShares": 6922423,
-          "last20NetShares": 1278580,
-          "firstDate": "2025-07-04",
-          "lastDate": "2026-06-29",
-          "days": 240
-        },
-        "score": 14,
-        "signal": "ACCUMULATION",
-        "gapPct": -12.7,
-        "overhang": false,
-        "memo": "B 외국인 순매수 VWAP, 추정 평단 211,859원, 괴리 -12.7%"
-      },
-      "holderCostScore": 14,
-      "structuralRegime": {
-        "mode": "PRICE_ONLY_STANDALONE",
-        "confidence": 2,
-        "score": 63,
-        "gate": "REVIEW",
-        "grade": "검토 체질",
-        "entryEligible": false,
-        "primary": {
-          "label": "v11 독립 가격 체질",
-          "date": "2024-01-09",
-          "latestDate": "2026-06-29",
-          "basisClose": 26550,
-          "latestClose": 184900,
-          "returnPct": 596.4,
-          "cagrPct": 120.9,
-          "highClose": 269000,
-          "lowClose": 25500,
-          "drawdownFromHighPct": -31.3,
-          "maxDrawdownPct": -36.9,
-          "aboveMA200": false,
-          "aboveMA600": true
-        }
-      },
-      "v11BaseDecision": "WAIT_TRIGGER",
-      "v11BaseScore": 78,
-      "entryPlan": {
-        "stance": "약세 분할",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 184900
-          },
-          {
-            "label": "MA20",
-            "kind": "add",
-            "price": 197480
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 166410
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 177504
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 199692
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 282000
-          },
-          {
-            "label": "추정 평단",
-            "kind": "holderCost",
-            "price": 211859
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "1차",
-            "weight": "25~30%",
-            "price": 184900,
-            "rule": "눌림 184,900원 부근에서 양봉 전환 확인"
-          },
-          {
-            "label": "2차",
-            "weight": "30%",
-            "price": 197480,
-            "rule": "종가 197,480원 회복"
-          },
-          {
-            "label": "3차",
-            "weight": "관찰",
-            "price": 284820,
-            "rule": "고점 돌파는 추격보다 재평가 후 실행"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "위험 축소",
-            "action": "30~50% 축소",
-            "trigger": "종가 177,504원 이탈 또는 5일선 회복 실패"
-          },
-          {
-            "label": "손절",
-            "action": "신규 검토 중단",
-            "trigger": "166,410원 이탈"
-          },
-          {
-            "label": "익절",
-            "action": "30% 이상 회수",
-            "trigger": "199,692원 도달 후 거래대금 둔화"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
-          },
-          {
-            "window": "장중",
-            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
-          },
-          {
-            "window": "종가",
-            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.72",
-          "의존도: INDEPENDENT_STRENGTH · 점수 9",
-          "리스크: MA20·MA60 동시 하회"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=064350",
-      "betaProfile": {
-        "ticker": "064350",
-        "company": "현대로템",
-        "sector": "방산",
-        "latestDate": "2026-06-29",
-        "alignedReturnDays": 727,
-        "evaluationDays": 60,
-        "betaWindowDays": 120,
-        "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
-        "tier": "A",
-        "rho": 1,
-        "avgTradingValueEok": 1106.5,
-        "betaMarket": 0.953,
-        "betaSemiExcess": -0.027,
-        "betaSemiRaw": 0.61,
-        "alpha": -0.00501,
-        "r2TwoFactor": 0.364,
-        "r2SemiRaw": 0.3,
-        "residualMomentum": -0.0924,
-        "residualIR": -0.254,
-        "semiCorr": 0.272,
-        "marketCorr": 0.339,
-        "upCapture": 0.306,
-        "lossCapture": 0.419,
-        "captureRatio": 0.729,
-        "captureBalance": -0.114,
-        "semiProxyFlag": false,
-        "adverseDependency": false,
-        "favorableBeta": false,
-        "asymmetricFailure": false,
-        "notes": [],
-        "residualStrengthPct": 0.881
-      },
-      "dependencyProfile": {
-        "marketDependencyScore": 9,
-        "dependencyScoreRaw": 9,
-        "components": {
-          "residualScore": 9,
-          "captureScore": -5,
-          "dependencyAdjustment": 5
-        },
-        "dependencyLabel": "INDEPENDENT_STRENGTH",
-        "sizeFactor": 0.72,
-        "thresholdRegime": "POLICY_EVENT_REBOUND"
-      },
-      "marketDependencyScore": 9,
-      "v11StandaloneScore": 87,
-      "v11Decision": "ACCUMULATE_ON_WEAKNESS",
-      "v11Reason": "정책 반등 레짐: 기본 조건은 대기지만 품질·수급·의존도 통과로 약세 분할 후보",
-      "executionPlan": {
-        "stance": "약세 분할",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 184900
-          },
-          {
-            "label": "MA20",
-            "kind": "add",
-            "price": 197480
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 166410
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 177504
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 199692
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 282000
-          },
-          {
-            "label": "추정 평단",
-            "kind": "holderCost",
-            "price": 211859
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "1차",
-            "weight": "25~30%",
-            "price": 184900,
-            "rule": "눌림 184,900원 부근에서 양봉 전환 확인"
-          },
-          {
-            "label": "2차",
-            "weight": "30%",
-            "price": 197480,
-            "rule": "종가 197,480원 회복"
-          },
-          {
-            "label": "3차",
-            "weight": "관찰",
-            "price": 284820,
-            "rule": "고점 돌파는 추격보다 재평가 후 실행"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "위험 축소",
-            "action": "30~50% 축소",
-            "trigger": "종가 177,504원 이탈 또는 5일선 회복 실패"
-          },
-          {
-            "label": "손절",
-            "action": "신규 검토 중단",
-            "trigger": "166,410원 이탈"
-          },
-          {
-            "label": "익절",
-            "action": "30% 이상 회수",
-            "trigger": "199,692원 도달 후 거래대금 둔화"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
-          },
-          {
-            "window": "장중",
-            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
-          },
-          {
-            "window": "종가",
-            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.72",
-          "의존도: INDEPENDENT_STRENGTH · 점수 9",
-          "리스크: MA20·MA60 동시 하회"
-        ]
-      }
     }
   ],
   "watchList": [
@@ -2885,12 +2917,12 @@
       "currentPrice": 120000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:33 KST",
       "priceSource": {
         "currentPrice": 120000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:33 KST",
         "analysisClose": 120000,
         "analysisDate": "2026-06-29"
       },
@@ -3257,12 +3289,12 @@
       "currentPrice": 22350,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:52 KST",
       "priceSource": {
         "currentPrice": 22350,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:52 KST",
         "analysisClose": 22350,
         "analysisDate": "2026-06-29"
       },
@@ -3631,12 +3663,12 @@
       "currentPrice": 53700,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:06 KST",
       "priceSource": {
         "currentPrice": 53700,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:06 KST",
         "analysisClose": 53700,
         "analysisDate": "2026-06-29"
       },
@@ -3646,7 +3678,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 8607945,
+        "avgVolume20": 8609910,
         "volumeRatio": 0.66
       },
       "returns": {
@@ -3871,7 +3903,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 4622.5,
+        "avgTradingValueEok": 4623.5,
         "betaMarket": 0.723,
         "betaSemiExcess": 1.353,
         "betaSemiRaw": 0.944,
@@ -4015,12 +4047,12 @@
       "currentPrice": 106200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:11 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:31 KST",
       "priceSource": {
         "currentPrice": 106200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:11 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:31 KST",
         "analysisClose": 106200,
         "analysisDate": "2026-06-29"
       },
@@ -4030,8 +4062,8 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 14618,
-        "volumeRatio": 0.63
+        "avgVolume20": 15757,
+        "volumeRatio": 2.03
       },
       "returns": {
         "d1": 5.5666,
@@ -4087,7 +4119,7 @@
         "memo": "시총 5183억원, PER 24.43, PBR -"
       },
       "technical": {
-        "score": 24,
+        "score": 27,
         "memo": "MA20 하회, RSI 46.7, 60일 고점 대비 -24.1%"
       },
       "flowScore": {
@@ -4101,7 +4133,7 @@
         ],
         "valuationBlock": false
       },
-      "totalScore": 76,
+      "totalScore": 79,
       "holderCost": {
         "tier": "B",
         "coefficient": 0.7,
@@ -4150,7 +4182,7 @@
         }
       },
       "v11BaseDecision": "WAIT_TRIGGER",
-      "v11BaseScore": 96,
+      "v11BaseScore": 99,
       "entryPlan": {
         "stance": "트리거 대기",
         "isOverheated": false,
@@ -4257,7 +4289,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "B",
         "rho": 0.7,
-        "avgTradingValueEok": 15.5,
+        "avgTradingValueEok": 16.7,
         "betaMarket": 0.635,
         "betaSemiExcess": -0.14,
         "betaSemiRaw": 0.364,
@@ -4294,7 +4326,7 @@
         "thresholdRegime": "POLICY_EVENT_REBOUND"
       },
       "marketDependencyScore": 1,
-      "v11StandaloneScore": 97,
+      "v11StandaloneScore": 100,
       "v11Decision": "WAIT_TRIGGER",
       "v11Reason": "기본 판정 WAIT_TRIGGER",
       "executionPlan": {
@@ -4393,6 +4425,390 @@
       }
     },
     {
+      "ticker": "000500",
+      "company": "가온전선",
+      "sector": "전력망·AI인프라",
+      "status": "candidate",
+      "rationale": "전선 중견주",
+      "latestDate": "2026-06-29",
+      "close": 190600,
+      "currentPrice": 190600,
+      "currentChangePct": 0,
+      "currentDiff": 0,
+      "quoteFetchedAt": "2026-06-30 08:50:22 KST",
+      "priceSource": {
+        "currentPrice": 190600,
+        "currentChangePct": 0,
+        "currentDiff": 0,
+        "quoteFetchedAt": "2026-06-30 08:50:22 KST",
+        "analysisClose": 190600,
+        "analysisDate": "2026-06-29"
+      },
+      "marketCapEok": 31531,
+      "listedShares": 16543115,
+      "per": 56.57,
+      "pbr": null,
+      "roe": null,
+      "liquidity": {
+        "avgVolume20": 345180,
+        "volumeRatio": 0.68
+      },
+      "returns": {
+        "d1": 4.2556,
+        "d5": 1.3296,
+        "d20": 6.5221,
+        "d60": 251.7968
+      },
+      "technicals": {
+        "ma5": 179319.2,
+        "ma20": 178555,
+        "ma60": 156209.97,
+        "ma120": 104635.47,
+        "ma200": 78068.55,
+        "ma600": 43559.25,
+        "rsi14": 52.92,
+        "high60": 352860,
+        "low60": 54457,
+        "drawdown60Pct": -45.9842,
+        "reboundFromLow60Pct": 250.0009,
+        "aboveMa20": true,
+        "aboveMa60": true,
+        "ma20SlopePct": -4.0678
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": -36.99,
+          "institutionNetValueEok": 51.28,
+          "foreignPct": -0.117,
+          "institutionPct": 0.163
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": -77.1,
+          "institutionNetValueEok": -1819.5,
+          "foreignPct": -0.245,
+          "institutionPct": -5.771
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": -279.04,
+          "institutionNetValueEok": -958.87,
+          "foreignPct": -0.885,
+          "institutionPct": -3.041
+        }
+      },
+      "policy": {
+        "score": 24,
+        "memo": "전선 중견주"
+      },
+      "value": {
+        "score": 14,
+        "memo": "시총 31531억원, PER 56.57, PBR -"
+      },
+      "technical": {
+        "score": 29,
+        "memo": "MA20 상회, RSI 52.9, 60일 고점 대비 -46%"
+      },
+      "flowScore": {
+        "score": 4,
+        "memo": "20일 외국인 -0.24%, 기관 -5.77%"
+      },
+      "risk": {
+        "penalty": 0,
+        "notes": [],
+        "valuationBlock": false
+      },
+      "totalScore": 71,
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "외국인 순매수 VWAP",
+        "estimatedCost": 70980,
+        "holderName": "외국인 수급",
+        "recentAccumulation": false,
+        "disposalPressure": false,
+        "flow": {
+          "cost": 70980.48102866679,
+          "shares": 1269099,
+          "netShares": -167075,
+          "last20NetShares": 35344,
+          "firstDate": "2025-07-04",
+          "lastDate": "2026-06-29",
+          "days": 240
+        },
+        "score": 1,
+        "signal": "NEUTRAL",
+        "gapPct": 168.5,
+        "overhang": false,
+        "memo": "B 외국인 순매수 VWAP, 추정 평단 70,980원, 괴리 168.5%"
+      },
+      "holderCostScore": 1,
+      "structuralRegime": {
+        "mode": "PRICE_ONLY_STANDALONE",
+        "confidence": 2,
+        "score": 65,
+        "gate": "REVIEW",
+        "grade": "개선 체질",
+        "entryEligible": false,
+        "primary": {
+          "label": "v11 독립 가격 체질",
+          "date": "2024-01-09",
+          "latestDate": "2026-06-29",
+          "basisClose": 11419,
+          "latestClose": 190600,
+          "returnPct": 1569.1,
+          "cagrPct": 215.6,
+          "highClose": 313406,
+          "lowClose": 10680,
+          "drawdownFromHighPct": -39.2,
+          "maxDrawdownPct": -55.3,
+          "aboveMA200": true,
+          "aboveMA600": true
+        }
+      },
+      "v11BaseDecision": "WAIT_TRIGGER",
+      "v11BaseScore": 72,
+      "entryPlan": {
+        "stance": "트리거 대기",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 190600
+          },
+          {
+            "label": "MA20",
+            "kind": "add",
+            "price": 178555
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 171540
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 178555
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 205848
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 352860
+          },
+          {
+            "label": "추정 평단",
+            "kind": "holderCost",
+            "price": 70980
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 190600,
+            "rule": "현재는 진입 금지"
+          },
+          {
+            "label": "트리거",
+            "weight": "관찰",
+            "price": 178555,
+            "rule": "MA20 178,555원 회복과 수급 개선 동시 확인"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "위험 축소",
+            "action": "30~50% 축소",
+            "trigger": "종가 178,555원 이탈 또는 5일선 회복 실패"
+          },
+          {
+            "label": "손절",
+            "action": "신규 검토 중단",
+            "trigger": "171,540원 이탈"
+          },
+          {
+            "label": "익절",
+            "action": "30% 이상 회수",
+            "trigger": "205,848원 도달 후 거래대금 둔화"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
+          },
+          {
+            "window": "장중",
+            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
+          },
+          {
+            "window": "종가",
+            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "단기 수급 급악화 아님",
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 1.02",
+          "의존도: INDEPENDENT_STRENGTH · 점수 25",
+          "특이 리스크 없음"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
+      "betaProfile": {
+        "ticker": "000500",
+        "company": "가온전선",
+        "sector": "전력망·AI인프라",
+        "latestDate": "2026-06-29",
+        "alignedReturnDays": 727,
+        "evaluationDays": 60,
+        "betaWindowDays": 120,
+        "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
+        "tier": "A",
+        "rho": 1,
+        "avgTradingValueEok": 657.9,
+        "betaMarket": 1.278,
+        "betaSemiExcess": -0.469,
+        "betaSemiRaw": 0.667,
+        "alpha": 0.00155,
+        "r2TwoFactor": 0.379,
+        "r2SemiRaw": 0.242,
+        "residualMomentum": 0.5899,
+        "residualIR": 0.707,
+        "semiCorr": 0.264,
+        "marketCorr": 0.266,
+        "upCapture": 1.629,
+        "lossCapture": 0.91,
+        "captureRatio": 1.789,
+        "captureBalance": 0.718,
+        "semiProxyFlag": false,
+        "adverseDependency": false,
+        "favorableBeta": false,
+        "asymmetricFailure": false,
+        "notes": [],
+        "residualStrengthPct": 0.969
+      },
+      "dependencyProfile": {
+        "marketDependencyScore": 25,
+        "dependencyScoreRaw": 25,
+        "components": {
+          "residualScore": 10,
+          "captureScore": 10,
+          "dependencyAdjustment": 5
+        },
+        "dependencyLabel": "INDEPENDENT_STRENGTH",
+        "sizeFactor": 1.02,
+        "thresholdRegime": "POLICY_EVENT_REBOUND"
+      },
+      "marketDependencyScore": 25,
+      "v11StandaloneScore": 97,
+      "v11Decision": "WAIT_TRIGGER",
+      "v11Reason": "기본 판정 WAIT_TRIGGER",
+      "executionPlan": {
+        "stance": "트리거 대기",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 190600
+          },
+          {
+            "label": "MA20",
+            "kind": "add",
+            "price": 178555
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 171540
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 178555
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 205848
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 352860
+          },
+          {
+            "label": "추정 평단",
+            "kind": "holderCost",
+            "price": 70980
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 190600,
+            "rule": "현재는 진입 금지"
+          },
+          {
+            "label": "트리거",
+            "weight": "관찰",
+            "price": 178555,
+            "rule": "MA20 178,555원 회복과 수급 개선 동시 확인"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "위험 축소",
+            "action": "30~50% 축소",
+            "trigger": "종가 178,555원 이탈 또는 5일선 회복 실패"
+          },
+          {
+            "label": "손절",
+            "action": "신규 검토 중단",
+            "trigger": "171,540원 이탈"
+          },
+          {
+            "label": "익절",
+            "action": "30% 이상 회수",
+            "trigger": "205,848원 도달 후 거래대금 둔화"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
+          },
+          {
+            "window": "장중",
+            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
+          },
+          {
+            "window": "종가",
+            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "단기 수급 급악화 아님",
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 1.02",
+          "의존도: INDEPENDENT_STRENGTH · 점수 25",
+          "특이 리스크 없음"
+        ]
+      }
+    },
+    {
       "ticker": "098460",
       "company": "고영",
       "sector": "스마트팩토리",
@@ -4403,12 +4819,12 @@
       "currentPrice": 31400,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:14 KST",
       "priceSource": {
         "currentPrice": 31400,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:14 KST",
         "analysisClose": 31400,
         "analysisDate": "2026-06-29"
       },
@@ -4418,7 +4834,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 2686915,
+        "avgVolume20": 2687503,
         "volumeRatio": 0.43
       },
       "returns": {
@@ -4646,7 +5062,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 843.7,
+        "avgTradingValueEok": 843.9,
         "betaMarket": 0.85,
         "betaSemiExcess": 0.926,
         "betaSemiRaw": 0.876,
@@ -4790,12 +5206,12 @@
       "currentPrice": 179200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 179200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 179200,
         "analysisDate": "2026-06-29"
       },
@@ -5164,390 +5580,6 @@
       }
     },
     {
-      "ticker": "000500",
-      "company": "가온전선",
-      "sector": "전력망·AI인프라",
-      "status": "candidate",
-      "rationale": "전선 중견주",
-      "latestDate": "2026-06-29",
-      "close": 343000,
-      "currentPrice": 190600,
-      "currentChangePct": 0,
-      "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:02 KST",
-      "priceSource": {
-        "currentPrice": 190600,
-        "currentChangePct": 0,
-        "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:02 KST",
-        "analysisClose": 343000,
-        "analysisDate": "2026-06-29"
-      },
-      "marketCapEok": 31531,
-      "listedShares": 16543115,
-      "per": 56.57,
-      "pbr": null,
-      "roe": null,
-      "liquidity": {
-        "avgVolume20": 191812,
-        "volumeRatio": 0.68
-      },
-      "returns": {
-        "d1": 4.2553,
-        "d5": 1.3294,
-        "d20": 6.5217,
-        "d60": 251.7949
-      },
-      "technicals": {
-        "ma5": 322700,
-        "ma20": 321325,
-        "ma60": 281113.33,
-        "ma120": 188300.83,
-        "ma200": 140491.5,
-        "ma600": 78389.28,
-        "rsi14": 52.92,
-        "high60": 635000,
-        "low60": 0,
-        "drawdown60Pct": -45.9843,
-        "reboundFromLow60Pct": null,
-        "aboveMa20": true,
-        "aboveMa60": true,
-        "ma20SlopePct": -4.0678
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": -36.99,
-          "institutionNetValueEok": 51.28,
-          "foreignPct": -0.117,
-          "institutionPct": 0.163
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": -77.1,
-          "institutionNetValueEok": -1819.5,
-          "foreignPct": -0.245,
-          "institutionPct": -5.771
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": -279.04,
-          "institutionNetValueEok": -958.87,
-          "foreignPct": -0.885,
-          "institutionPct": -3.041
-        }
-      },
-      "policy": {
-        "score": 24,
-        "memo": "전선 중견주"
-      },
-      "value": {
-        "score": 14,
-        "memo": "시총 31531억원, PER 56.57, PBR -"
-      },
-      "technical": {
-        "score": 25,
-        "memo": "MA20 상회, RSI 52.9, 60일 고점 대비 -46%"
-      },
-      "flowScore": {
-        "score": 4,
-        "memo": "20일 외국인 -0.24%, 기관 -5.77%"
-      },
-      "risk": {
-        "penalty": 0,
-        "notes": [],
-        "valuationBlock": false
-      },
-      "totalScore": 67,
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "외국인 순매수 VWAP",
-        "estimatedCost": 127736,
-        "holderName": "외국인 수급",
-        "recentAccumulation": false,
-        "disposalPressure": false,
-        "flow": {
-          "cost": 127735.92548729453,
-          "shares": 1269099,
-          "netShares": -167075,
-          "last20NetShares": 35344,
-          "firstDate": "2025-07-04",
-          "lastDate": "2026-06-29",
-          "days": 240
-        },
-        "score": 1,
-        "signal": "NEUTRAL",
-        "gapPct": 168.5,
-        "overhang": false,
-        "memo": "B 외국인 순매수 VWAP, 추정 평단 127,736원, 괴리 168.5%"
-      },
-      "holderCostScore": 1,
-      "structuralRegime": {
-        "mode": "PRICE_ONLY_STANDALONE",
-        "confidence": 2,
-        "score": 65,
-        "gate": "REVIEW",
-        "grade": "개선 체질",
-        "entryEligible": false,
-        "primary": {
-          "label": "v11 독립 가격 체질",
-          "date": "2024-01-09",
-          "latestDate": "2026-06-29",
-          "basisClose": 20550,
-          "latestClose": 343000,
-          "returnPct": 1569.1,
-          "cagrPct": 215.6,
-          "highClose": 564000,
-          "lowClose": 19220,
-          "drawdownFromHighPct": -39.2,
-          "maxDrawdownPct": -55.3,
-          "aboveMA200": true,
-          "aboveMA600": true
-        }
-      },
-      "v11BaseDecision": "WAIT_TRIGGER",
-      "v11BaseScore": 68,
-      "entryPlan": {
-        "stance": "트리거 대기",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 190600
-          },
-          {
-            "label": "MA20",
-            "kind": "add",
-            "price": 321325
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 171540
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 182976
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 205848
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 635000
-          },
-          {
-            "label": "추정 평단",
-            "kind": "holderCost",
-            "price": 127736
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 190600,
-            "rule": "현재는 진입 금지"
-          },
-          {
-            "label": "트리거",
-            "weight": "관찰",
-            "price": 321325,
-            "rule": "MA20 321,325원 회복과 수급 개선 동시 확인"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "위험 축소",
-            "action": "30~50% 축소",
-            "trigger": "종가 182,976원 이탈 또는 5일선 회복 실패"
-          },
-          {
-            "label": "손절",
-            "action": "신규 검토 중단",
-            "trigger": "171,540원 이탈"
-          },
-          {
-            "label": "익절",
-            "action": "30% 이상 회수",
-            "trigger": "205,848원 도달 후 거래대금 둔화"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
-          },
-          {
-            "window": "장중",
-            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
-          },
-          {
-            "window": "종가",
-            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 1.02",
-          "의존도: INDEPENDENT_STRENGTH · 점수 25",
-          "특이 리스크 없음"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
-      "betaProfile": {
-        "ticker": "000500",
-        "company": "가온전선",
-        "sector": "전력망·AI인프라",
-        "latestDate": "2026-06-29",
-        "alignedReturnDays": 727,
-        "evaluationDays": 60,
-        "betaWindowDays": 120,
-        "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
-        "tier": "A",
-        "rho": 1,
-        "avgTradingValueEok": 657.9,
-        "betaMarket": 1.278,
-        "betaSemiExcess": -0.469,
-        "betaSemiRaw": 0.667,
-        "alpha": 0.00155,
-        "r2TwoFactor": 0.379,
-        "r2SemiRaw": 0.242,
-        "residualMomentum": 0.5899,
-        "residualIR": 0.707,
-        "semiCorr": 0.264,
-        "marketCorr": 0.266,
-        "upCapture": 1.629,
-        "lossCapture": 0.91,
-        "captureRatio": 1.79,
-        "captureBalance": 0.718,
-        "semiProxyFlag": false,
-        "adverseDependency": false,
-        "favorableBeta": false,
-        "asymmetricFailure": false,
-        "notes": [],
-        "residualStrengthPct": 0.969
-      },
-      "dependencyProfile": {
-        "marketDependencyScore": 25,
-        "dependencyScoreRaw": 25,
-        "components": {
-          "residualScore": 10,
-          "captureScore": 10,
-          "dependencyAdjustment": 5
-        },
-        "dependencyLabel": "INDEPENDENT_STRENGTH",
-        "sizeFactor": 1.02,
-        "thresholdRegime": "POLICY_EVENT_REBOUND"
-      },
-      "marketDependencyScore": 25,
-      "v11StandaloneScore": 93,
-      "v11Decision": "WAIT_TRIGGER",
-      "v11Reason": "기본 판정 WAIT_TRIGGER",
-      "executionPlan": {
-        "stance": "트리거 대기",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 190600
-          },
-          {
-            "label": "MA20",
-            "kind": "add",
-            "price": 321325
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 171540
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 182976
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 205848
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 635000
-          },
-          {
-            "label": "추정 평단",
-            "kind": "holderCost",
-            "price": 127736
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 190600,
-            "rule": "현재는 진입 금지"
-          },
-          {
-            "label": "트리거",
-            "weight": "관찰",
-            "price": 321325,
-            "rule": "MA20 321,325원 회복과 수급 개선 동시 확인"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "위험 축소",
-            "action": "30~50% 축소",
-            "trigger": "종가 182,976원 이탈 또는 5일선 회복 실패"
-          },
-          {
-            "label": "손절",
-            "action": "신규 검토 중단",
-            "trigger": "171,540원 이탈"
-          },
-          {
-            "label": "익절",
-            "action": "30% 이상 회수",
-            "trigger": "205,848원 도달 후 거래대금 둔화"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
-          },
-          {
-            "window": "장중",
-            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
-          },
-          {
-            "window": "종가",
-            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 1.02",
-          "의존도: INDEPENDENT_STRENGTH · 점수 25",
-          "특이 리스크 없음"
-        ]
-      }
-    },
-    {
       "ticker": "265520",
       "company": "AP시스템",
       "sector": "OLED 장비",
@@ -5558,12 +5590,12 @@
       "currentPrice": 21400,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:17 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:37 KST",
       "priceSource": {
         "currentPrice": 21400,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:17 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:37 KST",
         "analysisClose": 21400,
         "analysisDate": "2026-06-29"
       },
@@ -5946,12 +5978,12 @@
       "currentPrice": 400500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:16 KST",
       "priceSource": {
         "currentPrice": 400500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:16 KST",
         "analysisClose": 400500,
         "analysisDate": "2026-06-29"
       },
@@ -6332,12 +6364,12 @@
       "currentPrice": 47200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:24 KST",
       "priceSource": {
         "currentPrice": 47200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:24 KST",
         "analysisClose": 47200,
         "analysisDate": "2026-06-29"
       },
@@ -6718,12 +6750,12 @@
       "currentPrice": 135000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:43 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:03 KST",
       "priceSource": {
         "currentPrice": 135000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:43 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:03 KST",
         "analysisClose": 135000,
         "analysisDate": "2026-06-29"
       },
@@ -7102,12 +7134,12 @@
       "currentPrice": 39150,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:01 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:20 KST",
       "priceSource": {
         "currentPrice": 39150,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:01 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:20 KST",
         "analysisClose": 39150,
         "analysisDate": "2026-06-29"
       },
@@ -7488,12 +7520,12 @@
       "currentPrice": 18330,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:15 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:35 KST",
       "priceSource": {
         "currentPrice": 18330,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:15 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:35 KST",
         "analysisClose": 18330,
         "analysisDate": "2026-06-29"
       },
@@ -7874,12 +7906,12 @@
       "currentPrice": 342500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:05 KST",
       "priceSource": {
         "currentPrice": 342500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:05 KST",
         "analysisClose": 342500,
         "analysisDate": "2026-06-29"
       },
@@ -8260,12 +8292,12 @@
       "currentPrice": 373000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 373000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 373000,
         "analysisDate": "2026-06-29"
       },
@@ -8646,12 +8678,12 @@
       "currentPrice": 1448000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:01 KST",
       "priceSource": {
         "currentPrice": 1448000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:01 KST",
         "analysisClose": 1448000,
         "analysisDate": "2026-06-29"
       },
@@ -9030,12 +9062,12 @@
       "currentPrice": 25750,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:18 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:37 KST",
       "priceSource": {
         "currentPrice": 25750,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:18 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:37 KST",
         "analysisClose": 25750,
         "analysisDate": "2026-06-29"
       },
@@ -9416,12 +9448,12 @@
       "currentPrice": 185900,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:07 KST",
       "priceSource": {
         "currentPrice": 185900,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:07 KST",
         "analysisClose": 185900,
         "analysisDate": "2026-06-29"
       },
@@ -9802,12 +9834,12 @@
       "currentPrice": 6810,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:23 KST",
       "priceSource": {
         "currentPrice": 6810,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:23 KST",
         "analysisClose": 6810,
         "analysisDate": "2026-06-29"
       },
@@ -9817,7 +9849,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 267925,
+        "avgVolume20": 267940,
         "volumeRatio": 0.66
       },
       "returns": {
@@ -10191,12 +10223,12 @@
       "currentPrice": 74600,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:07 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:27 KST",
       "priceSource": {
         "currentPrice": 74600,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:07 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:27 KST",
         "analysisClose": 74600,
         "analysisDate": "2026-06-29"
       },
@@ -10577,12 +10609,12 @@
       "currentPrice": 42450,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:52 KST",
       "priceSource": {
         "currentPrice": 42450,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:52 KST",
         "analysisClose": 42450,
         "analysisDate": "2026-06-29"
       },
@@ -10963,12 +10995,12 @@
       "currentPrice": 53000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:08 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:28 KST",
       "priceSource": {
         "currentPrice": 53000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:08 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:28 KST",
         "analysisClose": 53000,
         "analysisDate": "2026-06-29"
       },
@@ -11349,12 +11381,12 @@
       "currentPrice": 349000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:41 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:01 KST",
       "priceSource": {
         "currentPrice": 349000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:41 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:01 KST",
         "analysisClose": 349000,
         "analysisDate": "2026-06-29"
       },
@@ -11733,12 +11765,12 @@
       "currentPrice": 159000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:03 KST",
       "priceSource": {
         "currentPrice": 159000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:03 KST",
         "analysisClose": 159000,
         "analysisDate": "2026-06-29"
       },
@@ -12119,12 +12151,12 @@
       "currentPrice": 49500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:57 KST",
       "priceSource": {
         "currentPrice": 49500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:57 KST",
         "analysisClose": 49500,
         "analysisDate": "2026-06-29"
       },
@@ -12505,12 +12537,12 @@
       "currentPrice": 85300,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:46 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:05 KST",
       "priceSource": {
         "currentPrice": 85300,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:46 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:05 KST",
         "analysisClose": 85300,
         "analysisDate": "2026-06-29"
       },
@@ -12891,12 +12923,12 @@
       "currentPrice": 38650,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 38650,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 38650,
         "analysisDate": "2026-06-29"
       },
@@ -13278,12 +13310,12 @@
       "currentPrice": 73800,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 73800,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 73800,
         "analysisDate": "2026-06-29"
       },
@@ -13664,12 +13696,12 @@
       "currentPrice": 9360,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:01 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:20 KST",
       "priceSource": {
         "currentPrice": 9360,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:01 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:20 KST",
         "analysisClose": 9360,
         "analysisDate": "2026-06-29"
       },
@@ -13679,7 +13711,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 1021969,
+        "avgVolume20": 1022180,
         "volumeRatio": 0.91
       },
       "returns": {
@@ -14050,12 +14082,12 @@
       "currentPrice": 30650,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:59 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:18 KST",
       "priceSource": {
         "currentPrice": 30650,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:59 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:18 KST",
         "analysisClose": 30650,
         "analysisDate": "2026-06-29"
       },
@@ -14437,12 +14469,12 @@
       "currentPrice": 12200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:33 KST",
       "priceSource": {
         "currentPrice": 12200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:33 KST",
         "analysisClose": 12200,
         "analysisDate": "2026-06-29"
       },
@@ -14825,12 +14857,12 @@
       "currentPrice": 32900,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:16 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:36 KST",
       "priceSource": {
         "currentPrice": 32900,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:16 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:36 KST",
         "analysisClose": 32900,
         "analysisDate": "2026-06-29"
       },
@@ -15211,12 +15243,12 @@
       "currentPrice": 8890,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:01 KST",
       "priceSource": {
         "currentPrice": 8890,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:01 KST",
         "analysisClose": 8890,
         "analysisDate": "2026-06-29"
       },
@@ -15226,7 +15258,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 302373,
+        "avgVolume20": 302434,
         "volumeRatio": 0.59
       },
       "returns": {
@@ -15598,12 +15630,12 @@
       "currentPrice": 21950,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:06 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:26 KST",
       "priceSource": {
         "currentPrice": 21950,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:06 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:26 KST",
         "analysisClose": 21950,
         "analysisDate": "2026-06-29"
       },
@@ -15986,12 +16018,12 @@
       "currentPrice": 60500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:07 KST",
       "priceSource": {
         "currentPrice": 60500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:07 KST",
         "analysisClose": 60500,
         "analysisDate": "2026-06-29"
       },
@@ -16372,12 +16404,12 @@
       "currentPrice": 7740,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:03 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:22 KST",
       "priceSource": {
         "currentPrice": 7740,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:03 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:22 KST",
         "analysisClose": 7740,
         "analysisDate": "2026-06-29"
       },
@@ -16387,7 +16419,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 230768,
+        "avgVolume20": 230807,
         "volumeRatio": 0.81
       },
       "returns": {
@@ -16761,12 +16793,12 @@
       "currentPrice": 106600,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 106600,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 106600,
         "analysisDate": "2026-06-29"
       },
@@ -17149,12 +17181,12 @@
       "currentPrice": 30200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:11 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:31 KST",
       "priceSource": {
         "currentPrice": 30200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:11 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:31 KST",
         "analysisClose": 30200,
         "analysisDate": "2026-06-29"
       },
@@ -17549,12 +17581,12 @@
       "currentPrice": 745000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:09 KST",
       "priceSource": {
         "currentPrice": 745000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:09 KST",
         "analysisClose": 745000,
         "analysisDate": "2026-06-29"
       },
@@ -17947,12 +17979,12 @@
       "currentPrice": 176600,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:05 KST",
       "priceSource": {
         "currentPrice": 176600,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:05 KST",
         "analysisClose": 176600,
         "analysisDate": "2026-06-29"
       },
@@ -17962,8 +17994,8 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 3066482,
-        "volumeRatio": 0.72
+        "avgVolume20": 3066907,
+        "volumeRatio": 0.73
       },
       "returns": {
         "d1": 6.6425,
@@ -18193,7 +18225,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 5415.4,
+        "avgTradingValueEok": 5416.2,
         "betaMarket": 0.656,
         "betaSemiExcess": 1.368,
         "betaSemiRaw": 0.905,
@@ -18343,12 +18375,12 @@
       "currentPrice": 53700,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:06 KST",
       "priceSource": {
         "currentPrice": 53700,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:06 KST",
         "analysisClose": 53700,
         "analysisDate": "2026-06-29"
       },
@@ -18358,7 +18390,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 8607945,
+        "avgVolume20": 8609910,
         "volumeRatio": 0.66
       },
       "returns": {
@@ -18583,7 +18615,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 4622.5,
+        "avgTradingValueEok": 4623.5,
         "betaMarket": 0.723,
         "betaSemiExcess": 1.353,
         "betaSemiRaw": 0.944,
@@ -18717,6 +18749,394 @@
       }
     },
     {
+      "ticker": "093320",
+      "company": "케이아이엔엑스",
+      "sector": "AI·데이터센터",
+      "status": "candidate",
+      "rationale": "IDC·클라우드 인프라, AI 컴퓨팅 수요의 상장 대안",
+      "latestDate": "2026-06-29",
+      "close": 106200,
+      "currentPrice": 106200,
+      "currentChangePct": 0,
+      "currentDiff": 0,
+      "quoteFetchedAt": "2026-06-30 08:50:31 KST",
+      "priceSource": {
+        "currentPrice": 106200,
+        "currentChangePct": 0,
+        "currentDiff": 0,
+        "quoteFetchedAt": "2026-06-30 08:50:31 KST",
+        "analysisClose": 106200,
+        "analysisDate": "2026-06-29"
+      },
+      "marketCapEok": 5183,
+      "listedShares": 4880000,
+      "per": 24.43,
+      "pbr": null,
+      "roe": null,
+      "liquidity": {
+        "avgVolume20": 15757,
+        "volumeRatio": 2.03
+      },
+      "returns": {
+        "d1": 5.5666,
+        "d5": -8.6844,
+        "d20": -7.4913,
+        "d60": 6.2
+      },
+      "technicals": {
+        "ma5": 109500,
+        "ma20": 115310,
+        "ma60": 111445,
+        "ma120": 114390,
+        "ma200": 107692,
+        "ma600": 90490,
+        "rsi14": 46.73,
+        "high60": 139900,
+        "low60": 98700,
+        "drawdown60Pct": -24.0886,
+        "reboundFromLow60Pct": 7.5988,
+        "aboveMa20": false,
+        "aboveMa60": false,
+        "ma20SlopePct": -0.8427
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": 6.81,
+          "institutionNetValueEok": -0.14,
+          "foreignPct": 0.131,
+          "institutionPct": -0.003
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": -5.53,
+          "institutionNetValueEok": 55.04,
+          "foreignPct": -0.107,
+          "institutionPct": 1.062
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": 31.03,
+          "institutionNetValueEok": 45.35,
+          "foreignPct": 0.599,
+          "institutionPct": 0.875
+        }
+      },
+      "policy": {
+        "score": 23,
+        "memo": "IDC·클라우드 인프라, AI 컴퓨팅 수요의 상장 대안"
+      },
+      "value": {
+        "score": 19,
+        "memo": "시총 5183억원, PER 24.43, PBR -"
+      },
+      "technical": {
+        "score": 27,
+        "memo": "MA20 하회, RSI 46.7, 60일 고점 대비 -24.1%"
+      },
+      "flowScore": {
+        "score": 15,
+        "memo": "20일 외국인 -0.11%, 기관 1.06%"
+      },
+      "risk": {
+        "penalty": 5,
+        "notes": [
+          "MA20·MA60 동시 하회"
+        ],
+        "valuationBlock": false
+      },
+      "totalScore": 79,
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "외국인 순매수 VWAP",
+        "estimatedCost": 103953,
+        "holderName": "외국인 수급",
+        "recentAccumulation": true,
+        "disposalPressure": true,
+        "flow": {
+          "cost": 103952.92790581117,
+          "shares": 784127,
+          "netShares": 646191,
+          "last20NetShares": -2998,
+          "firstDate": "2025-07-04",
+          "lastDate": "2026-06-29",
+          "days": 240
+        },
+        "score": 20,
+        "signal": "ACCUMULATION",
+        "gapPct": 2.2,
+        "overhang": false,
+        "memo": "B 외국인 순매수 VWAP, 추정 평단 103,953원, 괴리 2.2%"
+      },
+      "holderCostScore": 20,
+      "structuralRegime": {
+        "mode": "PRICE_ONLY_STANDALONE",
+        "confidence": 2,
+        "score": 43,
+        "gate": "BLOCK",
+        "grade": "약한 체질",
+        "entryEligible": false,
+        "primary": {
+          "label": "v11 독립 가격 체질",
+          "date": "2024-01-09",
+          "latestDate": "2026-06-29",
+          "basisClose": 105500,
+          "latestClose": 106200,
+          "returnPct": 0.7,
+          "cagrPct": 0.3,
+          "highClose": 140600,
+          "lowClose": 61200,
+          "drawdownFromHighPct": -24.5,
+          "maxDrawdownPct": -50.4,
+          "aboveMA200": false,
+          "aboveMA600": true
+        }
+      },
+      "v11BaseDecision": "WAIT_TRIGGER",
+      "v11BaseScore": 99,
+      "entryPlan": {
+        "stance": "트리거 대기",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 106200
+          },
+          {
+            "label": "MA20",
+            "kind": "add",
+            "price": 115310
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 95739
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 101952
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 114696
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 139900
+          },
+          {
+            "label": "추정 평단",
+            "kind": "holderCost",
+            "price": 103953
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 106200,
+            "rule": "현재는 진입 금지"
+          },
+          {
+            "label": "트리거",
+            "weight": "관찰",
+            "price": 115310,
+            "rule": "MA20 115,310원 회복과 수급 개선 동시 확인"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "위험 축소",
+            "action": "30~50% 축소",
+            "trigger": "종가 101,952원 이탈 또는 5일선 회복 실패"
+          },
+          {
+            "label": "손절",
+            "action": "신규 검토 중단",
+            "trigger": "95,739원 이탈"
+          },
+          {
+            "label": "익절",
+            "action": "30% 이상 회수",
+            "trigger": "114,696원 도달 후 거래대금 둔화"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
+          },
+          {
+            "window": "장중",
+            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
+          },
+          {
+            "window": "종가",
+            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "단기 수급 급악화 아님",
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.5",
+          "의존도: INDEPENDENT_STRENGTH · 점수 1",
+          "리스크: MA20·MA60 동시 하회"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=093320",
+      "betaProfile": {
+        "ticker": "093320",
+        "company": "케이아이엔엑스",
+        "sector": "AI·데이터센터",
+        "latestDate": "2026-06-29",
+        "alignedReturnDays": 727,
+        "evaluationDays": 60,
+        "betaWindowDays": 120,
+        "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
+        "tier": "B",
+        "rho": 0.7,
+        "avgTradingValueEok": 16.7,
+        "betaMarket": 0.635,
+        "betaSemiExcess": -0.14,
+        "betaSemiRaw": 0.364,
+        "alpha": -0.00103,
+        "r2TwoFactor": 0.218,
+        "r2SemiRaw": 0.158,
+        "residualMomentum": -0.178,
+        "residualIR": -0.641,
+        "semiCorr": 0.285,
+        "marketCorr": 0.301,
+        "upCapture": 0.254,
+        "lossCapture": 0.368,
+        "captureRatio": 0.689,
+        "captureBalance": -0.114,
+        "semiProxyFlag": false,
+        "adverseDependency": false,
+        "favorableBeta": false,
+        "asymmetricFailure": true,
+        "notes": [
+          "moderate liquidity haircut"
+        ],
+        "residualStrengthPct": 0.792
+      },
+      "dependencyProfile": {
+        "marketDependencyScore": 1,
+        "dependencyScoreRaw": 1,
+        "components": {
+          "residualScore": 8,
+          "captureScore": -12,
+          "dependencyAdjustment": 5
+        },
+        "dependencyLabel": "INDEPENDENT_STRENGTH",
+        "sizeFactor": 0.5,
+        "thresholdRegime": "POLICY_EVENT_REBOUND"
+      },
+      "marketDependencyScore": 1,
+      "v11StandaloneScore": 100,
+      "v11Decision": "WAIT_TRIGGER",
+      "v11Reason": "기본 판정 WAIT_TRIGGER",
+      "executionPlan": {
+        "stance": "트리거 대기",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 106200
+          },
+          {
+            "label": "MA20",
+            "kind": "add",
+            "price": 115310
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 95739
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 101952
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 114696
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 139900
+          },
+          {
+            "label": "추정 평단",
+            "kind": "holderCost",
+            "price": 103953
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 106200,
+            "rule": "현재는 진입 금지"
+          },
+          {
+            "label": "트리거",
+            "weight": "관찰",
+            "price": 115310,
+            "rule": "MA20 115,310원 회복과 수급 개선 동시 확인"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "위험 축소",
+            "action": "30~50% 축소",
+            "trigger": "종가 101,952원 이탈 또는 5일선 회복 실패"
+          },
+          {
+            "label": "손절",
+            "action": "신규 검토 중단",
+            "trigger": "95,739원 이탈"
+          },
+          {
+            "label": "익절",
+            "action": "30% 이상 회수",
+            "trigger": "114,696원 도달 후 거래대금 둔화"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
+          },
+          {
+            "window": "장중",
+            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
+          },
+          {
+            "window": "종가",
+            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "단기 수급 급악화 아님",
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.5",
+          "의존도: INDEPENDENT_STRENGTH · 점수 1",
+          "리스크: MA20·MA60 동시 하회"
+        ]
+      }
+    },
+    {
       "ticker": "005290",
       "company": "동진쎄미켐",
       "sector": "반도체 소재",
@@ -18727,12 +19147,12 @@
       "currentPrice": 56100,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:03 KST",
       "priceSource": {
         "currentPrice": 56100,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:03 KST",
         "analysisClose": 56100,
         "analysisDate": "2026-06-29"
       },
@@ -19125,12 +19545,12 @@
       "currentPrice": 37250,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:05 KST",
       "priceSource": {
         "currentPrice": 37250,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:05 KST",
         "analysisClose": 37250,
         "analysisDate": "2026-06-29"
       },
@@ -19140,7 +19560,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 396225,
+        "avgVolume20": 396310,
         "volumeRatio": 0.53
       },
       "returns": {
@@ -19491,152 +19911,150 @@
       }
     },
     {
-      "ticker": "093320",
-      "company": "케이아이엔엑스",
-      "sector": "AI·데이터센터",
+      "ticker": "000500",
+      "company": "가온전선",
+      "sector": "전력망·AI인프라",
       "status": "candidate",
-      "rationale": "IDC·클라우드 인프라, AI 컴퓨팅 수요의 상장 대안",
+      "rationale": "전선 중견주",
       "latestDate": "2026-06-29",
-      "close": 106200,
-      "currentPrice": 106200,
+      "close": 190600,
+      "currentPrice": 190600,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:11 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:22 KST",
       "priceSource": {
-        "currentPrice": 106200,
+        "currentPrice": 190600,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:11 KST",
-        "analysisClose": 106200,
+        "quoteFetchedAt": "2026-06-30 08:50:22 KST",
+        "analysisClose": 190600,
         "analysisDate": "2026-06-29"
       },
-      "marketCapEok": 5183,
-      "listedShares": 4880000,
-      "per": 24.43,
+      "marketCapEok": 31531,
+      "listedShares": 16543115,
+      "per": 56.57,
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 14618,
-        "volumeRatio": 0.63
+        "avgVolume20": 345180,
+        "volumeRatio": 0.68
       },
       "returns": {
-        "d1": 5.5666,
-        "d5": -8.6844,
-        "d20": -7.4913,
-        "d60": 6.2
+        "d1": 4.2556,
+        "d5": 1.3296,
+        "d20": 6.5221,
+        "d60": 251.7968
       },
       "technicals": {
-        "ma5": 109500,
-        "ma20": 115310,
-        "ma60": 111445,
-        "ma120": 114390,
-        "ma200": 107692,
-        "ma600": 90490,
-        "rsi14": 46.73,
-        "high60": 139900,
-        "low60": 98700,
-        "drawdown60Pct": -24.0886,
-        "reboundFromLow60Pct": 7.5988,
-        "aboveMa20": false,
-        "aboveMa60": false,
-        "ma20SlopePct": -0.8427
+        "ma5": 179319.2,
+        "ma20": 178555,
+        "ma60": 156209.97,
+        "ma120": 104635.47,
+        "ma200": 78068.55,
+        "ma600": 43559.25,
+        "rsi14": 52.92,
+        "high60": 352860,
+        "low60": 54457,
+        "drawdown60Pct": -45.9842,
+        "reboundFromLow60Pct": 250.0009,
+        "aboveMa20": true,
+        "aboveMa60": true,
+        "ma20SlopePct": -4.0678
       },
       "flows": {
         "d5": {
           "days": 5,
-          "foreignNetValueEok": 6.81,
-          "institutionNetValueEok": -0.14,
-          "foreignPct": 0.131,
-          "institutionPct": -0.003
+          "foreignNetValueEok": -36.99,
+          "institutionNetValueEok": 51.28,
+          "foreignPct": -0.117,
+          "institutionPct": 0.163
         },
         "d20": {
           "days": 20,
-          "foreignNetValueEok": -5.53,
-          "institutionNetValueEok": 55.04,
-          "foreignPct": -0.107,
-          "institutionPct": 1.062
+          "foreignNetValueEok": -77.1,
+          "institutionNetValueEok": -1819.5,
+          "foreignPct": -0.245,
+          "institutionPct": -5.771
         },
         "d60": {
           "days": 60,
-          "foreignNetValueEok": 31.03,
-          "institutionNetValueEok": 45.35,
-          "foreignPct": 0.599,
-          "institutionPct": 0.875
+          "foreignNetValueEok": -279.04,
+          "institutionNetValueEok": -958.87,
+          "foreignPct": -0.885,
+          "institutionPct": -3.041
         }
       },
       "policy": {
-        "score": 23,
-        "memo": "IDC·클라우드 인프라, AI 컴퓨팅 수요의 상장 대안"
+        "score": 24,
+        "memo": "전선 중견주"
       },
       "value": {
-        "score": 19,
-        "memo": "시총 5183억원, PER 24.43, PBR -"
+        "score": 14,
+        "memo": "시총 31531억원, PER 56.57, PBR -"
       },
       "technical": {
-        "score": 24,
-        "memo": "MA20 하회, RSI 46.7, 60일 고점 대비 -24.1%"
+        "score": 29,
+        "memo": "MA20 상회, RSI 52.9, 60일 고점 대비 -46%"
       },
       "flowScore": {
-        "score": 15,
-        "memo": "20일 외국인 -0.11%, 기관 1.06%"
+        "score": 4,
+        "memo": "20일 외국인 -0.24%, 기관 -5.77%"
       },
       "risk": {
-        "penalty": 5,
-        "notes": [
-          "MA20·MA60 동시 하회"
-        ],
+        "penalty": 0,
+        "notes": [],
         "valuationBlock": false
       },
-      "totalScore": 76,
+      "totalScore": 71,
       "holderCost": {
         "tier": "B",
         "coefficient": 0.7,
         "source": "외국인 순매수 VWAP",
-        "estimatedCost": 103953,
+        "estimatedCost": 70980,
         "holderName": "외국인 수급",
-        "recentAccumulation": true,
-        "disposalPressure": true,
+        "recentAccumulation": false,
+        "disposalPressure": false,
         "flow": {
-          "cost": 103952.92790581117,
-          "shares": 784127,
-          "netShares": 646191,
-          "last20NetShares": -2998,
+          "cost": 70980.48102866679,
+          "shares": 1269099,
+          "netShares": -167075,
+          "last20NetShares": 35344,
           "firstDate": "2025-07-04",
           "lastDate": "2026-06-29",
           "days": 240
         },
-        "score": 20,
-        "signal": "ACCUMULATION",
-        "gapPct": 2.2,
+        "score": 1,
+        "signal": "NEUTRAL",
+        "gapPct": 168.5,
         "overhang": false,
-        "memo": "B 외국인 순매수 VWAP, 추정 평단 103,953원, 괴리 2.2%"
+        "memo": "B 외국인 순매수 VWAP, 추정 평단 70,980원, 괴리 168.5%"
       },
-      "holderCostScore": 20,
+      "holderCostScore": 1,
       "structuralRegime": {
         "mode": "PRICE_ONLY_STANDALONE",
         "confidence": 2,
-        "score": 43,
-        "gate": "BLOCK",
-        "grade": "약한 체질",
+        "score": 65,
+        "gate": "REVIEW",
+        "grade": "개선 체질",
         "entryEligible": false,
         "primary": {
           "label": "v11 독립 가격 체질",
           "date": "2024-01-09",
           "latestDate": "2026-06-29",
-          "basisClose": 105500,
-          "latestClose": 106200,
-          "returnPct": 0.7,
-          "cagrPct": 0.3,
-          "highClose": 140600,
-          "lowClose": 61200,
-          "drawdownFromHighPct": -24.5,
-          "maxDrawdownPct": -50.4,
-          "aboveMA200": false,
+          "basisClose": 11419,
+          "latestClose": 190600,
+          "returnPct": 1569.1,
+          "cagrPct": 215.6,
+          "highClose": 313406,
+          "lowClose": 10680,
+          "drawdownFromHighPct": -39.2,
+          "maxDrawdownPct": -55.3,
+          "aboveMA200": true,
           "aboveMA600": true
         }
       },
       "v11BaseDecision": "WAIT_TRIGGER",
-      "v11BaseScore": 96,
+      "v11BaseScore": 72,
       "entryPlan": {
         "stance": "트리거 대기",
         "isOverheated": false,
@@ -19645,68 +20063,68 @@
           {
             "label": "현재",
             "kind": "now",
-            "price": 106200
+            "price": 190600
           },
           {
             "label": "MA20",
             "kind": "add",
-            "price": 115310
+            "price": 178555
           },
           {
             "label": "손절",
             "kind": "stop",
-            "price": 95739
+            "price": 171540
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 101952
+            "price": 178555
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 114696
+            "price": 205848
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 139900
+            "price": 352860
           },
           {
             "label": "추정 평단",
             "kind": "holderCost",
-            "price": 103953
+            "price": 70980
           }
         ],
         "buySteps": [
           {
             "label": "대기",
             "weight": "0%",
-            "price": 106200,
+            "price": 190600,
             "rule": "현재는 진입 금지"
           },
           {
             "label": "트리거",
             "weight": "관찰",
-            "price": 115310,
-            "rule": "MA20 115,310원 회복과 수급 개선 동시 확인"
+            "price": 178555,
+            "rule": "MA20 178,555원 회복과 수급 개선 동시 확인"
           }
         ],
         "sellSteps": [
           {
             "label": "위험 축소",
             "action": "30~50% 축소",
-            "trigger": "종가 101,952원 이탈 또는 5일선 회복 실패"
+            "trigger": "종가 178,555원 이탈 또는 5일선 회복 실패"
           },
           {
             "label": "손절",
             "action": "신규 검토 중단",
-            "trigger": "95,739원 이탈"
+            "trigger": "171,540원 이탈"
           },
           {
             "label": "익절",
             "action": "30% 이상 회수",
-            "trigger": "114,696원 도달 후 거래대금 둔화"
+            "trigger": "205,848원 도달 후 거래대금 둔화"
           }
         ],
         "sessionRules": [
@@ -19726,60 +20144,58 @@
         "riskSwitches": [
           "과열 낮음: 분할 기준 유지",
           "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.5",
-          "의존도: INDEPENDENT_STRENGTH · 점수 1",
-          "리스크: MA20·MA60 동시 하회"
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 1.02",
+          "의존도: INDEPENDENT_STRENGTH · 점수 25",
+          "특이 리스크 없음"
         ]
       },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=093320",
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
       "betaProfile": {
-        "ticker": "093320",
-        "company": "케이아이엔엑스",
-        "sector": "AI·데이터센터",
+        "ticker": "000500",
+        "company": "가온전선",
+        "sector": "전력망·AI인프라",
         "latestDate": "2026-06-29",
         "alignedReturnDays": 727,
         "evaluationDays": 60,
         "betaWindowDays": 120,
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
-        "tier": "B",
-        "rho": 0.7,
-        "avgTradingValueEok": 15.5,
-        "betaMarket": 0.635,
-        "betaSemiExcess": -0.14,
-        "betaSemiRaw": 0.364,
-        "alpha": -0.00103,
-        "r2TwoFactor": 0.218,
-        "r2SemiRaw": 0.158,
-        "residualMomentum": -0.178,
-        "residualIR": -0.641,
-        "semiCorr": 0.285,
-        "marketCorr": 0.301,
-        "upCapture": 0.254,
-        "lossCapture": 0.368,
-        "captureRatio": 0.689,
-        "captureBalance": -0.114,
+        "tier": "A",
+        "rho": 1,
+        "avgTradingValueEok": 657.9,
+        "betaMarket": 1.278,
+        "betaSemiExcess": -0.469,
+        "betaSemiRaw": 0.667,
+        "alpha": 0.00155,
+        "r2TwoFactor": 0.379,
+        "r2SemiRaw": 0.242,
+        "residualMomentum": 0.5899,
+        "residualIR": 0.707,
+        "semiCorr": 0.264,
+        "marketCorr": 0.266,
+        "upCapture": 1.629,
+        "lossCapture": 0.91,
+        "captureRatio": 1.789,
+        "captureBalance": 0.718,
         "semiProxyFlag": false,
         "adverseDependency": false,
         "favorableBeta": false,
-        "asymmetricFailure": true,
-        "notes": [
-          "moderate liquidity haircut"
-        ],
-        "residualStrengthPct": 0.792
+        "asymmetricFailure": false,
+        "notes": [],
+        "residualStrengthPct": 0.969
       },
       "dependencyProfile": {
-        "marketDependencyScore": 1,
-        "dependencyScoreRaw": 1,
+        "marketDependencyScore": 25,
+        "dependencyScoreRaw": 25,
         "components": {
-          "residualScore": 8,
-          "captureScore": -12,
+          "residualScore": 10,
+          "captureScore": 10,
           "dependencyAdjustment": 5
         },
         "dependencyLabel": "INDEPENDENT_STRENGTH",
-        "sizeFactor": 0.5,
+        "sizeFactor": 1.02,
         "thresholdRegime": "POLICY_EVENT_REBOUND"
       },
-      "marketDependencyScore": 1,
+      "marketDependencyScore": 25,
       "v11StandaloneScore": 97,
       "v11Decision": "WAIT_TRIGGER",
       "v11Reason": "기본 판정 WAIT_TRIGGER",
@@ -19791,68 +20207,68 @@
           {
             "label": "현재",
             "kind": "now",
-            "price": 106200
+            "price": 190600
           },
           {
             "label": "MA20",
             "kind": "add",
-            "price": 115310
+            "price": 178555
           },
           {
             "label": "손절",
             "kind": "stop",
-            "price": 95739
+            "price": 171540
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 101952
+            "price": 178555
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 114696
+            "price": 205848
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 139900
+            "price": 352860
           },
           {
             "label": "추정 평단",
             "kind": "holderCost",
-            "price": 103953
+            "price": 70980
           }
         ],
         "buySteps": [
           {
             "label": "대기",
             "weight": "0%",
-            "price": 106200,
+            "price": 190600,
             "rule": "현재는 진입 금지"
           },
           {
             "label": "트리거",
             "weight": "관찰",
-            "price": 115310,
-            "rule": "MA20 115,310원 회복과 수급 개선 동시 확인"
+            "price": 178555,
+            "rule": "MA20 178,555원 회복과 수급 개선 동시 확인"
           }
         ],
         "sellSteps": [
           {
             "label": "위험 축소",
             "action": "30~50% 축소",
-            "trigger": "종가 101,952원 이탈 또는 5일선 회복 실패"
+            "trigger": "종가 178,555원 이탈 또는 5일선 회복 실패"
           },
           {
             "label": "손절",
             "action": "신규 검토 중단",
-            "trigger": "95,739원 이탈"
+            "trigger": "171,540원 이탈"
           },
           {
             "label": "익절",
             "action": "30% 이상 회수",
-            "trigger": "114,696원 도달 후 거래대금 둔화"
+            "trigger": "205,848원 도달 후 거래대금 둔화"
           }
         ],
         "sessionRules": [
@@ -19872,9 +20288,9 @@
         "riskSwitches": [
           "과열 낮음: 분할 기준 유지",
           "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.5",
-          "의존도: INDEPENDENT_STRENGTH · 점수 1",
-          "리스크: MA20·MA60 동시 하회"
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 1.02",
+          "의존도: INDEPENDENT_STRENGTH · 점수 25",
+          "특이 리스크 없음"
         ]
       }
     },
@@ -19889,12 +20305,12 @@
       "currentPrice": 120000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:33 KST",
       "priceSource": {
         "currentPrice": 120000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:33 KST",
         "analysisClose": 120000,
         "analysisDate": "2026-06-29"
       },
@@ -20261,12 +20677,12 @@
       "currentPrice": 31400,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:14 KST",
       "priceSource": {
         "currentPrice": 31400,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:14 KST",
         "analysisClose": 31400,
         "analysisDate": "2026-06-29"
       },
@@ -20276,7 +20692,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 2686915,
+        "avgVolume20": 2687503,
         "volumeRatio": 0.43
       },
       "returns": {
@@ -20504,7 +20920,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 843.7,
+        "avgTradingValueEok": 843.9,
         "betaMarket": 0.85,
         "betaSemiExcess": 0.926,
         "betaSemiRaw": 0.876,
@@ -20648,12 +21064,12 @@
       "currentPrice": 177800,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:03 KST",
       "priceSource": {
         "currentPrice": 177800,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:03 KST",
         "analysisClose": 177800,
         "analysisDate": "2026-06-29"
       },
@@ -21044,12 +21460,12 @@
       "currentPrice": 179200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 179200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 179200,
         "analysisDate": "2026-06-29"
       },
@@ -21418,390 +21834,6 @@
       }
     },
     {
-      "ticker": "000500",
-      "company": "가온전선",
-      "sector": "전력망·AI인프라",
-      "status": "candidate",
-      "rationale": "전선 중견주",
-      "latestDate": "2026-06-29",
-      "close": 343000,
-      "currentPrice": 190600,
-      "currentChangePct": 0,
-      "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:02 KST",
-      "priceSource": {
-        "currentPrice": 190600,
-        "currentChangePct": 0,
-        "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:02 KST",
-        "analysisClose": 343000,
-        "analysisDate": "2026-06-29"
-      },
-      "marketCapEok": 31531,
-      "listedShares": 16543115,
-      "per": 56.57,
-      "pbr": null,
-      "roe": null,
-      "liquidity": {
-        "avgVolume20": 191812,
-        "volumeRatio": 0.68
-      },
-      "returns": {
-        "d1": 4.2553,
-        "d5": 1.3294,
-        "d20": 6.5217,
-        "d60": 251.7949
-      },
-      "technicals": {
-        "ma5": 322700,
-        "ma20": 321325,
-        "ma60": 281113.33,
-        "ma120": 188300.83,
-        "ma200": 140491.5,
-        "ma600": 78389.28,
-        "rsi14": 52.92,
-        "high60": 635000,
-        "low60": 0,
-        "drawdown60Pct": -45.9843,
-        "reboundFromLow60Pct": null,
-        "aboveMa20": true,
-        "aboveMa60": true,
-        "ma20SlopePct": -4.0678
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": -36.99,
-          "institutionNetValueEok": 51.28,
-          "foreignPct": -0.117,
-          "institutionPct": 0.163
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": -77.1,
-          "institutionNetValueEok": -1819.5,
-          "foreignPct": -0.245,
-          "institutionPct": -5.771
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": -279.04,
-          "institutionNetValueEok": -958.87,
-          "foreignPct": -0.885,
-          "institutionPct": -3.041
-        }
-      },
-      "policy": {
-        "score": 24,
-        "memo": "전선 중견주"
-      },
-      "value": {
-        "score": 14,
-        "memo": "시총 31531억원, PER 56.57, PBR -"
-      },
-      "technical": {
-        "score": 25,
-        "memo": "MA20 상회, RSI 52.9, 60일 고점 대비 -46%"
-      },
-      "flowScore": {
-        "score": 4,
-        "memo": "20일 외국인 -0.24%, 기관 -5.77%"
-      },
-      "risk": {
-        "penalty": 0,
-        "notes": [],
-        "valuationBlock": false
-      },
-      "totalScore": 67,
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "외국인 순매수 VWAP",
-        "estimatedCost": 127736,
-        "holderName": "외국인 수급",
-        "recentAccumulation": false,
-        "disposalPressure": false,
-        "flow": {
-          "cost": 127735.92548729453,
-          "shares": 1269099,
-          "netShares": -167075,
-          "last20NetShares": 35344,
-          "firstDate": "2025-07-04",
-          "lastDate": "2026-06-29",
-          "days": 240
-        },
-        "score": 1,
-        "signal": "NEUTRAL",
-        "gapPct": 168.5,
-        "overhang": false,
-        "memo": "B 외국인 순매수 VWAP, 추정 평단 127,736원, 괴리 168.5%"
-      },
-      "holderCostScore": 1,
-      "structuralRegime": {
-        "mode": "PRICE_ONLY_STANDALONE",
-        "confidence": 2,
-        "score": 65,
-        "gate": "REVIEW",
-        "grade": "개선 체질",
-        "entryEligible": false,
-        "primary": {
-          "label": "v11 독립 가격 체질",
-          "date": "2024-01-09",
-          "latestDate": "2026-06-29",
-          "basisClose": 20550,
-          "latestClose": 343000,
-          "returnPct": 1569.1,
-          "cagrPct": 215.6,
-          "highClose": 564000,
-          "lowClose": 19220,
-          "drawdownFromHighPct": -39.2,
-          "maxDrawdownPct": -55.3,
-          "aboveMA200": true,
-          "aboveMA600": true
-        }
-      },
-      "v11BaseDecision": "WAIT_TRIGGER",
-      "v11BaseScore": 68,
-      "entryPlan": {
-        "stance": "트리거 대기",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 190600
-          },
-          {
-            "label": "MA20",
-            "kind": "add",
-            "price": 321325
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 171540
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 182976
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 205848
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 635000
-          },
-          {
-            "label": "추정 평단",
-            "kind": "holderCost",
-            "price": 127736
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 190600,
-            "rule": "현재는 진입 금지"
-          },
-          {
-            "label": "트리거",
-            "weight": "관찰",
-            "price": 321325,
-            "rule": "MA20 321,325원 회복과 수급 개선 동시 확인"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "위험 축소",
-            "action": "30~50% 축소",
-            "trigger": "종가 182,976원 이탈 또는 5일선 회복 실패"
-          },
-          {
-            "label": "손절",
-            "action": "신규 검토 중단",
-            "trigger": "171,540원 이탈"
-          },
-          {
-            "label": "익절",
-            "action": "30% 이상 회수",
-            "trigger": "205,848원 도달 후 거래대금 둔화"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
-          },
-          {
-            "window": "장중",
-            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
-          },
-          {
-            "window": "종가",
-            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 1.02",
-          "의존도: INDEPENDENT_STRENGTH · 점수 25",
-          "특이 리스크 없음"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=000500",
-      "betaProfile": {
-        "ticker": "000500",
-        "company": "가온전선",
-        "sector": "전력망·AI인프라",
-        "latestDate": "2026-06-29",
-        "alignedReturnDays": 727,
-        "evaluationDays": 60,
-        "betaWindowDays": 120,
-        "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
-        "tier": "A",
-        "rho": 1,
-        "avgTradingValueEok": 657.9,
-        "betaMarket": 1.278,
-        "betaSemiExcess": -0.469,
-        "betaSemiRaw": 0.667,
-        "alpha": 0.00155,
-        "r2TwoFactor": 0.379,
-        "r2SemiRaw": 0.242,
-        "residualMomentum": 0.5899,
-        "residualIR": 0.707,
-        "semiCorr": 0.264,
-        "marketCorr": 0.266,
-        "upCapture": 1.629,
-        "lossCapture": 0.91,
-        "captureRatio": 1.79,
-        "captureBalance": 0.718,
-        "semiProxyFlag": false,
-        "adverseDependency": false,
-        "favorableBeta": false,
-        "asymmetricFailure": false,
-        "notes": [],
-        "residualStrengthPct": 0.969
-      },
-      "dependencyProfile": {
-        "marketDependencyScore": 25,
-        "dependencyScoreRaw": 25,
-        "components": {
-          "residualScore": 10,
-          "captureScore": 10,
-          "dependencyAdjustment": 5
-        },
-        "dependencyLabel": "INDEPENDENT_STRENGTH",
-        "sizeFactor": 1.02,
-        "thresholdRegime": "POLICY_EVENT_REBOUND"
-      },
-      "marketDependencyScore": 25,
-      "v11StandaloneScore": 93,
-      "v11Decision": "WAIT_TRIGGER",
-      "v11Reason": "기본 판정 WAIT_TRIGGER",
-      "executionPlan": {
-        "stance": "트리거 대기",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 190600
-          },
-          {
-            "label": "MA20",
-            "kind": "add",
-            "price": 321325
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 171540
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 182976
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 205848
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 635000
-          },
-          {
-            "label": "추정 평단",
-            "kind": "holderCost",
-            "price": 127736
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 190600,
-            "rule": "현재는 진입 금지"
-          },
-          {
-            "label": "트리거",
-            "weight": "관찰",
-            "price": 321325,
-            "rule": "MA20 321,325원 회복과 수급 개선 동시 확인"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "위험 축소",
-            "action": "30~50% 축소",
-            "trigger": "종가 182,976원 이탈 또는 5일선 회복 실패"
-          },
-          {
-            "label": "손절",
-            "action": "신규 검토 중단",
-            "trigger": "171,540원 이탈"
-          },
-          {
-            "label": "익절",
-            "action": "30% 이상 회수",
-            "trigger": "205,848원 도달 후 거래대금 둔화"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
-          },
-          {
-            "window": "장중",
-            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
-          },
-          {
-            "window": "종가",
-            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 1.02",
-          "의존도: INDEPENDENT_STRENGTH · 점수 25",
-          "특이 리스크 없음"
-        ]
-      }
-    },
-    {
       "ticker": "265520",
       "company": "AP시스템",
       "sector": "OLED 장비",
@@ -21812,12 +21844,12 @@
       "currentPrice": 21400,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:17 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:37 KST",
       "priceSource": {
         "currentPrice": 21400,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:17 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:37 KST",
         "analysisClose": 21400,
         "analysisDate": "2026-06-29"
       },
@@ -22200,12 +22232,12 @@
       "currentPrice": 400500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:16 KST",
       "priceSource": {
         "currentPrice": 400500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:16 KST",
         "analysisClose": 400500,
         "analysisDate": "2026-06-29"
       },
@@ -22586,12 +22618,12 @@
       "currentPrice": 224000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:06 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:25 KST",
       "priceSource": {
         "currentPrice": 224000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:06 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:25 KST",
         "analysisClose": 224000,
         "analysisDate": "2026-06-29"
       },
@@ -22961,12 +22993,12 @@
       "currentPrice": 47200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:24 KST",
       "priceSource": {
         "currentPrice": 47200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:24 KST",
         "analysisClose": 47200,
         "analysisDate": "2026-06-29"
       },
@@ -23347,12 +23379,12 @@
       "currentPrice": 135000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:43 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:03 KST",
       "priceSource": {
         "currentPrice": 135000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:43 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:03 KST",
         "analysisClose": 135000,
         "analysisDate": "2026-06-29"
       },
@@ -23731,12 +23763,12 @@
       "currentPrice": 39150,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:01 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:20 KST",
       "priceSource": {
         "currentPrice": 39150,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:01 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:20 KST",
         "analysisClose": 39150,
         "analysisDate": "2026-06-29"
       },
@@ -24117,12 +24149,12 @@
       "currentPrice": 18330,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:15 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:35 KST",
       "priceSource": {
         "currentPrice": 18330,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:15 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:35 KST",
         "analysisClose": 18330,
         "analysisDate": "2026-06-29"
       },
@@ -24493,6 +24525,404 @@
       }
     },
     {
+      "ticker": "064350",
+      "company": "현대로템",
+      "sector": "방산",
+      "status": "candidate",
+      "rationale": "방산·철도, 수출 모멘텀",
+      "latestDate": "2026-06-29",
+      "close": 184900,
+      "currentPrice": 184900,
+      "currentChangePct": 0,
+      "currentDiff": 0,
+      "quoteFetchedAt": "2026-06-30 08:50:07 KST",
+      "priceSource": {
+        "currentPrice": 184900,
+        "currentChangePct": 0,
+        "currentDiff": 0,
+        "quoteFetchedAt": "2026-06-30 08:50:07 KST",
+        "analysisClose": 184900,
+        "analysisDate": "2026-06-29"
+      },
+      "marketCapEok": 201804,
+      "listedShares": 109142293,
+      "per": 24.83,
+      "pbr": null,
+      "roe": null,
+      "liquidity": {
+        "avgVolume20": 607324,
+        "volumeRatio": 1.03
+      },
+      "returns": {
+        "d1": 8.8928,
+        "d5": -9.14,
+        "d20": -7.7805,
+        "d60": 9.0855
+      },
+      "technicals": {
+        "ma5": 185360,
+        "ma20": 197480,
+        "ma60": 211225,
+        "ma120": 209638.33,
+        "ma200": 206986,
+        "ma600": 121461.33,
+        "rsi14": 51.62,
+        "high60": 282000,
+        "low60": 162000,
+        "drawdown60Pct": -34.4326,
+        "reboundFromLow60Pct": 14.1358,
+        "aboveMa20": false,
+        "aboveMa60": false,
+        "ma20SlopePct": -2.6305
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": 193.74,
+          "institutionNetValueEok": -268.81,
+          "foreignPct": 0.096,
+          "institutionPct": -0.133
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": 2694.77,
+          "institutionNetValueEok": -726.4,
+          "foreignPct": 1.335,
+          "institutionPct": -0.36
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": 8540.99,
+          "institutionNetValueEok": 186.59,
+          "foreignPct": 4.232,
+          "institutionPct": 0.092
+        }
+      },
+      "policy": {
+        "score": 21,
+        "memo": "방산·철도, 수출 모멘텀"
+      },
+      "value": {
+        "score": 13,
+        "memo": "시총 201804억원, PER 24.83, PBR -"
+      },
+      "technical": {
+        "score": 23,
+        "memo": "MA20 하회, RSI 51.6, 60일 고점 대비 -34.4%"
+      },
+      "flowScore": {
+        "score": 15,
+        "memo": "20일 외국인 1.34%, 기관 -0.36%"
+      },
+      "risk": {
+        "penalty": 5,
+        "notes": [
+          "MA20·MA60 동시 하회"
+        ],
+        "valuationBlock": false
+      },
+      "totalScore": 67,
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "외국인 순매수 VWAP",
+        "estimatedCost": 211859,
+        "holderName": "외국인 수급",
+        "recentAccumulation": true,
+        "disposalPressure": false,
+        "flow": {
+          "cost": 211859.48043703125,
+          "shares": 17616498,
+          "netShares": 6922423,
+          "last20NetShares": 1278580,
+          "firstDate": "2025-07-04",
+          "lastDate": "2026-06-29",
+          "days": 240
+        },
+        "score": 14,
+        "signal": "ACCUMULATION",
+        "gapPct": -12.7,
+        "overhang": false,
+        "memo": "B 외국인 순매수 VWAP, 추정 평단 211,859원, 괴리 -12.7%"
+      },
+      "holderCostScore": 14,
+      "structuralRegime": {
+        "mode": "PRICE_ONLY_STANDALONE",
+        "confidence": 2,
+        "score": 63,
+        "gate": "REVIEW",
+        "grade": "검토 체질",
+        "entryEligible": false,
+        "primary": {
+          "label": "v11 독립 가격 체질",
+          "date": "2024-01-09",
+          "latestDate": "2026-06-29",
+          "basisClose": 26550,
+          "latestClose": 184900,
+          "returnPct": 596.4,
+          "cagrPct": 120.9,
+          "highClose": 269000,
+          "lowClose": 25500,
+          "drawdownFromHighPct": -31.3,
+          "maxDrawdownPct": -36.9,
+          "aboveMA200": false,
+          "aboveMA600": true
+        }
+      },
+      "v11BaseDecision": "WAIT_TRIGGER",
+      "v11BaseScore": 81,
+      "entryPlan": {
+        "stance": "약세 분할",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 184900
+          },
+          {
+            "label": "MA20",
+            "kind": "add",
+            "price": 197480
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 166410
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 177504
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 199692
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 282000
+          },
+          {
+            "label": "추정 평단",
+            "kind": "holderCost",
+            "price": 211859
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "1차",
+            "weight": "25~30%",
+            "price": 184900,
+            "rule": "눌림 184,900원 부근에서 양봉 전환 확인"
+          },
+          {
+            "label": "2차",
+            "weight": "30%",
+            "price": 197480,
+            "rule": "종가 197,480원 회복"
+          },
+          {
+            "label": "3차",
+            "weight": "관찰",
+            "price": 284820,
+            "rule": "고점 돌파는 추격보다 재평가 후 실행"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "위험 축소",
+            "action": "30~50% 축소",
+            "trigger": "종가 177,504원 이탈 또는 5일선 회복 실패"
+          },
+          {
+            "label": "손절",
+            "action": "신규 검토 중단",
+            "trigger": "166,410원 이탈"
+          },
+          {
+            "label": "익절",
+            "action": "30% 이상 회수",
+            "trigger": "199,692원 도달 후 거래대금 둔화"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
+          },
+          {
+            "window": "장중",
+            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
+          },
+          {
+            "window": "종가",
+            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "단기 수급 급악화 아님",
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.72",
+          "의존도: INDEPENDENT_STRENGTH · 점수 9",
+          "리스크: MA20·MA60 동시 하회"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=064350",
+      "betaProfile": {
+        "ticker": "064350",
+        "company": "현대로템",
+        "sector": "방산",
+        "latestDate": "2026-06-29",
+        "alignedReturnDays": 727,
+        "evaluationDays": 60,
+        "betaWindowDays": 120,
+        "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
+        "tier": "A",
+        "rho": 1,
+        "avgTradingValueEok": 1122.9,
+        "betaMarket": 0.953,
+        "betaSemiExcess": -0.027,
+        "betaSemiRaw": 0.61,
+        "alpha": -0.00501,
+        "r2TwoFactor": 0.364,
+        "r2SemiRaw": 0.3,
+        "residualMomentum": -0.0924,
+        "residualIR": -0.254,
+        "semiCorr": 0.272,
+        "marketCorr": 0.339,
+        "upCapture": 0.306,
+        "lossCapture": 0.419,
+        "captureRatio": 0.729,
+        "captureBalance": -0.114,
+        "semiProxyFlag": false,
+        "adverseDependency": false,
+        "favorableBeta": false,
+        "asymmetricFailure": false,
+        "notes": [],
+        "residualStrengthPct": 0.881
+      },
+      "dependencyProfile": {
+        "marketDependencyScore": 9,
+        "dependencyScoreRaw": 9,
+        "components": {
+          "residualScore": 9,
+          "captureScore": -5,
+          "dependencyAdjustment": 5
+        },
+        "dependencyLabel": "INDEPENDENT_STRENGTH",
+        "sizeFactor": 0.72,
+        "thresholdRegime": "POLICY_EVENT_REBOUND"
+      },
+      "marketDependencyScore": 9,
+      "v11StandaloneScore": 90,
+      "v11Decision": "ACCUMULATE_ON_WEAKNESS",
+      "v11Reason": "정책 반등 레짐: 기본 조건은 대기지만 품질·수급·의존도 통과로 약세 분할 후보",
+      "executionPlan": {
+        "stance": "약세 분할",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 184900
+          },
+          {
+            "label": "MA20",
+            "kind": "add",
+            "price": 197480
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 166410
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 177504
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 199692
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 282000
+          },
+          {
+            "label": "추정 평단",
+            "kind": "holderCost",
+            "price": 211859
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "1차",
+            "weight": "25~30%",
+            "price": 184900,
+            "rule": "눌림 184,900원 부근에서 양봉 전환 확인"
+          },
+          {
+            "label": "2차",
+            "weight": "30%",
+            "price": 197480,
+            "rule": "종가 197,480원 회복"
+          },
+          {
+            "label": "3차",
+            "weight": "관찰",
+            "price": 284820,
+            "rule": "고점 돌파는 추격보다 재평가 후 실행"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "위험 축소",
+            "action": "30~50% 축소",
+            "trigger": "종가 177,504원 이탈 또는 5일선 회복 실패"
+          },
+          {
+            "label": "손절",
+            "action": "신규 검토 중단",
+            "trigger": "166,410원 이탈"
+          },
+          {
+            "label": "익절",
+            "action": "30% 이상 회수",
+            "trigger": "199,692원 도달 후 거래대금 둔화"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
+          },
+          {
+            "window": "장중",
+            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
+          },
+          {
+            "window": "종가",
+            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "단기 수급 급악화 아님",
+          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.72",
+          "의존도: INDEPENDENT_STRENGTH · 점수 9",
+          "리스크: MA20·MA60 동시 하회"
+        ]
+      }
+    },
+    {
       "ticker": "119850",
       "company": "지엔씨에너지",
       "sector": "데이터센터·전력",
@@ -24503,12 +24933,12 @@
       "currentPrice": 22350,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:52 KST",
       "priceSource": {
         "currentPrice": 22350,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:52 KST",
         "analysisClose": 22350,
         "analysisDate": "2026-06-29"
       },
@@ -24875,12 +25305,12 @@
       "currentPrice": 937000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:05 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:25 KST",
       "priceSource": {
         "currentPrice": 937000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:05 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:25 KST",
         "analysisClose": 937000,
         "analysisDate": "2026-06-29"
       },
@@ -25263,404 +25693,6 @@
       }
     },
     {
-      "ticker": "064350",
-      "company": "현대로템",
-      "sector": "방산",
-      "status": "candidate",
-      "rationale": "방산·철도, 수출 모멘텀",
-      "latestDate": "2026-06-29",
-      "close": 184900,
-      "currentPrice": 184900,
-      "currentChangePct": 0,
-      "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:48 KST",
-      "priceSource": {
-        "currentPrice": 184900,
-        "currentChangePct": 0,
-        "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:48 KST",
-        "analysisClose": 184900,
-        "analysisDate": "2026-06-29"
-      },
-      "marketCapEok": 201804,
-      "listedShares": 109142293,
-      "per": 24.83,
-      "pbr": null,
-      "roe": null,
-      "liquidity": {
-        "avgVolume20": 598428,
-        "volumeRatio": 0.75
-      },
-      "returns": {
-        "d1": 8.8928,
-        "d5": -9.14,
-        "d20": -7.7805,
-        "d60": 9.0855
-      },
-      "technicals": {
-        "ma5": 185360,
-        "ma20": 197480,
-        "ma60": 211225,
-        "ma120": 209638.33,
-        "ma200": 206986,
-        "ma600": 121461.33,
-        "rsi14": 51.62,
-        "high60": 282000,
-        "low60": 162000,
-        "drawdown60Pct": -34.4326,
-        "reboundFromLow60Pct": 14.1358,
-        "aboveMa20": false,
-        "aboveMa60": false,
-        "ma20SlopePct": -2.6305
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": 193.74,
-          "institutionNetValueEok": -268.81,
-          "foreignPct": 0.096,
-          "institutionPct": -0.133
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": 2694.77,
-          "institutionNetValueEok": -726.4,
-          "foreignPct": 1.335,
-          "institutionPct": -0.36
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": 8540.99,
-          "institutionNetValueEok": 186.59,
-          "foreignPct": 4.232,
-          "institutionPct": 0.092
-        }
-      },
-      "policy": {
-        "score": 21,
-        "memo": "방산·철도, 수출 모멘텀"
-      },
-      "value": {
-        "score": 13,
-        "memo": "시총 201804억원, PER 24.83, PBR -"
-      },
-      "technical": {
-        "score": 20,
-        "memo": "MA20 하회, RSI 51.6, 60일 고점 대비 -34.4%"
-      },
-      "flowScore": {
-        "score": 15,
-        "memo": "20일 외국인 1.34%, 기관 -0.36%"
-      },
-      "risk": {
-        "penalty": 5,
-        "notes": [
-          "MA20·MA60 동시 하회"
-        ],
-        "valuationBlock": false
-      },
-      "totalScore": 64,
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "외국인 순매수 VWAP",
-        "estimatedCost": 211859,
-        "holderName": "외국인 수급",
-        "recentAccumulation": true,
-        "disposalPressure": false,
-        "flow": {
-          "cost": 211859.48043703125,
-          "shares": 17616498,
-          "netShares": 6922423,
-          "last20NetShares": 1278580,
-          "firstDate": "2025-07-04",
-          "lastDate": "2026-06-29",
-          "days": 240
-        },
-        "score": 14,
-        "signal": "ACCUMULATION",
-        "gapPct": -12.7,
-        "overhang": false,
-        "memo": "B 외국인 순매수 VWAP, 추정 평단 211,859원, 괴리 -12.7%"
-      },
-      "holderCostScore": 14,
-      "structuralRegime": {
-        "mode": "PRICE_ONLY_STANDALONE",
-        "confidence": 2,
-        "score": 63,
-        "gate": "REVIEW",
-        "grade": "검토 체질",
-        "entryEligible": false,
-        "primary": {
-          "label": "v11 독립 가격 체질",
-          "date": "2024-01-09",
-          "latestDate": "2026-06-29",
-          "basisClose": 26550,
-          "latestClose": 184900,
-          "returnPct": 596.4,
-          "cagrPct": 120.9,
-          "highClose": 269000,
-          "lowClose": 25500,
-          "drawdownFromHighPct": -31.3,
-          "maxDrawdownPct": -36.9,
-          "aboveMA200": false,
-          "aboveMA600": true
-        }
-      },
-      "v11BaseDecision": "WAIT_TRIGGER",
-      "v11BaseScore": 78,
-      "entryPlan": {
-        "stance": "약세 분할",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 184900
-          },
-          {
-            "label": "MA20",
-            "kind": "add",
-            "price": 197480
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 166410
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 177504
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 199692
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 282000
-          },
-          {
-            "label": "추정 평단",
-            "kind": "holderCost",
-            "price": 211859
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "1차",
-            "weight": "25~30%",
-            "price": 184900,
-            "rule": "눌림 184,900원 부근에서 양봉 전환 확인"
-          },
-          {
-            "label": "2차",
-            "weight": "30%",
-            "price": 197480,
-            "rule": "종가 197,480원 회복"
-          },
-          {
-            "label": "3차",
-            "weight": "관찰",
-            "price": 284820,
-            "rule": "고점 돌파는 추격보다 재평가 후 실행"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "위험 축소",
-            "action": "30~50% 축소",
-            "trigger": "종가 177,504원 이탈 또는 5일선 회복 실패"
-          },
-          {
-            "label": "손절",
-            "action": "신규 검토 중단",
-            "trigger": "166,410원 이탈"
-          },
-          {
-            "label": "익절",
-            "action": "30% 이상 회수",
-            "trigger": "199,692원 도달 후 거래대금 둔화"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
-          },
-          {
-            "window": "장중",
-            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
-          },
-          {
-            "window": "종가",
-            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.72",
-          "의존도: INDEPENDENT_STRENGTH · 점수 9",
-          "리스크: MA20·MA60 동시 하회"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=064350",
-      "betaProfile": {
-        "ticker": "064350",
-        "company": "현대로템",
-        "sector": "방산",
-        "latestDate": "2026-06-29",
-        "alignedReturnDays": 727,
-        "evaluationDays": 60,
-        "betaWindowDays": 120,
-        "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
-        "tier": "A",
-        "rho": 1,
-        "avgTradingValueEok": 1106.5,
-        "betaMarket": 0.953,
-        "betaSemiExcess": -0.027,
-        "betaSemiRaw": 0.61,
-        "alpha": -0.00501,
-        "r2TwoFactor": 0.364,
-        "r2SemiRaw": 0.3,
-        "residualMomentum": -0.0924,
-        "residualIR": -0.254,
-        "semiCorr": 0.272,
-        "marketCorr": 0.339,
-        "upCapture": 0.306,
-        "lossCapture": 0.419,
-        "captureRatio": 0.729,
-        "captureBalance": -0.114,
-        "semiProxyFlag": false,
-        "adverseDependency": false,
-        "favorableBeta": false,
-        "asymmetricFailure": false,
-        "notes": [],
-        "residualStrengthPct": 0.881
-      },
-      "dependencyProfile": {
-        "marketDependencyScore": 9,
-        "dependencyScoreRaw": 9,
-        "components": {
-          "residualScore": 9,
-          "captureScore": -5,
-          "dependencyAdjustment": 5
-        },
-        "dependencyLabel": "INDEPENDENT_STRENGTH",
-        "sizeFactor": 0.72,
-        "thresholdRegime": "POLICY_EVENT_REBOUND"
-      },
-      "marketDependencyScore": 9,
-      "v11StandaloneScore": 87,
-      "v11Decision": "ACCUMULATE_ON_WEAKNESS",
-      "v11Reason": "정책 반등 레짐: 기본 조건은 대기지만 품질·수급·의존도 통과로 약세 분할 후보",
-      "executionPlan": {
-        "stance": "약세 분할",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 184900
-          },
-          {
-            "label": "MA20",
-            "kind": "add",
-            "price": 197480
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 166410
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 177504
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 199692
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 282000
-          },
-          {
-            "label": "추정 평단",
-            "kind": "holderCost",
-            "price": 211859
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "1차",
-            "weight": "25~30%",
-            "price": 184900,
-            "rule": "눌림 184,900원 부근에서 양봉 전환 확인"
-          },
-          {
-            "label": "2차",
-            "weight": "30%",
-            "price": 197480,
-            "rule": "종가 197,480원 회복"
-          },
-          {
-            "label": "3차",
-            "weight": "관찰",
-            "price": 284820,
-            "rule": "고점 돌파는 추격보다 재평가 후 실행"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "위험 축소",
-            "action": "30~50% 축소",
-            "trigger": "종가 177,504원 이탈 또는 5일선 회복 실패"
-          },
-          {
-            "label": "손절",
-            "action": "신규 검토 중단",
-            "trigger": "166,410원 이탈"
-          },
-          {
-            "label": "익절",
-            "action": "30% 이상 회수",
-            "trigger": "199,692원 도달 후 거래대금 둔화"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다"
-          },
-          {
-            "window": "장중",
-            "rule": "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다"
-          },
-          {
-            "window": "종가",
-            "rule": "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "단기 수급 급악화 아님",
-          "레짐: POLICY_EVENT_REBOUND · 사이즈 계수 0.72",
-          "의존도: INDEPENDENT_STRENGTH · 점수 9",
-          "리스크: MA20·MA60 동시 하회"
-        ]
-      }
-    },
-    {
       "ticker": "357780",
       "company": "솔브레인",
       "sector": "반도체 소재",
@@ -25671,12 +25703,12 @@
       "currentPrice": 342500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:05 KST",
       "priceSource": {
         "currentPrice": 342500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:45 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:05 KST",
         "analysisClose": 342500,
         "analysisDate": "2026-06-29"
       },
@@ -26057,12 +26089,12 @@
       "currentPrice": 373000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 373000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 373000,
         "analysisDate": "2026-06-29"
       },
@@ -26443,12 +26475,12 @@
       "currentPrice": 1448000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:01 KST",
       "priceSource": {
         "currentPrice": 1448000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:01 KST",
         "analysisClose": 1448000,
         "analysisDate": "2026-06-29"
       },
@@ -26827,12 +26859,12 @@
       "currentPrice": 162900,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:57 KST",
       "priceSource": {
         "currentPrice": 162900,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:57 KST",
         "analysisClose": 162900,
         "analysisDate": "2026-06-29"
       },
@@ -27201,12 +27233,12 @@
       "currentPrice": 25750,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:18 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:37 KST",
       "priceSource": {
         "currentPrice": 25750,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:18 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:37 KST",
         "analysisClose": 25750,
         "analysisDate": "2026-06-29"
       },
@@ -27587,12 +27619,12 @@
       "currentPrice": 185900,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:07 KST",
       "priceSource": {
         "currentPrice": 185900,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:07 KST",
         "analysisClose": 185900,
         "analysisDate": "2026-06-29"
       },
@@ -27973,12 +28005,12 @@
       "currentPrice": 6810,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:23 KST",
       "priceSource": {
         "currentPrice": 6810,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:23 KST",
         "analysisClose": 6810,
         "analysisDate": "2026-06-29"
       },
@@ -27988,7 +28020,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 267925,
+        "avgVolume20": 267940,
         "volumeRatio": 0.66
       },
       "returns": {
@@ -28362,12 +28394,12 @@
       "currentPrice": 74600,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:07 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:27 KST",
       "priceSource": {
         "currentPrice": 74600,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:07 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:27 KST",
         "analysisClose": 74600,
         "analysisDate": "2026-06-29"
       },
@@ -28748,12 +28780,12 @@
       "currentPrice": 42450,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:52 KST",
       "priceSource": {
         "currentPrice": 42450,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:52 KST",
         "analysisClose": 42450,
         "analysisDate": "2026-06-29"
       },
@@ -29134,12 +29166,12 @@
       "currentPrice": 53000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:08 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:28 KST",
       "priceSource": {
         "currentPrice": 53000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:08 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:28 KST",
         "analysisClose": 53000,
         "analysisDate": "2026-06-29"
       },
@@ -29520,12 +29552,12 @@
       "currentPrice": 349000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:41 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:01 KST",
       "priceSource": {
         "currentPrice": 349000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:41 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:01 KST",
         "analysisClose": 349000,
         "analysisDate": "2026-06-29"
       },
@@ -29904,12 +29936,12 @@
       "currentPrice": 159000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:03 KST",
       "priceSource": {
         "currentPrice": 159000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:03 KST",
         "analysisClose": 159000,
         "analysisDate": "2026-06-29"
       },
@@ -30290,12 +30322,12 @@
       "currentPrice": 34450,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:02 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:22 KST",
       "priceSource": {
         "currentPrice": 34450,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:02 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:22 KST",
         "analysisClose": 34450,
         "analysisDate": "2026-06-29"
       },
@@ -30305,7 +30337,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 4287370,
+        "avgVolume20": 4288321,
         "volumeRatio": 0.66
       },
       "returns": {
@@ -30527,7 +30559,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 1477,
+        "avgTradingValueEok": 1477.3,
         "betaMarket": 1.292,
         "betaSemiExcess": -0.092,
         "betaSemiRaw": 0.808,
@@ -30665,12 +30697,12 @@
       "currentPrice": 512000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:16 KST",
       "priceSource": {
         "currentPrice": 512000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:16 KST",
         "analysisClose": 512000,
         "analysisDate": "2026-06-29"
       },
@@ -31040,12 +31072,12 @@
       "currentPrice": 49500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:57 KST",
       "priceSource": {
         "currentPrice": 49500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:57 KST",
         "analysisClose": 49500,
         "analysisDate": "2026-06-29"
       },
@@ -31426,12 +31458,12 @@
       "currentPrice": 150400,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:09 KST",
       "priceSource": {
         "currentPrice": 150400,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:09 KST",
         "analysisClose": 150400,
         "analysisDate": "2026-06-29"
       },
@@ -31800,12 +31832,12 @@
       "currentPrice": 85300,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:46 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:05 KST",
       "priceSource": {
         "currentPrice": 85300,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:46 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:05 KST",
         "analysisClose": 85300,
         "analysisDate": "2026-06-29"
       },
@@ -32186,12 +32218,12 @@
       "currentPrice": 1020000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:09 KST",
       "priceSource": {
         "currentPrice": 1020000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:09 KST",
         "analysisClose": 1020000,
         "analysisDate": "2026-06-29"
       },
@@ -32201,8 +32233,8 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 257103,
-        "volumeRatio": 0.81
+        "avgVolume20": 259406,
+        "volumeRatio": 0.98
       },
       "returns": {
         "d1": 0.8902,
@@ -32422,7 +32454,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 2622.5,
+        "avgTradingValueEok": 2645.9,
         "betaMarket": 0.522,
         "betaSemiExcess": -0.003,
         "betaSemiRaw": 0.338,
@@ -32560,12 +32592,12 @@
       "currentPrice": 333000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:10 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:30 KST",
       "priceSource": {
         "currentPrice": 333000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:10 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:30 KST",
         "analysisClose": 333000,
         "analysisDate": "2026-06-29"
       },
@@ -32934,12 +32966,12 @@
       "currentPrice": 38650,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 38650,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 38650,
         "analysisDate": "2026-06-29"
       },
@@ -33321,12 +33353,12 @@
       "currentPrice": 187600,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:00 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:20 KST",
       "priceSource": {
         "currentPrice": 187600,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:00 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:20 KST",
         "analysisClose": 187600,
         "analysisDate": "2026-06-29"
       },
@@ -33696,12 +33728,12 @@
       "currentPrice": 73800,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 73800,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 73800,
         "analysisDate": "2026-06-29"
       },
@@ -34082,12 +34114,12 @@
       "currentPrice": 9360,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:01 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:20 KST",
       "priceSource": {
         "currentPrice": 9360,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:01 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:20 KST",
         "analysisClose": 9360,
         "analysisDate": "2026-06-29"
       },
@@ -34097,7 +34129,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 1021969,
+        "avgVolume20": 1022180,
         "volumeRatio": 0.91
       },
       "returns": {
@@ -34468,12 +34500,12 @@
       "currentPrice": 30650,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:59 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:18 KST",
       "priceSource": {
         "currentPrice": 30650,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:59 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:18 KST",
         "analysisClose": 30650,
         "analysisDate": "2026-06-29"
       },
@@ -34855,12 +34887,12 @@
       "currentPrice": 502000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:56 KST",
       "priceSource": {
         "currentPrice": 502000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:56 KST",
         "analysisClose": 502000,
         "analysisDate": "2026-06-29"
       },
@@ -35229,12 +35261,12 @@
       "currentPrice": 12200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:33 KST",
       "priceSource": {
         "currentPrice": 12200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:33 KST",
         "analysisClose": 12200,
         "analysisDate": "2026-06-29"
       },
@@ -35617,12 +35649,12 @@
       "currentPrice": 32900,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:16 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:36 KST",
       "priceSource": {
         "currentPrice": 32900,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:16 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:36 KST",
         "analysisClose": 32900,
         "analysisDate": "2026-06-29"
       },
@@ -36003,12 +36035,12 @@
       "currentPrice": 24700,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:52 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:12 KST",
       "priceSource": {
         "currentPrice": 24700,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:52 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:12 KST",
         "analysisClose": 24700,
         "analysisDate": "2026-06-29"
       },
@@ -36381,12 +36413,12 @@
       "currentPrice": 3274000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:05 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:24 KST",
       "priceSource": {
         "currentPrice": 3274000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:05 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:24 KST",
         "analysisClose": 3274000,
         "analysisDate": "2026-06-29"
       },
@@ -36396,7 +36428,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 57240,
+        "avgVolume20": 57244,
         "volumeRatio": 0.7
       },
       "returns": {
@@ -36618,7 +36650,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 1874,
+        "avgTradingValueEok": 1874.2,
         "betaMarket": 1.097,
         "betaSemiExcess": 0.069,
         "betaSemiRaw": 0.738,
@@ -36756,12 +36788,12 @@
       "currentPrice": 253000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:34 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:54 KST",
       "priceSource": {
         "currentPrice": 253000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:34 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:54 KST",
         "analysisClose": 253000,
         "analysisDate": "2026-06-29"
       },
@@ -37131,12 +37163,12 @@
       "currentPrice": 91600,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:34 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:53 KST",
       "priceSource": {
         "currentPrice": 91600,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:34 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:53 KST",
         "analysisClose": 91600,
         "analysisDate": "2026-06-29"
       },
@@ -37506,12 +37538,12 @@
       "currentPrice": 7450,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:02 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:22 KST",
       "priceSource": {
         "currentPrice": 7450,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:02 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:22 KST",
         "analysisClose": 7450,
         "analysisDate": "2026-06-29"
       },
@@ -37521,8 +37553,8 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 1408569,
-        "volumeRatio": 0.99
+        "avgVolume20": 1409131,
+        "volumeRatio": 1
       },
       "returns": {
         "d1": 12.8788,
@@ -37743,7 +37775,7 @@
         "modelMode": "OUT_OF_SAMPLE_RESIDUAL",
         "tier": "A",
         "rho": 1,
-        "avgTradingValueEok": 104.9,
+        "avgTradingValueEok": 105,
         "betaMarket": 1.484,
         "betaSemiExcess": -0.51,
         "betaSemiRaw": 0.787,
@@ -37881,12 +37913,12 @@
       "currentPrice": 8890,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:01 KST",
       "priceSource": {
         "currentPrice": 8890,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:01 KST",
         "analysisClose": 8890,
         "analysisDate": "2026-06-29"
       },
@@ -37896,7 +37928,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 302373,
+        "avgVolume20": 302434,
         "volumeRatio": 0.59
       },
       "returns": {
@@ -38268,12 +38300,12 @@
       "currentPrice": 21950,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:06 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:26 KST",
       "priceSource": {
         "currentPrice": 21950,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:06 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:26 KST",
         "analysisClose": 21950,
         "analysisDate": "2026-06-29"
       },
@@ -38656,12 +38688,12 @@
       "currentPrice": 60500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:07 KST",
       "priceSource": {
         "currentPrice": 60500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:47 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:07 KST",
         "analysisClose": 60500,
         "analysisDate": "2026-06-29"
       },
@@ -39042,12 +39074,12 @@
       "currentPrice": 7740,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:03 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:22 KST",
       "priceSource": {
         "currentPrice": 7740,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:03 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:22 KST",
         "analysisClose": 7740,
         "analysisDate": "2026-06-29"
       },
@@ -39057,7 +39089,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 230768,
+        "avgVolume20": 230807,
         "volumeRatio": 0.81
       },
       "returns": {
@@ -39431,12 +39463,12 @@
       "currentPrice": 54400,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:11 KST",
       "priceSource": {
         "currentPrice": 54400,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:11 KST",
         "analysisClose": 54400,
         "analysisDate": "2026-06-29"
       },
@@ -39807,12 +39839,12 @@
       "currentPrice": 73000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:23 KST",
       "priceSource": {
         "currentPrice": 73000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:23 KST",
         "analysisClose": 73000,
         "analysisDate": "2026-06-29"
       },
@@ -40181,12 +40213,12 @@
       "currentPrice": 106600,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:59 KST",
       "priceSource": {
         "currentPrice": 106600,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:40 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:59 KST",
         "analysisClose": 106600,
         "analysisDate": "2026-06-29"
       },
@@ -40567,12 +40599,12 @@
       "currentPrice": 7300,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:11 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:30 KST",
       "priceSource": {
         "currentPrice": 7300,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:11 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:30 KST",
         "analysisClose": 7300,
         "analysisDate": "2026-06-29"
       },
@@ -40944,12 +40976,12 @@
       "currentPrice": 53200,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:17 KST",
       "priceSource": {
         "currentPrice": 53200,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:17 KST",
         "analysisClose": 53200,
         "analysisDate": "2026-06-29"
       },
@@ -41319,12 +41351,12 @@
       "currentPrice": 10810,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:58 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:18 KST",
       "priceSource": {
         "currentPrice": 10810,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:58 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:18 KST",
         "analysisClose": 10810,
         "analysisDate": "2026-06-29"
       },
@@ -41334,7 +41366,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 369592,
+        "avgVolume20": 369629,
         "volumeRatio": 0.7
       },
       "returns": {
@@ -41694,12 +41726,12 @@
       "currentPrice": 23100,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:08 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:28 KST",
       "priceSource": {
         "currentPrice": 23100,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:08 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:28 KST",
         "analysisClose": 23100,
         "analysisDate": "2026-06-29"
       },
@@ -42069,12 +42101,12 @@
       "currentPrice": 516000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:34 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:54 KST",
       "priceSource": {
         "currentPrice": 516000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:34 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:54 KST",
         "analysisClose": 516000,
         "analysisDate": "2026-06-29"
       },
@@ -42443,12 +42475,12 @@
       "currentPrice": 2060,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:07 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:27 KST",
       "priceSource": {
         "currentPrice": 2060,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:07 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:27 KST",
         "analysisClose": 2060,
         "analysisDate": "2026-06-29"
       },
@@ -42458,7 +42490,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 174648,
+        "avgVolume20": 174649,
         "volumeRatio": 0.79
       },
       "returns": {
@@ -42820,12 +42852,12 @@
       "currentPrice": 2100,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:03 KST",
       "priceSource": {
         "currentPrice": 2100,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:44 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:03 KST",
         "analysisClose": 2100,
         "analysisDate": "2026-06-29"
       },
@@ -43197,12 +43229,12 @@
       "currentPrice": 7750,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:01 KST",
       "priceSource": {
         "currentPrice": 7750,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:01 KST",
         "analysisClose": 7750,
         "analysisDate": "2026-06-29"
       },
@@ -43573,12 +43605,12 @@
       "currentPrice": 36700,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:52 KST",
       "priceSource": {
         "currentPrice": 36700,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:52 KST",
         "analysisClose": 36700,
         "analysisDate": "2026-06-29"
       },
@@ -43948,12 +43980,12 @@
       "currentPrice": 2350,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:52 KST",
       "priceSource": {
         "currentPrice": 2350,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:52 KST",
         "analysisClose": 2350,
         "analysisDate": "2026-06-29"
       },
@@ -43963,7 +43995,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 3260956,
+        "avgVolume20": 3261280,
         "volumeRatio": 0.42
       },
       "returns": {
@@ -44323,12 +44355,12 @@
       "currentPrice": 41000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:00 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:20 KST",
       "priceSource": {
         "currentPrice": 41000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:00 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:20 KST",
         "analysisClose": 41000,
         "analysisDate": "2026-06-29"
       },
@@ -44698,12 +44730,12 @@
       "currentPrice": 8250,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:24 KST",
       "priceSource": {
         "currentPrice": 8250,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:04 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:24 KST",
         "analysisClose": 8250,
         "analysisDate": "2026-06-29"
       },
@@ -44713,7 +44745,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 307833,
+        "avgVolume20": 307899,
         "volumeRatio": 0.64
       },
       "returns": {
@@ -45073,12 +45105,12 @@
       "currentPrice": 17840,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:15 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:34 KST",
       "priceSource": {
         "currentPrice": 17840,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:15 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:34 KST",
         "analysisClose": 17840,
         "analysisDate": "2026-06-29"
       },
@@ -45448,12 +45480,12 @@
       "currentPrice": 915000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:57 KST",
       "priceSource": {
         "currentPrice": 915000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:57 KST",
         "analysisClose": 915000,
         "analysisDate": "2026-06-29"
       },
@@ -45822,12 +45854,12 @@
       "currentPrice": 39300,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:00 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:20 KST",
       "priceSource": {
         "currentPrice": 39300,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:00 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:20 KST",
         "analysisClose": 39300,
         "analysisDate": "2026-06-29"
       },
@@ -46197,12 +46229,12 @@
       "currentPrice": 77500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:09 KST",
       "priceSource": {
         "currentPrice": 77500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:09 KST",
         "analysisClose": 77500,
         "analysisDate": "2026-06-29"
       },
@@ -46572,12 +46604,12 @@
       "currentPrice": 195300,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:08 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:27 KST",
       "priceSource": {
         "currentPrice": 195300,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:08 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:27 KST",
         "analysisClose": 195300,
         "analysisDate": "2026-06-29"
       },
@@ -46947,12 +46979,12 @@
       "currentPrice": 14170,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:16 KST",
       "priceSource": {
         "currentPrice": 14170,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:57 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:16 KST",
         "analysisClose": 14170,
         "analysisDate": "2026-06-29"
       },
@@ -46962,7 +46994,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 259739,
+        "avgVolume20": 259755,
         "volumeRatio": 0.69
       },
       "returns": {
@@ -47322,12 +47354,12 @@
       "currentPrice": 38350,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:01 KST",
       "priceSource": {
         "currentPrice": 38350,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:42 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:01 KST",
         "analysisClose": 38350,
         "analysisDate": "2026-06-29"
       },
@@ -47698,12 +47730,12 @@
       "currentPrice": 16270,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:11 KST",
       "priceSource": {
         "currentPrice": 16270,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:11 KST",
         "analysisClose": 16270,
         "analysisDate": "2026-06-29"
       },
@@ -48074,12 +48106,12 @@
       "currentPrice": 10670,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:57 KST",
       "priceSource": {
         "currentPrice": 10670,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:57 KST",
         "analysisClose": 10670,
         "analysisDate": "2026-06-29"
       },
@@ -48089,7 +48121,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 183919,
+        "avgVolume20": 183927,
         "volumeRatio": 0.42
       },
       "returns": {
@@ -48451,12 +48483,12 @@
       "currentPrice": 1125000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:10 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:29 KST",
       "priceSource": {
         "currentPrice": 1125000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:10 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:29 KST",
         "analysisClose": 1125000,
         "analysisDate": "2026-06-29"
       },
@@ -48825,12 +48857,12 @@
       "currentPrice": 11330,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:53 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:13 KST",
       "priceSource": {
         "currentPrice": 11330,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:53 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:13 KST",
         "analysisClose": 11330,
         "analysisDate": "2026-06-29"
       },
@@ -49201,12 +49233,12 @@
       "currentPrice": 154500,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:59 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:18 KST",
       "priceSource": {
         "currentPrice": 154500,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:59 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:18 KST",
         "analysisClose": 154500,
         "analysisDate": "2026-06-29"
       },
@@ -49576,12 +49608,12 @@
       "currentPrice": 258000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:46 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:05 KST",
       "priceSource": {
         "currentPrice": 258000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:46 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:05 KST",
         "analysisClose": 258000,
         "analysisDate": "2026-06-29"
       },
@@ -49951,12 +49983,12 @@
       "currentPrice": 12360,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:15 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:35 KST",
       "priceSource": {
         "currentPrice": 12360,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:15 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:35 KST",
         "analysisClose": 12360,
         "analysisDate": "2026-06-29"
       },
@@ -50329,12 +50361,12 @@
       "currentPrice": 11210,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:48 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:07 KST",
       "priceSource": {
         "currentPrice": 11210,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:48 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:07 KST",
         "analysisClose": 11210,
         "analysisDate": "2026-06-29"
       },
@@ -50344,7 +50376,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 63484,
+        "avgVolume20": 63485,
         "volumeRatio": 0.6
       },
       "returns": {
@@ -50707,12 +50739,12 @@
       "currentPrice": 204000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:12 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:32 KST",
       "priceSource": {
         "currentPrice": 204000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:12 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:32 KST",
         "analysisClose": 204000,
         "analysisDate": "2026-06-29"
       },
@@ -51083,12 +51115,12 @@
       "currentPrice": 13380,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:35 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:54 KST",
       "priceSource": {
         "currentPrice": 13380,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:35 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:54 KST",
         "analysisClose": 13380,
         "analysisDate": "2026-06-29"
       },
@@ -51459,12 +51491,12 @@
       "currentPrice": 13550,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:14 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:34 KST",
       "priceSource": {
         "currentPrice": 13550,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:14 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:34 KST",
         "analysisClose": 13550,
         "analysisDate": "2026-06-29"
       },
@@ -51837,12 +51869,12 @@
       "currentPrice": 98400,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:58 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:18 KST",
       "priceSource": {
         "currentPrice": 98400,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:58 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:18 KST",
         "analysisClose": 98400,
         "analysisDate": "2026-06-29"
       },
@@ -52213,12 +52245,12 @@
       "currentPrice": 89900,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:14 KST",
       "priceSource": {
         "currentPrice": 89900,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:14 KST",
         "analysisClose": 89900,
         "analysisDate": "2026-06-29"
       },
@@ -52588,12 +52620,12 @@
       "currentPrice": 59300,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:16 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:36 KST",
       "priceSource": {
         "currentPrice": 59300,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:16 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:36 KST",
         "analysisClose": 59300,
         "analysisDate": "2026-06-29"
       },
@@ -52963,12 +52995,12 @@
       "currentPrice": 12020,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:32 KST",
       "priceSource": {
         "currentPrice": 12020,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:13 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:32 KST",
         "analysisClose": 12020,
         "analysisDate": "2026-06-29"
       },
@@ -53341,12 +53373,12 @@
       "currentPrice": 37950,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:52 KST",
       "priceSource": {
         "currentPrice": 37950,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:33 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:52 KST",
         "analysisClose": 37950,
         "analysisDate": "2026-06-29"
       },
@@ -53356,7 +53388,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 242789,
+        "avgVolume20": 242816,
         "volumeRatio": 0.51
       },
       "returns": {
@@ -53717,12 +53749,12 @@
       "currentPrice": 7850,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:14 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:34 KST",
       "priceSource": {
         "currentPrice": 7850,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:14 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:34 KST",
         "analysisClose": 7850,
         "analysisDate": "2026-06-29"
       },
@@ -54093,12 +54125,12 @@
       "currentPrice": 83400,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:11 KST",
       "priceSource": {
         "currentPrice": 83400,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:11 KST",
         "analysisClose": 83400,
         "analysisDate": "2026-06-29"
       },
@@ -54469,12 +54501,12 @@
       "currentPrice": 44150,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:34 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:54 KST",
       "priceSource": {
         "currentPrice": 44150,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:34 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:54 KST",
         "analysisClose": 44150,
         "analysisDate": "2026-06-29"
       },
@@ -54484,7 +54516,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 146831,
+        "avgVolume20": 146840,
         "volumeRatio": 0.55
       },
       "returns": {
@@ -54845,12 +54877,12 @@
       "currentPrice": 116900,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:59 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:19 KST",
       "priceSource": {
         "currentPrice": 116900,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:59 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:19 KST",
         "analysisClose": 116900,
         "analysisDate": "2026-06-29"
       },
@@ -55221,12 +55253,12 @@
       "currentPrice": 15050,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:02 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:21 KST",
       "priceSource": {
         "currentPrice": 15050,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:02 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:21 KST",
         "analysisClose": 15050,
         "analysisDate": "2026-06-29"
       },
@@ -55599,12 +55631,12 @@
       "currentPrice": 14070,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:08 KST",
       "priceSource": {
         "currentPrice": 14070,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:49 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:08 KST",
         "analysisClose": 14070,
         "analysisDate": "2026-06-29"
       },
@@ -55614,7 +55646,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 97483,
+        "avgVolume20": 97486,
         "volumeRatio": 1.15
       },
       "returns": {
@@ -55977,12 +56009,12 @@
       "currentPrice": 75900,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:15 KST",
       "priceSource": {
         "currentPrice": 75900,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:15 KST",
         "analysisClose": 75900,
         "analysisDate": "2026-06-29"
       },
@@ -56352,12 +56384,12 @@
       "currentPrice": 28800,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:12 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:32 KST",
       "priceSource": {
         "currentPrice": 28800,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:12 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:32 KST",
         "analysisClose": 28800,
         "analysisDate": "2026-06-29"
       },
@@ -56727,12 +56759,12 @@
       "currentPrice": 42800,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:53 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:13 KST",
       "priceSource": {
         "currentPrice": 42800,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:53 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:13 KST",
         "analysisClose": 42800,
         "analysisDate": "2026-06-29"
       },
@@ -57102,12 +57134,12 @@
       "currentPrice": 7370,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:56 KST",
       "priceSource": {
         "currentPrice": 7370,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:56 KST",
         "analysisClose": 7370,
         "analysisDate": "2026-06-29"
       },
@@ -57117,7 +57149,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 48197,
+        "avgVolume20": 48205,
         "volumeRatio": 0.68
       },
       "returns": {
@@ -57481,12 +57513,12 @@
       "currentPrice": 531000,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:57 KST",
       "priceSource": {
         "currentPrice": 531000,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:38 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:57 KST",
         "analysisClose": 531000,
         "analysisDate": "2026-06-29"
       },
@@ -57857,12 +57889,12 @@
       "currentPrice": 10300,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:10 KST",
       "priceSource": {
         "currentPrice": 10300,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:10 KST",
         "analysisClose": 10300,
         "analysisDate": "2026-06-29"
       },
@@ -58235,12 +58267,12 @@
       "currentPrice": 4300,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:55 KST",
       "priceSource": {
         "currentPrice": 4300,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:55 KST",
         "analysisClose": 4300,
         "analysisDate": "2026-06-29"
       },
@@ -58250,7 +58282,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 109483,
+        "avgVolume20": 109490,
         "volumeRatio": 0.84
       },
       "returns": {
@@ -58613,12 +58645,12 @@
       "currentPrice": 9910,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:15 KST",
       "priceSource": {
         "currentPrice": 9910,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:15 KST",
         "analysisClose": 9910,
         "analysisDate": "2026-06-29"
       },
@@ -58628,7 +58660,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 231301,
+        "avgVolume20": 231308,
         "volumeRatio": 0.55
       },
       "returns": {
@@ -58991,12 +59023,12 @@
       "currentPrice": 3770,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:14 KST",
       "priceSource": {
         "currentPrice": 3770,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:55 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:14 KST",
         "analysisClose": 3770,
         "analysisDate": "2026-06-29"
       },
@@ -59006,8 +59038,8 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 182835,
-        "volumeRatio": 0.59
+        "avgVolume20": 182902,
+        "volumeRatio": 0.6
       },
       "returns": {
         "d1": 8.3333,
@@ -59370,12 +59402,12 @@
       "currentPrice": 9090,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:56 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:16 KST",
       "priceSource": {
         "currentPrice": 9090,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:56 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:16 KST",
         "analysisClose": 9090,
         "analysisDate": "2026-06-29"
       },
@@ -59385,7 +59417,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 197395,
+        "avgVolume20": 197419,
         "volumeRatio": 0.65
       },
       "returns": {
@@ -59750,12 +59782,12 @@
       "currentPrice": 291,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:55 KST",
       "priceSource": {
         "currentPrice": 291,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:55 KST",
         "analysisClose": 291,
         "analysisDate": "2026-06-29"
       },
@@ -59765,7 +59797,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 1873467,
+        "avgVolume20": 1873763,
         "volumeRatio": 0.34
       },
       "returns": {
@@ -60130,12 +60162,12 @@
       "currentPrice": 4705,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:06 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:25 KST",
       "priceSource": {
         "currentPrice": 4705,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:06 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:25 KST",
         "analysisClose": 4705,
         "analysisDate": "2026-06-29"
       },
@@ -60145,7 +60177,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 50766,
+        "avgVolume20": 50768,
         "volumeRatio": 1.33
       },
       "returns": {
@@ -60504,12 +60536,12 @@
       "currentPrice": 2885,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:10 KST",
       "priceSource": {
         "currentPrice": 2885,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:51 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:10 KST",
         "analysisClose": 2885,
         "analysisDate": "2026-06-29"
       },
@@ -60519,8 +60551,8 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 85775,
-        "volumeRatio": 0.65
+        "avgVolume20": 85819,
+        "volumeRatio": 0.66
       },
       "returns": {
         "d1": 1.9435,
@@ -60878,12 +60910,12 @@
       "currentPrice": 3515,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:16 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:36 KST",
       "priceSource": {
         "currentPrice": 3515,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:16 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:36 KST",
         "analysisClose": 3515,
         "analysisDate": "2026-06-29"
       },
@@ -61252,12 +61284,12 @@
       "currentPrice": 15620,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:53 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:12 KST",
       "priceSource": {
         "currentPrice": 15620,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:53 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:12 KST",
         "analysisClose": 15620,
         "analysisDate": "2026-06-29"
       },
@@ -61267,8 +61299,8 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 17903,
-        "volumeRatio": 0.95
+        "avgVolume20": 17916,
+        "volumeRatio": 0.96
       },
       "returns": {
         "d1": 12.7798,
@@ -61626,12 +61658,12 @@
       "currentPrice": 1255,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:09 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:29 KST",
       "priceSource": {
         "currentPrice": 1255,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:09 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:29 KST",
         "analysisClose": 1255,
         "analysisDate": "2026-06-29"
       },
@@ -61641,7 +61673,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 121071,
+        "avgVolume20": 121074,
         "volumeRatio": 0.91
       },
       "returns": {
@@ -62001,12 +62033,12 @@
       "currentPrice": 6120,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+      "quoteFetchedAt": "2026-06-30 08:49:56 KST",
       "priceSource": {
         "currentPrice": 6120,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:36 KST",
+        "quoteFetchedAt": "2026-06-30 08:49:56 KST",
         "analysisClose": 6120,
         "analysisDate": "2026-06-29"
       },
@@ -62377,12 +62409,12 @@
       "currentPrice": 1193,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:07 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:26 KST",
       "priceSource": {
         "currentPrice": 1193,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:07 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:26 KST",
         "analysisClose": 1193,
         "analysisDate": "2026-06-29"
       },
@@ -62752,12 +62784,12 @@
       "currentPrice": 1297,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:10 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:29 KST",
       "priceSource": {
         "currentPrice": 1297,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:10 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:29 KST",
         "analysisClose": 1297,
         "analysisDate": "2026-06-29"
       },
@@ -62767,7 +62799,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 83949,
+        "avgVolume20": 83950,
         "volumeRatio": 1.14
       },
       "returns": {
@@ -63127,12 +63159,12 @@
       "currentPrice": 5460,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:22:53 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:12 KST",
       "priceSource": {
         "currentPrice": 5460,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:22:53 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:12 KST",
         "analysisClose": 5460,
         "analysisDate": "2026-06-29"
       },
@@ -63504,12 +63536,12 @@
       "currentPrice": 7060,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:17 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:37 KST",
       "priceSource": {
         "currentPrice": 7060,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:17 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:37 KST",
         "analysisClose": 7060,
         "analysisDate": "2026-06-29"
       },
@@ -63878,12 +63910,12 @@
       "currentPrice": 226,
       "currentChangePct": 0,
       "currentDiff": 0,
-      "quoteFetchedAt": "2026-06-30 08:23:09 KST",
+      "quoteFetchedAt": "2026-06-30 08:50:29 KST",
       "priceSource": {
         "currentPrice": 226,
         "currentChangePct": 0,
         "currentDiff": 0,
-        "quoteFetchedAt": "2026-06-30 08:23:09 KST",
+        "quoteFetchedAt": "2026-06-30 08:50:29 KST",
         "analysisClose": 226,
         "analysisDate": "2026-06-29"
       },
@@ -63893,7 +63925,7 @@
       "pbr": null,
       "roe": null,
       "liquidity": {
-        "avgVolume20": 1064034,
+        "avgVolume20": 1064041,
         "volumeRatio": 0.47
       },
       "returns": {
