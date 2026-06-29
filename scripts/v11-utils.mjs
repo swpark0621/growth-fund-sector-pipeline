@@ -296,8 +296,10 @@ export function scoreMarketDependency(profile) {
 }
 
 export function decideV11({ row, profile, score, regime }) {
-  const v10Entry = row.decision === "ENTRY_OK";
-  if (!v10Entry) return { v11Decision: "NOT_V10_ENTRY", reason: "v10 decision is not ENTRY_OK" };
+  const baseDecision = row.v11BaseDecision ?? row.baseDecision ?? row.decision;
+  if (baseDecision !== "ENTRY_OK") {
+    return { v11Decision: baseDecision ?? "WATCH", reason: `base decision is ${baseDecision ?? "UNKNOWN"}` };
+  }
   if (!profile || score.marketDependencyScore == null) {
     return { v11Decision: "NO_DATA", reason: "market dependency data is insufficient" };
   }

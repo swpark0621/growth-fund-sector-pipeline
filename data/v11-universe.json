@@ -1,0 +1,879 @@
+{
+  "meta": {
+    "title": "National Growth Fund v11 standalone universe",
+    "version": "v11-universe-standalone",
+    "seededAt": "2026-06-29T22:50:56.734Z",
+    "sourceNote": "Seeded once from the current known candidate universe. The standalone v11 pipeline reads this file and does not read prior version dashboard outputs.",
+    "selectionContract": "Each item is a candidate definition: ticker, company, sector, status, rationale. Scores and decisions must be recomputed by v11 from fresh market data."
+  },
+  "items": [
+    {
+      "ticker": "119850",
+      "company": "지엔씨에너지",
+      "sector": "데이터센터·전력",
+      "status": "candidate",
+      "rationale": "비상발전·데이터센터 전력"
+    },
+    {
+      "ticker": "078150",
+      "company": "HB테크놀러지",
+      "sector": "디스플레이 장비",
+      "status": "watch",
+      "rationale": "검사장비"
+    },
+    {
+      "ticker": "108320",
+      "company": "LX세미콘",
+      "sector": "디스플레이·반도체",
+      "status": "candidate",
+      "rationale": "디스플레이 IC, 재무 안정성"
+    },
+    {
+      "ticker": "161580",
+      "company": "필옵틱스",
+      "sector": "디스플레이·이차전지",
+      "status": "candidate",
+      "rationale": "레이저 장비"
+    },
+    {
+      "ticker": "348340",
+      "company": "뉴로메카",
+      "sector": "로봇",
+      "status": "watch",
+      "rationale": "협동로봇, 변동성 높음"
+    },
+    {
+      "ticker": "454910",
+      "company": "두산로보틱스",
+      "sector": "로봇",
+      "status": "candidate",
+      "rationale": "협동로봇 대형주"
+    },
+    {
+      "ticker": "277810",
+      "company": "레인보우로보틱스",
+      "sector": "로봇",
+      "status": "candidate",
+      "rationale": "휴머노이드·협동로봇 대형 테마"
+    },
+    {
+      "ticker": "108490",
+      "company": "로보티즈",
+      "sector": "로봇",
+      "status": "candidate",
+      "rationale": "자율주행 로봇·액추에이터"
+    },
+    {
+      "ticker": "389500",
+      "company": "에스비비테크",
+      "sector": "로봇",
+      "status": "candidate",
+      "rationale": "감속기 국산화"
+    },
+    {
+      "ticker": "117730",
+      "company": "티로보틱스",
+      "sector": "로봇",
+      "status": "watch",
+      "rationale": "물류·진공로봇, 변동성"
+    },
+    {
+      "ticker": "087260",
+      "company": "모바일어플라이언스",
+      "sector": "미래차",
+      "status": "watch",
+      "rationale": "ADAS 소형주"
+    },
+    {
+      "ticker": "424960",
+      "company": "스마트레이더시스템",
+      "sector": "미래차",
+      "status": "watch",
+      "rationale": "4D 레이더 소형주"
+    },
+    {
+      "ticker": "084730",
+      "company": "팅크웨어",
+      "sector": "미래차",
+      "status": "watch",
+      "rationale": "블랙박스·지도"
+    },
+    {
+      "ticker": "370090",
+      "company": "퓨런티어",
+      "sector": "미래차",
+      "status": "watch",
+      "rationale": "자율주행 카메라 검사"
+    },
+    {
+      "ticker": "012330",
+      "company": "현대모비스",
+      "sector": "미래차",
+      "status": "candidate",
+      "rationale": "전장·모듈 대형주"
+    },
+    {
+      "ticker": "204320",
+      "company": "HL만도",
+      "sector": "미래차",
+      "status": "candidate",
+      "rationale": "ADAS·섀시"
+    },
+    {
+      "ticker": "054450",
+      "company": "텔레칩스",
+      "sector": "미래차·반도체",
+      "status": "candidate",
+      "rationale": "차량용 SoC·SDV"
+    },
+    {
+      "ticker": "011070",
+      "company": "LG이노텍",
+      "sector": "미래차·부품",
+      "status": "candidate",
+      "rationale": "전장·광학"
+    },
+    {
+      "ticker": "307950",
+      "company": "현대오토에버",
+      "sector": "미래차·SW",
+      "status": "candidate",
+      "rationale": "SDV·차량 SW"
+    },
+    {
+      "ticker": "141080",
+      "company": "리가켐바이오",
+      "sector": "바이오",
+      "status": "candidate",
+      "rationale": "ADC 플랫폼"
+    },
+    {
+      "ticker": "068270",
+      "company": "셀트리온",
+      "sector": "바이오",
+      "status": "candidate",
+      "rationale": "바이오시밀러 대형주"
+    },
+    {
+      "ticker": "196170",
+      "company": "알테오젠",
+      "sector": "바이오",
+      "status": "candidate",
+      "rationale": "플랫폼 기술수출"
+    },
+    {
+      "ticker": "298380",
+      "company": "에이비엘바이오",
+      "sector": "바이오",
+      "status": "candidate",
+      "rationale": "항체 플랫폼"
+    },
+    {
+      "ticker": "039200",
+      "company": "오스코텍",
+      "sector": "바이오",
+      "status": "watch",
+      "rationale": "신약 이벤트형"
+    },
+    {
+      "ticker": "000100",
+      "company": "유한양행",
+      "sector": "바이오",
+      "status": "candidate",
+      "rationale": "신약·대형 제약"
+    },
+    {
+      "ticker": "214450",
+      "company": "파마리서치",
+      "sector": "바이오",
+      "status": "candidate",
+      "rationale": "현금창출형 바이오·의료"
+    },
+    {
+      "ticker": "206650",
+      "company": "유바이오로직스",
+      "sector": "바이오·백신",
+      "status": "watch",
+      "rationale": "백신 후보"
+    },
+    {
+      "ticker": "302440",
+      "company": "SK바이오사이언스",
+      "sector": "바이오·백신",
+      "status": "already-selected",
+      "rationale": "폐렴구균 3상 대출 승인"
+    },
+    {
+      "ticker": "053030",
+      "company": "바이넥스",
+      "sector": "바이오·CDMO",
+      "status": "watch",
+      "rationale": "바이오의약품 CDMO 중소형"
+    },
+    {
+      "ticker": "207940",
+      "company": "삼성바이오로직스",
+      "sector": "바이오·CDMO",
+      "status": "candidate",
+      "rationale": "대형 CDMO"
+    },
+    {
+      "ticker": "237690",
+      "company": "에스티팜",
+      "sector": "바이오·CDMO",
+      "status": "candidate",
+      "rationale": "올리고 CDMO"
+    },
+    {
+      "ticker": "334970",
+      "company": "프레스티지바이오로직스",
+      "sector": "바이오·CDMO",
+      "status": "watch",
+      "rationale": "CDMO, 재무 리스크 확인"
+    },
+    {
+      "ticker": "240810",
+      "company": "원익IPS",
+      "sector": "반도체",
+      "status": "candidate",
+      "rationale": "전공정 장비, 대형 고객 CAPEX 연동"
+    },
+    {
+      "ticker": "319660",
+      "company": "피에스케이",
+      "sector": "반도체",
+      "status": "candidate",
+      "rationale": "Dry strip 장비"
+    },
+    {
+      "ticker": "005290",
+      "company": "동진쎄미켐",
+      "sector": "반도체 소재",
+      "status": "candidate",
+      "rationale": "반도체 소재 국산화"
+    },
+    {
+      "ticker": "357780",
+      "company": "솔브레인",
+      "sector": "반도체 소재",
+      "status": "candidate",
+      "rationale": "고순도 공정소재, 재무 안정성"
+    },
+    {
+      "ticker": "330860",
+      "company": "네패스아크",
+      "sector": "반도체 테스트",
+      "status": "watch",
+      "rationale": "테스트 공급망이나 변동성 큼"
+    },
+    {
+      "ticker": "036930",
+      "company": "주성엔지니어링",
+      "sector": "반도체·디스플레이",
+      "status": "candidate",
+      "rationale": "증착 장비, CAPEX 회복 수혜"
+    },
+    {
+      "ticker": "058470",
+      "company": "리노공업",
+      "sector": "반도체·AI",
+      "status": "candidate",
+      "rationale": "테스트 소켓, 재무 안정성 우수"
+    },
+    {
+      "ticker": "042700",
+      "company": "한미반도체",
+      "sector": "반도체·AI",
+      "status": "candidate",
+      "rationale": "HBM 장비 대장주, 정책보다 글로벌 CAPEX 민감"
+    },
+    {
+      "ticker": "403870",
+      "company": "HPSP",
+      "sector": "반도체·AI",
+      "status": "candidate",
+      "rationale": "고압수소어닐링 장비, 고마진 장비"
+    },
+    {
+      "ticker": "095340",
+      "company": "ISC",
+      "sector": "반도체·AI",
+      "status": "candidate",
+      "rationale": "테스트 소켓, AI 반도체 후공정"
+    },
+    {
+      "ticker": "214430",
+      "company": "아이쓰리시스템",
+      "sector": "방산",
+      "status": "candidate",
+      "rationale": "적외선 영상센서"
+    },
+    {
+      "ticker": "448710",
+      "company": "코츠테크놀로지",
+      "sector": "방산",
+      "status": "watch",
+      "rationale": "방산 임베디드 시스템"
+    },
+    {
+      "ticker": "064350",
+      "company": "현대로템",
+      "sector": "방산",
+      "status": "candidate",
+      "rationale": "방산·철도, 수출 모멘텀"
+    },
+    {
+      "ticker": "361390",
+      "company": "제노코",
+      "sector": "방산·우주",
+      "status": "watch",
+      "rationale": "방산 통신부품"
+    },
+    {
+      "ticker": "047810",
+      "company": "한국항공우주",
+      "sector": "방산·우주",
+      "status": "candidate",
+      "rationale": "항공·우주 체계"
+    },
+    {
+      "ticker": "272210",
+      "company": "한화시스템",
+      "sector": "방산·우주",
+      "status": "candidate",
+      "rationale": "방산전자·위성"
+    },
+    {
+      "ticker": "012450",
+      "company": "한화에어로스페이스",
+      "sector": "방산·우주",
+      "status": "candidate",
+      "rationale": "방산·우주 대장주"
+    },
+    {
+      "ticker": "079550",
+      "company": "LIG넥스원",
+      "sector": "방산·우주",
+      "status": "candidate",
+      "rationale": "유도무기·방산 전자"
+    },
+    {
+      "ticker": "271940",
+      "company": "일진하이솔루스",
+      "sector": "수소",
+      "status": "watch",
+      "rationale": "수소 저장탱크"
+    },
+    {
+      "ticker": "126880",
+      "company": "제이엔케이글로벌",
+      "sector": "수소",
+      "status": "watch",
+      "rationale": "수소충전 설비"
+    },
+    {
+      "ticker": "089980",
+      "company": "상아프론테크",
+      "sector": "수소·소재",
+      "status": "candidate",
+      "rationale": "수소 멤브레인·소재"
+    },
+    {
+      "ticker": "126340",
+      "company": "비나텍",
+      "sector": "수소·에너지",
+      "status": "candidate",
+      "rationale": "슈퍼커패시터·연료전지 소재"
+    },
+    {
+      "ticker": "336260",
+      "company": "두산퓨얼셀",
+      "sector": "수소·연료전지",
+      "status": "candidate",
+      "rationale": "연료전지 대형주"
+    },
+    {
+      "ticker": "382900",
+      "company": "범한퓨얼셀",
+      "sector": "수소·연료전지",
+      "status": "watch",
+      "rationale": "연료전지 중소형"
+    },
+    {
+      "ticker": "288620",
+      "company": "에스프리즘",
+      "sector": "수소·전력",
+      "status": "watch",
+      "rationale": "소형 에너지 후보"
+    },
+    {
+      "ticker": "107600",
+      "company": "새빗켐",
+      "sector": "순환공급망",
+      "status": "watch",
+      "rationale": "배터리 리사이클링 소형주"
+    },
+    {
+      "ticker": "365340",
+      "company": "성일하이텍",
+      "sector": "순환공급망",
+      "status": "candidate",
+      "rationale": "배터리 리사이클링"
+    },
+    {
+      "ticker": "005420",
+      "company": "코스모화학",
+      "sector": "순환공급망",
+      "status": "watch",
+      "rationale": "폐배터리·소재"
+    },
+    {
+      "ticker": "098460",
+      "company": "고영",
+      "sector": "스마트팩토리",
+      "status": "candidate",
+      "rationale": "검사장비·의료로봇, 재무 안정성"
+    },
+    {
+      "ticker": "251630",
+      "company": "브이원텍",
+      "sector": "스마트팩토리",
+      "status": "watch",
+      "rationale": "검사장비, 수주 확인 필요"
+    },
+    {
+      "ticker": "099320",
+      "company": "쎄트렉아이",
+      "sector": "우주",
+      "status": "candidate",
+      "rationale": "위성 체계"
+    },
+    {
+      "ticker": "189300",
+      "company": "인텔리안테크",
+      "sector": "우주",
+      "status": "candidate",
+      "rationale": "위성통신 안테나"
+    },
+    {
+      "ticker": "451760",
+      "company": "컨텍",
+      "sector": "우주",
+      "status": "watch",
+      "rationale": "지상국·데이터, 소형주"
+    },
+    {
+      "ticker": "211270",
+      "company": "AP위성",
+      "sector": "우주",
+      "status": "watch",
+      "rationale": "소형 위성 부품"
+    },
+    {
+      "ticker": "368770",
+      "company": "파이버프로",
+      "sector": "우주·방산",
+      "status": "watch",
+      "rationale": "광섬유 자이로·센서"
+    },
+    {
+      "ticker": "006400",
+      "company": "삼성SDI",
+      "sector": "이차전지",
+      "status": "candidate",
+      "rationale": "대형 배터리 셀"
+    },
+    {
+      "ticker": "373220",
+      "company": "LG에너지솔루션",
+      "sector": "이차전지",
+      "status": "candidate",
+      "rationale": "대형 배터리 셀"
+    },
+    {
+      "ticker": "121600",
+      "company": "나노신소재",
+      "sector": "이차전지 소재",
+      "status": "candidate",
+      "rationale": "CNT 도전재"
+    },
+    {
+      "ticker": "078600",
+      "company": "대주전자재료",
+      "sector": "이차전지 소재",
+      "status": "candidate",
+      "rationale": "실리콘 음극재"
+    },
+    {
+      "ticker": "393890",
+      "company": "더블유씨피",
+      "sector": "이차전지 소재",
+      "status": "candidate",
+      "rationale": "분리막"
+    },
+    {
+      "ticker": "247540",
+      "company": "에코프로비엠",
+      "sector": "이차전지 소재",
+      "status": "candidate",
+      "rationale": "양극재 대형주"
+    },
+    {
+      "ticker": "348370",
+      "company": "엔켐",
+      "sector": "이차전지 소재",
+      "status": "candidate",
+      "rationale": "전해액"
+    },
+    {
+      "ticker": "066970",
+      "company": "엘앤에프",
+      "sector": "이차전지 소재",
+      "status": "already-selected",
+      "rationale": "자회사 LFP 대출 승인 프록시"
+    },
+    {
+      "ticker": "278280",
+      "company": "천보",
+      "sector": "이차전지 소재",
+      "status": "candidate",
+      "rationale": "전해질 소재"
+    },
+    {
+      "ticker": "005070",
+      "company": "코스모신소재",
+      "sector": "이차전지 소재",
+      "status": "candidate",
+      "rationale": "양극재 소재"
+    },
+    {
+      "ticker": "003670",
+      "company": "포스코퓨처엠",
+      "sector": "이차전지 소재",
+      "status": "candidate",
+      "rationale": "양극재·음극재"
+    },
+    {
+      "ticker": "222080",
+      "company": "씨아이에스",
+      "sector": "이차전지 장비",
+      "status": "candidate",
+      "rationale": "전극공정 장비"
+    },
+    {
+      "ticker": "137400",
+      "company": "피엔티",
+      "sector": "이차전지 장비",
+      "status": "candidate",
+      "rationale": "전극공정 장비"
+    },
+    {
+      "ticker": "299030",
+      "company": "하나기술",
+      "sector": "이차전지 장비",
+      "status": "watch",
+      "rationale": "장비 소형주"
+    },
+    {
+      "ticker": "000500",
+      "company": "가온전선",
+      "sector": "전력망·AI인프라",
+      "status": "candidate",
+      "rationale": "전선 중견주"
+    },
+    {
+      "ticker": "001440",
+      "company": "대한전선",
+      "sector": "전력망·AI인프라",
+      "status": "candidate",
+      "rationale": "초고압 전선, 인프라 수혜"
+    },
+    {
+      "ticker": "006910",
+      "company": "보성파워텍",
+      "sector": "전력망·AI인프라",
+      "status": "watch",
+      "rationale": "원전·전력망 테마 변동성"
+    },
+    {
+      "ticker": "017510",
+      "company": "세명전기",
+      "sector": "전력망·AI인프라",
+      "status": "watch",
+      "rationale": "송배전 금구류 소형주"
+    },
+    {
+      "ticker": "103590",
+      "company": "일진전기",
+      "sector": "전력망·AI인프라",
+      "status": "candidate",
+      "rationale": "전선·변압기, 전력망 투자"
+    },
+    {
+      "ticker": "147830",
+      "company": "제룡산업",
+      "sector": "전력망·AI인프라",
+      "status": "watch",
+      "rationale": "전력기자재 소형주, 급등락 큼"
+    },
+    {
+      "ticker": "033100",
+      "company": "제룡전기",
+      "sector": "전력망·AI인프라",
+      "status": "candidate",
+      "rationale": "변압기 소형 고성장"
+    },
+    {
+      "ticker": "199820",
+      "company": "제일일렉트릭",
+      "sector": "전력망·AI인프라",
+      "status": "watch",
+      "rationale": "스마트 배전, 변동성 큼"
+    },
+    {
+      "ticker": "298040",
+      "company": "효성중공업",
+      "sector": "전력망·AI인프라",
+      "status": "candidate",
+      "rationale": "변압기·전력설비 대형주"
+    },
+    {
+      "ticker": "267260",
+      "company": "HD현대일렉트릭",
+      "sector": "전력망·AI인프라",
+      "status": "candidate",
+      "rationale": "변압기 글로벌 호황 대형주"
+    },
+    {
+      "ticker": "010120",
+      "company": "LS ELECTRIC",
+      "sector": "전력망·AI인프라",
+      "status": "candidate",
+      "rationale": "전력기기·자동화, 데이터센터 전력 수요"
+    },
+    {
+      "ticker": "048910",
+      "company": "대원미디어",
+      "sector": "콘텐츠·IP",
+      "status": "watch",
+      "rationale": "캐릭터 IP"
+    },
+    {
+      "ticker": "253450",
+      "company": "스튜디오드래곤",
+      "sector": "콘텐츠·IP",
+      "status": "candidate",
+      "rationale": "드라마 IP"
+    },
+    {
+      "ticker": "408900",
+      "company": "스튜디오미르",
+      "sector": "콘텐츠·IP",
+      "status": "watch",
+      "rationale": "애니메이션 제작"
+    },
+    {
+      "ticker": "310200",
+      "company": "애니플러스",
+      "sector": "콘텐츠·IP",
+      "status": "watch",
+      "rationale": "애니메이션 유통"
+    },
+    {
+      "ticker": "041510",
+      "company": "에스엠",
+      "sector": "콘텐츠·IP",
+      "status": "candidate",
+      "rationale": "음악 IP"
+    },
+    {
+      "ticker": "352820",
+      "company": "하이브",
+      "sector": "콘텐츠·IP",
+      "status": "candidate",
+      "rationale": "글로벌 IP 대형주"
+    },
+    {
+      "ticker": "035900",
+      "company": "JYP Ent.",
+      "sector": "콘텐츠·IP",
+      "status": "candidate",
+      "rationale": "음악 IP"
+    },
+    {
+      "ticker": "419530",
+      "company": "SAMG엔터",
+      "sector": "콘텐츠·IP",
+      "status": "watch",
+      "rationale": "애니메이션 IP 소형주"
+    },
+    {
+      "ticker": "206560",
+      "company": "덱스터",
+      "sector": "콘텐츠·VFX",
+      "status": "watch",
+      "rationale": "VFX 변동성"
+    },
+    {
+      "ticker": "299900",
+      "company": "위지윅스튜디오",
+      "sector": "콘텐츠·VFX",
+      "status": "watch",
+      "rationale": "콘텐츠 제작·VFX"
+    },
+    {
+      "ticker": "289220",
+      "company": "자이언트스텝",
+      "sector": "콘텐츠·VFX",
+      "status": "watch",
+      "rationale": "버추얼 프로덕션"
+    },
+    {
+      "ticker": "010130",
+      "company": "고려아연",
+      "sector": "핵심광물",
+      "status": "candidate",
+      "rationale": "비철·니켈·자원순환"
+    },
+    {
+      "ticker": "005490",
+      "company": "POSCO홀딩스",
+      "sector": "핵심광물",
+      "status": "candidate",
+      "rationale": "리튬·소재 밸류체인"
+    },
+    {
+      "ticker": "300080",
+      "company": "플리토",
+      "sector": "AI·데이터",
+      "status": "watch",
+      "rationale": "AI 데이터·번역, 소형주"
+    },
+    {
+      "ticker": "079940",
+      "company": "가비아",
+      "sector": "AI·데이터센터",
+      "status": "candidate",
+      "rationale": "클라우드·보안·IDC 중견 플랫폼"
+    },
+    {
+      "ticker": "093320",
+      "company": "케이아이엔엑스",
+      "sector": "AI·데이터센터",
+      "status": "candidate",
+      "rationale": "IDC·클라우드 인프라, AI 컴퓨팅 수요의 상장 대안"
+    },
+    {
+      "ticker": "035420",
+      "company": "NAVER",
+      "sector": "AI·데이터센터",
+      "status": "already-selected",
+      "rationale": "AI 데이터센터 저리대출 승인 이후 테마 확산 신호"
+    },
+    {
+      "ticker": "200710",
+      "company": "에이디테크놀로지",
+      "sector": "AI·반도체",
+      "status": "candidate",
+      "rationale": "디자인하우스, AI 반도체 간접 후보"
+    },
+    {
+      "ticker": "394280",
+      "company": "오픈엣지테크놀로지",
+      "sector": "AI·반도체",
+      "status": "watch",
+      "rationale": "NPU·반도체 IP, 적자·변동성 확인"
+    },
+    {
+      "ticker": "094360",
+      "company": "칩스앤미디어",
+      "sector": "AI·반도체",
+      "status": "candidate",
+      "rationale": "영상 IP, 온디바이스 AI"
+    },
+    {
+      "ticker": "012510",
+      "company": "더존비즈온",
+      "sector": "AI·소프트웨어",
+      "status": "candidate",
+      "rationale": "기업용 AI·ERP 플랫폼, 정책자금보다 실적 안정성 우선"
+    },
+    {
+      "ticker": "108860",
+      "company": "셀바스AI",
+      "sector": "AI·소프트웨어",
+      "status": "watch",
+      "rationale": "AI 음성·의료 SW, 변동성 높음"
+    },
+    {
+      "ticker": "304100",
+      "company": "솔트룩스",
+      "sector": "AI·소프트웨어",
+      "status": "watch",
+      "rationale": "생성AI 플랫폼, 적자·변동성 확인 필요"
+    },
+    {
+      "ticker": "058970",
+      "company": "엠로",
+      "sector": "AI·소프트웨어",
+      "status": "candidate",
+      "rationale": "공급망 AI SaaS"
+    },
+    {
+      "ticker": "402030",
+      "company": "코난테크놀로지",
+      "sector": "AI·소프트웨어",
+      "status": "watch",
+      "rationale": "AI SW 순수 테마, 거래 변동성 큼"
+    },
+    {
+      "ticker": "030520",
+      "company": "한글과컴퓨터",
+      "sector": "AI·소프트웨어",
+      "status": "candidate",
+      "rationale": "AI 문서·공공 SW 수요"
+    },
+    {
+      "ticker": "213420",
+      "company": "덕산네오룩스",
+      "sector": "OLED",
+      "status": "candidate",
+      "rationale": "OLED 소재"
+    },
+    {
+      "ticker": "239890",
+      "company": "피엔에이치테크",
+      "sector": "OLED 소재",
+      "status": "watch",
+      "rationale": "OLED 소재 소형주"
+    },
+    {
+      "ticker": "171090",
+      "company": "선익시스템",
+      "sector": "OLED 장비",
+      "status": "watch",
+      "rationale": "OLED 증착장비, 변동성"
+    },
+    {
+      "ticker": "255440",
+      "company": "야스",
+      "sector": "OLED 장비",
+      "status": "watch",
+      "rationale": "OLED 증착장비"
+    },
+    {
+      "ticker": "265520",
+      "company": "AP시스템",
+      "sector": "OLED 장비",
+      "status": "candidate",
+      "rationale": "OLED 장비"
+    },
+    {
+      "ticker": "272290",
+      "company": "이녹스첨단소재",
+      "sector": "OLED·소재",
+      "status": "candidate",
+      "rationale": "OLED 필름·첨단소재"
+    }
+  ]
+}

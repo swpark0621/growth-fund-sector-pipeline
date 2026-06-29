@@ -1,53 +1,126 @@
-# 국민성장펀드 v11 설계
+# National Growth Fund v11 Standalone Design
 
-**시장 의존도·레짐 적합성 레이어**
+## Purpose
 
-- 문서 버전: v11-design draft 2
-- 기반: v7 totalScore, v8/v10 holderCostScore, v10cScore
-- 원칙: 기존 점수와 결정은 읽기 전용으로 보존하고, v11 필드만 추가한다.
+v11 is now a standalone process.
 
-## 목적
+It does not read v7, v8, v10, entry-monitor, or any prior dashboard output when selecting candidates, collecting data, scoring rows, classifying regime, or making final decisions.
 
-v11은 반도체와 독립적인 종목만 고르기 위한 레이어가 아니다.
+The process still inherits the older model's methodology:
 
-v11의 목적은 좋은 종목 후보 중에서 시장/반도체 의존도가 불리하게 작동하는 후보를 줄이고, 레짐에 따라 진입 강도와 비중을 조절하는 것이다.
+- policy fit
+- value and valuation burden
+- technical setup
+- foreign/institution flow
+- price-only structural regime
+- smart-money cost zone from standalone flow VWAP
+- market dependency and regime suitability
 
-따라서 반도체 상관이 높다는 사실만으로 탈락시키지 않는다. 진짜 제어 대상은 아래 조합이다.
+But those methods are recomputed inside v11 from its own universe file and fresh market data.
+
+## Dependency Audit
+
+### Removed Runtime Dependencies
+
+The previous v11 implementation depended on:
 
 ```text
-semiProxyFlag = true
-+ 상승 캡처 약함
-+ 하락 캡처 큼
-+ 잔차 강도 약함
-= 불리한 시장 의존성
+data/v10-execution-dashboard-data.json
+v10cScore
+decision === ENTRY_OK
+v10 entryList/allRows
 ```
 
-반대로 아래 조합은 살릴 수 있다.
+Those are no longer runtime inputs.
+
+### Current Runtime Inputs
 
 ```text
-semiCorr 높음
-+ 상승 캡처 좋음
-+ 하락 캡처 낮음
-+ 잔차 강도 양호
-= 반도체 장세를 활용하는 전술 후보
+data/v11-universe.json
+Naver daily stock prices
+Naver foreign/institution flow pages
+Naver quote/valuation pages
+KOSPI daily index
+KOSDAQ daily index
+KODEX Semiconductor ETF daily price as semi proxy
 ```
 
-## v11이 추가하는 필드
+### Current Runtime Outputs
 
 ```text
-betaProfile
-dependencyProfile
+data/v11-source-data.json
+data/v11-beta-regime.json
+data/v11-execution-dashboard-data.json
+data/v11-capture-verification.json
+docs/v11.html
+```
+
+## Process
+
+### 1. Universe
+
+`data/v11-universe.json` is the standalone candidate definition file.
+
+It contains:
+
+```text
+ticker
+company
+sector
+status
+rationale
+```
+
+It does not contain prior version scores or decisions. Scores must be recomputed by v11.
+
+### 2. Data Collection
+
+`scripts/run-v11-standalone-process.mjs` collects:
+
+- stock daily OHLCV
+- foreign/institution daily net flow
+- quote/valuation fields
+- KOSPI/KOSDAQ index history
+- semiconductor proxy history
+
+The collected raw series are stored in `data/v11-source-data.json`.
+
+### 3. Base Evaluation
+
+v11 computes:
+
+```text
+policy.score
+value.score
+technical.score
+flowScore.score
+risk.penalty
+totalScore
+holderCostScore
+structuralRegime
+v11BaseScore = totalScore + holderCostScore
+v11BaseDecision
+```
+
+This is the older model's methodology reimplemented inside v11, not imported from older dashboard data.
+
+### 4. Market Dependency
+
+v11 then computes:
+
+```text
+betaMarket
+betaSemiExcess
+semiCorr
+residualIR
+residualStrengthPct
+upCapture
+lossCapture
+captureRatio
 marketDependencyScore
-v11Score
-v11Decision
-v11Reason
 ```
 
-`totalScore`, `decision`, `holderCostScore`, `v10cScore`는 변경하지 않는다.
-
-## 베타 모델
-
-단일 반도체 베타가 시장 베타를 같이 먹지 않도록 2팩터 모델을 쓴다.
+The beta model is:
 
 ```text
 stockReturn
@@ -57,74 +130,83 @@ stockReturn
 + residual
 ```
 
-반도체 프록시는 현재 `KODEX Semiconductor ETF(091160)`을 사용한다.
-
-잔차 강도는 같은 윈도우 안의 잔차 합이 아니라, 베타 추정 구간과 평가 구간을 분리한 residual IR을 유니버스 백분위로 환산한다.
-
-## 점수 철학
-
-`marketDependencyScore`는 독립성 점수가 아니라 실행 리스크 점수다.
-
-가중 순서는 다음과 같다.
-
-1. 캡처 비대칭: 덜 빠지고 충분히 오르는가.
-2. 잔차 강도: 시장/반도체 베타 제거 후에도 강한가.
-3. 의존성 조정: 반도체 프록시가 불리하게 작동하는가, 또는 유리한 베타인가.
-
-반도체 동조성 자체는 감점하지 않는다. `semiProxyFlag`와 나쁜 캡처 구조가 함께 나타날 때만 강하게 감점한다.
-
-## v11Decision
-
-v11은 v10 ENTRY_OK를 절대 완화하지 않는다.
+The goal is not to reject semiconductor-linked names. The goal is to reject adverse dependency:
 
 ```text
-v10 비진입 종목 -> NOT_V10_ENTRY
-데이터 부족 -> NO_DATA
-v10 ENTRY_OK + 점수/레짐 통과 -> ENTRY
-v10 ENTRY_OK + 점수 근접 -> ACCUMULATE_ON_WEAKNESS
-v10 ENTRY_OK + 불리한 의존성/캡처 실패 -> WATCH
+high semi dependency
++ poor upside/downside capture
++ weak residual strength
+= adverse dependency
 ```
 
-레짐별 기본 임계값:
+### 5. Final Decision
+
+`v11Decision` is native to v11:
 
 ```text
-NARROW_SEMI_LED : 7
-RISK_OFF        : 10
-BROAD_RISK_ON   : 0
-NEUTRAL         : 3
+ENTRY
+ACCUMULATE_ON_WEAKNESS
+WAIT_TRIGGER
+WATCH
+AVOID_NOW
+NO_DATA
+DATA_FAIL
 ```
 
-`NARROW_SEMI_LED`와 `RISK_OFF`에서는 `ADVERSE_DEPENDENCY`, `asymmetricFailure`, 높은 하락 캡처를 하드 게이트로 본다.
-
-## 구현 파일
+`v11StandaloneScore` is:
 
 ```text
-scripts/v11-utils.mjs
-scripts/collect-beta-regime.mjs
-scripts/build-v11-structure-dashboard.mjs
-scripts/verify-v11-capture.mjs
-data/v11-beta-regime.json
-data/v11-execution-dashboard-data.json
-data/v11-capture-verification.json
-docs/v11.html
+v11StandaloneScore = v11BaseScore + marketDependencyScore
 ```
 
-## 실행 순서
+`NO_DATA` is not converted into a zero score.
+
+## Commands
+
+Full standalone refresh:
 
 ```powershell
-npm run v11:collect
-npm run v11
-npm run v11:verify
+npm run v11:standalone
 ```
 
-또는 전체 v11 파이프라인:
+Rebuild HTML from existing standalone data:
+
+```powershell
+npm run v11
+```
+
+Full refresh plus verification:
 
 ```powershell
 npm run v11:all
 ```
 
-## 해석 주의
+Verification only:
 
-v11은 방어적인 성격을 가진다. 다만 좋은 반도체 연동 수혜주를 무조건 배제하지 않는다. 목표는 반도체와 독립적인 종목만 고르는 것이 아니라, 같이 빠지기만 하는 불리한 후보를 줄이는 것이다.
+```powershell
+npm run v11:verify
+```
 
-검증 스크립트는 v11 베타/의존도 지표를 과거 시점 기준으로 굴려 이후 20거래일을 평가한다. 단, 현재 저장소에는 과거 시점별 v10cScore 재계산값이 없으므로 v10cScore는 최신 점수 기준이라는 한계가 있다.
+## Verification
+
+`scripts/verify-v11-capture.mjs` compares:
+
+```text
+baseEntry: rows where v11BaseDecision === ENTRY_OK
+v11Entry: rows where v11Decision === ENTRY
+v11Actionable: rows where v11Decision is ENTRY or ACCUMULATE_ON_WEAKNESS
+baseScoreTop / v11ScoreTop: score-top baskets kept as reference only
+```
+
+The primary read is baseEntry versus v11Entry, because v11 uses market dependency as a final risk gate. It is not an independence-only ranking system. The score-top comparison is kept only to show how the additive score behaves.
+
+It no longer compares against v10.
+
+The verification uses forward 20 trading days over recent rolling periods. Fundamental scores are still latest static scores, so this is a sanity test, not a full point-in-time backtest.
+
+## Invariants
+
+- v11 runtime does not read prior version dashboard JSON.
+- v11 universe, data collection, scoring, dependency profile, decision, dashboard, and verification are all generated under v11.
+- Older version files may remain in the repository, but they are not inputs to the v11 process.
+- The design remains defensive but does not blindly prefer semiconductor independence.

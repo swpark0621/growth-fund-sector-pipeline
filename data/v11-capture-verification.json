@@ -1,696 +1,1214 @@
 {
   "meta": {
-    "title": "v11 capture verification",
-    "mode": "rolling_forward_price_test_with_static_v10_scores",
-    "caveat": "v11 dependency metrics are calculated only with data available at each rebalance date and evaluated over the next 20 trading days. v10cScore itself is the latest available score, not a historical point-in-time score.",
+    "title": "v11 standalone capture verification",
+    "mode": "rolling_forward_price_test_with_static_standalone_scores",
+    "caveat": "The primary check compares standalone base ENTRY_OK rows with final v11 ENTRY rows. Score-top baskets remain reference only because v11 uses dependency as a gate, not as a pure independence-only ranking. Scores are latest static scores, not historical point-in-time fundamentals.",
     "horizonTradingDays": 20,
     "topN": 10,
     "periodCount": 12
   },
   "summary": {
-    "v10TopAvgCaptureRatio": 1.124,
-    "v11TopAvgCaptureRatio": 0.899,
-    "v10TopMedianSemiCorr": 0.744,
-    "v11TopMedianSemiCorr": 0.683,
-    "v10TopAvgBetaSemiExcess": 0.266,
-    "v11TopAvgBetaSemiExcess": 0.184,
-    "narrowPeriodCount": 5,
-    "narrowV10EntryAvgCount": 1,
-    "narrowV11EntryAvgCount": 0.8,
-    "narrowV10EntryAvgBetaSemiExcess": 1.388,
-    "narrowV11EntryAvgBetaSemiExcess": 1.436
+    "baseEntryCount": 3,
+    "v11EntryCount": 1,
+    "v11ActionableCount": 1,
+    "entryReductionPct": 66.7,
+    "actionableReductionPct": 66.7,
+    "baseEntryAvgCaptureRatio": 1.366,
+    "v11EntryAvgCaptureRatio": 2.66,
+    "v11ActionableAvgCaptureRatio": 2.66,
+    "baseEntryMedianSemiCorr": 0.718,
+    "v11EntryMedianSemiCorr": 0.711,
+    "v11ActionableMedianSemiCorr": 0.711,
+    "baseEntryAvgBetaSemiExcess": 0.651,
+    "v11EntryAvgBetaSemiExcess": 2.007,
+    "v11ActionableAvgBetaSemiExcess": 2.007,
+    "baseEntryAvgAdverseDependency": 0,
+    "v11EntryAvgAdverseDependency": 0,
+    "v11ActionableAvgAdverseDependency": 0,
+    "baseScoreTopAvgCaptureRatio": 1.09,
+    "v11ScoreTopAvgCaptureRatio": 1.079,
+    "baseScoreTopMedianSemiCorr": 0.759,
+    "v11ScoreTopMedianSemiCorr": 0.812,
+    "baseScoreTopAvgBetaSemiExcess": 0.323,
+    "v11ScoreTopAvgBetaSemiExcess": 0.808,
+    "baseScoreTopAvgAdverseDependency": 0,
+    "v11ScoreTopAvgAdverseDependency": 0
   },
   "periods": [
     {
       "asOfDate": "2025-06-05",
-      "regime": "NEUTRAL",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": 6.9,
+        "periodReturnPct": 10.77,
         "marketReturnPct": 8.61,
-        "semiCorr": 0.489,
-        "upCapture": 0.852,
+        "semiCorr": 0.358,
+        "upCapture": 1.531,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.273,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": 5.29,
+        "periodReturnPct": -2.97,
         "marketReturnPct": 8.61,
-        "semiCorr": -0.082,
-        "upCapture": 0.619,
+        "semiCorr": 0.845,
+        "upCapture": 0.663,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.076,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 1,
-      "v10EntryAvgBetaSemiExcess": 1.16,
-      "v11EntryAvgBetaSemiExcess": 1.16,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": -2.97,
+        "marketReturnPct": 8.61,
+        "semiCorr": 0.845,
+        "upCapture": 0.663,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 10.43,
+        "marketReturnPct": 8.61,
+        "semiCorr": 0.67,
+        "upCapture": 1.24,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 9.04,
+        "marketReturnPct": 8.61,
+        "semiCorr": 0.565,
+        "upCapture": 1.013,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
+      "v11ScoreTopTickers": [
         "079940",
         "079550",
-        "047810",
-        "030520",
+        "036930",
+        "403870",
+        "005290",
+        "330860",
         "093320",
-        "119850",
-        "064350",
-        "012450",
-        "010120",
-        "005290"
+        "012510",
+        "098460",
+        "319660"
       ]
     },
     {
       "asOfDate": "2025-07-04",
-      "regime": "NARROW_SEMI_LED",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": -2.58,
+        "periodReturnPct": -1.08,
         "marketReturnPct": 2.13,
-        "semiCorr": 0.766,
-        "upCapture": 0.322,
+        "semiCorr": 0.572,
+        "upCapture": 0.311,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.301,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": -0.03,
+        "periodReturnPct": 2.43,
         "marketReturnPct": 2.13,
-        "semiCorr": 0.564,
-        "upCapture": 0.721,
+        "semiCorr": 0.599,
+        "upCapture": 0.7,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.137,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 0,
-      "v10EntryAvgBetaSemiExcess": 1.196,
-      "v11EntryAvgBetaSemiExcess": null,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 2.43,
+        "marketReturnPct": 2.13,
+        "semiCorr": 0.599,
+        "upCapture": 0.7,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": -3.3,
+        "marketReturnPct": 2.13,
+        "semiCorr": 0.863,
+        "upCapture": 0.151,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": -3.13,
+        "marketReturnPct": 2.13,
+        "semiCorr": 0.783,
+        "upCapture": 0.543,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
+      "v11ScoreTopTickers": [
         "079940",
         "079550",
-        "030520",
-        "119850",
-        "068270",
-        "033100",
+        "036930",
+        "403870",
+        "005290",
+        "330860",
         "093320",
-        "103590",
         "012510",
-        "001440"
+        "098460",
+        "319660"
       ]
     },
     {
       "asOfDate": "2025-08-01",
-      "regime": "NEUTRAL",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": 0.25,
+        "periodReturnPct": 5.43,
         "marketReturnPct": 0.75,
-        "semiCorr": 0.799,
-        "upCapture": 0.842,
-        "lossCapture": 0.898,
-        "captureRatio": 0.938,
-        "avgBetaSemiExcess": 0.296,
+        "semiCorr": 0.545,
+        "upCapture": 1.041,
+        "lossCapture": 0.381,
+        "captureRatio": 2.729,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": -4.55,
+        "periodReturnPct": 21.33,
         "marketReturnPct": 0.75,
-        "semiCorr": 0.434,
-        "upCapture": 1.053,
-        "lossCapture": 1.851,
-        "captureRatio": 0.569,
-        "avgBetaSemiExcess": 0.114,
+        "semiCorr": 0.543,
+        "upCapture": 1.073,
+        "lossCapture": 0,
+        "captureRatio": 5.365,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 0,
-      "v10EntryAvgBetaSemiExcess": 1.225,
-      "v11EntryAvgBetaSemiExcess": null,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 21.33,
+        "marketReturnPct": 0.75,
+        "semiCorr": 0.543,
+        "upCapture": 1.073,
+        "lossCapture": 0,
+        "captureRatio": 5.365,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 1.27,
+        "marketReturnPct": 0.75,
+        "semiCorr": 0.761,
+        "upCapture": 0.793,
+        "lossCapture": 0.696,
+        "captureRatio": 1.139,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 0.82,
+        "marketReturnPct": 0.75,
+        "semiCorr": 0.828,
+        "upCapture": 0.878,
+        "lossCapture": 0.855,
+        "captureRatio": 1.028,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
-        "068270",
-        "267260",
-        "079550",
-        "033100",
-        "001440",
+      "v11ScoreTopTickers": [
         "079940",
-        "237690",
-        "010120",
-        "103590",
-        "030520"
+        "079550",
+        "036930",
+        "403870",
+        "005290",
+        "330860",
+        "093320",
+        "012510",
+        "098460",
+        "319660"
       ]
     },
     {
       "asOfDate": "2025-09-01",
-      "regime": "NEUTRAL",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": 10.15,
+        "periodReturnPct": 22.7,
         "marketReturnPct": 9.17,
-        "semiCorr": 0.591,
-        "upCapture": 0.894,
+        "semiCorr": 0.555,
+        "upCapture": 1.717,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.273,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": 12.54,
+        "periodReturnPct": 40.34,
         "marketReturnPct": 9.17,
-        "semiCorr": 0.781,
-        "upCapture": 1.109,
+        "semiCorr": 0.529,
+        "upCapture": 2.317,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.326,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 1,
-      "v10EntryAvgBetaSemiExcess": 1.278,
-      "v11EntryAvgBetaSemiExcess": 1.278,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 40.34,
+        "marketReturnPct": 9.17,
+        "semiCorr": 0.529,
+        "upCapture": 2.317,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 10.95,
+        "marketReturnPct": 9.17,
+        "semiCorr": 0.756,
+        "upCapture": 1.016,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 19.65,
+        "marketReturnPct": 9.17,
+        "semiCorr": 0.843,
+        "upCapture": 1.519,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
-        "068270",
-        "137400",
-        "012510",
+      "v11ScoreTopTickers": [
         "079940",
-        "357780",
-        "373220",
-        "237690",
-        "267260",
+        "079550",
+        "036930",
+        "403870",
+        "005290",
         "330860",
+        "093320",
+        "012510",
+        "098460",
         "319660"
       ]
     },
     {
       "asOfDate": "2025-09-29",
-      "regime": "NARROW_SEMI_LED",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": 6.6,
+        "periodReturnPct": 13.72,
         "marketReturnPct": 23.04,
-        "semiCorr": 0.74,
-        "upCapture": 0.469,
+        "semiCorr": 0.591,
+        "upCapture": 0.723,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.261,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": 12.78,
+        "periodReturnPct": 14.52,
         "marketReturnPct": 23.04,
-        "semiCorr": 0.758,
-        "upCapture": 0.629,
+        "semiCorr": 0.637,
+        "upCapture": 1.076,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.357,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 1,
-      "v10EntryAvgBetaSemiExcess": 1.226,
-      "v11EntryAvgBetaSemiExcess": 1.226,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 14.52,
+        "marketReturnPct": 23.04,
+        "semiCorr": 0.637,
+        "upCapture": 1.076,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 6.55,
+        "marketReturnPct": 23.04,
+        "semiCorr": 0.777,
+        "upCapture": 0.437,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 5.73,
+        "marketReturnPct": 23.04,
+        "semiCorr": 0.821,
+        "upCapture": 0.54,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
-        "047810",
-        "012510",
-        "137400",
-        "267260",
-        "357780",
-        "373220",
+      "v11ScoreTopTickers": [
         "079940",
-        "005290",
+        "079550",
+        "036930",
         "403870",
+        "005290",
+        "330860",
+        "093320",
+        "012510",
+        "098460",
         "319660"
       ]
     },
     {
       "asOfDate": "2025-11-03",
-      "regime": "NARROW_SEMI_LED",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": 5.15,
+        "periodReturnPct": -13.62,
         "marketReturnPct": -7.14,
-        "semiCorr": 0.748,
-        "upCapture": 1.329,
-        "lossCapture": 0.611,
-        "captureRatio": 2.174,
-        "avgBetaSemiExcess": 0.316,
+        "semiCorr": 0.751,
+        "upCapture": 0.372,
+        "lossCapture": 0.946,
+        "captureRatio": 0.394,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": -5.44,
+        "periodReturnPct": -17.31,
         "marketReturnPct": -7.14,
-        "semiCorr": 0.833,
-        "upCapture": 1.371,
-        "lossCapture": 1.15,
-        "captureRatio": 1.192,
-        "avgBetaSemiExcess": 0.061,
+        "semiCorr": 0.776,
+        "upCapture": 0.685,
+        "lossCapture": 1.357,
+        "captureRatio": 0.505,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 1,
-      "v10EntryAvgBetaSemiExcess": 1.146,
-      "v11EntryAvgBetaSemiExcess": 1.146,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": -17.31,
+        "marketReturnPct": -7.14,
+        "semiCorr": 0.776,
+        "upCapture": 0.685,
+        "lossCapture": 1.357,
+        "captureRatio": 0.505,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 1.24,
+        "marketReturnPct": -7.14,
+        "semiCorr": 0.731,
+        "upCapture": 1.154,
+        "lossCapture": 0.682,
+        "captureRatio": 1.693,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": -2.01,
+        "marketReturnPct": -7.14,
+        "semiCorr": 0.802,
+        "upCapture": 1.241,
+        "lossCapture": 0.895,
+        "captureRatio": 1.386,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
+      "v11ScoreTopTickers": [
         "079940",
-        "137400",
-        "047810",
+        "079550",
+        "036930",
+        "403870",
+        "005290",
+        "330860",
+        "093320",
         "012510",
-        "267260",
-        "001440",
-        "373220",
-        "357780",
-        "010120",
-        "006400"
+        "098460",
+        "319660"
       ]
     },
     {
       "asOfDate": "2025-12-01",
-      "regime": "RISK_OFF",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": -2.11,
+        "periodReturnPct": 2.69,
         "marketReturnPct": 7.49,
-        "semiCorr": 0.676,
-        "upCapture": 0.345,
-        "lossCapture": 0.981,
-        "captureRatio": 0.352,
-        "avgBetaSemiExcess": 0.313,
+        "semiCorr": 0.731,
+        "upCapture": 0.791,
+        "lossCapture": 1.213,
+        "captureRatio": 0.653,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": 0.81,
+        "periodReturnPct": 17.89,
         "marketReturnPct": 7.49,
-        "semiCorr": 0.607,
-        "upCapture": 0.638,
-        "lossCapture": 1.161,
-        "captureRatio": 0.55,
-        "avgBetaSemiExcess": 0.261,
+        "semiCorr": 0.866,
+        "upCapture": 1.884,
+        "lossCapture": 1.492,
+        "captureRatio": 1.262,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 0,
-      "v10EntryAvgBetaSemiExcess": 1.203,
-      "v11EntryAvgBetaSemiExcess": null,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 17.89,
+        "marketReturnPct": 7.49,
+        "semiCorr": 0.866,
+        "upCapture": 1.884,
+        "lossCapture": 1.492,
+        "captureRatio": 1.262,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": -0.56,
+        "marketReturnPct": 7.49,
+        "semiCorr": 0.694,
+        "upCapture": 0.348,
+        "lossCapture": 0.771,
+        "captureRatio": 0.452,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 1.08,
+        "marketReturnPct": 7.49,
+        "semiCorr": 0.911,
+        "upCapture": 0.685,
+        "lossCapture": 1.218,
+        "captureRatio": 0.562,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
-        "098460",
+      "v11ScoreTopTickers": [
         "079940",
-        "204320",
-        "047810",
+        "079550",
+        "036930",
+        "403870",
         "005290",
-        "001440",
-        "068270",
+        "330860",
         "093320",
-        "357780",
-        "010120"
+        "012510",
+        "098460",
+        "319660"
       ]
     },
     {
       "asOfDate": "2025-12-30",
-      "regime": "NEUTRAL",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": 25.38,
+        "periodReturnPct": 24.67,
         "marketReturnPct": 23.9,
-        "semiCorr": 0.563,
-        "upCapture": 0.83,
+        "semiCorr": 0.705,
+        "upCapture": 0.977,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.208,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": 25.82,
+        "periodReturnPct": 47.97,
         "marketReturnPct": 23.9,
-        "semiCorr": 0.482,
-        "upCapture": 0.88,
+        "semiCorr": 0.862,
+        "upCapture": 1.618,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.041,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 0,
-      "v10EntryAvgBetaSemiExcess": 1.237,
-      "v11EntryAvgBetaSemiExcess": null,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 47.97,
+        "marketReturnPct": 23.9,
+        "semiCorr": 0.862,
+        "upCapture": 1.618,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 22.79,
+        "marketReturnPct": 23.9,
+        "semiCorr": 0.618,
+        "upCapture": 0.752,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 26.58,
+        "marketReturnPct": 23.9,
+        "semiCorr": 0.787,
+        "upCapture": 0.918,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
-        "098460",
+      "v11ScoreTopTickers": [
         "079940",
-        "204320",
-        "001440",
+        "079550",
+        "036930",
+        "403870",
+        "005290",
+        "330860",
         "093320",
-        "237690",
-        "010120",
-        "137400",
-        "103590",
-        "006400"
+        "012510",
+        "098460",
+        "319660"
       ]
     },
     {
       "asOfDate": "2026-01-29",
-      "regime": "NEUTRAL",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": -12.06,
+        "periodReturnPct": 1.99,
         "marketReturnPct": -2.45,
-        "semiCorr": 0.836,
-        "upCapture": 0.552,
+        "semiCorr": 0.833,
+        "upCapture": 0.989,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.188,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": -19.24,
+        "periodReturnPct": -0.37,
         "marketReturnPct": -2.45,
-        "semiCorr": 0.839,
-        "upCapture": 0.25,
+        "semiCorr": 0.819,
+        "upCapture": 1.161,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.1,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 1,
-      "v10EntryAvgBetaSemiExcess": 1.323,
-      "v11EntryAvgBetaSemiExcess": 1.323,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": -0.37,
+        "marketReturnPct": -2.45,
+        "semiCorr": 0.819,
+        "upCapture": 1.161,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": -12.1,
+        "marketReturnPct": -2.45,
+        "semiCorr": 0.857,
+        "upCapture": 0.51,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": -5.98,
+        "marketReturnPct": -2.45,
+        "semiCorr": 0.868,
+        "upCapture": 0.484,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
-        "068270",
-        "098460",
+      "v11ScoreTopTickers": [
         "079940",
-        "047810",
-        "204320",
+        "079550",
+        "036930",
+        "403870",
+        "005290",
+        "330860",
         "093320",
-        "357780",
-        "272290",
-        "237690",
-        "137400"
+        "012510",
+        "098460",
+        "319660"
       ]
     },
     {
       "asOfDate": "2026-03-04",
-      "regime": "NARROW_SEMI_LED",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": 7.3,
+        "periodReturnPct": 19.15,
         "marketReturnPct": 7.56,
-        "semiCorr": 0.95,
-        "upCapture": 0.857,
-        "lossCapture": 0.83,
-        "captureRatio": 1.033,
-        "avgBetaSemiExcess": 0.199,
-        "adverseDependencyCount": 1
-      },
-      "v11Top": {
-        "count": 10,
-        "realizedDays": 20,
-        "periodReturnPct": 13.66,
-        "marketReturnPct": 7.56,
-        "semiCorr": 0.898,
-        "upCapture": 0.938,
-        "lossCapture": 0.731,
-        "captureRatio": 1.283,
-        "avgBetaSemiExcess": 0.04,
+        "semiCorr": 0.886,
+        "upCapture": 0.919,
+        "lossCapture": 0.544,
+        "captureRatio": 1.689,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 1,
-      "v10EntryAvgBetaSemiExcess": 1.46,
-      "v11EntryAvgBetaSemiExcess": 1.46,
-      "v10TopTickers": [
-        "079940",
+      "v11Entry": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 58.82,
+        "marketReturnPct": 7.56,
+        "semiCorr": 0.775,
+        "upCapture": 1.656,
+        "lossCapture": 0.472,
+        "captureRatio": 3.508,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 58.82,
+        "marketReturnPct": 7.56,
+        "semiCorr": 0.775,
+        "upCapture": 1.656,
+        "lossCapture": 0.472,
+        "captureRatio": 3.508,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 8.08,
+        "marketReturnPct": 7.56,
+        "semiCorr": 0.944,
+        "upCapture": 0.835,
+        "lossCapture": 0.777,
+        "captureRatio": 1.075,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 18.74,
+        "marketReturnPct": 7.56,
+        "semiCorr": 0.945,
+        "upCapture": 1.178,
+        "lossCapture": 0.881,
+        "captureRatio": 1.338,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
+      "v11ScoreTopTickers": [
+        "079940",
         "079550",
+        "036930",
+        "403870",
+        "005290",
+        "330860",
+        "093320",
         "012510",
-        "047810",
-        "012450",
-        "058470",
-        "319660",
-        "272210",
-        "068270",
-        "272290",
-        "033100"
+        "098460",
+        "319660"
       ]
     },
     {
       "asOfDate": "2026-04-01",
-      "regime": "NEUTRAL",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": 14.73,
+        "periodReturnPct": 5.85,
         "marketReturnPct": 22.13,
-        "semiCorr": 0.767,
-        "upCapture": 0.548,
+        "semiCorr": 0.749,
+        "upCapture": 0.305,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.251,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": 15.74,
+        "periodReturnPct": 7.99,
         "marketReturnPct": 22.13,
-        "semiCorr": 0.608,
-        "upCapture": 0.607,
+        "semiCorr": 0.523,
+        "upCapture": 0.443,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.191,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 1,
-      "v10EntryAvgBetaSemiExcess": 1.728,
-      "v11EntryAvgBetaSemiExcess": 1.728,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 7.99,
+        "marketReturnPct": 22.13,
+        "semiCorr": 0.523,
+        "upCapture": 0.443,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 14.07,
+        "marketReturnPct": 22.13,
+        "semiCorr": 0.841,
+        "upCapture": 0.692,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": 24.79,
+        "marketReturnPct": 22.13,
+        "semiCorr": 0.663,
+        "upCapture": 0.796,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
-        "012510",
+      "v11ScoreTopTickers": [
+        "079940",
         "079550",
-        "047810",
-        "068270",
-        "058470",
-        "012450",
-        "033100",
-        "010120",
-        "357780",
-        "005290"
+        "036930",
+        "403870",
+        "005290",
+        "330860",
+        "093320",
+        "012510",
+        "098460",
+        "319660"
       ]
     },
     {
       "asOfDate": "2026-04-29",
-      "regime": "NARROW_SEMI_LED",
-      "v10Top": {
-        "count": 10,
+      "baseEntry": {
+        "count": 3,
         "realizedDays": 20,
-        "periodReturnPct": -6.75,
+        "periodReturnPct": -14.99,
         "marketReturnPct": 31.35,
-        "semiCorr": 0.671,
-        "upCapture": 0.163,
+        "semiCorr": 0.749,
+        "upCapture": 0.035,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.312,
+        "avgBetaSemiExcess": 0.651,
         "adverseDependencyCount": 0
       },
-      "v11Top": {
-        "count": 10,
+      "v11Entry": {
+        "count": 1,
         "realizedDays": 20,
-        "periodReturnPct": -7.84,
+        "periodReturnPct": 0.54,
         "marketReturnPct": 31.35,
-        "semiCorr": 0.807,
-        "upCapture": 0.25,
+        "semiCorr": 0.647,
+        "upCapture": 0.589,
         "lossCapture": null,
         "captureRatio": null,
-        "avgBetaSemiExcess": 0.503,
+        "avgBetaSemiExcess": 2.007,
         "adverseDependencyCount": 0
       },
-      "v10EntryCount": 1,
-      "v11EntryCount": 1,
-      "v10EntryAvgBetaSemiExcess": 1.912,
-      "v11EntryAvgBetaSemiExcess": 1.912,
-      "v10TopTickers": [
-        "079940",
+      "v11Actionable": {
+        "count": 1,
+        "realizedDays": 20,
+        "periodReturnPct": 0.54,
+        "marketReturnPct": 31.35,
+        "semiCorr": 0.647,
+        "upCapture": 0.589,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 2.007,
+        "adverseDependencyCount": 0
+      },
+      "baseScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": -7.99,
+        "marketReturnPct": 31.35,
+        "semiCorr": 0.65,
+        "upCapture": 0.177,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.323,
+        "adverseDependencyCount": 0
+      },
+      "v11ScoreTop": {
+        "count": 10,
+        "realizedDays": 20,
+        "periodReturnPct": -0.32,
+        "marketReturnPct": 31.35,
+        "semiCorr": 0.774,
+        "upCapture": 0.444,
+        "lossCapture": null,
+        "captureRatio": null,
+        "avgBetaSemiExcess": 0.808,
+        "adverseDependencyCount": 0
+      },
+      "baseEntryTickers": [
+        "012510",
+        "119850",
+        "319660"
+      ],
+      "v11EntryTickers": [
+        "319660"
+      ],
+      "v11ActionableTickers": [
+        "319660"
+      ],
+      "baseScoreTopTickers": [
+        "012510",
+        "403870",
         "068270",
+        "079940",
         "005290",
+        "093320",
         "033100",
-        "098460",
         "137400",
         "265520",
-        "047810",
-        "093320",
-        "012510"
+        "237690"
       ],
-      "v11TopTickers": [
-        "012510",
+      "v11ScoreTopTickers": [
+        "079940",
         "079550",
-        "033100",
-        "010120",
-        "098460",
+        "036930",
+        "403870",
+        "005290",
         "330860",
-        "267260",
-        "001440",
-        "319660",
-        "265520"
+        "093320",
+        "012510",
+        "098460",
+        "319660"
       ]
     }
   ]

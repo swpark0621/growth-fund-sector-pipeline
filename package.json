@@ -21,8 +21,9 @@
     "v10": "node scripts/build-v10-execution-dashboard.mjs",
     "v11:collect": "node scripts/collect-beta-regime.mjs",
     "v11": "node scripts/build-v11-structure-dashboard.mjs",
+    "v11:standalone": "node scripts/run-v11-standalone-process.mjs",
     "v11:verify": "node scripts/verify-v11-capture.mjs",
-    "v11:all": "npm run v11:collect && npm run v11 && npm run v11:verify",
+    "v11:all": "npm run v11:standalone && npm run v11:verify",
     "entry-monitor": "node scripts/build-entry-change-monitor-v1.mjs"
   }
 }

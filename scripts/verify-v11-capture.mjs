@@ -2,37 +2,29 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  appendResidualPercentiles,
   average,
   captureStats,
-  classifyRegime,
-  computeBetaProfile,
-  cutoffHistory,
-  decideV11,
   median,
   pairsToHistory,
   round,
-  scoreMarketDependency,
   toReturnMap
 } from "./v11-utils.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
-const v10Path = path.join(root, "data", "v10-execution-dashboard-data.json");
-const betaPath = path.join(root, "data", "v11-beta-regime.json");
+const sourcePath = path.join(root, "data", "v11-source-data.json");
+const dashboardPath = path.join(root, "data", "v11-execution-dashboard-data.json");
 const outputPath = path.join(root, "data", "v11-capture-verification.json");
 const HORIZON = 20;
 const TOP_N = 10;
 
 function main() {
-  const v10 = JSON.parse(fs.readFileSync(v10Path, "utf8"));
-  const beta = JSON.parse(fs.readFileSync(betaPath, "utf8"));
-  const rows = v10.allRows ?? [];
+  const source = JSON.parse(fs.readFileSync(sourcePath, "utf8"));
+  const dashboard = JSON.parse(fs.readFileSync(dashboardPath, "utf8"));
   const histories = {
-    kospi: pairsToHistory(beta.series.indices.kospi),
-    kosdaq: pairsToHistory(beta.series.indices.kosdaq),
-    semi: pairsToHistory(beta.series.indices.semi),
-    stocks: Object.fromEntries(Object.entries(beta.series.stocks).map(([ticker, pairs]) => [ticker, pairsToHistory(pairs)]))
+    kospi: pairsToHistory(source.series.indices.kospi),
+    semi: pairsToHistory(source.series.indices.semi),
+    stocks: Object.fromEntries(Object.entries(source.series.stocks).map(([ticker, pairs]) => [ticker, pairsToHistory(pairs)]))
   };
   const marketDates = histories.kospi.map((row) => row.date);
   const rebalanceDates = marketDates
@@ -40,13 +32,14 @@ function main() {
     .filter((_, index) => index % HORIZON === 0)
     .slice(-12);
 
+  const rows = dashboard.allRows.filter((row) => !row.error && row.marketDependencyScore != null);
   const periods = rebalanceDates.map((asOfDate) => evaluatePeriod({ rows, histories, asOfDate }));
   const output = {
     meta: {
-      title: "v11 capture verification",
-      mode: "rolling_forward_price_test_with_static_v10_scores",
+      title: "v11 standalone capture verification",
+      mode: "rolling_forward_price_test_with_static_standalone_scores",
       caveat:
-        "v11 dependency metrics are calculated only with data available at each rebalance date and evaluated over the next 20 trading days. v10cScore itself is the latest available score, not a historical point-in-time score.",
+        "The primary check compares standalone base ENTRY_OK rows with final v11 ENTRY rows. Score-top baskets remain reference only because v11 uses dependency as a gate, not as a pure independence-only ranking. Scores are latest static scores, not historical point-in-time fundamentals.",
       horizonTradingDays: HORIZON,
       topN: TOP_N,
       periodCount: periods.length
@@ -56,69 +49,66 @@ function main() {
   };
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2) + "\n", "utf8");
   console.log(`Generated ${path.relative(root, outputPath)}`);
-  console.log(`v10 top capture avg: ${output.summary.v10TopAvgCaptureRatio}`);
-  console.log(`v11 top capture avg: ${output.summary.v11TopAvgCaptureRatio}`);
+  console.log(`base ENTRY capture avg: ${output.summary.baseEntryAvgCaptureRatio}`);
+  console.log(`v11 ENTRY capture avg: ${output.summary.v11EntryAvgCaptureRatio}`);
+  console.log(`score-top reference capture avg: ${output.summary.baseScoreTopAvgCaptureRatio} -> ${output.summary.v11ScoreTopAvgCaptureRatio}`);
 }
 
 function evaluatePeriod({ rows, histories, asOfDate }) {
-  const kospiHistory = cutoffHistory(histories.kospi, asOfDate);
-  const kosdaqHistory = cutoffHistory(histories.kosdaq, asOfDate);
-  const semiHistory = cutoffHistory(histories.semi, asOfDate);
-  const regime = classifyRegime({ kospiHistory, kosdaqHistory, semiHistory, rows });
-
-  const profiles = rows.map((row) => {
-    const stockHistory = histories.stocks[row.ticker] ?? [];
-    return computeBetaProfile({
-      row,
-      stockHistory,
-      kospiHistory: histories.kospi,
-      semiHistory: histories.semi,
-      asOfDate
-    });
-  });
-  appendResidualPercentiles(profiles);
-  const profileMap = new Map(profiles.map((profile) => [profile.ticker, profile]));
-  const scored = rows.map((row) => {
-    const profile = profileMap.get(row.ticker);
-    const score = scoreMarketDependency(profile);
-    const baseScore = Number.isFinite(row.v10cScore) ? row.v10cScore : row.totalScore;
-    const v11Score = score.marketDependencyScore == null || !Number.isFinite(baseScore)
-      ? null
-      : baseScore + score.marketDependencyScore;
-    const decision = decideV11({ row, profile, score, regime });
-    return { row, profile, score, v11Score, v11Decision: decision.v11Decision };
-  }).filter((item) => item.score.marketDependencyScore != null);
-
-  const topN = Math.min(TOP_N, scored.length);
-  const v10Top = [...scored]
-    .sort((a, b) => (b.row.v10cScore ?? b.row.totalScore ?? 0) - (a.row.v10cScore ?? a.row.totalScore ?? 0))
+  const topN = Math.min(TOP_N, rows.length);
+  const baseScoreTop = [...rows]
+    .sort((a, b) => (b.v11BaseScore ?? -Infinity) - (a.v11BaseScore ?? -Infinity))
     .slice(0, topN);
-  const v11Top = [...scored]
-    .sort((a, b) => (b.v11Score ?? -Infinity) - (a.v11Score ?? -Infinity))
+  const v11ScoreTop = [...rows]
+    .sort((a, b) => (b.v11StandaloneScore ?? -Infinity) - (a.v11StandaloneScore ?? -Infinity))
     .slice(0, topN);
-  const currentV10Entries = scored.filter((item) => item.row.decision === "ENTRY_OK");
-  const currentV11Entries = currentV10Entries.filter((item) => item.v11Decision === "ENTRY");
-
+  const baseEntry = [...rows]
+    .filter((row) => row.v11BaseDecision === "ENTRY_OK")
+    .sort((a, b) => (b.v11BaseScore ?? -Infinity) - (a.v11BaseScore ?? -Infinity))
+    .slice(0, topN);
+  const v11Entry = [...rows]
+    .filter((row) => row.v11Decision === "ENTRY")
+    .sort((a, b) => (b.v11StandaloneScore ?? -Infinity) - (a.v11StandaloneScore ?? -Infinity))
+    .slice(0, topN);
+  const v11Actionable = [...rows]
+    .filter((row) => ["ENTRY", "ACCUMULATE_ON_WEAKNESS"].includes(row.v11Decision))
+    .sort((a, b) => (b.v11StandaloneScore ?? -Infinity) - (a.v11StandaloneScore ?? -Infinity))
+    .slice(0, topN);
   return {
     asOfDate,
-    regime: regime.state,
-    v10Top: basketMetrics({ basket: v10Top, histories, asOfDate }),
-    v11Top: basketMetrics({ basket: v11Top, histories, asOfDate }),
-    v10EntryCount: currentV10Entries.length,
-    v11EntryCount: currentV11Entries.length,
-    v10EntryAvgBetaSemiExcess: round(average(currentV10Entries.map((item) => item.profile.betaSemiExcess)), 3),
-    v11EntryAvgBetaSemiExcess: round(average(currentV11Entries.map((item) => item.profile.betaSemiExcess)), 3),
-    v10TopTickers: v10Top.map((item) => item.row.ticker),
-    v11TopTickers: v11Top.map((item) => item.row.ticker)
+    baseEntry: basketMetrics({ basket: baseEntry, histories, asOfDate }),
+    v11Entry: basketMetrics({ basket: v11Entry, histories, asOfDate }),
+    v11Actionable: basketMetrics({ basket: v11Actionable, histories, asOfDate }),
+    baseScoreTop: basketMetrics({ basket: baseScoreTop, histories, asOfDate }),
+    v11ScoreTop: basketMetrics({ basket: v11ScoreTop, histories, asOfDate }),
+    baseEntryTickers: baseEntry.map((row) => row.ticker),
+    v11EntryTickers: v11Entry.map((row) => row.ticker),
+    v11ActionableTickers: v11Actionable.map((row) => row.ticker),
+    baseScoreTopTickers: baseScoreTop.map((row) => row.ticker),
+    v11ScoreTopTickers: v11ScoreTop.map((row) => row.ticker)
   };
 }
 
 function basketMetrics({ basket, histories, asOfDate }) {
+  if (!basket.length) {
+    return {
+      count: 0,
+      realizedDays: 0,
+      periodReturnPct: null,
+      marketReturnPct: null,
+      semiCorr: null,
+      upCapture: null,
+      lossCapture: null,
+      captureRatio: null,
+      avgBetaSemiExcess: null,
+      adverseDependencyCount: 0
+    };
+  }
   const marketReturns = toReturnMap(histories.kospi);
   const semiReturns = toReturnMap(histories.semi);
-  const stockReturnMaps = basket.map((item) => ({
-    ticker: item.row.ticker,
-    returns: toReturnMap(histories.stocks[item.row.ticker] ?? [])
+  const stockReturnMaps = basket.map((row) => ({
+    ticker: row.ticker,
+    returns: toReturnMap(histories.stocks[row.ticker] ?? [])
   }));
   const futureDates = [...marketReturns.keys()].filter((date) => date > asOfDate).slice(0, HORIZON);
   const obs = [];
@@ -144,25 +134,41 @@ function basketMetrics({ basket, histories, asOfDate }) {
     upCapture: round(capture.upCapture, 3),
     lossCapture: round(capture.lossCapture, 3),
     captureRatio: round(capture.captureRatio, 3),
-    avgBetaSemiExcess: round(average(basket.map((item) => item.profile.betaSemiExcess)), 3),
-    adverseDependencyCount: basket.filter((item) => item.profile.adverseDependency).length
+    avgBetaSemiExcess: round(average(basket.map((row) => row.betaProfile?.betaSemiExcess)), 3),
+    adverseDependencyCount: basket.filter((row) => row.betaProfile?.adverseDependency).length
   };
 }
 
 function summarize(periods) {
-  const narrow = periods.filter((period) => period.regime === "NARROW_SEMI_LED");
+  const baseEntryCount = periods[0]?.baseEntry.count ?? 0;
+  const v11EntryCount = periods[0]?.v11Entry.count ?? 0;
+  const v11ActionableCount = periods[0]?.v11Actionable.count ?? 0;
   return {
-    v10TopAvgCaptureRatio: round(average(periods.map((period) => period.v10Top.captureRatio)), 3),
-    v11TopAvgCaptureRatio: round(average(periods.map((period) => period.v11Top.captureRatio)), 3),
-    v10TopMedianSemiCorr: round(median(periods.map((period) => period.v10Top.semiCorr)), 3),
-    v11TopMedianSemiCorr: round(median(periods.map((period) => period.v11Top.semiCorr)), 3),
-    v10TopAvgBetaSemiExcess: round(average(periods.map((period) => period.v10Top.avgBetaSemiExcess)), 3),
-    v11TopAvgBetaSemiExcess: round(average(periods.map((period) => period.v11Top.avgBetaSemiExcess)), 3),
-    narrowPeriodCount: narrow.length,
-    narrowV10EntryAvgCount: round(average(narrow.map((period) => period.v10EntryCount)), 2),
-    narrowV11EntryAvgCount: round(average(narrow.map((period) => period.v11EntryCount)), 2),
-    narrowV10EntryAvgBetaSemiExcess: round(average(narrow.map((period) => period.v10EntryAvgBetaSemiExcess)), 3),
-    narrowV11EntryAvgBetaSemiExcess: round(average(narrow.map((period) => period.v11EntryAvgBetaSemiExcess)), 3)
+    baseEntryCount,
+    v11EntryCount,
+    v11ActionableCount,
+    entryReductionPct: baseEntryCount ? round((1 - v11EntryCount / baseEntryCount) * 100, 1) : null,
+    actionableReductionPct: baseEntryCount ? round((1 - v11ActionableCount / baseEntryCount) * 100, 1) : null,
+    baseEntryAvgCaptureRatio: round(average(periods.map((period) => period.baseEntry.captureRatio)), 3),
+    v11EntryAvgCaptureRatio: round(average(periods.map((period) => period.v11Entry.captureRatio)), 3),
+    v11ActionableAvgCaptureRatio: round(average(periods.map((period) => period.v11Actionable.captureRatio)), 3),
+    baseEntryMedianSemiCorr: round(median(periods.map((period) => period.baseEntry.semiCorr)), 3),
+    v11EntryMedianSemiCorr: round(median(periods.map((period) => period.v11Entry.semiCorr)), 3),
+    v11ActionableMedianSemiCorr: round(median(periods.map((period) => period.v11Actionable.semiCorr)), 3),
+    baseEntryAvgBetaSemiExcess: round(average(periods.map((period) => period.baseEntry.avgBetaSemiExcess)), 3),
+    v11EntryAvgBetaSemiExcess: round(average(periods.map((period) => period.v11Entry.avgBetaSemiExcess)), 3),
+    v11ActionableAvgBetaSemiExcess: round(average(periods.map((period) => period.v11Actionable.avgBetaSemiExcess)), 3),
+    baseEntryAvgAdverseDependency: round(average(periods.map((period) => period.baseEntry.adverseDependencyCount)), 2),
+    v11EntryAvgAdverseDependency: round(average(periods.map((period) => period.v11Entry.adverseDependencyCount)), 2),
+    v11ActionableAvgAdverseDependency: round(average(periods.map((period) => period.v11Actionable.adverseDependencyCount)), 2),
+    baseScoreTopAvgCaptureRatio: round(average(periods.map((period) => period.baseScoreTop.captureRatio)), 3),
+    v11ScoreTopAvgCaptureRatio: round(average(periods.map((period) => period.v11ScoreTop.captureRatio)), 3),
+    baseScoreTopMedianSemiCorr: round(median(periods.map((period) => period.baseScoreTop.semiCorr)), 3),
+    v11ScoreTopMedianSemiCorr: round(median(periods.map((period) => period.v11ScoreTop.semiCorr)), 3),
+    baseScoreTopAvgBetaSemiExcess: round(average(periods.map((period) => period.baseScoreTop.avgBetaSemiExcess)), 3),
+    v11ScoreTopAvgBetaSemiExcess: round(average(periods.map((period) => period.v11ScoreTop.avgBetaSemiExcess)), 3),
+    baseScoreTopAvgAdverseDependency: round(average(periods.map((period) => period.baseScoreTop.adverseDependencyCount)), 2),
+    v11ScoreTopAvgAdverseDependency: round(average(periods.map((period) => period.v11ScoreTop.adverseDependencyCount)), 2)
   };
 }
 
