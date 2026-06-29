@@ -110,22 +110,24 @@ export async function runStandaloneV11({ writeHtml = true } = {}) {
       : Math.round(row.v11BaseScore + dependencyScore.marketDependencyScore);
     row.v11Decision = decision.v11Decision;
     row.v11Reason = decision.reason;
+    row.executionPlan = buildExecutionPlan(row);
+    row.entryPlan = row.executionPlan;
   }
 
   const ranked = rows.sort(compareRows);
   const output = {
     meta: {
-      title: "National Growth Fund v11 standalone dashboard",
+      title: "국민성장펀드 v11 독립 실행 대시보드",
       version: "v11-standalone",
       runDate,
       updatedAt: formatSeoulDateTime(runNow),
       universeSource: "data/v11-universe.json",
       purpose:
-        "Standalone v11 recomputes candidate selection, market data collection, scoring, dependency evaluation, and execution decision without reading prior version dashboard outputs.",
+        "v11은 종목 유니버스, 데이터 수집, 기본 점수, 시장 의존도, 레짐, 실행 판단을 이전 버전 산출물 없이 독립적으로 다시 계산합니다.",
       methodology:
-        "The process reimplements the existing policy/value/technical/flow/holder-cost/structure method, then adds market dependency and regime suitability as native v11 gates.",
+        "기존의 정책·가치·기술·수급·평단·체질 방법론을 v11 내부에서 재계산한 뒤, 시장 의존도와 레짐 적합성을 실행 게이트로 더합니다.",
       warning:
-        "This is a screening and execution-condition framework, not investment advice. Scores are estimates and must be interpreted with data tier and market regime."
+        "투자 권유가 아니라 후보 탐색과 실행 조건 점검 프레임워크입니다. 점수와 베타는 추정치이며 데이터 Tier와 시장 레짐을 함께 봐야 합니다."
     },
     market: {
       kospi: marketSummary(kospiHistory),
@@ -141,9 +143,9 @@ export async function runStandaloneV11({ writeHtml = true } = {}) {
     triggerList: ranked.filter((row) => row.v11Decision === "WAIT_TRIGGER").slice(0, 35),
     allRows: ranked,
     sources: [
-      { title: "Standalone v11 universe", url: "data/v11-universe.json" },
-      { title: "Naver Finance stock daily API", url: "https://api.finance.naver.com/siseJson.naver" },
-      { title: "Naver Finance investor flow pages", url: "https://finance.naver.com/" },
+      { title: "v11 독립 유니버스", url: "data/v11-universe.json" },
+      { title: "네이버금융 일별 시세 API", url: "https://api.finance.naver.com/siseJson.naver" },
+      { title: "네이버금융 투자자 수급 페이지", url: "https://finance.naver.com/" },
       { title: SEMI_PROXY.name, url: SEMI_PROXY.sourceUrl }
     ]
   };
@@ -237,6 +239,7 @@ function evaluateStandalone(item, history, snapshot) {
     ...snapshot,
     marketCapEok: snapshot.marketCapEok ?? marketCapFromShares(snapshot.listedShares, latest.close)
   };
+  const ret1 = pctChange(closes.at(-2), latest.close);
   const flows = {
     d5: calcFlow(history, 5, quote.marketCapEok),
     d20: calcFlow(history, 20, quote.marketCapEok),
@@ -270,6 +273,18 @@ function evaluateStandalone(item, history, snapshot) {
     ...item,
     latestDate: latest.date,
     close: latest.close,
+    currentPrice: quote.currentPrice ?? latest.close,
+    currentChangePct: quote.currentChangePct,
+    currentDiff: quote.currentDiff,
+    quoteFetchedAt: quote.quoteFetchedAt,
+    priceSource: {
+      currentPrice: quote.currentPrice ?? latest.close,
+      currentChangePct: quote.currentChangePct,
+      currentDiff: quote.currentDiff,
+      quoteFetchedAt: quote.quoteFetchedAt,
+      analysisClose: latest.close,
+      analysisDate: latest.date
+    },
     marketCapEok: quote.marketCapEok,
     listedShares: quote.listedShares,
     per: quote.per,
@@ -279,7 +294,7 @@ function evaluateStandalone(item, history, snapshot) {
       avgVolume20: Math.round(avgVol20),
       volumeRatio: round(avgVol20 ? latest.volume / avgVol20 : null, 2)
     },
-    returns: { d5: ret5, d20: ret20, d60: ret60 },
+    returns: { d1: ret1, d5: ret5, d20: ret20, d60: ret60 },
     technicals: {
       ma5,
       ma20,
@@ -316,12 +331,30 @@ function evaluateStandalone(item, history, snapshot) {
 async function fetchQuoteSnapshot(ticker) {
   const html = await fetchText(`https://finance.naver.com/item/sise.naver?code=${ticker}`, "euc-kr");
   const text = strip(html);
+  const currentPrice = parseNumber(textById(html, "_nowVal"));
+  const currentDiff = parseNumber(textById(html, "_diff"));
+  const currentChangePct = parseNullableNumber(textById(html, "_rate")?.replace("%", ""));
   const marketCapEok = firstNumber(text.match(/시가총액\s*([\d,]+)\s*억원/));
   const listedShares = firstNumber(text.match(/상장주식수\s*([\d,]+)/));
   const per = parseNullableNumber(text.match(/\bPER\s*([-.\d]+|N\/A)/)?.[1]);
   const pbr = parseNullableNumber(text.match(/\bPBR[\s\S]{0,180}?([-.\d]+|N\/A)\s*(?:배)?\s*l/)?.[1]);
   const roe = parseNullableNumber(text.match(/\bROE[\s\S]{0,120}?([-.\d]+|N\/A)\s*%/)?.[1]);
-  return { marketCapEok, listedShares, per, pbr, roe };
+  return {
+    currentPrice,
+    currentDiff,
+    currentChangePct,
+    quoteFetchedAt: formatSeoulDateTime(new Date()),
+    marketCapEok,
+    listedShares,
+    per,
+    pbr,
+    roe
+  };
+}
+
+function textById(html, id) {
+  const match = html.match(new RegExp(`id="${id}"[^>]*>([\\s\\S]*?)<\\/[^>]+>`));
+  return match ? strip(match[1]) : null;
 }
 
 async function fetchForeignHistory(ticker, pages) {
@@ -415,7 +448,7 @@ function valueScore(quote, item) {
     else if (quote.per > 35) score -= 2;
   }
   if (item.status === "watch") score -= 1;
-  return { score: clamp(score, 0, 25), memo: `market cap ${quote.marketCapEok ?? "-"} eok, PER ${quote.per ?? "-"}, PBR ${quote.pbr ?? "-"}` };
+  return { score: clamp(score, 0, 25), memo: `시총 ${quote.marketCapEok ?? "-"}억원, PER ${quote.per ?? "-"}, PBR ${quote.pbr ?? "-"}` };
 }
 
 function technicalScore(t) {
@@ -434,7 +467,7 @@ function technicalScore(t) {
   else if (t.ret20 <= -35) score -= 6;
   if (t.reboundFromLow60Pct > 8) score += 4;
   if (t.volumeRatio != null && t.volumeRatio > 0.8 && t.volumeRatio < 2.5) score += 3;
-  return { score: clamp(score, 0, 35), memo: `MA20 ${t.latest.close >= t.ma20 ? "above" : "below"}, RSI ${round(t.rsi14, 1)}, drawdown60 ${round(t.drawdown60Pct, 1)}%` };
+  return { score: clamp(score, 0, 35), memo: `MA20 ${t.latest.close >= t.ma20 ? "상회" : "하회"}, RSI ${round(t.rsi14, 1)}, 60일 고점 대비 ${round(t.drawdown60Pct, 1)}%` };
 }
 
 function investorFlowScore(d5, d20, d60) {
@@ -445,7 +478,7 @@ function investorFlowScore(d5, d20, d60) {
   if ((d20.institutionPct ?? 0) > 0) score += 5;
   if ((d60.foreignPct ?? 0) > 0) score += 3;
   if ((d60.institutionPct ?? 0) > 0) score += 3;
-  return { score: clamp(score, 0, 20), memo: `20D foreign ${round(d20.foreignPct, 2)}%, institution ${round(d20.institutionPct, 2)}%` };
+  return { score: clamp(score, 0, 20), memo: `20일 외국인 ${round(d20.foreignPct, 2)}%, 기관 ${round(d20.institutionPct, 2)}%` };
 }
 
 function riskPenalty(item, quote, t) {
@@ -454,48 +487,48 @@ function riskPenalty(item, quote, t) {
   let valuationBlock = false;
   if (item.status === "already-selected") {
     penalty += 8;
-    notes.push("already selected");
+    notes.push("기선정 종목");
   }
   if (item.status === "watch") {
     penalty += 3;
-    notes.push("watch-list volatility");
+    notes.push("관찰군 변동성");
   }
   if (quote.marketCapEok != null && quote.marketCapEok < 700) {
     penalty += 5;
-    notes.push("micro liquidity risk");
+    notes.push("초소형 유동성 리스크");
   }
   if (quote.per != null && quote.per < 0 && quote.pbr != null && quote.pbr > 3) {
     penalty += 8;
     valuationBlock = true;
-    notes.push("loss-making and high PBR");
+    notes.push("적자와 고PBR 동시 부담");
   } else if (quote.per != null && quote.per < 0) {
     penalty += 4;
-    notes.push("loss-making");
+    notes.push("적자 기업");
   }
   if (quote.pbr != null && quote.pbr > 10) {
     penalty += 8;
     valuationBlock = true;
-    notes.push("PBR above 10");
+    notes.push("PBR 10배 초과");
   } else if (quote.pbr != null && quote.pbr > 6) {
     penalty += 5;
-    notes.push("high PBR");
+    notes.push("고PBR 부담");
   }
   if (quote.per != null && quote.per > 60) {
     penalty += 6;
     valuationBlock = true;
-    notes.push("PER above 60");
+    notes.push("PER 60배 초과");
   }
   if (t.ret20 <= -35) {
     penalty += 6;
-    notes.push("20D trend damage");
+    notes.push("20일 추세 훼손");
   }
   if (t.latest.close < t.ma20 && t.latest.close < t.ma60) {
     penalty += 5;
-    notes.push("below MA20 and MA60");
+    notes.push("MA20·MA60 동시 하회");
   }
   if (t.rsi14 < 28) {
     penalty += 3;
-    notes.push("deep oversold risk");
+    notes.push("과매도 지속 리스크");
   }
   return { penalty, notes, valuationBlock };
 }
@@ -509,21 +542,42 @@ function decideBase(totalScore, risk, t) {
 function decideStandalone({ row, profile, dependencyScore, regime }) {
   if (row.error) return { v11Decision: "DATA_FAIL", reason: row.error };
   if (row.v11BaseDecision !== "ENTRY_OK") {
-    return { v11Decision: row.v11BaseDecision, reason: `base decision is ${row.v11BaseDecision}` };
+    if (row.v11BaseDecision === "WAIT_TRIGGER" && canPromoteWaitTrigger({ row, profile, dependencyScore, regime })) {
+      return {
+        v11Decision: "ACCUMULATE_ON_WEAKNESS",
+        reason: "정책 반등 레짐: 기본 조건은 대기지만 품질·수급·의존도 통과로 약세 분할 후보"
+      };
+    }
+    return { v11Decision: row.v11BaseDecision, reason: `기본 판정 ${row.v11BaseDecision}` };
   }
   if (!profile || dependencyScore.marketDependencyScore == null) {
-    return { v11Decision: "NO_DATA", reason: "market dependency data is insufficient" };
+    return { v11Decision: "NO_DATA", reason: "시장 의존도 데이터 부족" };
   }
   const threshold = thresholdByRegime(regime.state);
   const hardBlock = hardGateBlock(profile, regime.state);
   if (hardBlock) return { v11Decision: "WATCH", reason: hardBlock };
   if (dependencyScore.marketDependencyScore >= threshold) {
-    return { v11Decision: "ENTRY", reason: `dependency score ${dependencyScore.marketDependencyScore} >= threshold ${threshold}` };
+    return { v11Decision: "ENTRY", reason: `의존도 점수 ${dependencyScore.marketDependencyScore} >= 레짐 기준 ${threshold}` };
   }
   if (dependencyScore.marketDependencyScore >= threshold - 6) {
-    return { v11Decision: "ACCUMULATE_ON_WEAKNESS", reason: `dependency score ${dependencyScore.marketDependencyScore} near threshold ${threshold}` };
+    return { v11Decision: "ACCUMULATE_ON_WEAKNESS", reason: `의존도 점수 ${dependencyScore.marketDependencyScore}, 레짐 기준 ${threshold} 근접` };
   }
-  return { v11Decision: "WATCH", reason: `dependency score ${dependencyScore.marketDependencyScore} below threshold ${threshold}` };
+  return { v11Decision: "WATCH", reason: `의존도 점수 ${dependencyScore.marketDependencyScore}, 레짐 기준 ${threshold} 미달` };
+}
+
+function canPromoteWaitTrigger({ row, profile, dependencyScore, regime }) {
+  const state = regime?.state ?? "NEUTRAL";
+  if (!["POLICY_EVENT_REBOUND", "BROAD_RISK_ON"].includes(state)) return false;
+  if (!profile || dependencyScore.marketDependencyScore == null) return false;
+  if (hardGateBlock(profile, state)) return false;
+  if (row.risk?.valuationBlock || (row.risk?.penalty ?? 99) > 12) return false;
+  if ((row.v11BaseScore ?? 0) < 78 || (row.totalScore ?? 0) < 64) return false;
+  if ((row.returns?.d20 ?? -100) <= -25 || (row.technicals?.rsi14 ?? 0) < 32) return false;
+  const structuralOk = ["PASS", "REVIEW"].includes(row.structuralRegime?.gate) || (row.structuralRegime?.score ?? 0) >= 55;
+  if (!structuralOk) return false;
+  const shortSetupOk = row.close >= row.technicals?.ma5 || (row.technicals?.reboundFromLow60Pct ?? 0) >= 8;
+  if (!shortSetupOk) return false;
+  return dependencyScore.marketDependencyScore >= Math.max(0, thresholdByRegime(state) - 2);
 }
 
 function buildStructuralRegime(history, latest, ma200, ma600) {
@@ -555,10 +609,10 @@ function buildStructuralRegime(history, latest, ma200, ma600) {
     confidence: 2,
     score,
     gate: entryEligible ? "PASS" : score >= 50 ? "REVIEW" : "BLOCK",
-    grade: score >= 80 ? "strong structure" : score >= 65 ? "improving structure" : score >= 50 ? "review structure" : "weak structure",
+    grade: score >= 80 ? "강한 체질" : score >= 65 ? "개선 체질" : score >= 50 ? "검토 체질" : "약한 체질",
     entryEligible,
     primary: {
-      label: "standalone price structure",
+      label: "v11 독립 가격 체질",
       date: basis.date,
       latestDate: latest.date,
       basisClose: basis.close,
@@ -603,9 +657,9 @@ function buildHolderCostSignal(history, close) {
     candidates.push(scoreHolderCost({
       tier: "B",
       coefficient: 0.7,
-      source: "institution VWAP accumulation",
+      source: "기관 순매수 VWAP",
       estimatedCost: institutionCost.cost,
-      holderName: "institution flow",
+      holderName: "기관 수급",
       recentAccumulation: institutionCost.netShares > 0,
       disposalPressure: institutionCost.last20NetShares < 0,
       flow: institutionCost
@@ -615,16 +669,16 @@ function buildHolderCostSignal(history, close) {
     candidates.push(scoreHolderCost({
       tier: "B",
       coefficient: 0.7,
-      source: "foreign VWAP accumulation",
+      source: "외국인 순매수 VWAP",
       estimatedCost: foreignCost.cost,
-      holderName: "foreign flow",
+      holderName: "외국인 수급",
       recentAccumulation: foreignCost.netShares > 0,
       disposalPressure: foreignCost.last20NetShares < 0,
       flow: foreignCost
     }, close));
   }
   if (!candidates.length) {
-    return { tier: "NO_DATA", coefficient: 0, score: 0, signal: "NO_DATA", estimatedCost: null, gapPct: null, memo: "no standalone flow cost evidence" };
+    return { tier: "NO_DATA", coefficient: 0, score: 0, signal: "NO_DATA", estimatedCost: null, gapPct: null, memo: "독립 수급 평단 근거 부족" };
   }
   return candidates.sort((a, b) => b.score - a.score)[0];
 }
@@ -647,7 +701,7 @@ function scoreHolderCost(candidate, close) {
     gapPct: round(gapPct, 1),
     estimatedCost: round(candidate.estimatedCost, 0),
     overhang,
-    memo: `${candidate.tier} ${candidate.source}, cost ${round(candidate.estimatedCost, 0)}, gap ${round(gapPct, 1)}%`
+    memo: `${candidate.tier} ${candidate.source}, 추정 평단 ${formatPrice(round(candidate.estimatedCost, 0))}, 괴리 ${round(gapPct, 1)}%`
   };
 }
 
@@ -713,6 +767,87 @@ function entryPlan(decision, close, ma20, ma60, low60, high60) {
   };
 }
 
+function buildExecutionPlan(row) {
+  const price = row.currentPrice ?? row.close;
+  const t = row.technicals ?? {};
+  const holderCost = row.holderCost?.estimatedCost;
+  const stop = round(Math.max((t.low60 ?? price) * 0.97, price * 0.9), 0);
+  const softStopBase = t.ma20 != null && t.ma20 < price && t.ma20 > stop ? t.ma20 : price * 0.96;
+  const softStop = round(Math.max(stop, softStopBase), 0);
+  const trim1 = round(price * 1.08, 0);
+  const target2 = round(Math.max(t.ma60 ?? price * 1.12, t.high60 ?? price * 1.15), 0);
+  const addLine = round(t.ma20 ?? price, 0);
+  const pullbackLine = round(Math.min(price, Math.max(t.ma5 ?? price * 0.97, price * 0.95)), 0);
+  const isOverheated = (row.returns?.d20 ?? 0) >= 35 || (t.rsi14 ?? 0) >= 72;
+  const isWeakFlow = (row.flows?.d5?.foreignPct ?? 0) < 0 && (row.flows?.d5?.institutionPct ?? 0) < 0;
+  const stanceByDecision = {
+    ENTRY: "분할 진입",
+    ACCUMULATE_ON_WEAKNESS: "약세 분할",
+    WAIT_TRIGGER: "트리거 대기",
+    WATCH: "관망",
+    AVOID_NOW: "제외/관망",
+    NO_DATA: "데이터 보류",
+    DATA_FAIL: "수집 실패"
+  };
+
+  const base = {
+    stance: stanceByDecision[row.v11Decision] ?? "관망",
+    isOverheated,
+    isWeakFlow,
+    levels: [
+      { label: "현재", kind: "now", price },
+      { label: "MA20", kind: "add", price: addLine },
+      { label: "손절", kind: "stop", price: stop },
+      { label: "축소", kind: "softStop", price: softStop },
+      { label: "1차 회수", kind: "trim", price: trim1 },
+      { label: "2차 목표", kind: "target", price: target2 }
+    ].concat(holderCost ? [{ label: "추정 평단", kind: "holderCost", price: round(holderCost, 0) }] : []),
+    buySteps: [],
+    sellSteps: [
+      { label: "위험 축소", action: "30~50% 축소", trigger: `종가 ${formatPrice(softStop)} 이탈 또는 5일선 회복 실패` },
+      { label: "손절", action: "신규 검토 중단", trigger: `${formatPrice(stop)} 이탈` },
+      { label: "익절", action: "30% 이상 회수", trigger: `${formatPrice(trim1)} 도달 후 거래대금 둔화` }
+    ],
+    sessionRules: [
+      { window: "장초반", rule: "갭상승 추격보다 눌림과 시초가 지지 확인을 우선한다" },
+      { window: "장중", rule: "현재가가 MA20 또는 전일 종가 위에서 버티는지 확인한다" },
+      { window: "종가", rule: "종가가 MA20 위면 유지, 아래면 다음 날 비중을 줄인다" }
+    ],
+    riskSwitches: [
+      isOverheated ? "20일 급등 또는 RSI 과열: 신규 비중을 절반으로 축소" : "과열 낮음: 분할 기준 유지",
+      isWeakFlow ? "5일 외국인·기관 동반 순매도: 매수 보류 또는 비중 축소" : "단기 수급 급악화 아님",
+      `레짐: ${row.dependencyProfile?.thresholdRegime ?? "-"} · 사이즈 계수 ${row.dependencyProfile?.sizeFactor ?? "-"}`,
+      `의존도: ${row.dependencyProfile?.dependencyLabel ?? "NO_DATA"} · 점수 ${row.marketDependencyScore ?? "NO_DATA"}`,
+      row.risk?.notes?.length ? `리스크: ${row.risk.notes.join(" · ")}` : "특이 리스크 없음"
+    ]
+  };
+
+  if (row.v11Decision === "ENTRY") {
+    base.buySteps = [
+      { label: "1차", weight: "40%", price, rule: "현재가가 시초가·MA20 위에서 버티면 분할 시작" },
+      { label: "2차", weight: "30%", price: addLine, rule: `종가 ${formatPrice(addLine)} 위 유지 확인` },
+      { label: "3차", weight: "30%", price: round((t.high60 ?? price) * 1.01, 0), rule: "거래대금 동반 돌파 확인" }
+    ];
+  } else if (row.v11Decision === "ACCUMULATE_ON_WEAKNESS") {
+    base.buySteps = [
+      { label: "1차", weight: "25~30%", price: pullbackLine, rule: `눌림 ${formatPrice(pullbackLine)} 부근에서 양봉 전환 확인` },
+      { label: "2차", weight: "30%", price: addLine, rule: `종가 ${formatPrice(addLine)} 회복` },
+      { label: "3차", weight: "관찰", price: round((t.high60 ?? price) * 1.01, 0), rule: "고점 돌파는 추격보다 재평가 후 실행" }
+    ];
+  } else if (row.v11Decision === "WAIT_TRIGGER") {
+    base.buySteps = [
+      { label: "대기", weight: "0%", price, rule: "현재는 진입 금지" },
+      { label: "트리거", weight: "관찰", price: addLine, rule: `MA20 ${formatPrice(addLine)} 회복과 수급 개선 동시 확인` }
+    ];
+  } else {
+    base.buySteps = [
+      { label: "대기", weight: "0%", price, rule: "v11 진입 조건 미충족" }
+    ];
+  }
+
+  return base;
+}
+
 function summarizeStandalone(rows) {
   const scored = rows.filter((row) => row.marketDependencyScore != null);
   const entries = rows.filter((row) => row.v11Decision === "ENTRY");
@@ -739,12 +874,12 @@ function summarizeStandalone(rows) {
 
 function standaloneRules() {
   return [
-    "v11 reads data/v11-universe.json, not prior version dashboard outputs.",
-    "Candidate score is recomputed from policy, value, technical, investor-flow, structure, and standalone flow-cost evidence.",
-    "Market dependency is native to v11: residual strength, capture asymmetry, and adverse semi dependency are evaluated after base screening.",
-    "High semiconductor correlation is not rejected by itself. It becomes a problem only when capture asymmetry and residual weakness are unfavorable.",
-    "NO_DATA is separated from zero score. It cannot be upgraded into ENTRY by missing beta data.",
-    "Regime changes the dependency threshold and size factor."
+    "v11은 이전 버전 대시보드가 아니라 data/v11-universe.json을 입력으로 읽습니다.",
+    "정책, 가치, 기술, 수급, 체질, 독립 수급 평단을 v11 내부에서 다시 계산합니다.",
+    "시장 의존도는 기본 심사 뒤에 잔차 강도, 상승/하락 캡처, 불리한 반도체 의존성을 점검하는 실행 게이트입니다.",
+    "반도체 상관이 높다는 이유만으로 배제하지 않습니다. 상승 캡처가 약하고 하락 캡처가 큰 조합만 문제로 봅니다.",
+    "NO_DATA는 0점이 아니라 별도 보류 상태입니다. 결측 데이터로 ENTRY를 만들지 않습니다.",
+    "정책 이벤트성 광폭 반등장에서는 좋은 WAIT_TRIGGER를 약세 분할 후보로 승격할 수 있습니다."
   ];
 }
 
@@ -782,69 +917,71 @@ function buildStandaloneHtml(data) {
     .regime{margin-bottom:16px;padding:16px 18px;border-left:5px solid var(--teal)}.regime.narrow{border-left-color:var(--orange)}.regime.risk{border-left-color:var(--red)}.regime.broad{border-left-color:var(--green)}.regime strong{display:block;font-size:20px}.regime-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:10px}.regime-grid span{display:block;padding:10px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;font-size:12px}.regime-grid b{display:block;font-size:18px}
     .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:16px}.metric{min-height:104px;padding:15px}.metric strong{display:block;font-size:27px;line-height:1.1}.metric span{display:block;margin-top:6px;color:var(--muted);font-size:12px}.band{padding:18px;margin-bottom:16px}.head{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;margin-bottom:12px}.head p{max-width:920px;margin-bottom:0;color:var(--muted);font-size:13px}
     .toolbar{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-bottom:12px}.segmented{display:flex;flex-wrap:wrap;gap:6px}.segmented button{min-height:34px;padding:5px 10px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;cursor:pointer;font-size:13px;font-weight:800}.segmented button.active{border-color:var(--teal);background:#e5f3f0;color:var(--teal)}.search{width:min(360px,100%);min-height:36px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff}
-    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff}table{width:100%;min-width:1660px;border-collapse:collapse}th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px}th{position:sticky;top:0;z-index:1;background:#edf3f4;color:#334155}tr:last-child td{border-bottom:0}.num{font-variant-numeric:tabular-nums;white-space:nowrap}.company{font-weight:900}.note{display:block;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.42}.teal{color:var(--teal);font-weight:900}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff}table{width:100%;min-width:1920px;border-collapse:collapse}th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px}th{position:sticky;top:0;z-index:1;background:#edf3f4;color:#334155}tr:last-child td{border-bottom:0}.num{font-variant-numeric:tabular-nums;white-space:nowrap}.company{font-weight:900}.note{display:block;margin-top:5px;color:var(--muted);font-size:12px;line-height:1.42}.teal{color:var(--teal);font-weight:900}
     .sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.sources a{min-height:58px;padding:11px;border:1px solid var(--line);border-radius:8px;background:#fbfcfd;text-decoration:none;font-size:13px}.sources span{display:block;margin-top:4px;color:var(--muted);font-size:12px}
-    footer{color:var(--muted);font-size:12px}@media(max-width:1120px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}.nav-list{grid-template-columns:repeat(3,minmax(150px,1fr))}.hero,.metrics,.regime-grid{grid-template-columns:1fr 1fr}}@media(max-width:720px){main{padding:14px}.nav-list{display:flex;overflow:auto;padding-bottom:4px}.nav-link{min-width:150px}.hero,.metrics,.regime-grid,.sources{grid-template-columns:1fr}h2{font-size:23px}table{min-width:1180px}}
+    footer{color:var(--muted);font-size:12px}@media(max-width:1120px){.layout{grid-template-columns:1fr}aside{position:static;height:auto}.nav-list{grid-template-columns:repeat(3,minmax(150px,1fr))}.hero,.metrics,.regime-grid{grid-template-columns:1fr 1fr}}@media(max-width:720px){main{padding:14px}.nav-list{display:flex;overflow:auto;padding-bottom:4px}.nav-link{min-width:150px}.hero,.metrics,.regime-grid,.sources{grid-template-columns:1fr}h2{font-size:23px}table{min-width:1420px}}
   </style>
 </head>
 <body>
   <div class="layout">
     <aside>
-      <div class="brand"><h1>${escapeHtml(data.meta.title)}</h1><p>Standalone v11 process</p></div>
+      <div class="brand"><h1>${escapeHtml(data.meta.title)}</h1><p>v11 독립 산출 프로세스</p></div>
       <div class="side-box">
-        <span>Run date: ${escapeHtml(data.meta.runDate)}</span>
-        <span>Updated: ${escapeHtml(data.meta.updatedAt)}</span>
-        <span>Regime: ${escapeHtml(data.regime.state)}</span>
-        <span>Entry: ${data.summary.v11Entry} / Base entry: ${data.summary.baseEntryOk}</span>
+        <span>기준일: ${escapeHtml(data.meta.runDate)}</span>
+        <span>갱신: ${escapeHtml(data.meta.updatedAt)}</span>
+        <span>레짐: ${escapeHtml(data.regime.state)}</span>
+        <span>진입: ${data.summary.v11Entry} / 기본 진입: ${data.summary.baseEntryOk}</span>
       </div>
       <nav class="nav-list">
-        <a class="nav-link" href="#overview"><span>Overview</span><span class="tag">v11</span></a>
-        <a class="nav-link" href="#entry"><span>Entry</span><span class="tag">Entry</span></a>
-        <a class="nav-link" href="#accumulate"><span>Weakness</span><span class="tag">Accum</span></a>
-        <a class="nav-link" href="#wait"><span>Triggers</span><span class="tag">Wait</span></a>
-        <a class="nav-link" href="#all"><span>All Rows</span><span class="tag">All</span></a>
-        <a class="nav-link" href="#sources"><span>Sources</span><span class="tag">Src</span></a>
+        <a class="nav-link" href="#overview"><span>개요</span><span class="tag">v11</span></a>
+        <a class="nav-link" href="#entry"><span>즉시 진입</span><span class="tag">ENTRY</span></a>
+        <a class="nav-link" href="#accumulate"><span>약세 분할</span><span class="tag">분할</span></a>
+        <a class="nav-link" href="#wait"><span>트리거 대기</span><span class="tag">대기</span></a>
+        <a class="nav-link" href="#all"><span>전체 후보</span><span class="tag">전체</span></a>
+        <a class="nav-link" href="#sources"><span>출처</span><span class="tag">Src</span></a>
       </nav>
     </aside>
     <main>
       <section class="hero" id="overview">
-        <div><p class="kicker">v11 Standalone Dashboard</p><h2>Universe, data collection, scoring, dependency gate, and decision are all recomputed inside v11.</h2><p>${escapeHtml(data.meta.purpose)}</p></div>
+        <div><p class="kicker">v11 독립 대시보드</p><h2>종목 선정, 데이터 수집, 평가, 시장 의존도, 실행 판단을 v11 내부에서 다시 계산합니다.</h2><p>${escapeHtml(data.meta.purpose)}</p></div>
         <div><p>${escapeHtml(data.meta.warning)}</p></div>
       </section>
       <section class="regime ${regimeClass(data.regime.state)}"><strong>${escapeHtml(data.regime.state)}</strong><span>${escapeHtml(data.regime.guidance)}</span><div class="regime-grid" id="regimeGrid"></div></section>
       <section class="metrics" id="metrics"></section>
-      <section class="band" id="entry"><div class="head"><div><h3>v11 ENTRY</h3><p>Standalone candidates that pass base quality, structure, dependency, and regime gates.</p></div></div><div class="table-wrap"><table>${tableHead()}<tbody id="entryRows"></tbody></table></div></section>
-      <section class="band" id="accumulate"><div class="head"><div><h3>ACCUMULATE_ON_WEAKNESS</h3><p>Base-quality candidates near the dependency threshold.</p></div></div><div class="table-wrap"><table>${tableHead()}<tbody id="accRows"></tbody></table></div></section>
-      <section class="band" id="wait"><div class="head"><div><h3>WAIT_TRIGGER</h3><p>Standalone candidates with reasonable base score but incomplete entry conditions.</p></div></div><div class="table-wrap"><table>${tableHead()}<tbody id="waitRows"></tbody></table></div></section>
-      <section class="band" id="all"><div class="toolbar"><div><h3 style="margin-bottom:4px;">All v11 Rows</h3><p class="muted" style="margin-bottom:0;font-size:13px;">v11StandaloneScore = v11BaseScore + marketDependencyScore. Missing dependency data is not treated as zero.</p></div><input class="search" id="search" type="search" placeholder="company, ticker, sector"></div><div class="segmented" id="filters"></div><div class="table-wrap"><table>${tableHead()}<tbody id="allRows"></tbody></table></div></section>
-      <section class="band" id="sources"><div class="head"><div><h3>Sources</h3><p>Standalone v11 uses its own universe file and fresh market data collection.</p></div></div><div class="sources" id="sourceList"></div></section>
-      <footer>Generated by <code>node scripts/run-v11-standalone-process.mjs</code>. Data: <code>data/v11-execution-dashboard-data.json</code>.</footer>
+      <section class="band" id="entry"><div class="head"><div><h3>v11 즉시 진입</h3><p>기본 품질, 체질, 시장 의존도, 레짐 게이트를 모두 통과한 후보입니다.</p></div></div><div class="table-wrap"><table>${tableHead()}<tbody id="entryRows"></tbody></table></div></section>
+      <section class="band" id="accumulate"><div class="head"><div><h3>약세 분할진입</h3><p>정책 반등 레짐에서 기본 조건은 대기지만 품질·수급·의존도 조건이 좋아 눌림 매수를 검토할 후보입니다.</p></div></div><div class="table-wrap"><table>${tableHead()}<tbody id="accRows"></tbody></table></div></section>
+      <section class="band" id="wait"><div class="head"><div><h3>트리거 대기</h3><p>점수는 양호하지만 가격, 체질, 수급 중 일부 조건 확인이 더 필요한 후보입니다.</p></div></div><div class="table-wrap"><table>${tableHead()}<tbody id="waitRows"></tbody></table></div></section>
+      <section class="band" id="all"><div class="toolbar"><div><h3 style="margin-bottom:4px;">전체 v11 후보</h3><p class="muted" style="margin-bottom:0;font-size:13px;">v11StandaloneScore = v11BaseScore + marketDependencyScore. 시장 의존도 결측은 0점으로 대체하지 않습니다.</p></div><input class="search" id="search" type="search" placeholder="종목명, 코드, 섹터 검색"></div><div class="segmented" id="filters"></div><div class="table-wrap"><table>${tableHead()}<tbody id="allRows"></tbody></table></div></section>
+      <section class="band" id="sources"><div class="head"><div><h3>출처</h3><p>v11은 자체 유니버스 파일과 현재 시장 데이터 수집으로 산출합니다.</p></div></div><div class="sources" id="sourceList"></div></section>
+      <footer><code>node scripts/run-v11-standalone-process.mjs</code>로 생성. 데이터: <code>data/v11-execution-dashboard-data.json</code>.</footer>
     </main>
   </div>
   <script>
     const DATA=${json}; let filter="all"; let search="";
     const fmt=(v,d=2)=>v==null?"-":Number(v).toLocaleString("ko-KR",{maximumFractionDigits:d});
     const pct=(v)=>v==null?"-":fmt(v,2)+"%";
+    const price=(v)=>v==null?"-":Number(v).toLocaleString("ko-KR")+"원";
     const score=(v)=>v==null?"NO_DATA":(v>0?"+":"")+fmt(v,0);
     const metrics=[
-      ["Universe",DATA.summary.universeCount,"standalone candidates"],
-      ["Base ENTRY_OK",DATA.summary.baseEntryOk,"before dependency gate"],
-      ["v11 ENTRY",DATA.summary.v11Entry,"final entry"],
-      ["Accumulate",DATA.summary.v11Accumulate,"weakness only"],
-      ["Adverse dep.",DATA.summary.adverseDependency,"universe"]
+      ["전체 후보",DATA.summary.universeCount,"독립 유니버스"],
+      ["기본 진입",DATA.summary.baseEntryOk,"의존도 적용 전"],
+      ["즉시 진입",DATA.summary.v11Entry,"최종 ENTRY"],
+      ["약세 분할",DATA.summary.v11Accumulate,"눌림 후보"],
+      ["불리한 의존",DATA.summary.adverseDependency,"전체 후보"]
     ];
     document.querySelector("#metrics").innerHTML=metrics.map(([a,b,c])=>\`<div class="metric"><strong>\${fmt(b,0)}</strong><span>\${escapeHtml(a)} · \${escapeHtml(c)}</span></div>\`).join("");
-    const regimeItems=[["KOSPI 20D",pct(DATA.regime.kospiRet20)],["KOSDAQ RS",pct(DATA.regime.kosdaqRS)],["SEMI RS",pct(DATA.regime.semiRS)],["Breadth",fmt(DATA.regime.breadth,3)],["Entry/Base",DATA.summary.v11Entry+"/"+DATA.summary.baseEntryOk]];
+    const regimeItems=[["KOSDAQ 1D",pct(DATA.regime.kosdaqRet1)],["KOSDAQ 20D",pct(DATA.regime.kosdaqRet20)],["당일 상승비율",fmt(DATA.regime.dayBreadth,3)],["MA20 상회",fmt(DATA.regime.breadth,3)],["진입/기본",DATA.summary.v11Entry+"/"+DATA.summary.baseEntryOk]];
     document.querySelector("#regimeGrid").innerHTML=regimeItems.map(([a,b])=>\`<span><b>\${escapeHtml(b)}</b>\${escapeHtml(a)}</span>\`).join("");
-    document.querySelector("#entryRows").innerHTML=DATA.entryList.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("No v11 ENTRY candidates.");
-    document.querySelector("#accRows").innerHTML=DATA.accumulateList.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("No weakness-accumulation candidates.");
-    document.querySelector("#waitRows").innerHTML=DATA.triggerList.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("No trigger candidates.");
+    document.querySelector("#entryRows").innerHTML=DATA.entryList.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("즉시 진입 후보가 없습니다.");
+    document.querySelector("#accRows").innerHTML=DATA.accumulateList.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("약세 분할 후보가 없습니다.");
+    document.querySelector("#waitRows").innerHTML=DATA.triggerList.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("트리거 대기 후보가 없습니다.");
     function renderFilters(){const vals=["all","ENTRY","ACCUMULATE_ON_WEAKNESS","WAIT_TRIGGER","WATCH","AVOID_NOW","NO_DATA","DATA_FAIL"];document.querySelector("#filters").innerHTML=vals.map(v=>\`<button class="\${filter===v?"active":""}" data-filter="\${v}">\${v==="all"?"All":label(v)}</button>\`).join("");document.querySelectorAll("#filters button").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;renderFilters();renderAll()}));}
-    function renderAll(){const needle=search.trim().toLowerCase();const rows=DATA.allRows.filter(r=>(filter==="all"||r.v11Decision===filter)&&(!needle||[r.company,r.ticker,r.sector,r.rationale,r.dependencyProfile?.dependencyLabel].join(" ").toLowerCase().includes(needle))).slice(0,140);document.querySelector("#allRows").innerHTML=rows.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("No rows.");}
-    function rowHtml(r,i){const p=r.betaProfile||{};const d=r.dependencyProfile||{};return \`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><span class="badge \${decisionClass(r.v11Decision)}">\${label(r.v11Decision)}</span><span class="note">\${escapeHtml(r.v11Reason)}</span></td><td><strong>\${r.v11StandaloneScore??"-"}</strong><span class="note">base \${r.v11BaseScore??"-"} · dep <span class="teal">\${score(r.marketDependencyScore)}</span></span></td><td><strong>\${r.totalScore??"-"}</strong><span class="note">policy \${r.policy?.score??"-"} · value \${r.value?.score??"-"} · tech \${r.technical?.score??"-"} · flow \${r.flowScore?.score??"-"}</span></td><td><strong class="teal">\${score(r.marketDependencyScore)}</strong><span class="note">\${escapeHtml(d.dependencyLabel??"NO_DATA")} · size \${d.sizeFactor??"-"}</span><span class="note">RS \${d.components?.residualScore??"-"} / CAP \${d.components?.captureScore??"-"} / DEP \${d.components?.dependencyAdjustment??"-"}</span></td><td>βM \${fmt(p.betaMarket,2)}<span class="note">βSemiExcess \${fmt(p.betaSemiExcess,2)} · corr \${fmt(p.semiCorr,2)}</span></td><td>\${fmt(p.captureRatio,2)}<span class="note">up \${fmt(p.upCapture,2)} · loss \${fmt(p.lossCapture,2)} · IR \${fmt(p.residualIR,2)}</span></td><td>\${r.structuralRegime?.score??"-"}<span class="note">\${escapeHtml(r.structuralRegime?.gate??"-")} · \${escapeHtml(r.structuralRegime?.grade??"-")}</span></td><td>\${r.holderCostScore??"-"}<span class="note">\${escapeHtml(r.holderCost?.signal??"-")} · \${escapeHtml(r.holderCost?.memo??"")}</span></td><td>Tier \${escapeHtml(p.tier??"NO_DATA")}<span class="note">\${p.alignedReturnDays??0} days · \${escapeHtml((p.notes||[]).join(" · "))}</span></td></tr>\`;}
+    function renderAll(){const needle=search.trim().toLowerCase();const rows=DATA.allRows.filter(r=>(filter==="all"||r.v11Decision===filter)&&(!needle||[r.company,r.ticker,r.sector,r.rationale,r.dependencyProfile?.dependencyLabel].join(" ").toLowerCase().includes(needle))).slice(0,140);document.querySelector("#allRows").innerHTML=rows.map((r,i)=>rowHtml(r,i)).join("") || emptyRow("표시할 후보가 없습니다.");}
+    function rowHtml(r,i){const p=r.betaProfile||{};const d=r.dependencyProfile||{};const e=r.executionPlan||{};const buy=(e.buySteps||[])[0]||{};const sell=(e.sellSteps||[])[0]||{};return \`<tr><td class="num">\${i+1}</td><td><span class="company">\${escapeHtml(r.company)}</span><span class="note">\${r.ticker} · \${escapeHtml(r.sector)}</span></td><td><strong>\${price(r.currentPrice??r.close)}</strong><span class="note">조회 \${escapeHtml(r.quoteFetchedAt??"-")} · 등락 \${pct(r.currentChangePct)}</span><span class="note">일봉 기준 \${escapeHtml(r.latestDate)} · \${price(r.close)}</span></td><td><span class="badge \${decisionClass(r.v11Decision)}">\${label(r.v11Decision)}</span><span class="note">\${escapeHtml(r.v11Reason)}</span></td><td><strong>\${r.v11StandaloneScore??"-"}</strong><span class="note">기본 \${r.v11BaseScore??"-"} · 의존 <span class="teal">\${score(r.marketDependencyScore)}</span></span></td><td><strong>\${r.totalScore??"-"}</strong><span class="note">정책 \${r.policy?.score??"-"} · 가치 \${r.value?.score??"-"} · 기술 \${r.technical?.score??"-"} · 수급 \${r.flowScore?.score??"-"}</span></td><td><strong class="teal">\${score(r.marketDependencyScore)}</strong><span class="note">\${depLabel(d.dependencyLabel)} · 비중 \${d.sizeFactor??"-"}</span><span class="note">잔차 \${d.components?.residualScore??"-"} / 캡처 \${d.components?.captureScore??"-"} / 조정 \${d.components?.dependencyAdjustment??"-"}</span></td><td>βM \${fmt(p.betaMarket,2)}<span class="note">βSemiExcess \${fmt(p.betaSemiExcess,2)} · 상관 \${fmt(p.semiCorr,2)}</span><span class="note">캡처 \${fmt(p.captureRatio,2)} · 상승 \${fmt(p.upCapture,2)} · 하락 \${fmt(p.lossCapture,2)}</span></td><td><strong>\${escapeHtml(e.stance??"-")}</strong><span class="note">매수: \${escapeHtml(b.weight??"-")} · \${escapeHtml(b.rule??"-")}</span><span class="note">매도: \${escapeHtml(sell.action??"-")} · \${escapeHtml(sell.trigger??"-")}</span></td><td>\${r.structuralRegime?.score??"-"}<span class="note">\${escapeHtml(r.structuralRegime?.gate??"-")} · \${escapeHtml(r.structuralRegime?.grade??"-")}</span><span class="note">평단 \${r.holderCostScore??"-"} · \${escapeHtml(r.holderCost?.memo??"")}</span></td><td>Tier \${escapeHtml(p.tier??"NO_DATA")}<span class="note">\${p.alignedReturnDays??0}일 · \${escapeHtml((p.notes||[]).join(" · "))}</span></td></tr>\`;}
     function emptyRow(text){return \`<tr><td colspan="11" class="muted">\${escapeHtml(text)}</td></tr>\`;}
     function decisionClass(d){return d==="ENTRY"?"entry":d==="ACCUMULATE_ON_WEAKNESS"?"acc":d==="WATCH"?"watch":d==="NO_DATA"||d==="DATA_FAIL"?"no":d==="WAIT_TRIGGER"?"acc":"neutral";}
-    function label(d){return {ENTRY:"ENTRY",ACCUMULATE_ON_WEAKNESS:"Weakness",WATCH:"WATCH",WAIT_TRIGGER:"WAIT",AVOID_NOW:"AVOID",NO_DATA:"NO_DATA",DATA_FAIL:"DATA_FAIL"}[d]??d;}
+    function label(d){return {ENTRY:"즉시진입",ACCUMULATE_ON_WEAKNESS:"약세분할",WATCH:"관망",WAIT_TRIGGER:"대기",AVOID_NOW:"제외",NO_DATA:"데이터부족",DATA_FAIL:"수집실패"}[d]??d;}
+    function depLabel(d){return {ADVERSE_DEPENDENCY:"불리한 의존",FAVORABLE_BETA:"유리한 베타",INDEPENDENT_STRENGTH:"독립 강세",NEUTRAL_DEPENDENCY:"중립 의존",NO_DATA:"데이터 부족"}[d]??escapeHtml(d??"NO_DATA");}
     function escapeHtml(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
     document.querySelector("#search").addEventListener("input",e=>{search=e.target.value;renderAll()});
     document.querySelector("#sourceList").innerHTML=DATA.sources.map(s=>\`<a href="\${escapeHtml(s.url)}" target="_blank" rel="noreferrer"><strong>\${escapeHtml(s.title)}</strong><span>\${escapeHtml(s.url)}</span></a>\`).join("");
@@ -855,7 +992,7 @@ function buildStandaloneHtml(data) {
 }
 
 function tableHead() {
-  return `<thead><tr><th>#</th><th>Company</th><th>Decision</th><th>v11 Score</th><th>Base Score</th><th>Dependency</th><th>Beta</th><th>Capture</th><th>Structure</th><th>Flow Cost</th><th>Tier</th></tr></thead>`;
+  return `<thead><tr><th>#</th><th>종목</th><th>현재가</th><th>판정</th><th>v11 점수</th><th>기본 점수</th><th>시장 의존도</th><th>베타·캡처</th><th>진입·매도 전략</th><th>체질·평단</th><th>Tier</th></tr></thead>`;
 }
 
 function regimeClass(state) {
@@ -867,6 +1004,7 @@ function regimeClass(state) {
 
 function thresholdByRegime(state) {
   return {
+    POLICY_EVENT_REBOUND: 0,
     NARROW_SEMI_LED: 7,
     RISK_OFF: 10,
     BROAD_RISK_ON: 0,
@@ -875,10 +1013,10 @@ function thresholdByRegime(state) {
 }
 
 function hardGateBlock(profile, state) {
-  if (profile.asymmetricFailure) return "asymmetric capture failure";
-  if ((state === "NARROW_SEMI_LED" || state === "RISK_OFF") && profile.adverseDependency) return "adverse dependency in fragile regime";
+  if ((state === "NARROW_SEMI_LED" || state === "RISK_OFF") && profile.asymmetricFailure) return "상승/하락 캡처 비대칭 실패";
+  if ((state === "NARROW_SEMI_LED" || state === "RISK_OFF") && profile.adverseDependency) return "취약 레짐의 불리한 반도체 의존성";
   if (state === "RISK_OFF" && profile.lossCapture != null && profile.lossCapture > 1 && profile.captureRatio != null && profile.captureRatio < 1.1) {
-    return "downside capture too high for risk-off";
+    return "위험회피장 대비 하락 캡처 과다";
   }
   return null;
 }
@@ -957,7 +1095,7 @@ function clamp(value, min, max) {
 }
 
 function formatPrice(value) {
-  return value == null ? "-" : `${Number(value).toLocaleString("ko-KR")} KRW`;
+  return value == null ? "-" : `${Number(value).toLocaleString("ko-KR")}원`;
 }
 
 function escapeHtml(value) {

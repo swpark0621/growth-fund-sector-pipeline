@@ -148,7 +148,7 @@ function summarize(periods) {
     v11EntryCount,
     v11ActionableCount,
     entryReductionPct: baseEntryCount ? round((1 - v11EntryCount / baseEntryCount) * 100, 1) : null,
-    actionableReductionPct: baseEntryCount ? round((1 - v11ActionableCount / baseEntryCount) * 100, 1) : null,
+    actionableExpansionPct: baseEntryCount ? round((v11ActionableCount / baseEntryCount - 1) * 100, 1) : null,
     baseEntryAvgCaptureRatio: round(average(periods.map((period) => period.baseEntry.captureRatio)), 3),
     v11EntryAvgCaptureRatio: round(average(periods.map((period) => period.v11Entry.captureRatio)), 3),
     v11ActionableAvgCaptureRatio: round(average(periods.map((period) => period.v11Actionable.captureRatio)), 3),

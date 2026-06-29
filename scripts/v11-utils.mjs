@@ -231,19 +231,36 @@ export function appendResidualPercentiles(profiles) {
 }
 
 export function classifyRegime({ kospiHistory, kosdaqHistory, semiHistory, rows }) {
+  const kospiRet1 = trailingReturn(kospiHistory, 1);
+  const kosdaqRet1 = trailingReturn(kosdaqHistory, 1);
+  const semiRet1 = trailingReturn(semiHistory, 1);
   const kospiRet20 = trailingReturn(kospiHistory, 20);
   const kosdaqRet20 = trailingReturn(kosdaqHistory, 20);
   const semiRet20 = trailingReturn(semiHistory, 20);
+  const kosdaqDayRS = nullableSub(kosdaqRet1, kospiRet1);
+  const semiDayRS = nullableSub(semiRet1, kospiRet1);
   const kosdaqRS = nullableSub(kosdaqRet20, kospiRet20);
   const semiRS = nullableSub(semiRet20, kospiRet20);
   const breadthRows = rows.filter((row) => row?.technicals && typeof row.technicals.aboveMa20 === "boolean");
   const breadth = breadthRows.length
     ? breadthRows.filter((row) => row.technicals.aboveMa20).length / breadthRows.length
     : null;
+  const dayBreadthRows = rows.filter((row) => Number.isFinite(row?.returns?.d1));
+  const dayBreadth = dayBreadthRows.length
+    ? dayBreadthRows.filter((row) => row.returns.d1 > 0).length / dayBreadthRows.length
+    : null;
+  const shortBreadthRows = rows.filter((row) => Number.isFinite(row?.close) && Number.isFinite(row?.technicals?.ma5));
+  const shortBreadth = shortBreadthRows.length
+    ? shortBreadthRows.filter((row) => row.close >= row.technicals.ma5).length / shortBreadthRows.length
+    : null;
+  const policyEventRebound = kosdaqRet1 != null && kosdaqDayRS != null && dayBreadth != null &&
+    kosdaqRet1 >= 0.035 && kosdaqDayRS >= 0.02 && dayBreadth >= 0.55;
 
   let state = "NEUTRAL";
   if (kospiRet20 != null && breadth != null && kospiRet20 < -0.05 && breadth < 0.35) {
     state = "RISK_OFF";
+  } else if (policyEventRebound) {
+    state = "POLICY_EVENT_REBOUND";
   } else if (semiRS != null && kosdaqRS != null && breadth != null && semiRS > 0.02 && kosdaqRS < 0 && breadth < 0.45) {
     state = "NARROW_SEMI_LED";
   } else if (kosdaqRS != null && breadth != null && kosdaqRS >= 0 && breadth >= 0.55) {
@@ -251,21 +268,29 @@ export function classifyRegime({ kospiHistory, kosdaqHistory, semiHistory, rows 
   }
 
   const guidance = {
-    NARROW_SEMI_LED: "Semi-led narrow tape. Do not reject good semi-beta names automatically; reject adverse dependency and size down.",
-    BROAD_RISK_ON: "Broad risk-on tape. Quality growth and smaller policy names can use normal entry gates.",
-    RISK_OFF: "Risk-off tape. Require strong downside capture and positive residual strength.",
-    NEUTRAL: "Mixed tape. Use default dependency gate and staged entry."
+    POLICY_EVENT_REBOUND: "정책 이벤트성 광폭 반등장입니다. 추격 매수는 제한하되, 품질과 수급이 통과한 트리거 후보는 약세 분할진입으로 승격합니다.",
+    NARROW_SEMI_LED: "좁은 반도체 주도장입니다. 좋은 반도체 베타는 무조건 배제하지 않되, 불리한 의존성과 하락 비대칭은 강하게 차단합니다.",
+    BROAD_RISK_ON: "광폭 위험선호장입니다. 품질 성장주와 정책 중소형주의 정상 진입 게이트를 허용합니다.",
+    RISK_OFF: "위험회피장입니다. 하락 캡처가 낮고 잔차 강도가 양호한 후보만 남깁니다.",
+    NEUTRAL: "혼조장입니다. 기본 의존도 게이트와 분할 진입 기준을 사용합니다."
   }[state];
 
   return {
     state,
     guidance,
+    kospiRet1: round(kospiRet1 * 100, 2),
+    kosdaqRet1: round(kosdaqRet1 * 100, 2),
+    semiRet1: round(semiRet1 * 100, 2),
+    kosdaqDayRS: round(kosdaqDayRS * 100, 2),
+    semiDayRS: round(semiDayRS * 100, 2),
     kospiRet20: round(kospiRet20 * 100, 2),
     kosdaqRet20: round(kosdaqRet20 * 100, 2),
     semiRet20: round(semiRet20 * 100, 2),
     kosdaqRS: round(kosdaqRS * 100, 2),
     semiRS: round(semiRS * 100, 2),
-    breadth: round(breadth, 3)
+    breadth: round(breadth, 3),
+    dayBreadth: round(dayBreadth, 3),
+    shortBreadth: round(shortBreadth, 3)
   };
 }
 
@@ -326,6 +351,7 @@ export function decideV11({ row, profile, score, regime }) {
 export function sizeFactor({ score, regime }) {
   if (score == null) return null;
   const regimeMult = {
+    POLICY_EVENT_REBOUND: 0.85,
     NARROW_SEMI_LED: 0.45,
     NEUTRAL: 0.7,
     BROAD_RISK_ON: 1.0,
@@ -552,6 +578,7 @@ function dependencyLabel(profile) {
 
 function thresholdByRegime(state) {
   return {
+    POLICY_EVENT_REBOUND: 0,
     NARROW_SEMI_LED: 7,
     RISK_OFF: 10,
     BROAD_RISK_ON: 0,
@@ -560,12 +587,12 @@ function thresholdByRegime(state) {
 }
 
 function hardGateBlock(profile, state) {
-  if (profile.asymmetricFailure) return "asymmetric capture failure";
+  if ((state === "NARROW_SEMI_LED" || state === "RISK_OFF") && profile.asymmetricFailure) return "상승/하락 캡처 비대칭 실패";
   if ((state === "NARROW_SEMI_LED" || state === "RISK_OFF") && profile.adverseDependency) {
-    return "adverse semi dependency in fragile regime";
+    return "취약 레짐의 불리한 반도체 의존성";
   }
   if (state === "RISK_OFF" && profile.lossCapture != null && profile.lossCapture > 1 && profile.captureRatio != null && profile.captureRatio < 1.1) {
-    return "downside capture too high for risk-off";
+    return "위험회피장 대비 하락 캡처 과다";
   }
   return null;
 }
