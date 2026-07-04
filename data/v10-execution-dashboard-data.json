@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-07-04",
-    "updatedAt": "2026-07-04 07:34:53 KST",
+    "updatedAt": "2026-07-04 15:05:11 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -5119,8 +5119,8 @@
         "topHolders": [
           {
             "name": "셀트리온홀딩스 외 96인",
-            "shares": 76002496,
-            "pct": 32.68
+            "shares": 76215547,
+            "pct": 32.77
           },
           {
             "name": "국민연금공단",
@@ -5134,9 +5134,9 @@
           }
         ],
         "majorHolderName": "셀트리온홀딩스 외 96인",
-        "majorHolderShares": 76002496,
-        "majorHolderPct": 32.68,
-        "topHolderPct": 40.99,
+        "majorHolderShares": 76215547,
+        "majorHolderPct": 32.77,
+        "topHolderPct": 41.08,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -5592,8 +5592,8 @@
           },
           {
             "name": "국민연금공단",
-            "shares": 2212945,
-            "pct": 10.06
+            "shares": 2268475,
+            "pct": 10.31
           },
           {
             "name": "자사주",
@@ -5604,7 +5604,7 @@
         "majorHolderName": "엘아이지 외 8인",
         "majorHolderShares": 8407165,
         "majorHolderPct": 38.21,
-        "topHolderPct": 48.97,
+        "topHolderPct": 49.22,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -6047,7 +6047,7 @@
           {
             "name": "동아쏘시오홀딩스 외 5인",
             "shares": 7808508,
-            "pct": 37.42
+            "pct": 37.41
           },
           {
             "name": "국민연금공단",
@@ -6057,8 +6057,8 @@
         ],
         "majorHolderName": "동아쏘시오홀딩스 외 5인",
         "majorHolderShares": 7808508,
-        "majorHolderPct": 37.42,
-        "topHolderPct": 43.46,
+        "majorHolderPct": 37.41,
+        "topHolderPct": 43.45,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -6505,14 +6505,14 @@
           },
           {
             "name": "국민연금공단",
-            "shares": 4760920,
-            "pct": 10.14
+            "shares": 4979013,
+            "pct": 10.6
           }
         ],
         "majorHolderName": "에이치엘홀딩스 외 3인",
         "majorHolderShares": 14208650,
         "majorHolderPct": 30.26,
-        "topHolderPct": 40.4,
+        "topHolderPct": 40.86,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -10986,8 +10986,8 @@
           },
           {
             "name": "국민연금공단",
-            "shares": 944514,
-            "pct": 10.13
+            "shares": 940378,
+            "pct": 10.08
           },
           {
             "name": "자사주",
@@ -10998,7 +10998,7 @@
         "majorHolderName": "효성 외 12인",
         "majorHolderShares": 4101808,
         "majorHolderPct": 43.99,
-        "topHolderPct": 54.26,
+        "topHolderPct": 54.21,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -11451,8 +11451,8 @@
         "topHolders": [
           {
             "name": "한컴위드 외 5인",
-            "shares": 9402739,
-            "pct": 38.89
+            "shares": 9541095,
+            "pct": 39.46
           },
           {
             "name": "자사주",
@@ -11461,9 +11461,9 @@
           }
         ],
         "majorHolderName": "한컴위드 외 5인",
-        "majorHolderShares": 9402739,
-        "majorHolderPct": 38.89,
-        "topHolderPct": 40.68,
+        "majorHolderShares": 9541095,
+        "majorHolderPct": 39.46,
+        "topHolderPct": 41.25,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -17326,14 +17326,14 @@
           },
           {
             "name": "자사주",
-            "shares": 2304015,
-            "pct": 2.54
+            "shares": 2324015,
+            "pct": 2.56
           }
         ],
         "majorHolderName": "기아 외 7인",
         "majorHolderShares": 29672278,
         "majorHolderPct": 32.7,
-        "topHolderPct": 50.08,
+        "topHolderPct": 50.1,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -22266,14 +22266,14 @@
           },
           {
             "name": "자사주",
-            "shares": 94000,
-            "pct": 0.29
+            "shares": 35000,
+            "pct": 0.11
           }
         ],
         "majorHolderName": "고연완 외 7인",
         "majorHolderShares": 12607051,
         "majorHolderPct": 38.37,
-        "topHolderPct": 63.55,
+        "topHolderPct": 63.37,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -26945,8 +26945,8 @@
         "topHolders": [
           {
             "name": "셀트리온홀딩스 외 96인",
-            "shares": 76002496,
-            "pct": 32.68
+            "shares": 76215547,
+            "pct": 32.77
           },
           {
             "name": "국민연금공단",
@@ -26960,9 +26960,9 @@
           }
         ],
         "majorHolderName": "셀트리온홀딩스 외 96인",
-        "majorHolderShares": 76002496,
-        "majorHolderPct": 32.68,
-        "topHolderPct": 40.99,
+        "majorHolderShares": 76215547,
+        "majorHolderPct": 32.77,
+        "topHolderPct": 41.08,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -27902,8 +27902,8 @@
           },
           {
             "name": "국민연금공단",
-            "shares": 2212945,
-            "pct": 10.06
+            "shares": 2268475,
+            "pct": 10.31
           },
           {
             "name": "자사주",
@@ -27914,7 +27914,7 @@
         "majorHolderName": "엘아이지 외 8인",
         "majorHolderShares": 8407165,
         "majorHolderPct": 38.21,
-        "topHolderPct": 48.97,
+        "topHolderPct": 49.22,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -28819,7 +28819,7 @@
           {
             "name": "동아쏘시오홀딩스 외 5인",
             "shares": 7808508,
-            "pct": 37.42
+            "pct": 37.41
           },
           {
             "name": "국민연금공단",
@@ -28829,8 +28829,8 @@
         ],
         "majorHolderName": "동아쏘시오홀딩스 외 5인",
         "majorHolderShares": 7808508,
-        "majorHolderPct": 37.42,
-        "topHolderPct": 43.46,
+        "majorHolderPct": 37.41,
+        "topHolderPct": 43.45,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -29277,14 +29277,14 @@
           },
           {
             "name": "국민연금공단",
-            "shares": 4760920,
-            "pct": 10.14
+            "shares": 4979013,
+            "pct": 10.6
           }
         ],
         "majorHolderName": "에이치엘홀딩스 외 3인",
         "majorHolderShares": 14208650,
         "majorHolderPct": 30.26,
-        "topHolderPct": 40.4,
+        "topHolderPct": 40.86,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -34408,8 +34408,8 @@
           },
           {
             "name": "국민연금공단",
-            "shares": 944514,
-            "pct": 10.13
+            "shares": 940378,
+            "pct": 10.08
           },
           {
             "name": "자사주",
@@ -34420,7 +34420,7 @@
         "majorHolderName": "효성 외 12인",
         "majorHolderShares": 4101808,
         "majorHolderPct": 43.99,
-        "topHolderPct": 54.26,
+        "topHolderPct": 54.21,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -34873,8 +34873,8 @@
         "topHolders": [
           {
             "name": "한컴위드 외 5인",
-            "shares": 9402739,
-            "pct": 38.89
+            "shares": 9541095,
+            "pct": 39.46
           },
           {
             "name": "자사주",
@@ -34883,9 +34883,9 @@
           }
         ],
         "majorHolderName": "한컴위드 외 5인",
-        "majorHolderShares": 9402739,
-        "majorHolderPct": 38.89,
-        "topHolderPct": 40.68,
+        "majorHolderShares": 9541095,
+        "majorHolderPct": 39.46,
+        "topHolderPct": 41.25,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -39910,14 +39910,14 @@
           },
           {
             "name": "자사주",
-            "shares": 2304015,
-            "pct": 2.54
+            "shares": 2324015,
+            "pct": 2.56
           }
         ],
         "majorHolderName": "기아 외 7인",
         "majorHolderShares": 29672278,
         "majorHolderPct": 32.7,
-        "topHolderPct": 50.08,
+        "topHolderPct": 50.1,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -45476,14 +45476,14 @@
           },
           {
             "name": "자사주",
-            "shares": 94000,
-            "pct": 0.29
+            "shares": 35000,
+            "pct": 0.11
           }
         ],
         "majorHolderName": "고연완 외 7인",
         "majorHolderShares": 12607051,
         "majorHolderPct": 38.37,
-        "topHolderPct": 63.55,
+        "topHolderPct": 63.37,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -49574,8 +49574,8 @@
           },
           {
             "name": "미래에셋자산운용",
-            "shares": 7863867,
-            "pct": 9.56
+            "shares": 8383757,
+            "pct": 10.19
           },
           {
             "name": "삼성자산운용",
@@ -49591,7 +49591,7 @@
         "majorHolderName": "히트2025홀딩스 유한회사",
         "majorHolderShares": 16840000,
         "majorHolderPct": 20.46,
-        "topHolderPct": 38.05,
+        "topHolderPct": 38.68,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -50558,12 +50558,12 @@
           {
             "name": "임중규 외 10인",
             "shares": 4238812,
-            "pct": 27.01
+            "pct": 26.99
           },
           {
             "name": "국민연금공단",
             "shares": 1203206,
-            "pct": 7.67
+            "pct": 7.66
           },
           {
             "name": "자사주",
@@ -50573,8 +50573,8 @@
         ],
         "majorHolderName": "임중규 외 10인",
         "majorHolderShares": 4238812,
-        "majorHolderPct": 27.01,
-        "topHolderPct": 36.87,
+        "majorHolderPct": 26.99,
+        "topHolderPct": 36.84,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
