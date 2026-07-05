@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-07-05",
-    "updatedAt": "2026-07-05 15:04:58 KST",
+    "updatedAt": "2026-07-05 19:34:53 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -48614,7 +48614,7 @@
       "marketCapEok": 6384,
       "listedShares": 16264300,
       "per": 13.95,
-      "pbr": 1.45,
+      "pbr": 2,
       "roe": 10.5,
       "ownership": {
         "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=108320&target=finsum_more",
@@ -48690,7 +48690,7 @@
       },
       "value": {
         "score": 24,
-        "memo": "시총 6,384억원, PER 13.95, PBR 1.45"
+        "memo": "시총 6,384억원, PER 13.95, PBR 2"
       },
       "technical": {
         "score": 3,
