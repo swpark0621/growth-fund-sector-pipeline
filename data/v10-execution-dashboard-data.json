@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-07-12",
-    "updatedAt": "2026-07-12 15:05:01 KST",
+    "updatedAt": "2026-07-12 19:34:59 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -36,8 +36,8 @@
   ],
   "summary": {
     "entryOk": 2,
-    "waitTrigger": 32,
-    "avoidNow": 90,
+    "waitTrigger": 31,
+    "avoidNow": 91,
     "baseEntryOk": 7,
     "structuralDowngraded": 5,
     "structuralPass": 11,
@@ -165,11 +165,6 @@
         "avgScore": 50.3,
         "entry": 0
       },
-      "디스플레이·반도체": {
-        "count": 1,
-        "avgScore": 65,
-        "entry": 0
-      },
       "반도체 테스트": {
         "count": 1,
         "avgScore": 60,
@@ -198,6 +193,11 @@
       "로봇": {
         "count": 6,
         "avgScore": 25.3,
+        "entry": 0
+      },
+      "디스플레이·반도체": {
+        "count": 1,
+        "avgScore": 53,
         "entry": 0
       },
       "미래차·SW": {
@@ -665,14 +665,14 @@
         "assessment": "정책/가치 매력은 있으나 아직 진입 트리거 확인이 필요합니다."
       },
       {
-        "ticker": "108320",
-        "company": "LX세미콘",
-        "sector": "디스플레이·반도체",
+        "ticker": "357780",
+        "company": "솔브레인",
+        "sector": "반도체 소재",
         "decision": "WAIT_TRIGGER",
-        "totalScore": 65,
+        "totalScore": 64,
         "policyScore": 22,
-        "policyMemo": "디스플레이 IC, 재무 안정성",
-        "technicalMemo": "MA20 하회, RSI 37.8, 60일 고점 대비 -40.3%",
+        "policyMemo": "고순도 공정소재, 재무 안정성",
+        "technicalMemo": "MA20 하회, RSI 35.6, 60일 고점 대비 -36.3%",
         "riskNotes": [
           "MA20·MA60 동시 하회"
         ],
@@ -1641,35 +1641,6 @@
           "interpretation": "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다."
         },
         {
-          "ticker": "108320",
-          "company": "LX세미콘",
-          "sector": "디스플레이·반도체",
-          "decision": "WAIT_TRIGGER",
-          "totalScore": 65,
-          "status": "복수 운용사 상품 보유 확인",
-          "managerCount": 2,
-          "managers": [
-            {
-              "manager": "Vanguard",
-              "vehicle": "Institutional Total International Stock Market Index Trust",
-              "evidence": "INDEX_TRUST_HOLDING",
-              "asOf": "2025-10-31",
-              "weightPct": null,
-              "shares": null
-            },
-            {
-              "manager": "SSGA/State Street",
-              "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
-              "evidence": "ETF_HOLDING",
-              "asOf": "As of 09-Jul-2026",
-              "weightPct": 0.000825,
-              "shares": 13187
-            }
-          ],
-          "largeHolderDisclosure": null,
-          "interpretation": "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다."
-        },
-        {
           "ticker": "005290",
           "company": "동진쎄미켐",
           "sector": "반도체 소재",
@@ -1809,6 +1780,35 @@
               "asOf": "As of 09-Jul-2026",
               "weightPct": 0.006184,
               "shares": 35525
+            }
+          ],
+          "largeHolderDisclosure": null,
+          "interpretation": "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다."
+        },
+        {
+          "ticker": "108320",
+          "company": "LX세미콘",
+          "sector": "디스플레이·반도체",
+          "decision": "AVOID_NOW",
+          "totalScore": 53,
+          "status": "복수 운용사 상품 보유 확인",
+          "managerCount": 2,
+          "managers": [
+            {
+              "manager": "Vanguard",
+              "vehicle": "Institutional Total International Stock Market Index Trust",
+              "evidence": "INDEX_TRUST_HOLDING",
+              "asOf": "2025-10-31",
+              "weightPct": null,
+              "shares": null
+            },
+            {
+              "manager": "SSGA/State Street",
+              "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
+              "evidence": "ETF_HOLDING",
+              "asOf": "As of 09-Jul-2026",
+              "weightPct": 0.000825,
+              "shares": 13187
             }
           ],
           "largeHolderDisclosure": null,
@@ -44077,332 +44077,6 @@
       }
     },
     {
-      "ticker": "108320",
-      "company": "LX세미콘",
-      "sector": "디스플레이·반도체",
-      "status": "candidate",
-      "rationale": "디스플레이 IC, 재무 안정성",
-      "latestDate": "2026-07-10",
-      "close": 40150,
-      "marketCapEok": 6571,
-      "listedShares": 16264300,
-      "per": 13.95,
-      "pbr": 1.45,
-      "roe": 10.5,
-      "ownership": {
-        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=108320&target=finsum_more",
-        "topHolders": [
-          {
-            "name": "엘엑스홀딩스 외 2인",
-            "shares": 5385624,
-            "pct": 33.11
-          }
-        ],
-        "majorHolderName": "엘엑스홀딩스 외 2인",
-        "majorHolderShares": 5385624,
-        "majorHolderPct": 33.11,
-        "topHolderPct": 33.11,
-        "memo": "대주주 지분 보통 이상"
-      },
-      "priceSource": {
-        "source": "NXT",
-        "asOfDate": "2026-07-10",
-        "asOfText": "2026-07-10 16:10 장마감",
-        "officialClose": 40400,
-        "alternateClose": 40150
-      },
-      "liquidity": {
-        "avgVolume20": 120363,
-        "volumeRatio": 0.18
-      },
-      "returns": {
-        "d5": 2.293,
-        "d20": -20.0199,
-        "d60": -22.6397
-      },
-      "technicals": {
-        "ma5": 39070,
-        "ma20": 42460,
-        "ma60": 52013.33,
-        "ma120": 52284.58,
-        "rsi14": 37.75,
-        "high60": 67300,
-        "low60": 37300,
-        "drawdown60Pct": -40.3418,
-        "reboundFromLow60Pct": 7.6408,
-        "aboveMa20": false,
-        "aboveMa60": false,
-        "ma20SlopePct": -5.3763
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": 3.31,
-          "institutionNetValueEok": -8.25,
-          "foreignPct": 0.05,
-          "institutionPct": -0.126
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": 52.44,
-          "institutionNetValueEok": -117.69,
-          "foreignPct": 0.798,
-          "institutionPct": -1.791
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": 202.53,
-          "institutionNetValueEok": -167.39,
-          "foreignPct": 3.082,
-          "institutionPct": -2.547
-        }
-      },
-      "policy": {
-        "score": 22,
-        "memo": "디스플레이 IC, 재무 안정성"
-      },
-      "value": {
-        "score": 24,
-        "memo": "시총 6,571억원, PER 13.95, PBR 1.45"
-      },
-      "technical": {
-        "score": 12,
-        "memo": "MA20 하회, RSI 37.8, 60일 고점 대비 -40.3%"
-      },
-      "flowScore": {
-        "score": 12,
-        "memo": "20일 외국인 0.8%, 기관 -1.8%"
-      },
-      "risk": {
-        "penalty": 5,
-        "notes": [
-          "MA20·MA60 동시 하회"
-        ],
-        "valuationBlock": false
-      },
-      "totalScore": 65,
-      "baseDecision": "WAIT_TRIGGER",
-      "decision": "WAIT_TRIGGER",
-      "structuralRegime": {
-        "mode": "PRICE_ONLY",
-        "confidence": 2,
-        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
-        "score": 10,
-        "grade": "장기 보유보다 이벤트·트레이딩 우선",
-        "gate": "BLOCK",
-        "entryEligible": false,
-        "primary": {
-          "id": "price-regime",
-          "label": "가격 기반 장기 추세 기준선",
-          "date": "2024-01-22",
-          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-          "sourceName": "Naver Finance daily price",
-          "sourceUrl": "https://finance.naver.com/item/main.naver?code=108320",
-          "firstTradingDate": "2024-01-22",
-          "basisClose": 80700,
-          "latestClose": 40150,
-          "latestDate": "2026-07-10",
-          "days": 900,
-          "returnPct": -50.2,
-          "cagrPct": -24.7,
-          "highClose": 85400,
-          "highDate": "2024-04-02",
-          "lowClose": 37700,
-          "lowDate": "2026-07-09",
-          "drawdownFromHighPct": -53,
-          "maxDrawdownPct": -55.9,
-          "aboveMA200": false,
-          "aboveMA600": false,
-          "score": 10,
-          "grade": "장기 보유보다 이벤트·트레이딩 우선",
-          "durationFlag": "가격 추세"
-        },
-        "events": [
-          {
-            "id": "price-regime",
-            "label": "가격 기반 장기 추세 기준선",
-            "date": "2024-01-22",
-            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-            "sourceName": "Naver Finance daily price",
-            "sourceUrl": "https://finance.naver.com/item/main.naver?code=108320",
-            "firstTradingDate": "2024-01-22",
-            "basisClose": 80700,
-            "latestClose": 40150,
-            "latestDate": "2026-07-10",
-            "days": 900,
-            "returnPct": -50.2,
-            "cagrPct": -24.7,
-            "highClose": 85400,
-            "highDate": "2024-04-02",
-            "lowClose": 37700,
-            "lowDate": "2026-07-09",
-            "drawdownFromHighPct": -53,
-            "maxDrawdownPct": -55.9,
-            "aboveMA200": false,
-            "aboveMA600": false,
-            "score": 10,
-            "grade": "장기 보유보다 이벤트·트레이딩 우선",
-            "durationFlag": "가격 추세"
-          }
-        ],
-        "memo": "가격 기반 장기 추세 검증 대기: 점수 10"
-      },
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
-        "estimatedCost": 53765,
-        "holderName": "외국인 투자자군",
-        "recentAccumulation": false,
-        "disposalPressure": false,
-        "flow": {
-          "cost": 53765.15417994054,
-          "shares": 1543132,
-          "netShares": -242034,
-          "last20NetShares": 107946,
-          "firstDate": "2025-07-17",
-          "lastDate": "2026-07-10",
-          "days": 240
-        },
-        "method": "구간 추정: 외국인 순매수 VWAP",
-        "score": 2,
-        "signal": "NEUTRAL",
-        "gapPct": -25.3,
-        "overhang": false,
-        "memo": "B 추정 평단 53,765원 대비 -25.3%. 방향성은 중립"
-      },
-      "holderCostScore": 2,
-      "v10cScore": 67,
-      "entryPlan": {
-        "action": "체질 검증 대기",
-        "trigger": "체질 점수 10점 BLOCK. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
-        "invalidation": "장기 기준선 미통과 상태에서 MA20 42,460원 재이탈 또는 60일 저점 37,300원 이탈",
-        "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요"
-      },
-      "executionPlan": {
-        "stance": "트리거 대기",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 36181
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 40150
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 42248
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 42460
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 43362
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 46173
-          },
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 53765
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 40150,
-            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
-          },
-          {
-            "label": "확인",
-            "weight": "관찰",
-            "price": 42460,
-            "rule": "MA20 42,460원 회복 또는 5일선 39,070원 위 양봉"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "보유자 대응",
-            "action": "반등 시 비중 축소",
-            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
-          },
-          {
-            "label": "무효",
-            "action": "신규 검토 중단",
-            "trigger": "60일 저점 37,300원 이탈"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
-          },
-          {
-            "window": "장중",
-            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
-          },
-          {
-            "window": "종가",
-            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "수급 보조 신호 양호",
-          "체질 기준: BLOCK · 10점 · 가격 기반 장기 추세 기준선",
-          "평단 신호: NEUTRAL · 2점 · B 추정 평단 53,765원 대비 -25.3%. 방향성은 중립",
-          "리스크: MA20·MA60 동시 하회",
-          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=108320",
-      "megaManagers": {
-        "score": 2,
-        "managerCount": 2,
-        "status": "복수 운용사 상품 보유 확인",
-        "managers": [
-          {
-            "manager": "Vanguard",
-            "managerGroup": "Vanguard",
-            "vehicle": "Institutional Total International Stock Market Index Trust",
-            "evidence": "INDEX_TRUST_HOLDING",
-            "asOf": "2025-10-31",
-            "weightPct": null,
-            "shares": null,
-            "holdingName": "LX세미콘",
-            "sourceUrl": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf"
-          },
-          {
-            "manager": "SSGA/State Street",
-            "managerGroup": "SSGA",
-            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
-            "evidence": "ETF_HOLDING",
-            "asOf": "As of 09-Jul-2026",
-            "weightPct": 0.000825,
-            "shares": 13187,
-            "holdingName": "LX SEMICON CO LTD",
-            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
-          }
-        ],
-        "largeHolderDisclosure": null,
-        "interpretation": "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다."
-      }
-    },
-    {
       "ticker": "330860",
       "company": "네패스아크",
       "sector": "반도체 테스트",
@@ -49816,6 +49490,333 @@
         "managers": [],
         "largeHolderDisclosure": null,
         "interpretation": "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다."
+      }
+    },
+    {
+      "ticker": "108320",
+      "company": "LX세미콘",
+      "sector": "디스플레이·반도체",
+      "status": "candidate",
+      "rationale": "디스플레이 IC, 재무 안정성",
+      "latestDate": "2026-07-10",
+      "close": 40150,
+      "marketCapEok": 6571,
+      "listedShares": 16264300,
+      "per": 13.95,
+      "pbr": 7,
+      "roe": 10.5,
+      "ownership": {
+        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=108320&target=finsum_more",
+        "topHolders": [
+          {
+            "name": "엘엑스홀딩스 외 2인",
+            "shares": 5385624,
+            "pct": 33.11
+          }
+        ],
+        "majorHolderName": "엘엑스홀딩스 외 2인",
+        "majorHolderShares": 5385624,
+        "majorHolderPct": 33.11,
+        "topHolderPct": 33.11,
+        "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-07-10",
+        "asOfText": "2026-07-10 16:10 장마감",
+        "officialClose": 40400,
+        "alternateClose": 40150
+      },
+      "liquidity": {
+        "avgVolume20": 120363,
+        "volumeRatio": 0.18
+      },
+      "returns": {
+        "d5": 2.293,
+        "d20": -20.0199,
+        "d60": -22.6397
+      },
+      "technicals": {
+        "ma5": 39070,
+        "ma20": 42460,
+        "ma60": 52013.33,
+        "ma120": 52284.58,
+        "rsi14": 37.75,
+        "high60": 67300,
+        "low60": 37300,
+        "drawdown60Pct": -40.3418,
+        "reboundFromLow60Pct": 7.6408,
+        "aboveMa20": false,
+        "aboveMa60": false,
+        "ma20SlopePct": -5.3763
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": 3.31,
+          "institutionNetValueEok": -8.25,
+          "foreignPct": 0.05,
+          "institutionPct": -0.126
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": 52.44,
+          "institutionNetValueEok": -117.69,
+          "foreignPct": 0.798,
+          "institutionPct": -1.791
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": 202.53,
+          "institutionNetValueEok": -167.39,
+          "foreignPct": 3.082,
+          "institutionPct": -2.547
+        }
+      },
+      "policy": {
+        "score": 22,
+        "memo": "디스플레이 IC, 재무 안정성"
+      },
+      "value": {
+        "score": 17,
+        "memo": "시총 6,571억원, PER 13.95, PBR 7"
+      },
+      "technical": {
+        "score": 12,
+        "memo": "MA20 하회, RSI 37.8, 60일 고점 대비 -40.3%"
+      },
+      "flowScore": {
+        "score": 12,
+        "memo": "20일 외국인 0.8%, 기관 -1.8%"
+      },
+      "risk": {
+        "penalty": 10,
+        "notes": [
+          "고PBR 부담",
+          "MA20·MA60 동시 하회"
+        ],
+        "valuationBlock": false
+      },
+      "totalScore": 53,
+      "baseDecision": "AVOID_NOW",
+      "decision": "AVOID_NOW",
+      "structuralRegime": {
+        "mode": "PRICE_ONLY",
+        "confidence": 2,
+        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
+        "score": 10,
+        "grade": "장기 보유보다 이벤트·트레이딩 우선",
+        "gate": "BLOCK",
+        "entryEligible": false,
+        "primary": {
+          "id": "price-regime",
+          "label": "가격 기반 장기 추세 기준선",
+          "date": "2024-01-22",
+          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+          "sourceName": "Naver Finance daily price",
+          "sourceUrl": "https://finance.naver.com/item/main.naver?code=108320",
+          "firstTradingDate": "2024-01-22",
+          "basisClose": 80700,
+          "latestClose": 40150,
+          "latestDate": "2026-07-10",
+          "days": 900,
+          "returnPct": -50.2,
+          "cagrPct": -24.7,
+          "highClose": 85400,
+          "highDate": "2024-04-02",
+          "lowClose": 37700,
+          "lowDate": "2026-07-09",
+          "drawdownFromHighPct": -53,
+          "maxDrawdownPct": -55.9,
+          "aboveMA200": false,
+          "aboveMA600": false,
+          "score": 10,
+          "grade": "장기 보유보다 이벤트·트레이딩 우선",
+          "durationFlag": "가격 추세"
+        },
+        "events": [
+          {
+            "id": "price-regime",
+            "label": "가격 기반 장기 추세 기준선",
+            "date": "2024-01-22",
+            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+            "sourceName": "Naver Finance daily price",
+            "sourceUrl": "https://finance.naver.com/item/main.naver?code=108320",
+            "firstTradingDate": "2024-01-22",
+            "basisClose": 80700,
+            "latestClose": 40150,
+            "latestDate": "2026-07-10",
+            "days": 900,
+            "returnPct": -50.2,
+            "cagrPct": -24.7,
+            "highClose": 85400,
+            "highDate": "2024-04-02",
+            "lowClose": 37700,
+            "lowDate": "2026-07-09",
+            "drawdownFromHighPct": -53,
+            "maxDrawdownPct": -55.9,
+            "aboveMA200": false,
+            "aboveMA600": false,
+            "score": 10,
+            "grade": "장기 보유보다 이벤트·트레이딩 우선",
+            "durationFlag": "가격 추세"
+          }
+        ],
+        "memo": "가격 기반 장기 추세 검증 대기: 점수 10"
+      },
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
+        "estimatedCost": 53765,
+        "holderName": "외국인 투자자군",
+        "recentAccumulation": false,
+        "disposalPressure": false,
+        "flow": {
+          "cost": 53765.15417994054,
+          "shares": 1543132,
+          "netShares": -242034,
+          "last20NetShares": 107946,
+          "firstDate": "2025-07-17",
+          "lastDate": "2026-07-10",
+          "days": 240
+        },
+        "method": "구간 추정: 외국인 순매수 VWAP",
+        "score": 2,
+        "signal": "NEUTRAL",
+        "gapPct": -25.3,
+        "overhang": false,
+        "memo": "B 추정 평단 53,765원 대비 -25.3%. 방향성은 중립"
+      },
+      "holderCostScore": 2,
+      "v10cScore": 55,
+      "entryPlan": {
+        "action": "관망/제외",
+        "trigger": "최소 MA20 42,460원 회복과 RSI 35 이상 필요",
+        "invalidation": "추세 훼손 지속",
+        "target": "반등 확인 전 목표가 산정 보류"
+      },
+      "executionPlan": {
+        "stance": "관망",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 36181
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 40150
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 42248
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 42460
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 43362
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 46173
+          },
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 53765
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 40150,
+            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
+          },
+          {
+            "label": "확인",
+            "weight": "관찰",
+            "price": 42460,
+            "rule": "MA20 42,460원 회복 또는 5일선 39,070원 위 양봉"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "보유자 대응",
+            "action": "반등 시 비중 축소",
+            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
+          },
+          {
+            "label": "무효",
+            "action": "신규 검토 중단",
+            "trigger": "60일 저점 37,300원 이탈"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
+          },
+          {
+            "window": "장중",
+            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
+          },
+          {
+            "window": "종가",
+            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "수급 보조 신호 양호",
+          "체질 기준: BLOCK · 10점 · 가격 기반 장기 추세 기준선",
+          "평단 신호: NEUTRAL · 2점 · B 추정 평단 53,765원 대비 -25.3%. 방향성은 중립",
+          "리스크: 고PBR 부담 · MA20·MA60 동시 하회",
+          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=108320",
+      "megaManagers": {
+        "score": 2,
+        "managerCount": 2,
+        "status": "복수 운용사 상품 보유 확인",
+        "managers": [
+          {
+            "manager": "Vanguard",
+            "managerGroup": "Vanguard",
+            "vehicle": "Institutional Total International Stock Market Index Trust",
+            "evidence": "INDEX_TRUST_HOLDING",
+            "asOf": "2025-10-31",
+            "weightPct": null,
+            "shares": null,
+            "holdingName": "LX세미콘",
+            "sourceUrl": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf"
+          },
+          {
+            "manager": "SSGA/State Street",
+            "managerGroup": "SSGA",
+            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
+            "evidence": "ETF_HOLDING",
+            "asOf": "As of 09-Jul-2026",
+            "weightPct": 0.000825,
+            "shares": 13187,
+            "holdingName": "LX SEMICON CO LTD",
+            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
+          }
+        ],
+        "largeHolderDisclosure": null,
+        "interpretation": "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다."
       }
     },
     {
