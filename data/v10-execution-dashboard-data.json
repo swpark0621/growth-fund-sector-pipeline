@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
-    "runDate": "2026-07-17",
-    "updatedAt": "2026-07-17 19:34:58 KST",
+    "runDate": "2026-07-18",
+    "updatedAt": "2026-07-18 07:34:57 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -172,7 +172,7 @@
       },
       "로봇": {
         "count": 6,
-        "avgScore": 19.8,
+        "avgScore": 19.7,
         "entry": 0
       },
       "이차전지 장비": {
@@ -680,10 +680,10 @@
     ]
   },
   "megaManagers": {
-    "asOf": "2026-07-17",
+    "asOf": "2026-07-18",
     "caveat": "ETF·인덱스 보유는 지수 편입·상품 운용 신호이며, 특정 종목을 능동적으로 매집했다는 증거가 아닙니다. DART 5% 이상 공시는 더 강한 보유 증거지만 신규 매수 시점과는 구분해야 합니다.",
     "sourceStatus": {
-      "blackRockEwy": "ok · Jul 15, 2026",
+      "blackRockEwy": "ok · Jul 16, 2026",
       "vanguardTrust": "ok · 2025-10-31 official holdings PDF",
       "ssgaSpdw": "ok · As of 16-Jul-2026"
     },
@@ -708,9 +708,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.9977,
-              "shares": 1864455
+              "asOf": "Jul 16, 2026",
+              "weightPct": 1.062,
+              "shares": 1906335
             },
             {
               "manager": "Vanguard",
@@ -754,9 +754,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.547,
-              "shares": 1313925
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.5877,
+              "shares": 1343445
             },
             {
               "manager": "Vanguard",
@@ -791,9 +791,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 1.0089,
-              "shares": 2034617
+              "asOf": "Jul 16, 2026",
+              "weightPct": 1.0713,
+              "shares": 2078417
             },
             {
               "manager": "Vanguard",
@@ -828,9 +828,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 1.0432,
-              "shares": 397888
+              "asOf": "Jul 16, 2026",
+              "weightPct": 1.1248,
+              "shares": 406828
             },
             {
               "manager": "Vanguard",
@@ -865,9 +865,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.3925,
-              "shares": 668647
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.4179,
+              "shares": 683647
             },
             {
               "manager": "Vanguard",
@@ -902,9 +902,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.7328,
-              "shares": 187746
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.7857,
+              "shares": 191946
             },
             {
               "manager": "Vanguard",
@@ -939,9 +939,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.9568,
-              "shares": 746749
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.9727,
+              "shares": 763489
             },
             {
               "manager": "Vanguard",
@@ -976,9 +976,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.7348,
-              "shares": 316349
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.7558,
+              "shares": 323429
             },
             {
               "manager": "Vanguard",
@@ -1013,9 +1013,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.3536,
-              "shares": 1802759
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.3826,
+              "shares": 1843259
             },
             {
               "manager": "Vanguard",
@@ -1050,9 +1050,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.6261,
-              "shares": 77354
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.6463,
+              "shares": 79034
             },
             {
               "manager": "Vanguard",
@@ -1087,9 +1087,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.6446,
-              "shares": 1133513
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.6456,
+              "shares": 1158953
             },
             {
               "manager": "Vanguard",
@@ -1124,9 +1124,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 1.0369,
-              "shares": 750565
+              "asOf": "Jul 16, 2026",
+              "weightPct": 1.0845,
+              "shares": 767425
             },
             {
               "manager": "Vanguard",
@@ -1161,9 +1161,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.5681,
-              "shares": 1200347
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.5722,
+              "shares": 1227287
             },
             {
               "manager": "Vanguard",
@@ -1198,9 +1198,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.5625,
-              "shares": 739576
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.5377,
+              "shares": 756196
             },
             {
               "manager": "Vanguard",
@@ -1235,9 +1235,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.3174,
-              "shares": 1709333
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.3357,
+              "shares": 1747733
             },
             {
               "manager": "Vanguard",
@@ -1272,9 +1272,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.6683,
-              "shares": 706826
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.7077,
+              "shares": 722666
             },
             {
               "manager": "Vanguard",
@@ -1309,9 +1309,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.5392,
-              "shares": 662268
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.549,
+              "shares": 677148
             },
             {
               "manager": "Vanguard",
@@ -1346,9 +1346,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.3649,
-              "shares": 1069414
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.3603,
+              "shares": 1093414
             },
             {
               "manager": "Vanguard",
@@ -1383,9 +1383,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.3379,
-              "shares": 781476
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.3458,
+              "shares": 798996
             },
             {
               "manager": "Vanguard",
@@ -1536,9 +1536,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 15, 2026",
-              "weightPct": 0.514,
-              "shares": 240595
+              "asOf": "Jul 16, 2026",
+              "weightPct": 0.5402,
+              "shares": 245995
             },
             {
               "manager": "SSGA/State Street",
@@ -2786,9 +2786,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.547,
-            "shares": 1313925,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.5877,
+            "shares": 1343445,
             "holdingName": "KOREA AEROSPACE INDUSTRIES LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -4632,9 +4632,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 1.0089,
-            "shares": 2034617,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 1.0713,
+            "shares": 2078417,
             "holdingName": "CELLTRION INC",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -5541,9 +5541,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.514,
-            "shares": 240595,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.5402,
+            "shares": 245995,
             "holdingName": "LIG DEFENSE&AEROSPACE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -6000,9 +6000,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 1.0432,
-            "shares": 397888,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 1.1248,
+            "shares": 406828,
             "holdingName": "HANWHA AEROSPACE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -8679,9 +8679,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.3925,
-            "shares": 668647,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.4179,
+            "shares": 683647,
             "holdingName": "HYBE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -10244,9 +10244,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.9568,
-            "shares": 746749,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.9727,
+            "shares": 763489,
             "holdingName": "SAMSUNG SDI LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -10287,7 +10287,7 @@
       "close": 2758000,
       "marketCapEok": 260062,
       "listedShares": 9324548,
-      "per": 1,
+      "per": 13.02,
       "pbr": 1.4,
       "roe": 11.29,
       "ownership": {
@@ -10374,7 +10374,7 @@
       },
       "value": {
         "score": 18,
-        "memo": "시총 260,062억원, PER 1, PBR 1.4"
+        "memo": "시총 260,062억원, PER 13.02, PBR 1.4"
       },
       "technical": {
         "score": 15,
@@ -10591,9 +10591,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.6261,
-            "shares": 77354,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.6463,
+            "shares": 79034,
             "holdingName": "HYOSUNG HEAVY INDUSTRIES CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -11295,9 +11295,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 1.0369,
-            "shares": 750565,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 1.0845,
+            "shares": 767425,
             "holdingName": "HYUNDAI MOBIS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -11975,9 +11975,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.7328,
-            "shares": 187746,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.7857,
+            "shares": 191946,
             "holdingName": "SAMSUNG BIOLOGICS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -12994,9 +12994,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.6446,
-            "shares": 1133513,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.6456,
+            "shares": 1158953,
             "holdingName": "LS ELECTRIC LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -13642,9 +13642,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.7348,
-            "shares": 316349,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.7558,
+            "shares": 323429,
             "holdingName": "HD HYUNDAI ELECTRIC LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -13995,9 +13995,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.5625,
-            "shares": 739576,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.5377,
+            "shares": 756196,
             "holdingName": "HANMI SEMICONDUCTOR LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -15315,9 +15315,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.3536,
-            "shares": 1802759,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.3826,
+            "shares": 1843259,
             "holdingName": "YUHAN CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -16305,9 +16305,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.8132,
-            "shares": 916154,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.8555,
+            "shares": 936734,
             "holdingName": "POSCO",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           }
@@ -20442,9 +20442,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.547,
-            "shares": 1313925,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.5877,
+            "shares": 1343445,
             "holdingName": "KOREA AEROSPACE INDUSTRIES LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -21344,9 +21344,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 1.0089,
-            "shares": 2034617,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 1.0713,
+            "shares": 2078417,
             "holdingName": "CELLTRION INC",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -22253,9 +22253,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.514,
-            "shares": 240595,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.5402,
+            "shares": 245995,
             "holdingName": "LIG DEFENSE&AEROSPACE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -23654,9 +23654,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 1.0432,
-            "shares": 397888,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 1.1248,
+            "shares": 406828,
             "holdingName": "HANWHA AEROSPACE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -25218,9 +25218,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.9568,
-            "shares": 746749,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.9727,
+            "shares": 763489,
             "holdingName": "SAMSUNG SDI LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -25261,7 +25261,7 @@
       "close": 2758000,
       "marketCapEok": 260062,
       "listedShares": 9324548,
-      "per": 1,
+      "per": 13.02,
       "pbr": 1.4,
       "roe": 11.29,
       "ownership": {
@@ -25348,7 +25348,7 @@
       },
       "value": {
         "score": 18,
-        "memo": "시총 260,062억원, PER 1, PBR 1.4"
+        "memo": "시총 260,062억원, PER 13.02, PBR 1.4"
       },
       "technical": {
         "score": 15,
@@ -25565,9 +25565,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.6261,
-            "shares": 77354,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.6463,
+            "shares": 79034,
             "holdingName": "HYOSUNG HEAVY INDUSTRIES CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -26269,9 +26269,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 1.0369,
-            "shares": 750565,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 1.0845,
+            "shares": 767425,
             "holdingName": "HYUNDAI MOBIS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -26949,9 +26949,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.7328,
-            "shares": 187746,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.7857,
+            "shares": 191946,
             "holdingName": "SAMSUNG BIOLOGICS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -29408,9 +29408,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.3925,
-            "shares": 668647,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.4179,
+            "shares": 683647,
             "holdingName": "HYBE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -29755,9 +29755,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.6446,
-            "shares": 1133513,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.6456,
+            "shares": 1158953,
             "holdingName": "LS ELECTRIC LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -30831,9 +30831,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.7348,
-            "shares": 316349,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.7558,
+            "shares": 323429,
             "holdingName": "HD HYUNDAI ELECTRIC LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -31184,9 +31184,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.5625,
-            "shares": 739576,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.5377,
+            "shares": 756196,
             "holdingName": "HANMI SEMICONDUCTOR LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -32504,9 +32504,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.3536,
-            "shares": 1802759,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.3826,
+            "shares": 1843259,
             "holdingName": "YUHAN CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -33957,9 +33957,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.8132,
-            "shares": 916154,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.8555,
+            "shares": 936734,
             "holdingName": "POSCO",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           }
@@ -37863,9 +37863,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.5681,
-            "shares": 1200347,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.5722,
+            "shares": 1227287,
             "holdingName": "HYUNDAI-ROTEM",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -38210,9 +38210,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.3174,
-            "shares": 1709333,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.3357,
+            "shares": 1747733,
             "holdingName": "HANWHA SYSTEMS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -38856,9 +38856,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.6683,
-            "shares": 706826,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.7077,
+            "shares": 722666,
             "holdingName": "LG ENERGY SOLUTION LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -43045,9 +43045,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.9977,
-            "shares": 1864455,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 1.062,
+            "shares": 1906335,
             "holdingName": "NAVER CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -56196,9 +56196,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.5392,
-            "shares": 662268,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.549,
+            "shares": 677148,
             "holdingName": "ALTEOGEN INC",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -57179,9 +57179,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.3649,
-            "shares": 1069414,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.3603,
+            "shares": 1093414,
             "holdingName": "ECOPRO BM LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -58739,340 +58739,6 @@
       }
     },
     {
-      "ticker": "277810",
-      "company": "레인보우로보틱스",
-      "sector": "로봇",
-      "status": "candidate",
-      "rationale": "휴머노이드·협동로봇 대형 테마",
-      "latestDate": "2026-07-16",
-      "close": 398500,
-      "marketCapEok": 77017,
-      "listedShares": 19399858,
-      "per": 5800,
-      "pbr": 26.13,
-      "roe": -0.93,
-      "ownership": {
-        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=277810&target=finsum_more",
-        "topHolders": [
-          {
-            "name": "삼성전자 외 3인",
-            "shares": 8076414,
-            "pct": 41.63
-          },
-          {
-            "name": "오준호 외 3인",
-            "shares": 3295401,
-            "pct": 16.99
-          }
-        ],
-        "majorHolderName": "삼성전자 외 3인",
-        "majorHolderShares": 8076414,
-        "majorHolderPct": 41.63,
-        "topHolderPct": 58.62,
-        "memo": "대주주 지분 높음"
-      },
-      "priceSource": {
-        "source": "NXT",
-        "asOfDate": "2026-07-16",
-        "asOfText": "2026-07-16 16:10 장마감",
-        "officialClose": 397000,
-        "alternateClose": 398500
-      },
-      "liquidity": {
-        "avgVolume20": 87682,
-        "volumeRatio": 0.45
-      },
-      "returns": {
-        "d5": -7.5406,
-        "d20": -35.2033,
-        "d60": -35.2033
-      },
-      "technicals": {
-        "ma5": 419500,
-        "ma20": 480250,
-        "ma60": 622783.33,
-        "ma120": 644658.33,
-        "rsi14": 35.63,
-        "high60": 979000,
-        "low60": 377000,
-        "drawdown60Pct": -59.2952,
-        "reboundFromLow60Pct": 5.7029,
-        "aboveMa20": false,
-        "aboveMa60": false,
-        "ma20SlopePct": -9.791
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": 109.27,
-          "institutionNetValueEok": -92.81,
-          "foreignPct": 0.142,
-          "institutionPct": -0.121
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": -7.96,
-          "institutionNetValueEok": 133.21,
-          "foreignPct": -0.01,
-          "institutionPct": 0.173
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": -839.28,
-          "institutionNetValueEok": 222.25,
-          "foreignPct": -1.09,
-          "institutionPct": 0.289
-        }
-      },
-      "policy": {
-        "score": 20,
-        "memo": "휴머노이드·협동로봇 대형 테마"
-      },
-      "value": {
-        "score": 3,
-        "memo": "시총 77,017억원, PER 5800, PBR 26.13"
-      },
-      "technical": {
-        "score": 0,
-        "memo": "MA20 하회, RSI 35.6, 60일 고점 대비 -59.3%"
-      },
-      "flowScore": {
-        "score": 12,
-        "memo": "20일 외국인 -0%, 기관 0.2%"
-      },
-      "risk": {
-        "penalty": 25,
-        "notes": [
-          "PBR 10배 초과",
-          "PER 60배 초과",
-          "20일 추세 훼손",
-          "MA20·MA60 동시 하회"
-        ],
-        "valuationBlock": true
-      },
-      "totalScore": 10,
-      "baseDecision": "AVOID_NOW",
-      "decision": "AVOID_NOW",
-      "structuralRegime": {
-        "mode": "PRICE_ONLY",
-        "confidence": 2,
-        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
-        "score": 59,
-        "grade": "전환 스토리/가격 검증 부족",
-        "gate": "REVIEW",
-        "entryEligible": false,
-        "primary": {
-          "id": "price-regime",
-          "label": "가격 기반 장기 추세 기준선",
-          "date": "2024-01-26",
-          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-          "sourceName": "Naver Finance daily price",
-          "sourceUrl": "https://finance.naver.com/item/main.naver?code=277810",
-          "firstTradingDate": "2024-01-26",
-          "basisClose": 168600,
-          "latestClose": 398500,
-          "latestDate": "2026-07-16",
-          "days": 902,
-          "returnPct": 136.4,
-          "cagrPct": 41.7,
-          "highClose": 880000,
-          "highDate": "2026-02-26",
-          "lowClose": 113500,
-          "lowDate": "2024-08-05",
-          "drawdownFromHighPct": -54.7,
-          "maxDrawdownPct": -54.7,
-          "aboveMA200": false,
-          "aboveMA600": true,
-          "score": 59,
-          "grade": "전환 스토리/가격 검증 부족",
-          "durationFlag": "가격 추세"
-        },
-        "events": [
-          {
-            "id": "price-regime",
-            "label": "가격 기반 장기 추세 기준선",
-            "date": "2024-01-26",
-            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-            "sourceName": "Naver Finance daily price",
-            "sourceUrl": "https://finance.naver.com/item/main.naver?code=277810",
-            "firstTradingDate": "2024-01-26",
-            "basisClose": 168600,
-            "latestClose": 398500,
-            "latestDate": "2026-07-16",
-            "days": 902,
-            "returnPct": 136.4,
-            "cagrPct": 41.7,
-            "highClose": 880000,
-            "highDate": "2026-02-26",
-            "lowClose": 113500,
-            "lowDate": "2024-08-05",
-            "drawdownFromHighPct": -54.7,
-            "maxDrawdownPct": -54.7,
-            "aboveMA200": false,
-            "aboveMA600": true,
-            "score": 59,
-            "grade": "전환 스토리/가격 검증 부족",
-            "durationFlag": "가격 추세"
-          }
-        ],
-        "memo": "가격 기반 장기 추세 검증 대기: 점수 59"
-      },
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
-        "estimatedCost": 487833,
-        "holderName": "외국인 투자자군",
-        "recentAccumulation": true,
-        "disposalPressure": false,
-        "flow": {
-          "cost": 487832.8166819818,
-          "shares": 4012377,
-          "netShares": 781065,
-          "last20NetShares": 7203,
-          "firstDate": "2025-07-23",
-          "lastDate": "2026-07-16",
-          "days": 240
-        },
-        "method": "구간 추정: 외국인 순매수 VWAP",
-        "score": 7,
-        "signal": "NEUTRAL",
-        "gapPct": -18.3,
-        "overhang": false,
-        "memo": "B 추정 평단 487,833원 대비 -18.3%. 방향성은 중립"
-      },
-      "holderCostScore": 7,
-      "v10cScore": 17,
-      "entryPlan": {
-        "action": "관망/제외",
-        "trigger": "최소 MA20 480,250원 회복과 RSI 35 이상 필요",
-        "invalidation": "추세 훼손 지속",
-        "target": "반등 확인 전 목표가 산정 보류"
-      },
-      "executionPlan": {
-        "stance": "관망",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 365690
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 398500
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 430380
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 458275
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 477849
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 480250
-          },
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 487833
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 398500,
-            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
-          },
-          {
-            "label": "확인",
-            "weight": "관찰",
-            "price": 480250,
-            "rule": "MA20 480,250원 회복 또는 5일선 419,500원 위 양봉"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "보유자 대응",
-            "action": "반등 시 비중 축소",
-            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
-          },
-          {
-            "label": "무효",
-            "action": "신규 검토 중단",
-            "trigger": "60일 저점 377,000원 이탈"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
-          },
-          {
-            "window": "장중",
-            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
-          },
-          {
-            "window": "종가",
-            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "수급 보조 신호 양호",
-          "체질 기준: REVIEW · 59점 · 가격 기반 장기 추세 기준선",
-          "평단 신호: NEUTRAL · 7점 · B 추정 평단 487,833원 대비 -18.3%. 방향성은 중립",
-          "리스크: PBR 10배 초과 · PER 60배 초과 · 20일 추세 훼손 · MA20·MA60 동시 하회",
-          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=277810",
-      "megaManagers": {
-        "score": 2,
-        "managerCount": 2,
-        "status": "복수 운용사 상품 보유 확인",
-        "managers": [
-          {
-            "manager": "Vanguard",
-            "managerGroup": "Vanguard",
-            "vehicle": "Institutional Total International Stock Market Index Trust",
-            "evidence": "INDEX_TRUST_HOLDING",
-            "asOf": "2025-10-31",
-            "weightPct": null,
-            "shares": null,
-            "holdingName": "레인보우로보틱스",
-            "sourceUrl": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf"
-          },
-          {
-            "manager": "SSGA/State Street",
-            "managerGroup": "SSGA",
-            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
-            "evidence": "ETF_HOLDING",
-            "asOf": "As of 16-Jul-2026",
-            "weightPct": 0.012891,
-            "shares": 19227,
-            "holdingName": "RAINBOW ROBOTICS",
-            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
-          }
-        ],
-        "largeHolderDisclosure": null,
-        "interpretation": "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다."
-      }
-    },
-    {
       "ticker": "394280",
       "company": "오픈엣지테크놀로지",
       "sector": "AI·반도체",
@@ -59369,6 +59035,340 @@
         "managers": [],
         "largeHolderDisclosure": null,
         "interpretation": "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다."
+      }
+    },
+    {
+      "ticker": "277810",
+      "company": "레인보우로보틱스",
+      "sector": "로봇",
+      "status": "candidate",
+      "rationale": "휴머노이드·협동로봇 대형 테마",
+      "latestDate": "2026-07-16",
+      "close": 398500,
+      "marketCapEok": 77017,
+      "listedShares": 19399858,
+      "per": -3,
+      "pbr": 26.13,
+      "roe": -0.93,
+      "ownership": {
+        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=277810&target=finsum_more",
+        "topHolders": [
+          {
+            "name": "삼성전자 외 3인",
+            "shares": 8076414,
+            "pct": 41.63
+          },
+          {
+            "name": "오준호 외 3인",
+            "shares": 3295401,
+            "pct": 16.99
+          }
+        ],
+        "majorHolderName": "삼성전자 외 3인",
+        "majorHolderShares": 8076414,
+        "majorHolderPct": 41.63,
+        "topHolderPct": 58.62,
+        "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-07-16",
+        "asOfText": "2026-07-16 16:10 장마감",
+        "officialClose": 397000,
+        "alternateClose": 398500
+      },
+      "liquidity": {
+        "avgVolume20": 87682,
+        "volumeRatio": 0.45
+      },
+      "returns": {
+        "d5": -7.5406,
+        "d20": -35.2033,
+        "d60": -35.2033
+      },
+      "technicals": {
+        "ma5": 419500,
+        "ma20": 480250,
+        "ma60": 622783.33,
+        "ma120": 644658.33,
+        "rsi14": 35.63,
+        "high60": 979000,
+        "low60": 377000,
+        "drawdown60Pct": -59.2952,
+        "reboundFromLow60Pct": 5.7029,
+        "aboveMa20": false,
+        "aboveMa60": false,
+        "ma20SlopePct": -9.791
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": 109.27,
+          "institutionNetValueEok": -92.81,
+          "foreignPct": 0.142,
+          "institutionPct": -0.121
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": -7.96,
+          "institutionNetValueEok": 133.21,
+          "foreignPct": -0.01,
+          "institutionPct": 0.173
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": -839.28,
+          "institutionNetValueEok": 222.25,
+          "foreignPct": -1.09,
+          "institutionPct": 0.289
+        }
+      },
+      "policy": {
+        "score": 20,
+        "memo": "휴머노이드·협동로봇 대형 테마"
+      },
+      "value": {
+        "score": 4,
+        "memo": "시총 77,017억원, PER -3, PBR 26.13"
+      },
+      "technical": {
+        "score": 0,
+        "memo": "MA20 하회, RSI 35.6, 60일 고점 대비 -59.3%"
+      },
+      "flowScore": {
+        "score": 12,
+        "memo": "20일 외국인 -0%, 기관 0.2%"
+      },
+      "risk": {
+        "penalty": 27,
+        "notes": [
+          "적자+고PBR 밸류에이션",
+          "PBR 10배 초과",
+          "20일 추세 훼손",
+          "MA20·MA60 동시 하회"
+        ],
+        "valuationBlock": true
+      },
+      "totalScore": 9,
+      "baseDecision": "AVOID_NOW",
+      "decision": "AVOID_NOW",
+      "structuralRegime": {
+        "mode": "PRICE_ONLY",
+        "confidence": 2,
+        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
+        "score": 59,
+        "grade": "전환 스토리/가격 검증 부족",
+        "gate": "REVIEW",
+        "entryEligible": false,
+        "primary": {
+          "id": "price-regime",
+          "label": "가격 기반 장기 추세 기준선",
+          "date": "2024-01-26",
+          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+          "sourceName": "Naver Finance daily price",
+          "sourceUrl": "https://finance.naver.com/item/main.naver?code=277810",
+          "firstTradingDate": "2024-01-26",
+          "basisClose": 168600,
+          "latestClose": 398500,
+          "latestDate": "2026-07-16",
+          "days": 902,
+          "returnPct": 136.4,
+          "cagrPct": 41.7,
+          "highClose": 880000,
+          "highDate": "2026-02-26",
+          "lowClose": 113500,
+          "lowDate": "2024-08-05",
+          "drawdownFromHighPct": -54.7,
+          "maxDrawdownPct": -54.7,
+          "aboveMA200": false,
+          "aboveMA600": true,
+          "score": 59,
+          "grade": "전환 스토리/가격 검증 부족",
+          "durationFlag": "가격 추세"
+        },
+        "events": [
+          {
+            "id": "price-regime",
+            "label": "가격 기반 장기 추세 기준선",
+            "date": "2024-01-26",
+            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+            "sourceName": "Naver Finance daily price",
+            "sourceUrl": "https://finance.naver.com/item/main.naver?code=277810",
+            "firstTradingDate": "2024-01-26",
+            "basisClose": 168600,
+            "latestClose": 398500,
+            "latestDate": "2026-07-16",
+            "days": 902,
+            "returnPct": 136.4,
+            "cagrPct": 41.7,
+            "highClose": 880000,
+            "highDate": "2026-02-26",
+            "lowClose": 113500,
+            "lowDate": "2024-08-05",
+            "drawdownFromHighPct": -54.7,
+            "maxDrawdownPct": -54.7,
+            "aboveMA200": false,
+            "aboveMA600": true,
+            "score": 59,
+            "grade": "전환 스토리/가격 검증 부족",
+            "durationFlag": "가격 추세"
+          }
+        ],
+        "memo": "가격 기반 장기 추세 검증 대기: 점수 59"
+      },
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
+        "estimatedCost": 487833,
+        "holderName": "외국인 투자자군",
+        "recentAccumulation": true,
+        "disposalPressure": false,
+        "flow": {
+          "cost": 487832.8166819818,
+          "shares": 4012377,
+          "netShares": 781065,
+          "last20NetShares": 7203,
+          "firstDate": "2025-07-23",
+          "lastDate": "2026-07-16",
+          "days": 240
+        },
+        "method": "구간 추정: 외국인 순매수 VWAP",
+        "score": 7,
+        "signal": "NEUTRAL",
+        "gapPct": -18.3,
+        "overhang": false,
+        "memo": "B 추정 평단 487,833원 대비 -18.3%. 방향성은 중립"
+      },
+      "holderCostScore": 7,
+      "v10cScore": 16,
+      "entryPlan": {
+        "action": "관망/제외",
+        "trigger": "최소 MA20 480,250원 회복과 RSI 35 이상 필요",
+        "invalidation": "추세 훼손 지속",
+        "target": "반등 확인 전 목표가 산정 보류"
+      },
+      "executionPlan": {
+        "stance": "관망",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 365690
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 398500
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 430380
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 458275
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 477849
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 480250
+          },
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 487833
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 398500,
+            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
+          },
+          {
+            "label": "확인",
+            "weight": "관찰",
+            "price": 480250,
+            "rule": "MA20 480,250원 회복 또는 5일선 419,500원 위 양봉"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "보유자 대응",
+            "action": "반등 시 비중 축소",
+            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
+          },
+          {
+            "label": "무효",
+            "action": "신규 검토 중단",
+            "trigger": "60일 저점 377,000원 이탈"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
+          },
+          {
+            "window": "장중",
+            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
+          },
+          {
+            "window": "종가",
+            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "수급 보조 신호 양호",
+          "체질 기준: REVIEW · 59점 · 가격 기반 장기 추세 기준선",
+          "평단 신호: NEUTRAL · 7점 · B 추정 평단 487,833원 대비 -18.3%. 방향성은 중립",
+          "리스크: 적자+고PBR 밸류에이션 · PBR 10배 초과 · 20일 추세 훼손 · MA20·MA60 동시 하회",
+          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=277810",
+      "megaManagers": {
+        "score": 2,
+        "managerCount": 2,
+        "status": "복수 운용사 상품 보유 확인",
+        "managers": [
+          {
+            "manager": "Vanguard",
+            "managerGroup": "Vanguard",
+            "vehicle": "Institutional Total International Stock Market Index Trust",
+            "evidence": "INDEX_TRUST_HOLDING",
+            "asOf": "2025-10-31",
+            "weightPct": null,
+            "shares": null,
+            "holdingName": "레인보우로보틱스",
+            "sourceUrl": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf"
+          },
+          {
+            "manager": "SSGA/State Street",
+            "managerGroup": "SSGA",
+            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
+            "evidence": "ETF_HOLDING",
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.012891,
+            "shares": 19227,
+            "holdingName": "RAINBOW ROBOTICS",
+            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
+          }
+        ],
+        "largeHolderDisclosure": null,
+        "interpretation": "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다."
       }
     },
     {
@@ -60327,9 +60327,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 15, 2026",
-            "weightPct": 0.3379,
-            "shares": 781476,
+            "asOf": "Jul 16, 2026",
+            "weightPct": 0.3458,
+            "shares": 798996,
             "holdingName": "POSCO FUTURE M LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
