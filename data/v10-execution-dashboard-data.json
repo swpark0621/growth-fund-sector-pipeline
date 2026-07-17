@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-07-17",
-    "updatedAt": "2026-07-17 15:04:57 KST",
+    "updatedAt": "2026-07-17 19:34:58 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -235,6 +235,11 @@
         "avgScore": 31.3,
         "entry": 0
       },
+      "미래차·부품": {
+        "count": 1,
+        "avgScore": 30,
+        "entry": 0
+      },
       "수소·에너지": {
         "count": 1,
         "avgScore": 25,
@@ -243,11 +248,6 @@
       "콘텐츠·VFX": {
         "count": 3,
         "avgScore": 16.7,
-        "entry": 0
-      },
-      "미래차·부품": {
-        "count": 1,
-        "avgScore": 25,
         "entry": 0
       },
       "OLED 소재": {
@@ -685,7 +685,7 @@
     "sourceStatus": {
       "blackRockEwy": "ok · Jul 15, 2026",
       "vanguardTrust": "ok · 2025-10-31 official holdings PDF",
-      "ssgaSpdw": "ok · As of 15-Jul-2026"
+      "ssgaSpdw": "ok · As of 16-Jul-2026"
     },
     "summary": {
       "withAny": 59,
@@ -724,8 +724,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.054464,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.055195,
               "shares": 172014
             }
           ],
@@ -770,8 +770,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.019453,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.0199,
               "shares": 78975
             }
           ],
@@ -807,8 +807,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.059689,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.060397,
               "shares": 203430
             }
           ],
@@ -844,8 +844,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.059014,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.060579,
               "shares": 38039
             }
           ],
@@ -881,8 +881,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.007492,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.007595,
               "shares": 21570
             }
           ],
@@ -918,8 +918,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.032195,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.032865,
               "shares": 13940
             }
           ],
@@ -955,8 +955,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.05511,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.053339,
               "shares": 72689
             }
           ],
@@ -992,8 +992,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.03504,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.034316,
               "shares": 25495
             }
           ],
@@ -1029,8 +1029,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.007189,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.007406,
               "shares": 61943
             }
           ],
@@ -1066,8 +1066,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.054935,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.054025,
               "shares": 11470
             }
           ],
@@ -1103,8 +1103,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.03119,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.029742,
               "shares": 92690
             }
           ],
@@ -1140,8 +1140,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.060056,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.059803,
               "shares": 73467
             }
           ],
@@ -1177,8 +1177,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.01947,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.018668,
               "shares": 69521
             }
           ],
@@ -1214,8 +1214,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.036042,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.032797,
               "shares": 80082
             }
           ],
@@ -1251,8 +1251,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.018569,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.018693,
               "shares": 168985
             }
           ],
@@ -1288,8 +1288,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.026373,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.026591,
               "shares": 47142
             }
           ],
@@ -1325,8 +1325,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.018752,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.018175,
               "shares": 38921
             }
           ],
@@ -1362,8 +1362,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.011186,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.010517,
               "shares": 55402
             }
           ],
@@ -1399,8 +1399,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.010222,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.00996,
               "shares": 39955
             }
           ],
@@ -1428,8 +1428,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.003966,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.004121,
               "shares": 7251
             }
           ],
@@ -1457,8 +1457,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.038737,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.035135,
               "shares": 110721
             }
           ],
@@ -1486,8 +1486,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.008466,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.008441,
               "shares": 35525
             }
           ],
@@ -1515,8 +1515,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.000898,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.000874,
               "shares": 13187
             }
           ],
@@ -1544,8 +1544,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.016525,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.016535,
               "shares": 13072
             }
           ],
@@ -1573,8 +1573,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.004201,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.004153,
               "shares": 148498
             }
           ],
@@ -1602,8 +1602,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.002931,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.002782,
               "shares": 37785
             }
           ],
@@ -1631,8 +1631,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.00524,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.00495,
               "shares": 49263
             }
           ],
@@ -1660,8 +1660,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.001333,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.00127,
               "shares": 38008
             }
           ],
@@ -1689,8 +1689,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.005956,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.006087,
               "shares": 28998
             }
           ],
@@ -1718,8 +1718,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.002827,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.002787,
               "shares": 36838
             }
           ],
@@ -1747,8 +1747,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.005919,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.005555,
               "shares": 45498
             }
           ],
@@ -1776,8 +1776,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.002581,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.00254,
               "shares": 21768
             }
           ],
@@ -1805,8 +1805,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.002408,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.002372,
               "shares": 30109
             }
           ],
@@ -1834,8 +1834,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.001287,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.001311,
               "shares": 21897
             }
           ],
@@ -1863,8 +1863,8 @@
               "manager": "SSGA/State Street",
               "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
               "evidence": "ETF_HOLDING",
-              "asOf": "As of 15-Jul-2026",
-              "weightPct": 0.0002,
+              "asOf": "As of 16-Jul-2026",
+              "weightPct": 0.000198,
               "shares": 14676
             }
           ],
@@ -2808,8 +2808,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.019453,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.0199,
             "shares": 78975,
             "holdingName": "KOREA AEROSPACE INDUSTRIES",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -3750,8 +3750,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.008466,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.008441,
             "shares": 35525,
             "holdingName": "WONIK IPS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -4654,8 +4654,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.059689,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.060397,
             "shares": 203430,
             "holdingName": "CELLTRION INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -5552,8 +5552,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.016525,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.016535,
             "shares": 13072,
             "holdingName": "LIG DEFENSE+AEROSPACE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -6022,8 +6022,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.059014,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.060579,
             "shares": 38039,
             "holdingName": "HANWHA AEROSPACE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -6452,8 +6452,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.003966,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.004121,
             "shares": 7251,
             "holdingName": "PHARMARESEARCH CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -6914,8 +6914,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.038737,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.035135,
             "shares": 110721,
             "holdingName": "JUSUNG ENGINEERING CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -7789,8 +7789,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.000898,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.000874,
             "shares": 13187,
             "holdingName": "LX SEMICON CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -8701,8 +8701,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.007492,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.007595,
             "shares": 21570,
             "holdingName": "HYBE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -9592,8 +9592,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.004201,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.004153,
             "shares": 148498,
             "holdingName": "HANCOM INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -9919,8 +9919,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.0219,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.020588,
             "shares": 461759,
             "holdingName": "KOH YOUNG TECHNOLOGY INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -10266,8 +10266,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.05511,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.053339,
             "shares": 72689,
             "holdingName": "SAMSUNG SDI CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -10613,8 +10613,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.054935,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.054025,
             "shares": 11470,
             "holdingName": "HYOSUNG HEAVY INDUSTRIES COR",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -10965,8 +10965,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.002931,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.002782,
             "shares": 37785,
             "holdingName": "DONGJIN SEMICHEM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -11317,8 +11317,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.060056,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.059803,
             "shares": 73467,
             "holdingName": "HYUNDAI MOBIS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -11649,8 +11649,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005956,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.006087,
             "shares": 28998,
             "holdingName": "ST PHARM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -11997,8 +11997,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.032195,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.032865,
             "shares": 13940,
             "holdingName": "SAMSUNG BIOLOGICS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -12669,8 +12669,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.001333,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.00127,
             "shares": 38008,
             "holdingName": "ADVANCED PROCESS SYSTEMS COR",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -13016,8 +13016,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.03119,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.029742,
             "shares": 92690,
             "holdingName": "LS ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -13664,8 +13664,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.03504,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.034316,
             "shares": 25495,
             "holdingName": "HD HYUNDAI ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -14017,8 +14017,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.036042,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.032797,
             "shares": 80082,
             "holdingName": "HANMI SEMICONDUCTOR CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -14662,8 +14662,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.00524,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.00495,
             "shares": 49263,
             "holdingName": "ILJIN ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -14987,8 +14987,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005963,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.005578,
             "shares": 119230,
             "holdingName": "TAIHAN CABLE + SOLUTION CO L",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -15337,8 +15337,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.007189,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.007406,
             "shares": 61943,
             "holdingName": "YUHAN CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -15667,8 +15667,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005139,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.004943,
             "shares": 10040,
             "holdingName": "SOULBRAIN CO LTD/NEW",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -16662,8 +16662,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.002827,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.002787,
             "shares": 36838,
             "holdingName": "HL MANDO CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -18550,8 +18550,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.003946,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.003857,
             "shares": 51260,
             "holdingName": "DOOSAN FUEL CELL CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -19209,8 +19209,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005919,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.005555,
             "shares": 45498,
             "holdingName": "LEENO INDUSTRIAL INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -20464,8 +20464,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.019453,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.0199,
             "shares": 78975,
             "holdingName": "KOREA AEROSPACE INDUSTRIES",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -21366,8 +21366,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.059689,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.060397,
             "shares": 203430,
             "holdingName": "CELLTRION INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -22264,8 +22264,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.016525,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.016535,
             "shares": 13072,
             "holdingName": "LIG DEFENSE+AEROSPACE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -23206,8 +23206,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.008466,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.008441,
             "shares": 35525,
             "holdingName": "WONIK IPS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -23676,8 +23676,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.059014,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.060579,
             "shares": 38039,
             "holdingName": "HANWHA AEROSPACE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -24106,8 +24106,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.003966,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.004121,
             "shares": 7251,
             "holdingName": "PHARMARESEARCH CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -24568,8 +24568,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.038737,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.035135,
             "shares": 110721,
             "holdingName": "JUSUNG ENGINEERING CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -24893,8 +24893,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.0219,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.020588,
             "shares": 461759,
             "holdingName": "KOH YOUNG TECHNOLOGY INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -25240,8 +25240,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.05511,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.053339,
             "shares": 72689,
             "holdingName": "SAMSUNG SDI CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -25587,8 +25587,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.054935,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.054025,
             "shares": 11470,
             "holdingName": "HYOSUNG HEAVY INDUSTRIES COR",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -25939,8 +25939,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.002931,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.002782,
             "shares": 37785,
             "holdingName": "DONGJIN SEMICHEM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -26291,8 +26291,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.060056,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.059803,
             "shares": 73467,
             "holdingName": "HYUNDAI MOBIS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -26623,8 +26623,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005956,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.006087,
             "shares": 28998,
             "holdingName": "ST PHARM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -26971,8 +26971,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.032195,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.032865,
             "shares": 13940,
             "holdingName": "SAMSUNG BIOLOGICS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -28151,8 +28151,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.000898,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.000874,
             "shares": 13187,
             "holdingName": "LX SEMICON CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -28957,8 +28957,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.001333,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.00127,
             "shares": 38008,
             "holdingName": "ADVANCED PROCESS SYSTEMS COR",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -29430,8 +29430,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.007492,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.007595,
             "shares": 21570,
             "holdingName": "HYBE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -29777,8 +29777,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.03119,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.029742,
             "shares": 92690,
             "holdingName": "LS ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -30853,8 +30853,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.03504,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.034316,
             "shares": 25495,
             "holdingName": "HD HYUNDAI ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -31206,8 +31206,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.036042,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.032797,
             "shares": 80082,
             "holdingName": "HANMI SEMICONDUCTOR CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -31851,8 +31851,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.00524,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.00495,
             "shares": 49263,
             "holdingName": "ILJIN ELECTRIC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -32176,8 +32176,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005963,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.005578,
             "shares": 119230,
             "holdingName": "TAIHAN CABLE + SOLUTION CO L",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -32526,8 +32526,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.007189,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.007406,
             "shares": 61943,
             "holdingName": "YUHAN CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -32989,8 +32989,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.004201,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.004153,
             "shares": 148498,
             "holdingName": "HANCOM INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -33319,8 +33319,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005139,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.004943,
             "shares": 10040,
             "holdingName": "SOULBRAIN CO LTD/NEW",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -34314,8 +34314,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.002827,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.002787,
             "shares": 36838,
             "holdingName": "HL MANDO CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -36202,8 +36202,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.003946,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.003857,
             "shares": 51260,
             "holdingName": "DOOSAN FUEL CELL CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -36861,8 +36861,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005919,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.005555,
             "shares": 45498,
             "holdingName": "LEENO INDUSTRIAL INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -37512,8 +37512,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005594,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.005175,
             "shares": 21134,
             "holdingName": "ISC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -37885,8 +37885,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.01947,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.018668,
             "shares": 69521,
             "holdingName": "HYUNDAI ROTEM COMPANY",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -38232,8 +38232,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.018569,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.018693,
             "shares": 168985,
             "holdingName": "HANWHA SYSTEMS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -38878,8 +38878,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.026373,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.026591,
             "shares": 47142,
             "holdingName": "LG ENERGY SOLUTION",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -39209,8 +39209,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.006735,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.00612,
             "shares": 18127,
             "holdingName": "ROBOTIS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -39847,8 +39847,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.025235,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.025746,
             "shares": 14815,
             "holdingName": "KOREA ZINC CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -41124,8 +41124,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.002581,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.00254,
             "shares": 21768,
             "holdingName": "SM ENTERTAINMENT CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -41466,8 +41466,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.004147,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.003817,
             "shares": 53176,
             "holdingName": "HPSP CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -41798,8 +41798,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.002408,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.002372,
             "shares": 30109,
             "holdingName": "JYP ENTERTAINMENT CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -43067,8 +43067,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.054464,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.055195,
             "shares": 172014,
             "holdingName": "NAVER CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -43409,8 +43409,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005712,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.005329,
             "shares": 8029,
             "holdingName": "HYUNDAI AUTOEVER CORP",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -46524,8 +46524,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.001878,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.001803,
             "shares": 28465,
             "holdingName": "COSMOAM+T CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -46861,8 +46861,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.003589,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.003369,
             "shares": 26146,
             "holdingName": "DAEJOO ELECTRONIC MATERIALS",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -47486,8 +47486,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.001287,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.001311,
             "shares": 21897,
             "holdingName": "SK BIOSCIENCE CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -47802,8 +47802,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.0002,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.000198,
             "shares": 14676,
             "holdingName": "EUBIOLOGICS CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -49621,8 +49621,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.00034,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.000331,
             "shares": 5740,
             "holdingName": "CHUNBO CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -49953,8 +49953,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.00077,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.000853,
             "shares": 21538,
             "holdingName": "ENCHEM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -51541,8 +51541,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.001543,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.00154,
             "shares": 30238,
             "holdingName": "OSCOTEC INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -52489,8 +52489,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.001794,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.001724,
             "shares": 23284,
             "holdingName": "ADVANCED NANO PRODUCTS CO LT",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -52803,6 +52803,344 @@
         "managers": [],
         "largeHolderDisclosure": null,
         "interpretation": "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다."
+      }
+    },
+    {
+      "ticker": "011070",
+      "company": "LG이노텍",
+      "sector": "미래차·부품",
+      "status": "candidate",
+      "rationale": "전장·광학",
+      "latestDate": "2026-07-16",
+      "close": 662000,
+      "marketCapEok": 158096,
+      "listedShares": 23667107,
+      "per": 10.03,
+      "pbr": 1.2,
+      "roe": 12.59,
+      "ownership": {
+        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=011070&target=finsum_more",
+        "topHolders": [
+          {
+            "name": "LG전자 외 1인",
+            "shares": 9654981,
+            "pct": 40.79
+          },
+          {
+            "name": "국민연금공단",
+            "shares": 2358701,
+            "pct": 9.97
+          },
+          {
+            "name": "자사주",
+            "shares": 2600,
+            "pct": 0.01
+          }
+        ],
+        "majorHolderName": "LG전자 외 1인",
+        "majorHolderShares": 9654981,
+        "majorHolderPct": 40.79,
+        "topHolderPct": 50.77,
+        "memo": "대주주 지분 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-07-16",
+        "asOfText": "2026-07-16 16:10 장마감",
+        "officialClose": 668000,
+        "alternateClose": 662000
+      },
+      "liquidity": {
+        "avgVolume20": 344164,
+        "volumeRatio": 0.25
+      },
+      "returns": {
+        "d5": -10.6613,
+        "d20": -48.4022,
+        "d60": 68.0203
+      },
+      "technicals": {
+        "ma5": 678800,
+        "ma20": 861150,
+        "ma60": 870575,
+        "ma120": 579179.17,
+        "rsi14": 22.94,
+        "high60": 1788000,
+        "low60": 394500,
+        "drawdown60Pct": -62.9754,
+        "reboundFromLow60Pct": 67.8074,
+        "aboveMa20": false,
+        "aboveMa60": false,
+        "ma20SlopePct": -13.1949
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": 3464.8,
+          "institutionNetValueEok": -3472.71,
+          "foreignPct": 2.192,
+          "institutionPct": -2.197
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": 9312.54,
+          "institutionNetValueEok": -7687.65,
+          "foreignPct": 5.89,
+          "institutionPct": -4.863
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": -9674.79,
+          "institutionNetValueEok": -2198.19,
+          "foreignPct": -6.12,
+          "institutionPct": -1.39
+        }
+      },
+      "policy": {
+        "score": 15,
+        "memo": "전장·광학"
+      },
+      "value": {
+        "score": 20,
+        "memo": "시총 158,096억원, PER 10.03, PBR 1.2"
+      },
+      "technical": {
+        "score": 0,
+        "memo": "MA20 하회, RSI 22.9, 60일 고점 대비 -63%"
+      },
+      "flowScore": {
+        "score": 9,
+        "memo": "20일 외국인 5.9%, 기관 -4.9%"
+      },
+      "risk": {
+        "penalty": 14,
+        "notes": [
+          "20일 추세 훼손",
+          "MA20·MA60 동시 하회",
+          "과매도 지속 가능성"
+        ],
+        "valuationBlock": false
+      },
+      "totalScore": 30,
+      "baseDecision": "AVOID_NOW",
+      "decision": "AVOID_NOW",
+      "structuralRegime": {
+        "mode": "PRICE_ONLY",
+        "confidence": 2,
+        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
+        "score": 61,
+        "grade": "전환 스토리/가격 검증 부족",
+        "gate": "REVIEW",
+        "entryEligible": false,
+        "primary": {
+          "id": "price-regime",
+          "label": "가격 기반 장기 추세 기준선",
+          "date": "2024-01-26",
+          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+          "sourceName": "Naver Finance daily price",
+          "sourceUrl": "https://finance.naver.com/item/main.naver?code=011070",
+          "firstTradingDate": "2024-01-26",
+          "basisClose": 200000,
+          "latestClose": 662000,
+          "latestDate": "2026-07-16",
+          "days": 902,
+          "returnPct": 231,
+          "cagrPct": 62.4,
+          "highClose": 1530000,
+          "highDate": "2026-06-01",
+          "lowClose": 122000,
+          "lowDate": "2025-04-09",
+          "drawdownFromHighPct": -56.7,
+          "maxDrawdownPct": -59.6,
+          "aboveMA200": true,
+          "aboveMA600": true,
+          "score": 61,
+          "grade": "전환 스토리/가격 검증 부족",
+          "durationFlag": "가격 추세"
+        },
+        "events": [
+          {
+            "id": "price-regime",
+            "label": "가격 기반 장기 추세 기준선",
+            "date": "2024-01-26",
+            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+            "sourceName": "Naver Finance daily price",
+            "sourceUrl": "https://finance.naver.com/item/main.naver?code=011070",
+            "firstTradingDate": "2024-01-26",
+            "basisClose": 200000,
+            "latestClose": 662000,
+            "latestDate": "2026-07-16",
+            "days": 902,
+            "returnPct": 231,
+            "cagrPct": 62.4,
+            "highClose": 1530000,
+            "highDate": "2026-06-01",
+            "lowClose": 122000,
+            "lowDate": "2025-04-09",
+            "drawdownFromHighPct": -56.7,
+            "maxDrawdownPct": -59.6,
+            "aboveMA200": true,
+            "aboveMA600": true,
+            "score": 61,
+            "grade": "전환 스토리/가격 검증 부족",
+            "durationFlag": "가격 추세"
+          }
+        ],
+        "memo": "가격 기반 장기 추세 검증 대기: 점수 61"
+      },
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "주요주주 기관명 + 최근 기관 순매수 VWAP",
+        "estimatedCost": 422452,
+        "holderName": "국민연금공단",
+        "recentAccumulation": true,
+        "disposalPressure": true,
+        "flow": {
+          "cost": 422452.3656737273,
+          "shares": 4319129,
+          "netShares": 946446,
+          "last20NetShares": -994706,
+          "firstDate": "2025-07-23",
+          "lastDate": "2026-07-16",
+          "days": 240
+        },
+        "method": "구간 추정: 최근 순매수 발생일의 거래량가중 매입가",
+        "score": 0,
+        "signal": "OVERHANG",
+        "gapPct": 56.7,
+        "overhang": true,
+        "memo": "B 추정 평단 422,452원 대비 56.7% 수익권이며 최근 처분 압력 감지. 오버행 주의"
+      },
+      "holderCostScore": 0,
+      "v10cScore": 30,
+      "entryPlan": {
+        "action": "관망/제외",
+        "trigger": "최소 MA20 861,150원 회복과 RSI 35 이상 필요",
+        "invalidation": "추세 훼손 지속",
+        "target": "반등 확인 전 목표가 산정 보류"
+      },
+      "executionPlan": {
+        "stance": "관망",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 422452
+          },
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 595800
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 662000
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 714960
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 761300
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 856844
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 861150
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 662000,
+            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
+          },
+          {
+            "label": "확인",
+            "weight": "관찰",
+            "price": 861150,
+            "rule": "MA20 861,150원 회복 또는 5일선 678,800원 위 양봉"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "보유자 대응",
+            "action": "반등 시 비중 축소",
+            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
+          },
+          {
+            "label": "무효",
+            "action": "신규 검토 중단",
+            "trigger": "60일 저점 394,500원 이탈"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
+          },
+          {
+            "window": "장중",
+            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
+          },
+          {
+            "window": "종가",
+            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "수급 보조 신호 양호",
+          "체질 기준: REVIEW · 61점 · 가격 기반 장기 추세 기준선",
+          "평단 신호: OVERHANG · 0점 · B 추정 평단 422,452원 대비 56.7% 수익권이며 최근 처분 압력 감지. 오버행 주의",
+          "리스크: 20일 추세 훼손 · MA20·MA60 동시 하회 · 과매도 지속 가능성",
+          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=011070",
+      "megaManagers": {
+        "score": 2,
+        "managerCount": 2,
+        "status": "복수 운용사 상품 보유 확인",
+        "managers": [
+          {
+            "manager": "Vanguard",
+            "managerGroup": "Vanguard",
+            "vehicle": "Institutional Total International Stock Market Index Trust",
+            "evidence": "INDEX_TRUST_HOLDING",
+            "asOf": "2025-10-31",
+            "weightPct": null,
+            "shares": null,
+            "holdingName": "LG이노텍",
+            "sourceUrl": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf"
+          },
+          {
+            "manager": "SSGA/State Street",
+            "managerGroup": "SSGA",
+            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
+            "evidence": "ETF_HOLDING",
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.033147,
+            "shares": 29382,
+            "holdingName": "LG INNOTEK CO LTD",
+            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
+          }
+        ],
+        "largeHolderDisclosure": null,
+        "interpretation": "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다."
       }
     },
     {
@@ -55880,8 +56218,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.018752,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.018175,
             "shares": 38921,
             "holdingName": "ALTEOGEN INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -55889,344 +56227,6 @@
         ],
         "largeHolderDisclosure": null,
         "interpretation": "3대 운용사 모두에서 확인되지만, 대부분 패시브 ETF·인덱스 편입 신호입니다."
-      }
-    },
-    {
-      "ticker": "011070",
-      "company": "LG이노텍",
-      "sector": "미래차·부품",
-      "status": "candidate",
-      "rationale": "전장·광학",
-      "latestDate": "2026-07-16",
-      "close": 662000,
-      "marketCapEok": 158096,
-      "listedShares": 23667107,
-      "per": 50,
-      "pbr": 1.2,
-      "roe": 12.59,
-      "ownership": {
-        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=011070&target=finsum_more",
-        "topHolders": [
-          {
-            "name": "LG전자 외 1인",
-            "shares": 9654981,
-            "pct": 40.79
-          },
-          {
-            "name": "국민연금공단",
-            "shares": 2358701,
-            "pct": 9.97
-          },
-          {
-            "name": "자사주",
-            "shares": 2600,
-            "pct": 0.01
-          }
-        ],
-        "majorHolderName": "LG전자 외 1인",
-        "majorHolderShares": 9654981,
-        "majorHolderPct": 40.79,
-        "topHolderPct": 50.77,
-        "memo": "대주주 지분 높음"
-      },
-      "priceSource": {
-        "source": "NXT",
-        "asOfDate": "2026-07-16",
-        "asOfText": "2026-07-16 16:10 장마감",
-        "officialClose": 668000,
-        "alternateClose": 662000
-      },
-      "liquidity": {
-        "avgVolume20": 344164,
-        "volumeRatio": 0.25
-      },
-      "returns": {
-        "d5": -10.6613,
-        "d20": -48.4022,
-        "d60": 68.0203
-      },
-      "technicals": {
-        "ma5": 678800,
-        "ma20": 861150,
-        "ma60": 870575,
-        "ma120": 579179.17,
-        "rsi14": 22.94,
-        "high60": 1788000,
-        "low60": 394500,
-        "drawdown60Pct": -62.9754,
-        "reboundFromLow60Pct": 67.8074,
-        "aboveMa20": false,
-        "aboveMa60": false,
-        "ma20SlopePct": -13.1949
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": 3464.8,
-          "institutionNetValueEok": -3472.71,
-          "foreignPct": 2.192,
-          "institutionPct": -2.197
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": 9312.54,
-          "institutionNetValueEok": -7687.65,
-          "foreignPct": 5.89,
-          "institutionPct": -4.863
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": -9674.79,
-          "institutionNetValueEok": -2198.19,
-          "foreignPct": -6.12,
-          "institutionPct": -1.39
-        }
-      },
-      "policy": {
-        "score": 15,
-        "memo": "전장·광학"
-      },
-      "value": {
-        "score": 15,
-        "memo": "시총 158,096억원, PER 50, PBR 1.2"
-      },
-      "technical": {
-        "score": 0,
-        "memo": "MA20 하회, RSI 22.9, 60일 고점 대비 -63%"
-      },
-      "flowScore": {
-        "score": 9,
-        "memo": "20일 외국인 5.9%, 기관 -4.9%"
-      },
-      "risk": {
-        "penalty": 14,
-        "notes": [
-          "20일 추세 훼손",
-          "MA20·MA60 동시 하회",
-          "과매도 지속 가능성"
-        ],
-        "valuationBlock": false
-      },
-      "totalScore": 25,
-      "baseDecision": "AVOID_NOW",
-      "decision": "AVOID_NOW",
-      "structuralRegime": {
-        "mode": "PRICE_ONLY",
-        "confidence": 2,
-        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
-        "score": 61,
-        "grade": "전환 스토리/가격 검증 부족",
-        "gate": "REVIEW",
-        "entryEligible": false,
-        "primary": {
-          "id": "price-regime",
-          "label": "가격 기반 장기 추세 기준선",
-          "date": "2024-01-26",
-          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-          "sourceName": "Naver Finance daily price",
-          "sourceUrl": "https://finance.naver.com/item/main.naver?code=011070",
-          "firstTradingDate": "2024-01-26",
-          "basisClose": 200000,
-          "latestClose": 662000,
-          "latestDate": "2026-07-16",
-          "days": 902,
-          "returnPct": 231,
-          "cagrPct": 62.4,
-          "highClose": 1530000,
-          "highDate": "2026-06-01",
-          "lowClose": 122000,
-          "lowDate": "2025-04-09",
-          "drawdownFromHighPct": -56.7,
-          "maxDrawdownPct": -59.6,
-          "aboveMA200": true,
-          "aboveMA600": true,
-          "score": 61,
-          "grade": "전환 스토리/가격 검증 부족",
-          "durationFlag": "가격 추세"
-        },
-        "events": [
-          {
-            "id": "price-regime",
-            "label": "가격 기반 장기 추세 기준선",
-            "date": "2024-01-26",
-            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-            "sourceName": "Naver Finance daily price",
-            "sourceUrl": "https://finance.naver.com/item/main.naver?code=011070",
-            "firstTradingDate": "2024-01-26",
-            "basisClose": 200000,
-            "latestClose": 662000,
-            "latestDate": "2026-07-16",
-            "days": 902,
-            "returnPct": 231,
-            "cagrPct": 62.4,
-            "highClose": 1530000,
-            "highDate": "2026-06-01",
-            "lowClose": 122000,
-            "lowDate": "2025-04-09",
-            "drawdownFromHighPct": -56.7,
-            "maxDrawdownPct": -59.6,
-            "aboveMA200": true,
-            "aboveMA600": true,
-            "score": 61,
-            "grade": "전환 스토리/가격 검증 부족",
-            "durationFlag": "가격 추세"
-          }
-        ],
-        "memo": "가격 기반 장기 추세 검증 대기: 점수 61"
-      },
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "주요주주 기관명 + 최근 기관 순매수 VWAP",
-        "estimatedCost": 422452,
-        "holderName": "국민연금공단",
-        "recentAccumulation": true,
-        "disposalPressure": true,
-        "flow": {
-          "cost": 422452.3656737273,
-          "shares": 4319129,
-          "netShares": 946446,
-          "last20NetShares": -994706,
-          "firstDate": "2025-07-23",
-          "lastDate": "2026-07-16",
-          "days": 240
-        },
-        "method": "구간 추정: 최근 순매수 발생일의 거래량가중 매입가",
-        "score": 0,
-        "signal": "OVERHANG",
-        "gapPct": 56.7,
-        "overhang": true,
-        "memo": "B 추정 평단 422,452원 대비 56.7% 수익권이며 최근 처분 압력 감지. 오버행 주의"
-      },
-      "holderCostScore": 0,
-      "v10cScore": 25,
-      "entryPlan": {
-        "action": "관망/제외",
-        "trigger": "최소 MA20 861,150원 회복과 RSI 35 이상 필요",
-        "invalidation": "추세 훼손 지속",
-        "target": "반등 확인 전 목표가 산정 보류"
-      },
-      "executionPlan": {
-        "stance": "관망",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 422452
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 595800
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 662000
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 714960
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 761300
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 856844
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 861150
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 662000,
-            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
-          },
-          {
-            "label": "확인",
-            "weight": "관찰",
-            "price": 861150,
-            "rule": "MA20 861,150원 회복 또는 5일선 678,800원 위 양봉"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "보유자 대응",
-            "action": "반등 시 비중 축소",
-            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
-          },
-          {
-            "label": "무효",
-            "action": "신규 검토 중단",
-            "trigger": "60일 저점 394,500원 이탈"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
-          },
-          {
-            "window": "장중",
-            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
-          },
-          {
-            "window": "종가",
-            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "수급 보조 신호 양호",
-          "체질 기준: REVIEW · 61점 · 가격 기반 장기 추세 기준선",
-          "평단 신호: OVERHANG · 0점 · B 추정 평단 422,452원 대비 56.7% 수익권이며 최근 처분 압력 감지. 오버행 주의",
-          "리스크: 20일 추세 훼손 · MA20·MA60 동시 하회 · 과매도 지속 가능성",
-          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=011070",
-      "megaManagers": {
-        "score": 2,
-        "managerCount": 2,
-        "status": "복수 운용사 상품 보유 확인",
-        "managers": [
-          {
-            "manager": "Vanguard",
-            "managerGroup": "Vanguard",
-            "vehicle": "Institutional Total International Stock Market Index Trust",
-            "evidence": "INDEX_TRUST_HOLDING",
-            "asOf": "2025-10-31",
-            "weightPct": null,
-            "shares": null,
-            "holdingName": "LG이노텍",
-            "sourceUrl": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf"
-          },
-          {
-            "manager": "SSGA/State Street",
-            "managerGroup": "SSGA",
-            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
-            "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.033758,
-            "shares": 29382,
-            "holdingName": "LG INNOTEK CO LTD",
-            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
-          }
-        ],
-        "largeHolderDisclosure": null,
-        "interpretation": "복수 글로벌 운용사 상품 보유가 확인됩니다. 유동성·지수 편입 신호로만 보조 해석합니다."
       }
     },
     {
@@ -56551,8 +56551,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.002861,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.002746,
             "shares": 24270,
             "holdingName": "DOOSAN ROBOTICS INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -57201,8 +57201,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.011186,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.010517,
             "shares": 55402,
             "holdingName": "ECOPRO BM CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -58727,8 +58727,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.004197,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.004047,
             "shares": 31695,
             "holdingName": "ABLBIO INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -59061,8 +59061,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.013807,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.012891,
             "shares": 19227,
             "holdingName": "RAINBOW ROBOTICS",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -60005,8 +60005,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005438,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.005137,
             "shares": 29335,
             "holdingName": "LIGACHEM BIOSCIENCES INC",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -60349,8 +60349,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.010222,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.00996,
             "shares": 39955,
             "holdingName": "POSCO FUTURE M CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
@@ -60995,8 +60995,8 @@
             "managerGroup": "SSGA",
             "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
             "evidence": "ETF_HOLDING",
-            "asOf": "As of 15-Jul-2026",
-            "weightPct": 0.005093,
+            "asOf": "As of 16-Jul-2026",
+            "weightPct": 0.004983,
             "shares": 32070,
             "holdingName": "L+F CO LTD",
             "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
