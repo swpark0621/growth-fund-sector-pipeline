@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-07-25",
-    "updatedAt": "2026-07-25 07:34:53 KST",
+    "updatedAt": "2026-07-25 15:04:54 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -3307,9 +3307,9 @@
         "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=079940&target=finsum_more",
         "topHolders": [
           {
-            "name": "김홍국 외 6인",
-            "shares": 3492610,
-            "pct": 26.02
+            "name": "김홍국 외 5인",
+            "shares": 3611610,
+            "pct": 26.91
           },
           {
             "name": "Miri Capital Management LLC",
@@ -3327,10 +3327,10 @@
             "pct": 5.42
           }
         ],
-        "majorHolderName": "김홍국 외 6인",
-        "majorHolderShares": 3492610,
-        "majorHolderPct": 26.02,
-        "topHolderPct": 64.48,
+        "majorHolderName": "김홍국 외 5인",
+        "majorHolderShares": 3611610,
+        "majorHolderPct": 26.91,
+        "topHolderPct": 65.37,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -9124,8 +9124,8 @@
         "topHolders": [
           {
             "name": "에이치디현대 외 4인",
-            "shares": 13366399,
-            "pct": 37.08
+            "shares": 13361420,
+            "pct": 37.07
           },
           {
             "name": "국민연금공단",
@@ -9139,9 +9139,9 @@
           }
         ],
         "majorHolderName": "에이치디현대 외 4인",
-        "majorHolderShares": 13366399,
-        "majorHolderPct": 37.08,
-        "topHolderPct": 45.23,
+        "majorHolderShares": 13361420,
+        "majorHolderPct": 37.07,
+        "topHolderPct": 45.22,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -14107,7 +14107,7 @@
           {
             "name": "방시혁 외 11인",
             "shares": 12316502,
-            "pct": 28.58
+            "pct": 28.57
           },
           {
             "name": "국민연금공단",
@@ -14127,8 +14127,8 @@
         ],
         "majorHolderName": "방시혁 외 11인",
         "majorHolderShares": 12316502,
-        "majorHolderPct": 28.58,
-        "topHolderPct": 48.53,
+        "majorHolderPct": 28.57,
+        "topHolderPct": 48.52,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -14959,8 +14959,8 @@
           },
           {
             "name": "국민연금공단",
-            "shares": 940378,
-            "pct": 10.08
+            "shares": 930779,
+            "pct": 9.98
           },
           {
             "name": "자사주",
@@ -14971,7 +14971,7 @@
         "majorHolderName": "효성 외 12인",
         "majorHolderShares": 4101808,
         "majorHolderPct": 43.99,
-        "topHolderPct": 54.21,
+        "topHolderPct": 54.11,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -22344,8 +22344,8 @@
         "topHolders": [
           {
             "name": "유비벨록스 외 3인",
-            "shares": 4702163,
-            "pct": 42.33
+            "shares": 4739482,
+            "pct": 42.66
           },
           {
             "name": "민영기",
@@ -22359,9 +22359,9 @@
           }
         ],
         "majorHolderName": "유비벨록스 외 3인",
-        "majorHolderShares": 4702163,
-        "majorHolderPct": 42.33,
-        "topHolderPct": 53.66,
+        "majorHolderShares": 4739482,
+        "majorHolderPct": 42.66,
+        "topHolderPct": 53.99,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -26453,9 +26453,9 @@
         "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=079940&target=finsum_more",
         "topHolders": [
           {
-            "name": "김홍국 외 6인",
-            "shares": 3492610,
-            "pct": 26.02
+            "name": "김홍국 외 5인",
+            "shares": 3611610,
+            "pct": 26.91
           },
           {
             "name": "Miri Capital Management LLC",
@@ -26473,10 +26473,10 @@
             "pct": 5.42
           }
         ],
-        "majorHolderName": "김홍국 외 6인",
-        "majorHolderShares": 3492610,
-        "majorHolderPct": 26.02,
-        "topHolderPct": 64.48,
+        "majorHolderName": "김홍국 외 5인",
+        "majorHolderShares": 3611610,
+        "majorHolderPct": 26.91,
+        "topHolderPct": 65.37,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -31800,8 +31800,8 @@
         "topHolders": [
           {
             "name": "에이치디현대 외 4인",
-            "shares": 13366399,
-            "pct": 37.08
+            "shares": 13361420,
+            "pct": 37.07
           },
           {
             "name": "국민연금공단",
@@ -31815,9 +31815,9 @@
           }
         ],
         "majorHolderName": "에이치디현대 외 4인",
-        "majorHolderShares": 13366399,
-        "majorHolderPct": 37.08,
-        "topHolderPct": 45.23,
+        "majorHolderShares": 13361420,
+        "majorHolderPct": 37.07,
+        "topHolderPct": 45.22,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -34116,8 +34116,8 @@
           },
           {
             "name": "국민연금공단",
-            "shares": 940378,
-            "pct": 10.08
+            "shares": 930779,
+            "pct": 9.98
           },
           {
             "name": "자사주",
@@ -34128,7 +34128,7 @@
         "majorHolderName": "효성 외 12인",
         "majorHolderShares": 4101808,
         "majorHolderPct": 43.99,
-        "topHolderPct": 54.21,
+        "topHolderPct": 54.11,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -38475,7 +38475,7 @@
           {
             "name": "방시혁 외 11인",
             "shares": 12316502,
-            "pct": 28.58
+            "pct": 28.57
           },
           {
             "name": "국민연금공단",
@@ -38495,8 +38495,8 @@
         ],
         "majorHolderName": "방시혁 외 11인",
         "majorHolderShares": 12316502,
-        "majorHolderPct": 28.58,
-        "topHolderPct": 48.53,
+        "majorHolderPct": 28.57,
+        "topHolderPct": 48.52,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -45018,8 +45018,8 @@
         "topHolders": [
           {
             "name": "유비벨록스 외 3인",
-            "shares": 4702163,
-            "pct": 42.33
+            "shares": 4739482,
+            "pct": 42.66
           },
           {
             "name": "민영기",
@@ -45033,9 +45033,9 @@
           }
         ],
         "majorHolderName": "유비벨록스 외 3인",
-        "majorHolderShares": 4702163,
-        "majorHolderPct": 42.33,
-        "topHolderPct": 53.66,
+        "majorHolderShares": 4739482,
+        "majorHolderPct": 42.66,
+        "topHolderPct": 53.99,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -48552,15 +48552,15 @@
             "pct": 5.09
           },
           {
-            "name": "자사주",
-            "shares": 54607,
-            "pct": 0.26
+            "name": "GIC Private Limited",
+            "shares": 1079480,
+            "pct": 5.09
           }
         ],
         "majorHolderName": "SKC 외 1인",
         "majorHolderShares": 10305957,
         "majorHolderPct": 48.62,
-        "topHolderPct": 59.35,
+        "topHolderPct": 64.18,
         "memo": "대주주 지분 높음"
       },
       "priceSource": {
@@ -66290,8 +66290,8 @@
       "close": 26800,
       "marketCapEok": 3326,
       "listedShares": 12409151,
-      "per": -21.97,
-      "pbr": 16.27,
+      "per": -23.37,
+      "pbr": 17.31,
       "roe": -55.35,
       "ownership": {
         "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=348340&target=finsum_more",
@@ -66367,7 +66367,7 @@
       },
       "value": {
         "score": 7,
-        "memo": "시총 3,326억원, PER -21.97, PBR 16.27"
+        "memo": "시총 3,326억원, PER -23.37, PBR 17.31"
       },
       "technical": {
         "score": 2,
