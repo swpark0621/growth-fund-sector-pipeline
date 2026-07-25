@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
-    "runDate": "2026-07-25",
-    "updatedAt": "2026-07-25 19:34:51 KST",
+    "runDate": "2026-07-26",
+    "updatedAt": "2026-07-26 07:34:44 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -683,7 +683,7 @@
     ]
   },
   "megaManagers": {
-    "asOf": "2026-07-25",
+    "asOf": "2026-07-26",
     "caveat": "ETF·인덱스 보유는 지수 편입·상품 운용 신호이며, 특정 종목을 능동적으로 매집했다는 증거가 아닙니다. DART 5% 이상 공시는 더 강한 보유 증거지만 신규 매수 시점과는 구분해야 합니다.",
     "sourceStatus": {
       "blackRockEwy": "ok · Jul 23, 2026",
