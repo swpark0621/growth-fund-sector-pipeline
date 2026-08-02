@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-08-02",
-    "updatedAt": "2026-08-02 15:04:52 KST",
+    "updatedAt": "2026-08-02 19:34:50 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -689,7 +689,7 @@
     "asOf": "2026-08-02",
     "caveat": "ETF·인덱스 보유는 지수 편입·상품 운용 신호이며, 특정 종목을 능동적으로 매집했다는 증거가 아닙니다. DART 5% 이상 공시는 더 강한 보유 증거지만 신규 매수 시점과는 구분해야 합니다.",
     "sourceStatus": {
-      "blackRockEwy": "ok · Jul 30, 2026",
+      "blackRockEwy": "ok · Jul 31, 2026",
       "vanguardTrust": "ok · 2025-10-31 official holdings PDF",
       "ssgaSpdw": "ok · As of 30-Jul-2026"
     },
@@ -714,9 +714,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 1.3163,
-              "shares": 2096889
+              "asOf": "Jul 31, 2026",
+              "weightPct": 1.2061,
+              "shares": 2160407
             },
             {
               "manager": "Vanguard",
@@ -760,9 +760,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 1.3953,
-              "shares": 2277707
+              "asOf": "Jul 31, 2026",
+              "weightPct": 1.176,
+              "shares": 2346685
             },
             {
               "manager": "Vanguard",
@@ -797,9 +797,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 1.2111,
-              "shares": 844138
+              "asOf": "Jul 31, 2026",
+              "weightPct": 1.1112,
+              "shares": 869709
             },
             {
               "manager": "Vanguard",
@@ -834,9 +834,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.4837,
-              "shares": 2027534
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.4121,
+              "shares": 2088959
             },
             {
               "manager": "Vanguard",
@@ -871,9 +871,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.9705,
-              "shares": 839656
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.9218,
+              "shares": 865045
             },
             {
               "manager": "Vanguard",
@@ -908,9 +908,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.3415,
-              "shares": 1922453
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.3323,
+              "shares": 1980693
             },
             {
               "manager": "Vanguard",
@@ -945,9 +945,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.6177,
-              "shares": 1274705
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.6514,
+              "shares": 1313289
             },
             {
               "manager": "Vanguard",
@@ -982,9 +982,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 1.248,
-              "shares": 447505
+              "asOf": "Jul 31, 2026",
+              "weightPct": 1.1348,
+              "shares": 461064
             },
             {
               "manager": "Vanguard",
@@ -1019,9 +1019,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.5293,
-              "shares": 86678
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.5788,
+              "shares": 89226
             },
             {
               "manager": "Vanguard",
@@ -1056,9 +1056,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 1.0391,
-              "shares": 211056
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.8666,
+              "shares": 217426
             },
             {
               "manager": "Vanguard",
@@ -1093,9 +1093,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.5751,
-              "shares": 1477761
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.5202,
+              "shares": 1522533
             },
             {
               "manager": "Vanguard",
@@ -1130,9 +1130,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.6685,
-              "shares": 355643
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.6726,
+              "shares": 366381
             },
             {
               "manager": "Vanguard",
@@ -1167,9 +1167,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.4495,
-              "shares": 831817
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.4934,
+              "shares": 857024
             },
             {
               "manager": "Vanguard",
@@ -1204,9 +1204,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.82,
-              "shares": 794738
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.7208,
+              "shares": 818762
             },
             {
               "manager": "Vanguard",
@@ -1241,9 +1241,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.6712,
-              "shares": 744852
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.6355,
+              "shares": 767420
             },
             {
               "manager": "Vanguard",
@@ -1278,9 +1278,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.5244,
-              "shares": 1349864
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.4991,
+              "shares": 1390723
             },
             {
               "manager": "Vanguard",
@@ -1315,9 +1315,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.3952,
-              "shares": 751897
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.351,
+              "shares": 774647
             },
             {
               "manager": "Vanguard",
@@ -1352,9 +1352,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.3689,
-              "shares": 878712
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.3346,
+              "shares": 905284
             },
             {
               "manager": "Vanguard",
@@ -1389,9 +1389,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.3742,
-              "shares": 1202614
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.3442,
+              "shares": 1239014
             },
             {
               "manager": "Vanguard",
@@ -1513,9 +1513,9 @@
               "manager": "BlackRock",
               "vehicle": "iShares MSCI South Korea ETF (EWY)",
               "evidence": "ETF_HOLDING",
-              "asOf": "Jul 30, 2026",
-              "weightPct": 0.5592,
-              "shares": 270565
+              "asOf": "Jul 31, 2026",
+              "weightPct": 0.523,
+              "shares": 278755
             },
             {
               "manager": "SSGA/State Street",
@@ -4572,9 +4572,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.5592,
-            "shares": 270565,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.523,
+            "shares": 278755,
             "holdingName": "LIG DEFENSE&AEROSPACE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -5029,9 +5029,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.3953,
-            "shares": 2277707,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 1.176,
+            "shares": 2346685,
             "holdingName": "CELLTRION INC",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -5504,9 +5504,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.2111,
-            "shares": 844138,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 1.1112,
+            "shares": 869709,
             "holdingName": "HYUNDAI MOBIS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -6454,9 +6454,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.9705,
-            "shares": 839656,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.9218,
+            "shares": 865045,
             "holdingName": "SAMSUNG SDI LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -6922,9 +6922,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.9983,
-            "shares": 1030373,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.8904,
+            "shares": 1061586,
             "holdingName": "POSCO",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           }
@@ -10045,9 +10045,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.4837,
-            "shares": 2027534,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.4121,
+            "shares": 2088959,
             "holdingName": "YUHAN CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -11747,9 +11747,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.3163,
-            "shares": 2096889,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 1.2061,
+            "shares": 2160407,
             "holdingName": "NAVER CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -12690,9 +12690,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.3415,
-            "shares": 1922453,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.3323,
+            "shares": 1980693,
             "holdingName": "HANWHA SYSTEMS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -14651,9 +14651,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.5293,
-            "shares": 86678,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.5788,
+            "shares": 89226,
             "holdingName": "HYOSUNG HEAVY INDUSTRIES CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -14999,9 +14999,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.0391,
-            "shares": 211056,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.8666,
+            "shares": 217426,
             "holdingName": "SAMSUNG BIOLOGICS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -15346,9 +15346,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.6177,
-            "shares": 1274705,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.6514,
+            "shares": 1313289,
             "holdingName": "LS ELECTRIC LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -15698,9 +15698,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.5751,
-            "shares": 1477761,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.5202,
+            "shares": 1522533,
             "holdingName": "KOREA AEROSPACE INDUSTRIES LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -16346,9 +16346,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.248,
-            "shares": 447505,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 1.1348,
+            "shares": 461064,
             "holdingName": "HANWHA AEROSPACE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -16699,9 +16699,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.4495,
-            "shares": 831817,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.4934,
+            "shares": 857024,
             "holdingName": "HANMI SEMICONDUCTOR LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -21834,9 +21834,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.6685,
-            "shares": 355643,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.6726,
+            "shares": 366381,
             "holdingName": "HD HYUNDAI ELECTRIC LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -25994,9 +25994,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.5592,
-            "shares": 270565,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.523,
+            "shares": 278755,
             "holdingName": "LIG DEFENSE&AEROSPACE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -26451,9 +26451,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.3953,
-            "shares": 2277707,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 1.176,
+            "shares": 2346685,
             "holdingName": "CELLTRION INC",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -26926,9 +26926,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.2111,
-            "shares": 844138,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 1.1112,
+            "shares": 869709,
             "holdingName": "HYUNDAI MOBIS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -28331,9 +28331,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.9705,
-            "shares": 839656,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.9218,
+            "shares": 865045,
             "holdingName": "SAMSUNG SDI LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -28799,9 +28799,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.9983,
-            "shares": 1030373,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.8904,
+            "shares": 1061586,
             "holdingName": "POSCO",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           }
@@ -32263,9 +32263,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.4837,
-            "shares": 2027534,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.4121,
+            "shares": 2088959,
             "holdingName": "YUHAN CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -32610,9 +32610,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.5293,
-            "shares": 86678,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.5788,
+            "shares": 89226,
             "holdingName": "HYOSUNG HEAVY INDUSTRIES CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -32958,9 +32958,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.0391,
-            "shares": 211056,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.8666,
+            "shares": 217426,
             "holdingName": "SAMSUNG BIOLOGICS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -33305,9 +33305,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.6177,
-            "shares": 1274705,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.6514,
+            "shares": 1313289,
             "holdingName": "LS ELECTRIC LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -33657,9 +33657,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.5751,
-            "shares": 1477761,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.5202,
+            "shares": 1522533,
             "holdingName": "KOREA AEROSPACE INDUSTRIES LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -35359,9 +35359,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.3163,
-            "shares": 2096889,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 1.2061,
+            "shares": 2160407,
             "holdingName": "NAVER CORP",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -36016,9 +36016,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 1.248,
-            "shares": 447505,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 1.1348,
+            "shares": 461064,
             "holdingName": "HANWHA AEROSPACE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -36369,9 +36369,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.4495,
-            "shares": 831817,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.4934,
+            "shares": 857024,
             "holdingName": "HANMI SEMICONDUCTOR LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -37303,9 +37303,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.3415,
-            "shares": 1922453,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.3323,
+            "shares": 1980693,
             "holdingName": "HANWHA SYSTEMS LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -43709,9 +43709,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.6685,
-            "shares": 355643,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.6726,
+            "shares": 366381,
             "holdingName": "HD HYUNDAI ELECTRIC LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -48127,9 +48127,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.82,
-            "shares": 794738,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.7208,
+            "shares": 818762,
             "holdingName": "LG ENERGY SOLUTION LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -49714,9 +49714,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.6712,
-            "shares": 744852,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.6355,
+            "shares": 767420,
             "holdingName": "ALTEOGEN INC",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -51070,9 +51070,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.5244,
-            "shares": 1349864,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.4991,
+            "shares": 1390723,
             "holdingName": "HYUNDAI-ROTEM",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -52379,9 +52379,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.3952,
-            "shares": 751897,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.351,
+            "shares": 774647,
             "holdingName": "HYBE LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -59641,9 +59641,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.3689,
-            "shares": 878712,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.3346,
+            "shares": 905284,
             "holdingName": "POSCO FUTURE M LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
@@ -61540,9 +61540,9 @@
             "managerGroup": "BlackRock",
             "vehicle": "iShares MSCI South Korea ETF (EWY)",
             "evidence": "ETF_HOLDING",
-            "asOf": "Jul 30, 2026",
-            "weightPct": 0.3742,
-            "shares": 1202614,
+            "asOf": "Jul 31, 2026",
+            "weightPct": 0.3442,
+            "shares": 1239014,
             "holdingName": "ECOPRO BM LTD",
             "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
           },
