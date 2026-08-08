@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-08-08",
-    "updatedAt": "2026-08-08 15:05:43 KST",
+    "updatedAt": "2026-08-08 19:35:18 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -147,7 +147,7 @@
       },
       "반도체·AI": {
         "count": 4,
-        "avgScore": 46,
+        "avgScore": 48.8,
         "entry": 0
       },
       "방산": {
@@ -552,6 +552,21 @@
         "assessment": "정책 테마는 있으나 현재 가격·추세·밸류 리스크가 우선입니다."
       },
       {
+        "ticker": "042700",
+        "company": "한미반도체",
+        "sector": "반도체·AI",
+        "decision": "AVOID_NOW",
+        "totalScore": 39,
+        "policyScore": 23,
+        "policyMemo": "HBM 장비 대장주, 정책보다 글로벌 CAPEX 민감",
+        "technicalMemo": "MA20 하회, RSI 41.2, 60일 고점 대비 -52.2%",
+        "riskNotes": [
+          "PBR 10배 초과",
+          "MA20·MA60 동시 하회"
+        ],
+        "assessment": "정책 테마는 있으나 현재 가격·추세·밸류 리스크가 우선입니다."
+      },
+      {
         "ticker": "403870",
         "company": "HPSP",
         "sector": "반도체·AI",
@@ -562,22 +577,6 @@
         "technicalMemo": "MA20 하회, RSI 40.9, 60일 고점 대비 -62.6%",
         "riskNotes": [
           "PBR 10배 초과",
-          "MA20·MA60 동시 하회"
-        ],
-        "assessment": "정책 테마는 있으나 현재 가격·추세·밸류 리스크가 우선입니다."
-      },
-      {
-        "ticker": "042700",
-        "company": "한미반도체",
-        "sector": "반도체·AI",
-        "decision": "AVOID_NOW",
-        "totalScore": 28,
-        "policyScore": 23,
-        "policyMemo": "HBM 장비 대장주, 정책보다 글로벌 CAPEX 민감",
-        "technicalMemo": "MA20 하회, RSI 41.2, 60일 고점 대비 -52.2%",
-        "riskNotes": [
-          "PBR 10배 초과",
-          "PER 60배 초과",
           "MA20·MA60 동시 하회"
         ],
         "assessment": "정책 테마는 있으나 현재 가격·추세·밸류 리스크가 우선입니다."
@@ -1245,6 +1244,43 @@
           "interpretation": "3대 운용사 모두에서 확인되지만, 대부분 패시브 ETF·인덱스 편입 신호입니다."
         },
         {
+          "ticker": "042700",
+          "company": "한미반도체",
+          "sector": "반도체·AI",
+          "decision": "AVOID_NOW",
+          "totalScore": 39,
+          "status": "3대 운용사 상품 보유 확인",
+          "managerCount": 3,
+          "managers": [
+            {
+              "manager": "BlackRock",
+              "vehicle": "iShares MSCI South Korea ETF (EWY)",
+              "evidence": "ETF_HOLDING",
+              "asOf": "Aug 06, 2026",
+              "weightPct": 0.4785,
+              "shares": 857578
+            },
+            {
+              "manager": "Vanguard",
+              "vehicle": "Institutional Total International Stock Market Index Trust",
+              "evidence": "INDEX_TRUST_HOLDING",
+              "asOf": "2025-10-31",
+              "weightPct": null,
+              "shares": null
+            },
+            {
+              "manager": "SSGA/State Street",
+              "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
+              "evidence": "ETF_HOLDING",
+              "asOf": "As of 06-Aug-2026",
+              "weightPct": 0.027447,
+              "shares": 80342
+            }
+          ],
+          "largeHolderDisclosure": null,
+          "interpretation": "3대 운용사 모두에서 확인되지만, 대부분 패시브 ETF·인덱스 편입 신호입니다."
+        },
+        {
           "ticker": "196170",
           "company": "알테오젠",
           "sector": "바이오",
@@ -1313,43 +1349,6 @@
               "asOf": "As of 06-Aug-2026",
               "weightPct": 0.009708,
               "shares": 55584
-            }
-          ],
-          "largeHolderDisclosure": null,
-          "interpretation": "3대 운용사 모두에서 확인되지만, 대부분 패시브 ETF·인덱스 편입 신호입니다."
-        },
-        {
-          "ticker": "042700",
-          "company": "한미반도체",
-          "sector": "반도체·AI",
-          "decision": "AVOID_NOW",
-          "totalScore": 28,
-          "status": "3대 운용사 상품 보유 확인",
-          "managerCount": 3,
-          "managers": [
-            {
-              "manager": "BlackRock",
-              "vehicle": "iShares MSCI South Korea ETF (EWY)",
-              "evidence": "ETF_HOLDING",
-              "asOf": "Aug 06, 2026",
-              "weightPct": 0.4785,
-              "shares": 857578
-            },
-            {
-              "manager": "Vanguard",
-              "vehicle": "Institutional Total International Stock Market Index Trust",
-              "evidence": "INDEX_TRUST_HOLDING",
-              "asOf": "2025-10-31",
-              "weightPct": null,
-              "shares": null
-            },
-            {
-              "manager": "SSGA/State Street",
-              "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
-              "evidence": "ETF_HOLDING",
-              "asOf": "As of 06-Aug-2026",
-              "weightPct": 0.027447,
-              "shares": 80342
             }
           ],
           "largeHolderDisclosure": null,
@@ -26527,6 +26526,359 @@
       }
     },
     {
+      "ticker": "042700",
+      "company": "한미반도체",
+      "sector": "반도체·AI",
+      "status": "candidate",
+      "rationale": "HBM 장비 대장주, 정책보다 글로벌 CAPEX 민감",
+      "latestDate": "2026-08-07",
+      "close": 195800,
+      "marketCapEok": 183285,
+      "listedShares": 95312200,
+      "per": 22.48,
+      "pbr": 10.45,
+      "roe": 55.54,
+      "ownership": {
+        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=042700&target=finsum_more",
+        "topHolders": [
+          {
+            "name": "곽동신 외 7인",
+            "shares": 53200101,
+            "pct": 55.82
+          },
+          {
+            "name": "국민연금공단",
+            "shares": 5224463,
+            "pct": 5.48
+          },
+          {
+            "name": "미래에셋자산운용",
+            "shares": 4829214,
+            "pct": 5.07
+          },
+          {
+            "name": "자사주",
+            "shares": 459198,
+            "pct": 0.48
+          }
+        ],
+        "majorHolderName": "곽동신 외 7인",
+        "majorHolderShares": 53200101,
+        "majorHolderPct": 55.82,
+        "topHolderPct": 66.85,
+        "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-08-07",
+        "asOfText": "2026-08-07 16:10 장마감",
+        "officialClose": 192300,
+        "alternateClose": 195800
+      },
+      "liquidity": {
+        "avgVolume20": 980647,
+        "volumeRatio": 0.44
+      },
+      "returns": {
+        "d5": -8.7179,
+        "d20": -9.1415,
+        "d60": -48.1325
+      },
+      "technicals": {
+        "ma5": 202160,
+        "ma20": 208425,
+        "ma60": 262553.33,
+        "ma120": 277213.33,
+        "rsi14": 41.15,
+        "high60": 409500,
+        "low60": 148900,
+        "drawdown60Pct": -52.1856,
+        "reboundFromLow60Pct": 31.4976,
+        "aboveMa20": false,
+        "aboveMa60": false,
+        "ma20SlopePct": -1.7304
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": -986,
+          "institutionNetValueEok": 157.11,
+          "foreignPct": -0.538,
+          "institutionPct": 0.086
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": 667.35,
+          "institutionNetValueEok": -255.75,
+          "foreignPct": 0.364,
+          "institutionPct": -0.14
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": 614.04,
+          "institutionNetValueEok": -12410.29,
+          "foreignPct": 0.335,
+          "institutionPct": -6.771
+        }
+      },
+      "policy": {
+        "score": 23,
+        "memo": "HBM 장비 대장주, 정책보다 글로벌 CAPEX 민감"
+      },
+      "value": {
+        "score": 5,
+        "memo": "시총 183,285억원, PER 22.48, PBR 10.45"
+      },
+      "technical": {
+        "score": 12,
+        "memo": "MA20 하회, RSI 41.2, 60일 고점 대비 -52.2%"
+      },
+      "flowScore": {
+        "score": 12,
+        "memo": "20일 외국인 0.4%, 기관 -0.1%"
+      },
+      "risk": {
+        "penalty": 13,
+        "notes": [
+          "PBR 10배 초과",
+          "MA20·MA60 동시 하회"
+        ],
+        "valuationBlock": true
+      },
+      "totalScore": 39,
+      "baseDecision": "AVOID_NOW",
+      "decision": "AVOID_NOW",
+      "structuralRegime": {
+        "mode": "PRICE_ONLY",
+        "confidence": 2,
+        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
+        "score": 53,
+        "grade": "전환 스토리/가격 검증 부족",
+        "gate": "REVIEW",
+        "entryEligible": false,
+        "primary": {
+          "id": "price-regime",
+          "label": "가격 기반 장기 추세 기준선",
+          "date": "2024-02-20",
+          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+          "sourceName": "Naver Finance daily price",
+          "sourceUrl": "https://finance.naver.com/item/main.naver?code=042700",
+          "firstTradingDate": "2024-02-20",
+          "basisClose": 74500,
+          "latestClose": 195800,
+          "latestDate": "2026-08-07",
+          "days": 899,
+          "returnPct": 162.8,
+          "cagrPct": 48.1,
+          "highClose": 409500,
+          "highDate": "2026-05-14",
+          "lowClose": 59500,
+          "lowDate": "2025-04-09",
+          "drawdownFromHighPct": -52.2,
+          "maxDrawdownPct": -68.5,
+          "aboveMA200": false,
+          "aboveMA600": true,
+          "score": 53,
+          "grade": "전환 스토리/가격 검증 부족",
+          "durationFlag": "가격 추세"
+        },
+        "events": [
+          {
+            "id": "price-regime",
+            "label": "가격 기반 장기 추세 기준선",
+            "date": "2024-02-20",
+            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+            "sourceName": "Naver Finance daily price",
+            "sourceUrl": "https://finance.naver.com/item/main.naver?code=042700",
+            "firstTradingDate": "2024-02-20",
+            "basisClose": 74500,
+            "latestClose": 195800,
+            "latestDate": "2026-08-07",
+            "days": 899,
+            "returnPct": 162.8,
+            "cagrPct": 48.1,
+            "highClose": 409500,
+            "highDate": "2026-05-14",
+            "lowClose": 59500,
+            "lowDate": "2025-04-09",
+            "drawdownFromHighPct": -52.2,
+            "maxDrawdownPct": -68.5,
+            "aboveMA200": false,
+            "aboveMA600": true,
+            "score": 53,
+            "grade": "전환 스토리/가격 검증 부족",
+            "durationFlag": "가격 추세"
+          }
+        ],
+        "memo": "가격 기반 장기 추세 검증 대기: 점수 53"
+      },
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
+        "estimatedCost": 210417,
+        "holderName": "외국인 투자자군",
+        "recentAccumulation": true,
+        "disposalPressure": false,
+        "flow": {
+          "cost": 210417.10624766015,
+          "shares": 17060451,
+          "netShares": 298252,
+          "last20NetShares": 215957,
+          "firstDate": "2025-08-13",
+          "lastDate": "2026-08-07",
+          "days": 240
+        },
+        "method": "구간 추정: 외국인 순매수 VWAP",
+        "score": 18,
+        "signal": "ACCUMULATION",
+        "gapPct": -6.9,
+        "overhang": false,
+        "memo": "B 추정 평단 210,417원 대비 -6.9%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점"
+      },
+      "holderCostScore": 18,
+      "v10cScore": 57,
+      "entryPlan": {
+        "action": "관망/제외",
+        "trigger": "최소 MA20 208,425원 회복과 RSI 35 이상 필요",
+        "invalidation": "추세 훼손 지속",
+        "target": "반등 확인 전 목표가 산정 보류"
+      },
+      "executionPlan": {
+        "stance": "관망",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 176220
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 195800
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 207383
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 208425
+          },
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 210417
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 211464
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 225170
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 195800,
+            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
+          },
+          {
+            "label": "확인",
+            "weight": "관찰",
+            "price": 208425,
+            "rule": "MA20 208,425원 회복 또는 5일선 202,160원 위 양봉"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "보유자 대응",
+            "action": "반등 시 비중 축소",
+            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
+          },
+          {
+            "label": "무효",
+            "action": "신규 검토 중단",
+            "trigger": "60일 저점 148,900원 이탈"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
+          },
+          {
+            "window": "장중",
+            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
+          },
+          {
+            "window": "종가",
+            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "수급 보조 신호 양호",
+          "체질 기준: REVIEW · 53점 · 가격 기반 장기 추세 기준선",
+          "평단 신호: ACCUMULATION · 18점 · B 추정 평단 210,417원 대비 -6.9%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
+          "리스크: PBR 10배 초과 · MA20·MA60 동시 하회",
+          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=042700",
+      "megaManagers": {
+        "score": 3,
+        "managerCount": 3,
+        "status": "3대 운용사 상품 보유 확인",
+        "managers": [
+          {
+            "manager": "BlackRock",
+            "managerGroup": "BlackRock",
+            "vehicle": "iShares MSCI South Korea ETF (EWY)",
+            "evidence": "ETF_HOLDING",
+            "asOf": "Aug 06, 2026",
+            "weightPct": 0.4785,
+            "shares": 857578,
+            "holdingName": "HANMI SEMICONDUCTOR",
+            "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
+          },
+          {
+            "manager": "Vanguard",
+            "managerGroup": "Vanguard",
+            "vehicle": "Institutional Total International Stock Market Index Trust",
+            "evidence": "INDEX_TRUST_HOLDING",
+            "asOf": "2025-10-31",
+            "weightPct": null,
+            "shares": null,
+            "holdingName": "한미반도체",
+            "sourceUrl": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf"
+          },
+          {
+            "manager": "SSGA/State Street",
+            "managerGroup": "SSGA",
+            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
+            "evidence": "ETF_HOLDING",
+            "asOf": "As of 06-Aug-2026",
+            "weightPct": 0.027447,
+            "shares": 80342,
+            "holdingName": "HANMI SEMICONDUCTOR CO LTD",
+            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
+          }
+        ],
+        "largeHolderDisclosure": null,
+        "interpretation": "3대 운용사 모두에서 확인되지만, 대부분 패시브 ETF·인덱스 편입 신호입니다."
+      }
+    },
+    {
       "ticker": "189300",
       "company": "인텔리안테크",
       "sector": "우주",
@@ -26832,332 +27184,6 @@
         "managers": [],
         "largeHolderDisclosure": null,
         "interpretation": "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다."
-      }
-    },
-    {
-      "ticker": "121600",
-      "company": "나노신소재",
-      "sector": "이차전지 소재",
-      "status": "candidate",
-      "rationale": "CNT 도전재",
-      "latestDate": "2026-08-07",
-      "close": 47600,
-      "marketCapEok": 5843,
-      "listedShares": 12262191,
-      "per": 88,
-      "pbr": 6.04,
-      "roe": 7.65,
-      "ownership": {
-        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=121600&target=finsum_more",
-        "topHolders": [
-          {
-            "name": "박장우 외 11인",
-            "shares": 2651377,
-            "pct": 21.62
-          },
-          {
-            "name": "삼성자산운용",
-            "shares": 883435,
-            "pct": 7.2
-          },
-          {
-            "name": "자사주",
-            "shares": 219206,
-            "pct": 1.79
-          }
-        ],
-        "majorHolderName": "박장우 외 11인",
-        "majorHolderShares": 2651377,
-        "majorHolderPct": 21.62,
-        "topHolderPct": 30.61,
-        "memo": "대주주 지분 보통 이상"
-      },
-      "priceSource": {
-        "source": "NXT",
-        "asOfDate": "2026-08-07",
-        "asOfText": "2026-08-07 16:10 장마감",
-        "officialClose": 47650,
-        "alternateClose": 47600
-      },
-      "liquidity": {
-        "avgVolume20": 62338,
-        "volumeRatio": 1.25
-      },
-      "returns": {
-        "d5": 19.1489,
-        "d20": 9.1743,
-        "d60": -35.0614
-      },
-      "technicals": {
-        "ma5": 44450,
-        "ma20": 42252.5,
-        "ma60": 53251.67,
-        "ma120": 61918.33,
-        "rsi14": 62.87,
-        "high60": 77600,
-        "low60": 33200,
-        "drawdown60Pct": -38.6598,
-        "reboundFromLow60Pct": 43.3735,
-        "aboveMa20": true,
-        "aboveMa60": false,
-        "ma20SlopePct": -0.8797
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": -21.12,
-          "institutionNetValueEok": 17.08,
-          "foreignPct": -0.361,
-          "institutionPct": 0.292
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": -36.26,
-          "institutionNetValueEok": 32.93,
-          "foreignPct": -0.621,
-          "institutionPct": 0.564
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": 27.98,
-          "institutionNetValueEok": -199.16,
-          "foreignPct": 0.479,
-          "institutionPct": -3.409
-        }
-      },
-      "policy": {
-        "score": 17,
-        "memo": "CNT 도전재"
-      },
-      "value": {
-        "score": 9,
-        "memo": "시총 5,843억원, PER 88, PBR 6.04"
-      },
-      "technical": {
-        "score": 24,
-        "memo": "MA20 상회, RSI 62.9, 60일 고점 대비 -38.7%"
-      },
-      "flowScore": {
-        "score": 12,
-        "memo": "20일 외국인 -0.6%, 기관 0.6%"
-      },
-      "risk": {
-        "penalty": 11,
-        "notes": [
-          "고PBR 부담",
-          "PER 60배 초과"
-        ],
-        "valuationBlock": true
-      },
-      "totalScore": 51,
-      "baseDecision": "AVOID_NOW",
-      "decision": "AVOID_NOW",
-      "structuralRegime": {
-        "mode": "PRICE_ONLY",
-        "confidence": 2,
-        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
-        "score": 10,
-        "grade": "장기 보유보다 이벤트·트레이딩 우선",
-        "gate": "BLOCK",
-        "entryEligible": false,
-        "primary": {
-          "id": "price-regime",
-          "label": "가격 기반 장기 추세 기준선",
-          "date": "2024-02-20",
-          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-          "sourceName": "Naver Finance daily price",
-          "sourceUrl": "https://finance.naver.com/item/main.naver?code=121600",
-          "firstTradingDate": "2024-02-20",
-          "basisClose": 104900,
-          "latestClose": 47600,
-          "latestDate": "2026-08-07",
-          "days": 899,
-          "returnPct": -54.6,
-          "cagrPct": -27.5,
-          "highClose": 147600,
-          "highDate": "2024-03-18",
-          "lowClose": 35350,
-          "lowDate": "2026-07-29",
-          "drawdownFromHighPct": -67.8,
-          "maxDrawdownPct": -76.1,
-          "aboveMA200": false,
-          "aboveMA600": false,
-          "score": 10,
-          "grade": "장기 보유보다 이벤트·트레이딩 우선",
-          "durationFlag": "가격 추세"
-        },
-        "events": [
-          {
-            "id": "price-regime",
-            "label": "가격 기반 장기 추세 기준선",
-            "date": "2024-02-20",
-            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-            "sourceName": "Naver Finance daily price",
-            "sourceUrl": "https://finance.naver.com/item/main.naver?code=121600",
-            "firstTradingDate": "2024-02-20",
-            "basisClose": 104900,
-            "latestClose": 47600,
-            "latestDate": "2026-08-07",
-            "days": 899,
-            "returnPct": -54.6,
-            "cagrPct": -27.5,
-            "highClose": 147600,
-            "highDate": "2024-03-18",
-            "lowClose": 35350,
-            "lowDate": "2026-07-29",
-            "drawdownFromHighPct": -67.8,
-            "maxDrawdownPct": -76.1,
-            "aboveMA200": false,
-            "aboveMA600": false,
-            "score": 10,
-            "grade": "장기 보유보다 이벤트·트레이딩 우선",
-            "durationFlag": "가격 추세"
-          }
-        ],
-        "memo": "가격 기반 장기 추세 검증 대기: 점수 10"
-      },
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "주요주주 기관명 + 최근 기관 순매수 VWAP",
-        "estimatedCost": 66372,
-        "holderName": "삼성자산운용",
-        "recentAccumulation": false,
-        "disposalPressure": false,
-        "flow": {
-          "cost": 66372.36433587167,
-          "shares": 2185692,
-          "netShares": -79813,
-          "last20NetShares": 71634,
-          "firstDate": "2025-08-13",
-          "lastDate": "2026-08-07",
-          "days": 240
-        },
-        "method": "구간 추정: 최근 순매수 발생일의 거래량가중 매입가",
-        "score": 5,
-        "signal": "NEUTRAL",
-        "gapPct": -28.3,
-        "overhang": false,
-        "memo": "B 추정 평단 66,372원 대비 -28.3%. 방향성은 중립"
-      },
-      "holderCostScore": 5,
-      "v10cScore": 56,
-      "entryPlan": {
-        "action": "관망/제외",
-        "trigger": "최소 MA20 42,252.5원 회복과 RSI 35 이상 필요",
-        "invalidation": "추세 훼손 지속",
-        "target": "반등 확인 전 목표가 산정 보류"
-      },
-      "executionPlan": {
-        "stance": "관망",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 42253
-          },
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 42840
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 44744
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 47600
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 51408
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 54740
-          },
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 66372
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 47600,
-            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
-          },
-          {
-            "label": "확인",
-            "weight": "관찰",
-            "price": 42252.5,
-            "rule": "MA20 42,252.5원 회복 또는 5일선 44,450원 위 양봉"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "보유자 대응",
-            "action": "반등 시 비중 축소",
-            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
-          },
-          {
-            "label": "무효",
-            "action": "신규 검토 중단",
-            "trigger": "60일 저점 33,200원 이탈"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
-          },
-          {
-            "window": "장중",
-            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
-          },
-          {
-            "window": "종가",
-            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "수급 보조 신호 양호",
-          "체질 기준: BLOCK · 10점 · 가격 기반 장기 추세 기준선",
-          "평단 신호: NEUTRAL · 5점 · B 추정 평단 66,372원 대비 -28.3%. 방향성은 중립",
-          "리스크: 고PBR 부담 · PER 60배 초과",
-          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=121600",
-      "megaManagers": {
-        "score": 1,
-        "managerCount": 1,
-        "status": "단일 운용사 상품 보유 확인",
-        "managers": [
-          {
-            "manager": "SSGA/State Street",
-            "managerGroup": "SSGA",
-            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
-            "evidence": "ETF_HOLDING",
-            "asOf": "As of 06-Aug-2026",
-            "weightPct": 0.001837,
-            "shares": 23362,
-            "holdingName": "ADVANCED NANO PRODUCTS CO LT",
-            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
-          }
-        ],
-        "largeHolderDisclosure": null,
-        "interpretation": "단일 운용사 상품 보유 확인입니다. 능동적 매집 근거로 단정하지 않습니다."
       }
     }
   ],
@@ -59117,6 +59143,359 @@
       }
     },
     {
+      "ticker": "042700",
+      "company": "한미반도체",
+      "sector": "반도체·AI",
+      "status": "candidate",
+      "rationale": "HBM 장비 대장주, 정책보다 글로벌 CAPEX 민감",
+      "latestDate": "2026-08-07",
+      "close": 195800,
+      "marketCapEok": 183285,
+      "listedShares": 95312200,
+      "per": 22.48,
+      "pbr": 10.45,
+      "roe": 55.54,
+      "ownership": {
+        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=042700&target=finsum_more",
+        "topHolders": [
+          {
+            "name": "곽동신 외 7인",
+            "shares": 53200101,
+            "pct": 55.82
+          },
+          {
+            "name": "국민연금공단",
+            "shares": 5224463,
+            "pct": 5.48
+          },
+          {
+            "name": "미래에셋자산운용",
+            "shares": 4829214,
+            "pct": 5.07
+          },
+          {
+            "name": "자사주",
+            "shares": 459198,
+            "pct": 0.48
+          }
+        ],
+        "majorHolderName": "곽동신 외 7인",
+        "majorHolderShares": 53200101,
+        "majorHolderPct": 55.82,
+        "topHolderPct": 66.85,
+        "memo": "대주주 지분 매우 높음"
+      },
+      "priceSource": {
+        "source": "NXT",
+        "asOfDate": "2026-08-07",
+        "asOfText": "2026-08-07 16:10 장마감",
+        "officialClose": 192300,
+        "alternateClose": 195800
+      },
+      "liquidity": {
+        "avgVolume20": 980647,
+        "volumeRatio": 0.44
+      },
+      "returns": {
+        "d5": -8.7179,
+        "d20": -9.1415,
+        "d60": -48.1325
+      },
+      "technicals": {
+        "ma5": 202160,
+        "ma20": 208425,
+        "ma60": 262553.33,
+        "ma120": 277213.33,
+        "rsi14": 41.15,
+        "high60": 409500,
+        "low60": 148900,
+        "drawdown60Pct": -52.1856,
+        "reboundFromLow60Pct": 31.4976,
+        "aboveMa20": false,
+        "aboveMa60": false,
+        "ma20SlopePct": -1.7304
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": -986,
+          "institutionNetValueEok": 157.11,
+          "foreignPct": -0.538,
+          "institutionPct": 0.086
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": 667.35,
+          "institutionNetValueEok": -255.75,
+          "foreignPct": 0.364,
+          "institutionPct": -0.14
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": 614.04,
+          "institutionNetValueEok": -12410.29,
+          "foreignPct": 0.335,
+          "institutionPct": -6.771
+        }
+      },
+      "policy": {
+        "score": 23,
+        "memo": "HBM 장비 대장주, 정책보다 글로벌 CAPEX 민감"
+      },
+      "value": {
+        "score": 5,
+        "memo": "시총 183,285억원, PER 22.48, PBR 10.45"
+      },
+      "technical": {
+        "score": 12,
+        "memo": "MA20 하회, RSI 41.2, 60일 고점 대비 -52.2%"
+      },
+      "flowScore": {
+        "score": 12,
+        "memo": "20일 외국인 0.4%, 기관 -0.1%"
+      },
+      "risk": {
+        "penalty": 13,
+        "notes": [
+          "PBR 10배 초과",
+          "MA20·MA60 동시 하회"
+        ],
+        "valuationBlock": true
+      },
+      "totalScore": 39,
+      "baseDecision": "AVOID_NOW",
+      "decision": "AVOID_NOW",
+      "structuralRegime": {
+        "mode": "PRICE_ONLY",
+        "confidence": 2,
+        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
+        "score": 53,
+        "grade": "전환 스토리/가격 검증 부족",
+        "gate": "REVIEW",
+        "entryEligible": false,
+        "primary": {
+          "id": "price-regime",
+          "label": "가격 기반 장기 추세 기준선",
+          "date": "2024-02-20",
+          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+          "sourceName": "Naver Finance daily price",
+          "sourceUrl": "https://finance.naver.com/item/main.naver?code=042700",
+          "firstTradingDate": "2024-02-20",
+          "basisClose": 74500,
+          "latestClose": 195800,
+          "latestDate": "2026-08-07",
+          "days": 899,
+          "returnPct": 162.8,
+          "cagrPct": 48.1,
+          "highClose": 409500,
+          "highDate": "2026-05-14",
+          "lowClose": 59500,
+          "lowDate": "2025-04-09",
+          "drawdownFromHighPct": -52.2,
+          "maxDrawdownPct": -68.5,
+          "aboveMA200": false,
+          "aboveMA600": true,
+          "score": 53,
+          "grade": "전환 스토리/가격 검증 부족",
+          "durationFlag": "가격 추세"
+        },
+        "events": [
+          {
+            "id": "price-regime",
+            "label": "가격 기반 장기 추세 기준선",
+            "date": "2024-02-20",
+            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+            "sourceName": "Naver Finance daily price",
+            "sourceUrl": "https://finance.naver.com/item/main.naver?code=042700",
+            "firstTradingDate": "2024-02-20",
+            "basisClose": 74500,
+            "latestClose": 195800,
+            "latestDate": "2026-08-07",
+            "days": 899,
+            "returnPct": 162.8,
+            "cagrPct": 48.1,
+            "highClose": 409500,
+            "highDate": "2026-05-14",
+            "lowClose": 59500,
+            "lowDate": "2025-04-09",
+            "drawdownFromHighPct": -52.2,
+            "maxDrawdownPct": -68.5,
+            "aboveMA200": false,
+            "aboveMA600": true,
+            "score": 53,
+            "grade": "전환 스토리/가격 검증 부족",
+            "durationFlag": "가격 추세"
+          }
+        ],
+        "memo": "가격 기반 장기 추세 검증 대기: 점수 53"
+      },
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
+        "estimatedCost": 210417,
+        "holderName": "외국인 투자자군",
+        "recentAccumulation": true,
+        "disposalPressure": false,
+        "flow": {
+          "cost": 210417.10624766015,
+          "shares": 17060451,
+          "netShares": 298252,
+          "last20NetShares": 215957,
+          "firstDate": "2025-08-13",
+          "lastDate": "2026-08-07",
+          "days": 240
+        },
+        "method": "구간 추정: 외국인 순매수 VWAP",
+        "score": 18,
+        "signal": "ACCUMULATION",
+        "gapPct": -6.9,
+        "overhang": false,
+        "memo": "B 추정 평단 210,417원 대비 -6.9%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점"
+      },
+      "holderCostScore": 18,
+      "v10cScore": 57,
+      "entryPlan": {
+        "action": "관망/제외",
+        "trigger": "최소 MA20 208,425원 회복과 RSI 35 이상 필요",
+        "invalidation": "추세 훼손 지속",
+        "target": "반등 확인 전 목표가 산정 보류"
+      },
+      "executionPlan": {
+        "stance": "관망",
+        "isOverheated": false,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 176220
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 195800
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 207383
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 208425
+          },
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 210417
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 211464
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 225170
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 195800,
+            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
+          },
+          {
+            "label": "확인",
+            "weight": "관찰",
+            "price": 208425,
+            "rule": "MA20 208,425원 회복 또는 5일선 202,160원 위 양봉"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "보유자 대응",
+            "action": "반등 시 비중 축소",
+            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
+          },
+          {
+            "label": "무효",
+            "action": "신규 검토 중단",
+            "trigger": "60일 저점 148,900원 이탈"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
+          },
+          {
+            "window": "장중",
+            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
+          },
+          {
+            "window": "종가",
+            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
+          }
+        ],
+        "riskSwitches": [
+          "과열 낮음: 분할 기준 유지",
+          "수급 보조 신호 양호",
+          "체질 기준: REVIEW · 53점 · 가격 기반 장기 추세 기준선",
+          "평단 신호: ACCUMULATION · 18점 · B 추정 평단 210,417원 대비 -6.9%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
+          "리스크: PBR 10배 초과 · MA20·MA60 동시 하회",
+          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=042700",
+      "megaManagers": {
+        "score": 3,
+        "managerCount": 3,
+        "status": "3대 운용사 상품 보유 확인",
+        "managers": [
+          {
+            "manager": "BlackRock",
+            "managerGroup": "BlackRock",
+            "vehicle": "iShares MSCI South Korea ETF (EWY)",
+            "evidence": "ETF_HOLDING",
+            "asOf": "Aug 06, 2026",
+            "weightPct": 0.4785,
+            "shares": 857578,
+            "holdingName": "HANMI SEMICONDUCTOR",
+            "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
+          },
+          {
+            "manager": "Vanguard",
+            "managerGroup": "Vanguard",
+            "vehicle": "Institutional Total International Stock Market Index Trust",
+            "evidence": "INDEX_TRUST_HOLDING",
+            "asOf": "2025-10-31",
+            "weightPct": null,
+            "shares": null,
+            "holdingName": "한미반도체",
+            "sourceUrl": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf"
+          },
+          {
+            "manager": "SSGA/State Street",
+            "managerGroup": "SSGA",
+            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
+            "evidence": "ETF_HOLDING",
+            "asOf": "As of 06-Aug-2026",
+            "weightPct": 0.027447,
+            "shares": 80342,
+            "holdingName": "HANMI SEMICONDUCTOR CO LTD",
+            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
+          }
+        ],
+        "largeHolderDisclosure": null,
+        "interpretation": "3대 운용사 모두에서 확인되지만, 대부분 패시브 ETF·인덱스 편입 신호입니다."
+      }
+    },
+    {
       "ticker": "189300",
       "company": "인텔리안테크",
       "sector": "우주",
@@ -66244,360 +66623,6 @@
         "managers": [],
         "largeHolderDisclosure": null,
         "interpretation": "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다."
-      }
-    },
-    {
-      "ticker": "042700",
-      "company": "한미반도체",
-      "sector": "반도체·AI",
-      "status": "candidate",
-      "rationale": "HBM 장비 대장주, 정책보다 글로벌 CAPEX 민감",
-      "latestDate": "2026-08-07",
-      "close": 195800,
-      "marketCapEok": 183285,
-      "listedShares": 95312200,
-      "per": 103,
-      "pbr": 10.45,
-      "roe": 55.54,
-      "ownership": {
-        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=042700&target=finsum_more",
-        "topHolders": [
-          {
-            "name": "곽동신 외 7인",
-            "shares": 53200101,
-            "pct": 55.82
-          },
-          {
-            "name": "국민연금공단",
-            "shares": 5224463,
-            "pct": 5.48
-          },
-          {
-            "name": "미래에셋자산운용",
-            "shares": 4829214,
-            "pct": 5.07
-          },
-          {
-            "name": "자사주",
-            "shares": 459198,
-            "pct": 0.48
-          }
-        ],
-        "majorHolderName": "곽동신 외 7인",
-        "majorHolderShares": 53200101,
-        "majorHolderPct": 55.82,
-        "topHolderPct": 66.85,
-        "memo": "대주주 지분 매우 높음"
-      },
-      "priceSource": {
-        "source": "NXT",
-        "asOfDate": "2026-08-07",
-        "asOfText": "2026-08-07 16:10 장마감",
-        "officialClose": 192300,
-        "alternateClose": 195800
-      },
-      "liquidity": {
-        "avgVolume20": 980647,
-        "volumeRatio": 0.44
-      },
-      "returns": {
-        "d5": -8.7179,
-        "d20": -9.1415,
-        "d60": -48.1325
-      },
-      "technicals": {
-        "ma5": 202160,
-        "ma20": 208425,
-        "ma60": 262553.33,
-        "ma120": 277213.33,
-        "rsi14": 41.15,
-        "high60": 409500,
-        "low60": 148900,
-        "drawdown60Pct": -52.1856,
-        "reboundFromLow60Pct": 31.4976,
-        "aboveMa20": false,
-        "aboveMa60": false,
-        "ma20SlopePct": -1.7304
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": -986,
-          "institutionNetValueEok": 157.11,
-          "foreignPct": -0.538,
-          "institutionPct": 0.086
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": 667.35,
-          "institutionNetValueEok": -255.75,
-          "foreignPct": 0.364,
-          "institutionPct": -0.14
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": 614.04,
-          "institutionNetValueEok": -12410.29,
-          "foreignPct": 0.335,
-          "institutionPct": -6.771
-        }
-      },
-      "policy": {
-        "score": 23,
-        "memo": "HBM 장비 대장주, 정책보다 글로벌 CAPEX 민감"
-      },
-      "value": {
-        "score": 0,
-        "memo": "시총 183,285억원, PER 103, PBR 10.45"
-      },
-      "technical": {
-        "score": 12,
-        "memo": "MA20 하회, RSI 41.2, 60일 고점 대비 -52.2%"
-      },
-      "flowScore": {
-        "score": 12,
-        "memo": "20일 외국인 0.4%, 기관 -0.1%"
-      },
-      "risk": {
-        "penalty": 19,
-        "notes": [
-          "PBR 10배 초과",
-          "PER 60배 초과",
-          "MA20·MA60 동시 하회"
-        ],
-        "valuationBlock": true
-      },
-      "totalScore": 28,
-      "baseDecision": "AVOID_NOW",
-      "decision": "AVOID_NOW",
-      "structuralRegime": {
-        "mode": "PRICE_ONLY",
-        "confidence": 2,
-        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
-        "score": 53,
-        "grade": "전환 스토리/가격 검증 부족",
-        "gate": "REVIEW",
-        "entryEligible": false,
-        "primary": {
-          "id": "price-regime",
-          "label": "가격 기반 장기 추세 기준선",
-          "date": "2024-02-20",
-          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-          "sourceName": "Naver Finance daily price",
-          "sourceUrl": "https://finance.naver.com/item/main.naver?code=042700",
-          "firstTradingDate": "2024-02-20",
-          "basisClose": 74500,
-          "latestClose": 195800,
-          "latestDate": "2026-08-07",
-          "days": 899,
-          "returnPct": 162.8,
-          "cagrPct": 48.1,
-          "highClose": 409500,
-          "highDate": "2026-05-14",
-          "lowClose": 59500,
-          "lowDate": "2025-04-09",
-          "drawdownFromHighPct": -52.2,
-          "maxDrawdownPct": -68.5,
-          "aboveMA200": false,
-          "aboveMA600": true,
-          "score": 53,
-          "grade": "전환 스토리/가격 검증 부족",
-          "durationFlag": "가격 추세"
-        },
-        "events": [
-          {
-            "id": "price-regime",
-            "label": "가격 기반 장기 추세 기준선",
-            "date": "2024-02-20",
-            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-            "sourceName": "Naver Finance daily price",
-            "sourceUrl": "https://finance.naver.com/item/main.naver?code=042700",
-            "firstTradingDate": "2024-02-20",
-            "basisClose": 74500,
-            "latestClose": 195800,
-            "latestDate": "2026-08-07",
-            "days": 899,
-            "returnPct": 162.8,
-            "cagrPct": 48.1,
-            "highClose": 409500,
-            "highDate": "2026-05-14",
-            "lowClose": 59500,
-            "lowDate": "2025-04-09",
-            "drawdownFromHighPct": -52.2,
-            "maxDrawdownPct": -68.5,
-            "aboveMA200": false,
-            "aboveMA600": true,
-            "score": 53,
-            "grade": "전환 스토리/가격 검증 부족",
-            "durationFlag": "가격 추세"
-          }
-        ],
-        "memo": "가격 기반 장기 추세 검증 대기: 점수 53"
-      },
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
-        "estimatedCost": 210417,
-        "holderName": "외국인 투자자군",
-        "recentAccumulation": true,
-        "disposalPressure": false,
-        "flow": {
-          "cost": 210417.10624766015,
-          "shares": 17060451,
-          "netShares": 298252,
-          "last20NetShares": 215957,
-          "firstDate": "2025-08-13",
-          "lastDate": "2026-08-07",
-          "days": 240
-        },
-        "method": "구간 추정: 외국인 순매수 VWAP",
-        "score": 18,
-        "signal": "ACCUMULATION",
-        "gapPct": -6.9,
-        "overhang": false,
-        "memo": "B 추정 평단 210,417원 대비 -6.9%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점"
-      },
-      "holderCostScore": 18,
-      "v10cScore": 46,
-      "entryPlan": {
-        "action": "관망/제외",
-        "trigger": "최소 MA20 208,425원 회복과 RSI 35 이상 필요",
-        "invalidation": "추세 훼손 지속",
-        "target": "반등 확인 전 목표가 산정 보류"
-      },
-      "executionPlan": {
-        "stance": "관망",
-        "isOverheated": false,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 176220
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 195800
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 207383
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 208425
-          },
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 210417
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 211464
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 225170
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 195800,
-            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
-          },
-          {
-            "label": "확인",
-            "weight": "관찰",
-            "price": 208425,
-            "rule": "MA20 208,425원 회복 또는 5일선 202,160원 위 양봉"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "보유자 대응",
-            "action": "반등 시 비중 축소",
-            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
-          },
-          {
-            "label": "무효",
-            "action": "신규 검토 중단",
-            "trigger": "60일 저점 148,900원 이탈"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
-          },
-          {
-            "window": "장중",
-            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
-          },
-          {
-            "window": "종가",
-            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
-          }
-        ],
-        "riskSwitches": [
-          "과열 낮음: 분할 기준 유지",
-          "수급 보조 신호 양호",
-          "체질 기준: REVIEW · 53점 · 가격 기반 장기 추세 기준선",
-          "평단 신호: ACCUMULATION · 18점 · B 추정 평단 210,417원 대비 -6.9%. 현재가가 스마트머니 비용권 근처라 지지 기대 점수 18점",
-          "리스크: PBR 10배 초과 · PER 60배 초과 · MA20·MA60 동시 하회",
-          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=042700",
-      "megaManagers": {
-        "score": 3,
-        "managerCount": 3,
-        "status": "3대 운용사 상품 보유 확인",
-        "managers": [
-          {
-            "manager": "BlackRock",
-            "managerGroup": "BlackRock",
-            "vehicle": "iShares MSCI South Korea ETF (EWY)",
-            "evidence": "ETF_HOLDING",
-            "asOf": "Aug 06, 2026",
-            "weightPct": 0.4785,
-            "shares": 857578,
-            "holdingName": "HANMI SEMICONDUCTOR",
-            "sourceUrl": "https://www.ishares.com/us/products/239681/EWY"
-          },
-          {
-            "manager": "Vanguard",
-            "managerGroup": "Vanguard",
-            "vehicle": "Institutional Total International Stock Market Index Trust",
-            "evidence": "INDEX_TRUST_HOLDING",
-            "asOf": "2025-10-31",
-            "weightPct": null,
-            "shares": null,
-            "holdingName": "한미반도체",
-            "sourceUrl": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/trust-financial-documents/Vanguard_Institutional_Total_International_Stock_Market_Index_Trust.pdf"
-          },
-          {
-            "manager": "SSGA/State Street",
-            "managerGroup": "SSGA",
-            "vehicle": "SPDR Portfolio Developed World ex-US ETF (SPDW)",
-            "evidence": "ETF_HOLDING",
-            "asOf": "As of 06-Aug-2026",
-            "weightPct": 0.027447,
-            "shares": 80342,
-            "holdingName": "HANMI SEMICONDUCTOR CO LTD",
-            "sourceUrl": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-developed-world-ex-us-etf-spdw"
-          }
-        ],
-        "largeHolderDisclosure": null,
-        "interpretation": "3대 운용사 모두에서 확인되지만, 대부분 패시브 ETF·인덱스 편입 신호입니다."
       }
     },
     {
