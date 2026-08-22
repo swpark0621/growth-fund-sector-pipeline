@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-08-22",
-    "updatedAt": "2026-08-22 07:35:30 KST",
+    "updatedAt": "2026-08-22 15:05:38 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -8308,14 +8308,14 @@
           },
           {
             "name": "자사주",
-            "shares": 220000,
-            "pct": 0.43
+            "shares": 231000,
+            "pct": 0.45
           }
         ],
         "majorHolderName": "동진홀딩스 외 3인",
         "majorHolderShares": 17757724,
         "majorHolderPct": 34.84,
-        "topHolderPct": 35.27,
+        "topHolderPct": 35.29,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -10117,7 +10117,7 @@
       "marketCapEok": 203492,
       "listedShares": 95312200,
       "per": 22.48,
-      "pbr": 31,
+      "pbr": 10.45,
       "roe": 55.54,
       "ownership": {
         "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=042700&target=finsum_more",
@@ -10208,7 +10208,7 @@
       },
       "value": {
         "score": 5,
-        "memo": "시총 203,492억원, PER 22.48, PBR 31"
+        "memo": "시총 203,492억원, PER 22.48, PBR 10.45"
       },
       "technical": {
         "score": 29,
@@ -32380,14 +32380,14 @@
           },
           {
             "name": "자사주",
-            "shares": 220000,
-            "pct": 0.43
+            "shares": 231000,
+            "pct": 0.45
           }
         ],
         "majorHolderName": "동진홀딩스 외 3인",
         "majorHolderShares": 17757724,
         "majorHolderPct": 34.84,
-        "topHolderPct": 35.27,
+        "topHolderPct": 35.29,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -34189,7 +34189,7 @@
       "marketCapEok": 203492,
       "listedShares": 95312200,
       "per": 22.48,
-      "pbr": 31,
+      "pbr": 10.45,
       "roe": 55.54,
       "ownership": {
         "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=042700&target=finsum_more",
@@ -34280,7 +34280,7 @@
       },
       "value": {
         "score": 5,
-        "memo": "시총 203,492억원, PER 22.48, PBR 31"
+        "memo": "시총 203,492억원, PER 22.48, PBR 10.45"
       },
       "technical": {
         "score": 29,
@@ -43273,6 +43273,317 @@
       }
     },
     {
+      "ticker": "222080",
+      "company": "씨아이에스",
+      "sector": "이차전지 장비",
+      "status": "candidate",
+      "rationale": "전극공정 장비",
+      "latestDate": "2026-08-21",
+      "close": 7490,
+      "marketCapEok": 5826,
+      "listedShares": 77780144,
+      "per": 25.34,
+      "pbr": 2.94,
+      "roe": 14.44,
+      "ownership": {
+        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=222080&target=finsum_more",
+        "topHolders": [
+          {
+            "name": "에스에프에이 외 1인",
+            "shares": 25722456,
+            "pct": 33.07
+          },
+          {
+            "name": "삼성자산운용",
+            "shares": 3895268,
+            "pct": 5.01
+          },
+          {
+            "name": "자사주",
+            "shares": 8521,
+            "pct": 0.01
+          }
+        ],
+        "majorHolderName": "에스에프에이 외 1인",
+        "majorHolderShares": 25722456,
+        "majorHolderPct": 33.07,
+        "topHolderPct": 38.09,
+        "memo": "대주주 지분 보통 이상"
+      },
+      "priceSource": {
+        "source": "KRX",
+        "asOfDate": "2026-08-21",
+        "asOfText": "2026-08-21 16:10 장마감",
+        "officialClose": 7490,
+        "alternateClose": null
+      },
+      "liquidity": {
+        "avgVolume20": 560780,
+        "volumeRatio": 0.6
+      },
+      "returns": {
+        "d5": -8.7698,
+        "d20": 0.1337,
+        "d60": -44.395
+      },
+      "technicals": {
+        "ma5": 7918,
+        "ma20": 7372.5,
+        "ma60": 8653.17,
+        "ma120": 11212.92,
+        "rsi14": 63.67,
+        "high60": 13670,
+        "low60": 5690,
+        "drawdown60Pct": -45.2085,
+        "reboundFromLow60Pct": 31.6344,
+        "aboveMa20": true,
+        "aboveMa60": false,
+        "ma20SlopePct": 2.8673
+      },
+      "flows": {
+        "d5": {
+          "days": 5,
+          "foreignNetValueEok": 4.41,
+          "institutionNetValueEok": -15.04,
+          "foreignPct": 0.076,
+          "institutionPct": -0.258
+        },
+        "d20": {
+          "days": 20,
+          "foreignNetValueEok": -3.36,
+          "institutionNetValueEok": 5.71,
+          "foreignPct": -0.058,
+          "institutionPct": 0.098
+        },
+        "d60": {
+          "days": 60,
+          "foreignNetValueEok": 226.42,
+          "institutionNetValueEok": 71.85,
+          "foreignPct": 3.886,
+          "institutionPct": 1.233
+        }
+      },
+      "policy": {
+        "score": 17,
+        "memo": "전극공정 장비"
+      },
+      "value": {
+        "score": 19,
+        "memo": "시총 5,826억원, PER 25.34, PBR 2.94"
+      },
+      "technical": {
+        "score": 13,
+        "memo": "MA20 상회, RSI 63.7, 60일 고점 대비 -45.2%"
+      },
+      "flowScore": {
+        "score": 15,
+        "memo": "20일 외국인 -0.1%, 기관 0.1%"
+      },
+      "risk": {
+        "penalty": 0,
+        "notes": [],
+        "valuationBlock": false
+      },
+      "totalScore": 64,
+      "baseDecision": "WAIT_TRIGGER",
+      "decision": "WAIT_TRIGGER",
+      "structuralRegime": {
+        "mode": "PRICE_ONLY",
+        "confidence": 2,
+        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
+        "score": 10,
+        "grade": "장기 보유보다 이벤트·트레이딩 우선",
+        "gate": "BLOCK",
+        "entryEligible": false,
+        "primary": {
+          "id": "price-regime",
+          "label": "가격 기반 장기 추세 기준선",
+          "date": "2024-03-05",
+          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+          "sourceName": "Naver Finance daily price",
+          "sourceUrl": "https://finance.naver.com/item/main.naver?code=222080",
+          "firstTradingDate": "2024-03-05",
+          "basisClose": 13150,
+          "latestClose": 7490,
+          "latestDate": "2026-08-21",
+          "days": 899,
+          "returnPct": -43,
+          "cagrPct": -20.4,
+          "highClose": 18650,
+          "highDate": "2026-04-29",
+          "lowClose": 5940,
+          "lowDate": "2026-07-30",
+          "drawdownFromHighPct": -59.8,
+          "maxDrawdownPct": -68.2,
+          "aboveMA200": false,
+          "aboveMA600": false,
+          "score": 10,
+          "grade": "장기 보유보다 이벤트·트레이딩 우선",
+          "durationFlag": "가격 추세"
+        },
+        "events": [
+          {
+            "id": "price-regime",
+            "label": "가격 기반 장기 추세 기준선",
+            "date": "2024-03-05",
+            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
+            "sourceName": "Naver Finance daily price",
+            "sourceUrl": "https://finance.naver.com/item/main.naver?code=222080",
+            "firstTradingDate": "2024-03-05",
+            "basisClose": 13150,
+            "latestClose": 7490,
+            "latestDate": "2026-08-21",
+            "days": 899,
+            "returnPct": -43,
+            "cagrPct": -20.4,
+            "highClose": 18650,
+            "highDate": "2026-04-29",
+            "lowClose": 5940,
+            "lowDate": "2026-07-30",
+            "drawdownFromHighPct": -59.8,
+            "maxDrawdownPct": -68.2,
+            "aboveMA200": false,
+            "aboveMA600": false,
+            "score": 10,
+            "grade": "장기 보유보다 이벤트·트레이딩 우선",
+            "durationFlag": "가격 추세"
+          }
+        ],
+        "memo": "가격 기반 장기 추세 검증 대기: 점수 10"
+      },
+      "holderCost": {
+        "tier": "B",
+        "coefficient": 0.7,
+        "source": "주요주주 기관명 + 최근 기관 순매수 VWAP",
+        "estimatedCost": 10446,
+        "holderName": "삼성자산운용",
+        "recentAccumulation": true,
+        "disposalPressure": false,
+        "flow": {
+          "cost": 10446.466530797356,
+          "shares": 7327139,
+          "netShares": 2106761,
+          "last20NetShares": 101555,
+          "firstDate": "2025-08-27",
+          "lastDate": "2026-08-21",
+          "days": 240
+        },
+        "method": "구간 추정: 최근 순매수 발생일의 거래량가중 매입가",
+        "score": 5,
+        "signal": "NEUTRAL",
+        "gapPct": -28.3,
+        "overhang": false,
+        "memo": "B 추정 평단 10,446원 대비 -28.3%. 방향성은 중립"
+      },
+      "holderCostScore": 5,
+      "v10cScore": 69,
+      "entryPlan": {
+        "action": "체질 검증 대기",
+        "trigger": "체질 점수 10점 BLOCK. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
+        "invalidation": "장기 기준선 미통과 상태에서 MA20 7,372.5원 재이탈 또는 60일 저점 5,690원 이탈",
+        "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요"
+      },
+      "executionPlan": {
+        "stance": "트리거 대기",
+        "isOverheated": true,
+        "isWeakFlow": false,
+        "levels": [
+          {
+            "label": "손절",
+            "kind": "stop",
+            "price": 6741
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 7336
+          },
+          {
+            "label": "추가",
+            "kind": "add",
+            "price": 7373
+          },
+          {
+            "label": "현재",
+            "kind": "now",
+            "price": 7490
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 8089
+          },
+          {
+            "label": "2차 목표",
+            "kind": "target",
+            "price": 8614
+          },
+          {
+            "label": "평단",
+            "kind": "holderCost",
+            "price": 10446
+          }
+        ],
+        "buySteps": [
+          {
+            "label": "대기",
+            "weight": "0%",
+            "price": 7490,
+            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
+          },
+          {
+            "label": "확인",
+            "weight": "관찰",
+            "price": 7372.5,
+            "rule": "MA20 7,372.5원 회복 또는 5일선 7,918원 위 양봉"
+          }
+        ],
+        "sellSteps": [
+          {
+            "label": "보유자 대응",
+            "action": "반등 시 비중 축소",
+            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
+          },
+          {
+            "label": "무효",
+            "action": "신규 검토 중단",
+            "trigger": "60일 저점 5,690원 이탈"
+          }
+        ],
+        "sessionRules": [
+          {
+            "window": "장초반",
+            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
+          },
+          {
+            "window": "장중",
+            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
+          },
+          {
+            "window": "종가",
+            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
+          }
+        ],
+        "riskSwitches": [
+          "단기 과열: 기본 진입 비중 절반 이하",
+          "수급 보조 신호 양호",
+          "체질 기준: BLOCK · 10점 · 가격 기반 장기 추세 기준선",
+          "평단 신호: NEUTRAL · 5점 · B 추정 평단 10,446원 대비 -28.3%. 방향성은 중립",
+          "특이 리스크 없음",
+          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
+        ]
+      },
+      "sourceUrl": "https://finance.naver.com/item/main.naver?code=222080",
+      "megaManagers": {
+        "score": 0,
+        "managerCount": 0,
+        "status": "공개 소스상 미확인",
+        "managers": [],
+        "largeHolderDisclosure": null,
+        "interpretation": "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다."
+      }
+    },
+    {
       "ticker": "403870",
       "company": "HPSP",
       "sector": "반도체·AI",
@@ -46156,312 +46467,6 @@
         ]
       },
       "sourceUrl": "https://finance.naver.com/item/main.naver?code=300080",
-      "megaManagers": {
-        "score": 0,
-        "managerCount": 0,
-        "status": "공개 소스상 미확인",
-        "managers": [],
-        "largeHolderDisclosure": null,
-        "interpretation": "공개 다운로드와 확인 PDF 기준으로는 BlackRock·Vanguard·SSGA 보유 신호를 확인하지 못했습니다."
-      }
-    },
-    {
-      "ticker": "222080",
-      "company": "씨아이에스",
-      "sector": "이차전지 장비",
-      "status": "candidate",
-      "rationale": "전극공정 장비",
-      "latestDate": "2026-08-21",
-      "close": 7490,
-      "marketCapEok": 5826,
-      "listedShares": 77780144,
-      "per": 25.34,
-      "pbr": 2.94,
-      "roe": 14.44,
-      "ownership": {
-        "sourceUrl": "https://navercomp.wisereport.co.kr/v2/company/c1010001.aspx?cmp_cd=222080&target=finsum_more",
-        "topHolders": [
-          {
-            "name": "에스에프에이 외 1인",
-            "shares": 25722456,
-            "pct": 33.07
-          },
-          {
-            "name": "자사주",
-            "shares": 8521,
-            "pct": 0.01
-          }
-        ],
-        "majorHolderName": "에스에프에이 외 1인",
-        "majorHolderShares": 25722456,
-        "majorHolderPct": 33.07,
-        "topHolderPct": 33.08,
-        "memo": "대주주 지분 보통 이상"
-      },
-      "priceSource": {
-        "source": "KRX",
-        "asOfDate": "2026-08-21",
-        "asOfText": "2026-08-21 16:10 장마감",
-        "officialClose": 7490,
-        "alternateClose": null
-      },
-      "liquidity": {
-        "avgVolume20": 560780,
-        "volumeRatio": 0.6
-      },
-      "returns": {
-        "d5": -8.7698,
-        "d20": 0.1337,
-        "d60": -44.395
-      },
-      "technicals": {
-        "ma5": 7918,
-        "ma20": 7372.5,
-        "ma60": 8653.17,
-        "ma120": 11212.92,
-        "rsi14": 63.67,
-        "high60": 13670,
-        "low60": 5690,
-        "drawdown60Pct": -45.2085,
-        "reboundFromLow60Pct": 31.6344,
-        "aboveMa20": true,
-        "aboveMa60": false,
-        "ma20SlopePct": 2.8673
-      },
-      "flows": {
-        "d5": {
-          "days": 5,
-          "foreignNetValueEok": 4.41,
-          "institutionNetValueEok": -15.04,
-          "foreignPct": 0.076,
-          "institutionPct": -0.258
-        },
-        "d20": {
-          "days": 20,
-          "foreignNetValueEok": -3.36,
-          "institutionNetValueEok": 5.71,
-          "foreignPct": -0.058,
-          "institutionPct": 0.098
-        },
-        "d60": {
-          "days": 60,
-          "foreignNetValueEok": 226.42,
-          "institutionNetValueEok": 71.85,
-          "foreignPct": 3.886,
-          "institutionPct": 1.233
-        }
-      },
-      "policy": {
-        "score": 17,
-        "memo": "전극공정 장비"
-      },
-      "value": {
-        "score": 19,
-        "memo": "시총 5,826억원, PER 25.34, PBR 2.94"
-      },
-      "technical": {
-        "score": 13,
-        "memo": "MA20 상회, RSI 63.7, 60일 고점 대비 -45.2%"
-      },
-      "flowScore": {
-        "score": 15,
-        "memo": "20일 외국인 -0.1%, 기관 0.1%"
-      },
-      "risk": {
-        "penalty": 0,
-        "notes": [],
-        "valuationBlock": false
-      },
-      "totalScore": 64,
-      "baseDecision": "WAIT_TRIGGER",
-      "decision": "WAIT_TRIGGER",
-      "structuralRegime": {
-        "mode": "PRICE_ONLY",
-        "confidence": 2,
-        "thesis": "직접 사업 전환 이벤트가 아직 등록되지 않아 장기 가격 추세만 낮은 신뢰도로 평가한다.",
-        "score": 10,
-        "grade": "장기 보유보다 이벤트·트레이딩 우선",
-        "gate": "BLOCK",
-        "entryEligible": false,
-        "primary": {
-          "id": "price-regime",
-          "label": "가격 기반 장기 추세 기준선",
-          "date": "2024-03-05",
-          "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-          "sourceName": "Naver Finance daily price",
-          "sourceUrl": "https://finance.naver.com/item/main.naver?code=222080",
-          "firstTradingDate": "2024-03-05",
-          "basisClose": 13150,
-          "latestClose": 7490,
-          "latestDate": "2026-08-21",
-          "days": 899,
-          "returnPct": -43,
-          "cagrPct": -20.4,
-          "highClose": 18650,
-          "highDate": "2026-04-29",
-          "lowClose": 5940,
-          "lowDate": "2026-07-30",
-          "drawdownFromHighPct": -59.8,
-          "maxDrawdownPct": -68.2,
-          "aboveMA200": false,
-          "aboveMA600": false,
-          "score": 10,
-          "grade": "장기 보유보다 이벤트·트레이딩 우선",
-          "durationFlag": "가격 추세"
-        },
-        "events": [
-          {
-            "id": "price-regime",
-            "label": "가격 기반 장기 추세 기준선",
-            "date": "2024-03-05",
-            "basis": "직접 사업 전환 이벤트 미등록 종목은 최근 약 600거래일 가격 추세를 낮은 신뢰도로만 평가한다.",
-            "sourceName": "Naver Finance daily price",
-            "sourceUrl": "https://finance.naver.com/item/main.naver?code=222080",
-            "firstTradingDate": "2024-03-05",
-            "basisClose": 13150,
-            "latestClose": 7490,
-            "latestDate": "2026-08-21",
-            "days": 899,
-            "returnPct": -43,
-            "cagrPct": -20.4,
-            "highClose": 18650,
-            "highDate": "2026-04-29",
-            "lowClose": 5940,
-            "lowDate": "2026-07-30",
-            "drawdownFromHighPct": -59.8,
-            "maxDrawdownPct": -68.2,
-            "aboveMA200": false,
-            "aboveMA600": false,
-            "score": 10,
-            "grade": "장기 보유보다 이벤트·트레이딩 우선",
-            "durationFlag": "가격 추세"
-          }
-        ],
-        "memo": "가격 기반 장기 추세 검증 대기: 점수 10"
-      },
-      "holderCost": {
-        "tier": "B",
-        "coefficient": 0.7,
-        "source": "외국인 보유율 증가 + 최근 외국인 순매수 VWAP",
-        "estimatedCost": 11411,
-        "holderName": "외국인 투자자군",
-        "recentAccumulation": true,
-        "disposalPressure": true,
-        "flow": {
-          "cost": 11410.699674685604,
-          "shares": 16724744,
-          "netShares": 2391984,
-          "last20NetShares": -32664,
-          "firstDate": "2025-08-27",
-          "lastDate": "2026-08-21",
-          "days": 240
-        },
-        "method": "구간 추정: 외국인 순매수 VWAP",
-        "score": 2,
-        "signal": "NEUTRAL",
-        "gapPct": -34.4,
-        "overhang": false,
-        "memo": "B 추정 평단 11,411원 대비 -34.4%. 방향성은 중립"
-      },
-      "holderCostScore": 2,
-      "v10cScore": 66,
-      "entryPlan": {
-        "action": "체질 검증 대기",
-        "trigger": "체질 점수 10점 BLOCK. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
-        "invalidation": "장기 기준선 미통과 상태에서 MA20 7,372.5원 재이탈 또는 60일 저점 5,690원 이탈",
-        "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요"
-      },
-      "executionPlan": {
-        "stance": "트리거 대기",
-        "isOverheated": true,
-        "isWeakFlow": false,
-        "levels": [
-          {
-            "label": "손절",
-            "kind": "stop",
-            "price": 6741
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 7336
-          },
-          {
-            "label": "추가",
-            "kind": "add",
-            "price": 7373
-          },
-          {
-            "label": "현재",
-            "kind": "now",
-            "price": 7490
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 8089
-          },
-          {
-            "label": "2차 목표",
-            "kind": "target",
-            "price": 8614
-          },
-          {
-            "label": "평단",
-            "kind": "holderCost",
-            "price": 11411
-          }
-        ],
-        "buySteps": [
-          {
-            "label": "대기",
-            "weight": "0%",
-            "price": 7490,
-            "rule": "종가 기준 트리거 충족 전 신규 진입 보류"
-          },
-          {
-            "label": "확인",
-            "weight": "관찰",
-            "price": 7372.5,
-            "rule": "MA20 7,372.5원 회복 또는 5일선 7,918원 위 양봉"
-          }
-        ],
-        "sellSteps": [
-          {
-            "label": "보유자 대응",
-            "action": "반등 시 비중 축소",
-            "trigger": "고점 재돌파 실패 또는 시초가 이탈"
-          },
-          {
-            "label": "무효",
-            "action": "신규 검토 중단",
-            "trigger": "60일 저점 5,690원 이탈"
-          }
-        ],
-        "sessionRules": [
-          {
-            "window": "장초반",
-            "rule": "갭 상승·급등은 보유분 회수 기회로 먼저 본다"
-          },
-          {
-            "window": "장중",
-            "rule": "시초가와 VWAP 위에서 버티면 유지, 둘 다 깨면 축소"
-          },
-          {
-            "window": "종가",
-            "rule": "MA20 위 안착이면 보유, MA20 아래면 다음 날 재평가"
-          }
-        ],
-        "riskSwitches": [
-          "단기 과열: 기본 진입 비중 절반 이하",
-          "수급 보조 신호 양호",
-          "체질 기준: BLOCK · 10점 · 가격 기반 장기 추세 기준선",
-          "평단 신호: NEUTRAL · 2점 · B 추정 평단 11,411원 대비 -34.4%. 방향성은 중립",
-          "특이 리스크 없음",
-          "KOSPI -2% 또는 KOSDAQ -1.5% 이하 전환 시 신규 진입 중단, 수익권 물량 30% 이상 회수"
-        ]
-      },
-      "sourceUrl": "https://finance.naver.com/item/main.naver?code=222080",
       "megaManagers": {
         "score": 0,
         "managerCount": 0,
