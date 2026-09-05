@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-09-05",
-    "updatedAt": "2026-09-05 07:35:02 KST",
+    "updatedAt": "2026-09-05 15:05:03 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -15477,14 +15477,14 @@
           },
           {
             "name": "자사주",
-            "shares": 3913405,
-            "pct": 1.68
+            "shares": 3953405,
+            "pct": 1.7
           }
         ],
         "majorHolderName": "셀트리온홀딩스 외 97인",
         "majorHolderShares": 76363056,
         "majorHolderPct": 32.83,
-        "topHolderPct": 41.79,
+        "topHolderPct": 41.81,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
@@ -30851,14 +30851,14 @@
           },
           {
             "name": "자사주",
-            "shares": 3913405,
-            "pct": 1.68
+            "shares": 3953405,
+            "pct": 1.7
           }
         ],
         "majorHolderName": "셀트리온홀딩스 외 97인",
         "majorHolderShares": 76363056,
         "majorHolderPct": 32.83,
-        "topHolderPct": 41.79,
+        "topHolderPct": 41.81,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": {
