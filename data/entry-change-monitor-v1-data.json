@@ -1,18 +1,18 @@
 {
   "meta": {
     "title": "Entry Change Monitor v1",
-    "runDate": "2026-09-11T19:33:09",
+    "runDate": "2026-09-12T15:03:02",
     "startDate": "2026-06-10",
     "startLabel": "저번주 수요일 이후",
     "source": "git history of v6, v7, v10 dashboard data",
-    "snapshotCount": 172,
+    "snapshotCount": 173,
     "trackedVersions": [
       "v6",
       "v7",
       "v10"
     ],
     "entryTickerCount": 28,
-    "latestV10Snapshot": "V10 · 2026-09-11 · 083e4cd"
+    "latestV10Snapshot": "V10 · 2026-09-11 · 7b9331c"
   },
   "summary": {
     "byStatus": {
@@ -1226,11 +1226,18 @@
         "latestDate": "2026-09-11",
         "commit": "083e4cd",
         "entryOk": 0
+      },
+      {
+        "version": "v10",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "latestDate": "2026-09-11",
+        "commit": "7b9331c",
+        "entryOk": 0
       }
     ]
   },
   "feedback": {
-    "latestV10Label": "V10 · 2026-09-11 · 083e4cd",
+    "latestV10Label": "V10 · 2026-09-11 · 7b9331c",
     "latestDate": "2026-09-11",
     "entryCount": 0,
     "averageReturns": {
@@ -3944,6 +3951,20 @@
       "label": "V10 · 2026-09-11 · 083e4cd",
       "order": 171,
       "entryCount": 0
+    },
+    {
+      "id": "v10-7b9331c",
+      "version": "v10",
+      "file": "data/v10-execution-dashboard-data.json",
+      "commit": "7b9331c961489ebe79696c6fef35f032cc3817bf",
+      "shortHash": "7b9331c",
+      "commitDate": "2026-09-12T15:03:01+09:00",
+      "subject": "Scheduled v10 refresh 20260912-150003",
+      "runDate": "2026-09-12",
+      "latestDate": "2026-09-11",
+      "label": "V10 · 2026-09-11 · 7b9331c",
+      "order": 172,
+      "entryCount": 0
     }
   ],
   "records": [
@@ -3957,9 +3978,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 REVIEW 59점 | 평단 NO_DATA 0점 | MA20 하회, RSI 41, 60일 고점 대비 -15.5%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -4046,40 +4067,40 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
         "totalScore": 67,
         "v10cScore": 67,
         "holderCostScore": 0,
-        "close": 137300,
+        "close": 138400,
         "entryRank": null,
         "returns": {
-          "d5": 0.5124,
-          "d20": -6.0233,
-          "d60": 13.0041
+          "d5": 1.3177,
+          "d20": -5.2704,
+          "d60": 13.9095
         },
         "technicals": {
-          "ma5": 140120,
-          "ma20": 142355,
-          "ma60": 133408.33,
-          "ma120": 121810,
-          "rsi14": 40.07,
+          "ma5": 140340,
+          "ma20": 142410,
+          "ma60": 133426.67,
+          "ma120": 121819.17,
+          "rsi14": 40.98,
           "high60": 163700,
           "low60": 100600,
-          "drawdown60Pct": -16.1271,
-          "reboundFromLow60Pct": 36.4811,
+          "drawdown60Pct": -15.4551,
+          "reboundFromLow60Pct": 37.5746,
           "aboveMa20": false,
           "aboveMa60": true,
-          "ma20SlopePct": -1.4878
+          "ma20SlopePct": -1.4498
         },
-        "technicalMemo": "MA20 하회, RSI 40.1, 60일 고점 대비 -16.1%",
+        "technicalMemo": "MA20 하회, RSI 41, 60일 고점 대비 -15.5%",
         "entryAction": "체질 검증 대기",
         "entryTrigger": "체질 점수 59점 REVIEW. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
-        "invalidation": "장기 기준선 미통과 상태에서 MA20 142,355원 재이탈 또는 60일 저점 100,600원 이탈",
+        "invalidation": "장기 기준선 미통과 상태에서 MA20 142,410원 재이탈 또는 60일 저점 100,600원 이탈",
         "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요",
         "riskNotes": [],
         "valuationBlock": false,
@@ -4104,32 +4125,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 123570
+            "price": 124560
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 137300
+            "price": 138400
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 141643
+            "price": 141698
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 142355
+            "price": 142410
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 148284
+            "price": 149472
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 157895
+            "price": 159160
           }
         ]
       },
@@ -4399,9 +4420,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "WAIT_TRIGGER",
@@ -7067,6 +7088,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 138400,
+          "totalScore": 67,
+          "v10cScore": 67,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 14,
@@ -7087,9 +7123,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 PASS 71점 | 평단 NO_DATA 0점 | MA20 상회, RSI 56.5, 60일 고점 대비 -26%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -7176,41 +7212,41 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
         "totalScore": 66,
         "v10cScore": 66,
         "holderCostScore": 0,
-        "close": 205000,
+        "close": 204500,
         "entryRank": null,
         "returns": {
-          "d5": 4.9667,
-          "d20": -4.2056,
-          "d60": -19.6078
+          "d5": 4.7107,
+          "d20": -4.4393,
+          "d60": -19.8039
         },
         "technicals": {
-          "ma5": 206000,
-          "ma20": 202600,
-          "ma60": 205431.67,
-          "ma120": 214346.67,
-          "rsi14": 56.79,
+          "ma5": 205900,
+          "ma20": 202575,
+          "ma60": 205423.33,
+          "ma120": 214342.5,
+          "rsi14": 56.49,
           "high60": 276500,
           "low60": 148000,
-          "drawdown60Pct": -25.859,
-          "reboundFromLow60Pct": 38.5135,
+          "drawdown60Pct": -26.0398,
+          "reboundFromLow60Pct": 38.1757,
           "aboveMa20": true,
           "aboveMa60": false,
-          "ma20SlopePct": -0.1232
+          "ma20SlopePct": -0.1356
         },
-        "technicalMemo": "MA20 상회, RSI 56.8, 60일 고점 대비 -25.9%",
+        "technicalMemo": "MA20 상회, RSI 56.5, 60일 고점 대비 -26%",
         "entryAction": "트리거 대기",
-        "entryTrigger": "종가가 MA20 202,600원 회복, 또는 5일선 206,000원 위에서 거래량 동반 양봉",
+        "entryTrigger": "종가가 MA20 202,575원 회복, 또는 5일선 205,900원 위에서 거래량 동반 양봉",
         "invalidation": "60일 저점 148,000원 이탈",
-        "target": "MA60 205,431.67원 또는 60일 고점 대비 절반 되돌림",
+        "target": "MA60 205,423.33원 또는 60일 고점 대비 절반 되돌림",
         "riskNotes": [],
         "valuationBlock": false,
         "structural": {
@@ -7218,7 +7254,7 @@
           "gate": "PASS",
           "grade": "체질 개선 인정, 진입가 관리 필요",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 988.1%"
+          "memo": "가격 기반 장기 추세 통과: 985.5%"
         },
         "holderCost": {
           "signal": "NO_DATA",
@@ -7234,32 +7270,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 184500
+            "price": 184050
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 201587
+            "price": 201562
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 202600
+            "price": 202575
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 205000
+            "price": 204500
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 221400
+            "price": 220860
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 235750
+            "price": 235175
           }
         ]
       },
@@ -7583,9 +7619,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "WAIT_TRIGGER",
@@ -10251,6 +10287,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 204500,
+          "totalScore": 66,
+          "v10cScore": 66,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 46,
@@ -10269,9 +10320,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 REVIEW 53점 | 평단 NO_DATA 0점 | MA20 상회, RSI 58.4, 60일 고점 대비 -24.1%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -10358,40 +10409,40 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
         "totalScore": 66,
         "v10cScore": 66,
         "holderCostScore": 0,
-        "close": 71100,
+        "close": 71000,
         "entryRank": null,
         "returns": {
-          "d5": 4.0996,
-          "d20": -1.7956,
-          "d60": -20.0225
+          "d5": 3.9531,
+          "d20": -1.9337,
+          "d60": -20.135
         },
         "technicals": {
-          "ma5": 70600,
-          "ma20": 70035,
-          "ma60": 67231.67,
-          "ma120": 81386.67,
-          "rsi14": 58.56,
+          "ma5": 70580,
+          "ma20": 70030,
+          "ma60": 67230,
+          "ma120": 81385.83,
+          "rsi14": 58.42,
           "high60": 93600,
           "low60": 45000,
-          "drawdown60Pct": -24.0385,
-          "reboundFromLow60Pct": 58,
+          "drawdown60Pct": -24.1453,
+          "reboundFromLow60Pct": 57.7778,
           "aboveMa20": true,
           "aboveMa60": true,
-          "ma20SlopePct": 1.8469
+          "ma20SlopePct": 1.8396
         },
-        "technicalMemo": "MA20 상회, RSI 58.6, 60일 고점 대비 -24%",
+        "technicalMemo": "MA20 상회, RSI 58.4, 60일 고점 대비 -24.1%",
         "entryAction": "체질 검증 대기",
         "entryTrigger": "체질 점수 53점 REVIEW. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
-        "invalidation": "장기 기준선 미통과 상태에서 MA20 70,035원 재이탈 또는 60일 저점 45,000원 이탈",
+        "invalidation": "장기 기준선 미통과 상태에서 MA20 70,030원 재이탈 또는 60일 저점 45,000원 이탈",
         "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요",
         "riskNotes": [],
         "valuationBlock": false,
@@ -10416,32 +10467,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 63990
+            "price": 63900
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 69685
+            "price": 69680
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 70035
+            "price": 70030
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 71100
+            "price": 71000
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 76788
+            "price": 76680
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 81765
+            "price": 81650
           }
         ]
       },
@@ -10775,9 +10826,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "WAIT_TRIGGER",
@@ -13443,6 +13494,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 71000,
+          "totalScore": 66,
+          "v10cScore": 66,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 4,
@@ -13461,9 +13527,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 PASS 74점 | 평단 NO_DATA 0점 | MA20 하회, RSI 31.2, 60일 고점 대비 -10.1%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -13550,41 +13616,41 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
         "totalScore": 65,
         "v10cScore": 65,
         "holderCostScore": 0,
-        "close": 43150,
+        "close": 43050,
         "entryRank": null,
         "returns": {
-          "d5": 1.7689,
-          "d20": -2.7057,
-          "d60": 37.6396
+          "d5": 1.533,
+          "d20": -2.9312,
+          "d60": 37.3206
         },
         "technicals": {
-          "ma5": 42560,
-          "ma20": 44320,
-          "ma60": 40160.83,
-          "ma120": 35001.67,
-          "rsi14": 32.28,
+          "ma5": 42540,
+          "ma20": 44315,
+          "ma60": 40159.17,
+          "ma120": 35000.83,
+          "rsi14": 31.2,
           "high60": 47900,
           "low60": 28500,
-          "drawdown60Pct": -9.9165,
-          "reboundFromLow60Pct": 51.4035,
+          "drawdown60Pct": -10.1253,
+          "reboundFromLow60Pct": 51.0526,
           "aboveMa20": false,
           "aboveMa60": true,
-          "ma20SlopePct": -0.7724
+          "ma20SlopePct": -0.7836
         },
-        "technicalMemo": "MA20 하회, RSI 32.3, 60일 고점 대비 -9.9%",
+        "technicalMemo": "MA20 하회, RSI 31.2, 60일 고점 대비 -10.1%",
         "entryAction": "트리거 대기",
-        "entryTrigger": "종가가 MA20 44,320원 회복, 또는 5일선 42,560원 위에서 거래량 동반 양봉",
+        "entryTrigger": "종가가 MA20 44,315원 회복, 또는 5일선 42,540원 위에서 거래량 동반 양봉",
         "invalidation": "60일 저점 28,500원 이탈",
-        "target": "MA60 40,160.83원 또는 60일 고점 대비 절반 되돌림",
+        "target": "MA60 40,159.17원 또는 60일 고점 대비 절반 되돌림",
         "riskNotes": [],
         "valuationBlock": false,
         "structural": {
@@ -13592,7 +13658,7 @@
           "gate": "PASS",
           "grade": "체질 개선 인정, 진입가 관리 필요",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 106.5%"
+          "memo": "가격 기반 장기 추세 통과: 106%"
         },
         "holderCost": {
           "signal": "NO_DATA",
@@ -13608,27 +13674,27 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 38835
+            "price": 38745
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 43150
+            "price": 43050
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 44098
+            "price": 44093
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 44320
+            "price": 44315
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 46602
+            "price": 46494
           },
           {
             "label": "2차 목표",
@@ -13903,9 +13969,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "WAIT_TRIGGER",
@@ -16571,6 +16637,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 43050,
+          "totalScore": 65,
+          "v10cScore": 65,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 96,
@@ -16591,9 +16672,9 @@
       "reason": "완전 배제가 아니라 재진입 대기 | 체질 REVIEW 67점 | 평단 NO_DATA 0점 | MA20 하회, RSI 46.4, 60일 고점 대비 -13.9%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
@@ -16680,40 +16761,40 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "WAIT_TRIGGER",
         "baseDecision": "WAIT_TRIGGER",
         "totalScore": 65,
         "v10cScore": 65,
         "holderCostScore": 0,
-        "close": 1080000,
+        "close": 1081000,
         "entryRank": null,
         "returns": {
-          "d5": 2.3697,
-          "d20": -8.8608,
-          "d60": -11.7647
+          "d5": 2.4645,
+          "d20": -8.7764,
+          "d60": -11.683
         },
         "technicals": {
-          "ma5": 1052000,
-          "ma20": 1094150,
-          "ma60": 1042083.33,
-          "ma120": 1175716.67,
-          "rsi14": 46.22,
+          "ma5": 1052200,
+          "ma20": 1094200,
+          "ma60": 1042100,
+          "ma120": 1175725,
+          "rsi14": 46.39,
           "high60": 1255000,
           "low60": 783000,
-          "drawdown60Pct": -13.9442,
-          "reboundFromLow60Pct": 37.931,
+          "drawdown60Pct": -13.8645,
+          "reboundFromLow60Pct": 38.0587,
           "aboveMa20": false,
           "aboveMa60": true,
-          "ma20SlopePct": -1.9183
+          "ma20SlopePct": -1.9139
         },
-        "technicalMemo": "MA20 하회, RSI 46.2, 60일 고점 대비 -13.9%",
+        "technicalMemo": "MA20 하회, RSI 46.4, 60일 고점 대비 -13.9%",
         "entryAction": "체질 검증 대기",
         "entryTrigger": "체질 점수 67점 REVIEW. 가격 기반 장기 추세 기준선 이후 우상향 검증 필요",
-        "invalidation": "장기 기준선 미통과 상태에서 MA20 1,094,150원 재이탈 또는 60일 저점 783,000원 이탈",
+        "invalidation": "장기 기준선 미통과 상태에서 MA20 1,094,200원 재이탈 또는 60일 저점 783,000원 이탈",
         "target": "기술 반등은 가능하나 장기 보유 전환은 체질 점수 65점 이상 필요",
         "riskNotes": [],
         "valuationBlock": false,
@@ -16738,32 +16819,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 972000
+            "price": 972900
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 1080000
+            "price": 1081000
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 1088679
+            "price": 1088729
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 1094150
+            "price": 1094200
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 1166400
+            "price": 1167480
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 1242000
+            "price": 1243150
           }
         ]
       },
@@ -17095,9 +17176,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "WAIT_TRIGGER",
           "baseDecision": "WAIT_TRIGGER",
@@ -19763,6 +19844,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "WAIT_TRIGGER",
+          "to": "WAIT_TRIGGER",
+          "change": "WATCH",
+          "close": 1081000,
+          "totalScore": 65,
+          "v10cScore": 65,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 23,
@@ -19781,9 +19877,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 33점 | 평단 NO_DATA 0점 | MA20 하회, RSI 50, 60일 고점 대비 -19.5%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -19870,9 +19966,9 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -20198,9 +20294,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -22866,6 +22962,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 330000,
+          "totalScore": 63,
+          "v10cScore": 63,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 2,
@@ -22885,9 +22996,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 69점 | 평단 NO_DATA 0점 | MA20 상회, RSI 71.1, 60일 고점 대비 -18.5%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -22974,39 +23085,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 59,
         "v10cScore": 59,
         "holderCostScore": 0,
-        "close": 209500,
+        "close": 209000,
         "entryRank": null,
         "returns": {
-          "d5": 17.4986,
-          "d20": 16.8433,
-          "d60": -4.7727
+          "d5": 17.2182,
+          "d20": 16.5644,
+          "d60": -5
         },
         "technicals": {
-          "ma5": 203760,
-          "ma20": 181875,
-          "ma60": 173165,
-          "ma120": 154855,
-          "rsi14": 71.47,
+          "ma5": 203660,
+          "ma20": 181850,
+          "ma60": 173156.67,
+          "ma120": 154850.83,
+          "rsi14": 71.12,
           "high60": 256500,
           "low60": 96800,
-          "drawdown60Pct": -18.3236,
-          "reboundFromLow60Pct": 116.4256,
+          "drawdown60Pct": -18.5185,
+          "reboundFromLow60Pct": 115.9091,
           "aboveMa20": true,
           "aboveMa60": true,
-          "ma20SlopePct": 6.7655
+          "ma20SlopePct": 6.7508
         },
-        "technicalMemo": "MA20 상회, RSI 71.5, 60일 고점 대비 -18.3%",
+        "technicalMemo": "MA20 상회, RSI 71.1, 60일 고점 대비 -18.5%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 181,875원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 181,850원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [],
@@ -23032,32 +23143,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 188550
+            "price": 188100
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 196930
+            "price": 196460
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 201120
+            "price": 200640
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 209500
+            "price": 209000
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 226260
+            "price": 225720
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 240925
+            "price": 240350
           }
         ]
       },
@@ -23383,9 +23494,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -26051,6 +26162,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 209000,
+          "totalScore": 59,
+          "v10cScore": 59,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 13,
@@ -26069,9 +26195,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 69점 | 평단 NO_DATA 0점 | MA20 상회, RSI 77.7, 60일 고점 대비 -22.1%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -26158,39 +26284,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 58,
         "v10cScore": 58,
         "holderCostScore": 0,
-        "close": 253000,
+        "close": 254000,
         "entryRank": null,
         "returns": {
-          "d5": 19.3396,
-          "d20": 51.497,
-          "d60": 33.5177
+          "d5": 19.8113,
+          "d20": 52.0958,
+          "d60": 34.0454
         },
         "technicals": {
-          "ma5": 246100,
-          "ma20": 199235,
-          "ma60": 195975.9,
-          "ma120": 167741.44,
-          "rsi14": 77.52,
+          "ma5": 246300,
+          "ma20": 199285,
+          "ma60": 195992.57,
+          "ma120": 167749.78,
+          "rsi14": 77.65,
           "high60": 326000,
           "low60": 106400,
-          "drawdown60Pct": -22.3926,
-          "reboundFromLow60Pct": 137.782,
+          "drawdown60Pct": -22.0859,
+          "reboundFromLow60Pct": 138.7218,
           "aboveMa20": true,
           "aboveMa60": true,
-          "ma20SlopePct": 12.4161
+          "ma20SlopePct": 12.4443
         },
-        "technicalMemo": "MA20 상회, RSI 77.5, 60일 고점 대비 -22.4%",
+        "technicalMemo": "MA20 상회, RSI 77.7, 60일 고점 대비 -22.1%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 199,235원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 199,285원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [],
@@ -26216,32 +26342,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 227700
+            "price": 228600
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 237820
+            "price": 238760
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 242880
+            "price": 243840
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 253000
+            "price": 254000
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 273240
+            "price": 274320
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 290950
+            "price": 292100
           }
         ]
       },
@@ -26571,9 +26697,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -29239,6 +29365,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 254000,
+          "totalScore": 58,
+          "v10cScore": 58,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 18,
@@ -29257,9 +29398,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 46점 | 평단 NO_DATA 0점 | MA20 하회, RSI 45.2, 60일 고점 대비 -35.8%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -29346,39 +29487,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
-        "totalScore": 52,
-        "v10cScore": 52,
+        "totalScore": 57,
+        "v10cScore": 57,
         "holderCostScore": 0,
-        "close": 49550,
+        "close": 49750,
         "entryRank": null,
         "returns": {
-          "d5": 2.1649,
-          "d20": -10.7207,
-          "d60": -32.9499
+          "d5": 2.5773,
+          "d20": -10.3604,
+          "d60": -32.6793
         },
         "technicals": {
-          "ma5": 49670,
-          "ma20": 50777.5,
-          "ma60": 49549.17,
-          "ma120": 52845.83,
-          "rsi14": 44.56,
+          "ma5": 49710,
+          "ma20": 50787.5,
+          "ma60": 49552.5,
+          "ma120": 52847.5,
+          "rsi14": 45.2,
           "high60": 77500,
           "low60": 37600,
-          "drawdown60Pct": -36.0645,
-          "reboundFromLow60Pct": 31.7819,
+          "drawdown60Pct": -35.8065,
+          "reboundFromLow60Pct": 32.3138,
           "aboveMa20": false,
           "aboveMa60": true,
-          "ma20SlopePct": -1.9266
+          "ma20SlopePct": -1.9073
         },
-        "technicalMemo": "MA20 하회, RSI 44.6, 60일 고점 대비 -36.1%",
+        "technicalMemo": "MA20 하회, RSI 45.2, 60일 고점 대비 -35.8%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 50,777.5원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 50,787.5원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [],
@@ -29404,32 +29545,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 44595
+            "price": 44775
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 49550
+            "price": 49750
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 50524
+            "price": 50534
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 50778
+            "price": 50788
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 53514
+            "price": 53730
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 56982
+            "price": 57212
           }
         ]
       },
@@ -29699,9 +29840,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -32367,6 +32508,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 49750,
+          "totalScore": 57,
+          "v10cScore": 57,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 11,
@@ -32387,9 +32543,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 PASS 73점 | 평단 NO_DATA 0점 | MA20 상회, RSI 53, 60일 고점 대비 -12.8%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -32476,39 +32632,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 56,
         "v10cScore": 56,
         "holderCostScore": 0,
-        "close": 51100,
+        "close": 50600,
         "entryRank": null,
         "returns": {
-          "d5": 13.8085,
-          "d20": -7.7617,
-          "d60": 109.8563
+          "d5": 12.6949,
+          "d20": -8.6643,
+          "d60": 107.8029
         },
         "technicals": {
-          "ma5": 47980,
-          "ma20": 48720,
-          "ma60": 38709.67,
-          "ma120": 34555.58,
-          "rsi14": 53.98,
+          "ma5": 47880,
+          "ma20": 48695,
+          "ma60": 38701.33,
+          "ma120": 34551.42,
+          "rsi14": 52.97,
           "high60": 58000,
           "low60": 18690,
-          "drawdown60Pct": -11.8966,
-          "reboundFromLow60Pct": 173.4082,
+          "drawdown60Pct": -12.7586,
+          "reboundFromLow60Pct": 170.733,
           "aboveMa20": true,
           "aboveMa60": true,
-          "ma20SlopePct": -1.883
+          "ma20SlopePct": -1.9333
         },
-        "technicalMemo": "MA20 상회, RSI 54, 60일 고점 대비 -11.9%",
+        "technicalMemo": "MA20 상회, RSI 53, 60일 고점 대비 -12.8%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 48,720원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 48,695원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [],
@@ -32518,7 +32674,7 @@
           "gate": "PASS",
           "grade": "체질 개선 인정, 진입가 관리 필요",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 790.2%"
+          "memo": "가격 기반 장기 추세 통과: 781.5%"
         },
         "holderCost": {
           "signal": "NO_DATA",
@@ -32534,27 +32690,27 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 45990
+            "price": 45540
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 48476
+            "price": 48452
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 48720
+            "price": 48695
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 51100
+            "price": 50600
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 55188
+            "price": 54648
           },
           {
             "label": "2차 목표",
@@ -32891,9 +33047,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -35559,6 +35715,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 50600,
+          "totalScore": 56,
+          "v10cScore": 56,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 37,
@@ -35577,9 +35748,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 15점 | 평단 NO_DATA 0점 | MA20 하회, RSI 48.1, 60일 고점 대비 -14% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -35668,39 +35839,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
-        "totalScore": 59,
-        "v10cScore": 59,
+        "totalScore": 54,
+        "v10cScore": 54,
         "holderCostScore": 0,
-        "close": 17190,
+        "close": 17080,
         "entryRank": null,
         "returns": {
-          "d5": -1.2636,
-          "d20": -6.1169,
-          "d60": -12.2063
+          "d5": -1.8955,
+          "d20": -6.7176,
+          "d60": -12.7681
         },
         "technicals": {
-          "ma5": 17126,
-          "ma20": 17494,
-          "ma60": 17597,
-          "ma120": 18791.25,
-          "rsi14": 49.49,
+          "ma5": 17104,
+          "ma20": 17488.5,
+          "ma60": 17595.17,
+          "ma120": 18790.33,
+          "rsi14": 48.13,
           "high60": 19850,
           "low60": 14800,
-          "drawdown60Pct": -13.4005,
-          "reboundFromLow60Pct": 16.1486,
+          "drawdown60Pct": -13.9547,
+          "reboundFromLow60Pct": 15.4054,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -2.219
+          "ma20SlopePct": -2.2497
         },
-        "technicalMemo": "MA20 하회, RSI 49.5, 60일 고점 대비 -13.4%",
+        "technicalMemo": "MA20 하회, RSI 48.1, 60일 고점 대비 -14%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 17,494원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 17,488.5원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -35728,32 +35899,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 15471
+            "price": 15372
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 17190
+            "price": 17080
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 17407
+            "price": 17401
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 17494
+            "price": 17489
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 18565
+            "price": 18446
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 19769
+            "price": 19642
           }
         ]
       },
@@ -35998,9 +36169,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -38668,6 +38839,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 17080,
+          "totalScore": 54,
+          "v10cScore": 54,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 2,
@@ -38687,9 +38873,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 63점 | 평단 NO_DATA 0점 | MA20 하회, RSI 49.7, 60일 고점 대비 -21.5% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -38778,39 +38964,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 54,
         "v10cScore": 54,
         "holderCostScore": 0,
-        "close": 130900,
+        "close": 130500,
         "entryRank": null,
         "returns": {
-          "d5": 3.4783,
-          "d20": -13.4259,
-          "d60": -15.874
+          "d5": 3.1621,
+          "d20": -13.6905,
+          "d60": -16.1311
         },
         "technicals": {
-          "ma5": 130060,
-          "ma20": 131690,
-          "ma60": 140973.33,
-          "ma120": 155636.67,
-          "rsi14": 50.26,
+          "ma5": 129980,
+          "ma20": 131670,
+          "ma60": 140966.67,
+          "ma120": 155633.33,
+          "rsi14": 49.74,
           "high60": 166200,
           "low60": 110000,
-          "drawdown60Pct": -21.2395,
-          "reboundFromLow60Pct": 19,
+          "drawdown60Pct": -21.4801,
+          "reboundFromLow60Pct": 18.6364,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -3.2616
+          "ma20SlopePct": -3.2763
         },
-        "technicalMemo": "MA20 하회, RSI 50.3, 60일 고점 대비 -21.2%",
+        "technicalMemo": "MA20 하회, RSI 49.7, 60일 고점 대비 -21.5%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 131,690원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 131,670원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -38838,32 +39024,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 117810
+            "price": 117450
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 130900
+            "price": 130500
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 131032
+            "price": 131012
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 131690
+            "price": 131670
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 141372
+            "price": 140940
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 150535
+            "price": 150075
           }
         ]
       },
@@ -39193,9 +39379,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -41863,6 +42049,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 130500,
+          "totalScore": 54,
+          "v10cScore": 54,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 26,
@@ -41881,9 +42082,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 53점 | 평단 NO_DATA 0점 | MA20 하회, RSI 54, 60일 고점 대비 -35.4% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -41972,39 +42173,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 53,
         "v10cScore": 53,
         "holderCostScore": 0,
-        "close": 748000,
+        "close": 747000,
         "entryRank": null,
         "returns": {
-          "d5": 4.7619,
-          "d20": -4.7134,
-          "d60": -33.2143
+          "d5": 4.6218,
+          "d20": -4.8408,
+          "d60": -33.3036
         },
         "technicals": {
-          "ma5": 747200,
-          "ma20": 751400,
-          "ma60": 806766.67,
-          "ma120": 945341.67,
-          "rsi14": 54.12,
+          "ma5": 747000,
+          "ma20": 751350,
+          "ma60": 806750,
+          "ma120": 945333.33,
+          "rsi14": 53.98,
           "high60": 1157000,
           "low60": 538000,
-          "drawdown60Pct": -35.35,
-          "reboundFromLow60Pct": 39.0335,
+          "drawdown60Pct": -35.4365,
+          "reboundFromLow60Pct": 38.8476,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -0.6348
+          "ma20SlopePct": -0.6414
         },
-        "technicalMemo": "MA20 하회, RSI 54.1, 60일 고점 대비 -35.4%",
+        "technicalMemo": "MA20 하회, RSI 54, 60일 고점 대비 -35.4%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 751,400원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 751,350원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -42032,32 +42233,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 673200
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 747643
+            "price": 672300
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 748000
+            "price": 747000
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 747593
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 751400
+            "price": 751350
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 807840
+            "price": 806760
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 860200
+            "price": 859050
           }
         ]
       },
@@ -42327,9 +42528,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -44997,6 +45198,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 747000,
+          "totalScore": 53,
+          "v10cScore": 53,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 14,
@@ -45017,9 +45233,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 53점 | 평단 NO_DATA 0점 | MA20 하회, RSI 51.5, 60일 고점 대비 -32.4% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -45108,39 +45324,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 52,
         "v10cScore": 52,
         "holderCostScore": 0,
-        "close": 70800,
+        "close": 70900,
         "entryRank": null,
         "returns": {
-          "d5": 2.907,
-          "d20": -11.0553,
-          "d60": -32.7635
+          "d5": 3.0523,
+          "d20": -10.9296,
+          "d60": -32.6686
         },
         "technicals": {
-          "ma5": 70920,
-          "ma20": 72690,
-          "ma60": 71765,
-          "ma120": 94260,
-          "rsi14": 51.26,
+          "ma5": 70940,
+          "ma20": 72695,
+          "ma60": 71766.67,
+          "ma120": 94260.83,
+          "rsi14": 51.45,
           "high60": 104900,
           "low60": 50700,
-          "drawdown60Pct": -32.5071,
-          "reboundFromLow60Pct": 39.645,
+          "drawdown60Pct": -32.4118,
+          "reboundFromLow60Pct": 39.8422,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -1.4507
+          "ma20SlopePct": -1.4439
         },
-        "technicalMemo": "MA20 하회, RSI 51.3, 60일 고점 대비 -32.5%",
+        "technicalMemo": "MA20 하회, RSI 51.5, 60일 고점 대비 -32.4%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 72,690원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 72,695원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -45168,32 +45384,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 63720
+            "price": 63810
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 70800
+            "price": 70900
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 72327
+            "price": 72332
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 72690
+            "price": 72695
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 76464
+            "price": 76572
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 81420
+            "price": 81535
           }
         ]
       },
@@ -45523,9 +45739,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -48193,6 +48409,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 70900,
+          "totalScore": 52,
+          "v10cScore": 52,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 3,
@@ -48211,9 +48442,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 41점 | 평단 NO_DATA 0점 | MA20 하회, RSI 52.1, 60일 고점 대비 -23.3% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -48302,39 +48533,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 51,
         "v10cScore": 51,
         "holderCostScore": 0,
-        "close": 27800,
+        "close": 27650,
         "entryRank": null,
         "returns": {
-          "d5": -0.3584,
-          "d20": -12.8527,
-          "d60": -21.6901
+          "d5": -0.8961,
+          "d20": -13.3229,
+          "d60": -22.1127
         },
         "technicals": {
-          "ma5": 27860,
-          "ma20": 28630,
-          "ma60": 28756.67,
-          "ma120": 31175,
-          "rsi14": 52.91,
+          "ma5": 27830,
+          "ma20": 28622.5,
+          "ma60": 28754.17,
+          "ma120": 31173.75,
+          "rsi14": 52.08,
           "high60": 36050,
           "low60": 21100,
-          "drawdown60Pct": -22.8849,
-          "reboundFromLow60Pct": 31.7536,
+          "drawdown60Pct": -23.301,
+          "reboundFromLow60Pct": 31.0427,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -3.1298
+          "ma20SlopePct": -3.1551
         },
-        "technicalMemo": "MA20 하회, RSI 52.9, 60일 고점 대비 -22.9%",
+        "technicalMemo": "MA20 하회, RSI 52.1, 60일 고점 대비 -23.3%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 28,630원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 28,622.5원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -48362,32 +48593,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 25020
+            "price": 24885
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 27800
+            "price": 27650
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 28487
+            "price": 28479
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 28630
+            "price": 28623
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 30024
+            "price": 29862
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 31970
+            "price": 31797
           }
         ]
       },
@@ -48657,9 +48888,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -51327,6 +51558,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 27650,
+          "totalScore": 51,
+          "v10cScore": 51,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 6,
@@ -51347,9 +51593,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 37점 | 평단 NO_DATA 0점 | MA20 하회, RSI 55.6, 60일 고점 대비 -29.7% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -51438,39 +51684,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
-        "totalScore": 47,
-        "v10cScore": 47,
+        "totalScore": 50,
+        "v10cScore": 50,
         "holderCostScore": 0,
-        "close": 66700,
+        "close": 66400,
         "entryRank": null,
         "returns": {
-          "d5": 0.1502,
-          "d20": -6.4516,
-          "d60": -29.5671
+          "d5": -0.3003,
+          "d20": -6.8724,
+          "d60": -29.8838
         },
         "technicals": {
-          "ma5": 68680,
-          "ma20": 67220,
-          "ma60": 71623.33,
-          "ma120": 89220,
-          "rsi14": 56.6,
+          "ma5": 68620,
+          "ma20": 67205,
+          "ma60": 71618.33,
+          "ma120": 89217.5,
+          "rsi14": 55.56,
           "high60": 94400,
           "low60": 54000,
-          "drawdown60Pct": -29.3432,
-          "reboundFromLow60Pct": 23.5185,
+          "drawdown60Pct": -29.661,
+          "reboundFromLow60Pct": 22.963,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -0.5327
+          "ma20SlopePct": -0.5549
         },
-        "technicalMemo": "MA20 하회, RSI 56.6, 60일 고점 대비 -29.3%",
+        "technicalMemo": "MA20 하회, RSI 55.6, 60일 고점 대비 -29.7%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 67,220원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 67,205원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -51498,32 +51744,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 60030
+            "price": 59760
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 66700
+            "price": 66400
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 66884
+            "price": 66869
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 67220
+            "price": 67205
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 72036
+            "price": 71712
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 76705
+            "price": 76360
           }
         ]
       },
@@ -51787,9 +52033,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -54457,6 +54703,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 66400,
+          "totalScore": 50,
+          "v10cScore": 50,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 3,
@@ -54477,9 +54738,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 65점 | 평단 NO_DATA 0점 | MA20 하회, RSI 47.4, 60일 고점 대비 -44% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -54568,39 +54829,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 49,
         "v10cScore": 49,
         "holderCostScore": 0,
-        "close": 123700,
+        "close": 123000,
         "entryRank": null,
         "returns": {
-          "d5": -2.2134,
-          "d20": -8.0981,
-          "d60": -23.83
+          "d5": -2.7668,
+          "d20": -8.6181,
+          "d60": -24.2611
         },
         "technicals": {
-          "ma5": 127900,
-          "ma20": 128000,
-          "ma60": 148225,
-          "ma120": 124812.5,
-          "rsi14": 48.13,
+          "ma5": 127760,
+          "ma20": 127965,
+          "ma60": 148213.33,
+          "ma120": 124806.67,
+          "rsi14": 47.36,
           "high60": 219500,
           "low60": 98000,
-          "drawdown60Pct": -43.6446,
-          "reboundFromLow60Pct": 26.2245,
+          "drawdown60Pct": -43.9636,
+          "reboundFromLow60Pct": 25.5102,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -0.3154
+          "ma20SlopePct": -0.3427
         },
-        "technicalMemo": "MA20 하회, RSI 48.1, 60일 고점 대비 -43.6%",
+        "technicalMemo": "MA20 하회, RSI 47.4, 60일 고점 대비 -44%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 128,000원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 127,965원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -54628,32 +54889,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 111330
+            "price": 110700
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 123700
+            "price": 123000
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 127360
+            "price": 127325
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 128000
+            "price": 127965
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 133596
+            "price": 132840
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 142255
+            "price": 141450
           }
         ]
       },
@@ -54923,9 +55184,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -57593,6 +57854,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 123000,
+          "totalScore": 49,
+          "v10cScore": 49,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 60,
@@ -57613,9 +57889,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 PASS 71점 | 평단 NO_DATA 0점 | MA20 하회, RSI 39.6, 60일 고점 대비 -27.6% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -57704,39 +57980,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 49,
         "v10cScore": 49,
         "holderCostScore": 0,
-        "close": 676000,
+        "close": 678000,
         "entryRank": null,
         "returns": {
-          "d5": 3.681,
-          "d20": -19.2354,
-          "d60": -28.8421
+          "d5": 3.9877,
+          "d20": -18.9964,
+          "d60": -28.6316
         },
         "technicals": {
-          "ma5": 670200,
-          "ma20": 710700,
-          "ma60": 737300,
-          "ma120": 789975,
-          "rsi14": 39.15,
+          "ma5": 670600,
+          "ma20": 710800,
+          "ma60": 737333.33,
+          "ma120": 789991.67,
+          "rsi14": 39.57,
           "high60": 937000,
           "low60": 575000,
-          "drawdown60Pct": -27.8549,
-          "reboundFromLow60Pct": 17.5652,
+          "drawdown60Pct": -27.6414,
+          "reboundFromLow60Pct": 17.913,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -4.0373
+          "ma20SlopePct": -4.0238
         },
-        "technicalMemo": "MA20 하회, RSI 39.2, 60일 고점 대비 -27.9%",
+        "technicalMemo": "MA20 하회, RSI 39.6, 60일 고점 대비 -27.6%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 710,700원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 710,800원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -57748,7 +58024,7 @@
           "gate": "PASS",
           "grade": "체질 개선 인정, 진입가 관리 필요",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 통과: 281.3%"
+          "memo": "가격 기반 장기 추세 통과: 282.4%"
         },
         "holderCost": {
           "signal": "NO_DATA",
@@ -57764,32 +58040,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 608400
+            "price": 610200
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 676000
+            "price": 678000
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 707147
+            "price": 707246
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 710700
+            "price": 710800
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 730080
+            "price": 732240
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 777400
+            "price": 779700
           }
         ]
       },
@@ -58113,9 +58389,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -60783,6 +61059,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 678000,
+          "totalScore": 49,
+          "v10cScore": 49,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 33,
@@ -60801,9 +61092,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 65점 | 평단 NO_DATA 0점 | MA20 하회, RSI 54, 60일 고점 대비 -41.3% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -60892,39 +61183,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 49,
         "v10cScore": 49,
         "holderCostScore": 0,
-        "close": 110700,
+        "close": 110300,
         "entryRank": null,
         "returns": {
-          "d5": -3.5714,
-          "d20": -7.75,
-          "d60": -31.5399
+          "d5": -3.9199,
+          "d20": -8.0833,
+          "d60": -31.7873
         },
         "technicals": {
-          "ma5": 116600,
-          "ma20": 112295,
-          "ma60": 118866.67,
-          "ma120": 121040.83,
-          "rsi14": 54.4,
+          "ma5": 116520,
+          "ma20": 112275,
+          "ma60": 118860,
+          "ma120": 121037.5,
+          "rsi14": 53.96,
           "high60": 187800,
           "low60": 74100,
-          "drawdown60Pct": -41.0543,
-          "reboundFromLow60Pct": 49.3927,
+          "drawdown60Pct": -41.2673,
+          "reboundFromLow60Pct": 48.8529,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": 2.7496
+          "ma20SlopePct": 2.7313
         },
-        "technicalMemo": "MA20 하회, RSI 54.4, 60일 고점 대비 -41.1%",
+        "technicalMemo": "MA20 하회, RSI 54, 60일 고점 대비 -41.3%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 112,295원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 112,275원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -60952,32 +61243,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 99630
+            "price": 99270
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 110700
+            "price": 110300
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 111734
+            "price": 111714
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 112295
+            "price": 112275
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 119556
+            "price": 119124
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 127305
+            "price": 126845
           }
         ]
       },
@@ -61311,9 +61602,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -63981,6 +64272,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 110300,
+          "totalScore": 49,
+          "v10cScore": 49,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 13,
@@ -63999,9 +64305,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 65점 | 평단 NO_DATA 0점 | MA20 하회, RSI 52.2, 60일 고점 대비 -31.5% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -64090,39 +64396,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 48,
         "v10cScore": 48,
         "holderCostScore": 0,
-        "close": 2841000,
+        "close": 2854000,
         "entryRank": null,
         "returns": {
-          "d5": 3.9898,
-          "d20": -5.8336,
-          "d60": -26.3035
+          "d5": 4.4656,
+          "d20": -5.4027,
+          "d60": -25.9663
         },
         "technicals": {
-          "ma5": 2892400,
-          "ma20": 2878150,
-          "ma60": 2914033.33,
-          "ma120": 3160608.33,
-          "rsi14": 51.72,
+          "ma5": 2895000,
+          "ma20": 2878800,
+          "ma60": 2914250,
+          "ma120": 3160716.67,
+          "rsi14": 52.2,
           "high60": 4169000,
           "low60": 1834000,
-          "drawdown60Pct": -31.8542,
-          "reboundFromLow60Pct": 54.9073,
+          "drawdown60Pct": -31.5423,
+          "reboundFromLow60Pct": 55.6161,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -0.0764
+          "ma20SlopePct": -0.0538
         },
-        "technicalMemo": "MA20 하회, RSI 51.7, 60일 고점 대비 -31.9%",
+        "technicalMemo": "MA20 하회, RSI 52.2, 60일 고점 대비 -31.5%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 2,878,150원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 2,878,800원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -64150,32 +64456,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 2556900
+            "price": 2568600
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 2841000
+            "price": 2854000
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 2863759
+            "price": 2864406
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 2878150
+            "price": 2878800
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 3068280
+            "price": 3082320
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 3267150
+            "price": 3282100
           }
         ]
       },
@@ -64495,9 +64801,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -67165,6 +67471,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 2854000,
+          "totalScore": 48,
+          "v10cScore": 48,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 11,
@@ -67183,9 +67504,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 46점 | 평단 NO_DATA 0점 | MA20 하회, RSI 45.4, 60일 고점 대비 -37.2% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -67274,9 +67595,9 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -67629,9 +67950,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -70299,6 +70620,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 40800,
+          "totalScore": 46,
+          "v10cScore": 46,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 15,
@@ -70319,9 +70655,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 25점 | 평단 NO_DATA 0점 | MA20 하회, RSI 46.3, 60일 고점 대비 -24.6% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -70410,39 +70746,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 43,
         "v10cScore": 43,
         "holderCostScore": 0,
-        "close": 18530,
+        "close": 18580,
         "entryRank": null,
         "returns": {
-          "d5": -1.5932,
-          "d20": -9.3888,
-          "d60": -25.1313
+          "d5": -1.3277,
+          "d20": -9.1443,
+          "d60": -24.9293
         },
         "technicals": {
-          "ma5": 18816,
-          "ma20": 19227,
-          "ma60": 19809.67,
-          "ma120": 21750.25,
-          "rsi14": 45.75,
+          "ma5": 18826,
+          "ma20": 19229.5,
+          "ma60": 19810.5,
+          "ma120": 21750.67,
+          "rsi14": 46.33,
           "high60": 24650,
           "low60": 15600,
-          "drawdown60Pct": -24.8276,
-          "reboundFromLow60Pct": 18.7821,
+          "drawdown60Pct": -24.6247,
+          "reboundFromLow60Pct": 19.1026,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -1.8705
+          "ma20SlopePct": -1.8578
         },
-        "technicalMemo": "MA20 하회, RSI 45.8, 60일 고점 대비 -24.8%",
+        "technicalMemo": "MA20 하회, RSI 46.3, 60일 고점 대비 -24.6%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 19,227원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 19,229.5원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -70470,32 +70806,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 16677
+            "price": 16722
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 18530
+            "price": 18580
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 19131
+            "price": 19133
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 19227
+            "price": 19230
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 20012
+            "price": 20066
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 21310
+            "price": 21367
           }
         ]
       },
@@ -70765,9 +71101,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -73435,6 +73771,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 18580,
+          "totalScore": 43,
+          "v10cScore": 43,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 9,
@@ -73455,9 +73806,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 10점 | 평단 NO_DATA 0점 | MA20 상회, RSI 73.5, 60일 고점 대비 -1.9%",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -73544,49 +73895,49 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 43,
         "v10cScore": 43,
         "holderCostScore": 0,
-        "close": 84500,
+        "close": 84000,
         "entryRank": null,
         "returns": {
-          "d5": 6.962,
-          "d20": 17.5243,
-          "d60": 2.7981
+          "d5": 6.3291,
+          "d20": 16.8289,
+          "d60": 2.1898
         },
         "technicals": {
-          "ma5": 81640,
-          "ma20": 76005,
-          "ma60": 73948.33,
-          "ma120": 80785.83,
-          "rsi14": 74.05,
+          "ma5": 81540,
+          "ma20": 75980,
+          "ma60": 73940,
+          "ma120": 80781.67,
+          "rsi14": 73.54,
           "high60": 85600,
           "low60": 63900,
-          "drawdown60Pct": -1.285,
-          "reboundFromLow60Pct": 32.2379,
+          "drawdown60Pct": -1.8692,
+          "reboundFromLow60Pct": 31.4554,
           "aboveMa20": true,
           "aboveMa60": true,
-          "ma20SlopePct": 2.1916
+          "ma20SlopePct": 2.158
         },
-        "technicalMemo": "MA20 상회, RSI 74.1, 60일 고점 대비 -1.3%",
+        "technicalMemo": "MA20 상회, RSI 73.5, 60일 고점 대비 -1.9%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 76,005원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 75,980원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [],
         "valuationBlock": false,
         "structural": {
-          "score": 14,
+          "score": 10,
           "gate": "BLOCK",
           "grade": "장기 보유보다 이벤트·트레이딩 우선",
           "label": "가격 기반 장기 추세 기준선",
-          "memo": "가격 기반 장기 추세 검증 대기: 점수 14"
+          "memo": "가격 기반 장기 추세 검증 대기: 점수 10"
         },
         "holderCost": {
           "signal": "NO_DATA",
@@ -73602,17 +73953,17 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 76050
+            "price": 75600
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 79430
+            "price": 78960
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 81120
+            "price": 80640
           },
           {
             "label": "1차 회수",
@@ -73622,7 +73973,7 @@
           {
             "label": "현재",
             "kind": "now",
-            "price": 84500
+            "price": 84000
           },
           {
             "label": "2차 목표",
@@ -73872,9 +74223,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -76540,6 +76891,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 84000,
+          "totalScore": 43,
+          "v10cScore": 43,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 2,
@@ -76559,9 +76925,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 60점 | 평단 NO_DATA 0점 | MA20 하회, RSI 33.2, 60일 고점 대비 -42.8% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -76650,39 +77016,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 41,
         "v10cScore": 41,
         "holderCostScore": 0,
-        "close": 123900,
+        "close": 124100,
         "entryRank": null,
         "returns": {
-          "d5": -2.2871,
-          "d20": -16.0569,
-          "d60": -43.4247
+          "d5": -2.1293,
+          "d20": -15.9214,
+          "d60": -43.3333
         },
         "technicals": {
-          "ma5": 125480,
-          "ma20": 132280,
-          "ma60": 153540,
-          "ma120": 181485,
-          "rsi14": 32.78,
+          "ma5": 125520,
+          "ma20": 132290,
+          "ma60": 153543.33,
+          "ma120": 181486.67,
+          "rsi14": 33.22,
           "high60": 217000,
           "low60": 113100,
-          "drawdown60Pct": -42.9032,
-          "reboundFromLow60Pct": 9.5491,
+          "drawdown60Pct": -42.8111,
+          "reboundFromLow60Pct": 9.7259,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -3.8243
+          "ma20SlopePct": -3.8171
         },
-        "technicalMemo": "MA20 하회, RSI 32.8, 60일 고점 대비 -42.9%",
+        "technicalMemo": "MA20 하회, RSI 33.2, 60일 고점 대비 -42.8%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 132,280원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 132,290원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -76710,32 +77076,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 111510
+            "price": 111690
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 123900
+            "price": 124100
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 131619
+            "price": 131629
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 132280
+            "price": 132290
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 133812
+            "price": 134028
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 142485
+            "price": 142715
           }
         ]
       },
@@ -77005,9 +77371,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -79675,6 +80041,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 124100,
+          "totalScore": 41,
+          "v10cScore": 41,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 23,
@@ -79695,9 +80076,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 10점 | 평단 NO_DATA 0점 | MA20 하회, RSI 47.6, 60일 고점 대비 -28.2% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -79786,39 +80167,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 40,
         "v10cScore": 40,
         "holderCostScore": 0,
-        "close": 173200,
+        "close": 173000,
         "entryRank": null,
         "returns": {
-          "d5": -2.9692,
-          "d20": -1.8141,
-          "d60": -26.4544
+          "d5": -3.0812,
+          "d20": -1.9274,
+          "d60": -26.5393
         },
         "technicals": {
-          "ma5": 176180,
-          "ma20": 175880,
-          "ma60": 190958.33,
-          "ma120": 220195,
-          "rsi14": 47.9,
+          "ma5": 176140,
+          "ma20": 175870,
+          "ma60": 190955,
+          "ma120": 220193.33,
+          "rsi14": 47.59,
           "high60": 241000,
           "low60": 157900,
-          "drawdown60Pct": -28.1328,
-          "reboundFromLow60Pct": 9.6897,
+          "drawdown60Pct": -28.2158,
+          "reboundFromLow60Pct": 9.563,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -0.6833
+          "ma20SlopePct": -0.6889
         },
-        "technicalMemo": "MA20 하회, RSI 47.9, 60일 고점 대비 -28.1%",
+        "technicalMemo": "MA20 하회, RSI 47.6, 60일 고점 대비 -28.2%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 175,880원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 175,870원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -79846,32 +80227,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 155880
+            "price": 155700
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 173200
+            "price": 173000
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 175001
+            "price": 174991
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 175880
+            "price": 175870
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 187056
+            "price": 186840
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 199180
+            "price": 198950
           }
         ]
       },
@@ -80116,9 +80497,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -82786,6 +83167,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 173000,
+          "totalScore": 40,
+          "v10cScore": 40,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 2,
@@ -82805,9 +83201,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 61점 | 평단 NO_DATA 0점 | MA20 하회, RSI 45.4, 60일 고점 대비 -58.9% | 리스크: MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -82896,39 +83292,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 31,
         "v10cScore": 31,
         "holderCostScore": 0,
-        "close": 539000,
+        "close": 543000,
         "entryRank": null,
         "returns": {
-          "d5": -4.0925,
-          "d20": -12.3577,
-          "d60": -56.8109
+          "d5": -3.3808,
+          "d20": -11.7073,
+          "d60": -56.4904
         },
         "technicals": {
-          "ma5": 556000,
-          "ma20": 584350,
-          "ma60": 682883.33,
-          "ma120": 681095.83,
-          "rsi14": 44.78,
+          "ma5": 556800,
+          "ma20": 584550,
+          "ma60": 682950,
+          "ma120": 681129.17,
+          "rsi14": 45.39,
           "high60": 1320000,
           "low60": 416000,
-          "drawdown60Pct": -59.1667,
-          "reboundFromLow60Pct": 29.5673,
+          "drawdown60Pct": -58.8636,
+          "reboundFromLow60Pct": 30.5288,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -0.8063
+          "ma20SlopePct": -0.7724
         },
-        "technicalMemo": "MA20 하회, RSI 44.8, 60일 고점 대비 -59.2%",
+        "technicalMemo": "MA20 하회, RSI 45.4, 60일 고점 대비 -58.9%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 584,350원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 584,550원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -82956,32 +83352,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 485100
+            "price": 488700
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 539000
+            "price": 543000
           },
           {
             "label": "축소",
             "kind": "softStop",
-            "price": 581428
-          },
-          {
-            "label": "1차 회수",
-            "kind": "trim",
-            "price": 582120
+            "price": 581627
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 584350
+            "price": 584550
+          },
+          {
+            "label": "1차 회수",
+            "kind": "trim",
+            "price": 586440
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 619850
+            "price": 624450
           }
         ]
       },
@@ -83226,9 +83622,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -85896,6 +86292,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 543000,
+          "totalScore": 31,
+          "v10cScore": 31,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 2,
@@ -85915,9 +86326,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 BLOCK 18점 | 평단 NO_DATA 0점 | MA20 하회, RSI 41.5, 60일 고점 대비 -57% | 리스크: 변동성/재무 확인 필요 · MA20·MA60 동시 하회",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -86007,39 +86418,39 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
         "totalScore": 27,
         "v10cScore": 27,
         "holderCostScore": 0,
-        "close": 23500,
+        "close": 23350,
         "entryRank": null,
         "returns": {
-          "d5": -0.6342,
-          "d20": -21.797,
-          "d60": -54.2802
+          "d5": -1.2685,
+          "d20": -22.2962,
+          "d60": -54.572
         },
         "technicals": {
-          "ma5": 24030,
-          "ma20": 25477.5,
-          "ma60": 30574.33,
-          "ma120": 33703.42,
-          "rsi14": 42.16,
+          "ma5": 24000,
+          "ma20": 25470,
+          "ma60": 30571.83,
+          "ma120": 33702.17,
+          "rsi14": 41.49,
           "high60": 54300,
           "low60": 18000,
-          "drawdown60Pct": -56.7219,
-          "reboundFromLow60Pct": 30.5556,
+          "drawdown60Pct": -56.9982,
+          "reboundFromLow60Pct": 29.7222,
           "aboveMa20": false,
           "aboveMa60": false,
-          "ma20SlopePct": -3.8494
+          "ma20SlopePct": -3.8777
         },
-        "technicalMemo": "MA20 하회, RSI 42.2, 60일 고점 대비 -56.7%",
+        "technicalMemo": "MA20 하회, RSI 41.5, 60일 고점 대비 -57%",
         "entryAction": "관망/제외",
-        "entryTrigger": "최소 MA20 25,477.5원 회복과 RSI 35 이상 필요",
+        "entryTrigger": "최소 MA20 25,470원 회복과 RSI 35 이상 필요",
         "invalidation": "추세 훼손 지속",
         "target": "반등 확인 전 목표가 산정 보류",
         "riskNotes": [
@@ -86068,32 +86479,32 @@
           {
             "label": "손절",
             "kind": "stop",
-            "price": 21150
+            "price": 21015
           },
           {
             "label": "현재",
             "kind": "now",
-            "price": 23500
-          },
-          {
-            "label": "축소",
-            "kind": "softStop",
-            "price": 25350
+            "price": 23350
           },
           {
             "label": "1차 회수",
             "kind": "trim",
-            "price": 25380
+            "price": 25218
+          },
+          {
+            "label": "축소",
+            "kind": "softStop",
+            "price": 25343
           },
           {
             "label": "추가",
             "kind": "add",
-            "price": 25478
+            "price": 25470
           },
           {
             "label": "2차 목표",
             "kind": "target",
-            "price": 27025
+            "price": 26852
           }
         ]
       },
@@ -86375,9 +86786,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -89046,6 +89457,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 23350,
+          "totalScore": 27,
+          "v10cScore": 27,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 4,
@@ -89066,9 +89492,9 @@
       "reason": "신규 진입 금지/축소 우선 | 체질 REVIEW 52점 | 평단 NO_DATA 0점 | MA20 하회, RSI 18.1, 60일 고점 대비 -36.9% | 리스크: MA20·MA60 동시 하회 · 과매도 지속 가능성",
       "current": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 083e4cd",
-        "commit": "083e4cd",
-        "commitDate": "2026-09-11T19:33:06+09:00",
+        "label": "V10 · 2026-09-11 · 7b9331c",
+        "commit": "7b9331c",
+        "commitDate": "2026-09-12T15:03:01+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -89158,9 +89584,9 @@
       },
       "previousSameVersion": {
         "version": "v10",
-        "label": "V10 · 2026-09-11 · 5fa59c5",
-        "commit": "5fa59c5",
-        "commitDate": "2026-09-11T15:03:27+09:00",
+        "label": "V10 · 2026-09-11 · 083e4cd",
+        "commit": "083e4cd",
+        "commitDate": "2026-09-11T19:33:06+09:00",
         "latestDate": "2026-09-11",
         "decision": "AVOID_NOW",
         "baseDecision": "AVOID_NOW",
@@ -89570,9 +89996,9 @@
         },
         "v10": {
           "version": "v10",
-          "label": "V10 · 2026-09-11 · 083e4cd",
-          "commit": "083e4cd",
-          "commitDate": "2026-09-11T19:33:06+09:00",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "commit": "7b9331c",
+          "commitDate": "2026-09-12T15:03:01+09:00",
           "latestDate": "2026-09-11",
           "decision": "AVOID_NOW",
           "baseDecision": "AVOID_NOW",
@@ -92241,6 +92667,21 @@
           "entryRank": null,
           "commitDate": "2026-09-11T19:33:06+09:00",
           "snapshotOrder": 171
+        },
+        {
+          "version": "v10",
+          "label": "V10 · 2026-09-11 · 7b9331c",
+          "latestDate": "2026-09-11",
+          "commit": "7b9331c",
+          "from": "AVOID_NOW",
+          "to": "AVOID_NOW",
+          "change": "WATCH",
+          "close": 415500,
+          "totalScore": 19,
+          "v10cScore": 19,
+          "entryRank": null,
+          "commitDate": "2026-09-12T15:03:01+09:00",
+          "snapshotOrder": 172
         }
       ],
       "entryCount": 8,
