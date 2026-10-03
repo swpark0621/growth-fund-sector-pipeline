@@ -2,7 +2,7 @@
   "meta": {
     "title": "국민성장펀드 v10 체질·평단 제약 실행 대시보드",
     "runDate": "2026-10-03",
-    "updatedAt": "2026-10-03 07:32:38 KST",
+    "updatedAt": "2026-10-03 15:02:49 KST",
     "universeCount": 124,
     "validCount": 124,
     "methodology": "v7의 정책·가치·기술·수급 점수는 유지하되, v10은 ENTRY_OK에 체질 전환 기준선을 신규 제약으로 적용한다. holderCostScore는 총점과 기존 판단을 바꾸지 않는 별도 보조 점수이며, v10cScore=totalScore+holderCostScore로 별도 랭킹을 제공한다.",
@@ -9453,14 +9453,14 @@
           },
           {
             "name": "자사주",
-            "shares": 4417704,
-            "pct": 1.9
+            "shares": 4467704,
+            "pct": 1.92
           }
         ],
         "majorHolderName": "셀트리온홀딩스 외 97인",
         "majorHolderShares": 76363161,
         "majorHolderPct": 32.83,
-        "topHolderPct": 42.01,
+        "topHolderPct": 42.03,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": null,
@@ -21826,14 +21826,14 @@
           },
           {
             "name": "자사주",
-            "shares": 4417704,
-            "pct": 1.9
+            "shares": 4467704,
+            "pct": 1.92
           }
         ],
         "majorHolderName": "셀트리온홀딩스 외 97인",
         "majorHolderShares": 76363161,
         "majorHolderPct": 32.83,
-        "topHolderPct": 42.01,
+        "topHolderPct": 42.03,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": null,
@@ -36727,14 +36727,14 @@
             "pct": 25.48
           },
           {
+            "name": "미래에셋자산운용 외 1인",
+            "shares": 5298152,
+            "pct": 6.95
+          },
+          {
             "name": "삼성자산운용",
             "shares": 4891973,
             "pct": 6.42
-          },
-          {
-            "name": "미래에셋자산운용 외 1인",
-            "shares": 4507577,
-            "pct": 5.91
           },
           {
             "name": "베어링자산운용 외 3인",
@@ -36745,7 +36745,7 @@
         "majorHolderName": "이채윤",
         "majorHolderShares": 19418345,
         "majorHolderPct": 25.48,
-        "topHolderPct": 42.85,
+        "topHolderPct": 43.89,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": null,
@@ -42394,8 +42394,8 @@
         "topHolders": [
           {
             "name": "에이치디현대 외 4인",
-            "shares": 13361420,
-            "pct": 37.07
+            "shares": 13359797,
+            "pct": 37.06
           },
           {
             "name": "국민연금공단",
@@ -42409,9 +42409,9 @@
           }
         ],
         "majorHolderName": "에이치디현대 외 4인",
-        "majorHolderShares": 13361420,
-        "majorHolderPct": 37.07,
-        "topHolderPct": 45.22,
+        "majorHolderShares": 13359797,
+        "majorHolderPct": 37.06,
+        "topHolderPct": 45.21,
         "memo": "대주주 지분 높음"
       },
       "priceSource": null,
@@ -46023,13 +46023,13 @@
         "topHolders": [
           {
             "name": "삼성물산 외 5인",
-            "shares": 34393138,
-            "pct": 74.3
+            "shares": 35743886,
+            "pct": 73.61
           },
           {
             "name": "국민연금공단",
             "shares": 3186122,
-            "pct": 6.88
+            "pct": 6.56
           },
           {
             "name": "자사주",
@@ -46038,9 +46038,9 @@
           }
         ],
         "majorHolderName": "삼성물산 외 5인",
-        "majorHolderShares": 34393138,
-        "majorHolderPct": 74.3,
-        "topHolderPct": 81.29,
+        "majorHolderShares": 35743886,
+        "majorHolderPct": 73.61,
+        "topHolderPct": 80.28,
         "memo": "대주주 지분 매우 높음"
       },
       "priceSource": null,
@@ -48401,8 +48401,8 @@
         "topHolders": [
           {
             "name": "김용화 외 2인",
-            "shares": 5377352,
-            "pct": 21.16
+            "shares": 5383852,
+            "pct": 21.19
           },
           {
             "name": "CJ ENM",
@@ -48416,9 +48416,9 @@
           }
         ],
         "majorHolderName": "김용화 외 2인",
-        "majorHolderShares": 5377352,
-        "majorHolderPct": 21.16,
-        "topHolderPct": 28.91,
+        "majorHolderShares": 5383852,
+        "majorHolderPct": 21.19,
+        "topHolderPct": 28.94,
         "memo": "대주주 지분 보통 이상"
       },
       "priceSource": null,
